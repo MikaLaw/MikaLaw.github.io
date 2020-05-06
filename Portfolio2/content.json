@@ -1,0 +1,80 @@
+{
+  "skills" : [
+    {
+      "Frontend" : ["HTML5","CSS3", "JavaScript & jQuery"]
+    },
+    {
+      "Backend" : ["PHP", "mySQL", "Node.js & npm", "Mongo.db"]
+    },
+    {
+      "WorkFlow" : ["Git", "Gulp", "Bower"]      
+    }
+  ],
+  
+  "socials" : [
+    {
+      "vk" : "https://vk.com/id152397305"
+    },
+    {
+      "github" : "https://github.com/MikaLaw"
+    },
+    {
+      "in" : "https://www.instagram.com/nadezhda.feo/"     
+    }
+  ],
+
+  "footerSocials" : [
+    {
+      "vk_round" : "https://vk.com/id152397305"
+    },
+    {
+      "github_round" : "https://github.com/MikaLaw"
+    },
+    {
+      "in_round" : "https://www.instagram.com/nadezhda.feo/"     
+    }
+  ],
+
+  "contacts" : [
+    {
+      "skype" : ["skype_dn", "https://www.skype.com/ru/"]
+      
+    },
+    {
+      "envelope" : ["feoktistovaconstr@gmail.com", "https://mail.google.com/mail/u/0/#inbox"]
+      
+    },
+     {
+      "phone" : ["8 920 970 87 12", "#"]      
+    }
+  ],
+
+ "footerMenu" : [
+    {
+      "Мои работы" : "works.html"
+    },
+    {
+      "Обо мне" : "about.html"
+    },
+    {
+      "Блог" : "blog.html"    
+    },
+    {
+      "Авторизация" : "index.html"
+    }
+  ],
+
+  "buttons" : [
+    {
+      "Мои работы" : "works.html"
+    },
+    {
+      "Обо мне" : "about.html"
+    },
+    {
+      "Блог" : "blog.html"     
+    }
+  ]
+}
+
+

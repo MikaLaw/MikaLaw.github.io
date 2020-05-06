@@ -1,0 +1,78 @@
+.footer {
+	padding: 20px 0;
+		.container {
+		font-size: 0;
+		* {
+			font-size: 16px;
+		}
+	}
+}
+
+.footer__logo{
+@include inlineblock(middle);
+width: 21%;
+	.logo__text {
+		font-size: 25px;
+	}
+}
+
+.footer__copy{
+@include inlineblock(middle);
+width: 24%;	
+}
+
+.footer__address {
+@include inlineblock(middle);
+width: 34%;
+}
+
+.footer__soc {
+@include inlineblock(middle);
+width: 21%;
+}
+
+.footer__text {
+	padding: 0 20px;
+}
+
+.soc__link {
+	display: block;
+	text-decoration: none;
+	position: relative;
+}
+
+.soc__item {
+	@include inlineblock(middle);
+	margin-left: 20px;
+	&:hover {
+		.soc__link {
+			opacity: 1;
+		}
+	}
+}
+
+.soc__link {
+	display: block;
+	width: 22px;
+	height: 22px;
+	background: url('../img/icon/soc-sprite.png');
+	opacity: 0.5;
+	transition: 0.3s;
+}
+
+.soc__link_fb{	
+	background-position: 0 0;
+}
+
+.soc__link_inst{
+	background-position: -22px 0;
+}
+.soc__link_ok{
+	background-position: -44px 0;
+}
+.soc__link_tw{
+	background-position: -68px 0;
+}
+.soc__link_vk{
+	background-position: -90px 0;	
+}

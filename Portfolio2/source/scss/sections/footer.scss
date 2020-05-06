@@ -1,0 +1,112 @@
+.footer {
+	background: rgba($second, .85);
+	position: relative;
+	z-index: 1;	
+	width: 100%;
+}
+
+.footer-menu {
+	border-bottom: 1px solid #656b6e;
+	padding: rem(25px);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	@include phones {
+		padding: rem(15px);
+	}
+}
+
+.footer-menu__left,
+.footer-menu__right {
+	text-align: center;
+	@include laptop {
+  	 	width: 100%;
+  	}	
+}
+
+.footer-menu__left {
+	@include laptop {
+  	 	margin-bottom: rem(30px);
+  	}
+  	@include phones {
+		margin-bottom: rem(20px);
+	}
+}
+
+.footer-menu__list {
+	display: inline-block; 
+}
+
+.footer-menu__item {
+	@include inlineblock(middle);
+	margin-right: rem(40px);
+	&:hover {
+		.footer-menu__link {
+			opacity: 1;
+			color: $contrast;
+		}
+	}
+	@include phones {
+		margin-right: rem(5px);
+	}
+}
+
+.footer-menu__item:last-child {
+	margin-right: rem(0px);
+}
+
+.footer-menu__link {
+	text-decoration: none;
+	color: $white;
+	opacity: .75;
+	display: block;
+	transition: 0.3s ease-in-out;
+	 @include phones {
+		font-size: rem(13px);
+	}
+}
+
+.social__item_footer{
+	margin-right: rem(5px);	
+}
+
+.social__icon_footer{
+	fill: $white;
+    width: 36px;
+    height: 36px;
+    @include phones {
+		width: 26px;
+    	height: 26px;
+	}
+}
+
+.footer-info {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	@include Roboto(light);
+	color: rgba($white, 0.5);
+	@include phones {
+		font-size: rem(13px);
+	}
+}
+
+.footer-info__copyright {
+	text-align: right;
+}
+
+.footer-info__copyright,
+.footer-info__text {
+	width: 50%;
+	padding: rem(15px) rem(25px);
+	@include laptop {
+		text-align: center;
+  	 	width: 100%;
+  	}
+  	 @include phones {
+		padding: rem(15px) rem(15px);
+	}	
+}
+

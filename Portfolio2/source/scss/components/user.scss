@@ -1,0 +1,53 @@
+.user_section{
+	@include centered(both);
+	color: $white;
+}
+
+.blog-user__title {
+	.section__title {
+		color: $white;
+		&:after,
+		&:before {
+			background: rgba($white, .4);
+		}
+		@include phones {
+			font-size: rem(50px);
+		}
+	}
+}
+
+.user {
+	text-align: center;	
+}
+
+.user__foto {	
+	background-position: center !important;
+	background-repeat: no-repeat !important;
+	background-size: cover !important;	
+	width: 140px;
+	height: 140px;
+	margin: 0 auto;
+	border-radius: 50%;
+	border: 3px solid $white;
+	margin-bottom: rem(20px);
+}
+
+.user__name {
+	@include Roboto(medium);
+	font-size: rem(35px);
+	margin-bottom: rem(5px);
+	word-break: break-word;
+	@include tablets {
+		font-size: rem(30px);
+	}
+	@include phones {
+		font-size: rem(24px);
+		line-height: 1.2;
+	}
+}
+
+.user__desc {
+	@include Roboto(light);
+	opacity: 0.8;
+	word-break: break-word;
+}

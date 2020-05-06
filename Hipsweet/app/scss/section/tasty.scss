@@ -1,0 +1,59 @@
+.tasty {
+    background-color: #dbdbdb;   
+    background-image: -webkit-linear-gradient(to left,rgb(200, 200, 201) 0%,rgb(225, 225, 225) 100%);
+    background-image: linear-gradient(to right,rgb(200, 200, 201) 0%,rgb(225, 225, 225) 100%);
+    background-image: -ms-linear-gradient(to left,rgb(200, 200, 201) 0%,rgb(225, 225, 225) 100%);
+   
+}
+
+.tasty__left {
+	@include inlineblock();
+	margin-left: -4px;
+	padding: 95px 100px 95px 50px;
+	width: 65%;
+	
+}
+
+.tasty__right {
+	@include inlineblock(bottom);
+	margin-left: -4px;
+	padding-top: 50px;
+	width: 35%;
+}
+
+.tasty__right-pic {
+	@include pic();
+}
+
+.tasty__block {
+	margin-top: 85px;
+}
+
+.tasty .section__text p {
+	color: $second;
+}
+
+.tasty__list {
+	font-size: 0;
+	* {
+		font-size: 16px;
+	}
+}
+
+.tasty__item {
+	@include inlineblock();
+	width: 33.3%;
+	padding:10px;
+
+}
+
+.tasty__text {
+	color: $second;
+	font-family: 'Peace Sans', sans-serif;
+	font-weight: normal;
+}
+
+.item__icon_margin {
+	margin: 0;
+	margin-bottom: 30px;
+}

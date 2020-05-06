@@ -1,0 +1,95 @@
+.auth__wrapper {
+	width: 100%;
+	min-width: 310px;
+	height: 100vh;
+	background: url('../img/bg.jpg');
+	overflow: hidden;
+	text-align: center;
+	&:before {
+		content: "";
+		@include inlineblock(middle);
+		height: 100%;
+		width: 0;
+	}
+}
+
+.auth__form {
+	width: 300px;
+	text-align: center;
+	@include inlineblock(middle);
+	@include laptop {
+		width: 350px;
+	}
+	@include phone {
+		width: 300px;
+	}
+
+}
+
+.auth__head {
+	position: relative;
+	background: #fff;
+	padding-top: rem(60px);
+	margin-top: rem(70px);
+	box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+	border-radius: 10px;
+	@include laptop {
+		padding-top: rem(40px);
+	}
+}
+
+.auth__avatar {
+	width: 140px;
+	height: 140px;
+	border-radius: 50%;
+	overflow: hidden;
+	border: 1px solid #bebebe;
+	position: absolute;
+	top: -70px;
+	left: 50%;
+	transform: translate(-50%, 0);
+	@include laptop {
+		width: 100px;
+		height: 100px;
+		top: -50px;
+	}
+}
+
+.auth__pic {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+.auth__name {
+	font-size: rem(21px);
+	color: $prime;
+	padding-left: 15%;
+	padding-right: 15%;	
+	padding-bottom: 5%;
+	padding-top: 8%;
+}
+
+.auth__btn {
+	background: $contrast;
+	padding: rem(20px) 0;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+.auth__click {
+	color: #fff;	
+	border: 2px solid #fff;
+	@include inlineblock();
+	@include Fira(bold);
+	text-decoration: none;
+	padding: rem(7px) rem(14px);
+	border-radius: 35px;
+	font-size: rem(14px);
+	transition: all 0.3s linear;
+	&:hover {
+		color: $contrast;
+		background: #fff;		
+	}
+}
+

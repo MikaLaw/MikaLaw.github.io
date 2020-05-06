@@ -1,0 +1,95 @@
+html {
+  font-size: 18px; 
+  @include laptop {
+  	 font-size: 16px;
+  }
+  @include tablet {
+  	 font-size: 15px;
+  }
+  @include phone {
+  	 font-size: 14px;
+  }
+}
+
+html,
+body {
+	width: 100%;
+	min-height: 100%;
+	font-family: 'Gotham Light', Helvetica ,sans-serif;
+	font-size: 18px;
+	font-weight: 300;
+	color: $prime;
+	line-height: 1.2;
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+ul li {
+	list-style: none;
+}
+
+p {
+	margin: 0;
+}
+
+h1, h2, h3 {
+	margin: 0;
+	font-weight: normal;
+}
+
+.wrapper {
+	min-height: 100%;
+	overflow: hidden;
+}
+
+.wrapper {
+	&:after {
+		content: "";
+		height: 80px;
+		display: block;
+		@include tablet {
+			height: 145px;
+		}
+	}	
+}
+
+.container {
+    max-width: 1080px;
+    padding: rem(0px) rem(10px);
+	margin: 0 auto;
+	@extend %clearfix;
+	@include desktop {
+  	 	max-width: 940px;
+	}
+	@include laptop {
+  	 	max-width: 750px;
+	}
+	@include tablet {
+	  	max-width: 480px; 
+	}
+	@include phone {
+	  	max-width: 100%; 
+	}
+}
+
+.title {
+	font-size: rem(49px);
+	@include Gotham(bold);
+	word-break: break-word;
+	@include tablet {
+	  	text-align: center; 
+	  	font-size: rem(36px);
+	}
+	@include phone {
+		font-size: rem(28px);
+	}
+}

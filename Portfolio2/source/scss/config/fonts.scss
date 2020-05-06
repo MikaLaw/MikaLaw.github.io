@@ -1,0 +1,46 @@
+@font-face {
+    font-family: 'Roboto Light';
+    src: url('../fonts/roboto-light.woff2') format('woff2'),
+         url('../fonts/roboto-light.eot'),
+         url('../fonts/roboto-light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto Medium';
+    src: url('../fonts/roboto-medium.woff2') format('woff2'),
+         url('../fonts/roboto-medium.eot'),
+         url('../fonts/roboto-medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto Regular';
+    src: url('../fonts/roboto-regular.ttf') format('truetype'), 
+         url('../fonts/roboto-regular.woff') format('woff'),
+         url('../fonts/roboto-regular.woff2') format('woff2'),
+         url('roboto-regular.eot');
+         
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Bernier';
+    src: url('../fonts/bernierregular-regular.woff2') format('woff2'),
+         url('../fonts/bernierregular-regular.eot'),
+         url('../fonts/bernierregular-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@mixin Roboto($style: regular) {
+  font-family: 'Roboto Regular';
+
+  @if $style == light {
+    font-family: 'Roboto Light';
+  }
+
+  @if $style == medium {
+    font-family: 'Roboto Medium';
+  }
+}

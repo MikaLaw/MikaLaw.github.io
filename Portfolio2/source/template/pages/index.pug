@@ -1,0 +1,26 @@
+extends ../template
+
+block title
+	title Авторизация
+
+include ../modules/mixins
+block content
+
+	include ../modules/preloader
+	include ../modules/parallax
+	section.intro
+		header.intro-header
+			a(href="#").intro-header__link Авторизоваться
+		.intro-content
+			.intro-container
+				include ../modules/auth-info
+				include ../modules/auth-login
+		.intro__footer
+			p
+				|© Феоктистова Надежда | 2019
+	.popup.hide
+		.popup__content
+			p.popup__text
+			button.popup__close Закрыть
+	script(src='js/foundation.js')
+	script(src='js/intro.js')

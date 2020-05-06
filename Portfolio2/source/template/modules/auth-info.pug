@@ -1,0 +1,28 @@
+-
+	var socials = {
+		"vk" : "https://vk.com/id152397305",
+		"github" : "https://github.com/MikaLaw",
+		"in" : "https://www.instagram.com/nadezhda.feo/"
+	};
+-
+	var buttons = {
+		"Мои работы" : "works.html",
+		"Обо мне" : "about.html",
+		"Блог" : "blog.html"
+	};
+
+.auth__info
+	.user.auth__info-user
+		.user__foto(style="background: url('img/content/user__avatar.jpg');")
+		h1.user__name Феоктистова Надежда
+		.user__desc Сайт-портфолио веб-разработчика
+		ul.social__list
+				each socialLink, socialName in socials
+					li.social__item
+						a(href= socialLink class="social__link" target="_blank")
+							svg.social__icon.social__icon_auth
+								use(xlink:href=`img/sprite.svg#${socialName}`)
+	ul.auth__button-list
+		each buttonLink, buttonName in buttons
+			li.auth__button-item
+				a(href=`${buttonLink}`).auth__button-link= buttonName

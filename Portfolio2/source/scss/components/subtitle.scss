@@ -1,0 +1,40 @@
+.subtitle {
+	font-family: 'Bernier';
+	color: $prime;
+	font-size: rem(35px);
+	line-height: 1.2;
+	position: relative; 
+	max-width: 320px;
+	display: inline-block;
+	word-break: break-word;
+	&:after,
+	&:before {
+		content: '';
+		position: absolute;
+		top: rem(18px);
+		width: 22px;
+		height: 5px;
+		background: rgba($prime, 0.2);
+	}
+	&:after {
+		right: rem(-38px);
+	}
+	&:before {
+		left: rem(-38px);
+	}
+	@include tablets {
+		font-size: rem(33px);
+		&:after,
+		&:before {
+		top: rem(15px);
+		}
+	}
+	@include phones {
+		max-width: 200px;
+		font-size: rem(30px);
+		&:after,
+		&:before {
+		top: rem(14px);
+		}
+	}
+}

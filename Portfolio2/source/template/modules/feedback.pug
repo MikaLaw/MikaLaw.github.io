@@ -1,0 +1,18 @@
+.feedback-container
+	img.feedback__bg(src="img/contact__bg@1x.jpg" srcset="img/contact__bg@2x.jpg 2x" alt="contact__bg")
+	.feedback-wrapper
+		.blur
+		form#feedback
+			.feedback-info
+				.feedback-form__row
+					h2.subtitle Связаться со мной
+				.feedback-form__row
+					input(type="text" placeholder='Имя' data-check="username" name="name").feedback-form__input
+				.feedback-form__row
+					input(type="email" placeholder='Email' data-check="email" name="email").feedback-form__input
+				.feedback-form__row
+					textarea(placeholder='Ваше сообщение' data-check="text" name="text").feedback-form__textarea
+			.feedback-form__row-btn
+				input(type="submit" value='Отправить').feedback-form__btn
+				input(type="reset" value='Очистить').feedback-form__btn#form-clear
+	+arrow('#hero', 'portf_arrow_up', 'arrow-nav__icon_up')

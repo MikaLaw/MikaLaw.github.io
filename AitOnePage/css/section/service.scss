@@ -1,0 +1,40 @@
+.service {
+    background: #fafafa;
+}
+.service-card {
+    padding: 50px;
+    background: #fff;
+    height: 100%}
+.service-card_active {
+    background: #17bed2;
+    color: #fff;
+}
+.service-card_active .section-card__title {
+    color: #fff;
+}
+.service-card_active .section-card__icon {
+    color: #fff;
+}
+.section-card__icon, .service-card__body {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    transform: translate(0, 0);
+    transition: all .3s cubic-bezier(.7, 1, .7, 1);
+}
+.service-card {
+    &:hover {
+    .section-card__icon {
+        opacity: 0;
+        -webkit-transform: translate(0, -100%);
+        -moz-transform: translate(0, -100%);
+        transform: translate(0, -100%);
+        transition: all .3s cubic-bezier(.7, 1, .7, 1);
+        }
+    .service-card__body {
+        -webkit-transform: translate(0, -30%);
+        -moz-transform: translate(0, -30%);
+        transform: translate(0, -30%);
+        transition: all .3s cubic-bezier(.7, 1, .7, 1);
+        }
+    }
+}

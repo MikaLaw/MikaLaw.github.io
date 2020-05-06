@@ -1,0 +1,85 @@
+.menu {
+	background: url('../img/bg/menu.jpg') no-repeat center;
+	background-size: cover;
+	background-color: $second;
+	position: relative;
+	.section__title {
+		position: absolute;
+		top: 100px;
+		left: 100px;
+	}
+}
+
+.menu__acco {
+	@extend %clearfix;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+}
+
+.menu__acco-item {
+	float: left;
+	height: 100vh;
+	min-height: 100%;
+	@extend %clearfix;
+	&.active {
+		.menu__acco-title {
+		top: 75%;
+		color: $contrast;
+		}
+	}
+	&:hover {
+		.menu__acco-title {
+			color: $contrast;
+		}
+	}
+}
+
+.menu__acco-trigger {
+	float: left;
+	width: 80px;
+	height: 100%;
+	text-decoration: none;
+	display: block;
+	position: relative;
+	background-repeat: no-repeat !important;
+	background-position: center !important;
+	background-size: cover !important;	
+	&:focus {
+		outline: none;
+	}
+}
+
+.menu__acco-title {
+	font-family: 'Gagalin Regular';
+	font-size: 40px;
+	color: $prime;
+	position: absolute;
+	transform: rotate(-90deg);
+	white-space: nowrap;
+	width: 650px;
+	height: 80px;
+	left: -275px;
+	top: 50%;
+	margin-top: -40px;
+	text-align: center;
+	transition: 0.3s;
+}
+
+.menu__acco-content {
+	float: left;
+	height: 100%;
+	overflow: hidden;
+	width: 0;
+	transition: 0.3s;
+	background: #eee;
+	p {
+		width: 540px;
+		height: 100%;
+		background: rgba(47, 50, 52, .9);
+		color: $prime;
+		padding: 60px 30px;
+		opacity: 0.9;
+	}
+}

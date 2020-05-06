@@ -1,0 +1,54 @@
+html {
+  font-size: 16px; 
+  @include laptop {
+  	 font-size: 15px;
+  }
+  @include tablets {
+  	 font-size: 14px;
+  }
+  @include phones {
+  	 font-size: 13px;
+  }
+}
+
+html,
+body {
+	height: 100%;
+	margin: 0;
+	font-family: 'Roboto Regular', 'Arial', sans-serif;
+	font-size: 16px;
+	line-height: 1.42;
+	-webkit-font-smoothing: antialiased;
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+p {
+	margin: 0;
+}
+
+h1, h2, h3, h4, h5 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: normal;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+a {
+  &:focus {
+    outline: none;
+  }
+}
+
+input {
+  &:active {
+    background: transparent;
+  }
+}

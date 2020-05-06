@@ -1,0 +1,32 @@
+.auth__login
+	form(action="GET")#login
+		.auth__login-form
+			.auth__login-info
+				.auth__login-row
+					h2.subtitle Авторизуйтесь
+				.auth__login-row
+					input.auth__login-input(type="text" name="username" placeholder="Логин" data-check="username" required)
+					.auth__login-pic
+						svg.auth__login-icon
+							use(xlink:href="img/sprite.svg#login")
+				.auth__login-row
+					input.auth__login-input(type="password" name="password" placeholder="Пароль" data-check="password" required)
+					.auth__login-pic
+						svg.auth__login-icon
+							use(xlink:href="img/sprite.svg#password")
+				.auth__login-row
+					input(type="checkbox" name="ident" checked id="ident").auth__login-checkbox
+					label(for="ident").auth__login-labelbox Я человек
+				.auth__login-row 
+					.auth__login-text Вы точно не робот?
+				.auth__login-row
+					.auth__login-cell
+						input(type="radio" name="confirm" value="Yes" checked id="confirmYes").auth__login-radio
+						label(for="confirmYes").auth__login-labelradio Да
+					.auth__login-cell
+						input(type="radio" name="confirm" value="No"  id="confirmNo").auth__login-radio
+						label(for="confirmNo").auth__login-labelradio Не уверен
+			.auth__login-btn
+				a(href="#").auth__login-link.auth__login-back На главную
+				a(href="#").auth__login-link#log-me Войти
+

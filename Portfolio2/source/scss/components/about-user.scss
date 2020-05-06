@@ -1,0 +1,34 @@
+.about-user {
+	padding: rem(40px) rem(60px);
+	@include laptop {
+  	 	padding: rem(40px) rem(20px);
+  	}
+	@include phones {
+		padding: rem(40px) rem(10px);
+	}
+}
+
+.about-user__title {
+	text-align: center;
+}
+
+.about-user__img {
+	border-radius: 5px;
+	overflow: hidden;
+	margin-bottom: rem(20px);
+}
+
+.about-user__pic {
+	width: 100%;
+	height: auto;	
+	vertical-align: middle;
+}
+
+.about-user__title {
+	margin-bottom: rem(20px);
+}
+
+.about-user__desc {
+	text-align: left;
+}
+

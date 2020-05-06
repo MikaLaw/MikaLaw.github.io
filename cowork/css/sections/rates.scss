@@ -1,0 +1,115 @@
+.main__bredcrumbs {
+	margin-top: rem(38px);
+}
+
+.main__bredcrumbs-item {
+	@include inlineblock(middle);
+	margin-right: rem(10px);
+	position: relative;
+	&:before {
+		content: "/";
+		display: block;
+		position: absolute;
+		top: -2px;
+		right: -12px;
+	}
+	&:last-child {
+		&:before {
+			display: none;
+		}
+	}
+}
+
+.main__bredcrumbs-link {
+	text-decoration: none;
+	display: block;
+	color: $contrast;
+	font-size: rem(14px);
+  	@include Gotham(italic);
+}
+
+.main__bredcrumbs-item_active {	
+	.main__bredcrumbs-link {
+		color: $prime;
+	}	
+}
+
+.rates__list  {	
+	font-size: 0;
+	* {
+		font-size: rem(14px);
+	}
+	margin: rem(0px) rem(-21px);
+	margin-top: rem(28px);
+}
+
+.rates__items {
+	@include inlineblock();
+	width: 33.3%;
+	text-align: center;
+	margin-bottom: rem(45px);
+	padding: rem(0px) rem(21px);	
+	@include tablet {
+		width: 50%;
+	}
+	@include phone {
+		width: 100%;
+	}
+}
+
+.rates__link {
+	display: block;
+	text-decoration: none;
+	color: $prime;
+}
+
+.rates__img {
+	height: 153px;
+	border-radius: 5px;
+	background: $second;
+	position: relative;
+	overflow: hidden;
+	margin-bottom: rem(20px);
+}
+
+.rates__pic{
+	width: 100%;
+	height: auto;
+	opacity: 0.15;
+	@include center();
+}
+
+.rates__img-text {
+	color: #5dd1f8;
+	font-size: rem(22px);
+	@include Gotham(bold);
+	text-transform: uppercase;
+	@include center();
+	width: 100%;
+	padding:rem(16px);
+	word-break: break-word;
+	@include tablet {
+		padding:rem(24px);
+		font-size: rem(20px);
+	}
+}
+
+.rates__desc {
+	@include Gotham(bold);
+}
+
+.rates__vip-desc {
+	font-size: rem(22px);
+	@include tablet {
+		font-size: rem(20px);
+	}
+}
+
+.rates__text {
+	margin-top: rem(15px);
+}
+
+.rates__vip {
+	color: $contrast;
+	display: block;
+}

@@ -1,0 +1,80 @@
+.faq {
+	background: url('../img/faqs_bg/faq1.png') no-repeat 0 135%,
+				url('../img/faqs_bg/faq2.png') no-repeat 0 -70%,
+				url('../img/faqs_bg/faq3.png') no-repeat 10% 20%,
+				url('../img/faqs_bg/faq4.png') no-repeat 75% -10%,
+				url('../img/faqs_bg/faq5.png') no-repeat 100% 0%,								
+				url('../img/faqs_bg/faq6.png') no-repeat 100% 100%,
+				url('../img/faqs_bg/faq7.png') no-repeat 70% 120%;
+				background-size: 260px;
+	padding: 90px 0;
+	position: relative;
+	min-height: 760px;
+	z-index: 0;
+	&:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background-color: #bd262a;   
+		background-image: linear-gradient(to top right,rgb(165, 20, 26) 0%,rgb(213, 55, 58) 100%);
+		background-image: linear-gradient(to bottom left,rgb(165, 20, 26) 0%,rgb(213, 55, 58) 100%);
+		background-image: -ms-linear-gradient(to top right,rgb(165, 20, 26) 0%,rgb(213, 55, 58) 100%);
+		opacity: 0.92;
+		z-index: -1;
+	}	
+}
+
+.faq__block {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.faq__title {
+	.section__title{
+		font-size: 40px;
+	}	
+	text-align: center;
+	margin-bottom: 60px;
+}
+
+.acco__item {
+	color: $prime;
+	margin-bottom: 30px;
+	&.active {
+		color: $contrast;
+		.acco__trigger {
+			color: $contrast;
+			border-bottom: none;
+		}
+		.acco__content-text p {
+			color: $prime;
+		}
+	}
+	&:hover {
+		.acco__trigger {
+			color: $contrast;
+			border-bottom: 1px dashed $contrast;
+		}
+	}
+}
+
+.acco__trigger {
+	display: inline-block; 	
+	color: $prime;
+	text-decoration: none;
+	border-bottom: 1px dashed $prime;
+	font-size: 22px;
+}
+
+.acco__content {
+	height: 0;
+  	overflow: hidden;
+  	transition: .8s;
+}
+
+.acco__content-text {
+	padding: 0px 30px;
+}

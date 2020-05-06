@@ -1,0 +1,69 @@
+.footer {
+  height: 50px;
+  margin-top: -50px;
+  background: $prime;
+  padding: rem(10px) 0;
+  overflow: hidden;
+  @include tablet {
+       	height: 100px;
+  		margin-top: -100px;
+    }
+   @include phone {
+       	height: 140px;
+  		margin-top: -140px;
+   }
+}
+
+
+.footer__left{
+	@include float(60%);
+	 @include tablet {
+		float: none;
+		width: 100%;
+		text-align: center;
+		margin-bottom: rem(10px);
+    }
+}
+.footer__right{
+	@include float(40%);
+	text-align: right;
+	 @include tablet {
+		float: none;
+		width: 100%;
+		text-align: center;
+    }
+}
+
+.footer__copyright {
+	color: #9c9c9c;
+	line-height: 2;
+}
+
+.social__item {
+	@include inlineblock();
+}
+
+.social__icon {
+	fill: #9c9c9c;
+	fill-rule: evenodd;
+	transition: 0.3s;
+}
+
+.social__link {
+	width: 30px;
+	height: 30px;
+	@include inlineblock(middle);
+	&:hover {
+		.social__icon_fb {
+			fill:#4463a6;
+		}
+		.social__icon_vk {
+			fill:#5d99c3;
+		}
+		.social__icon_tw {
+			fill:#6ac4d9;
+		}
+	}
+}
+
+

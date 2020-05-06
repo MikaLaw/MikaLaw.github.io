@@ -1,0 +1,67 @@
+.map-contact {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include phones {
+		 align-items: flex-start;
+	}
+}
+
+.contact-block {
+	width: 380px;
+	background: rgba(#fcfcfc, 0.85);
+	border-radius: 5px;
+	padding: rem(30px) rem(40px);	
+	position: relative;
+	z-index: 1;	
+	@include phones {
+		width: 100%;
+		padding: rem(20px);
+	}
+}
+
+.contact__title {
+	text-align: center;
+	margin-bottom: rem(20px);
+	@include phones {
+		margin-bottom: rem(25px);
+	}
+}
+
+.contact__item {
+	margin-bottom: rem(20px);
+	&:hover {
+		.contact__link {
+			color: #000;
+		}
+		.contact__link-pic {
+			fill: $add;
+		}
+	}
+}
+
+.contact__link {
+	display: block;
+	text-decoration: none;
+	color: $prime;
+	position: relative;
+	transition: 0.3s ease-in-out;
+}
+
+.contact__link-icon {
+	position: absolute;
+}
+
+.contact__link-pic {
+	width: 23px;
+	height: 23px;
+	fill: $contrast;
+	transition: 0.3s ease-in-out;
+}
+
+.contact__name {
+	@include Roboto(medium);
+	margin-left: rem(30px);
+	word-break: break-word;
+}

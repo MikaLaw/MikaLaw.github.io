@@ -1,0 +1,77 @@
+.map {
+	background-color: $second;
+	position: relative;
+}
+ 
+#map {
+	position: absolute;
+	z-index: 0;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	padding: 10px 0;
+	background: url('../img/bg/footer.jpg') no-repeat center;
+	background-size: cover;
+	background-color: $second;
+}
+
+.footer__left,
+.footer__right {
+	@include float(50%);
+}
+
+.footer__right {
+	text-align: right;
+}
+
+.contact__adress {
+	color: $prime;
+	margin-bottom: 10px;
+}
+
+.contact__tel {
+	color: $add;
+	background: url('../img/icon/phone.svg') no-repeat left;
+}
+
+.contact__tel-number {
+	padding-left: 15px;
+}
+
+.social__list {
+	margin-top: 16px;
+}
+
+.social__item {
+	@include inlineblock();
+	margin-right: 20px;
+	&:hover {
+		.icon {
+			fill-opacity: 1;
+		}
+	}
+}
+
+.social__link {
+	display: block;
+	text-decoration: none;
+	width: 20px;
+	height: 20px;
+}
+
+.icon {
+	fill: $prime;
+	fill-opacity: 0.3;
+	transition: 0.3s ease-in-out;
+}
+
+.hide {
+	display: none;
+}

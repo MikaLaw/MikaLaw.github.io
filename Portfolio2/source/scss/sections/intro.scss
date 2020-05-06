@@ -1,0 +1,81 @@
+.intro{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+    align-items: center;
+    min-height: 650px;
+    height: 100vh;
+}
+
+.intro-header {
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	padding: rem(20px);
+	@include phones {
+		justify-content: center;
+	}
+}
+
+.intro-header__link {
+	display: inline-block;
+	text-decoration: none;
+	@include Roboto(medium);
+	color: $white;
+	border: 1px solid $white;
+	border-radius: 5px;
+	padding: rem(12px) rem(30px);
+	transition: 0.3s ease-in-out;
+	&:hover {
+		color: $contrast;
+		background: $white;;
+	}
+}
+
+.intro-content {
+	height: 58%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+    align-items: center;
+}
+
+.intro-container {
+	position: relative;
+	perspective: 1000px;
+  	z-index: 20;
+  	transform-origin: top center;
+  	transform: perspective(600px) rotateX(-40deg) translateY(-20px);
+  	opacity: 0;  	
+  	transition: all 0.8s 1s;
+}
+
+.intro-container.loaded {
+	transform: perspective(600px) rotateX(0) translateY(0);
+  	opacity: 1;
+}
+
+.intro-container.flip .auth__info {
+  transform: rotateY(180deg);
+  z-index: 0;
+  opacity: 0;
+}
+
+.intro-container.flip .auth__login {
+  transform: rotateY(0deg);
+  z-index: 10;
+  opacity: 1;
+}
+
+.intro__footer {
+	width: 100%;
+	text-align: center;
+	padding: rem(30px);
+	p {
+		color: rgba($white, .7);
+	}
+}
+
+
+
+

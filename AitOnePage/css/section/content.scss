@@ -1,0 +1,60 @@
+.content {
+    background: #fafafa;
+}
+.content-left__btn {
+    display: inline-block;
+    font-weight: 600;
+    background: #515769;
+    padding: 15px 40px;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 1em;
+    transition: all .3s cubic-bezier(.7, 1, .7, 1);
+    margin-top: 15px;
+    &:hover {
+        text-decoration: none;
+        background: #17bed2;
+        color: #fff;
+    }
+}
+.accordion>.card {
+    border-bottom: 0;
+    border-radius: 0;
+}
+.card {
+    margin-bottom: 10px;
+}
+.card-header {
+    background-color: #fff;
+    border-bottom: none;
+    padding: 0;
+}
+.content-right__btn {
+    font-size: 20px;
+    font-family: 'Hind Bold',  sans-serif;
+    color: #515769;
+    padding: 30px;
+    border-radius: 0;
+    width: 100%;
+    text-align: left;
+    &:hover {
+        color: #a6a7aa;
+    } 
+    &:focus {
+        box-shadow: none;
+    }
+}
+.content-card {
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+.content-right-body {
+    font-size: 1.2em;
+    padding: 0 30px 30px;
+    background: #17bed2;
+    color: #fff;
+}
+.accordion [aria-expanded=true] {
+    color: #fff;
+    background: #17bed2;
+}

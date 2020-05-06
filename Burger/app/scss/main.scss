@@ -1,0 +1,18 @@
+$prime: #ffffff;
+$second: #2f3234;
+$contrast: #f9b43b;
+$add: #e35028;
+
+
+@import "layout/mixins.scss";
+@import "layout/fonts.scss";
+@import "layout/adjustment.scss";
+
+@import  "section/hero.scss";
+@import  "section/best.scss";
+@import  "section/burgers.scss";
+@import  "section/team.scss";
+@import  "section/menu.scss";
+@import  "section/rewiew.scss";
+@import  "section/order.scss";
+@import  "section/map.scss";

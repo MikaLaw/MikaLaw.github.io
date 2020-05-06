@@ -1,0 +1,44 @@
+@font-face {
+  font-family: 'Gotham Bold';
+  src: url('../fonts/GothamProBold.woff') format('woff'),
+       url('../fonts/GothamProBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gotham Light';
+  src: url('../fonts/GothamProLight.woff') format('woff'),
+       url('../fonts/GothamProLight.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gotham LightItalic';
+  src: url('../fonts/GothamProLightItalic.woff') format('woff'),
+       url('../fonts/GothamProLightItalic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'OpenSans Bold';
+  src: url('../fonts/OpenSans-Bold.woff') format('woff'),
+       url('../fonts/OpenSans-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+@mixin Gotham($style: light) {
+  font-family: 'Gotham Light';
+
+  @if $style == italic {
+    font-family: 'Gotham LightItalic';
+  }
+
+  @if $style == bold {
+    font-family: 'Gotham Bold';
+  }
+}

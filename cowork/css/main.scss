@@ -1,0 +1,17 @@
+@import "layout/normalize.scss";
+@import "layout/animate.min.scss";
+
+// mixins 
+@import "layout/variables.scss";
+@import "layout/mixins.scss";
+@import "layout/fonts.scss";
+
+//style
+@import "layout/adjustment.scss";
+@import "sections/auth.scss";
+@import "sections/header.scss";
+@import "sections/sidebar.scss";
+@import "sections/about.scss";
+@import "sections/footer.scss";
+@import "sections/rates.scss";
+@import "sections/review.scss";

@@ -1,0 +1,30 @@
+.testimonials {
+	@include background-img('../img/bg/testimonials-bg.jpg');
+	&:before {
+		@include gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.73), rgba(0,0,0,0.66), rgba(0,0,0,0.55), rgba(0,0,0,0.4));
+	}
+}
+
+.testimonials__list {
+	margin-top: 70px;
+} 
+
+.testimonials__item {
+	text-align: center;
+	margin: 0 auto;
+	max-width: 800px;	
+}
+
+.testimonials__text {
+	@include Lato('bold');		
+	font-size: 1.1em;
+	text-transform: uppercase;
+	margin-bottom: 30px;
+}
+
+.testimonials__author {
+	font-size: 1.2em;
+	margin-bottom: 30px;
+	color: #d1d1d1;
+
+}

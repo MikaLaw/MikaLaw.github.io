@@ -1,0 +1,116 @@
+.portfolio__content {
+	margin-top: 90px;
+}
+
+.navigation__desc {
+	@include Lato();
+	font-size: 1.5em;
+	color: $secondary-color;
+	text-transform: uppercase;
+	margin-bottom: 15px;
+}
+
+.navigation__buttons {
+	text-align: center;
+}
+
+.portfolio__header {
+	width: 100%;
+}
+
+.portfolio__content {
+	@include d-flex();
+	@include flex-direction(column);
+	width: 100%;
+}
+
+.portfolio__navigation {
+	@include d-flex();
+	@include flex-wrap(wrap);
+	@include justify-content(space-between);
+}
+
+.works__btn-link {
+	background: transparent;
+	border: none;
+	border-right: 2px solid #d1d1d1;
+	cursor: pointer;
+	font-size: 1.2em;
+	line-height: 0.8;
+	padding: 0 20px; 
+	margin-bottom: 10px;
+	text-transform: capitalize;
+	&:last-child {
+	border-right: 2px solid transparent;
+	}
+	&.active {
+		@include OpenSans('bold');
+	}
+}
+
+.works__list {
+	@include d-flex();
+	@include flex-wrap(wrap);
+	@include justify-content(center);
+
+}
+
+.works__items {
+  	position: relative;
+  	@include flex-basis (25%);
+  	max-width: 25%;
+  	padding: 15px;
+  	&:hover {
+  		.works__desc {
+  			opacity: 1;
+  		}
+  	}
+  }
+
+.works__pic {
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle;
+	color: #ccc;
+}
+
+.works__desc {
+	position: absolute;
+    text-align: center;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.66);
+    padding: 25% 0;
+   	opacity: 0;
+  	@include transition(all, 0.3s, ease);
+    &:hover {
+    	.works__title {
+    		@include translateY(-50%);
+    	}
+    	.works__button {
+    		@include translateY(50%);
+    	}
+    }
+}
+
+.works__title {
+	font-size: 1.6em;
+	text-transform: uppercase;
+	margin-top: 10%;
+	@include transition(all, 0.3s, ease);
+}
+
+.works__button {
+	color: $accent-color;
+	font-size: 1.6em;
+	border: 1px solid $accent-color;
+	@include border-radius(50%);
+	height: 30px;
+    width: 30px;
+    line-height: 28px;
+    display: inline-block;
+    @include transition(all, 0.3s, ease);
+}

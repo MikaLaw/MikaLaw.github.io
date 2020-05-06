@@ -1,0 +1,32 @@
+@font-face {
+    font-family: Hind;
+    src:url('../fonts/Hindregular.woff2') format("woff2"), 
+        url('../fonts/Hindregular.woff') format("woff"), 
+        url('../fonts/Hindregular.ttf') format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Hind Medium';
+    src:url('../fonts/Hindmedium.woff2') format("woff2"), 
+        url('../fonts/Hindmedium.woff') format("woff"), 
+        url('../fonts/Hindmedium.ttf') format("truetype");
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Hind Semibold';
+    src:url('../fonts/Hindsemibold.woff2') format("woff2"), 
+        url('../fonts/Hindsemibold.woff') format("woff"), 
+        url('../fonts/Hindsemibold.ttf') format("truetype");
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Hind Bold';
+    src:url('../fonts/Hindbold.woff2') format("woff2"), 
+        url('../fonts/Hindbold.woff') format("woff"), 
+        url('../fonts/Hindbold.ttf') format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}

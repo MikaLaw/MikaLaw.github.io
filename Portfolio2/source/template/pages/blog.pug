@@ -1,0 +1,15 @@
+extends ../template
+
+block title
+	title Блог
+include ../modules/mixins
+block content
+	include ../modules/preloader
+	include ../modules/hero_blog
+	section.blog#blog
+		.articles
+			include ../modules/blog-nav
+			include ../modules/blog-post
+		include ../modules/footer
+	script(src='js/foundation.js')
+	script(src='js/blog.js')

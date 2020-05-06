@@ -1,0 +1,77 @@
+.hero {
+	position: relative;	
+	overflow: hidden;
+}
+
+.hero__bg {
+	position: absolute;
+	z-index: -1;
+	width: 125%;
+	height: 125%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #ccc;
+	background: url('../img/hero__bg@1x.png') no-repeat center;
+	@include retina {
+		background: url('../img/hero__bg@2x.png') no-repeat center;
+		background-size: cover;
+   	}
+	background-size: cover;
+}
+
+.header {
+	padding: rem(0px) rem(30px); 
+	@extend %clearfix;
+}
+
+.header__left {
+	padding: rem(30px) rem(0px);
+	@include float(80%);
+}
+
+.header__right {
+	text-align: right;
+	padding: rem(20px) rem(0px);
+	@include float(20%);
+}
+
+.hero__title {
+	@include centered();
+	width: 100%;
+}
+
+.hero__title-img {
+	opacity: 0.1;
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+	@include centered();
+}
+
+.arrow-nav {
+	display: block;
+	text-decoration: none;
+	@include centered(x);
+	bottom: 11%;
+	z-index: 1;	
+	&:hover {
+		.arrow-nav__icon {
+			opacity: 1;
+			transform: translateY(10px)
+		}
+		.arrow-nav__icon_up {
+			transform: translateY(-10px)
+		}
+	}
+}
+
+.arrow-nav__icon {
+	display: block;
+	width: 26px;
+	height: 17px;
+	fill: $white;
+	opacity: 0.7;
+	transition: 0.3s ease-in-out;	
+}
+

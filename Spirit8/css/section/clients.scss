@@ -1,0 +1,25 @@
+.clients {
+	@include background-img('../img/bg/clients_bg.jpg');
+	&:before {
+		@include gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.73), rgba(0,0,0,0.66), rgba(0,0,0,0.55), rgba(0,0,0,0.4));
+	}
+}
+
+.client__list {
+	margin-top: 70px;
+} 
+
+.client__item {
+ 	text-align: center;
+ 	height: 100px;
+}
+
+.client__pic {
+	max-width: 100%;
+	width: auto !important;
+	margin: 0 auto;
+	position: relative;
+	top:50%;
+	@include translateY(-50%);
+}
+

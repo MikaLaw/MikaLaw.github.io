@@ -1,0 +1,23 @@
+.about {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.about__left,
+.about__right  {
+	flex-basis: 50%;
+	@include laptop {
+  	 	flex-basis: 100%;
+  	}
+}
+
+.about__left {
+	background: $gray;
+}
+
+.about__right {
+	background: $beige;
+}
+
+
+

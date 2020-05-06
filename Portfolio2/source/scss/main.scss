@@ -1,0 +1,33 @@
+//config
+@import "config/variables.scss";
+@import "config/mixins.scss";
+@import "config/fonts.scss";
+@import "config/base.scss";
+@import "config/layout.scss";
+//components
+@import 'components/parallax.scss';
+@import 'components/preloader.scss';
+@import 'components/socials.scss';
+@import 'components/section-title.scss';
+@import 'components/subtitle.scss';
+@import 'components/user.scss';
+@import 'components/about-data.scss';
+@import 'components/about-user.scss';
+@import 'components/auth-info.scss';
+@import 'components/auth-login.scss';
+@import 'components/blog-nav.scss';
+@import 'components/blog-post.scss';
+@import 'components/feedback.scss';
+@import 'components/map-contact.scss';
+@import 'components/menu-header.scss';
+@import 'components/section-triangle.scss';
+@import 'components/slider.scss';
+@import 'components/admin.scss';
+//sections
+@import 'sections/footer.scss';
+@import 'sections/hero.scss';
+@import 'sections/about.scss';
+@import 'sections/works.scss';
+@import 'sections/blog.scss';
+@import 'sections/map.scss';
+@import 'sections/intro.scss';

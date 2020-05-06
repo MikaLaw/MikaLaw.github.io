@@ -1,0 +1,38 @@
+-
+	var footerSocials = {
+		"vk_round" : "https://vk.com/id152397305",
+		"github_round" : "https://github.com/MikaLaw",
+		"in_round" : "https://www.instagram.com/nadezhda.feo/"
+	};
+
+-
+	var footerMenu = {
+		"Мои работы" : "works.html",
+		"Обо мне" : "about.html",
+		"Блог" : "blog.html",
+		"Авторизация" : "index.html"
+	};
+
+
+
+footer.footer
+	.footer-menu
+		.footer-menu__left
+			ul.footer-menu__list
+				each menuLink, menuTitle in footerMenu
+					li.footer-menu__item
+						a(href= menuLink).footer-menu__link= menuTitle
+		.footer-menu__right
+			ul.social__list
+				each footerSocialLink, footerSocialName in footerSocials
+					li.social__item.social__item_footer 
+						a(href= footerSocialLink class="social__link" target="_blank")
+							svg.social__icon.social__icon_footer
+								use(xlink:href=`img/sprite.svg#${footerSocialName}`)
+	.footer-info
+		.footer-info__text
+			p
+				|“It is so shocking to find out how many people do not believe that they can learn, and how many more believe learning to be difficult.” ― Frank Herbert, Dune
+		.footer-info__copyright
+			p
+				|© Феоктистова Надежда | 2019

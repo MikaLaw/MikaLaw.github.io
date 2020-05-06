@@ -1,0 +1,179 @@
+.auth__login {
+	transition: .7s ease;
+  	opacity: 0;
+  	transform: rotateY(-180deg);
+  	backface-visibility: hidden;
+}
+
+.auth__login-form {
+	width: 360px;
+	border-radius: 10px;
+	overflow: hidden;
+	@include phones {
+		width: 300px;
+	}
+}
+
+.auth__login-info {
+	background: rgba(#fcfcfc, .85);
+	padding: rem(32px) rem(20px);
+}
+
+.auth__login-row {
+	text-align: center;
+	position: relative;
+	margin-bottom: rem(20px);
+}
+
+.auth__login-row:last-child {
+	margin-bottom: rem(0px);
+}
+
+.auth__login-pic {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	background: #f0efe9;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	padding: rem(12px);
+	transition: 0.3s ease-in-out;
+}
+
+.auth__login-icon {
+	width: 15px;
+	height: 15px;
+	fill: #c4cbcd;
+}
+
+.auth__login-input {
+	width: 100%;
+	padding: rem(12px) rem(16px) rem(12px) rem(64px);
+	border: 1px solid transparent;
+	border-radius: 5px;
+	transition: 0.3s ease-in-out;
+	&:focus {
+		outline: none;
+		border: 1px solid $contrast;
+		& + .auth__login-pic {
+			background:  $contrast;
+		}
+	}
+}
+
+.auth__login-input.valid {
+	border: 1px solid green;
+	& + .auth__login-pic {
+		background: green;
+	}
+}
+
+.auth__login-input.error {
+	border: 1px solid red;
+	& + .auth__login-pic {
+		background: red;
+	}
+}
+
+.auth__login-checkbox {
+	position: absolute;
+	left: -9999px;
+}
+
+.auth__login-labelbox {
+	position: relative;
+	&:before {
+		content: '';
+		position: absolute;
+		width: 20px;
+		height: 20px;
+		border-radius: 3px;
+		background: $contrast;
+		left: -30px;
+	}
+	&:after {
+		content: '';
+		position: absolute;
+		width: 11px;
+		height: 9px;
+		background: url('../img/icons/check.svg') no-repeat center;
+		background-size: cover;
+		top: 5px;
+    	left: -25px;
+		display: none;
+	}
+}
+
+.auth__login-checkbox:checked + .auth__login-labelbox:after {
+	display: block;
+} 
+
+.auth__login-cell {
+	display: inline-block;	
+}
+
+.auth__login-cell:first-child {
+	margin-right: rem(60px);
+}
+
+.auth__login-radio {
+	position: absolute;
+	left: -9999px;
+}
+
+.auth__login-radio:checked + .auth__login-labelradio:after {
+	display: block;
+} 
+
+.auth__login-labelradio {
+	position: relative;
+	&:before {
+		content: '';
+		position: absolute;
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		background: $white;
+		border: 1px solid #cdcdcd;
+		left: -30px;
+	}
+	&:after {
+		content: '';
+		position: absolute;
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+		background: $contrast;
+		top: 7px;
+    	left: -23px;
+		display: none;
+	}
+}
+
+
+.auth__login-btn {
+	@extend %clearfix;
+	text-align: center;
+}
+
+.auth__login-link {
+	@include float(50%);
+	background: rgba(#00bfa5, .8);
+	display: block;
+	text-decoration: none;		
+	padding: rem(12px) rem(0px);
+	color: $white;
+	@include Roboto(medium);
+	font-size: rem(16px);
+	transition: 0.3s ease-in-out;
+	&:focus {
+		outline: none;
+	}
+	&:hover {
+		background: rgba(#00bfa5, .5);
+	}
+}
+
+.auth__login-link:nth-child(2) {
+	border-left: 2px solid rgba(#dee3e7, 0.5);
+}

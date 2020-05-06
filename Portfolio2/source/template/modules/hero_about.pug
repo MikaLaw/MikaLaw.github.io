@@ -1,0 +1,32 @@
+-
+	var socials = {
+		"vk" : "https://vk.com/id152397305",
+		"github" : "https://github.com/MikaLaw",
+		"in" : "https://www.instagram.com/nadezhda.feo/"
+	};
+
+section.section.hero
+	.hero__bg
+	header.header
+		.header__left
+			ul.social__list
+				each socialLink, socialName in socials
+					li.social__item
+						a(href= socialLink class="social__link" target="_blank")
+							svg.social__icon
+								use(xlink:href=`img/sprite.svg#${socialName}`)
+		.header__right
+			.menu-btn
+				button.navbar-toggle
+					span.navbar-toggle__icon-bar
+					span.navbar-toggle__icon-bar
+					span.navbar-toggle__icon-bar
+			include ../modules/menu-header_about
+	.hero__title
+		img(src="img/icons/portfolio_header.svg" alt="portfolio").hero__title-img
+		.user.user_section
+			.user__foto(style="background: url('img/content/user__avatar.jpg');")
+			h3.user__name Феоктистова Надежда
+			.user__desc Сайт-портфолио веб-разработчика
+	+arrow('#about', 'arrow_down')
+	+triangle('triangle_fill_gray', 'triangle_fill_beige')

@@ -1,0 +1,50 @@
+.section__title {
+	background-repeat: no-repeat !important;
+	background-position: center !important;
+	background-size: contain !important;
+	font-family: 'Bernier';
+ 	color: $second;
+ 	font-size: rem(63px);
+ 	display: inline-block;
+ 	padding: rem(20px) rem(90px);
+ 	position: relative;
+ 	&:after,
+	&:before {
+		content: '';
+		position: absolute;
+		top: rem(62px);
+		width: 22px;
+		height: 5px;
+		background: rgba($second, 0.2);
+	}
+	&:after {
+		right: rem(40px);
+	}
+	&:before {
+		left: rem(40px);
+	}
+	@include tablets {
+		font-size: rem(50px);
+		&:after,
+		&:before {
+		top: rem(53px);
+		}
+	}
+	@include phones {
+		font-size: rem(35px);
+		padding: rem(20px) rem(70px);
+		line-height: 1.2;
+		&:after,
+		&:before {
+		top: rem(37px);
+		}
+		&:after {
+		right: rem(30px);
+		}
+		&:before {
+			left: rem(30px);
+		}
+
+	}
+}
+

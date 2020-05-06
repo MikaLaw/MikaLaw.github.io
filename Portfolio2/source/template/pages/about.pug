@@ -1,0 +1,25 @@
+extends ../template
+
+block title
+	title Обо мне
+	
+include ../modules/mixins
+block content
+	include ../modules/preloader
+	include ../modules/hero_about
+	section.about#about
+		.about__left
+			include ../modules/about-user
+		.about__right
+			include ../modules/about-data
+	section.section.map
+		#map
+		include ../modules/map-contact
+		include ../modules/footer
+	script(src='js/foundation.js')
+	script(src="https://api-maps.yandex.ru/2.1/?apikey=<ваш API-ключ>&lang=ru_RU" type="text/javascript")
+	script(src='js/about.js')
+
+
+
+	

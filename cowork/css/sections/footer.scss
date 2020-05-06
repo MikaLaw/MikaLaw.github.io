@@ -1,0 +1,90 @@
+.footer {
+	height: 80px;
+	margin-top: -80px;
+	background: $second;
+	color: $white;
+	font-size: rem(14px);
+	@include tablet {
+		margin-top: -145px;
+		height: 145px;
+	}
+}
+
+.footer__right {
+	text-align: right;
+}
+
+.footer__left,
+.footer__right {
+	@include float(40%);
+	padding-top: rem(12px);
+	@include tablet {
+		float: none;
+		width: 100%;
+		text-align: center;
+	}
+}
+
+.footer__copyright-text {
+	@include laptop {
+		font-size: rem(12px);
+	}
+}
+
+.footer__copyright-link {
+	text-decoration: underline;
+	color: $white;
+	transition: 0.3s;
+	display: inline-block;
+	&:hover {
+		color: $contrast;
+	}
+} 
+
+.footer__logo {
+	@include float(20%);
+	text-align: center;
+	padding-top: rem(12px);
+	@include tablet {
+		display: none;
+	}
+	.logo__link {
+		margin: 0 auto;
+	}	
+}
+
+.soc__list {
+	margin-top: rem(9px);
+}
+
+.soc__item {
+	@include inlineblock(middle);	
+	margin-right: rem(6px);
+}
+
+.soc__link {
+	display: block;
+	width: 20px;
+	height: 20px;
+	background: url('../img/icons/socials-sprite.png');
+	&:hover {
+		background-position-y: 20px;
+	}
+}
+
+.soc__link_fb {
+	background-position: 320px 0; 
+}
+
+.soc__link_gplus {
+	background-position: 220px 0; 
+}
+
+.soc__link_tt {
+	background-position: 120px 0; 
+}
+
+.soc__link_com {
+	background-position: 20px 0; 
+}
+

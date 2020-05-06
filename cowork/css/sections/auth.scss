@@ -1,0 +1,61 @@
+.intro {
+	height: 100vh;
+	min-height: 480px;
+	min-width: 300px;
+	background: url('../img/bg/coworking.jpg') no-repeat center;
+	background-size: cover;
+	overflow: hidden;
+	position: relative;
+	text-align: center;//
+	&:before {
+		position: absolute;
+		display: block;
+		content: "";
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		background: rgba(96, 37, 63, 0.15);
+	}
+	&:after {
+		content: "";
+		display: inline-block;
+		height: 100%;
+		width: 0;
+		vertical-align: middle;
+	}
+}
+
+.intro__content {
+	@include inlineblock(middle);	
+	max-width: 320px;
+}
+
+
+.intro__logo {
+	width: 161px;
+	height: 119px;
+	margin: 0 auto;
+	margin-bottom: rem(24px);
+}
+
+.intro__logo-img {
+	max-width: 100%;
+	height: auto;
+}
+
+.intro__logo-button {
+	@include inlineblock();
+	@include Gotham(bold);
+	text-decoration: none;
+	font-size: rem(12px);
+	text-transform: uppercase;
+	color: $contrast;
+	border: 3px solid $contrast;
+	padding: rem(10px) rem(20px);
+	transition: 0.3s;
+	&:hover {
+		background: $contrast;
+		color: $white;
+	}
+}

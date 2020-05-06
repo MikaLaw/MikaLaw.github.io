@@ -1,0 +1,83 @@
+.about {
+	color: $secondary-color;
+}
+.about .container {
+	@include flex-direction(row);
+	@include align-items(flex-start);
+	@include flex-wrap(wrap);
+}
+
+.about__img {
+	@include flex-basis (50%);
+}
+
+.about__pic {
+	max-width: 100%;
+	height: auto;
+}
+
+.about__content {
+	@include flex-basis (50%);
+}
+
+.about__title {	
+	text-transform: uppercase;
+	position: relative;
+	&::after {
+		content: "";
+		display: block;
+		width: 60px;
+		height: 4px;
+		background: $accent-color;
+		position: absolute;
+		bottom: -10px;
+	}
+}
+
+.about__title-text {
+	@include Lato();		
+	font-size: 1.5em;
+	margin-bottom: 10px;
+}
+
+.about__title-name{	
+	@include Lato('light');	
+	font-size: 2.5em;	
+}
+
+.about__desc {
+	margin-top: 40px;	
+	font-size: 1.3em;
+	line-height: 1.6;
+}
+
+.about__advantages {
+	margin-top: 30px;
+}
+
+.about__advantages-item {
+	position: relative;
+	font-size: 1.3em;
+	line-height: 1.9;
+	padding-left: 26px;
+	&::before {
+		content: "";
+		position: absolute;
+		top: 7px;
+		left: 0;
+		width: 10px;
+		height: 10px;
+		@include border-radius(50%);
+		border:  2px solid $secondary-color;
+	}
+	&::after {
+		content: "";
+		position: absolute;
+		left: 5px;
+		top: 12px;
+		width: 4px;
+		height: 4px;
+		@include border-radius(50%);
+		background: $secondary-color;
+	}
+}

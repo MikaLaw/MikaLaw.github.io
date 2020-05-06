@@ -1,0 +1,127 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    text-rendering: optimizeLegibility!important;
+    -webkit-font-smoothing: antialiased!important;
+    font-size: 13px;
+    line-height: 1.4;
+    color: #a6a7aa;
+    font-family: Hind, sans-serif;
+    background: #fff;
+}
+* {
+    box-sizing: border-box;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+h1, h2, h3, p {
+    margin: 0;
+}
+button {
+    outline: 0!important;
+}
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+.section {
+    padding: 100px 0;
+}
+.section__title {
+    font-family: 'Hind Bold',  sans-serif;
+    font-size: 2.3em;
+    color: #515769;
+    margin-bottom: 15px;
+}
+.section__text {
+    font-size: 1.15em;
+    margin-bottom: 15px;
+}
+.item__title {
+    font-family: 'Hind Bold',  sans-serif;
+    font-size: 1.7em;
+    color: #515769;
+}
+.section-card__pic {
+    width: 100%;
+    height: auto;
+}
+.section-card__title {
+    font-family: 'Hind Bold',  sans-serif;
+    color: #515769;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+.section-card__subtitle {
+    font-size: 14px;
+    font-family: Hind,  sans-serif;
+    text-transform: uppercase;
+    color: #bfc1c7;
+    margin-left: 20px;
+}
+.section-card__text {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+.section-card__p-1 {
+    padding: .1rem;
+}
+.section-card__icon {
+    display: block;
+    font-size: 30px;
+    color: #999caa;
+    margin-bottom: 22px;
+}
+#back-to-top {
+    position: fixed;
+    display: inline-block;
+    right: 10px;
+    bottom: 10px;
+    width: 40px;
+    height: 40px;
+    background: #515769;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    line-height: 3;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 5px;
+    z-index: 9;
+    opacity: .8;
+    text-decoration: none;
+    &:hover {
+        opacity: 1;
+        color: #fff;
+        transition-duration: all .3s cubic-bezier(.7, 1, .7, 1);
+    }
+    &:focus {
+        text-decoration: none
+    }
+}
+.header-modify {
+    .navbar {
+        background: #fff;
+        border-bottom: 1px solid #f0f0f0;
+        transition-duration: all .3s cubic-bezier(.7, 1, .7, 1);
+    }
+    .nav-link_child {
+       color: #515769;
+        &:hover {
+            color: #515769;
+        }
+    }
+    .logo-img-main {
+        display: none;
+    }
+    .logo-img-dark {
+        display: block;
+    }
+}

@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'fira_sans_compressedbold';
+    src: url('FiraSansCompressed-Bold-webfont.eot');
+    src: url('FiraSansCompressed-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('FiraSansCompressed-Bold-webfont.woff2') format('woff2'),
+         url('FiraSansCompressed-Bold-webfont.woff') format('woff'),
+         url('FiraSansCompressed-Bold-webfont.ttf') format('truetype'),
+         url('FiraSansCompressed-Bold-webfont.svg#fira_sans_compressedbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+

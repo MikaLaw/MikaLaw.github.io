@@ -1,0 +1,64 @@
+extends ../template
+
+block title
+	title Админка
+
+block content
+	.popup
+		.popup__content
+			p.popup__text
+			button.popup__close Закрыть
+	section.panel
+		header.panel-header
+			.panel-header__left
+				h1.panel-header__logo Панель администрирования
+			.panel-header__right
+				a(href="index.html").panel-header__link Вернуться на сайт
+		.panel-content
+			.tubs
+				ul.tabs__controls
+					li.tabs__controls-item
+						a(href="#").tabs__controls-link Tab 1
+					li.tabs__controls-item
+						a(href="#").tabs__controls-link Tab 2
+				ul.tabs__content
+					li.tabs__content-item.active
+						.tabs__content-container
+							h2.tabs__content-title Страница "Блог"
+							div.tabs__content-text Добавить запись
+							form#blog__form
+								.form-container
+									.form-row
+										input(type="text" name="title" placeholder="Название").form-input
+									.form-row
+										input(name="date" type="date").form-input
+									.form-row
+										textarea(name="text" placeholder="Содержание").form-textarea
+									.form-row
+										button(type="submit" value="Добавить").form-btn Добавить
+					li.tabs__content-item
+						.tabs__content-container
+							h2.tabs__content-title Страница "Мои работы"
+							div.tabs__content-text Добавить работу
+							form#upload(action='/upload' method="POST" enctype="multipart/form-data")
+								.form-container
+									.form-row
+										input(type="text" placeholder="Название проекта" name="name" required).form-input
+									.form-row
+										input(type="text" name="tech" placeholder="Технологии" required).form-input
+									.form-row
+										input(type="text", placeholder="Ссылка", name="link" required).form-input
+									.form-row
+										input(name="photo" type="file" required accept="image/*").form__input#file-select
+										label(for="file-select").form__label
+											img(src="img/admin__icon.png" alt="admin__icon").form__label-icon
+											span.form__label-text Загрузить картинку
+									.form-row
+										.form__field_image-preview
+									.form-row
+										button(type="submit" value="Добавить").form-btn Добавить
+			
+
+	script(src='js/foundation.js')
+	script(src='js/admin.js')
+

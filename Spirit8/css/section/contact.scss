@@ -1,0 +1,78 @@
+.contact__header,
+.contact__form {
+	max-width: 785px;
+	margin: 0 auto;
+}
+
+.block-wrapper {
+	width: 100%;
+}
+
+.contact__form {
+	padding-top: 30px;
+	width: 100%;
+	color: $secondary-color
+}
+
+.form__content {	
+	margin: 0 auto;
+}
+
+.form__row {
+	@include d-flex();
+}
+
+.form__cell-double {	
+	@include flex-basis (49%);
+	&:first-child {
+		margin-right: 2%;
+	}
+}
+
+.form__cell {
+	@include d-flex();
+	@include flex-direction(column);	
+	margin-bottom: 20px;
+}
+
+.form__input {
+	padding: 8px 12px;
+    font-size: 1.2em;
+    outline: none;
+    @include border-radius(3px);
+    border: 1px solid #ccc;
+    @include input-color(#ccc)
+    &:focus {
+    	border: 1px solid #000;
+    }
+}
+
+.textarea__input {
+	resize: none;
+}
+
+.form__field-title {
+	@include Lato();	
+	font-size: 1.1em;
+	margin-bottom: 5px;
+}
+
+.form__button {
+	text-align: right;
+}
+
+.form__btn {	
+	padding: 10px 40px;
+	text-transform: uppercase;
+	background: transparent;
+	border: 1px solid $secondary-color;
+	color: $secondary-color;	
+	font-size: 1.2em;
+	@include transition(all, 0.3s, ease); 
+	&:hover {
+		background: $accent-color;
+		border: 1px solid $accent-color;
+		color: $main-color;
+	}
+}
+

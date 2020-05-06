@@ -1,0 +1,112 @@
+.header {
+	background: $second;
+	padding: rem(8px) rem(0px);
+}
+
+.header__left {
+	@include float(20%);
+}
+
+.logo__link {
+	text-decoration: none;
+	display: block;
+	width: 99px;
+	height: 51px;
+}
+
+.logo__small-img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	font-size: rem(24px);
+    color: #ccc;
+}
+
+.header__right {
+	@include float(80%);
+	text-align: right;
+}
+
+.contacts__phone{
+	display: block;
+	@include Gotham(bold);
+	color: $white;
+	font-size: rem(21px);
+	text-decoration: none;
+	white-space: nowrap;
+	@include phone {
+		font-size: rem(14px);
+	}
+}
+
+.contacts__popup {
+	position: relative;
+	display: inline-block;
+	&:hover {
+		.contacts__schedule-list {
+			right: 0;
+			opacity: 1;
+		}
+	}
+}
+
+.contacts__schedule {
+	@include inlineblock(middle);
+	@include Gotham(bold);
+	font-size: rem(14px);
+	color: rgba(#5dd1f8, 0.7);
+	transition: 0.3s;
+	&:hover {
+		color: rgba(236, 30, 121, 0.7);
+	}
+}
+
+.contacts__schedule-list{
+	padding: 10px 15px;
+    box-shadow: 0px 0px 10px 0px rgba(23, 59, 117, 0.55);
+    background: $white;
+    border-radius: 5px 0 5px 5px;
+    text-align: left;
+    position: absolute;
+    right: -9999px;
+    opacity: 0;
+    top: 100%;
+    z-index: 1000;
+    margin-top: 13px;
+	transition: opacity 0.3s;
+  	&:after{
+  		content: "";
+  		display: block;
+  		height: 20px;
+  		position: absolute;
+  		left: 0;
+  		right: 0;
+  		top: -20px;
+  	}
+ 	&:before {
+		content: "";
+		display: block;
+		position: absolute;
+		top: -11px;
+		right: 0;
+		width: 0;
+		height: 0;
+		border-left: 12px solid transparent;
+		border-right: 12px solid transparent;
+		border-bottom: 12px solid #fff;
+	}
+}
+
+.contacts__schedule-day {
+	@include Gotham(bold);
+	color: $contrast;
+	font-size: rem(14px);
+	margin-bottom: rem(10px);
+	white-space: nowrap;
+}
+
+.contacts__schedule-dinner {
+	color: $prime;
+	font-size: rem(14px);
+	white-space: nowrap;
+}

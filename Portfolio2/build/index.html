@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Авторизация</title>
+    <meta content="Феоктистова Надежда" name="author">
+    <meta content="Сайт-портфолио" name="description">
+    <meta content="портфолио сайт надежда феоктистова" name="keywords">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/main.min.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="preloader">
+        <div class="preloader__spinner">
+          <div class="preloader__animation"></div><span class="preloader__percents">0%</span>
+        </div>
+      </div>
+      <ul class="parallax" id="parallax">
+        <li class="parallax-layer">
+          <div class="layer-bg layer-bg_0"></div>
+        </li>
+        <li class="parallax-layer">
+          <div class="layer-bg layer-bg_1"></div>
+        </li>
+        <li class="parallax-layer">
+          <div class="layer-bg layer-bg_2"></div>
+        </li>
+        <li class="parallax-layer">
+          <div class="layer-bg layer-bg_3"></div>
+        </li>
+        <li class="parallax-layer">
+          <div class="layer-bg layer-bg_4"></div>
+        </li>
+        <li class="parallax-layer">
+          <div class="layer-bg layer-bg_5"></div>
+        </li>
+        <li class="parallax-layer">
+          <div class="layer-bg layer-bg_6"></div>
+        </li>
+        <li class="parallax-layer">
+          <div class="layer-bg layer-bg_7"></div>
+        </li>
+        <li class="parallax-layer">
+          <div class="layer-bg layer-bg_8"></div>
+        </li>
+        <li class="parallax-layer">
+          <div class="layer-bg layer-bg_9"></div>
+        </li>
+      </ul>
+      <section class="intro">
+        <header class="intro-header"><a class="intro-header__link" href="#">Авторизоваться</a></header>
+        <div class="intro-content">
+          <div class="intro-container">
+            <div class="auth__info">
+              <div class="user auth__info-user">
+                <div class="user__foto" style="background: url('img/content/user__avatar.jpg');"></div>
+                <h1 class="user__name">Феоктистова Надежда</h1>
+                <div class="user__desc">Сайт-портфолио веб-разработчика</div>
+                <ul class="social__list">
+                  <li class="social__item"><a class="social__link" href="https://vk.com/id152397305" target="_blank">
+                      <svg class="social__icon social__icon_auth">
+                        <use xlink:href="img/sprite.svg#vk"></use>
+                      </svg></a></li>
+                  <li class="social__item"><a class="social__link" href="https://github.com/MikaLaw" target="_blank">
+                      <svg class="social__icon social__icon_auth">
+                        <use xlink:href="img/sprite.svg#github"></use>
+                      </svg></a></li>
+                  <li class="social__item"><a class="social__link" href="https://www.instagram.com/nadezhda.feo/" target="_blank">
+                      <svg class="social__icon social__icon_auth">
+                        <use xlink:href="img/sprite.svg#in"></use>
+                      </svg></a></li>
+                </ul>
+              </div>
+              <ul class="auth__button-list">
+                <li class="auth__button-item"><a class="auth__button-link" href="works.html">Мои работы</a></li>
+                <li class="auth__button-item"><a class="auth__button-link" href="about.html">Обо мне</a></li>
+                <li class="auth__button-item"><a class="auth__button-link" href="blog.html">Блог</a></li>
+              </ul>
+            </div>
+            <div class="auth__login">
+              <form action="GET" id="login">
+                <div class="auth__login-form">
+                  <div class="auth__login-info">
+                    <div class="auth__login-row">
+                      <h2 class="subtitle">Авторизуйтесь</h2>
+                    </div>
+                    <div class="auth__login-row">
+                      <input class="auth__login-input" type="text" name="username" placeholder="Логин" data-check="username" required>
+                      <div class="auth__login-pic">
+                        <svg class="auth__login-icon">
+                          <use xlink:href="img/sprite.svg#login"></use>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="auth__login-row">
+                      <input class="auth__login-input" type="password" name="password" placeholder="Пароль" data-check="password" required>
+                      <div class="auth__login-pic">
+                        <svg class="auth__login-icon">
+                          <use xlink:href="img/sprite.svg#password"></use>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="auth__login-row">
+                      <input class="auth__login-checkbox" type="checkbox" name="ident" checked id="ident">
+                      <label class="auth__login-labelbox" for="ident">Я человек</label>
+                    </div>
+                    <div class="auth__login-row"> 
+                      <div class="auth__login-text">Вы точно не робот?</div>
+                    </div>
+                    <div class="auth__login-row">
+                      <div class="auth__login-cell">
+                        <input class="auth__login-radio" type="radio" name="confirm" value="Yes" checked id="confirmYes">
+                        <label class="auth__login-labelradio" for="confirmYes">Да</label>
+                      </div>
+                      <div class="auth__login-cell">
+                        <input class="auth__login-radio" type="radio" name="confirm" value="No" id="confirmNo">
+                        <label class="auth__login-labelradio" for="confirmNo">Не уверен</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="auth__login-btn"><a class="auth__login-link auth__login-back" href="#">На главную</a><a class="auth__login-link" href="#" id="log-me">Войти</a></div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="intro__footer">
+          <p>© Феоктистова Надежда | 2019</p>
+        </div>
+      </section>
+      <div class="popup hide">
+        <div class="popup__content">
+          <p class="popup__text"></p>
+          <button class="popup__close">Закрыть</button>
+        </div>
+      </div>
+      <script src="js/foundation.js"></script>
+      <script src="js/intro.js"></script>
+    </div><!--[if lt IE 9]>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
+  </body>
+</html>

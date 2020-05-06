@@ -1,0 +1,162 @@
+.header {
+	background: #fff;
+	padding: rem(10px) 0;
+	box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+}
+
+.header__left {
+	@include float(70%);
+}
+
+.header__right {
+	@include float(30%);
+	text-align: right;
+}
+
+.logo {
+	display: inline-block;
+	color: $prime;
+	text-decoration: none;
+}
+
+.user__avatar {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	overflow: hidden;
+	border: 1px solid #bebebe;
+	@include inlineblock(middle);
+	margin-right: rem(14px);
+	@include phone {
+		margin-right: rem(10px);
+	}
+}
+
+.user__pic {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+.user__name {
+	font-size: rem(18px);
+	@include inlineblock(middle);
+	@include Fira();
+	max-width: 240px;
+	@include phone {
+		font-size: rem(16px);
+		max-width: 120px;
+	}
+}
+
+.menu__item {
+	position: relative;
+	@include inlineblock();
+	&:hover {
+		.menu__dropdown {
+			right: 0%;
+			opacity: 1;
+		}
+		.menu__link {
+			color: $hover;
+			border-bottom: 1px dashed $hover;
+		}
+	}
+}
+
+.menu__link {
+	display: inline-block;
+	font-size: rem(18px);
+	padding-top: rem(15px);
+	text-decoration: none;
+	color:  $contrast;
+	border-bottom: 1px dashed  $contrast;
+	transition: all 0.3s linear;
+	@include tablet {
+		border-bottom: none;
+	}
+}
+
+.menu__link-icon {
+	display: none;
+	@include tablet {
+		display: block;
+		font-size: rem(40px);
+	}
+}
+
+.menu__link-text {
+	@include Fira(bold);
+	@include tablet {
+		display: none;
+	}
+}
+
+.menu__dropdown {
+	text-align: left;	
+	position: absolute;
+	top: 100%;
+	right: -9999px;
+	opacity: 0;
+	background: #fff;
+	border: 1px solid #dedede;
+	border-radius: 10px;
+	transition: opacity 0.3s linear;
+	z-index: 10;
+	&:after {
+		content: "";
+		display: block;
+		width: 12px;
+		height: 12px;
+		border-bottom: 1px solid #dedede;
+		border-right: 1px solid #dedede;
+		background: #fff;
+		transform: rotate(-135deg);
+		position: absolute;
+		top: -8px;
+		right: 20%;
+		margin-left: -6px;		
+	}
+	&:before {
+		content: "";
+		display: block;
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 100%;
+		height: 25px;
+	}
+}
+
+.menu__dropdown-item {
+	&:last-child{
+		.menu__dropdown-link{
+			border-bottom: none;
+		}	
+	}
+}
+
+.menu__dropdown-link {
+	font-size: rem(18px);
+	text-decoration: none;
+	color: $prime;
+	padding: rem(9px) rem(20px);
+	border-bottom: 1px solid #dedede;
+	display: block;
+	white-space: nowrap;
+	@include Fira();
+	&:link {
+		outline: none;
+	}
+	&:hover {
+		.menu__dropdown-icon {
+			color: $hover;
+		}
+	}	
+}
+
+.menu__dropdown-icon {
+	color:  $contrast;
+	margin-right: rem(10px);
+	transition: 0.3s linear;
+}

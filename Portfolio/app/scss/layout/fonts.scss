@@ -1,0 +1,106 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?i36lm#iefix') format('embedded-opentype'),
+        url('../fonts/icomoon.ttf?i36lm') format('truetype'),
+        url('../fonts/icomoon.woff?i36lm') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.icon-download:before {
+  content: "\f019";
+}
+.icon-phone:before {
+  content: "\f095";
+}
+.icon-briefcase:before {
+  content: "\f0b1";
+}
+.icon-envelope:before {
+  content: "\f0e0";
+}
+.icon-desktop:before {
+  content: "\f108";
+}
+.icon-mobile:before {
+  content: "\f10b";
+}
+.icon-mobile-phone:before {
+  content: "\f10b";
+}
+.icon-rocket:before {
+  content: "\f135";
+}
+.icon-skype:before {
+  content: "\f17e";
+}
+.icon-user-secret:before {
+  content: "\f21b";
+}
+
+
+@font-face {
+    font-family: 'Fira Sans';
+    src:  url('../fonts/Firasansmedium.woff2') format('woff2'), 
+          url('../fonts/Firasansmedium.woff') format('woff'), 
+          url('../fonts/Firasansmedium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Fira Sans';
+    src:  url('../fonts/Firasanslight.woff2') format('woff2'), 
+          url('../fonts/Firasanslight.woff') format('woff'), 
+          url('../fonts/Firasanslight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Fira Sans';
+    src:  url('../fonts/Firasansregular.woff2') format('woff2'), 
+          url('../fonts/Firasansregular.woff') format('woff'), 
+          url('../fonts/Firasansregular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Fira Sans';
+    src:  url('../fonts/Firasansbold.woff2') format('woff2'), 
+          url('../fonts/Firasansbold.woff') format('woff'), 
+          url('../fonts/Firasansbold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@mixin Fira($style: regular) {
+  font-family: 'Fira Sans';
+  font-weight: 400;
+
+  @if $style == bold {
+  	font-weight: 600;
+  }
+
+  @if $style == light {
+    font-weight: 200;
+  }
+
+  @if $style == medium {
+    font-weight: 500;
+  }
+}

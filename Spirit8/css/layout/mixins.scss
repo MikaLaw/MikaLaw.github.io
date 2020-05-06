@@ -1,0 +1,126 @@
+@mixin Lato($font-weight: 'regular'){
+    font-family: 'Lato';
+    @if $font-weight =='light' {
+        font-weight: 300;
+    }
+    @if $font-weight =='bold' {
+        font-weight: 700;
+    }
+    @if $font-weight =='black' {
+        font-weight: 900;
+    }
+}
+
+@mixin OpenSans($font-weight: 'regular', $font-style:'normal'){
+    font-family: 'Open Sans';
+    @if $font-weight =='bold'{
+        font-weight: 700;
+    }
+
+    @if $font-style =='italic'{
+       font-style: italic;
+    }
+}
+
+
+@mixin input-color($placeholder-color) {
+    &::-webkit-input-placeholder {
+        color: $placeholder-color;
+    }
+    &:-moz-input-placeholder {
+        color: $placeholder-color;
+    }
+    &:-ms-input-placeholder {
+        color: $placeholder-color;
+    }
+}
+
+@mixin translateY($y) {
+  -webkit-transform: translateY($y);
+     -moz-transform: translateY($y);
+      -ms-transform: translateY($y);
+       -o-transform: translateY($y);
+          transform: translateY($y);
+}
+
+@mixin transition($property, $duration, $timing) {
+    -moz-transition: $property $duration $timing;
+    -o-transition: $property $duration $timing;
+    -webkit-transition: $property $duration $timing;
+    transition: $property $duration $timing;
+}
+
+@mixin border-radius($radius) {
+    -moz-border-radius: $radius;
+    -o-border-radius: $radius;
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin background-img($src) {
+    position: relative;
+    background: url($src) no-repeat center;
+    background-size: cover; 
+    background-attachment: fixed;
+    height: auto;
+}
+
+@mixin gradient($color1, $color2, $color3, $color4, $color5) {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-image: -webkit-gradient(linear, 0% 17% 35% 62% 100%, ($color1) 0%, ($color2) 17%, ($color3) 35%, ($color4) 62%, ($color5) 100%);
+    background-image: -webkit-linear-gradient(($color1) 0%, ($color2) 17%, ($color3) 35%, ($color4) 62%, ($color5) 100%); 
+    background-image: -moz-linear-gradient(($color1) 0%, ($color2) 17%, ($color3) 35%, ($color4) 62%, ($color5) 100%);
+    background-image: -ms-linear-gradient(($color1) 0%, ($color2) 17%, ($color3) 35%, ($color4) 62%, ($color5) 100%);
+    background-image: -o-linear-gradient(($color1) 0%, ($color2) 17%, ($color3) 35%, ($color4) 62%, ($color5) 100%);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='$from-color', EndColorStr='$to-color')";
+}
+
+@mixin d-flex() {
+    display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+}
+
+@mixin flex-direction($direction) {
+    flex-direction: $direction;
+    -webkit-flex-direction: $direction;
+    -ms-flex-direction: $direction;
+}
+
+@mixin flex-wrap($wrap) {
+    flex-wrap: $wrap;
+    -webkit-flex-wrap: $wrap;
+    -ms-flex-wrap: $wrap;
+}
+
+@mixin justify-content($justify) {
+    justify-content: $justify;
+    -webkit-justify-content: $justify;
+}
+
+@mixin align-items($align) {
+    align-items: $align;
+    -webkit-box-align: $align;
+    -webkit-align-items: $align;
+    -ms-flex-align: $align;
+}
+
+@mixin flex-basis ($value) {
+    flex-basis: $value;
+    -webkit-flex-basis: $value;
+    -ms-flex-preferred-size: $value;
+}
+
+@mixin flex ($value) {
+    flex: $value;
+    -webkit-flex: $value;
+    -ms-flex: $value;
+}
+
+    

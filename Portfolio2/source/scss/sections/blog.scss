@@ -1,0 +1,7 @@
+.articles {
+    display: flex;
+    justify-content: flex-end; 
+    @include tablets {
+        justify-content: center; 
+    } 
+}

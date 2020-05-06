@@ -1,0 +1,79 @@
+.sidebar {
+	@include float(17%);
+	@include laptop {
+		float: none;
+		width: 100%;
+		text-align: center;
+	}
+}
+
+.nav {
+	padding-top: rem(34px);
+	@include phone {
+		padding: rem(10px) rem(0px);
+	}
+}
+
+.nav__item {
+	margin-bottom: rem(20px);
+	@include laptop {
+		@include inlineblock(middle);
+		margin-right: rem(20px);
+	}
+	@include phone{
+		display: block;
+		margin-right: rem(0px);
+		margin-bottom: rem(5px);
+	}
+	&:hover {
+		.nav__link {
+			color: $prime;
+		}
+		.nav__icon {
+			background-position-y: 19px;
+		}
+	}
+}
+
+.nav__link {
+	display: block;
+	text-decoration: none;	
+	@include Gotham(bold);
+	color: $contrast;
+}
+
+.nav__text {
+	@include inlineblock(middle);	
+	max-width: 140px;
+	font-size: rem(12px);
+	text-transform: uppercase;
+	word-break: break-word;
+}
+
+.nav__icon {
+	@include inlineblock(middle);
+	width: 20px;
+	height: 18px;
+	margin-right: rem(14px);
+	background: url('../img/icons/icons-sprite.png');
+}
+
+.nav__icon_home {
+	background-position: 0 0;
+}
+
+.nav__icon_rate {
+	background-position: 121px 0;
+}
+
+.nav__icon_reviews {
+	background-position: 20px 0;
+}
+
+.nav__item_active .nav__link {
+	color: $prime;
+}
+
+.nav__item_active .nav__icon {
+	background-position-y: 19px;
+}

@@ -1,0 +1,112 @@
+.navbar {
+    border-bottom: 1px solid rgba(255, 255, 255, .2);
+    transition: all .3s cubic-bezier(.7, 1, .7, 1);
+}
+.navbar-brand {
+    padding: 15px 0;
+    line-height: 55px;
+}
+.nav-link {
+    position: relative;
+    font-family: Hind;
+    font-size: 1em;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 15px!important;
+    line-height: 55px;
+    color: #fff;
+    transition-duration: all .3s cubic-bezier(.7, 1, .7, 1);
+    &:after {
+        content: "";
+        position: absolute;
+        top: 40px;
+        left: 0;
+        width: 9px;
+        height: 2px;
+        background: #17bed2;
+        opacity: 0;
+        transition: all .4s cubic-bezier(.7, 1, .7, 1);
+    }
+    &:hover {
+        color: #fff;
+    }
+}
+
+.nav-item {
+    &:hover {
+        .nav-link {
+            &:after {
+              opacity: 1;  
+            }
+        }
+    }
+}
+
+.navbar-toggler {
+    padding: 0;
+    border: none;
+    width: 25px;
+    height: 25px;
+    margin: 35px 0;
+    outline: 0;
+    &:focus {
+        outline: 0;
+    }
+    &:hover {
+        .navbar-toggler-icon {
+            background: #17bed2;
+            transition: all .3s cubic-bezier(.7, 1, .7, 1);
+        }
+        .navbar-toggler-icon{
+            &:after,
+            &:before {
+                width: 21px;
+                height: 1px;
+                background: #17bed2;
+                transition: all .3s cubic-bezier(.7, 1, .7, 1);
+            }
+        }
+    }
+}
+.navbar-toggler-icon {
+    position: relative;
+    display: inline-block;
+    width: 21px;
+    height: 1px;
+    background: #515769;
+    transition: all .3s cubic-bezier(.7, 1, .7, 1);
+        &:after,
+        &:before { 
+            position: absolute;
+            left: 0;
+            background: #515769;
+            content: " "  
+        }
+        &:before {
+            width: 10px;
+            height: 1px;
+            bottom: 10px;
+            -webkit-transform: rotate(0);
+            -moz-transform: rotate(0);
+            transform: rotate(0);
+            transition: all .3s cubic-bezier(.7, 1, .7, 1); 
+        }
+        &:after {
+            width: 16px;
+            height: 1px;
+            top: -5px;
+            -webkit-transform: rotate(0);
+            -moz-transform: rotate(0);
+            transform: rotate(0);
+            transition: all .3s cubic-bezier(.7, 1, .7, 1);
+        }
+}
+
+.logo-img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+.logo-img-dark {
+    display: none;
+}

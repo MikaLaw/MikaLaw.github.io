@@ -1,0 +1,24 @@
+extends ../template
+
+block title
+	title Портфолио
+	
+include ../modules/mixins
+block content
+	include ../modules/preloader		
+	include ../modules/hero_works		
+	section.works#works
+		.works__title
+			h1.section__title.wow.fadeInUp(style="background: url('img/icons/works_header.svg')") Мои работы	
+		include ../modules/slider
+	section.feedback
+		include ../modules/feedback
+		include ../modules/footer
+	.popup
+		.popup__content
+			p.popup__text
+			button.popup__close Закрыть
+	script(src='js/foundation.js')
+	script(src='js/works.js')
+
+

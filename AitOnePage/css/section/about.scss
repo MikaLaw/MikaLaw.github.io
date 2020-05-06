@@ -1,0 +1,12 @@
+.card {
+    border: none;
+}
+.card-revers {
+    flex-direction: column-reverse;
+}
+.col-lg-4:nth-child(3n+2) .about__block-img {
+    margin-bottom: 60px;
+}
+.col-lg-4:nth-child(2n+1) .about__block-img {
+    margin-top: 60px;
+}

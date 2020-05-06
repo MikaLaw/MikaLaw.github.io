@@ -1,0 +1,134 @@
+.main {
+	@include float(83%);
+	@include laptop {
+		float: none;
+		width: 100%;
+	}
+}
+
+.main__header {
+	background: url('../img/bg/companybg.jpg') no-repeat center;
+	background-size: cover;
+	height: 354px;
+	position: relative;
+	margin-bottom: rem(24px);
+	color: #fff;
+	padding-left: rem(70px);
+	&::before {
+		content: "";
+		display: block;
+		position: absolute;
+		background: rgba(3, 226, 255, 0.6);
+		filter: brightness(0.3) saturate(7);
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+	@include phone {
+		padding-left: rem(30px);
+	}
+}
+
+.main__wrapper  {
+	padding-bottom: rem(70px);
+}
+
+.main__header-wrapper {
+	@include center(y);
+}
+
+.title__uppercase {
+	text-transform: uppercase;
+}
+
+.main__desc {
+	line-height: 1.7;	
+	@include phone {
+		font-size: rem(15px);
+		line-height: 1.5;
+	}
+}
+
+.main__text {
+	p {
+		margin-top: rem(10px);
+		font-size: rem(16px);
+		@include tablet {
+			text-align: center;
+		}
+	}
+}
+
+.main__text_bold {
+	@include Gotham(bold);
+}
+
+.main__list {
+	padding-top: rem(10px);
+}
+
+.main__item {
+	position: relative;
+	margin-left: rem(37px);
+	margin-bottom: rem(4px);
+	&:before {
+		content: "";
+		display: block;
+		position: absolute;
+		width: 5px;
+		height: 5px;
+		border-radius: 50%;
+		background: $contrast;
+		top:12px;
+		left: -15px;
+	}
+}
+
+.main__addittional {
+	color: $white;
+	background: $second;
+	padding: rem(20px) rem(30px);
+	margin-top: rem(20px);
+	@include phone {
+		font-size: rem(15px);
+		line-height: 1.5;
+	}
+}
+
+.main__addittional-discount {
+	color: $contrast;
+}
+
+.main__partner {
+	margin-top: rem(50px);	
+}
+
+.main__partner-list {
+	font-size: 0;	
+	* {
+		font-size: rem(18px);
+	}
+}
+
+.main__partner-item {
+	@include inlineblock(middle);
+	width: 33.3%;
+	margin-top: rem(36px);
+	padding: rem(0px) rem(7px);
+	text-align: center;
+}
+
+.main__partner-link {
+	display: block;
+}
+
+.main__partner-img {
+	max-width: 100%;
+	height: auto;
+	filter: grayscale(1);
+	transition: 0.3s;
+	&:hover {
+		filter: none;
+	}
+}

@@ -1,0 +1,71 @@
+.auth__info {
+	width: 360px;
+	border-radius: 10px;
+	overflow: hidden;
+	backface-visibility: hidden;
+	position: absolute;
+	transition: .7s ease;
+	transform-style: preserve-3d;
+	@include phones {
+		width: 300px;
+	}
+}
+
+.auth__info-user {
+	background: rgba(#fcfcfc, .85);
+	padding: rem(40px) rem(20px);
+	.user__name {
+ 		font-size: rem(28px);
+ 		color: $prime;
+ 		margin-bottom: rem(5px);
+ 		@include phones {
+			font-size: rem(20px);
+		}
+ 	}
+ 	.user__desc {
+ 		@include Roboto();
+ 		margin-bottom: rem(20px);
+ 	}
+ 	.social__list {
+		margin-bottom: rem(10px);
+ 	}
+}
+
+.social__icon_auth {
+	fill: $contrast;
+}
+
+.auth__button-list {
+	display: table;
+ 	width: 100%;
+}
+
+.auth__button-item {
+	display: table-cell;
+	background: rgba(#00bfa5, .8);
+	border-right: 2px solid rgba(#dee3e7, 0.8);
+	text-align: center;
+	&:hover {
+		background: rgba(#00bfa5, .5);
+	}
+}
+
+.auth__button-link {
+	display: block;
+	text-decoration: none;		
+	padding: rem(12px) rem(0px);
+	color: $white;
+	@include Roboto(medium);
+	font-size: rem(16px);
+	transition: 0.3s ease-in-out;
+	&:focus {
+		outline: none;
+	}
+}
+
+.auth__button-item:last-child {
+	border-right: none;
+}
+
+
+

@@ -1,0 +1,38 @@
+.product-card__body {
+    margin: 25px 0;
+}
+.product-card__link {
+    color: #515769;
+    display:  inline-block;
+}
+.product-card__link{
+    &:hover {
+        text-decoration: none;
+        color: #81848f;
+    }
+}
+.prodact-card__btn {
+    font-family: 'Hind Semibold',  sans-serif;
+    display:  inline-block;
+    color: #81848f;
+    font-size: 1em;
+}
+.prodact-card__btn {
+    &:after {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        width: 9px;
+        height: 2px;
+        background: #17bed2;
+        margin-left: 5px;
+        margin-top: -2px;
+    }
+}
+.prodact-card__btn {
+    &:hover {
+        color: #999caa;
+        text-decoration: none;
+    }
+}
+

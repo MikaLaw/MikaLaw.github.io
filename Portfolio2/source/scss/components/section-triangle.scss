@@ -1,0 +1,36 @@
+.section-triangle {
+	position: absolute;
+	bottom: -5px;
+	width: 100%;
+	@extend %clearfix;
+	z-index: 0;
+}
+
+.section-triangle__side {
+	@include float(50%);
+}
+
+.triangle {
+	display: block;
+	width:  100%;
+	height: 105px;	
+}
+
+.triangle_fill_gray {
+	fill: $gray;
+}
+
+.triangle_fill_beige {
+	fill: $beige;
+	@include laptop {
+  		fill: $gray;
+  	}
+}
+
+.triangle_fill_milk {
+    fill: $milk;
+}
+
+.triangle_fill_white {
+	fill: $white;
+}

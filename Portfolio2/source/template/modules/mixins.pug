@@ -1,0 +1,13 @@
+mixin triangle(classNameL, classNameR)
+	.section-triangle
+		.section-triangle__side
+			svg(viewbox="0 0 1000 85" preserveAspectRatio="none" class=`triangle ${classNameL}`)
+				polygon(points="0,0   0,100   1000,90   1000,80")
+		.section-triangle__side
+			svg(viewbox="0 0 1000 85" preserveAspectRatio="none" class=`triangle ${classNameR}`)
+				polygon(points="1000,0   1000,100   0,90   0,80")
+
+mixin arrow(dataAnchor, href, addClass)
+	a(href="#" data-anchor=`${dataAnchor}`).arrow-nav
+			svg(class=`arrow-nav__icon ${addClass}`)
+				use(xlink:href=`img/sprite.svg#${href}`)

@@ -1,0 +1,29 @@
+.social__list{
+	display: inline-block;
+}
+
+.social__item {
+	@include inlineblock(middle);
+	margin-right: rem(20px);
+	&:hover {
+		.social__icon {
+			opacity: 1;
+		}
+	}
+}
+
+.social__item:last-child {
+	margin-right: rem(0px);
+}
+
+.social__link {
+	display: block;
+}
+.social__icon {
+	display: block;
+	width: 32px;
+ 	height: 22px;
+	opacity: 0.5;
+	fill: $white;
+	transition: 0.3s ease-in-out;
+}

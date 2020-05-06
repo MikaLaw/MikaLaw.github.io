@@ -1,0 +1,86 @@
+.parallax {
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  min-height: 650px;
+  z-index: -1;
+  @include tablets {
+    .layer-bg_0,
+    .layer-bg_1,
+    .layer-bg_2,
+    .layer-bg_3,
+    .layer-bg_4,
+    .layer-bg_5,
+    .layer-bg_6,
+    .layer-bg_7,
+    .layer-bg_8 {
+    display: none;
+    }    
+    .layer-bg_9 {
+     background-image: url('../img/hero__bg@1x.png'); 
+    }
+  }
+}
+
+.parallax-layer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.layer-bg {
+  position: absolute;
+  width: 110%;
+  height: 110%;
+  left: -5%;
+  top: -5%;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+}
+
+.layer-bg_0 {
+background-image: url('../img/parallax/layer_0.png');
+}
+
+.layer-bg_1 {
+background-image: url('../img/parallax/layer_1.png');
+}
+
+.layer-bg_2 {
+ background-image: url('../img/parallax/layer_2.png'); 
+}
+
+.layer-bg_3 {
+ background-image: url('../img/parallax/layer_3.png'); 
+}
+
+.layer-bg_4 {
+ background-image: url('../img/parallax/layer_4.png'); 
+}
+
+.layer-bg_5 {
+ background-image: url('../img/parallax/layer_5.png'); 
+}
+
+.layer-bg_6 {
+ background-image: url('../img/parallax/layer_6.png'); 
+}
+
+.layer-bg_7 {
+ background-image: url('../img/parallax/layer_7.png'); 
+}
+
+.layer-bg_8 {
+ background-image: url('../img/parallax/layer_8.png'); 
+}
+
+.layer-bg_9 {
+ background-image: url('../img/parallax/layer_9.png'); 
+}
+

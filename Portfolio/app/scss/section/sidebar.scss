@@ -1,0 +1,85 @@
+.sidebar {
+	text-align: right;
+	@include laptop {
+		text-align: left;
+		padding-bottom: rem(25px);
+	}
+}
+
+.sidebar__nav-item {
+	position: relative;
+	@include laptop {
+		@include inlineblock(middle);
+	}
+	&.active {
+		&:after {
+			content: '';
+			position: absolute;
+			width: 6px;
+			top: 0;
+			bottom: 0;
+			left: 100%;
+			background: $contrast;
+			opacity: 1;			
+		}
+		.sidebar__nav-link {
+			color: $contrast;
+			@include Fira(bold);
+		}
+	}
+	&:after {
+		content: '';
+		position: absolute;
+		width: 6px;
+		top: 0;
+		bottom: 0;
+		left: 100%;
+		background: $contrast;
+		opacity: 0;
+		transition: 0.3s;
+		@include laptop {
+			display: none;
+		}
+	}
+	&:hover {
+		.sidebar__nav-link {
+			color: $contrast;
+		}
+		&:after {
+			opacity: 1;
+		}
+	}
+}
+
+.sidebar__nav-link {
+	font-size: rem(18px);
+	display: inline-block;
+	color: $prime;
+	text-decoration: none;
+	padding: rem(10px) rem(22px);
+	@include Fira();
+	@include tablet {
+		padding: rem(10px) rem(10px);
+	}
+	@include phone {
+		padding: rem(10px) rem(5px);
+	}
+}
+
+.sidebar__nav-icon {
+	@include inlineblock();
+	margin-right: rem(5px);
+	margin-top: rem(2px);
+	@include phone {
+		display: none;
+	}
+}
+
+.sidebar__nav-text {
+	@include inlineblock();	
+	word-break: break-word;
+	max-width: 145px;
+	@include phone {
+		font-size: rem(14px);
+	}
+}

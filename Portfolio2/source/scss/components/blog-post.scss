@@ -1,0 +1,77 @@
+.articles__list {
+    width: 70%;
+    display: block;
+    padding: 0 15% 0 6%; 
+    @include laptop {
+        padding: 0 6%; 
+    }
+    @include tablets {
+        width: 90%;
+        padding: 0; 
+    }
+}
+
+.articles__item {
+    padding: rem(50px) rem(0px);
+    position: relative; 
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 4px;
+        width: 70%;
+        background-color: #f6f2f1; 
+    }
+    @include laptop {
+        &:after {
+           width: 100%;
+        } 
+    }
+}
+
+.articles__item:last-child:after {
+    content: none; 
+}
+
+.article__title {
+    font-family: 'Bernier';
+    font-size: rem(34px);
+    color: $prime;
+    margin-bottom: rem(20px);
+    @include tablets {
+        font-size: rem(24px); 
+        margin-bottom: rem(15px);
+    } 
+}
+
+.article__date {
+  display: block;
+  color: $contrast;
+  margin-bottom: rem(20px);
+  @include Roboto(medium); 
+  @include tablets {
+        margin-bottom: rem(15px);
+    } 
+}
+
+.article__content {
+    p {
+        line-height: 1.6; 
+    }
+    ul {
+        list-style: disc;        
+        margin-left: rem(40px);
+        margin-bottom: 20px;
+        line-height: 1.6;
+        color: $prime;
+    }
+    a {
+        display: block;
+        color: $contrast;
+        text-decoration: none;
+    }
+}
+
+
+

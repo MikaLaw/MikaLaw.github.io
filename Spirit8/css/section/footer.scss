@@ -1,0 +1,44 @@
+.footer .container {
+	@include d-flex();
+	@include justify-content(space-between);
+	@include flex-wrap(wrap);
+}
+
+.footer {
+	background: #222222;
+}
+
+.footer__copyright {
+	margin-top: 30px;
+	text-align: center;
+	white-space: wrap;
+}
+
+.footer__soc {
+	@include d-flex();
+	margin: 20px 0;
+}
+
+.footer__soc-item {
+	&:hover {
+		.footer__soc-link {
+			background: $accent-color;
+			color: $main-color;
+			border: 2px solid $accent-color;
+		}
+	}
+}
+
+.footer__soc-link {
+	text-align: center;
+	display: inline-block;
+	height: 30px;
+    width: 30px;
+    margin-right: 10px;
+    border: 2px solid #8c8c8c;
+    font-size: 1.3em;
+    padding: 4px 5px;
+    @include border-radius(50%);
+    color: #8c8c8c;
+   	@include transition(all, 0.3s, ease);
+}

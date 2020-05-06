@@ -1,0 +1,97 @@
+.header {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 10;
+	background-color: rgba(34, 34, 34, 0.85);
+}
+
+.header .container {
+	@include d-flex();
+	@include align-items(center);
+	@include justify-content(space-between);
+}
+
+.logo__text {
+	@include Lato('black');	
+	font-size: 1.8em;
+	text-transform: uppercase;
+	padding: 15px;
+	color: $main-color;
+	text-decoration: none;	
+	display: inline-block;
+}
+
+.nav__list {
+	@include d-flex();
+	@include flex-wrap(wrap);	
+}
+
+.nav__item {
+	padding: 11px;
+}
+
+.nav__link {
+	display: inline-block;
+	text-decoration: none;
+	text-transform: uppercase;
+	@include Lato();	
+	color: $main-color;				
+	letter-spacing: 1px;
+	line-height: 20px;
+	@include transition (all, 0.3s, ease);
+	&:hover {
+		color:$accent-color;
+	}
+}
+
+.navbar-toggle {
+	display: none;
+	padding: 9px 10px;
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	border: 1px solid #ddd;
+	background-color: transparent;
+	@include transition (all, 0.3s, ease);
+	&:hover {
+		background-color: $accent-color;
+		.navbar-toggle__icon-bar {
+			background-color: #fff;
+		}
+	}
+}
+
+.navbar-toggle__icon-bar {
+	display: block;
+    width: 22px;
+    height: 2px;
+    @include border-radius(1px);
+    background-color: #888;
+    margin-bottom: 4px;
+    @include transition (all, 0.3s, ease);
+}
+
+.navbar-toggle__icon-bar:last-child {
+	 margin-bottom: 0px;
+}
+
+.nav_hidden {
+	display: none;
+	position: absolute;	
+	background-color: rgba(34, 34, 34, 0.85);
+	top: 64px;
+	right: 0;
+	left: 0;
+}
+.nav__list_hidden {
+	padding: 10px 0;
+	display: block;
+	width: 95%;
+	margin: 0 auto;	
+	border-top: 1px solid $main-color;		
+	}
+
+.nav__item_hidden {
+	padding: 10px 15px;
+}

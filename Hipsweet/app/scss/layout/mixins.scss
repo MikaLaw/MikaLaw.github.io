@@ -1,0 +1,28 @@
+@mixin inlineblock($valign: top){
+	display: inline-block;
+	vertical-align: $valign;
+}
+
+@mixin float($width){
+	float: left;
+	width: $width;
+}
+
+@mixin pic(){
+	max-width: 100%;
+	height: auto;
+	@include inlineblock(middle);
+}
+
+
+%clearfix{
+	&:after, &:before {
+		content: "";
+		display: table;
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+

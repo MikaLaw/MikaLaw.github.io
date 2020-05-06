@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Админка</title>
+    <meta content="Феоктистова Надежда" name="author">
+    <meta content="Сайт-портфолио" name="description">
+    <meta content="портфолио сайт надежда феоктистова" name="keywords">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/main.min.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="popup">
+        <div class="popup__content">
+          <p class="popup__text"></p>
+          <button class="popup__close">Закрыть</button>
+        </div>
+      </div>
+      <section class="panel">
+        <header class="panel-header">
+          <div class="panel-header__left">
+            <h1 class="panel-header__logo">Панель администрирования</h1>
+          </div>
+          <div class="panel-header__right"><a class="panel-header__link" href="index.html">Вернуться на сайт</a></div>
+        </header>
+        <div class="panel-content">
+          <div class="tubs">
+            <ul class="tabs__controls">
+              <li class="tabs__controls-item"><a class="tabs__controls-link" href="#">Tab 1</a></li>
+              <li class="tabs__controls-item"><a class="tabs__controls-link" href="#">Tab 2</a></li>
+            </ul>
+            <ul class="tabs__content">
+              <li class="tabs__content-item active">
+                <div class="tabs__content-container">
+                  <h2 class="tabs__content-title">Страница "Блог"</h2>
+                  <div class="tabs__content-text">Добавить запись</div>
+                  <form id="blog__form">
+                    <div class="form-container">
+                      <div class="form-row">
+                        <input class="form-input" type="text" name="title" placeholder="Название">
+                      </div>
+                      <div class="form-row">
+                        <input class="form-input" name="date" type="date">
+                      </div>
+                      <div class="form-row">
+                        <textarea class="form-textarea" name="text" placeholder="Содержание"></textarea>
+                      </div>
+                      <div class="form-row">
+                        <button class="form-btn" type="submit" value="Добавить">Добавить</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </li>
+              <li class="tabs__content-item">
+                <div class="tabs__content-container">
+                  <h2 class="tabs__content-title">Страница "Мои работы"</h2>
+                  <div class="tabs__content-text">Добавить работу</div>
+                  <form id="upload" action="/upload" method="POST" enctype="multipart/form-data">
+                    <div class="form-container">
+                      <div class="form-row">
+                        <input class="form-input" type="text" placeholder="Название проекта" name="name" required>
+                      </div>
+                      <div class="form-row">
+                        <input class="form-input" type="text" name="tech" placeholder="Технологии" required>
+                      </div>
+                      <div class="form-row">
+                        <input class="form-input" type="text" placeholder="Ссылка" name="link" required>
+                      </div>
+                      <div class="form-row">
+                        <input class="form__input" name="photo" type="file" required accept="image/*" id="file-select">
+                        <label class="form__label" for="file-select"><img class="form__label-icon" src="img/admin__icon.png" alt="admin__icon"><span class="form__label-text">Загрузить картинку</span></label>
+                      </div>
+                      <div class="form-row">
+                        <div class="form__field_image-preview"></div>
+                      </div>
+                      <div class="form-row">
+                        <button class="form-btn" type="submit" value="Добавить">Добавить</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <script src="js/foundation.js"></script>
+      <script src="js/admin.js"></script>
+    </div><!--[if lt IE 9]>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
+  </body>
+</html>

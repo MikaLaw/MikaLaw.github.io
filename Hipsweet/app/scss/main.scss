@@ -1,0 +1,20 @@
+// adjustment variables
+$body-font : Helvetica, sans-serif;
+
+// colors
+$prime: #ffffff;
+$second: #747474;
+$contrast: #ffb100;
+$add: #ab594a;
+
+
+@import "layout/mixins.scss";
+@import "layout/fonts.scss";
+@import "layout/adjustment.scss";
+
+@import  "section/cupcake.scss";
+@import  "section/tasty.scss";
+@import  "section/products.scss";
+@import  "section/team.scss";
+@import  "section/faq.scss";
+@import  "section/contacts.scss";
