@@ -490,9 +490,18 @@
             <div class="email__block">
               <div class="email__title">Бонус первым, кто пройдет регистрацию.</div>
               <div class="email__desc">Подробные условия по<a href="#">ссылке</a></div>
-              <form class="email__field" id="form">
-                <input class="email__input" type="email" name="email" placeholder="Введите ваш e-mail" required>
-                <button class="btn__link email__btn-link" id="email__btn-link" type="submit">Подписаться</button>
+              <!--form#form.email__field-->
+              <!--    input.email__input(type='email' name='email' placeholder='Введите ваш e-mail' required)-->
+              <!--    button.btn__link.email__btn-link#email__btn-link Подписаться-->
+              <script type="text/javascript">var submitted=false; if(submitted){console.log('lsdkl')}</script>
+              <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+              <form class="email__field" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeJ_NsJDN4avVMj7bcH7sG92Z-GdbgyHZYjkE07gDDNs9dGmA/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true;">
+                <input class="email__input" type="email" name="entry.1045781291" autocomplete="off" tabindex="0" aria-labelledby="i1" aria-describedby="i2 i3" required="" dir="auto" data-initial-dir="auto" data-initial-value="">
+                <input type="hidden" name="fvv" value="1">
+                <input type="hidden" name="draftResponse" value="[null,null,&amp;quot;818877336087847650&amp;quot;]">
+                <input type="hidden" name="pageHistory" value="0">
+                <input type="hidden" name="fbzx" value="818877336087847650">
+                <input class="btn__link email__btn-link" type="submit" name="submit" value="Подписаться" id="ss-submit">
               </form>
             </div>
           </div>
@@ -524,7 +533,6 @@
     </div><!--[if lt IE 9]>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
     <script src="js/foundation.js"></script>
-    <script src="js/ajaxHelper.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
