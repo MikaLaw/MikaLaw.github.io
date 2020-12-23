@@ -299,7 +299,8 @@
         </div>
     </div>
     <div class="similarButton">
-        <button>Поделиться</button>
+        <button class="ya-share2" data-curtain data-shape="round" data-limit="0" data-more-button-type="short" data-services="messenger,vkontakte,facebook,odnoklassniki,telegram,twitter,viber,whatsapp">Поделиться</button>
+<!--        <button>Поделиться</button>-->
     </div>
     <script>
         function progressViewSvg(){
@@ -310,37 +311,8 @@
                 circle.style.strokeDasharray = deg;
             });
         };
-        function shareSimilarity(){
-            let btn = document.querySelector('.similarButton button');
-            const shareData = {
-                title: 'MDN',
-                text: 'Learn web development on MDN!',
-                url: 'https://developer.mozilla.org',
-            };
-
-            // Must be triggered some kind of "user activation"
-            btn.addEventListener('click', async () => {
-                alert('kfkd')
-                try {
-                    await navigator.share(shareData);
-                    alert('MDN shared successfully')
-                } catch(err) {
-                    alert('Error: ' + err);
-                }
-            });
-            // btn.addEventListener('click', async () => {
-            //     if (navigator.share) {
-            //         navigator.share({
-            //             title: document.title,
-            //             text: "Hello World",
-            //             url: window.location.href
-            //         }).then(() => console.log('Successful share'))
-            //             .catch(error => alert(error));
-            //     }
-            // });
-        };
         progressViewSvg();
-        shareSimilarity();
     </script>
+    <script src="https://yastatic.net/share2/share.js"></script>
 </body>
 </html>
