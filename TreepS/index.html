@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang='ru'>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            vertical-align: baseline;
+            line-height: 1;
+            height: 100%;
+            width: 100%;
+            font-size: 14px;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #F7F8FA;
+        }
+        p {
+            margin: 0;
+            padding: 0;
+        }
+        .wrapper {
+            padding: 0px 16px 32px 16px;
+        }
+        .similarBlock {
+            margin-bottom: 20px;
+            margin-top: 30px;
+        }
+        .similarTitle {
+            margin: 0;
+            margin-bottom: 12px;
+            padding: 0;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 24px;
+            color: #373646;
+        }
+        .similarText {
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 20px;
+            color: #898F97;
+            margin-bottom: 16px;
+        }
+        .similarText:last-child{
+            margin-bottom: 0px;
+        }
+        .similarCard {
+            background: #FFFFFF;
+            border-radius: 12px;
+            text-align: center;
+        }
+        .similarCardHead {
+            background: #4DCE96;
+            color: #ffffff;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            text-align: center;
+            padding: 12px 0;
+            font-size: 22px;
+        }
+        .similarCardBody {
+            padding: 0 5% 5% 5%;
+        }
+        .similarCardAvatar {
+            margin-bottom: 18px;
+            width: 57%;
+            display: inline-block;
+            position: relative;
+        }
+        .similarCardAvatar .circles {
+            stroke-width: 3;
+        }
+        .similarCardName {
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 24px;
+            color: #373646;
+            margin-bottom: 8px;
+        }
+        .similarCardNickname {
+            font-weight: 600;
+            font-size: 17px;
+            line-height: 22px;
+            letter-spacing: -0.41px;
+            color: #4DCE96;
+            margin-bottom: 16px;
+        }
+        .similarCardUserCount {
+            background: #F7F8FA;
+            border-radius: 12px;
+            padding: 12px 22px;
+            display: inline-block;
+            max-width: 187px;
+            word-break: break-all;
+        }
+        .similarCardUserCountNum {
+            font-weight: bold;
+            font-size: 22px;
+            line-height: 28px;
+            text-align: center;
+            letter-spacing: 0.35px;
+            color: #232326;
+            margin-bottom: 5px;
+        }
+        .similarCardUserCountText {
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 18px;
+            text-align: center;
+            letter-spacing: -0.08px;
+            color: #9A99A2;
+        }
+        .otherSimilarBlock {
+            font-size: 0;
+            margin: 0 -6px;
+            margin-top: 12px;
+            padding: 0;
+        }
+        .otherSimilarItem {
+            width: 33.3%;
+            padding: 6px;
+            box-sizing: border-box;
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 14px;
+        }
+        .otherSimilarAvatar {
+            background: #FFFFFF;
+            border-radius: 12px;
+            padding: 8px 10px;
+            position: relative;
+        }
+        .similarAvatarWrapper {
+            position: relative;
+        }
+        .similarAvatarPic {
+            background: url("Ellipse296.jpg") no-repeat center;
+            background-size: cover;
+            border-radius: 50%;
+            width: 70%;
+            height: 70%;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            left: 50%;
+        }
+        .similarAvatarPersent {
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 17px;
+            text-align: center;
+        }
+        .similarAvatarPersent.similarAvatarPersentBlock {
+            background: #F7F8FA;
+            border-radius: 12px;
+            height: 20%;
+            width: 26%;
+            color: #373646;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 48px;
+            min-height: 40px;
+            word-break: break-all;
+        }
+        .similarCardBody.antipode .similarCardNickname{
+            color: #F04E6B;
+        }
+        .similarCardBody.antipode .circle__second{
+            stroke: #F04E6B;
+        }
+        .circles {
+            display: block;
+            fill: none;
+            stroke-width: 4;
+        }
+        .circle__first {
+            stroke: #F7F8FA;
+        }
+        .circle__second {
+            stroke: #4DCE96;
+            transition: all 1s;
+        }
+        .similarButton {
+            padding: 16px;
+            border-top: 1px solid #E8ECEE;
+        }
+        .similarButton button {
+            background: #4DCE96;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 19px;
+            text-align: center;
+            color: #FFFFFF;
+            border: 1px solid transparent;
+            width: 100%;
+            padding: 16px 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="similarBlock">
+            <h2 class="similarTitle">Вы похожи на 78%</h2>
+            <p class="similarText">Ваши предпочтения наиболее схожи с этой знаменитостью<p>
+        </div>
+        <div class="similarCard">
+            <div class="similarCardHead">treep</div>
+            <div class="similarCardBody">
+                <div class="similarCardAvatar">
+                    <div class="similarAvatarWrapper">
+                        <div class="similarAvatarPic"></div>
+                        <svg class="circles" viewBox='0 0 110 110'>
+                            <circle r="45" cx="50%" cy="50%" fill="none" class="circle__first"/>
+                            <circle r="45" cx="50%" cy="50%" transform="rotate(90 55 55)" data-percent="100" class="circle__second"/>
+                        </svg>
+                    </div>
+                    <div class="similarAvatarPersent similarAvatarPersentBlock"></div>
+                </div>
+                <div class="similarCardName">Дуэйн Джонсон</div>
+                <div class="similarCardNickname">@therock</div>
+                <div class="similarCardUserCount">
+                    <div class="similarCardUserCountNum">2 560</div>
+                    <div class="similarCardUserCountText">тоже похожи на Джонсона</div>
+                </div>
+            </div>
+        </div>
+        <ul class='otherSimilarBlock'>
+            <li class='otherSimilarItem'>
+                <div class="otherSimilarAvatar">
+                    <div class="similarAvatarWrapper">
+                        <div class="similarAvatarPic"></div>
+                        <svg class="circles" viewBox='0 0 110 110'>
+                            <circle r="45" cx="50%" cy="50%" fill="none" class="circle__first"/>
+                            <circle r="45" cx="50%" cy="50%"  transform="rotate(90 55 55)" data-percent="90" class="circle__second"/>
+                        </svg>
+                    </div>
+                    <div class="similarAvatarPersent"></div>
+                </div>
+            </li>
+            <li class='otherSimilarItem'>
+                <div class="otherSimilarAvatar">
+                    <div class="similarAvatarWrapper">
+                        <div class="similarAvatarPic"></div>
+                        <svg class="circles" viewBox='0 0 110 110'>
+                            <circle r="45" cx="50%" cy="50%" fill="none" class="circle__first"/>
+                            <circle r="45" cx="50%" cy="50%"  transform="rotate(90 55 55)" data-percent="10" class="circle__second"/>
+                        </svg>
+                    </div>
+                    <div class="similarAvatarPersent"></div>
+                </div>
+            </li>
+            <li class='otherSimilarItem'>
+                <div class="otherSimilarAvatar">
+                    <div class="similarAvatarWrapper">
+                        <div class="similarAvatarPic"></div>
+                        <svg class="circles" viewBox='0 0 110 110'>
+                            <circle r="45" cx="50%" cy="50%" fill="none" class="circle__first"/>
+                            <circle r="45" cx="50%" cy="50%" transform="rotate(90 55 55)" data-percent="10" class="circle__second"/>
+                        </svg>
+                    </div>
+                    <div class="similarAvatarPersent"></div>
+                </div>
+            </li>
+        </ul>
+        <div class="similarBlock">
+            <h2 class="similarTitle">Ваш антипод 8%</h2>
+            <p class="similarText">Предпочтения других знаменитостей менее похожи на ваши.<p>
+            <p class="similarText">В процессе выполнения активностей алгоритм уточняет сходство, вы сразу можете увидеть изменения.<p>
+        </div>
+        <div class="similarCard">
+            <div class="similarCardBody antipode">
+                <div class="similarCardAvatar">
+                    <div class="similarAvatarWrapper">
+                        <div class="similarAvatarPic"></div>
+                        <svg class="circles" viewBox='0 0 110 110'>
+                            <circle r="45" cx="50%" cy="50%" fill="none" class="circle__first"/>
+                            <circle r="45" cx="50%" cy="50%" transform="rotate(90 55 55)" data-percent="10" class="circle__second"/>
+                        </svg>
+                    </div>
+                    <div class="similarAvatarPersent similarAvatarPersentBlock"></div>
+                </div>
+                <div class="similarCardName">Бенедикт Камбербэтч</div>
+                <div class="similarCardNickname">@benedictcumberbatch</div>
+            </div>
+        </div>
+    </div>
+    <div class="similarButton">
+        <button>Поделиться</button>
+    </div>
+    <script>
+        function progressViewSvg(){
+            let circles = document.querySelectorAll('.circle__second');
+            circles.forEach((circle) => {
+                circle.parentElement.parentElement.nextElementSibling.innerHTML = circle.dataset.percent + '%';
+                let deg = circle.dataset.percent*2.9+' 282.6';
+                circle.style.strokeDasharray = deg;
+            });
+        };
+        function shareSimilarity(){
+            const shareData = {
+                title: 'MDN', // название странички, которой хотим поделится
+                text: 'Learn web development on MDN!', // текс на страничке, которой хотим поделится
+                url: 'https://developer.mozilla.org', // url странички, которой хотим поделится
+            };
+
+            let btn = document.querySelector('.similarButton button');
+
+            // Must be triggered some kind of "user activation"
+            btn.addEventListener('click', async () => {
+                try {
+                    await navigator.share(shareData)
+                } catch(err) {
+                    console.log(err)
+                }
+            });
+        };
+        progressViewSvg();
+        shareSimilarity();
+    </script>
+</body>
+</html>
