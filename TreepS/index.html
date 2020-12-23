@@ -302,6 +302,7 @@
         <button class="ya-share2" data-curtain data-shape="round" data-limit="0" data-more-button-type="short" data-services="messenger,vkontakte,facebook,odnoklassniki,telegram,twitter,viber,whatsapp">Поделиться</button>
 <!--        <button>Поделиться</button>-->
     </div>
+    <script src="html2canvas.min.js"></script>
     <script>
         function progressViewSvg(){
             let circles = document.querySelectorAll('.circle__second');
@@ -311,8 +312,25 @@
                 circle.style.strokeDasharray = deg;
             });
         };
+
+            html2canvas(document.querySelector('.wrapper')).then(function(canvas) {
+
+                console.log(canvas);
+                myRenderFunction(canvas)
+            });
+
+        function myRenderFunction(canvas){
+            var a = document.createElement('a');
+            // toDataURL defaults to png, so we need to request a jpeg, then convert for file download.
+            a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
+            a.download = 'somefilename.jpg';
+            a.click();
+        }
+
         progressViewSvg();
+
     </script>
+
     <script src="https://yastatic.net/share2/share.js"></script>
 </body>
 </html>
