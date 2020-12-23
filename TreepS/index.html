@@ -206,6 +206,9 @@
             padding: 16px 0;
             cursor: pointer;
         }
+        .similarButton button:focus {
+            outline: none;
+        }
     </style>
 </head>
 <body>
@@ -308,25 +311,20 @@
             });
         };
         function shareSimilarity(){
-            const shareData = {
-                title: 'MDN', // название странички, которой хотим поделится
-                text: 'Learn web development on MDN!', // текс на страничке, которой хотим поделится
-                url: 'https://developer.mozilla.org', // url странички, которой хотим поделится
-            };
-
             let btn = document.querySelector('.similarButton button');
 
-            // Must be triggered some kind of "user activation"
             btn.addEventListener('click', async () => {
-                try {
-                    await navigator.share(shareData)
-                } catch(err) {
-                    console.log(err)
-                }
+                navigator
+                    .share({
+                        title: document.title,
+                        text: 'Hello World',
+                        url: window.location.href
+                    })
+                    .then(() => console.log('Successful share! 🎉'))
+                    .catch(err => console.error(err));
             });
         };
         progressViewSvg();
-        shareSimilarity();
     </script>
 </body>
 </html>
