@@ -224,8 +224,8 @@
                     <div class="similarAvatarWrapper">
                         <div class="similarAvatarPic"></div>
                         <svg class="circles" viewBox='0 0 110 110'>
-                            <circle r="45" cx="55" cy="55" fill="none" class="circle__first"/>
-                            <circle r="45" cx="55" cy="55" transform="rotate(90 55 55)" data-percent="100" class="circle__second"/>
+                            <circle r="45" cx="50%" cy="50%" fill="none" class="circle__first"/>
+                            <circle r="45" cx="50%" cy="50%" transform="rotate(90 55 55)" data-percent="100" class="circle__second"/>
                         </svg>
                     </div>
                     <div class="similarAvatarPersent similarAvatarPersentBlock"></div>
@@ -244,8 +244,8 @@
                     <div class="similarAvatarWrapper">
                         <div class="similarAvatarPic"></div>
                         <svg class="circles" viewBox='0 0 110 110'>
-                            <circle r="45" cx="55" cy="55" fill="none" class="circle__first"/>
-                            <circle r="45" cx="55" cy="55"  transform="rotate(90 55 55)" data-percent="90" class="circle__second"/>
+                            <circle r="45" cx="50%" cy="50%" fill="none" class="circle__first"/>
+                            <circle r="45" cx="50%" cy="50%"  transform="rotate(90 55 55)" data-percent="90" class="circle__second"/>
                         </svg>
                     </div>
                     <div class="similarAvatarPersent"></div>
@@ -256,8 +256,8 @@
                     <div class="similarAvatarWrapper">
                         <div class="similarAvatarPic"></div>
                         <svg class="circles" viewBox='0 0 110 110'>
-                            <circle r="45" cx="55" cy="55" fill="none" class="circle__first"/>
-                            <circle r="45" cx="55" cy="55"  transform="rotate(90 55 55)" data-percent="10" class="circle__second"/>
+                            <circle r="45" cx="50%" cy="50%" fill="none" class="circle__first"/>
+                            <circle r="45" cx="50%" cy="50%"  transform="rotate(90 55 55)" data-percent="10" class="circle__second"/>
                         </svg>
                     </div>
                     <div class="similarAvatarPersent"></div>
@@ -268,8 +268,8 @@
                     <div class="similarAvatarWrapper">
                         <div class="similarAvatarPic"></div>
                         <svg class="circles" viewBox='0 0 110 110'>
-                            <circle r="45" cx="55" cy="55" fill="none" class="circle__first"/>
-                            <circle r="45" cx="55" cy="55" transform="rotate(90 55 55)" data-percent="10" class="circle__second"/>
+                            <circle r="45" cx="50%" cy="50%" fill="none" class="circle__first"/>
+                            <circle r="45" cx="50%" cy="50%" transform="rotate(90 55 55)" data-percent="10" class="circle__second"/>
                         </svg>
                     </div>
                     <div class="similarAvatarPersent"></div>
@@ -287,8 +287,8 @@
                     <div class="similarAvatarWrapper">
                         <div class="similarAvatarPic"></div>
                         <svg class="circles" viewBox='0 0 110 110'>
-                            <circle r="45" cx="55" cy="55" fill="none" class="circle__first"/>
-                            <circle r="45" cx="55" cy="55" transform="rotate(90 55 55)" data-percent="10" class="circle__second"/>
+                            <circle r="45" cx="50%" cy="50%" fill="none" class="circle__first"/>
+                            <circle r="45" cx="50%" cy="50%" transform="rotate(90 55 55)" data-percent="10" class="circle__second"/>
                         </svg>
                     </div>
                     <div class="similarAvatarPersent similarAvatarPersentBlock"></div>
@@ -302,6 +302,7 @@
         <button class="ya-share2" data-curtain data-shape="round" data-limit="0" data-more-button-type="short" data-services="messenger,vkontakte,facebook,odnoklassniki,telegram,twitter,viber,whatsapp">Поделиться</button>
 <!--        <button>Поделиться</button>-->
     </div>
+    <script src="https://superal.github.io/canvas2image/canvas2image.js"></script>
     <script src="html2canvas.js"></script>
     <script>
         function progressViewSvg(){
@@ -316,23 +317,33 @@
             html2canvas(document.querySelector('.wrapper')).then(function(canvas) {
 
                 console.log(canvas);
-                myRenderFunction(canvas)
+                // myRenderFunction(canvas)
+                document.querySelector('.wrapper').append(canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream"));
             });
+        // html2canvas(document.querySelector('.wrapper'), {
+        //     onrendered: function(canvas) {
+        //         // document.body.appendChild(canvas);
+        //         Canvas2Image.saveAsPNG(canvas);
+        //         document.querySelector('.wrapper').append(canvas);
+        //         // return Canvas2Image.saveAsPNG(canvas);
+        //     }
+        // });
 
-        function myRenderFunction(canvas){
-            var svgElements = document.body.querySelectorAll('svg');
-            svgElements.forEach(function(item) {
-                item.setAttribute("width", item.getBoundingClientRect().width);
-                item.setAttribute("height", item.getBoundingClientRect().height);
-                item.style.width = null;
-                item.style.height= null;
-            });
-            var a = document.createElement('a');
-            // toDataURL defaults to png, so we need to request a jpeg, then convert for file download.
-            a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
-            a.download = 'somefilename.jpg';
-            a.click();
-        }
+
+        // function myRenderFunction(canvas){
+        //     var svgElements = document.body.querySelectorAll('svg');
+        //     svgElements.forEach(function(item) {
+        //         item.setAttribute("width", item.getBoundingClientRect().width);
+        //         item.setAttribute("height", item.getBoundingClientRect().height);
+        //         item.style.width = null;
+        //         item.style.height= null;
+        //     });
+        //     var a = document.createElement('a');
+        //     // toDataURL defaults to png, so we need to request a jpeg, then convert for file download.
+        //     a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
+        //     a.download = 'somefilename.jpg';
+        //     a.click();
+        // }
 
         progressViewSvg();
 
