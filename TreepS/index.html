@@ -314,17 +314,18 @@
             let btn = document.querySelector('.similarButton button');
 
             btn.addEventListener('click', async () => {
-                navigator
-                    .share({
+                if (navigator.share) {
+                    navigator.share({
                         title: document.title,
-                        text: 'Hello World',
+                        text: "Hello World",
                         url: window.location.href
-                    })
-                    .then(() => console.log('Successful share! 🎉'))
-                    .catch(err => console.error(err));
+                    }).then(() => console.log('Successful share'))
+                        .catch(error => console.log('Error sharing:', error));
+                }
             });
         };
         progressViewSvg();
+        shareSimilarity();
     </script>
 </body>
 </html>
