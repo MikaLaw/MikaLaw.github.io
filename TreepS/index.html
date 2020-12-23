@@ -312,17 +312,32 @@
         };
         function shareSimilarity(){
             let btn = document.querySelector('.similarButton button');
+            const shareData = {
+                title: 'MDN',
+                text: 'Learn web development on MDN!',
+                url: 'https://developer.mozilla.org',
+            };
 
+            // Must be triggered some kind of "user activation"
             btn.addEventListener('click', async () => {
-                if (navigator.share) {
-                    navigator.share({
-                        title: document.title,
-                        text: "Hello World",
-                        url: window.location.href
-                    }).then(() => console.log('Successful share'))
-                        .catch(error => console.log('Error sharing:', error));
+                alert('kfkd')
+                try {
+                    await navigator.share(shareData);
+                    alert('MDN shared successfully')
+                } catch(err) {
+                    alert('Error: ' + err);
                 }
             });
+            // btn.addEventListener('click', async () => {
+            //     if (navigator.share) {
+            //         navigator.share({
+            //             title: document.title,
+            //             text: "Hello World",
+            //             url: window.location.href
+            //         }).then(() => console.log('Successful share'))
+            //             .catch(error => alert(error));
+            //     }
+            // });
         };
         progressViewSvg();
         shareSimilarity();
