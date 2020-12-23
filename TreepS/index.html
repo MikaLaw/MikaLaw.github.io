@@ -223,7 +223,7 @@
                 <div class="similarCardAvatar">
                     <div class="similarAvatarWrapper">
                         <div class="similarAvatarPic"></div>
-                        <svg class="circles" viewBox='0 0 110 110'>
+                        <svg class="circles" viewBox='0 0 110 110' width='100%' height='100%'>
                             <circle r="45" cx="50%" cy="50%" fill="none" class="circle__first"/>
                             <circle r="45" cx="50%" cy="50%" transform="rotate(90 55 55)" data-percent="100" class="circle__second"/>
                         </svg>
@@ -243,7 +243,7 @@
                 <div class="otherSimilarAvatar">
                     <div class="similarAvatarWrapper">
                         <div class="similarAvatarPic"></div>
-                        <svg class="circles" viewBox='0 0 110 110'>
+                        <svg class="circles" viewBox='0 0 110 110' width='100%' height='100%'>
                             <circle r="45" cx="50%" cy="50%" fill="none" class="circle__first"/>
                             <circle r="45" cx="50%" cy="50%"  transform="rotate(90 55 55)" data-percent="90" class="circle__second"/>
                         </svg>
@@ -255,7 +255,7 @@
                 <div class="otherSimilarAvatar">
                     <div class="similarAvatarWrapper">
                         <div class="similarAvatarPic"></div>
-                        <svg class="circles" viewBox='0 0 110 110'>
+                        <svg class="circles" viewBox='0 0 110 110' width='100%' height='100%'>
                             <circle r="45" cx="50%" cy="50%" fill="none" class="circle__first"/>
                             <circle r="45" cx="50%" cy="50%"  transform="rotate(90 55 55)" data-percent="10" class="circle__second"/>
                         </svg>
@@ -267,7 +267,7 @@
                 <div class="otherSimilarAvatar">
                     <div class="similarAvatarWrapper">
                         <div class="similarAvatarPic"></div>
-                        <svg class="circles" viewBox='0 0 110 110'>
+                        <svg class="circles" viewBox='0 0 110 110' width='100%' height='100%'>
                             <circle r="45" cx="50%" cy="50%" fill="none" class="circle__first"/>
                             <circle r="45" cx="50%" cy="50%" transform="rotate(90 55 55)" data-percent="10" class="circle__second"/>
                         </svg>
@@ -286,7 +286,7 @@
                 <div class="similarCardAvatar">
                     <div class="similarAvatarWrapper">
                         <div class="similarAvatarPic"></div>
-                        <svg class="circles" viewBox='0 0 110 110'>
+                        <svg class="circles" viewBox='0 0 110 110' width='100%' height='100%'>
                             <circle r="45" cx="50%" cy="50%" fill="none" class="circle__first"/>
                             <circle r="45" cx="50%" cy="50%" transform="rotate(90 55 55)" data-percent="10" class="circle__second"/>
                         </svg>
@@ -320,13 +320,6 @@
             });
 
         function myRenderFunction(canvas){
-            var svgElements = document.body.querySelectorAll('svg');
-            svgElements.forEach(function(item) {
-                item.setAttribute("width", item.getBoundingClientRect().width);
-                item.setAttribute("height", item.getBoundingClientRect().height);
-                item.style.width = null;
-                item.style.height= null;
-            });
             var a = document.createElement('a');
             // toDataURL defaults to png, so we need to request a jpeg, then convert for file download.
             a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
