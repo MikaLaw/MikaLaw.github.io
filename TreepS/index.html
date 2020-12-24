@@ -315,13 +315,11 @@
         };
 
         html2canvas(document.querySelector('.wrapper')).then(function(canvas) {
-            var ctx = canvas.getContext("2d");
-            console.log(ctx, 'ff'); // CanvasRenderingContext2D { ... }
-            window.open('', ctx.toDataURL());
-            // window.open('', canvas.toDataURL());
-            // document.querySelector('.wrapper').append(canvas);
+            let url = canvas.toDataURL();
+            let img = document.createElement('img');
+            img.setAttribute('src', url);
+            document.querySelector('.wrapper').append(img);
         });
-
 
         progressViewSvg();
 
