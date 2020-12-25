@@ -66,6 +66,7 @@
             text-align: center;
             padding: 12px 0;
             font-size: 22px;
+            width: 100%;
         }
         .similarCardBody {
             padding: 0 5% 5% 5%;
@@ -97,6 +98,8 @@
             letter-spacing: -0.41px;
             color: #4DCE96;
             display: inline-block;
+            width: 100%;
+            text-align: center;
             margin-bottom: 16px;
         }
         .similarCardUserCount {
@@ -246,6 +249,37 @@
         .similarButton button:focus {
             outline: none;
         }
+        .screenshot {
+            display: flex;
+            min-width: 645px;
+        }
+        .screenshotBlock {
+            background: #F7F8FA;
+            border-radius: 12px;
+            margin: 0 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .screenshotBody {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 5%;
+            box-sizing: border-box;
+            justify-content: center;
+            flex: 1
+        }
+        .screenshotBlock.antipod .similarCardHead{
+            background: #F04E6B;
+        }
+        .screenshotBlock.antipod .similarCardNickname{
+            color: #F04E6B;
+        }
     </style>
 </head>
 <body>
@@ -330,7 +364,35 @@
             </div>
         </div>
     </div>
-    <script src="dom-to-image-master/dist/dom-to-image.min.js"></script>
+    <div class="screenshot">
+        <div class="screenshotBlock">
+            <div class="similarCardHead">treep</div>
+            <div class="screenshotBody">
+                <div class="similarTitle">Вы похожи на 78%</div>
+                <div class="antipodeCardAvatar"><img src="Ellipse296.jpg" alt=""></div>
+                <div class="similarCardName">Бенедикт Камбербэтч</div>
+                <div href="" class="similarCardNickname">@benedictcumberbatch</div>
+                <div class="screenshotCardUserCount" style="background: #F7F8FA; border-radius: 12px; padding: 12px 22px; display: inline-block; max-width: 187px; word-break: break-all;">
+                    <div class="similarCardUserCountNum">2 560</div>
+                    <div class="similarCardUserCountText">тоже похожи на Джонсона</div>
+                </div>
+            </div>
+        </div>
+        <div class="ya-share2" data-curtain data-shape="round" data-limit="0" data-more-button-type="short" data-services="vkontakte,facebook,odnoklassniki,telegram,twitter,whatsapp,skype"></div>
+        <div class="screenshotBlock antipod">
+            <div class="similarCardHead">treep</div>
+            <div class="screenshotBody">
+                <div class="similarTitle">Ваш антипод</div>
+                <div class="antipodeCardAvatar"><img src="Ellipse296.jpg" alt=""></div>
+                <div class="similarCardName">Бенедикт Камбербэтч</div>
+                <div href="" class="similarCardNickname">@benedictcumberbatch</div>
+            </div>
+        </div>
+    </div>
+    <script src="canvas2image.js"></script>
+    <script src="html2canvas.js"></script>
+    <script src="https://yastatic.net/share2/share.js"></script>
+
     <script>
         function progressViewSvg(){
             let circles = document.querySelectorAll('.circle__second');
@@ -341,17 +403,14 @@
             });
         };
         progressViewSvg();
-        var node = document.querySelector('.wrapper');
+        html2canvas(document.querySelector(".screenshot")).then(canvas => {
+            var imgsrc = canvas.toDataURL();
+            let pic = document.createElement('img');
+            pic.setAttribute('src', imgsrc);
+            document.querySelector(".ya-share2").setAttribute('data-image', imgsrc)
+            Canvas2Image.saveAsPNG(canvas)
+        });
 
-        domtoimage.toPng(node)
-            .then(function (dataUrl) {
-                var img = new Image();
-                img.src = dataUrl;
-                document.body.appendChild(img);
-            })
-            .catch(function (error) {
-                console.error('oops, something went wrong!', error);
-            });
     </script>
 </body>
 </html>
