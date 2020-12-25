@@ -410,8 +410,7 @@
             var imgsrc = canvas.toDataURL();
             let pic = document.createElement('img');
             pic.setAttribute('src', imgsrc);
-            document.querySelector(".ya-share2").setAttribute('data-image', Canvas2Image.saveAsPNG(canvas))
-            Canvas2Image.saveAsPNG(canvas)
+            document.querySelector(".ya-share2").setAttribute('data-image', imgsrc)
         });
 
     </script>
