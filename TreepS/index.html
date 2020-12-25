@@ -378,7 +378,7 @@
                 </div>
             </div>
         </div>
-        <div class="ya-share2" data-curtain data-shape="round" data-limit="0" data-more-button-type="short" data-services="vkontakte,facebook,odnoklassniki,telegram,twitter,whatsapp,skype"></div>
+        <div class="ya-share2" data-image="https://cdn25.img.ria.ru/images/156243/30/1562433005_0:0:3037:2047_1440x900_80_1_1_4684185c40f27b15a7fbdce51f3cd238.jpg.webp?source-sid=rian_photo" data-curtain data-shape="round" data-limit="0" data-more-button-type="short" data-services="vkontakte,facebook,odnoklassniki,telegram,twitter,whatsapp,skype"></div>
         <div class="screenshotBlock antipod">
             <div class="similarCardHead">treep</div>
             <div class="screenshotBody">
@@ -407,7 +407,7 @@
             var imgsrc = canvas.toDataURL();
             let pic = document.createElement('img');
             pic.setAttribute('src', imgsrc);
-            document.querySelector(".ya-share2").setAttribute('data-image', imgsrc)
+            // document.querySelector(".ya-share2").setAttribute('data-image', Canvas2Image.saveAsPNG(canvas))
             Canvas2Image.saveAsPNG(canvas)
         });
 
