@@ -252,6 +252,8 @@
         .screenshot {
             display: flex;
             min-width: 645px;
+            position: absolute;
+            left: -9999px;
         }
         .screenshotBlock {
             background: #F7F8FA;
@@ -363,6 +365,9 @@
                 <a href="" class="similarCardNickname">@benedictcumberbatch</a>
             </div>
         </div>
+
+        <div class="ya-share2" data-curtain data-shape="round" data-limit="0" data-more-button-type="short" data-services="messenger,vkontakte,facebook,odnoklassniki"></div>
+        </div>
     </div>
     <div class="screenshot">
         <div class="screenshotBlock">
@@ -378,7 +383,7 @@
                 </div>
             </div>
         </div>
-        <div class="ya-share2" data-image data-curtain data-shape="round" data-limit="0" data-more-button-type="short" data-services="vkontakte,facebook,odnoklassniki,telegram,twitter,whatsapp,skype"></div>
+
         <div class="screenshotBlock antipod">
             <div class="similarCardHead">treep</div>
             <div class="screenshotBody">
@@ -389,10 +394,9 @@
             </div>
         </div>
     </div>
+    <script src="https://yastatic.net/share2/share.js"></script>
     <script src="canvas2image.js"></script>
     <script src="html2canvas.js"></script>
-    <script src="https://yastatic.net/share2/share.js" async></script>
-
     <script>
         function progressViewSvg(){
             let circles = document.querySelectorAll('.circle__second');
@@ -410,7 +414,8 @@
             var imgsrc = canvas.toDataURL();
             let pic = document.createElement('img');
             pic.setAttribute('src', imgsrc);
-            document.querySelector(".ya-share2").setAttribute('data-image', imgsrc)
+            document.querySelector(".wrapper").appendChild(pic)
+
         });
 
     </script>
