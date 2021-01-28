@@ -1,0 +1,664 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <title>Тест</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+        <style type="text/css">
+            html, body { margin: 0; padding: 0; height: 100%; font-family: Roboto}
+            iframe{ position: absolute; left:0; right:0; bottom:0; top:0; border:0; }
+            .wrapper {
+                width: 100%;
+                height: 100%;
+                background: #aab0b6;
+                color: #ffffff;
+                font-family: Roboto;
+                overflow-x: hidden;
+                display: flex;
+                flex-direction: column;
+            }
+            .section {
+                width: 100%;
+                display: none;
+                align-items: center;
+                justify-content: center;
+                padding: 10%;
+                box-sizing: border-box;
+            }
+            #section__one {
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+            }
+            .section.active {
+                display: flex;
+            }
+            .question__title {
+                font-size: 24px;
+                line-height: 32px;
+                margin-bottom: 8px;
+            }
+            .question__description {
+                font-size: 20px;
+                line-height: 28px;
+                color: rgba(255, 255, 255, 0.7);
+                margin-bottom: 26px;
+            }
+            .question__answer {
+                margin-bottom: 18px;
+            }
+            .question__input {
+                background: transparent;
+                border: 1px solid transparent;
+                border-bottom: 2px solid #ffffff;
+                font-size: 30px;
+                width: 100%;
+                padding: 10px 0px;
+                color: #ffffff;
+            }
+            .question__input::placeholder {
+                color: rgba(255, 255, 255, 0.3);
+                font-size: 24px;
+                line-height: 32px;
+            }
+            .question__input:focus {
+                outline: none;
+            }
+            .question__button {
+                display: flex;
+                align-items: center;
+            }
+            .question__btn {
+                cursor: pointer;
+                transition-duration: 0.1s;
+                transition-property: background-color, color, border-color, opacity, box-shadow;
+                transition-timing-function: ease-out;
+                outline: none;
+                border: 1px solid transparent;
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 12px 0px;
+                padding: 6px 14px;
+                background-color: rgb(255, 255, 255);
+                color: #808389;
+                border-radius: 4px;
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 28px;
+            }
+            .question__btn_icon {
+                width: 17px;
+            }
+            .question__load {
+                display: none;
+            }
+            .question__load img{
+                width: 25px;
+                height: 25px;
+                margin-left: 16px;
+            }
+            .question__list {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 0;
+                list-style: none;
+                margin: 0 -10px;
+                margin-bottom: 30px;
+            }
+            .question__item.active .question__label{
+                display: block;
+            }
+            .question__label {
+                position: absolute;
+                top: -9px;
+                right: -37px;
+                background: white;
+                width: 110px;
+                height: 50px;
+                transform: rotate(45deg);
+                display: none;
+            }
+            .question__label-icon {
+                margin-top: 22px;
+                transform: rotate(-45deg);
+            }
+            .question__label-icon img {
+                width: 20px;
+            }
+            .question__item {
+                width: 295px;
+                padding: 10px;
+                box-sizing: border-box;
+            }
+            .question__block {
+                border: 1px solid #ffffff;
+                text-align: center;
+                padding: 8px 0;
+                position: relative;
+                overflow: hidden;
+            }
+            .question__pic {
+                width: 150px;
+                height: 150px;
+                margin: 0 auto;
+                margin-bottom: 14px;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+            }
+            .question__img {
+                display: block;
+                opacity: 0;
+            }
+            .question__mark {
+                width: 24px;
+                height: 24px;
+                line-height: 24px;
+                font-size: 16px;
+                border: 1px solid #FFFFFF;
+                box-sizing: border-box;
+                border-radius: 3px;
+                margin: 0 auto;
+            }
+            .section__control {
+                display: flex;
+                justify-content: flex-end;
+                padding: 24px;
+                flex: 1;
+                align-items: flex-end;
+            }
+            .section__control-btn {
+                background-color: white;
+                width: 38px;
+                height: 38px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 1px;
+            }
+            .section__control-btn:hover img{
+                opacity: 0.2;
+            }
+            .section__control-btn_prev {
+                border-radius: 0px 4px 4px 0px;
+                transform: rotate(180deg);
+            }
+            .section__control-btn_next {
+                border-radius: 0px 4px 4px 0px;
+            }
+            .section__control-btn img {
+                display: block;
+                width: 14px;
+                transition: 0.3s;
+            }
+            input:-webkit-autofill,
+            input:-webkit-autofill:hover,
+            input:-webkit-autofill:focus
+            input:-webkit-autofill,
+            textarea:-webkit-autofill,
+            textarea:-webkit-autofill:hover
+            textarea:-webkit-autofill:focus,
+            select:-webkit-autofill,
+            select:-webkit-autofill:hover,
+            select:-webkit-autofill:focus {
+                color: white;
+                -webkit-text-fill-color: #ссс;
+                -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+                transition: background-color 5000s ease-in-out 0s;
+                background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(0,174,255,0.04) 50%,rgba(255,255,255,0) 51%,rgba(0,174,255,0.03) 100%);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="section active" id="section__one">
+                <div class="content">
+                    <div class="question">
+                        <div class="question__title">Создайте свой первый проект</div>
+                        <div class="question__description">Введите наименование любого вида объекта, который хотели бы
+                            модернизировать.
+                        </div>
+                        <div class="question__answer">
+                            <input type="text" class="question__input" id="question__input" placeholder="Напишите ответ здесь..." autocomplete="off">
+                        </div>
+                        <div class="question__button">
+                            <button class="question__btn" id="question__btn_one">
+                                <span class="question__btn_text">Далее</span>
+                                <img src="check__icon.svg" alt="" class="question__btn_icon">
+                            </button>
+                            <div class="question__load"><img src="loader.gif" alt=""></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section" id="section__two">
+                <div class="content" style="width: 100%;">
+                    <div class="question__title">Выбор аналогов</div>
+                    <div class="question__description">Посмотрите формы современных аналогов и выберите 3 версии</div>
+                    <ul class="question__list question__list_analog">
+                        <li class="question__item question__item_analog">
+                            <div class="question__block">
+                                <div class="question__pic"
+                                     style="background-image: url('https://via.placeholder.com/150')">
+                                    <img src="https://via.placeholder.com/150" alt="" class="question__img">
+                                </div>
+                                <div class="question__mark">A</div>
+                                <div class="question__label">
+                                    <div class="question__label-icon">
+                                        <img src="check__icon.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="question__item question__item_analog">
+                            <div class="question__block">
+                                <div class="question__pic"
+                                     style="background-image: url('https://via.placeholder.com/150')">
+                                    <img src="https://via.placeholder.com/150" alt="" class="question__img">
+                                </div>
+                                <div class="question__mark">B</div>
+                                <div class="question__label">
+                                    <div class="question__label-icon">
+                                        <img src="check__icon.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="question__item question__item_analog">
+                            <div class="question__block">
+                                <div class="question__pic"
+                                     style="background-image: url('https://via.placeholder.com/150')">
+                                    <img src="https://via.placeholder.com/150" alt="" class="question__img">
+                                </div>
+                                <div class="question__mark">C</div>
+                                <div class="question__label">
+                                    <div class="question__label-icon">
+                                        <img src="check__icon.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="question__item question__item_analog">
+                            <div class="question__block">
+                                <div class="question__pic"
+                                     style="background-image: url('https://via.placeholder.com/150')">
+                                    <img src="https://via.placeholder.com/150" alt="" class="question__img">
+                                </div>
+                                <div class="question__mark">D</div>
+                                <div class="question__label">
+                                    <div class="question__label-icon">
+                                        <img src="check__icon.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="question__item question__item_analog">
+                            <div class="question__block">
+                                <div class="question__pic"
+                                     style="background-image: url('https://via.placeholder.com/150')">
+                                    <img src="https://via.placeholder.com/150" alt="" class="question__img">
+                                </div>
+                                <div class="question__mark">E</div>
+                                <div class="question__label">
+                                    <div class="question__label-icon">
+                                        <img src="check__icon.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="question__item question__item_analog">
+                            <div class="question__block">
+                                <div class="question__pic"
+                                     style="background-image: url('https://via.placeholder.com/150')">
+                                    <img src="https://via.placeholder.com/150" alt="" class="question__img">
+                                </div>
+                                <div class="question__mark">F</div>
+                                <div class="question__label">
+                                    <div class="question__label-icon">
+                                        <img src="check__icon.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="question__item question__item_analog">
+                            <div class="question__block">
+                                <div class="question__pic"
+                                     style="background-image: url('https://via.placeholder.com/150')">
+                                    <img src="https://via.placeholder.com/150" alt="" class="question__img">
+                                </div>
+                                <div class="question__mark">G</div>
+                                <div class="question__label">
+                                    <div class="question__label-icon">
+                                        <img src="check__icon.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="question__item question__item_analog">
+                            <div class="question__block">
+                                <div class="question__pic"
+                                     style="background-image: url('https://via.placeholder.com/150')">
+                                    <img src="https://via.placeholder.com/150" alt="" class="question__img">
+                                </div>
+                                <div class="question__mark">H</div>
+                                <div class="question__label">
+                                    <div class="question__label-icon">
+                                        <img src="check__icon.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="question__item question__item_analog">
+                            <div class="question__block">
+                                <div class="question__pic"
+                                     style="background-image: url('https://via.placeholder.com/150')">
+                                    <img src="https://via.placeholder.com/150" alt="" class="question__img">
+                                </div>
+                                <div class="question__mark">I</div>
+                                <div class="question__label">
+                                    <div class="question__label-icon">
+                                        <img src="check__icon.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="question__item question__item_analog">
+                            <div class="question__block">
+                                <div class="question__pic"
+                                     style="background-image: url('https://via.placeholder.com/150')">
+                                    <img src="https://via.placeholder.com/150" alt="" class="question__img">
+                                </div>
+                                <div class="question__mark">J</div>
+                                <div class="question__label">
+                                    <div class="question__label-icon">
+                                        <img src="check__icon.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="question__button">
+                        <button class="question__btn" id="question__btn_two">
+                            <span class="question__btn_text">Далее</span>
+                            <img src="check__icon.svg" alt="" class="question__btn_icon">
+                        </button>
+                        <div class="question__icon"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="section" id="section__three">
+                <div class="content" style="width: 100%;">
+                    <div class="question__title">Процесс использования</div>
+                    <div class="question__description">Представьте процесс их использования и выберете самую удобную
+                        версию
+                    </div>
+                    <ul class="question__list question__list_choice">
+                        <li class="question__item">
+                            <div class="question__block">
+                                <div class="question__pic"
+                                     style="background-image: url('https://via.placeholder.com/150')">
+                                    <img src="https://via.placeholder.com/150" alt="" class="question__img">
+                                </div>
+                                <div class="question__mark">A</div>
+                                <div class="question__label">
+                                    <div class="question__label-icon">
+                                        <img src="check__icon.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="question__item">
+                            <div class="question__block">
+                                <div class="question__pic"
+                                     style="background-image: url('https://via.placeholder.com/150')">
+                                    <img src="https://via.placeholder.com/150" alt="" class="question__img">
+                                </div>
+                                <div class="question__mark">B</div>
+                                <div class="question__label">
+                                    <div class="question__label-icon">
+                                        <img src="check__icon.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="question__item">
+                            <div class="question__block">
+                                <div class="question__pic"
+                                     style="background-image: url('https://via.placeholder.com/150')">
+                                    <img src="https://via.placeholder.com/150" alt="" class="question__img">
+                                </div>
+                                <div class="question__mark">C</div>
+                                <div class="question__label">
+                                    <div class="question__label-icon">
+                                        <img src="check__icon.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="question__button">
+                        <button class="question__btn" id="question__btn_three">
+                            <span class="question__btn_text">Далее</span>
+                            <img src="check__icon.svg" alt="" class="question__btn_icon">
+                        </button>
+                        <div class="question__icon"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="section" id="section__four" style="padding: 0;height: 100%;">
+                <div id="my-embedded-typeform" style="width: 100%; height: 100%;"></div>
+            </div>
+            <div class="section__control">
+                <a href="#" class="section__control-btn section__control-btn_prev"><img src="arroe__icon.svg" alt=""></a>
+                <a href="#" class="section__control-btn section__control-btn_next"><img src="arroe__icon.svg" alt=""></a>
+            </div>
+        </div>
+    </body>
+    <script>
+        let prevBtn = document.querySelector('.section__control-btn_prev');
+        let nextBtn = document.querySelector('.section__control-btn_next');
+        let sections = document.querySelectorAll('.section');
+        let analogItem = document.querySelectorAll('.question__list_analog li');
+        let choiceItem = document.querySelectorAll('.question__list_choice li');
+        let choiceItemPic = document.querySelectorAll('.question__list_choice li .question__pic');
+        function makeMove(btn, move) {
+            btn.addEventListener('click', function () {
+                if (move === 'forward') {
+                    let sectionActive = document.querySelector('.section.active');
+                    let sectionOne = document.getElementById('section__one');
+                    let sectionTwo= document.getElementById('section__two');
+                    if (sections[sections.length - 1] !== sectionActive && sectionActive !== sectionOne && sectionActive !== sectionTwo) {
+                        sectionActive.classList.remove('active');
+                        sectionActive.nextElementSibling.classList.add('active');
+                    }
+                } else if (move === 'backward'){
+                    let sectionActive = document.querySelector('.section.active');
+                    if (sections[0] !== sectionActive) {
+                        sectionActive.classList.remove('active');
+                        sectionActive.previousElementSibling.classList.add('active')
+                    }
+                }
+            });
+        };
+        function makeChoice() {
+            for (let i = 0; i < analogItem.length; i++) {
+                analogItem[i].addEventListener('click', function (e) {
+                    this.classList.toggle('active');
+                    let activeItem = document.querySelectorAll('.question__list_analog li.active');
+                    let activeItemImg = document.querySelectorAll('.question__list_analog li.active .question__pic');
+                    if (activeItem.length > 3) {
+                        analogItem[i].classList.remove('active')
+                    } else if (activeItem.length < 4){
+                        for (let j = 0; j < activeItem.length; j++) {
+                            choiceItemPic[j].setAttribute('style', activeItemImg[j].getAttribute('style'))
+                        }
+                    }
+                    document.getElementById('question__btn_two').addEventListener('click', function () {
+                        if (activeItem.length === 3) {
+                            document.getElementById('section__two').classList.remove('active');
+                            document.getElementById('section__three').classList.add('active');
+                        }
+                    });
+                });
+            }
+            for (let i = 0; i < choiceItem.length; i++) {
+                choiceItem[i].addEventListener('click', function (e) {
+                    this.classList.toggle('active');
+                    let activeItem = document.querySelectorAll('.question__list_choice li.active');
+                    if (activeItem.length > 1) {
+                        choiceItem[i].classList.remove('active')
+                    }
+                    document.getElementById('question__btn_three').addEventListener('click', function () {
+                        if (activeItem.length === 1) {
+                            document.getElementById('section__three').classList.remove('active');
+                            document.getElementById('section__four').classList.add('active');
+                            document.querySelector('.section__control').setAttribute('style', 'display: none')
+                        }
+                    });
+                })
+            }
+        }
+        function makeSearch() {
+            document.getElementById('question__btn_one').addEventListener('click', function () {
+                document.querySelector('.question__load').setAttribute('style', 'display: block');
+                let searchRes = document.getElementById('question__input').value;
+                function toggle(){
+                    document.getElementById('section__one').classList.remove('active');
+                    document.getElementById('section__two').classList.add('active');
+                    document.querySelector('.question__load').setAttribute('style', 'display: none')
+                };
+                setTimeout(toggle, 2000);
+                function loadFile(url) {
+                    return new Promise((resolve, reject) => {
+                        const xhr = new XMLHttpRequest();
+                        xhr.open('GET', url);
+                        xhr.send();
+                        xhr.addEventListener('load', () => {
+                            if (xhr.status === 404) {
+                                reject(xhr.statusText);
+                            } else {
+                                resolve(xhr.response)
+                            }
+                        })
+                    })
+                }
+                loadFile(`https://www.googleapis.com/customsearch/v1?q=${searchRes}&cx=41dbda0cf59435eca&key=AIzaSyBckN9a3YPQ2e0Bukt1_IqLtxF_F5IEQcg&searchType=image&alt=json`)
+                    .then((data) => {
+                        let { items } = JSON.parse(data);
+                        for (let i = 0; i < items.length; i++) {
+                            let activeItemImg = document.querySelectorAll('.question__list_analog li .question__pic');
+                            activeItemImg[i].setAttribute('style', `background-image: url(${items[i].link})`)
+                        }
+                    })
+                    .catch((error) => {
+                        console.log(error, 'error')
+                    })
+
+            })
+
+        }
+        makeMove(nextBtn, 'forward');
+        makeMove(prevBtn, 'backward');
+        makeChoice();
+        makeSearch();
+    </script>
+    <script src="https://embed.typeform.com/embed.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        window.addEventListener("DOMContentLoaded", function() {
+            var el = document.getElementById("my-embedded-typeform");
+            window.typeformEmbed.makeWidget(el, "https://admin.typeform.com/to/e9H31izO",
+                {
+                    hideHeaders: true,
+                    hideFooter: true,
+                    buttonText: "Take the survey!",
+                    onSubmit: function (event) {
+                        let id = event.response_id;
+                        function getResponses(url) {
+                            return new Promise((resolve, reject) => {
+                                const xhr = new XMLHttpRequest();
+                                xhr.open('GET', url);
+                                xhr.setRequestHeader('Authorization', 'Bearer FJCXk3T1bSNYYcr8p8xDqHkvYyA8S6k5jaJp5vJQrkip');
+                                xhr.send();
+                                xhr.addEventListener('load', () => {
+                                    if (xhr.status === 404) {
+                                        reject(xhr.statusText);
+                                    } else {
+                                        resolve(xhr.response)
+                                    }
+                                })
+                            })
+                        };
+                        function createProjects(url, data) {
+                            return new Promise((resolve, reject) => {
+                                const xhr = new XMLHttpRequest();
+                                xhr.open('POST', url);
+                                xhr.setRequestHeader('Authorization', 'JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQzMzczNzU3LCJqdGkiOiJjZmVhNjcyYzUwYmM0Y2NjOGZiZDNkZWNlYmJjOGQ3OCIsInVzZXJfaWQiOjUzfQ.QV-cpNDZ0prCzLGRwNYS7GE42kVQZd0PB9sOJC0IHpw');
+                                xhr.send(data);
+                                xhr.addEventListener('load', () => {
+                                    if (xhr.status === 404) {
+                                        reject(xhr.statusText);
+                                    } else {
+                                        resolve(xhr.response)
+                                    }
+                                })
+                            })
+                        };
+                        let userData = []
+                        getResponses(`https://api.typeform.com/forms/e9H31izO/responses?included_tokens=${id}`)
+                            .then((data) => {
+                                let { answers } = JSON.parse(data).items[0];
+                                answers.forEach(items => {
+                                    userData.push({
+                                        type: items.field.ref,
+                                        answer: items.text ? items.text :
+                                            items.choices ? items.choices.labels :
+                                                items.choice ? items.choice.label ? items.choice.label : items.choice.other : ''
+                                    });
+                                });
+                            })
+                            .then(() => {
+                                getResponses('https://api.typeform.com/forms/e9H31izO')
+                                    .then((data) => {
+                                        let { fields } = JSON.parse(data);
+                                        userData.forEach((items, i )=> items.question = fields[i].title);
+                                        let userDataSort = {category:[],monetization:[],description:[]};
+                                        for (let i = 0; i < userData.length; i++) {
+                                            let data = userData[i].type.substr(0, userData[i].type.indexOf('_', 0));
+                                            switch (data) {
+                                                case '1':
+                                                    userDataSort.description.push({answer: userData[i].answer, question: userData[i].question})
+                                                    break;
+                                                case '2':
+                                                    userDataSort.monetization.push({answer: userData[i].answer, question: userData[i].question})
+                                                    break;
+                                                case '3':
+                                                    userDataSort.category.push({answer: userData[i].answer, question: userData[i].question})
+                                                    break;
+                                                default:
+                                                    userDataSort = {}
+                                            }
+
+                                        }
+                                        console.log(userData, 'userData');
+                                        console.log(userDataSort, 'userDataSort');
+
+                                        createProjects('http://165.227.136.251:30023/api/projects/', userDataSort)
+                                            .then((data) => {
+                                                console.log(data, 'error')
+                                            })
+                                            .catch((error) => {
+                                                console.log(error, 'error')
+                                            })
+
+                                    })
+                                    .catch((error) => {
+                                        console.log(error, 'error')
+                                    })
+                            })
+                            .catch((error) => {
+                                console.log(error, 'error')
+                            })
+                    }});
+        });
+    </script>
+</html>
