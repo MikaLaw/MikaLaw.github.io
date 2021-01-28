@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3963f2d1-53ea-4a68-8013-9b2c93b12cee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/innovator/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/innovator/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/innovator/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="3963f2d1-53ea-4a68-8013-9b2c93b12cee" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +42,7 @@
       <updated>1608801492093</updated>
       <workItem from="1608801493298" duration="12000" />
       <workItem from="1611843239279" duration="13000" />
+      <workItem from="1611843967035" duration="19000" />
     </task>
     <servers />
   </component>
