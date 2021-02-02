@@ -563,7 +563,7 @@
         //     }
         // }
         document.getElementById('btn').addEventListener('click', function () {
-            AjaxHelper(urls.formResponse + formParams.formId + formParams.responseId, 'GET', null, [['Authorization', `Bearer ${tokens.formToken}`], ['Content-Type', "application/json; charset=UTF-8"], ['Access-Control-Allow-Origin', "http://165.227.136.251:5000/"], ['Access-Control-Allow-Headers', "Authorization, Content-Type, Origin"], ['Access-Control-Allow-Methods', "GET, POST, PUT, DELETE, OPTIONS"]])
+            AjaxHelper(urls.formResponse + formParams.formId + formParams.responseId, 'GET', null, [['Authorization', `Bearer ${tokens.formToken}`]])
         });
         //
         // function getForm() {
