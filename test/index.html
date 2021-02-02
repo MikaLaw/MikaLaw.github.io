@@ -563,7 +563,7 @@
         //     }
         // }
         document.getElementById('btn').addEventListener('click', function () {
-            AjaxHelper(urls.formResponse + formParams.formId + formParams.responseId, 'GET', null)
+            AjaxHelper('https://api.typeform.com/oauth/authorize', 'GET', null)
         });
         //
         // function getForm() {
