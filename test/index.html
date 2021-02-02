@@ -516,9 +516,9 @@
                         if (ajax.status === 404) {reject(ajax.statusText)}
                         else {resolve(ajax.response)}
                     };
-                    for (let i = 0; i < headers.length; i++) {
-                        ajax.setRequestHeader(headers[i][0], headers[i][1]);
-                    }
+                    // for (let i = 0; i < headers.length; i++) {
+                    //     ajax.setRequestHeader(headers[i][0], headers[i][1]);
+                    // }
                     if (data) { ajax.send(data) }
                     else { ajax.send() }
                 });
@@ -563,7 +563,7 @@
         //     }
         // }
         document.getElementById('btn').addEventListener('click', function () {
-            AjaxHelper(urls.formResponse + formParams.formId + formParams.responseId, 'GET', null, [])
+            AjaxHelper(urls.formResponse + formParams.formId + formParams.responseId, 'GET', null)
         });
         //
         // function getForm() {
