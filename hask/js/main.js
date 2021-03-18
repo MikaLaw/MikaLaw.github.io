@@ -5,12 +5,17 @@ $(function() {
             loop: true,
             margin: 23,
             nav: true,
-            navText: [ '<div><img src="/img/icon/arrow-prev.svg" alt=""></div>', '<div><img src="/img/icon/arrow-next.svg" alt=""></div>'],
+            navText: [ '<div><img src="img/icon/arrow-prev.svg" alt=""></div>', '<div><img src="img/icon/arrow-next.svg" alt=""></div>'],
             responsive: {
                 0: {
-                    items: 2,
+                    items: 1,
+                    margin: 18,
+                    stagePadding:16,
                 },
                 768: {
+                    items: 2
+                },
+                962: {
                     items: 3
                 }
             }
@@ -43,18 +48,6 @@ $(function (){
     });
 });
 
-// Scroll header
-$(function () {
-    $(window).scroll(function() {
-      if ($(document).scrollTop() > $('#advantages').offset().top) {
-          $('.header').addClass('header-modify');
-              } else {
-          $('.header').removeClass('header-modify');
-        }
-
-    });
-});
-
 // Menu scroll
 $('a[href^="#"]').click(function(e) {
     var target = $(this).attr('href');
@@ -64,16 +57,18 @@ $('a[href^="#"]').click(function(e) {
     return false;
 });
 
+$(document).ready(function(){
+    //Wow.js init
+    wow = new WOW(
+        {
+            animateClass: 'animated',
+            mobile: true,
+            offset: 100
+        }
+    );
+    wow.init();
+});
 
-//Wow.js init
-wow = new WOW(
-    {
-        animateClass: 'animated',
-        mobile: true,
-        offset: 100
-    }
-);
-wow.init();
 
 
 
