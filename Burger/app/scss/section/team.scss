@@ -1,0 +1,112 @@
+.team {
+	background: url('../img/bg/team.jpg') no-repeat center;
+	background-size: cover;
+	position: relative;
+}
+
+.team__block {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 50%;    
+   	background: rgba($second, 0.9);
+   	padding-left: 80px; 
+   	padding-top: 65px;
+}
+
+.team__acco {
+	max-width: 380px;
+	margin-top: 70px;
+	padding-left: 20px;
+	 .active {
+		.team__acco-trigger {
+			color: $contrast;
+			&:before {
+				transform: rotate(180deg);
+			}
+		}
+	}
+}
+
+.team__acco-item {
+	margin-bottom: 28px;
+}
+
+.team__acco-trigger {
+	font-family: 'Gagalin Regular';
+	color: $prime;
+	text-transform: uppercase;
+	text-decoration: none;
+	opacity: 0.9;
+	position: relative;
+	transition: 0.3s;
+	display: inline-block;
+	&:before {
+		content: '';		
+		left: -20px;
+		@include pos(absolute);
+		width: 0;
+		height: 0;
+		border-left: 5px solid transparent;
+		border-right: 5px solid transparent;
+		border-top: 8px solid $contrast;
+		transition: 0.3s;
+	}
+	&:focus {
+		outline: none;
+	}
+	&:hover {
+		color: $contrast;
+	}
+}
+
+.team__acco-content {
+	height: 0;
+	overflow: hidden;
+	transition: 0.3s;
+}
+
+.team__acco-block {
+	@extend %clearfix;	
+}
+
+.team__acco-avatar {
+	@include float(27%);	
+	margin-top: 12px;
+}
+
+.team__acco-img {
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+	margin: 0 auto;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.team__acco-pic {
+	position: absolute;
+	left: -9999px;
+}
+
+.team__acco-desc {
+	@include float(73%);	
+	opacity: 0.9;
+	margin-top: 12px;
+	padding: 0px 21px;
+}
+
+.team__acco-title {
+	margin-bottom: 10px;
+	@include Ubuntu(bold);
+	font-size: 14px;
+	color: $prime;
+}
+
+.team__acco-text {
+	p {
+		color: $prime;
+	}	
+}
