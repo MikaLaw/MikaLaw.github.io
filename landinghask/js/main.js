@@ -67,6 +67,33 @@ $(document).ready(function(){
             }
         );
         wow.init();
+
+    let featuresItem = document.querySelectorAll('.features__item');
+    let downloadOnePic = document.querySelector('.download-one__pic');
+    let processItem = document.querySelectorAll('.process__item');
+    let reviewItem = document.querySelectorAll('.review__item');
+    let btn = document.querySelector('.download-two .download__link');
+
+    if ( window.innerWidth < 480 ) {
+        console.log(';llk')
+        for (let i = 0; i < featuresItem.length; i++) {
+            featuresItem[i].classList.remove('fadeInUp');
+            featuresItem[i].classList.add('hvr-wobble-vertical');
+        }
+        for (let i = 0; i < processItem.length; i++) {
+            processItem[i].classList.remove('fadeInUp');
+            processItem[i].classList.add('hvr-wobble-vertical');
+        }
+        for (let i = 0; i < reviewItem.length; i++) {
+            reviewItem[i].classList.remove('fadeInUp');
+            reviewItem[i].classList.add('hvr-wobble-vertical');
+        }
+        downloadOnePic.classList.remove('fadeInUp');
+        downloadOnePic.classList.add('hvr-wobble-vertical');
+
+        btn.classList.add('tadaBig');
+    }
+
 });
 
 
