@@ -59,14 +59,27 @@ $('a[href^="#"]').click(function(e) {
 
 $(document).ready(function(){
     //Wow.js init
-    wow = new WOW(
-        {
-            animateClass: 'animated',
-            mobile: true,
-            offset: 100
-        }
-    );
-    wow.init();
+
+    if ( $(window).width() < 480 ) {
+        wow = new WOW(
+            {
+                animateClass: 'animated',
+                mobile: true,
+                offset: 1
+            }
+        );
+        wow.init();
+    } else {
+        wow = new WOW(
+            {
+                animateClass: 'animated',
+                mobile: true,
+                offset: 100
+            }
+        );
+        wow.init();
+    }
+
 });
 
 
