@@ -27,9 +27,9 @@ $(function() {
 // Header menu
 $(function (){
     var hamburger = $('.navbar'),
-        mainMenu = $('.nav__hidden'),
+        mainMenu = $('.nav__menu'),
         nav =  $('.nav'),
-        link = $('.nav__item-hidden');
+        link = $('.nav__item');
 
     hamburger.on('click', function(e){
         e.preventDefault();
@@ -49,18 +49,16 @@ $(function (){
 });
 
 // Menu scroll
-$('a[href^="#"]').click(function(e) {
-    var target = $(this).attr('href');
+$('a[data-anchor^="#"]').click(function(e) {
+    var target = $(this).attr('data-anchor');
     $('html, body').animate({
-        scrollTop: $(target).offset().top -75
+        scrollTop: $(target).offset().top
     }, 800);
     return false;
 });
 
 $(document).ready(function(){
     //Wow.js init
-
-    if ( $(window).width() < 480 ) {
         wow = new WOW(
             {
                 animateClass: 'animated',
@@ -69,17 +67,6 @@ $(document).ready(function(){
             }
         );
         wow.init();
-    } else {
-        wow = new WOW(
-            {
-                animateClass: 'animated',
-                mobile: true,
-                offset: 100
-            }
-        );
-        wow.init();
-    }
-
 });
 
 
