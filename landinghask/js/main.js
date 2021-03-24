@@ -58,16 +58,28 @@ $('a[data-anchor^="#"]').click(function(e) {
 });
 
 $(document).ready(function(){
-    //Wow.js init
+
+    if ( window.innerWidth < 480 ) {
+        //Wow.js init
         wow = new WOW(
-            {
-                animateClass: 'animated',
-                mobile: true,
-                offset: 1
-            }
+          {
+              animateClass: 'animated',
+              mobile: true,
+              offset: 0
+          }
         );
         wow.init();
-
+    } else {
+        //Wow.js init
+        wow = new WOW(
+          {
+              animateClass: 'animated',
+              mobile: true,
+              offset: 100
+          }
+        );
+        wow.init();
+    }
     let featuresItem = document.querySelectorAll('.features__item');
     let downloadOnePic = document.querySelector('.download-one__pic');
     let processItem = document.querySelectorAll('.process__item');
