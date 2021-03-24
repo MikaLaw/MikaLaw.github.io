@@ -72,10 +72,8 @@ $(document).ready(function(){
     let downloadOnePic = document.querySelector('.download-one__pic');
     let processItem = document.querySelectorAll('.process__item');
     let reviewItem = document.querySelectorAll('.review__item');
-    let btn = document.querySelector('.download-two .download__link');
 
     if ( window.innerWidth < 480 ) {
-        console.log(';llk')
         for (let i = 0; i < featuresItem.length; i++) {
             featuresItem[i].classList.remove('fadeInUp');
             featuresItem[i].classList.add('hvr-wobble-vertical');
@@ -90,8 +88,6 @@ $(document).ready(function(){
         }
         downloadOnePic.classList.remove('fadeInUp');
         downloadOnePic.classList.add('hvr-wobble-vertical');
-
-        btn.classList.add('tadaBig');
     }
 
 });
