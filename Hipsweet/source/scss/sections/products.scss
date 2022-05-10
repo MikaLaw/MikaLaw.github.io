@@ -1,0 +1,68 @@
+.products {
+  background: linear-gradient(to top, rgba(#ff9800, 0.85), rgba(#ff9800, 0.85)), url("../img/products-pattern.png") repeat;
+}
+
+.products__head {
+  max-width: 810px;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 64px;
+
+  .section__title {
+    margin-bottom: 12px;
+  }
+
+  .section__text p {
+    color: $dark-text-contrast;
+  }
+}
+
+.products__list {
+  font-size: 0;
+  * {
+    font-size: 14px;
+  }
+}
+
+.products__item {
+  @include inlineblock($valign: top);
+  width: calc(25% - 20px);
+  margin-right: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+
+  &:nth-last-child(-n + 4) {
+    margin-bottom: 0px;
+  }
+}
+
+.products__icon {
+  padding: 39.65%;
+  margin: 0 12%;
+  margin-bottom: 8px;
+  background: rgba(#000000, 0.1);
+  border-radius: 50%;
+  position: relative;
+}
+
+.products__pic {
+  position: absolute;
+  left: 0;
+  bottom: 1%;
+  max-width: 113%;
+}
+
+.products__info {
+  padding: 0 14px;
+}
+
+.products__title {
+  font-size: 32px;
+  font-family: $title-font;
+  color: $title;
+  margin-bottom: 8px;
+}
+
+.products__desc {
+  color: $dark-text-contrast;
+}

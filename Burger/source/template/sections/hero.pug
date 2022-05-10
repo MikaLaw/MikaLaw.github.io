@@ -1,0 +1,15 @@
+section.hero
+    include ../components/header
+    .hero-content
+        .container
+            .hero__img
+                img.hero__pic(src="./img/hero-burger.png", alt="Изображение бургера")
+            .hero__desc 
+                h1.section__title Мы делаем
+                    span.hero__subtitle натуральные бургеры
+   
+    .hero-arrow
+        a.hero-arrow__link(data-index="2" href="#2")
+            svg.hero-arrow__icon
+                use(xlink:href=`./img/sprite.svg#arrow-scroll`)      
+            

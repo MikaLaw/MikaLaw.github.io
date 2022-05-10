@@ -1,0 +1,79 @@
+.footer {
+  min-width: 380px;
+  background-color: $text;
+  padding: 10px 0;
+  height: 50px;
+  margin-top: -50px;
+  @include tablets {
+    height: 90px;
+    margin-top: -90px;
+  }
+  .container {
+    @extend %clearfix;
+  }
+}
+.footer__left {
+  float: left;
+  width: 50%;
+  @include tablets {
+    float: none;
+    width: 100%;
+    text-align: center;
+  }
+}
+.footer__right {
+  float: right;
+  width: 50%;
+  text-align: right;
+  @include tablets {
+    float: none;
+    width: 100%;
+    text-align: center;
+  }
+}
+.copyright {
+  font-size: 14px;
+  line-height: 30px;
+  font-weight: 200;
+  color: $subtext;
+  @include tablets {
+    margin-bottom: 10px;
+  }
+}
+.soc__item {
+  margin-right: 4px;
+  @include inlineblock();
+  &:last-child {
+    margin-right: 0;
+  }
+  @include tablets{
+    margin-right: 10px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+.soc__link {
+  display: block;
+}
+@each $soc in ("fb", "vk", "tw") {
+  .soc__link-#{$soc} {
+    &:hover {
+      .soc__icon {
+        fill: #4463a6;
+        @if $soc == "vk" {
+          fill: #5d99c3;
+        } @else if $soc == "tw" {
+          fill: #6ac4d9;
+        }
+      }
+    }
+  }
+}
+.soc__icon {
+  display: block;
+  width: 30px;
+  height: 30px;
+  fill: #9c9c9c;
+  transition: 0.3s;
+}

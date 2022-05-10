@@ -1,0 +1,24 @@
+-   
+    var productsItems = [
+        {title:"Dignissimos debitis", price:"$200.00", img:"img_1", delay:"0s"},
+        {title:"Consectetur adipisicing", price:"$390.00", img:"img_2", delay:"0s"},
+        {title:"Temporibus aperiam", price:"$180.00", img:"img_3", delay:"0s"},
+        {title:"Expedita fugiat", price:"$600.00", img:"img_4", delay:"0.2s"},
+        {title:"Consectetur adipisicing", price:"$330.00", img:"img_5", delay:"0.2s"},
+        {title:"Consectetur Amet", price:"$450.00", img:"img_6", delay:"0.2s"}
+        ]
+section.products#products.py-5
+    .container 
+        .row.mb-5
+            .col 
+                .products__head 
+                    +sectionTitle("Journey", "Your Journey Starts Here", "Journey")
+        ul.products__list.row 
+            each productsItem in productsItems
+                li.products__item.col-lg-4.col-md-6.col-12.mb-4.wow.animate__animated.animate__fadeInUp(data-wow-duration="1.4s"  data-wow-delay=`${productsItem.delay}`) 
+                    .product__pic
+                        img.product__img.img-fluid(src=`./img/${productsItem.img}.jpg`, alt="Изображение места")
+                    .product__info.d-flex.flex-column.align-items-center.text-white
+                        .products__price.mb-3= productsItem.price
+                        h3.products__title= productsItem.title
+

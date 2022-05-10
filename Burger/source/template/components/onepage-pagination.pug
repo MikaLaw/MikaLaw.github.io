@@ -1,0 +1,15 @@
+-   
+    var navItems = [
+        {num:"1", class:"active"},
+        {num:"2", class:""},
+        {num:"3", class:""},
+        {num:"4", class:""},
+        {num:"5", class:""},
+        {num:"6", class:""},
+        {num:"7", class:""},
+        {num:"8", class:""}
+        ]
+ul.onepage-pagination
+    each navItem in navItems
+        li
+            a(data-index=`${navItem.num}` href=`#${navItem.num}` class=`${navItem.class}`)

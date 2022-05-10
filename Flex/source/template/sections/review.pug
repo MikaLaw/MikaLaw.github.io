@@ -1,0 +1,23 @@
+-   
+    var reviewItems = [
+        {img: "review-1", name:"Matthew Dix", proff:"Graphic Design", text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim."},     
+        {img: "review-2", name:"Jaelynn Castillo ", proff:"Graphic Design", text:"Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"},
+        {img: "review-3", name:"Nick Karvounis", proff:"Graphic Design", text:"Sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam"},
+        {img: "review-4", name:"Mike Petrucci", proff:"Graphic Design", text:"Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim."},
+    ];
+
+section.review 
+    .container
+        .wow.animate__fadeInUp(data-wow-duration="1.2s") 
+            +sectionTitle("Happy Clients", "What people say", "review__title")
+        ul.review__list
+            each reviewItem in reviewItems
+                li.review__item
+                    .review__avatar 
+                        .review__pic
+                            img.section__img(src=`./img/${reviewItem.img}.jpg`, alt=`${reviewItem.name}`)
+                    .review__desc
+                        .review__desc-title 
+                            .review__desc-name= reviewItem.name 
+                            .review__desc-proff= reviewItem.proff 
+                        .review__desc-text= reviewItem.text

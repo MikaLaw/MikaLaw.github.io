@@ -1,0 +1,18 @@
+-	
+	var socItems = [
+		{icon: "fb", link: "https://www.facebook.com/"},			
+		{icon: "vk", link: "https://vk.com/"},
+		{icon: "tw", link: "https://twitter.com/"}
+	]
+footer.footer
+	.container
+		.footer__left
+			.copyright © Дизайн сайта был разработан в школе LoftSchool
+		.footer__right
+			ul.soc__list
+				each socItem in socItems
+					li.soc__item
+						a(class=`soc__link soc__link-${socItem.icon}`, href=`${socItem.link}` target="_blank" rel="noopener")
+							svg.soc__icon
+								use(xlink:href=`../../img/sprite.svg#${socItem.icon}`)
+

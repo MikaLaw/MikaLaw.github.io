@@ -1,0 +1,14 @@
+//config
+@import "../../node_modules/normalize.css/normalize.css";
+
+@import "config/mixins";
+@import "config/variables";
+@import "config/animate";
+@import "config/fonts";
+@import "config/base";
+
+//sections
+@import "sections/*.scss";
+
+//components
+@import "components/*.scss";

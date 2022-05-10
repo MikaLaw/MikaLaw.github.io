@@ -1,0 +1,68 @@
+doctype html
+html(lang='ru')
+    head
+        meta(charset="utf-8")
+        title MoGo
+        meta(content="Пример flex сайта" name="author")
+        meta(content="Лендинг" name="description")
+        meta(content="Пример flex сайта" name="keywords")
+        meta(content="width=device-width, initial-scale=1" name="viewport")
+        meta(content="IE=edge" http-equiv="X-UA-Compatible" )
+        include components/favicon
+        link(rel='stylesheet' href='./css/foundation.min.css')
+        link(rel='stylesheet' href='./css/main.min.css')
+    body
+        include ./components/mixins 
+        .wrapper
+            // SECTION HERO START
+            include ./sections/hero
+            // SECTION HERO END
+            // SECTION ABOUT START
+            include ./sections/about
+            // SECTION ABOUT END
+            // SECTION COUNTER START
+            include ./sections/counter
+            // SECTION COUNTER END
+            // SECTION INSTRUMENTS START
+            include ./sections/instruments
+            // SECTION INSTRUMENTS END
+            // SECTION UNIQUE START
+            include ./sections/unique 
+            // SECTION UNIQUE END
+            // SECTION SERVICES START
+            include ./sections/services 
+            // SECTION SERVICES END
+            // SECTION QUOTE-ONE START
+            include ./sections/quote-one
+            // SECTION QUOTE-ONE END
+            // SECTION TEAM START
+            include ./sections/team 
+            // SECTION TEAM END
+            // SECTION CLIENTS START
+            include ./sections/clients 
+            // SECTION CLIENTS END
+            // SECTION WORKS START
+            include ./sections/works 
+            // SECTION WORKS END
+            // SECTION QUOTE-TWO START
+            include ./sections/quote-two 
+            // SECTION QUOTE-TWO END
+            // SECTION REVIEW START
+            include ./sections/review 
+            // SECTION REVIEW END
+            // SECTION BLOG START
+            include ./sections/blog
+            // SECTION BLOG END
+            // SECTION MAP START
+            include ./sections/map
+            // SECTION MAP END
+            // SECTION FOOTER START
+            include ./sections/footer
+            // SECTION FOOTER END                   
+
+        script(src="./js/foundation.min.js")   
+        script(src="./js/main.min.js")
+        <!--[if lt IE 9]>
+        script(src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js")
+        <![endif]-->
+        

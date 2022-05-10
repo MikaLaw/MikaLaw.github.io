@@ -1,0 +1,50 @@
+doctype html
+html(lang='ru')
+    head
+        meta(charset="utf-8")
+        title Burgers
+        meta(content="Пример one page scroll сайта" name="author")
+        meta(content="Лендинг бургерной" name="description")
+        meta(content="Пример one page scroll сайта" name="keywords")
+        meta(name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, minimum-scale=1, user-scalable=no")
+        //- meta(content="width=960, user-scalable=no" name="viewport")       
+        meta(content="IE=edge" http-equiv="X-UA-Compatible" )
+        include components/favicon
+        link(rel='stylesheet' href='./css/foundation.min.css')
+        link(rel='stylesheet' href='./css/main.min.css')
+    body
+        include components/preloader
+        .wrapper
+            .maincontent
+                // SECTION HERO START
+                include ./sections/hero
+                // SECTION HERO END
+                // SECTION ADVANTAGES START
+                include ./sections/advantages
+                // SECTION ADVANTAGES END
+                // SECTION PRODUCTS-ONE START
+                include ./sections/burgers
+                // SECTION PRODUCTS-ONE END
+                // SECTION TEAM START
+                include ./sections/team
+                // SECTION TEAM END
+                // SECTION PRODUCTS-TWO START
+                include ./sections/menu
+                // SECTION PRODUCTS-TWO END
+                // SECTION REVIEW START
+                include ./sections/review
+                // SECTION REVIEW END
+                // SECTION ORDER START
+                include ./sections/order
+                // SECTION ORDER END
+                // SECTION MAP START              
+                include ./sections/map
+                // SECTION MAP END
+        include ./components/review-modal   
+        include ./components/form-modal   
+        include ./components/onepage-pagination      
+
+        script(src="./js/foundation.min.js" defer) 
+        div#yamap
+        script(src="./js/main.min.js" defer)
+        

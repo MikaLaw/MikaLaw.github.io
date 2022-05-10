@@ -1,0 +1,24 @@
+-   
+    var advantagesItems = [
+        {icon: "icon-tasty-1.png", text:"Лучшие повара своего дела",imgAlt:"Изображение шляпы повара", delay:"0.1s"},
+        {icon: "icon-tasty-2.png", text:"Свежие ингредиенты",imgAlt:"Изображение зеленого листочка", delay:"0.3s"},
+        {icon: "icon-tasty-3.png", text:"Приготовлено с любовью",imgAlt:"Изображение сердца", delay:"0.5s"},
+    ]
+section.advantages#advantages
+    .container    
+        .advantages__content
+            .section__head.advantages__head.wow.animate__animated.animate__fadeIn(data-wow-duration="2s", data-wow-delay="0s", data-wow-offset="100")
+                h2.section__title Почему так вкусно?
+                .section__text
+                    p 
+                        | В основе пирожного Sweet Cupcake выпеченный бисквит, 
+                        | промоченный сахарным сиропом с добавлением коньяка 
+                        | и десертного вина. Прослоено суфлейной массой, смешанной 
+                        | с апельсиновым концентратом (калоризатор). Заглазировано 
+                        | шоколадной глазурью с нанесением сеточки из белой шоколадной глазури
+            ul.advantages__list
+                each advantagesItem in advantagesItems
+                    li.advantages__item.wow.animate__animated.animate__fadeInUp(data-wow-duration="0.7s" data-wow-delay=`${advantagesItem.delay}`)
+                        .advantages__icon
+                            img.advantages__pic(src=`./img/${advantagesItem.icon}`, alt=`${advantagesItem.imgAlt}`)
+                        h3.advantages__text= advantagesItem.text       

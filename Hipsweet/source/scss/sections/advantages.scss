@@ -1,0 +1,58 @@
+.advantages {
+  background: #c8c9c9;
+  background: -moz-radial-gradient(80% 80%, circle cover, #fefdfd 0%, #c8c9c9 100%);
+  background: -webkit-radial-gradient(80% 80%, circle cover, #fefdfd 0%, #c8c9c9 100%);
+  background: radial-gradient(circle at 80% 80%, #fefdfd 0%, #c8c9c9 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefdfd', endColorstr='#c8c9c9',GradientType=1 );
+}
+
+.advantages__content {
+  padding: 100px 0;
+  padding-right: 47%;
+  background: url("../img/tasty-bg.png") no-repeat right 60px bottom/37%;
+}
+
+.advantages__head {
+  max-width: 420px;
+  margin-bottom: 62px;
+  .section__title {
+    margin-bottom: 38px;
+  }
+}
+
+.advantages__list {
+  font-size: 0;
+  * {
+    font-size: 16px;
+  }
+  margin-right: -60px;
+}
+
+.advantages__item {
+  @include inlineblock($valign: top);
+  width: calc(33.3% - 60px);
+  margin-right: 60px;
+  margin-bottom: 30px;
+}
+
+.advantages__icon {
+  padding: 38.29%;
+  margin-right: 40%;
+  margin-bottom: 30px;
+  background: rgba(#000000, 0.1);
+  border-radius: 50%;
+  position: relative;
+}
+
+.advantages__pic {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 118%;
+}
+
+.advantages__text {
+  font-family: $title-font;
+  font-size: 16px;
+}

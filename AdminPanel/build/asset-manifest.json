@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "./static/css/main.12cdd568.css",
+    "main.js": "./static/js/main.e391e61d.js",
+    "static/media/mapLocation.png": "./static/media/mapLocation.c069451e1ebb8a1d538c.png",
+    "static/media/user.svg": "./static/media/user.78b64d9fcab0c046d8efe343f7860fc9.svg",
+    "index.html": "./index.html",
+    "static/media/arrowBackIcon.svg": "./static/media/arrowBackIcon.ec6509bed111963f3e157554d413279c.svg",
+    "static/media/editIcon.svg": "./static/media/editIcon.bb35e9dd919cc284ecf75c9819c8833b.svg",
+    "main.12cdd568.css.map": "./static/css/main.12cdd568.css.map",
+    "main.e391e61d.js.map": "./static/js/main.e391e61d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.12cdd568.css",
+    "static/js/main.e391e61d.js"
+  ]
+}

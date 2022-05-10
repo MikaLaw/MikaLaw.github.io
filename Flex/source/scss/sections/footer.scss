@@ -1,0 +1,254 @@
+.footer {
+  padding-top: 64px;
+  background: $color-bg;
+}
+
+.footer__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.footer-contacts {
+  margin-right: 30px;
+  padding-right: 10px;
+  flex: 1 1 calc(42.5% - 30px);
+}
+
+.footer-blogs {
+  flex: 1 1 calc(35% - 30px);
+  margin-right: 30px;
+  min-width: 250px;
+}
+
+.footer-instagram {
+  flex: 0 1 22.5%;
+  min-width: 250px;
+}
+
+.footer__logo {
+  margin-bottom: 34px;
+  .logo {
+    color: #ccc;
+    font-size: 46px;
+  }
+}
+
+.footer__text {
+  font-size: 15px;
+  line-height: 1.57;
+  color: $color-secondary;
+  margin-bottom: 39px;
+}
+
+.footer__followers-title {
+  display: flex;
+  align-items: baseline;
+  font-family: $title-font;
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 14px;
+  margin-bottom: 15px;
+}
+
+.footer__followers-amount {
+  font-size: 18px;
+  font-weight: 700;
+  margin-right: 4px;
+}
+
+.footer__followers-text {
+  font-size: 14px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.footer__followers-soc {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 32px;
+}
+
+.footer__soc-title {
+  font-style: italic;
+  color: $color-secondary;
+  font-size: 15px;
+  margin-right: 20px;
+}
+
+.footer__soc-list {
+  display: flex;
+}
+
+.footer__soc-item {
+  margin-right: 14px;
+}
+
+.footer__soc-link {
+  display: inline-block;
+
+  &:hover,
+  &:active,
+  &:focus {
+    .footer__soc-icon {
+      fill: $color-pink;
+    }
+  }
+}
+
+.footer__soc-icon {
+  display: flex;
+  fill: $color-blue;
+  width: 16px;
+  height: 16px;
+  transition: 0.3s;
+}
+
+.footer__email-form {
+  display: flex;
+  color: #fff;
+}
+
+.footer__email-imput {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-right: 1px solid transparent;
+  padding: 10px 15px;
+  width: 100%;
+  &::placeholder {
+    color: $color-secondary;
+    font-size: 15px;
+    font-style: italic;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.footer__email-btn {
+  border: none;
+  background: $color-blue;
+  text-transform: uppercase;
+  font-family: $title-font;
+  padding: 10px 35px;
+  font-size: 14px;
+  color: inherit;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background: $color-pink;
+  }
+}
+
+.footer__title {
+  font-family: $title-font;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 2.9;
+  margin-bottom: 24px;
+}
+
+.footer-blogs__item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.footer-blogs__preview {
+  max-width: 120px;
+  flex: 1 0 auto;
+}
+
+.footer-blogs__desc {
+  padding: 0 20px;
+}
+
+.footer-blogs__title {
+  font-size: 12px;
+  font-family: $title-font;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.footer-blogs__data {
+  font-style: italic;
+  color: $color-secondary;
+  font-size: 13px;
+}
+
+.footer-instagram__list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -2px;
+  margin-bottom: 13px;
+}
+
+.footer-instagram__item {
+  margin-right: 2px;
+  margin-bottom: 2px;
+  flex: 1 1 calc(33.3% - 2px);
+}
+
+.footer-instagram__link {
+  display: block;
+  height: 100%;
+  overflow: hidden;
+
+  &:hover,
+  &:active,
+  &:focus {
+    .section__img {
+      transform: scale(1.1);
+    }
+  }
+  .section__img {
+    transform: scale(1);
+    transition: 0.3s;
+  }
+}
+
+.footer-instagram__subtitle {
+  display: inline-block;
+  font-size: 13px;
+  font-style: italic;
+  transition: 0.3s;
+  &:hover,
+  &:active,
+  &:focus {
+    color: $color-blue;
+  }
+}
+
+.footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+  font-family: $title-font;
+  font-size: 14px;
+}
+
+.footer__copyright {
+  display: flex;
+}
+
+.footer__copyright-year {
+  margin: 0 2px;
+}
+
+.footer__copyright-link {
+  color: $color-pink;
+  margin-left: 2px;
+  transition: 0.3s;
+  &:hover,
+  &:active,
+  &:focus {
+    color: $color-blue;
+  }
+}

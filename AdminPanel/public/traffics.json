@@ -1,0 +1,104 @@
+{
+    "traffics": [
+        {
+            "id": 1,
+            "distance": 6565.255,
+            "elevation":0.654,
+            "type": 0,
+            "creator": 65,
+            "reportsCount": 3,
+            "isBlocked": false
+        },
+        {
+            "id": 2,
+            "distance": 6555.255,
+            "elevation":0.754,
+            "type": 0,
+            "creator": 65,
+            "reportsCount": 3,
+            "isBlocked": false
+        },
+        {
+            "id": 3,
+            "distance": 4565.255,
+            "elevation":1.654,
+            "type": 1,
+            "creator": 60,
+            "reportsCount": 3,
+            "isBlocked": false
+        },
+        {
+            "id": 4,
+            "distance": 6565.255,
+            "elevation":0.654,
+            "type": 1,
+            "creator": 65,
+            "reportsCount": 3,
+            "isBlocked": false
+        },
+        {
+            "id": 5,
+            "distance": 6565.255,
+            "elevation":0.654,
+            "type": 0,
+            "creator": 65,
+            "reportsCount": 3,
+            "isBlocked": true
+        },
+        {
+            "id": 6,
+            "distance": 6565.255,
+            "elevation":0.654,
+            "type": 0,
+            "creator": 65,
+            "reportsCount": 3,
+            "isBlocked": false
+        },
+        {
+            "id": 7,
+            "distance": 6555.255,
+            "elevation":0.754,
+            "type": 0,
+            "creator": 65,
+            "reportsCount": 3,
+            "isBlocked": false
+        },
+        {
+            "id": 8,
+            "distance": 4565.255,
+            "elevation":1.654,
+            "type": 1,
+            "creator": 60,
+            "reportsCount": 3,
+            "isBlocked": false
+        },
+        {
+            "id": 9,
+            "distance": 6565.255,
+            "elevation":0.654,
+            "type": 1,
+            "creator": 65,
+            "reportsCount": 3,
+            "isBlocked": false
+        },
+        {
+            "id": 10,
+            "distance": 6565.255,
+            "elevation":0.654,
+            "type": 0,
+            "creator": 65,
+            "reportsCount": 3,
+            "isBlocked": true
+        },
+        {
+            "id": 11,
+            "distance": 6565.255,
+            "elevation":0.654,
+            "type": 1,
+            "creator": 65,
+            "reportsCount": 3,
+            "isBlocked": false
+        }
+        ],
+    "count": 11
+}

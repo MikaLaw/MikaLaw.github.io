@@ -1,0 +1,44 @@
+extends ../template
+include ../components/mixins
+
+block title
+	title Карьерный путь
+	
+block content
+	.wrapper
+		include ../components/header
+		.content
+			.container
+				+navigation('career.html')
+				main.career
+					h1.title.career__title Карьерный путь
+					.career__left
+						.career__avatar
+							img.career__avatar-pic(src="../../img/career-1.jpg" alt="Место работы")
+					.career__right
+						ul.career__list
+							li.career__item.active(data-src="./img/career-1.jpg") 
+								a.career__wrap(href="#", role="button")
+									h2.career__name ООО «Звезды путешествий»
+									.career__prof Системный Администратор
+									.career__time 2015 - по настоящее время
+									.career__year 2016
+							li.career__item(data-src="./img/career-2.jpg") 
+								a.career__wrap(href="#", role="button")
+									h2.career__name Санкт-Петербургский государственный университет
+									.career__time 2010 - 2015
+									.career__year 2015
+							li.career__item(data-src="./img/career-3.jpg") 
+								a.career__wrap(href="#", role="button")
+									h2.career__name Технологический институт им. Горького
+									.career__time 2012 - 2014
+									.career__year 2014
+							li.career__item(data-src="./img/career-4.jpg") 
+								a.career__wrap(href="#", role="button")
+									h2.career__name ООО «Звезды путешествий»
+									.career__prof Помощник руководителя группы разработки
+									.career__time 2015 - по настоящее время
+									.career__year 2013		
+	include ../components/footer
+	
+	

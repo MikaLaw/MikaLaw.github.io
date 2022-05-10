@@ -1,0 +1,17 @@
+.hero__content {
+  min-height: 677px;
+  background: linear-gradient(rgba(#000000, 0.3) 0%, rgba(#000000, 0.3) 100%), url("../img/hero_1.jpg") no-repeat center / cover;
+}
+
+.hero__title {
+  font-size: 48px;
+  line-height: 1;
+  font-weight: 900;
+  @include laptop {
+    font-size: 38px;
+  }
+}
+
+.hero__text {
+  font-size: 15px;
+}

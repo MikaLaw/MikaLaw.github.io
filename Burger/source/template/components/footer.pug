@@ -1,0 +1,22 @@
+-   
+    var socItems = [
+        {icon:"vk", link:"https://vk.com/"},
+        {icon:"fb", link:"https://www.facebook.com/"},
+        {icon:"inst", link:"https://www.instagram.com/"},
+        {icon:"twitter", link:"https://twitter.com/"}
+    ]
+footer.footer#footer
+    .container 
+        .footer__left
+            address.footer__address Санкт-Петербург, ул.Бабушкина, д.12/1, 15
+            a.footer__tel(href="tel:+78123771377") 
+                svg.footer__tel-icon
+                    use(xlink:href=`img/sprite.svg#phone`)    
+                span.footer__tel-text +7 (812) 377-13-77
+        .footer__right
+            ul.soc__list
+                each socItem in socItems
+                    li.soc__item
+                        a.soc__link(href=`${socItem.link}` target="_blank" rel="noopener")
+                            svg.soc__icon
+                                use(xlink:href=`img/sprite.svg#${socItem.icon}`)

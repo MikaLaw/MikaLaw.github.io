@@ -1,0 +1,28 @@
+extends ../template
+include ../components/mixins
+
+block title
+	title Обо мне 
+	
+block content
+	.wrapper
+		include ../components/header
+		.content
+			.container
+				+navigation('about.html')
+				main.about
+					.about__left
+						.about__avatar
+							img.about__avatar-pic(src="../../img/about-avatar@1x.jpg" srcset="../../img/about-avatar@2x.jpg 2x" alt="Константин Константинов")
+					.about__right
+						h1.title.about__title Обо мне
+						.about__description 
+							p Меня зовут Костя. Проживаю на Юге Башкортостана, с появлением интернета, с головой увлёкся этой темой, и теперь уже почти живу Он-Лайн.
+							p С недавних пор (уже года два), это уже не просто увлечение, но и нормальный заработок для меня и моей семьи, на этом конечно не собираюсь останавливаться, а буду стараться добиться ещё больших результатов!
+							p Интернет сообщество очень интересно и многогранно , почти каждый день появляется что то новое и хочется всё это изучить, внедрить и проверить на себе , многое получается, и со временем приносит свои плоды.
+						.about__btn
+							a.btn__link.about__btn-link(download href="#")
+								i.fa-solid.fa-download.about__btn-icon
+								span.about__btn-text Скачать резюме
+	include ../components/footer
+	

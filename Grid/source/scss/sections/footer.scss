@@ -1,0 +1,48 @@
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 20px;
+  align-items: center;
+  padding: 20px 0;
+  font-family: $title-font;
+  text-transform: uppercase;
+  font-size: 12px;
+  position: relative;
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 2px;
+    background: url("../img/separator.jpg");
+  }
+  @include phones {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+    justify-items: center;
+  }
+}
+
+.footer__copyright {
+  display: flex;
+  align-items: center;
+  grid-column: 1 / 2;
+}
+.footer__copyright-year {
+  margin: 0 3px;
+}
+.footer__btn {
+  grid-column: 2 / 3;
+  display: inline-block;
+  transition: 0.3s;
+  &:hover,
+  &:active,
+  &:focus {
+    color: $color-theme;
+  }
+
+  @include phones {
+    grid-column: 1 / 2;
+  }
+}

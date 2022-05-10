@@ -1,0 +1,27 @@
+.clients {
+  background: $color-bg;
+  padding-top: 55px;
+  padding-bottom: 60px;
+}
+
+.clients__list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include phones {
+    flex-wrap: wrap;
+  }
+}
+
+.clients__item {
+  padding: 5px;
+  @include phones {
+    flex: 1 1 33.3%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.clients__pic {
+  max-width: 132px;
+}

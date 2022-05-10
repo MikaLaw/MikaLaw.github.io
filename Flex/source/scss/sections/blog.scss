@@ -1,0 +1,137 @@
+.blog {
+  padding-top: 103px;
+  padding-bottom: 84px;
+}
+
+.blog__title {
+  margin-bottom: 50px;
+}
+
+.blog__list {
+  display: flex;
+  margin-right: -30px;
+  flex-wrap: wrap;
+  @include phones {
+    flex-direction: column;
+  }
+}
+
+.blog__item {
+  flex: 1 1 calc(33.33% - 30px);
+  margin-right: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog__pic {
+  position: relative;
+  margin-bottom: 14px;
+}
+
+.blog__data {
+  background: $color-blue;
+  position: absolute;
+  z-index: 2;
+  padding: 8px 15px;
+  padding-bottom: 12px;
+  top: 80%;
+  left: -2%;
+  transform: translateY(-50%);
+  color: #fff;
+  @include tablets {
+    padding: 4px 7px;
+  }
+  @include phones {
+    padding: 8px 15px;
+  }
+}
+
+.blog__day {
+  font-family: $title-font;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 1;
+  @include tablets {
+    font-size: 16px;
+  }
+  @include phones {
+    font-size: 30px;
+  }
+}
+
+.blog__month {
+  font-size: 15px;
+  font-style: italic;
+  @include tablets {
+    font-size: 12px;
+  }
+  @include phones {
+    font-size: 15px;
+  }
+}
+
+.blog__info {
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 20px;
+  margin-bottom: 15px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog__info-title {
+  font-size: 14px;
+  display: inline-block;
+  text-transform: uppercase;
+  font-family: $title-font;
+  margin-bottom: 12px;
+  transition: 0.3s;
+  flex: 1;
+  &:hover,
+  &:active,
+  &:focus {
+    color: $color-blue;
+  }
+}
+
+.blog__info-text {
+  font-size: 15px;
+  color: $color-secondary;
+  max-height: 40px;
+  p {
+    line-height: 20px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+}
+
+.blog__stats {
+  display: flex;
+  align-items: center;
+}
+
+.blog__stats-num {
+  display: flex;
+  align-items: center;
+  margin-right: 16px;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.blog__icon {
+  fill: $color-blue;
+  display: block;
+  width: 20px;
+  height: 17px;
+  margin-right: 8px;
+}
+
+.blog__stats-text {
+  font-size: 15px;
+  color: $color-secondary;
+  font-style: italic;
+}

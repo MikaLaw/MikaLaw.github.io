@@ -1,0 +1,103 @@
+.hero {
+  background: url("../img/hero-bg.jpg") no-repeat center / cover #000;
+  display: flex;
+  flex-direction: column;
+  @include phones {
+    background: url("../img/hero-bg-mobile.jpg") no-repeat center / cover #000;
+  }
+}
+
+.hero-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .container {
+    display: flex;
+    @include phones {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+}
+
+.hero__img {
+  flex: 0 1 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("../img/icon/drops.svg") no-repeat center top 37% / contain;
+  margin-right: 20px;
+  @include phones {
+    margin-bottom: 20px;
+  }
+}
+
+.hero__pic {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero__desc {
+  flex: 0 1 50%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  @include phones {
+    text-align: center;
+  }
+}
+
+.hero__subtitle {
+  margin-top: 28px;
+  font-family: $subtitle-font;
+  color: $white-color;
+  font-size: 60px;
+  text-transform: none;
+  line-height: 1;
+  display: block;
+  @include tablets {
+    font-size: 45px;
+  }
+}
+
+.hero-arrow {
+  padding: 40px 0;
+  text-align: center;
+}
+
+.hero-arrow__link {
+  display: inline-block;
+  transform: translateY(0);
+  animation-name: "topToBottom";
+  animation-duration: 1.7s;
+  animation-iteration-count: infinite;
+  opacity: 1;
+  transition: 0.3s;
+
+  &:hover,
+  &:active,
+  &:focus {
+    opacity: 0.5;
+  }
+}
+
+.hero-arrow__icon {
+  width: 30px;
+  height: 15px;
+}
+
+@keyframes topToBottom {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,18 @@
+-   
+    var advantagesItems = [
+        {icon:"meat",title:"100% свежее мясо", text:"Драма представляет собой деструктивный цикл. Анапест представляет собой анапест. Ямб неравномерен."},
+        {icon:"hand",title:"Ручная  сборка", text:"Драма представляет собой деструктивный цикл. Анапест представляет собой анапест. Первое полустишие притягивает сюжетный реформаторский пафос."},
+        {icon:"natural",title:"Натуральные ингредиенты", text:"Драма представляет собой деструктивный цикл. Анапест представляет собой анапест."}
+        ]
+section.advantages#advantages
+    .container
+        h2.section__title.advantages__title Мы лучшие
+        ul.advantages__list
+            each advantagesItem in advantagesItems
+                li.advantages__item
+                    .advantages__icon
+                        svg.advantages__icon-pic
+                            use(xlink:href=`./img/sprite.svg#${advantagesItem.icon}`)
+                    .advantages__name= advantagesItem.title 
+                    .section__text.advantages__desc 
+                        p= advantagesItem.text            

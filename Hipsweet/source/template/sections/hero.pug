@@ -1,0 +1,86 @@
+-   
+    var ingridients = [
+        {icon:"icon-table-3",title:"мука пшеничная", amount:"200г."},
+        {icon:"icon-table-4",title:"яйце продукты", amount:"3шт."},
+        {icon:"icon-table-5",title:"сахарный песок", amount:"20г."},
+        {icon:"icon-table-1",title:"масло сливочное", amount:"50г."},
+        {icon:"icon-table-2",title:"молоко сгущеное", amount:"100г."},
+        ]
+
+section.hero
+    include ../components/header    
+    .capcake__content
+        .container 
+            ul.capcake__list.owl-carousel.owl-theme
+                li.capcake__item.item
+                    .capcake__item-title Пирожинка
+                    .capcake__item-content
+                        .capcake__weight                
+                            .capcake__consist
+                                .consist__icon
+                                    .consist__icon-pic.section__icon
+                                        .consist__icon-img.section__icon-pic
+                                    .consist__icon-text Ингридиенты
+                                .consist__ingridients
+                                    table.consist__ingridients-table
+                                        each ingridient in ingridients
+                                            tr.consist__ingridients-row
+                                                td.consist__ingridients-cell
+                                                    div(class=`consist__ingridients-icon ${ingridient.icon}`)
+                                                td.consist__ingridients-cell= ingridient.title
+                                                td.consist__ingridients-cell= ingridient.amount  
+                            .consist__time
+                                .consist__time-title Срок хранения:
+                                .consist__time-amount 120 часов 
+                        .capcake__image
+                            .capcake__pic
+                                img.capcake__img(src="./img/slider-1.png", alt="Изображение пироженного")
+                        .capcake__desc
+                            h2.section__title.capcake__title Sweet Cupcake
+                            .capcake__text.section__text 
+                                p
+                                    | В основе пирожного Sweet Cupcake выпеченный бисквит, 
+                                    | промоченный сахарным сиропом с добавлением коньяка и десертного вина. 
+                                    | Прослоено суфлейной массой, смешанной с апельсиновым концентратом 
+                                    | (калоризатор). Заглазировано шоколадной глазурью с нанесением сеточки 
+                                    | из белой шоколадной глазури
+                            .capcake__order
+                                .capcake__price 199 P
+                                .capcake__btn
+                                    a.capcake__btn-link(href="#", data-href="#form-block") Заказать
+                li.capcake__item.item
+                    .capcake__item-title Мороженка
+                    .capcake__item-content
+                        .capcake__weight                
+                            .capcake__consist
+                                .consist__icon
+                                    .consist__icon-pic.section__icon
+                                        .consist__icon-img.section__icon-pic
+                                    .consist__icon-text Ингридиенты
+                                .consist__ingridients
+                                    table.consist__ingridients-table
+                                        each ingridient in ingridients
+                                            tr.consist__ingridients-row
+                                                td.consist__ingridients-cell
+                                                    div(class=`consist__ingridients-icon ${ingridient.icon}`)
+                                                td.consist__ingridients-cell= ingridient.title
+                                                td.consist__ingridients-cell= ingridient.amount  
+                            .consist__time
+                                .consist__time-title Срок хранения:
+                                .consist__time-amount 120 часов 
+                        .capcake__image
+                            .capcake__pic
+                                img.capcake__img(src="./img/slider-2.png", alt="Изображение мороженного" loading="lazy")
+                        .capcake__desc
+                            h2.section__title.capcake__title Sweet Ice Cream
+                            .capcake__text.section__text 
+                                p
+                                    | В основе пирожного Sweet Cupcake выпеченный бисквит, 
+                                    | промоченный сахарным сиропом с добавлением коньяка и десертного вина. 
+                                    | Прослоено суфлейной массой, смешанной с апельсиновым концентратом 
+                                    | (калоризатор). Заглазировано шоколадной глазурью с нанесением сеточки 
+                                    | из белой шоколадной глазури
+                            .capcake__order
+                                .capcake__price 199 P
+                                .capcake__btn
+                                    a.capcake__btn-link(href="#", data-href="#form-block") Заказать      

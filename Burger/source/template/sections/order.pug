@@ -1,0 +1,51 @@
+section.order#order
+    .container
+        h2.section__title.order__title Закажите доставку
+        form.form#form-order(action="#")
+            .form__left 
+                .form__row
+                    .form__cell
+                        label.form__label(for="name") Имя
+                        input.form__input#name(type="text", name="name") 
+                    .form__cell
+                        label.form__label(for="phone") Телефон
+                        input.form__input#phone(type="tel", name="phone",placeholder="+7 (___) ___-__-__") 
+                .form__row
+                    .form__cell
+                        label.form__label(for="street") Улица
+                        input.form__input#street(name="street", type="text") 
+                .form__row
+                    .form__cell
+                        label.form__label(for="house") Дом
+                        input.form__input#house(name="house", type="text") 
+                    .form__cell
+                        label.form__label(for="housing") Корпус
+                        input.form__input#housing(name="housing", type="text") 
+                    .form__cell
+                        label.form__label(for="flat") Квартира
+                        input.form__input#flat(name="flat", type="text") 
+                    .form__cell
+                        label.form__label(for="floor") Этаж
+                        input.form__input#floor(name="floor", type="text")                                 
+            .form__right 
+                .form__row
+                    .form__cell
+                        label.form__label(for="commentary") Комментарий
+                        textarea#commentary.form__textarea(name="commentary") 
+                .form__row.form__row--wrap
+                    .form__cell
+                        input.form__input-radio#cash(name="payment", type="radio" checked value="cash") 
+                        label.form__label.form__label--radio(for="cash") Потребуется сдача                                
+                    .form__cell
+                        input.form__input-radio#card(name="payment", type="radio" value="card") 
+                        label.form__label.form__label--radio(for="card") Оплата по карте    
+                .form__row.form__row--wrap
+                    .form__cell
+                        input.form__input-checkbox#call(name="call", type="checkbox", checked)
+                        label.form__label.form__label--checkbox(for="call") Не перезванивать   
+                .form__row.form__row--wrap
+                    .form__cell
+                        button.btn.form__btn#order-btn(type="submit") Заказать
+                    .form__cell    
+                        button.form__btn--reset(type="reset") Очистить
+                                

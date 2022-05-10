@@ -1,0 +1,31 @@
+-   
+    var blogItems = [
+        {animate:"fadeInLeft", img: "blog-1", data:"15", month:"Jan", title:"Lorem ipsum dolor sit amet", text:"Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", views:"542", commentary:"17"},     
+        {animate:"fadeInUp", img: "blog-2", data:"14", month:"Jan", title:"sed do eiusmod tempor", text:"Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", views:"992", commentary:"42"},
+        {animate:"fadeInRight", img: "blog-3", data:"12", month:"Jan", title:"incididunt ut labore et dolore", text:"Elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", views:"1560", commentary:"98"},
+    ];
+section.blog#blog 
+    .container 
+        .wow.animate__fadeInUp(data-wow-duration="1.2s") 
+            +sectionTitle("Our stories", "Latest blog", "blog__title")
+        ul.blog__list
+            each blogItem in blogItems
+                li.blog__item.wow(data-wow-duration="1.2s", class=`animate__${blogItem.animate}`) 
+                    .blog__pic 
+                        img.section__img(src=`./img/${blogItem.img}.jpg`, alt=`${blogItem.title}`)
+                        .blog__data 
+                            .blog__day= blogItem.data 
+                            .blog__month= blogItem.month 
+                    .blog__info
+                        a.blog__info-title(href="#")= blogItem.title 
+                        .blog__info-text
+                            p= blogItem.text
+                    .blog__stats 
+                        .blog__stats-num
+                            svg.blog__icon
+                                use(xlink:href="./img/sprite.svg#blog-view")
+                            .blog__stats-text= blogItem.views
+                        .blog__stats-num 
+                            svg.blog__icon
+                                use(xlink:href="./img/sprite.svg#blog-speech")
+                            .blog__stats-text= blogItem.commentary

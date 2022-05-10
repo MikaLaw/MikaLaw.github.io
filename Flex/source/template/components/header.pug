@@ -1,0 +1,31 @@
+-   
+    var navItems = [
+        {title:"about", link:"about"},
+        {title:"service", link:"service"},
+        {title:"work", link:"work"},
+        {title:"blog", link:"blog"},
+        {title:"contact", link:"contact"},
+        
+    ];
+    
+-   var navIcons = ["hero-cart", "hero-search"];
+
+header.header 
+    .container 
+        a.logo(href="") MoGo
+        button.nav-toggler(type="button" )
+            svg.nav-toggler__icon(width="30" height="30")
+                use(xlink:href="./img/sprite.svg#menu") 
+        nav.nav__header 
+            button.nav-close(type="button" )
+                svg.navbar-close__icon(width="25" height="25")
+                    use(xlink:href="./img/sprite.svg#close")
+            ul.nav__list 
+                each navItem in navItems
+                    li.nav__item 
+                        a.nav__link(href="#", data-href=`#${navItem.link}`)= navItem.title 
+            .nav__btn
+                each navIcon in navIcons 
+                    button.nav__btn-link
+                        svg.nav__btn-icon 
+                            use(xlink:href=`./img/sprite.svg#${navIcon}`)

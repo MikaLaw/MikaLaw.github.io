@@ -1,0 +1,51 @@
+-   
+    var navItems = [
+        "Home",
+        "Pages",
+        "Gallery",
+        "Blog",
+        "Scortcodes",
+        "Testimonials",
+        "Our shop",
+        ];
+-   
+    var headerItems = [
+        {title:"Inspiration", text:"Short description", img:"service-1"},
+        {title:"Videos", text:"Short description", img:"service-2"},
+        {title:"Shop", text:"Short description", img:"service-3"},
+    ];
+-   
+    var socItems = [
+        {icon:"fb", link:"#"},
+        {icon:"picasa", link:"#"},
+        {icon:"gplus", link:"#"},
+        {icon:"vimeo", link:"#"},
+        {icon:"rss", link:"#"},
+    ];
+section.hero#hero
+    header.header
+        a.logo(href="#")
+            img.logo__img(src="./img/logo.jpg" alt="Socha")
+            h1.visually-hidden Socha
+        nav.nav 
+            ul.nav__list 
+                each navItem in navItems
+                    li.nav__item 
+                        a.nav__link(href="#")= navItem
+        .soc__label Follow            
+        ul.soc__list 
+            each socItem in socItems                
+                li.soc__item 
+                    a.soc__link(href=`${socItem.link}` target="_blank" rel="noopener")
+                        svg.soc__icon 
+                            use(xlink:href=`./img/sprite.svg#${socItem.icon}`)
+          
+    ul.hero__links-list 
+        each headerItem in headerItems     
+            li.hero__links-item(style=`background-image: linear-gradient(to top, rgba(0,0,0, 0.8) 0%, rgba(0,0,0, 0.0) 50%), url('./img/${headerItem.img}.jpg')`)
+                a.hero__links-btn(href="#" target="_blank")
+                    svg.hero__links-icon 
+                        use(xlink:href="./img/sprite.svg#arrow") 
+                .hero__links-desc   
+                    h2.hero__links-title= headerItem.title
+                    .hero__links-text= headerItem.text

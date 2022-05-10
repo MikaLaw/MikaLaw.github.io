@@ -1,0 +1,94 @@
+.content {
+  padding: 26px 0;
+  .container {
+    @extend %clearfix;
+  }
+}
+.about {
+  float: right;
+  width: 75%;
+  @extend %clearfix;
+  @include laptop {
+    width: 100%;
+    float: none;
+  }
+}
+.about__left {
+  float: left;
+  margin-right: 3%;
+  width: 43%;
+  @include laptop {
+    margin-right: 3%;
+    width: 30%;
+  }
+  @include tablets {
+    width: 100%;
+    float: none;
+    margin-right: 0px;
+    margin-bottom: 35px;
+  }
+}
+.about__right {
+  float: right;
+  width: 54%;
+  @include laptop {
+    width: 67%;
+  }
+  @include tablets {
+    width: 100%;
+    float: none;
+  }
+}
+.about__avatar {
+  width: 228px;
+  height: 228px;
+  margin: 0 auto;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #fff;
+  border-radius: 50%;
+  overflow: hidden;
+  @include laptop {
+    width: 186px;
+    height: 186px;
+  }
+}
+
+.about__avatar-pic {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.about__title {
+  margin-bottom: 20px;
+}
+.about__description {
+  margin-bottom: 52px;
+  p {
+    font-weight: 200;
+    color: $subtext;
+    margin-bottom: 10px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+.about__btn {
+  text-align: right;
+  @include tablets {
+    text-align: center;
+  }
+}
+.about__btn-link {
+  border-color: $red;
+  color: $red;
+  background: transparent;
+  &:hover,
+  &:active {
+    color: #fff;
+    background: $red;
+  }
+}
+.about__btn-icon {
+  margin-right: 10px;
+}

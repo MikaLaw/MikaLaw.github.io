@@ -1,0 +1,35 @@
+-   
+    var teamItems = [
+        {class:"animate__fadeInLeft", pic:"person_1", name:"John Doe", profession:"staff", desc:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, maiores? Eos alias fugit eius, repudiandae molestias error"},
+        {class:"animate__fadeInUp", pic:"person_2", name:"Jean Doe", profession:"staff", desc:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, maiores? Eos alias fugit eius, repudiandae molestias error"},
+        {class:"animate__fadeInRight", pic:"person_3", name:"Claire Dormey", profession:"staff", desc:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, maiores? Eos alias fugit eius, repudiandae molestias error"},
+        {class:"", delay:"", pic:"person_4", name:"Jean Doe", profession:"staff", desc:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, maiores? Eos alias fugit eius, repudiandae molestias error"},
+        {class:"", delay:"", pic:"person_5", name:"Claire Dormey", profession:"staff", desc:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, maiores? Eos alias fugit eius, repudiandae molestias error"},
+        ]
+-   
+    var socItems = [
+        {link: "https://ru-ru.facebook.com/", title:"fb"},
+        {link: "https://www.instagram.com/", title:"inst"},
+        {link: "https://twitter.com/", title:"tw"},
+        ] 
+section.team.py-5
+    .container 
+        .row.mb-5
+            .col 
+                .team__head.text-center.wow.animate__animated.animate__fadeIn(data-wow-duration="1.4s")  
+                    +sectionTitle("Amazing staff", "Meet Our Team", "Our Team")
+        ul.team__list.row.owl-carousel.owl-theme 
+            each teamItem in teamItems 
+                li(class=`team__item text-center wow animate__animated ${teamItem.class}` data-wow-duration="1.4s")
+                    .team__avatar.mb-4 
+                        img.img-fluid(src=`./img/${teamItem.pic}.jpg`, loading='lazy', alt="Фото члена команды")
+                    .team__info.px-4
+                        h3.team__name.mb-2= teamItem.name 
+                        .team__profession.mb-4= teamItem.profession
+                        .team__desc.mb-5= teamItem.desc
+                        ul.soc__list.d-flex.justify-content-center
+                            each socItem in socItems
+                                li.soc__item 
+                                    a.soc__link.d-flex.justify-content-center.align-items-center(href=`${socItem.link}` rel="noopener" target="_blank") 
+                                        svg.soc__icon.d-block(width="16" height="16")
+                                            use(xlink:href=`./img/sprite.svg#${socItem.title}`) 

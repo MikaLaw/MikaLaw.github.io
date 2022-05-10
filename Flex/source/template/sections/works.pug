@@ -1,0 +1,29 @@
+-   
+    var worksItems = [
+        {img: "works-1", title:"creatively designed", subtitle:"Lorem ipsum dolor sit"},     
+        {img: "works-2", title:"creatively designed", subtitle:"Lorem ipsum dolor sit"},
+        {img: "works-3", title:"creatively designed", subtitle:"Lorem ipsum dolor sit"},     
+        {img: "works-4", title:"creatively designed", subtitle:"Lorem ipsum dolor sit"},
+        {img: "works-5", title:"creatively designed", subtitle:"Lorem ipsum dolor sit"},     
+        {img: "works-6", title:"creatively designed", subtitle:"Lorem ipsum dolor sit"},
+        {img: "works-7", title:"creatively designed", subtitle:"Lorem ipsum dolor sit"},   
+    ];
+
+section.works#work 
+    .works__head
+        .container  
+            +sectionTitle("What we do", "some of our work","works__title")
+            .section__desc.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                sed do eiusmod tempor incididunt ut labore et dolore magna 
+                aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+                ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+    ul.works__list
+        each worksItem in worksItems
+            li.works__item 
+                img.section__img(src=`./img/${worksItem.img}.jpg`, alt=`${worksItem.subtitle}`)
+                .section__thumb 
+                    svg.works__thumb-icon 
+                        use(xlink:href=`./img/sprite.svg#services-picture`)
+                    .works__thumb-title= worksItem.title 
+                    .works__thumb-subtitle= worksItem.subtitle

@@ -1,0 +1,115 @@
+$menuItemsBg: (
+  "vertical-slider-bg-1",
+  "vertical-slider-bg-2",
+  "vertical-slider-bg-3"
+);
+
+.menu {
+  background: url("../img/vertical-slider-bg.jpg") no-repeat center / cover
+    #8b5026;
+  display: flex;
+  justify-content: space-between;
+  @include tablets {
+    flex-direction: column;
+  }
+}
+
+.menu__title {
+  color: $white-color;
+  margin-left: 134px;
+  margin-top: 76px;
+}
+
+.menu-accordion {
+  display: flex;
+  @include tablets {
+    flex-direction: column;
+  }
+}
+
+.menu-accordion__item {
+  display: flex;
+
+  &.active,
+  &:hover,
+  &:active,
+  &:focus {
+    .menu-accordion__trigger-title {
+      color: $title-color;
+    }
+  }
+  @include tablets {
+    flex-direction: column;
+  }
+}
+
+.menu-accordion__trigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 80px;
+  @include tablets {
+    height: auto;
+    width: auto;
+    padding: 10px;
+  }
+}
+
+.menu-accordion__trigger-title {
+  transform: rotate(-90deg);
+  white-space: nowrap;
+  color: $white-color;
+  font-family: $title-font;
+  font-size: 40px;
+  transition: 0.3s;
+  @include tablets {
+    transform: rotate(0deg);
+  }
+}
+
+.menu-accordion__content {
+  background: rgba($gray-color, 0.9);
+  width: 0;
+  transition: 0.3s;
+  @include tablets {
+    display: none;
+    width: auto;
+    transition: unset;
+  }
+}
+
+.menu-accordion__wrap {
+  width: 540px;
+  height: 100%;
+  padding: 65px 34px;
+  overflow-y: auto;
+  @include tablets {
+    width: 100%;
+    max-height: 330px;
+    overflow: hidden;
+    padding: 20px;
+  }
+
+  &::-webkit-scrollbar {
+    width: 7px; /* ширина для вертикального скролла */
+    height: 7px; /* высота для горизонтального скролла */
+    background-color: rgba($gray-color, 0.8);
+  }
+
+  /* ползунок скроллбара */
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(#ffffff, 0.4);
+    border-radius: 9em;
+  }
+}
+
+@each $menuItemBg in $menuItemsBg {
+  .#{$menuItemBg} {
+    background: url(../img/#{$menuItemBg}.jpg) no-repeat center / cover #383838;
+    @include tablets {
+      background: url(../img/#{$menuItemBg}-mobile.jpg) no-repeat center / cover
+        #383838;
+    }
+  }
+}

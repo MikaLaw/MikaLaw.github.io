@@ -1,0 +1,71 @@
+.sidebar {
+  display: block;
+  float: left;
+  text-align: right;
+  margin-right: 2%;
+  width: 23%;
+  @include laptop {
+    width: 100%;
+    text-align: left;
+    float: none;
+    margin-bottom: 34px;
+    margin-right: 0px;
+  }
+}
+.nav__items {
+  display: inline-block;
+  width: 100%;
+  &.active {
+    .nav__link {
+      color: $blue;
+      font-weight: 500;
+    }
+  }
+  @include laptop {
+    width: auto;
+    margin-right: 17px;
+    margin-bottom: 10px;
+    &:last-child {
+      margin-right: 0px;
+    }
+  }
+}
+.nav__link {
+  display: block;
+  padding: 9px 23px;
+  color: inherit;
+  text-decoration: none;
+  border-right: 6px solid transparent;
+  transition: 0.3s;
+  @include laptop {
+    border-right: none;
+    padding: 0;
+  }
+  &:hover,
+  &:active {
+    color: $blue;
+    border-right: 6px solid $blue;
+    @include laptop {
+      border-right: none;
+    }
+  }
+}
+.nav__link-text {
+  margin-left: 10px;
+  word-break: break-word;
+  @include inlineblock();
+  max-width: calc(90% - 18px);
+  @include laptop {
+    max-width: 100%;
+  }
+  @include phones {
+    margin-left: 0px;
+  }
+}
+.nav__link-icon {
+  @include inlineblock();
+  max-width: 18px;
+  @include phones {
+    display: none;
+  }
+}

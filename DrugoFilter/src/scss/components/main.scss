@@ -1,0 +1,236 @@
+$main: rgb(255, 134, 99);
+$white: #ffffff;
+$gray: #f0f0f0;
+
+html,
+body {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  margin-bottom: 16px;
+}
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  min-width: 620px;
+  background-color: #e4e4e4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.filter {
+  background: $white;
+  border-radius: 10px;
+  overflow: hidden;
+  min-width: 600px;
+}
+.filter__header {
+  background-color: $main;
+  color: $white;
+  padding: 17px;
+}
+.filter__title {
+  font-size: 16px;
+  font-weight: 500;
+}
+.filter__search {
+  padding: 17px;
+  background-color: $gray;
+  display: flex;
+  justify-content: space-between;
+}
+.search__block {
+  background: $white;
+  display: flex;
+  width: 48%;
+  align-items: center;
+  font-size: 14px;
+  border-radius: 30px;
+  padding: 8px;
+  box-sizing: border-box;
+  i {
+    color: #9f9f9f;
+    cursor: pointer;
+  }
+  &::placeholder {
+    font-size: 12px;
+    color: #9f9f9f;
+  }
+}
+.search__input {
+  border: none;
+  background: $white;
+  width: 100%;
+  padding: 0px 6px;
+  &:focus {
+    outline: none;
+  }
+}
+.filter__body {
+  display: flex;
+}
+.filter__col {
+  width: 50%;
+  padding: 0 17px;
+  display: flex;
+  flex-direction: column;
+  &:first-child {
+    position: relative;
+    &:before {
+      content: "";
+      display: block;
+      width: 1px;
+      height: 100%;
+      background: $gray;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+}
+.col__title {
+  font-size: 12px;
+  color: rgb(79, 79, 79);
+  font-weight: 500;
+  padding: 14px 0 6px 0;
+  position: relative;
+  &:before {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 100%;
+    background: $gray;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}
+.friends__list {
+  height: 310px;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    width: 3px;
+    background-color: #ffffff;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #c4c4c4;
+    border-radius: 2px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #ffffff;
+  }
+}
+.friends-list__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 0 6px 14px;
+  background: $white;
+  transition: 0.3s;
+  position: relative;
+  &.active {
+    &:before {
+      content: "";
+      display: block;
+      height: 2px;
+      width: 100%;
+      background: #dddddd;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  border-bottom: 1px solid $gray;
+  &:hover {
+    background: $gray;
+  }
+}
+.friend__info {
+  display: flex;
+  align-items: center;
+}
+.friend__avatar {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+  img {
+    width: auto;
+    height: 100%;
+    display: block;
+    pointer-events: none;
+  }
+}
+.friend__name {
+  font-size: 12px;
+  font-weight: 500;
+}
+.drag-zone {
+  flex: 1;
+}
+.friend-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 24px;
+  width: 16px;
+  height: 16px;
+  &.btn--add {
+    background: url(../img/iconAdd.svg) no-repeat center;
+    display: block;
+    background-size: 16px;
+  }
+  &.btn--delete {
+    background: url(../img/iconMinus.svg) no-repeat center;
+    display: block;
+    background-size: 16px;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+.filter__footer {
+  padding: 10px 17px;
+  background-color: $gray;
+  display: flex;
+  justify-content: flex-end;
+}
+.btn {
+  background-color: $main;
+  border: none;
+  border-radius: 10px;
+  padding: 13px;
+  color: $white;
+  font-size: 12px;
+  font-weight: 400;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+}
+.filter__start {
+  padding: 12px 33px;
+  font-size: 16px;
+}

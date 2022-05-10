@@ -1,0 +1,17 @@
+-   
+    var counterItems = [
+        {num:"42", text:"Web Design Projects"},
+        {num:"123", text:"happy client"},
+        {num:"15", text:"award winner"},
+        {num:"99", text:"cup of coffee"},
+        {num:"24", text:"members"},
+
+    ];
+    
+section.counter 
+    .container 
+        ul.counter__list 
+            each counterItem in counterItems
+                li.counter__item.wow.animate__fadeInUp(data-wow-offset="100" data-wow-duration="1.2s") 
+                    .counter__num(data-counterup-time="1500" data-counterup-delay="30" data-counterup-beginat="10")= counterItem.num 
+                    .counter__text= counterItem.text

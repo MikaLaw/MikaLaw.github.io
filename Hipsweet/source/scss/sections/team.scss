@@ -1,0 +1,274 @@
+.team {
+  background: #c8c9c9;
+  background: radial-gradient(circle at 50% 50%, #fefdfd 0%, #c8c9c9 100%);
+}
+
+.tabs__controls__head {
+  @extend %clearfix;
+  margin-bottom: 75px;
+}
+
+.tabs__controls-title {
+  float: left;
+  margin-right: 44px;
+  width: calc(36% - 44px);
+}
+
+.tabs__controls {
+  float: right;
+
+  width: 64%;
+  font-size: 0;
+  * {
+    font-size: 16px;
+  }
+}
+
+.tabs__controls-item {
+  @include inlineblock($valign: top);
+  width: calc(33.33% - 20px);
+  margin-right: 20px;
+  margin-bottom: 20px;
+
+  &:nth-last-child(-n + 3) {
+    margin-bottom: 0;
+  }
+
+  &:last-child {
+    margin-right: 0px;
+  }
+
+  &.active,
+  &:hover,
+  &:active {
+    .tabs__controls-link {
+      background: $dark-text-contrast;
+      &::before {
+        opacity: 1;
+      }
+    }
+
+    .tabs__control-title {
+      color: $contrast;
+    }
+
+    .tabs__control-text {
+      color: $white;
+    }
+  }
+}
+
+.tabs__controls-link {
+  border-radius: 16px;
+  padding: 23px 28px;
+  display: inline-block;
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    @include centered($axis: "x");
+    top: 100%;
+    width: 0;
+    height: 0;
+    border-bottom: 12px solid transparent;
+    border-top: 12px solid $dark-text-contrast;
+    border-left: 16px solid transparent;
+    border-right: 16px solid transparent;
+    opacity: 0;
+  }
+}
+
+.tabs__control-title {
+  font-family: $title-font;
+  font-size: 30px;
+  line-height: 36px;
+  color: $title;
+  margin-bottom: 8px;
+}
+
+.tabs__control-text {
+  font-size: 16px;
+  color: $text;
+}
+
+.tabs__content-item {
+  font-size: 0;
+  * {
+    font-size: 16px;
+  }
+  display: none;
+  &.active {
+    display: block;
+  }
+}
+
+.tabs__content-left {
+  @include inlineblock($valign: top);
+  margin-right: 20px;
+  width: calc(28% - 20px);
+  padding-top: 30px;
+
+  p {
+    margin-bottom: 20px;
+  }
+}
+
+.tabs__content-center {
+  @include inlineblock($valign: bottom);
+  margin-right: 20px;
+  width: calc(41% - 20px);
+}
+
+.tabs__content-right {
+  @include inlineblock($valign: top);
+  width: 31%;
+  padding-top: 30px;
+
+  p {
+    margin-bottom: 20px;
+  }
+}
+
+.tabs__content-pic {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.form__wrap {
+  background: linear-gradient(to right, rgba(#1d1d20, 0) 0%, rgba(#1d1d20, 0) 51%, rgba(#1d1d20, 0.83) 51%, rgba(#1d1d20, 0.83) 100%), url("../img/form-bg.jpg") no-repeat center / cover;
+
+  border-radius: 20px;
+  font-size: 0;
+  max-width: 844px;
+  margin: 0 auto;
+  position: relative;
+  * {
+    font-size: 16px;
+  }
+}
+
+.form__wrap-title {
+  width: 51%;
+  @include inlineblock();
+}
+
+.form__wrap-content {
+  width: 49%;
+  padding: 72px 50px;
+  @include inlineblock();
+}
+
+.form__wrap-title {
+  text-align: center;
+
+  .section__title {
+    font-size: 66px;
+    color: $white;
+  }
+}
+
+.form__row {
+  margin-bottom: 32px;
+
+  &:nth-last-child(-n + 2) {
+    margin-bottom: 0;
+  }
+}
+
+.form__input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid $white;
+  box-sizing: border-box;
+  background: transparent;
+  padding: 14px;
+  padding-left: 0;
+  color: $white;
+  transition: 0.3s;
+
+  &::placeholder {
+    color: $white;
+    font-size: 16px;
+  }
+
+  &:focus {
+    outline: none;
+    border-bottom: 1px solid $contrast;
+  }
+}
+
+.form__checkbox {
+  @include inlineblock();
+  position: absolute;
+  left: -9999px;
+}
+
+.form__label {
+  @include inlineblock();
+  cursor: pointer;
+  color: $white;
+  position: relative;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    background: $white;
+    margin-right: 10px;
+  }
+
+  &::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    @include sprite($icon-checkbox);
+    position: absolute;
+    left: 1%;
+    top: 40%;
+    transform: translateY(-50%);
+    display: none;
+  }
+}
+
+.form__checkbox:checked + .form__label::after {
+  display: block;
+}
+
+.form__row--btn {
+  width: 97px;
+  display: block;
+  height: 97px;
+  position: absolute;
+  top: 97%;
+  transform: translate(-50%, -50%);
+  left: 98%;
+  background: $contrast;
+  border-radius: 50%;
+  transition: 0.3s;
+  cursor: pointer;
+
+  &:hover,
+  &:active {
+    background: $dark-contrast;
+
+    .form__btn {
+      @include sprite($icon-arrow-hover);
+    }
+  }
+}
+
+.form__btn {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 53%;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  padding: 0;
+  border: none;
+  @include sprite($icon-arrow);
+  cursor: pointer;
+}

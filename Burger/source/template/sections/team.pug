@@ -1,0 +1,22 @@
+-   
+    var accoItems = [
+        {name:"Дэниэл Редклиф", prof:"Оператор", avatar:"team-member.jpg", text: "С радостью поможет подобрать идеальный бургер и оформить заказ."},
+        {name:"Ричард Джеймс", prof:"Менеджер", avatar:"team-member.jpg", text: "С радостью поможет подобрать идеальный бургер и оформить заказ."},
+        {name:"Джейк Финн", prof:"Повар", avatar:"team-member.jpg", text: "С радостью поможет подобрать идеальный бургер и оформить заказ."},
+        {name:"Николай Иванов", prof:"Младший повар", avatar:"team-member.jpg", text: "С радостью поможет подобрать идеальный бургер и оформить заказ."}
+    ]
+section.team#team 
+    .container
+        .team__block 
+            h2.section__title.team__title Команда
+            ul.team-accordion
+                each accoItem in accoItems
+                    li.team-accordion__item
+                        a.team-accordion__trigger(role="button", href="#")= accoItem.name
+                        .team-accordion__content
+                            .team-accordion__wrap
+                                .team-accordion__avatar 
+                                    img.team-accordion__img.lazy__img(data-src=`./img/${accoItem.avatar}`, src="#", alt=`Фото ${accoItem.name}`)
+                                .team-accordion__desc 
+                                    .team-accordion__title= accoItem.prof 
+                                    .team-accordion__text= accoItem.text    

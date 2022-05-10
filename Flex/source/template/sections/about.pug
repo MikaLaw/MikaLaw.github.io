@@ -1,0 +1,26 @@
+-   
+    var aboutItems = [
+        {img:"about-1", alt:"Монитор, клавиатура", delay:""},
+        {img:"about-2", alt:"Наушники, телефон", delay:"0.1s"},
+        {img:"about-3", alt:"Цветок, телефон", delay:"0.2s"},
+    ];
+     
+section.about#about
+    .container 
+        .about__head.wow.animate__fadeInUp(data-wow-duration="1.2s")
+            +sectionTitle("What we do", "Story about us", "about__title")
+            .section__desc.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                sed do eiusmod tempor incididunt ut labore et dolore magna 
+                aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+                ullamco laboris nisi ut aliquip ex ea commodo consequat.  
+        ul.about__list
+            each aboutItem in aboutItems
+                li.about__item.wow.animate__fadeInUp(data-wow-duration="1.2s", data-wow-delay=`${aboutItem.delay}`)
+                    .about__block
+                        .about__pic 
+                            img.section__img(src=`./img/${aboutItem.img}.jpg`, alt=`${aboutItem.alt}`)
+                            .section__thumb 
+                                svg.about__thumb-icon 
+                                    use(xlink:href=`./img/sprite.svg#about-users`)
+                                .about__thumb-text super team 

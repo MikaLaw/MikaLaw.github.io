@@ -1,0 +1,11 @@
+.EditUserForm .info-cell {
+    font-weight: 500;
+}
+.EditUserForm .info-avatar {
+    padding: 20px;
+}
+
+.EditUserForm .info-cell span {
+    margin-left: 10px;
+    font-weight: normal;
+}

@@ -1,0 +1,25 @@
+-   
+    var socItems = [
+        {link:"https://ru-ru.facebook.com/", icon:"icon-fb"},
+        {link:"https://www.instagram.com/", icon:"icon-in"},
+        {link:"https://ok.ru/", icon:"icon-ok"},
+        {link:"https://twitter.com/", icon:"icon-tw"},
+        {link:"https://vk.com", icon:"icon-vk"}
+        ]
+footer.footer
+    .container 
+        .footer__logo
+            .logo
+                .logo__pic
+                    img.logo__img(src="./img/logo.png", alt="Hipsweet")
+                .logo__text Hipsweet
+        .footer__copyright 
+            .footer__copyright-text © 2016 Все права защищены
+        .footer__address 
+            address.footer__address-text г. Москва, Вознесенский проспект 44 оф 166
+        .footer__soc
+            ul.soc__list
+                each socItem in socItems
+                    li.soc__item
+                        a.soc__link(href=`${socItem.link}`, target="_blank", rel="noopener")
+                            div(class=`soc__icon ${socItem.icon}`)

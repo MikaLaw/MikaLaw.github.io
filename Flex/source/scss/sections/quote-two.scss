@@ -1,0 +1,25 @@
+.quote__two {
+  padding-top: 102px;
+  padding-bottom: 126px;
+  .quote__item {
+    padding-left: 82px;
+    @include tablets {
+      padding: 0;
+    }
+  }
+}
+
+.quote__avatar {
+  margin-right: 30px;
+  @include tablets {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+.quote__avatar-pic {
+  width: 212px;
+  height: 212px;
+  border-radius: 50%;
+  overflow: hidden;
+}

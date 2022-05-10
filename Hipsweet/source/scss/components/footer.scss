@@ -1,0 +1,74 @@
+.footer {
+  padding: 26px 0;
+  font-size: 14px;
+  color: $subtitle;
+  height: 100px;
+  margin-top: -100px;
+}
+
+.footer__logo {
+  @include inlineblock();
+  margin-right: 47px;
+
+  .logo__pic {
+    width: 62px;
+    height: 52px;
+    margin-right: 7px;
+  }
+
+  .logo__text {
+    font-size: 32px;
+    max-width: calc(100% - 71px);
+  }
+}
+
+.footer__copyright {
+  @include inlineblock();
+  margin-right: 39px;
+}
+
+.footer__address {
+  @include inlineblock();
+  margin-right: 15px;
+}
+
+.footer__address-text {
+  font-style: normal;
+}
+
+.footer__soc {
+  @include inlineblock();
+}
+
+.soc__item {
+  @include inlineblock();
+
+  &:hover,
+  &:active {
+    .soc__link {
+      opacity: 1;
+    }
+  }
+}
+
+.soc__link {
+  display: block;
+  width: 22px;
+  height: 22px;
+  text-align: center;
+  opacity: 0.5;
+  transition: 0.3s;
+  box-sizing: content-box;
+  padding: 10px 10px;
+}
+
+.soc__icon {
+  display: inline-block;
+}
+
+@each $sprite in ($icon-fb, $icon-in, $icon-ok, $icon-tw, $icon-vk) {
+  $sprite-name: nth($sprite, 10);
+  .#{$sprite-name} {
+    @include sprite($sprite);
+  }
+}

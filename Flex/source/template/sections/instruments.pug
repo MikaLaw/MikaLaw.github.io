@@ -1,0 +1,25 @@
+-   
+    var instrumentsItems = [
+        {delay:"", icon:"instruments-alarm", title:"Photography", text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."},
+        {delay:"", icon:"instruments-linegraph", title:"Web Design", text:"Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."},
+        {delay:"", icon:"instruments-computer", title:"Creativity", text:"Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."},
+        {delay:"0.1s", icon:"instruments-seo", title:"seo", text:"Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod."},
+        {delay:"0.1s", icon:"instruments-home", title:"Css/Html", text:"Lorem dolor sit amet, consectetur adipiscing elit, sed do tempor."},
+        {delay:"0.1s", icon:"instruments-image", title:"digital", text:"Sit amet, consectetur adipiscing elit, sed do eiusmod tempor."},
+    ];
+section.instruments 
+    .container
+        .wow.animate__fadeInUp(data-wow-duration="1.2s" data-wow-offset="200") 
+            +sectionTitle("We work with", "Amazing Services", "instruments__title")
+        ul.instruments__list 
+            each instrumentsItem in instrumentsItems
+                li.instruments__item.wow.animate__fadeInUp(data-wow-duration="1.2s", data-wow-offset="200" data-wow-delay=`${instrumentsItem.delay}`) 
+                    .instruments__item-pic 
+                        svg.instruments__item-icon 
+                            use(xlink:href=`./img/sprite.svg#${instrumentsItem.icon}`)
+                    .instruments__item-desc
+                        h3.instruments__item-title= instrumentsItem.title 
+                        .instruments__item-text.section__desk= instrumentsItem.text 
+
+
+

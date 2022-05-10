@@ -1,0 +1,40 @@
+.popup {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -100px);
+  transition: 1s;
+
+  &.active {
+    transform: translate(-50%, 100px);
+  }
+}
+
+.popup__block {
+  min-width: 250px;
+  max-width: 500px;
+  display: inline-block;
+  background: $white;
+  border-radius: 16px;
+  padding: 20px;
+  padding-right: 46px;
+  position: relative;
+}
+
+.popup__close-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 85%;
+  padding: 0;
+  background: transparent;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+
+  svg {
+    display: block;
+    width: 12px;
+    height: 12px;
+  }
+}

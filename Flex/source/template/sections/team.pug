@@ -1,0 +1,36 @@
+-   
+    var teamItems = [
+        {img:"team-1", name:"Matthew Dix", proff:"Graphic Design",socLinks: [{icon:"facebook",link:"#"},{icon:"twitter",link:"#"},{icon:"pinterest",link:"#"},{icon:"instagram",link:"#"}]},
+        {img:"team-2", name:"Christopher Campbell", proff:"Branding/UX design",socLinks: [{icon:"facebook",link:"#"},{icon:"twitter",link:"#"},{icon:"pinterest",link:"#"},{icon:"instagram",link:"#"}]},
+        {img:"team-3", name:"Michael Fertig", proff:"Developer",socLinks: [{icon:"facebook",link:"#"},{icon:"twitter",link:"#"},{icon:"pinterest",link:"#"},{icon:"instagram",link:"#"}]},
+        {img:"team-1", name:"Matthew Dix", proff:"Graphic Design",socLinks: [{icon:"facebook",link:"#"},{icon:"twitter",link:"#"},{icon:"pinterest",link:"#"},{icon:"instagram",link:"#"}]},
+        {img:"team-2", name:"Christopher Campbell", proff:"Branding/UX design",socLinks: [{icon:"facebook",link:"#"},{icon:"twitter",link:"#"},{icon:"pinterest",link:"#"},{icon:"instagram",link:"#"}]},
+        {img:"team-3", name:"Michael Fertig", proff:"Developer",socLinks: [{icon:"facebook",link:"#"},{icon:"twitter",link:"#"},{icon:"pinterest",link:"#"},{icon:"instagram",link:"#"}]},
+    ];
+
+section.team 
+    .container 
+        .team__head.wow.animate__fadeInUp(data-wow-duration="1.2s")  
+            +sectionTitle("Who we are", "Meet our team","team__title")
+            .section__desc.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                sed do eiusmod tempor incididunt ut labore et dolore magna 
+                aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+                ullamco laboris nisi ut aliquip ex ea commodo consequat.  
+        ul.team__list.owl-carousel.owl-theme
+            each teamItem in teamItems
+                li.team__item 
+                    .team__avatar
+                        .team__pic
+                            img.section__img(src=`./img/${teamItem.img}.jpg`, alt=`${teamItem.name}`)
+                            .section__thumb 
+                                ul.team-soc__list 
+                                    each socIcon in teamItem.socLinks
+                                        li.team-soc__item
+                                            a.team-soc__link(href=`${socIcon.link}` target="_blank" rel="noopener") 
+                                                svg.team-soc__icon
+                                                    use(xlink:href=`./img/sprite.svg#${socIcon.icon}`)
+                    .team__desc 
+                        h3.team__name= teamItem.name
+                        .team__proff= teamItem.proff   
+                    

@@ -1,0 +1,22 @@
+header.header 
+	.container 
+		.header__left
+			include ./user
+		.header__right
+			.contacts 
+				button.contacts__title 
+					i.fa-solid.fa-phone.contacts__title-icon
+					span.contacts__title-desc Мои контакты
+				ul.contacts__menu
+					li.contacts__item 								
+						a.contacts__link(href="mailto:kostya@mail.ru")
+							i.fa-solid.fa-envelope.contacts__link-icon
+							span.contacts__link-text kostya@mail.ru
+					li.contacts__item 	
+						a.contacts__link(href="tel:+79218876237") 
+							i.fa-solid.fa-phone.contacts__link-icon
+							span.contacts__link-text +7 921 887 62 37
+					li.contacts__item 	
+						a.contacts__link(href="#") 
+							i.fa-brands.fa-skype.contacts__link-icon
+							span.contacts__link-text kostik_

@@ -1,0 +1,34 @@
+-var productsItems = ["Торты","Печенья","Пончики","Рулеты","Зефир","Шоколад","Пироженные","Конфеты"]
+-var teamMembers = ["Тони Ройстер","Ричард Джейс","Майти Модстер"]
+header.header
+    .container
+        .header__logo
+            .logo
+                .logo__pic
+                    img.logo__img(src="./img/logo.png", alt="Hipsweet")
+                h1.logo__text Hipsweet
+        nav.header__nav
+            ul.nav__list
+                li.nav__item.nav__item--dropdown
+                    a.nav__link(role="button", href="#") Сладости
+                    ul.nav__dropdown-list
+                        each productsItem in productsItems
+                            li.nav__dropdown-item
+                                a.nav__dropdown-link(href="#", data-href="#products")
+                                    .nav__dropdown-text= productsItem
+                li.nav__item
+                    a.nav__link(href="#", data-href="#form-block") Доставка
+                li.nav__item
+                    a.nav__link(href="#", data-href="#advantages") Компания
+                li.nav__item.nav__item--dropdown
+                    a.nav__link(role="button", href="#") Команда
+                    ul.nav__dropdown-list
+                        each teamMember in teamMembers
+                            li.nav__dropdown-item
+                                a.nav__dropdown-link(href="#", data-href="#team")
+                                    .nav__dropdown-text= teamMember
+            .nav__btn
+                a.nav__btn-link.section__icon(role="button", href="#")
+                    span.section__icon-pic.nav__btn-icon--user
+                a.nav__btn-link.section__icon(role="button", href="#")
+                    span.section__icon-pic.nav__btn-icon--search

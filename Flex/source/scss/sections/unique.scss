@@ -1,0 +1,27 @@
+.unique {
+  padding-top: 103px;
+  background: linear-gradient(rgba(#fff, 0.85) 0%, rgba(#fff, 0.85) 100%), url("../img/unique-bg.jpg") no-repeat fixed top / cover;
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.unique__title {
+  margin-bottom: 7px;
+}
+
+.unique__pic {
+  position: relative;
+  max-width: 570px;
+  margin-right: 53px;
+}
+
+.unique__pic-phone {
+  position: absolute;
+  max-width: 49%;
+  top: 37.8%;
+  right: -19.5%;
+}

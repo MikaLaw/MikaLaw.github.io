@@ -1,0 +1,20 @@
+-   
+    var galleryItems = [
+        {img:"galery-1", title:"Milford Sound", subtitle:"New Zeland", text:"There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form, by injected humor"},
+        {img:"galery-2", title:"Milford Sound", subtitle:"New Zeland", text:"There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form, by injected humor"},
+        {img:"galery-3", title:"Beatifull Halong Bay View", subtitle:"New Zeland", text:""},
+        {img:"galery-4", title:"Milford Sound", subtitle:"New Zeland", text:""},
+    ];
+
+section.gallery
+    h2.gallery__title Collections
+    each galleryItem in galleryItems
+        .galllery__item(style=`background-image: url('./img/${galleryItem.img}.jpg')`)
+            a.galllery__item-btn(href="#")
+                svg.galllery__item-icon 
+                    use(xlink:href="./img/sprite.svg#arrow") 
+            .gallery__desc 
+                h3.gallery__desc-title= galleryItem.title
+                .gallery__desc-subtitle= galleryItem.subtitle
+                .gallery__desc-text= galleryItem.text
+                

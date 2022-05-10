@@ -1,0 +1,13 @@
+extends ../template
+
+block title
+	title Авторизация
+	
+block content
+	.auth__wrapper
+		.auth__block.animate__animated.animate__bounceInDown
+			.auth__user 
+				include ../components/user
+			.auth__btn 
+				a.btn__link.auth__btn-link(href="about.html")
+					span.about__btn-text Перейти на сайт

@@ -1,0 +1,29 @@
+-   
+    var productsItems = [
+        {icon:"product-1.png",iconRetina:"product-1@2x.png", title: "Торты", imgAlt:"Торты", delay:"0.1s",text:"Десерт, состоящий из одного или нескольких коржей, пропитанных кремом или джемом. Сверху торт обычно украшают кремом, глазурью или фруктами"},
+        {icon:"product-2.png",iconRetina:"product-2@2x.png", title: "Печенья", imgAlt:"Печенья", delay:"0.2s",text:"Десерт, состоящий из одного или нескольких коржей, пропитанных кремом или джемом. Сверху торт обычно украшают кремом, глазурью или фруктами"},
+        {icon:"product-3.png",iconRetina:"product-3@2x.png", title: "Пончики", imgAlt:"Пончики", delay:"0.3s",text:"Десерт, состоящий из одного или нескольких коржей, пропитанных кремом или джемом. Сверху торт обычно украшают кремом, глазурью или фруктами"},
+        {icon:"product-4.png",iconRetina:"product-4@2x.png", title: "Рулеты", imgAlt:"Рулеты", delay:"0.4s",text:"Десерт, состоящий из одного или нескольких коржей, пропитанных кремом или джемом. Сверху торт обычно украшают кремом, глазурью или фруктами"},
+        {icon:"product-5.png",iconRetina:"product-5@2x.png", title: "Зефир", imgAlt:"Зефир", delay:"0.5s",text:"Десерт, состоящий из одного или нескольких коржей, пропитанных кремом или джемом. Сверху торт обычно украшают кремом, глазурью или фруктами"},
+        {icon:"product-6.png",iconRetina:"product-6@2x.png", title: "Шоколад", imgAlt:"Шоколад", delay:"0.6s",text:"Десерт, состоящий из одного или нескольких коржей, пропитанных кремом или джемом. Сверху торт обычно украшают кремом, глазурью или фруктами"},
+        {icon:"product-7.png",iconRetina:"product-7@2x.png", title: "Пироженные", imgAlt:"Пироженные", delay:"0.7s",text:"Десерт, состоящий из одного или нескольких коржей, пропитанных кремом или джемом. Сверху торт обычно украшают кремом, глазурью или фруктами"},
+        {icon:"product-8.png",iconRetina:"product-8@2x.png", title: "Конфеты", imgAlt:"Конфеты", delay:"0.8s",text:"Десерт, состоящий из одного или нескольких коржей, пропитанных кремом или джемом. Сверху торт обычно украшают кремом, глазурью или фруктами"}
+        ]
+section.products#products
+    .container
+        .section__head.products__head
+            h2.section__title Мы поставляем
+            .section__text
+                p 
+                    | Также мы делаем выпечку под заказ для различных праздников и банкетов. 
+                    | Заказать индивидуальную выпечку вы можете заполнив 
+                    a.section__link(href="#") форму. 
+                    | После с Вами свяжется один из наших поваров и обсудит заказ более детально.
+        ul.products__list
+            each productsItem in productsItems
+                li.products__item.wow.animate__animated.animate__zoomIn(data-wow-duration=".3s" data-wow-delay=`${productsItem.delay}`)
+                    .products__icon
+                        img.products__pic(src=`./img/${productsItem.icon}` srcset=`./img/${productsItem.iconRetina} 2x`,  alt=`${productsItem.imgAlt}`)
+                    .products__info
+                        h3.products__title= productsItem.title
+                        .products__desc= productsItem.text

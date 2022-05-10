@@ -1,0 +1,45 @@
+doctype html
+html(lang='ru')
+    head
+        meta(charset="utf-8")
+        title Hipsweet
+        meta(content="Пример статичного сайта" name="author")
+        meta(content="Лендинг кондитерской" name="description")
+        meta(content="Пример статичного сайта" name="keywords")
+        meta(content="width=1152" name="viewport")
+        meta(content="IE=edge" http-equiv="X-UA-Compatible" )
+        include components/favicon       
+        link(rel='stylesheet' href='./css/foundation.min.css')
+        link(rel='stylesheet' href='./css/main.min.css')
+    body
+        include components/preloader
+        .wrapper
+            // SECTION HERO START
+            include ./sections/hero
+            // SECTION HERO END
+            // SECTION ADVANTAGES START
+            include ./sections/advantages
+            // SECTION ADVANTAGES END
+            // SECTION PRODUCTS START
+            include ./sections/products
+            // SECTION PRODUCTS END
+            // SECTION TEAM START
+            include ./sections/team
+            // SECTION TEAM END
+            // SECTION FAQS START   
+            include ./sections/faqs
+            // SECTION FAQS END
+            // SECTION MAP START                 
+            include ./sections/map
+            // SECTION MAP END 
+            // FOOTER START          
+        include ./components/footer
+            // FOOTER END 
+        include ./components/popup            
+
+        script(src="./js/foundation.min.js")
+        div(id="yamap")  
+        //- script(src="https://api-maps.yandex.ru/2.1/?apikey=вашAPI-ключ&lang=ru_RU")
+        script(src="./js/main.min.js")
+
+        

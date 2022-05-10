@@ -1,0 +1,28 @@
+-   
+    var countItems = [
+        {count: "58", desc:"Photo collections"},
+        {count: "20", desc:"Visited countries"},
+        {count: "61", desc:"Articles"},        
+    ]
+section.about
+    ul.about__count-list
+        each countItem in countItems
+            li.about__count-item
+                .about__count-num= countItem.count
+                .about__count-text= countItem.desc 
+    .about__desc 
+        h2.about__title Socha. Responsive Theme
+        .about__text.
+            There are many variations of passages of Lorem Ipsum available
+            but the majority have suffered alteration in some form, by injected humor,
+            a randomised words with dont look even slightly believable. 
+            If you are going to use a passages of Lorem Ipsum 
+        a.about__btn-link(href="#") Read more
+    .about__video
+        .about__video-pic
+            img.about__video-img(src="./img/video-1.jpg", alt="")
+            .about__video-desc 
+                a.about__video-link(href="#") 
+                .about__video-title Socha 
+                    span Adventures
+                .about__video-text Short video presentation

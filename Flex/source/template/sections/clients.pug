@@ -1,0 +1,16 @@
+-   
+    var clientsItems = [
+        {img: "clients-1", alt:"Hipster Barbershop"},     
+        {img: "clients-2", alt:"ABCD"},
+        {img: "clients-3", alt:"Design Quality"},
+        {img: "clients-4", alt:"Hipster Barbershop"},
+        {img: "clients-5", alt:"Hipster Barbershop"},
+        {img: "clients-6", alt:"Studio Designer"},     
+    ];
+
+section.clients 
+    .container 
+        ul.clients__list.wow.animate__fadeIn(data-wow-duration="1.2s")  
+            each clientsItem in clientsItems
+                li.clients__item 
+                    img.section__img(src=`./img/${clientsItem.img}.png`, alt=`${clientsItem.alt}`)

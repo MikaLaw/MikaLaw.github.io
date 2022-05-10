@@ -1,0 +1,17 @@
+.TrafficPage .controllers {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.TrafficPage__img{
+    width: 30px;
+    height: 30px;
+}
+.TrafficPage__img img {
+    max-width: 100%;
+    height: auto;
+}
+
+.ml-2 {
+    margin-left: 20px;
+   }

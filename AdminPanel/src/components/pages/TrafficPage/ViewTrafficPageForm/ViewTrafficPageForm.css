@@ -1,0 +1,19 @@
+.ViewTrafficPageForm {
+    height: 100%;
+}
+
+.ViewTrafficPageForm__wrapper {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ViewTrafficPageForm__bredcrumb {
+    display: flex;
+    align-items: center;  
+}
+.ViewTrafficPageForm__bredcrumb span{
+    font-size:  22px;  
+    
+}

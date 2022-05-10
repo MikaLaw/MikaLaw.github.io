@@ -1,0 +1,81 @@
+-   
+    var socItems = [
+        {icon:"facebook", link:"#"},
+        {icon:"twitter", link:"#"},
+        {icon:"instagram", link:"#"},
+        {icon:"pinterest", link:"#"},
+        {icon:"googleplus", link:"#"},
+        {icon:"youtube", link:"#"},
+        {icon:"dribbble", link:"#"},
+        {icon:"tumblr", link:"#"},
+    ];
+-   
+    var blogsItems = [
+        {img:"footer-blogs-1", title:"Lorem ipsum dolor sit amet, consectetur adipiscing", data:"Jan 9, 2016"},
+        {img:"footer-blogs-2", title:"Consectetur adipiscing elit, sed do eiusmod tempor", data:"Jan 9, 2016"},
+        {img:"footer-blogs-3", title:"sed do eiusmod tempor incididunt ut labore", data:"Jan 9, 2016"},
+    ];   
+-   
+    var instagramItems = [
+        {img:"footer-instagram-1",link:"#"},
+        {img:"footer-instagram-2",link:"#"},
+        {img:"footer-instagram-3",link:"#"},
+        {img:"footer-instagram-4",link:"#"},
+        {img:"footer-instagram-5",link:"#"},
+        {img:"footer-instagram-6",link:"#"},
+        {img:"footer-instagram-7",link:"#"},
+        {img:"footer-instagram-8",link:"#"},
+        {img:"footer-instagram-9",link:"#"},
+    ];  
+
+
+footer.footer#contact 
+    .container 
+        .footer__top 
+            .footer-contacts 
+                .footer__logo
+                     a.logo(href="#") MoGo
+                .footer__text.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna 
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                .footer__followers  
+                    .footer__followers-title 
+                        .footer__followers-amount 15k 
+                        .footer__followers-text followers
+                    .footer__followers-soc 
+                        .footer__soc-title Follow Us:
+                        ul.footer__soc-list
+                            each  socItem in socItems
+                                li.footer__soc-item 
+                                    a.footer__soc-link(href=`${socItem.link}` rel="noopener" target="_blank")
+                                        svg.footer__soc-icon 
+                                            use(xlink:href=`./img/sprite.svg#${socItem.icon}`)
+                    .footer__email 
+                        form.footer__email-form(action="#")
+                            input.footer__email-imput(type="email" placeholder="Your email..." required)
+                            button.footer__email-btn(type="submit") subscribe
+            .footer-blogs
+                .footer__title Blogs
+                ul.footer-blogs__list 
+                    each blogsItem in blogsItems
+                        li.footer-blogs__item
+                            .footer-blogs__preview
+                                img.section__img(src=`./img/${blogsItem.img}.jpg`, alt=`${blogsItem.title}`)
+                            .footer-blogs__desc 
+                                .footer-blogs__title= blogsItem.title
+                                .footer-blogs__data= blogsItem.data
+            .footer-instagram
+                .footer__title Instagram
+                ul.footer-instagram__list 
+                    each instagramItem in instagramItems
+                        li.footer-instagram__item
+                             a.footer-instagram__link(href=`${instagramItem.link}` target="_blank" rel="noopener")
+                                img.section__img(src=`./img/${instagramItem.img}.jpg`, alt="Картинки из инстаграма")
+                a(href="#" target="_blank" rel="noopener").footer-instagram__subtitle View more photos
+        .footer__bottom 
+            .footer__copyright  © 
+                .footer__copyright-year 
+                span MoGo free PSD template by 
+                a.footer__copyright-link(href="#" target="_blank" rel="noopener") Laaqiq

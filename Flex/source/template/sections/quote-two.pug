@@ -1,0 +1,18 @@
+-   
+    var quoteItems = [
+        {img:"quote-two-1", text: "“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.”", name:"Joshua Earle"},     
+        {img:"quote-two-1", text: "“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.”", name:"Joshua Earle"},  
+        {img:"quote-two-1", text: "“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.”", name:"Joshua Earle"},  
+    ];
+
+section.quote.quote__two
+    .container 
+        ul.quote__list.quote__list-two.owl-carousel.owl-theme.wow.animate__fadeIn(data-wow-duration="1.2s") 
+            each quoteItem in quoteItems
+                li.quote__item 
+                    .quote__avatar
+                        .quote__avatar-pic  
+                            img.section__img(src=`./img/${quoteItem.img}.jpg`, alt=`${quoteItem.name}`)
+                    .quote__desc
+                        blockquote.quote__text= quoteItem.text 
+                        .quote__name= quoteItem.name

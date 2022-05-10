@@ -1,0 +1,84 @@
+.quote {
+  background: $color-bg;
+  padding-top: 69px;
+  padding-bottom: 64px;
+}
+
+.quote__item {
+  display: flex;
+  align-items: center;
+  padding: 0 111px;
+  @include tablets {
+    flex-direction: column;
+    padding: 0 0px;
+  }
+}
+
+.quote__pic {
+  padding: 40px;
+  border: 3px solid $color-blue;
+  margin-right: 60px;
+  @include tablets {
+    margin-right: 0px;
+    margin-bottom: 20px;
+  }
+}
+
+.quote__icon {
+  width: 64px;
+  height: 64px;
+  display: block;
+  fill: $color-blue;
+}
+
+.quote__text {
+  margin: 0;
+  font-style: italic;
+  line-height: 1.5;
+  color: $color-secondary;
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.quote__name {
+  font-family: $subtitle-font;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  &::before {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: $color-pink;
+    margin-right: 10px;
+  }
+}
+
+.quote__list.owl-theme .owl-nav {
+  margin-top: 10px;
+  position: absolute;
+  top: 44%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 97%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: 0.3s;
+}
+
+.quote__list.owl-theme .owl-nav [class*="owl-"]:hover {
+  background: transparent;
+}
+
+.quote__list.owl-carousel .owl-nav button.owl-next,
+.quote__list.owl-carousel .owl-nav button.owl-prev {
+  opacity: 1;
+  transition: 0.3s;
+  &:hover,
+  &:active,
+  &:focus {
+    opacity: 0.6;
+  }
+}

@@ -1,0 +1,31 @@
+.modal {
+  background-color: rgba(66, 66, 73, 0.55);
+  z-index: 20;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: auto;
+  padding-top: 1%;
+}
+  .modal .modal-content {
+    position: relative;
+    width: auto;
+    max-width: 40%;
+    min-width: 300px;
+    margin: auto;
+    border-radius: 8px;
+    z-index: 30;  
+
+}
+.modal .modal-content .close {
+  cursor: pointer;
+  color: #aaaaaa;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 14px;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}

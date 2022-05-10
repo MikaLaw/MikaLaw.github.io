@@ -1,0 +1,47 @@
+.fa-solid,
+.fa-brands {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-style: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-rendering: auto; 
+}
+
+.fa-brands {
+    font-family: 'Font Awesome 6 Brands';
+    font-weight: 400; 
+}
+
+.fa-user-secret::before {
+   content: "\f21b"; 
+}
+.fa-rocket::before {
+    content: "\f135";
+}
+.fa-briefcase::before {
+    content: "\f0b1";
+}
+.fa-download::before {
+    content: "\f019";
+}
+.fa-phone::before {
+    content: "\f095";
+}
+.fa-envelope::before {
+    content: "\f0e0";
+}
+.fa-phone::before {
+    content: "\f095";
+}
+.fa-skype:before {
+    content: "\f17e";
+}
+.fa-mobile-screen-button::before {
+    content: "\f3cd"; 
+}
+.fa-desktop::before {
+    content: "\f390"; 
+}

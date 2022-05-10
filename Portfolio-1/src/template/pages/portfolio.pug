@@ -1,0 +1,70 @@
+extends ../template
+include ../components/mixins
+
+block title
+	title Портфолио
+	
+block content
+	.wrapper
+		include ../components/header
+		.content
+			.container
+				+navigation('portfolio.html')
+				main.works
+					h1.title.works__title Портфолио
+					ul.works__list
+						li.works__item
+							a.works__link(href="#")
+								.works__avatar
+									img.works__avatar-pic(src="../../img/portfolio-1.jpg" alt="Продажа одежды")
+								.works__info
+									h2.works__name Deals App
+									.works__desc Продажа одежды
+									.works__type
+										i.works__type-icon.fa-solid.fa-mobile-screen-button
+										span.works__type-text Приложение
+						li.works__item
+							a.works__link(href="#")
+								.works__avatar
+									img.works__avatar-pic(src="../../img/portfolio-2.jpg" alt="Лагуна Люфтганза")
+								.works__info
+									h2.works__name Dream-scapes
+									.works__desc Лагуна Люфтганза
+									.works__type
+										i.works__type-icon.fa-solid.fa-desktop
+										span.works__type-text Лендинг	
+						li.works__item
+							a.works__link(href="#")
+								.works__avatar
+									img.works__avatar-pic(src="../../img/portfolio-3.jpg" alt="Танцевальная студия")
+								.works__info
+									h2.works__name Creative studio
+									.works__desc Танцевальная студия
+									.works__type
+										i.works__type-icon.fa-solid.fa-desktop
+										span.works__type-text Корпоративный сайт	
+						li.works__item
+							a.works__link(href="#")
+								.works__avatar
+									img.works__avatar-pic(src="../../img/portfolio-4.jpg" alt="Мебельный магазин")
+								.works__info
+									h2.works__name Studio Frog
+									.works__desc Мебельный магазин
+									.works__type
+										i.works__type-icon.fa-solid.fa-desktop
+										span.works__type-text Лендинг	
+						li.works__item
+							a.works__link(href="#")
+								.works__avatar
+									img.works__avatar-pic(src="../../img/portfolio-5.jpg" alt="Итальянсий ресторан")
+								.works__info
+									h2.works__name Carbonara
+									.works__desc Итальянсий ресторан
+									.works__type
+										i.works__type-icon.fa-solid.fa-desktop
+										span.works__type-text Лендинг																		 
+
+						
+
+	include ../components/footer
+	

@@ -1,0 +1,24 @@
+-   
+    var menuLinks = [
+        {title:"О нас", link:"2"},
+        {title:"Бургеры", link:"3"},
+        {title:"Команда", link:"4"},
+        {title:"Меню", link:"5"},
+        {title:"Отзывы", link:"6"},
+        {title:"Контакты", link:"8"},
+        ]    
+header.header
+    .container
+        .logo  
+            img.logo__icon(src="./img/icon/logo.svg" alt="Mr. Burger")  
+        button.nav-toggle
+            span.nav-toggle__icon
+            span.nav-toggle__icon
+            span.nav-toggle__icon   
+        nav.header__nav 
+            ul.nav__list
+                each menuLink in menuLinks
+                    li.nav__item
+                        a.nav__link(data-index=`${menuLink.link}` href=`#${menuLink.link}`)= menuLink.title
+            .nav__btn 
+                a.btn.nav__btn-link(data-index="7" href="#7") Заказать     

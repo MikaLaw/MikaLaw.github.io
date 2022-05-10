@@ -1,0 +1,44 @@
+.review__list {
+  @include phones {
+    margin-left: 0;
+  }
+}
+
+.review__item {
+  padding-right: 30px;
+  padding-bottom: 30px;
+}
+
+.review__block {
+  background: $contrast-color;
+  box-shadow: 20px 20px 0px 0px rgba($contrast-color, 0.4);
+  padding: 50px;
+}
+
+.review__pic {
+  flex: 0 0 60px;
+}
+
+.review__quote,
+.review__name {
+  font-size: 20px;
+}
+
+.review__list.owl-theme .owl-dots .owl-dot span {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 4px;
+  background: rgba($contrast-color, 0.4);
+  margin: 3px;
+}
+
+.review__list.owl-theme .owl-dots {
+  margin-top: 38px !important;
+}
+
+.review__list.owl-theme .owl-dots .owl-dot.active span,
+.review__list.owl-theme .owl-dots .owl-dot:hover span {
+  width: 20px;
+  background: $contrast-color;
+}

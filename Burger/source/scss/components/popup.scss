@@ -1,0 +1,42 @@
+.review-modal {
+  border-radius: 5px;
+  background-color: $white-color;
+  color: $gray-color;
+  padding: 30px 20px;
+  display: none;
+  width: 500px;
+}
+
+.review-modal__header {
+  margin-bottom: 25px;
+}
+
+.review-modal__title {
+  font-family: $title-font;
+  font-size: 14px;
+}
+
+.review-modal__body {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.form-modal {
+  display: inline-block;
+  border-radius: 5px;
+  background-color: $white-color;
+  color: $gray-color;
+  padding: 20px 20px;
+  max-width: 500px;
+  text-align: center;
+  display: none;
+}
+
+.form-modal__body {
+  margin-bottom: 16px;
+}
+
+.form-moda__btn {
+  color: $white-color;
+  outline: none;
+}
