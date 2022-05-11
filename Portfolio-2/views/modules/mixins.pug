@@ -1,0 +1,37 @@
+mixin triangle(classNameL, classNameR)
+	.section-triangle
+		.section-triangle__side
+			svg(viewbox="0 0 1000 85" preserveAspectRatio="none" class=`triangle ${classNameL}`)
+				polygon(points="0,0   0,100   1000,90   1000,80")
+		.section-triangle__side
+			svg(viewbox="0 0 1000 85" preserveAspectRatio="none" class=`triangle ${classNameR}`)
+				polygon(points="1000,0   1000,100   0,90   0,80")
+
+mixin arrow(dataAnchor, href, addClass)
+	a(href="#" data-anchor=`${dataAnchor}`).arrow-nav
+			svg(class=`arrow-nav__icon ${addClass}`)
+				use(xlink:href=`./img/sprite.svg#${href}`)
+
+mixin user(sectionName, className="")
+	div(class=`user${className !== "" ? " " + className : ""}`) 
+		.user__avatar 
+			img.section__img(src="./img/content/user__avatar.jpg", alt="Фото пользователя")
+		if sectionName !== "blog"
+			.user__name Надежда Феоктистова
+			.user__text Сайт-портфолио веб-разработчика
+		else 
+			.section__title.blog__title
+					h1.section__title-text Блог
+			.user__text Полезные статьи
+
+mixin heroSection(sectionName)
+	section.hero#hero 
+		include header
+		.hero__content
+			if sectionName !== "blog" 
+				.hero__subtitle
+					img.section__img(src="./img/icons/portfolio_header.svg", alt="Portfolio секция")
+			+user(sectionName, "user--centred")
+		a.hero__arrow(href="#" data-href=`#${sectionName}`)
+			svg.hero__arrow-icon(width="26" height="16")
+				use(xlink:href=`./img/sprite.svg#arrow_down`)

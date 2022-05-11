@@ -1,0 +1,32 @@
+.auth
+	form.auth-form 
+		.auth-form__field
+			.auth-form__row 
+				.section__subtitle.intro-auth__title Авторизуйтесь
+			.auth-form__row
+				.auth-form__cell
+					input.auth-form__input(type="text" placeholder="Логин" name="username")
+					.auth-form__pic 
+						svg.auth-form__icon 
+							use(xlink:href='./img/sprite.svg#login')
+			.auth-form__row 
+				.auth-form__cell
+					input.auth-form__input(type="password" placeholder="Пароль" name="password")
+					.auth-form__pic 
+						svg.auth-form__icon  
+							use(xlink:href='./img/sprite.svg#password')
+			.auth-form__row 
+				input.auth-form__checkbox#verification(type="checkbox" name="verification")
+				label.auth-form__label-check(for="verification") Я человек	
+			.auth-form__row
+				.auth-form__text Вы точно не робот?
+				.auth-form__row-radio 
+					.auth-form__cell
+						input.auth-form__radio#doubl-verification-1(type="radio" name="doubl-verification" value="Yes")
+						label.auth-form__label-radio(for="doubl-verification-1") Да
+					.auth-form__cell
+						input.auth-form__radio#doubl-verification-2(checked type="radio" name="doubl-verification" value="No")
+						label.auth-form__label-radio(for="doubl-verification-2") Не уверен			
+		.intro__btn
+			button.intro__link.auth-form(type="button") На главную
+			button.intro__link.auth-form(type="submit") Войти

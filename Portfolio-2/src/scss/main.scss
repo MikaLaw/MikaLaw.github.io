@@ -1,0 +1,12 @@
+//config
+@import "config/variables.scss";
+@import "config/mixins.scss";
+@import "config/fonts.scss";
+@import "config/base.scss";
+@import "config/layout.scss";
+
+//components
+@import "components/*.scss";
+
+//sections
+@import "sections/*.scss";

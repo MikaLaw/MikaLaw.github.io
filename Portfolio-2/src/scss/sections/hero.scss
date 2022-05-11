@@ -1,0 +1,44 @@
+.hero {
+  background: url("../img/hero__bg@1x.png") no-repeat center / cover $contrast;
+  min-height: 615px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  @include retina {
+    background: url("../img/hero__bg@2x.png") no-repeat center / cover $contrast;
+  }
+}
+
+.hero__content {
+  width: 100%;
+  position: relative;
+}
+
+.hero__subtitle {
+  opacity: 0.06;
+  width: 100%;
+  @include centered();
+  will-change: transform;
+}
+
+.hero__arrow {
+  opacity: 0.7;
+  margin-bottom: 78px;
+  animation: upDown;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  transition: 0.3s ease-in-out;
+  position: relative;
+  z-index: 1;
+  &:hover,
+  &:active,
+  &:focus {
+    opacity: 1;
+  }
+  svg {
+    fill: #fff;
+  }
+}

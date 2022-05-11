@@ -1,0 +1,39 @@
+extends ../template
+
+include ../modules/mixins
+block content
+	include ../modules/preloader
+	+heroSection("blog")
+	section.blog#blog
+		+triangle("triangle__white","triangle__white")
+		.container 
+			aside.article-title__sidebar
+				button.article-title__btn
+					svg.article-title__icon
+						use(xlink:href="./img/sprite.svg#arrow_down")
+				ul.article-title__list 
+					each newArticle in newArticles
+						li(class=`article-title__item`) 
+							button.article-title__link= newArticle.title
+			ul.article-content__list
+				each newArticle in newArticles
+					li.article-content__item 
+						article.article-content__article 
+							h2.article-content__title= newArticle.title
+							-
+								var data = new Date(newArticle.date).toLocaleDateString('ru', {
+										year: 'numeric',
+										month: 'long',
+										day: '2-digit'
+									})
+							-
+								var dataAtr = new Date(newArticle.date).toISOString().split('T')[0]
+							time.article-content__date(datetime= dataAtr)= data
+							.article-content__text !{newArticle.body}
+								
+	include ../modules/footer
+	
+	script(src='js/foundation.min.js')
+	script(src='js/blog.min.js')
+			
+

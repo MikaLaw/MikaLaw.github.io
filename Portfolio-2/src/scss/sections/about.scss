@@ -1,0 +1,136 @@
+.about {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.about__left {
+  flex: 1 1 50%;
+  padding: 0 6.7%;
+  background: $gray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include tablets {
+    flex: 1 1 100%;
+    padding: 40px 40px;
+  }
+}
+
+.about__right {
+  flex: 1 1 50%;
+  padding: 0 40px;
+  background: $beige;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .about__text {
+    margin-bottom: 46px;
+  }
+  @include tablets {
+    flex: 1 1 100%;
+    padding: 40px 40px;
+  }
+}
+
+.about__title {
+  color: $second;
+  margin-bottom: 45px;
+  &::before {
+    background-image: url("../img/icons/about_header.svg");
+  }
+}
+
+.about__avatar {
+  margin-bottom: 32px;
+}
+
+.about__subtitle {
+  margin-bottom: 27px;
+}
+
+.skills__title {
+  font-weight: 500;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.skills__tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -20px;
+}
+
+.skills__tech-item {
+  display: flex;
+  background-color: $gray;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  flex: 1 1 calc(50% - 20px);
+  min-width: 260px;
+  padding: 16px;
+}
+
+.skills__tech-icon {
+  width: 46px;
+  margin-right: 16px;
+  flex-shrink: 0;
+}
+
+.skills__tech-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.map {
+  position: relative;
+  min-height: 400px;
+}
+#map {
+  height: 514px;
+  min-height: 400px;
+}
+
+.contacts {
+  max-width: 380px;
+  width: 100%;
+  text-align: center;
+  @include centered();
+  border-radius: $border-radius;
+  background: rgba($white, 0.85);
+  padding: 30px 40px;
+  @include phones {
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translate(0%, 0);
+    max-width: unset;
+  }
+}
+
+.contact__title {
+  margin-bottom: 27px;
+}
+
+.contacts__item {
+  &:not(:last-child) {
+    margin-bottom: 18px;
+  }
+}
+
+.contacts__link {
+  display: flex;
+  align-items: center;
+  color: inherit;
+  transition: 0.3s ease-in-out;
+  &:hover,
+  &:active {
+    color: $contrast;
+  }
+}
+
+.contacts__icon {
+  margin-right: 10px;
+  fill: $contrast;
+}

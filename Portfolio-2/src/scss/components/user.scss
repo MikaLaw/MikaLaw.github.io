@@ -1,0 +1,35 @@
+.user {
+  color: $white;
+  will-change: transform;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.user--centred {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.user__avatar {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 140px;
+  height: 140px;
+  margin-bottom: 18px;
+  border: 3px solid $white;
+}
+
+.user__name {
+  font-weight: 500;
+  font-size: 35px;
+}
+
+.user__text {
+  font-weight: 300;
+  opacity: 0.8;
+}

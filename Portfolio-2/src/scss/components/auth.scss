@@ -1,0 +1,167 @@
+.auth {
+  width: 380px;
+  border-radius: $border-radius;
+  overflow: hidden;
+  backface-visibility: hidden;
+  transform: rotateY(-180deg);
+  top: 0;
+  left: 0;
+  transition: 0.8s ease;
+}
+
+.auth-form__field {
+  padding: 38px 20px;
+  background: rgba($white, 0.85);
+}
+
+.auth-form__row {
+  margin-bottom: 20px;
+  position: relative;
+  text-align: center;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.auth-form__row-radio {
+  display: flex;
+  justify-content: center;
+  .auth-form__cell {
+    margin-right: 35px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.auth-form__cell {
+  display: flex;
+  border-radius: $border-radius;
+  position: relative;
+}
+.auth-form__pic {
+  background: #f0efe9;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  order: -1;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.auth-form__icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  fill: #c4cbcd;
+}
+
+.auth-form__input {
+  width: 100%;
+  border: 2px solid transparent;
+  padding: 11px 16px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  &:focus {
+    outline: none;
+    background: $white;
+  }
+  &.valid {
+    & ~ .auth-form__pic .auth-form__icon {
+      fill: green;
+    }
+  }
+  &.error {
+    & ~ .auth-form__pic .auth-form__icon {
+      fill: #e44845;
+    }
+  }
+}
+
+.auth-form__label-check {
+  position: relative;
+  display: inline-block;
+  margin-left: 32px;
+  &::before {
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-right: 11px;
+    transform: translateY(-50%);
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: $contrast;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  &::after {
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    transform: translateY(-50%);
+    margin-right: 15px;
+    content: "";
+    display: none;
+    background: url("../img/icons/check.svg") no-repeat center / contain;
+    width: 11px;
+    height: 11px;
+  }
+}
+
+.auth-form__label-radio {
+  position: relative;
+  display: inline-block;
+  margin-left: 32px;
+  &::before {
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-right: 11px;
+    transform: translateY(-50%);
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: $white;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+  }
+  &::after {
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    transform: translateY(-50%);
+    margin-right: 18px;
+    content: "";
+    display: none;
+    background: $contrast;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+  }
+}
+
+.auth-form__checkbox {
+  position: absolute;
+  left: -999999px;
+  &:checked + .auth-form__label-check::after {
+    display: block;
+  }
+}
+
+.auth-form__radio {
+  position: absolute;
+  left: -999999px;
+  &:checked + .auth-form__label-radio::after {
+    display: block;
+  }
+}
+
+.auth-form__text {
+  font-weight: 500;
+  text-align: center;
+}

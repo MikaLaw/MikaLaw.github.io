@@ -1,0 +1,39 @@
+-	
+	var worksItems = [
+		{src: "./img/works/Ait2.png" , title: "AitOnePage Landing Page", tech: "HTML5, CSS3, JQuery, Media Querie, Bootstrap 4, Sass, API map", link: "https://mikalaw.github.io/AitOnePage/"},
+		{src: "./img/works/spirit82.png" , title: "Spirit8 Landing Page ", tech: "HTML5, CSS3, JQuery, Media Querie, Flexbox, Sass", link: "https://mikalaw.github.io/Spirit8/"},
+		{src: "./img/works/cowork2.png" , title: "Корпоративный сайт Workadium", tech: "HTML5, CSS3, Media Querie, Sass", link: "https://mikalaw.github.io/cowork/"},
+		{src: "./img/works/pottfolio2.png" , title: "Сайт-портфолио", tech: "HTML5, CSS3, Media Querie, Sass, Npm, Gulp", link: "https://mikalaw.github.io/Portfolio/dist/"},
+		{src: "./img/works/portfolio22.png" , title: "Сайт-портфолио", tech: "HTML5, CSS3, JQuery, JavaScript, Flexbox, Parallax, Pug, Sass, Npm, Gulp, Api map, Ajax, Node.js, Mongodb", link: "https://mikalaw.github.io/Portfolio2/dist/"},
+		{src: "./img/works/hip2.png" , title: "Hipsweet Landing Page ", tech: "HTML5, CSS3, JQuery, Sass, Npm, Gulp, API map", link: "https://mikalaw.github.io/Hipsweet/dist/"},
+		{src: "./img/works/bur2.png" , title: "Burgers Landing Page", tech: "HTML5, CSS3, JQuery, Sass, Npm, Gulp, API map, Ajax", link: "https://mikalaw.github.io/Burger/dist/"},
+		{src: "./img/works/emai2.png" , title: "Email рассылка", tech: "HTML, CSS", link:"https://mikalaw.github.io/Email/"}
+	]
+.works__slider 
+	.slider__desc 
+		.slider__info
+			h2.slider__title.section__subtitle 
+			.slider__tech 
+			a.slider__btn(href="#" target="_blank" rel="noopener")
+				svg.slider__btn-icon 
+					use(xlink:href="./img/sprite.svg#link")
+				.slider__btn-text Посмотреть сайт
+	.slider__review 
+		img.slider__review-img(src="./img/works/Ait2.png", alt="Ait")
+	.slider__controls
+		.slider__controls-left
+			ul.slider__controls-works
+				each worksItem in portfolioWorks
+					li.slider__controls-pic(data-src=`${worksItem.picture}` data-title=`${worksItem.title}` data-tech=`${worksItem.tech}` data-link=`${worksItem.link}`)
+						img.slider__controls-img(src=`${worksItem.picture}` alt=`${worksItem.title}`)
+			button.slider__controls-btn.prev
+				svg.slider__controls-icon 
+					use(xlink:href="./img/sprite.svg#portf_arrow_down")
+		.slider__controls-right
+			ul.slider__controls-works
+				each worksItem in portfolioWorks
+					li.slider__controls-pic(data-src=`${worksItem.picture}` data-title=`${worksItem.title}` data-tech=`${worksItem.tech}` data-link=`${worksItem.link}`)
+						img.slider__controls-img(src=`${worksItem.picture}` alt=`${worksItem.title}`)
+			button.slider__controls-btn.next
+				svg.slider__controls-icon 
+					use(xlink:href="./img/sprite.svg#portf_arrow_up")

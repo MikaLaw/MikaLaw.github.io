@@ -1,0 +1,13 @@
+-	
+	var socItems = [
+		{icon:"vk", link:"https://vk.com/feoktisn"},
+		{icon:"github", link:"https://github.com/MikaLaw/MikaLaw.github.io"},
+		{icon:"inst", link:"https://www.instagram.com/nadezhda.feo/"},
+		];
+        
+ul.social__list
+	each socItem in socItems
+		li.social__item 	
+			a.social__link(href=`${socItem.link}`, target="_blank", rel="noopener")
+				svg.social__icon
+					use(xlink:href=`./img/sprite.svg#${socItem.icon}`)

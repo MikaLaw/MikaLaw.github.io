@@ -1,0 +1,12 @@
+-	
+	var navItems = [
+		{title:"Мои работы", link:"works"},
+		{title:"Блог", link:"blog"},
+		{title:"Обо мне", link:"about"},
+		{title:"Авторизация", link:"/"},
+		];
+nav.nav
+	ul.nav__list
+		each navItem in navItems
+			li.nav__item 
+				a.nav__link(href=`${navItem.link}`)= navItem.title
