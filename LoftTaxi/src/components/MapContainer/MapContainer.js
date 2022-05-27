@@ -47,7 +47,7 @@ export class Map extends Component {
       "pk.eyJ1IjoibWlrYWxhdyIsImEiOiJja3czcHljdDkxdjAyMnBubzBxajQ1cGx6In0.f3T_UmyZiQZvsh1vTFDTlw";
     this.map = new mapboxgl.Map({
       container: this.mapContainer.current,
-      style: "mapbox://styles/mapbox/streets-v9",
+      style: "mapbox://styles/mapbox/streets-v11",
       center: [30.2656504, 59.8029126],
       zoom: 15,
     });
