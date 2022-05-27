@@ -19,7 +19,7 @@ import Modal from "../FormComponents/Modal";
 
 export const styles = () => ({
   Grid: {
-    minHeight: "100vh",
+    minHeight: "100%",
     paddingTop: "80px",
   },
   error: {
@@ -40,6 +40,7 @@ export const styles = () => ({
   },
   background: {
     backgroundColor: "#ffd128",
+    height: "100%",
   },
   Card: {
     boxSizing: "border-box",

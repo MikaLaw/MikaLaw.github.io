@@ -11,8 +11,8 @@ export const styles = () => ({
     top: "100px",
     left: "33px",
     boxSizing: "border-box",
-    minWidth: "28%",
-    maxWidth: "28%",
+    minWidth: "50%",
+    maxWidth: "700px",
     padding: 10,
   },
 });

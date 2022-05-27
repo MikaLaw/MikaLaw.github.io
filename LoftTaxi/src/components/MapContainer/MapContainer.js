@@ -24,17 +24,8 @@ import {
 
 export const styles = () => ({
   MapContainer: {
-    minHeight: "100vh",
+    minHeight: "100%",
     position: "relative",
-  },
-  Card: {
-    position: "absolute",
-    top: "100px",
-    left: "33px",
-    boxSizing: "border-box",
-    minWidth: "28%",
-    maxWidth: "28%",
-    padding: 10,
   },
 });
 

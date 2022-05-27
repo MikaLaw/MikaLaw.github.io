@@ -21,7 +21,7 @@ import { getUserProfile } from "../../redux/reducers/profile";
 
 export const styles = () => ({
   Grid: {
-    minHeight: "100vh",
+    minHeight: "100%",
     paddingTop: "80px",
   },
   Form: {
@@ -32,11 +32,12 @@ export const styles = () => ({
   },
   background: {
     backgroundColor: "#ffd128",
+    height: "100%",
   },
   Card: {
     boxSizing: "border-box",
-    minWidth: "35%",
-    maxWidth: "35%",
+    width: "50%",
+    maxWidth: "600px",
     padding: 10,
   },
   Input: {

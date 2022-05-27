@@ -1,6 +1,14 @@
+html,
 body {
   margin: 0;
   padding: 0;
+  height: 100%;
+}
+#root {
+  position: relative;
+  min-width: 700px;
+  height: 100%;
+  overflow: hidden;
 }
 .mapboxgl-map {
   height: 100vh;
