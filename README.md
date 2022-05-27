@@ -9,3 +9,4 @@ https://mikalaw.github.io/Grid/dist/ - Grid
 https://mikalaw.github.io/Flex/dist/ - Flex   
 https://mikalaw.github.io/AdminPanel/build/ - AdminPanel   
 https://mikalaw.github.io/DrugoFilter/dist/ - DrugoFilter  
+https://mikalaw.github.io/LoftTaxi/build/ - LoftTaxi
