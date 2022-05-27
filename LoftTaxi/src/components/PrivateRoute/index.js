@@ -13,7 +13,7 @@ export class PrivateRoute extends PureComponent {
           isAuthorized || window.localStorage.getItem("token") ? (
             <Component {...props} />
           ) : (
-            <Redirect to="/login" />
+            <Redirect to="/" />
           )
         }
       />

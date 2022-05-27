@@ -66,16 +66,15 @@ class Header extends PureComponent {
 
             {isAuthorized ? (
               <NavLink
-                to="/login"
+                to="/"
                 className={classes.Link}
-                activeClassName={classes.NavLink_selected}
                 onClick={this.handleClick}
               >
                 <Button color="inherit">Выйти</Button>
               </NavLink>
             ) : (
               <NavLink
-                to="/login"
+                to="/"
                 className={classes.Link}
                 activeClassName={classes.NavLink_selected}
               >

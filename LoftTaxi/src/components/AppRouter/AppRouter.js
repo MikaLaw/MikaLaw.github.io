@@ -14,10 +14,10 @@ class AppRouter extends Component {
       <Fragment>
         <Header />
         <Switch>
-          <Route exact path="/login" component={LoginForm} />
+          <Route exact path="/" component={LoginForm} />
           <PrivateRoute path="/map" component={MapContainer} />
           <PrivateRoute path="/profile" component={ProfileForm} />
-          <Redirect to="login" />
+          <Redirect to="/" />
         </Switch>
       </Fragment>
     );
