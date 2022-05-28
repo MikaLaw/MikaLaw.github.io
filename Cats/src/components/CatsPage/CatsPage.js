@@ -26,7 +26,7 @@ const CatsPage = ({
   isLoading,
 }) => {
   useEffect(() => {
-    fetchCatsRequest({ filters: { page: 1, limit: 50 }, force: false });
+    fetchCatsRequest({ filters: { page: 1, limit: 20 }, force: false });
   }, []);
 
   const loadData = () => {

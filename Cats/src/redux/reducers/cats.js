@@ -21,7 +21,7 @@ const catsFilter = handleAction(
   (state, action) => {
     return action.payload;
   },
-  { page: 1, limit: 50 }
+  { page: 1, limit: 20 }
 );
 
 const isLoading = handleActions(

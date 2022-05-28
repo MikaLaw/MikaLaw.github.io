@@ -27,7 +27,7 @@ const FavoritesPage = ({
 }) => {
   useEffect(() => {
     fetchFavoriteCatsRequest({
-      filters: { page: 1, limit: 50 },
+      filters: { page: 1, limit: 10 },
       force: false,
     });
   }, []);
@@ -53,7 +53,11 @@ const FavoritesPage = ({
           className="CatsPage__list"
           loader={
             <div className="loader" key={0}>
-              <div>... загружаем еще котиков ...</div>
+              {favorite.length === 0 ? (
+                ""
+              ) : (
+                <div>... загружаем еще котиков ...</div>
+              )}
             </div>
           }
         >
@@ -65,7 +69,13 @@ const FavoritesPage = ({
             />
           ))}
         </InfiniteScroll>
-        {isLoading ? <div>... загружаем котиков ...</div> : ""}
+        {favorite.length === 0 ? (
+          <div>В избранном пока еще нет котиков</div>
+        ) : isLoading ? (
+          <div>... загружаем котиков ...</div>
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );
