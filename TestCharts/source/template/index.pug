@@ -1,0 +1,155 @@
+doctype html
+html(lang='ru')
+    head
+        meta(charset="utf-8")
+        title Тестовое задание - диаграммы
+        meta(content="Тестовое задание - диаграммы" name="author")
+        meta(content="Тестовое задание - диаграммы" name="description")
+        meta(content="Тестовое задание - диаграммы" name="keywords")
+        meta(content="width=device-width, initial-scale=1" name="viewport")
+        meta(content="IE=edge" http-equiv="X-UA-Compatible" )
+        link(rel="shortcut icon" type="image/x-icon" href="./img/favicon/favicon.ico")
+        link(rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png")
+        link(rel="icon" type="image/png" sizes="96x96" href="./img/favicon/favicon-96x96.png")
+        link(rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png")
+        link(rel="icon" type="image/png" sizes="192x192"  href="./img/favicon/android-icon-192x192.png")
+        link(rel="apple-touch-icon" sizes="57x57" href="./img/favicon/apple-icon-57x57.png")
+        link(rel="apple-touch-icon" sizes="60x60" href="./img/favicon/apple-icon-60x60.png")
+        link(rel="apple-touch-icon" sizes="72x72" href="./img/favicon/apple-icon-72x72.png")
+        link(rel="apple-touch-icon" sizes="76x76" href="./img/favicon/apple-icon-76x76.png")
+        link(rel="apple-touch-icon" sizes="114x114" href="./img/favicon/apple-icon-114x114.png")
+        link(rel="apple-touch-icon" sizes="120x120" href="./img/favicon/apple-icon-120x120.png")
+        link(rel="apple-touch-icon" sizes="144x144" href="./img/favicon/apple-icon-144x144.png")
+        link(rel="apple-touch-icon" sizes="152x152" href="./img/favicon/apple-icon-152x152.png")
+        link(rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-icon-180x180.png")
+        meta(name="msapplication-square70x70logo" content="./img/favicon/ms-icon-70x70.png")
+        meta(name="msapplication-square144x144logo" content="./img/favicon/ms-icon-144x144.png")
+        meta(name="msapplication-square150x150logo" content="./img/favicon/ms-icon-150x150.png")
+        meta(name="msapplication-square310x310logo" content="./img/favicon/ms-icon-310x310.png")
+        link(rel="manifest" href="./img/favicon/manifest.json")
+        meta(name="msapplication-TileColor" content="#ffffff")
+        meta(name="msapplication-TileImage" content="./img/favicon/ms-icon-144x144.png")
+        meta(name="theme-color" content="#ffffff")
+        meta(name="msapplication-config" content="./img/favicon/browserconfig.xml")        
+        link(rel='stylesheet' href='./css/foundation.min.css')
+        link(rel='stylesheet' href='./css/main.min.css')
+    body
+        -   
+            var statisticsItems = [
+                    {icon: "statistics-1", text: "МГУ" },
+                    {icon: "statistics-2", text: "Финансовый университетпри Правительстве РФ" },
+                    {icon: "statistics-1", text: "МГИМО МИД России" },
+                    {icon: "statistics-3", text: "РЭУ им. Г.В. Плеханова" },
+                    {icon: "statistics-4", text: "ГУ ВШЭ" },
+                    {icon: "statistics-5", text: "Другие учебные заведения" },
+                    {icon: "statistics-2", text: "РАНХиГС" },
+                    {icon: "statistics-6", text: "Обучение за границей" },
+            ];
+
+        -   
+            var resultMainItems = [
+                    {icon: "resultmain-1",num: "5 баллов", title: "Английский язык" },
+                    {icon: "resultmain-1",num: "5 баллов", title: "Физика" },
+                    {icon: "resultmain-1",num: "5 баллов", title: "Информатика" },
+                    {icon: "resultmain-1",num: "5 баллов", title: "Литература" },
+                    {icon: "resultmain-2",num: "4.6 баллов", title: "Математика" },
+                    {icon: "resultmain-1",num: "5 баллов", title: "Биология" },
+            ];
+        -   
+            var resultSingleItems = [
+                {icon: "resultsingle-1", num: "94-100 баллов", title: "Литература"},
+                {icon: "resultsingle-2",num: "92-100 баллов", title: "Английский язык" },
+                {icon: "resultsingle-3",num: "96 баллов", title: "Физика" },
+                {icon: "resultsingle-4",num: "86 баллов", title: "Химия" },
+                {icon: "resultsingle-5",num: "80-96 баллов", title: "Русский язык" },
+                {icon: "resultsingle-4",num: "85 баллов", title: "История" },
+            ]
+
+        .wrapper
+            section.section-world
+                .container 
+                    h2.section__title Международная программа
+                    .section__content 
+                        .section__block
+                            h3.section__subtitle.color-blue Результаты IGCSE
+                            .section__desc
+                                .section__text
+                                    span.color-yellow.text-bold 46% 
+                                    | — от А* до А (средний показатель в Великобритании 29% )
+                                .section__text
+                                    span.color-yellow.text-bold 88% 
+                                    | — от А* до  C
+                            .chart__pic 
+                                svg.chart__icon(width="648" height="244")      
+                                    use(xlink:href="./img/sprite.svg#chart-1")
+                            .chart__desc 
+                                .chart__desc-item 
+                                    svg.chart__desc-icon(width="48" height="16")
+                                        use(xlink:href="./img/sprite.svg#yellow-block") 
+                                    .chart__desc-text A*-C IGCSE
+                                .chart__desc-item 
+                                    svg.chart__desc-icon(width="48" height="16")
+                                        use(xlink:href="./img/sprite.svg#blue-block") 
+                                    .chart__desc-text A*-A IGCSE
+                        .section__block
+                            h3.section__subtitle.color-blue Результаты IB
+                            .chart__pic 
+                                svg.chart__icon(width="655" height="318")      
+                                    use(xlink:href="./img/sprite.svg#chart-2")
+                            .chart__desc 
+                                .chart__desc-item 
+                                    svg.chart__desc-icon(width="48" height="16")
+                                        use(xlink:href="./img/sprite.svg#yellow-block") 
+                                    .chart__desc-text Средний балл IB по школе
+                                .chart__desc-item 
+                                    svg.chart__desc-icon(width="48" height="16")
+                                        use(xlink:href="./img/sprite.svg#blue-block") 
+                                    .chart__desc-text Средний балл IB по миру                       
+            section.section-rus
+                .container
+                    h2.section__title Российская программа
+                    .section__content 
+                        .section__block
+                            h3.section__subtitle Результаты ЕГЭ за 2021 год:
+                            ul.result__list 
+                                each resultSingleItem in resultSingleItems
+                                    li.result__item 
+                                        .result__title= resultSingleItem.title
+                                        .result__amount
+                                            .result__num= resultSingleItem.num
+                                            svg.result__icon(width="260" height="56")
+                                                use(xlink:href=`./img/sprite.svg#${resultSingleItem.icon}`) 
+                        .section__block
+                            h3.section__subtitle Статистика по выпускникам 2012-2021:
+                            .statistics__content 
+                                .statistics__chart
+                                    svg.statistics__chart-icon(width="336" height="336")  
+                                        use(xlink:href=`./img/sprite.svg#statistics-diag`)
+                                ul.statistics__list
+                                    each statisticsItem in statisticsItems
+                                        li.statistics__item 
+                                            svg.statistics__icon(width="64" height="40")    
+                                                use(xlink:href=`./img/sprite.svg#${statisticsItem.icon}`)
+                                            .statistics__text= statisticsItem.text   
+                        .section__block
+                            h3.section__subtitle Результаты ОГЭ за 2019 год:
+                            ul.result__list 
+                                each resultMainItem in resultMainItems
+                                    li.result__item 
+                                        .result__title= resultMainItem.title
+                                        .result__amount
+                                            .result__num= resultMainItem.num
+                                            svg.result__icon(width="260" height="56")
+                                                use(xlink:href=`./img/sprite.svg#${resultMainItem.icon}`) 
+                        .section__block
+                            h3.section__subtitle Достижения выпускников:
+                            ul.progress__list
+                                li.progress__item                                     
+                                    svg.progress__icon(width="160" height="144") 
+                                        use(xlink:href="./img/sprite.svg#progress-1")
+                                    .progress__text 4 выпускника 11 класса награждены московской медалью «За особые успехи в учении» по итогам ЕГЭ
+                                li.progress__item 
+                                    svg.progress__icon(width="160" height="125")
+                                        use(xlink:href="./img/sprite.svg#progress-2")
+                                    .progress__text 2 выпускника 11 класса получили аттестат с отличием и награждены медалями «За особые успехи в учении»
+                
