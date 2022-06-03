@@ -11,4 +11,5 @@ https://mikalaw.github.io/AdminPanel/build/ - AdminPanel
 https://mikalaw.github.io/DrugoFilter/dist/ - DrugoFilter  
 https://mikalaw.github.io/LoftTaxi/build/ - LoftTaxi  
 https://mikalaw.github.io/Cats/build/ - Cats  
-https://mikalaw.github.io/TestCharts/dist/ - TestCharts  
+https://mikalaw.github.io/TestCharts/dist/ - TestCharts    
+https://mikalaw.github.io/MapsGeo/build/ - MapsGeo  
