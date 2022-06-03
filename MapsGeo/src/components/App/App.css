@@ -1,0 +1,12 @@
+.App {
+  text-align: center;
+  position: relative;
+}
+
+.SearchInput {
+  position: absolute;
+  z-index: 1000;
+  left: 50px;
+  top: 50px;
+  min-width: 194px;
+}
