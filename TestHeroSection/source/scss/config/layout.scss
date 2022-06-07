@@ -1,0 +1,26 @@
+.container {
+  max-width: 1376px;
+  padding: 0 20px;
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  @include desktop {
+    max-width: 1260px;
+  }
+
+  @include laptop {
+    max-width: 1000px;
+  }
+
+  @include tablets {
+    max-width: 740px;
+  }
+
+  @include phones {
+    max-width: 100%;
+  }
+}
+
+.orange-color {
+  color: $color-orange;
+}

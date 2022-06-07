@@ -1,0 +1,290 @@
+.header {
+  width: 100%;
+  color: #fff;
+  padding: 20px 0;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.private {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.private__top {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.logo {
+  margin-right: 9px;
+}
+
+.logo__link {
+  display: inline-block;
+}
+
+.logo__icon {
+  display: block;
+}
+
+.logo__link--descktop {
+  display: inline-block;
+  @include phones {
+    display: none;
+  }
+}
+
+.logo__link--mobile {
+  display: none;
+  @include phones {
+    display: inline-block;
+  }
+}
+
+.soc__list {
+  display: flex;
+  @include phones {
+    display: none;
+  }
+}
+
+.soc__item {
+  cursor: pointer;
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+
+.soc__icon {
+  fill: #fff;
+  transition: 0.3s;
+  &:hover,
+  &:active,
+  &:focus {
+    fill: $color-orange;
+  }
+}
+
+.user-panel {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  &:hover,
+  &:active,
+  &:focus {
+    color: $color-orange;
+  }
+}
+
+.user-panel__icon {
+  margin-right: 8px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  @include laptop {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: white;
+    width: 300px;
+    box-shadow: -10px 0 20px -10px rgb(0 0 0 / 10%);
+    transform: translateX(310px);
+    transition: transform 0.3s;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 20px;
+    &.active {
+      transform: translateX(0%);
+    }
+    .nav__list {
+      margin-right: 50px;
+      display: block;
+    }
+  }
+}
+.nav-toggler {
+  display: none;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  transition: 0.3s;
+  opacity: 1;
+  margin-right: 8px;
+
+  &:hover,
+  &:active,
+  &:focus {
+    opacity: 0.5;
+  }
+
+  @include laptop {
+    display: block;
+  }
+}
+
+.nav-toggler__icon {
+  fill: #fff;
+}
+
+.nav-close {
+  display: none;
+  @include laptop {
+    display: block;
+    align-self: flex-end;
+    background: transparent;
+    border: 0;
+    opacity: 1;
+    transition: 0.3s;
+    cursor: pointer;
+    &:hover,
+    &:active,
+    &:focus {
+      opacity: 0.3;
+    }
+  }
+}
+.nav__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.nav__item:last-child {
+  .nav__link {
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.nav__link {
+  display: inline-block;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 10px 20px;
+  color: inherit;
+  transition: 0.3s;
+  position: relative;
+  word-break: break-word;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: $color-orange;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -3px;
+    transition: 0.3s;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $color-orange;
+  }
+
+  @include laptop {
+    color: #212121;
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.header__contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-top: 10px;
+}
+
+.contacts__phone {
+  margin-bottom: 3px;
+  display: flex;
+  .orange-color {
+    margin-right: 3px;
+  }
+}
+
+.contacts__phone-icon {
+  margin-right: 8px;
+  @include phones {
+    display: none;
+  }
+}
+
+.contacts__phone-text {
+  display: flex;
+  font-size: 20px;
+  line-height: 24px;
+  white-space: nowrap;
+  @include phones {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.contacts__geo {
+  display: flex;
+  margin-bottom: 10px;
+  transition: 0.3s;
+  &:hover,
+  &:active,
+  &:focus {
+    color: $color-orange;
+  }
+}
+
+.contacts__geo-icon {
+  margin-right: 8px;
+}
+
+.contacts__cart {
+  display: flex;
+  align-items: center;
+  border: 1px solid $color-orange;
+  border-radius: 34px;
+  padding: 7px 7px;
+  cursor: pointer;
+  &:hover,
+  &:active,
+  &:focus {
+    .contacts__cart-text {
+      color: $color-orange;
+    }
+    .contacts__cart-icon {
+      fill: $color-orange;
+    }
+  }
+}
+
+.contacts__cart-icon {
+  margin-right: 8px;
+  fill: $color-white;
+  transition: 0.3s;
+}
+
+.contacts__cart-text {
+  font-size: 14px;
+  line-height: 16px;
+  color: inherit;
+  transition: 0.3s;
+}

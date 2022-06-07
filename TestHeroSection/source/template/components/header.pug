@@ -1,0 +1,65 @@
+-   
+    var navItems = [
+        {title:"Цены на вход", link:"price"},
+        {title:"Меню под заказ", link:"menu"},
+        {title:"Акции", link:"stock"},
+        {title:"События", link:"events"},
+        {title:"Контакты", link:"contacts"},
+        
+    ];
+-   
+    var socItems = [
+        {icon:"instagram", link:"https://www.instagram.com/"},
+        {icon:"vk", link:"https://vk.com/"},
+              
+    ];
+
+
+header.header 
+    .container 
+        .private
+            .private__top
+                button.nav-toggler(type="button" )
+                    svg.nav-toggler__icon(width="47" height="47")
+                        use(xlink:href="./img/sprite.svg#menu") 
+                .logo
+                    a.logo__link.logo__link--descktop(href="")
+                        svg.logo__icon(width="168" height="48")
+                            use(xlink:href="./img/sprite.svg#logo") 
+                    a.logo__link.logo__link--mobile(href="")
+                        svg.logo__icon(width="38" height="38")
+                            use(xlink:href="./img/sprite.svg#logo-small")
+                ul.soc__list  
+                    each socItem in socItems
+                        li.soc__item
+                            a.soc__link(href=`${socItem.link}`)
+                                svg.soc__icon(width="16" height="15")
+                                    use(xlink:href=`./img/sprite.svg#${socItem.icon}`)
+            .private__bottom
+                .user-panel 
+                    svg.user-panel__icon(width="11" height="11")
+                        use(xlink:href="./img/sprite.svg#user")
+                    .user-panel__text Кабинет
+        nav.nav 
+            button.nav-close(type="button" )
+                svg.navbar-close__icon(width="25" height="25")
+                    use(xlink:href="./img/sprite.svg#close")
+            ul.nav__list 
+                each navItem in navItems
+                    li.nav__item 
+                        a.nav__link(href="#", data-href=`#${navItem.link}`)= navItem.title 
+        .header__contacts 
+            a.contacts__phone(href="tel:+73832075505")
+                svg.contacts__phone-icon(width="25" height="25")
+                    use(xlink:href="./img/sprite.svg#phone")
+                .contacts__phone-text 
+                    div.orange-color +7 (383) 
+                    div 207-55-05
+            a.contacts__geo(href="") 
+                svg.contacts__geo-icon(width="11" height="16")
+                    use(xlink:href="./img/sprite.svg#mark")
+                .contacts__geo-text Как проехать
+            .contacts__cart(href="") 
+                svg.contacts__cart-icon(width="16" height="16")
+                    use(xlink:href="./img/sprite.svg#cart")
+                .contacts__cart-text 20 000 р.

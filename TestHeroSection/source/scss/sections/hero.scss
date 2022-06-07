@@ -1,0 +1,98 @@
+.hero {
+  background: linear-gradient(
+      0deg,
+      rgba(17, 21, 37, 0.59),
+      rgba(17, 21, 37, 0.59)
+    ),
+    url("../img/hero-bg.jpg") no-repeat center / cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 862px;
+  padding-bottom: 192px;
+  @include phones {
+    min-height: 680px;
+  }
+}
+
+.hero__content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+}
+
+.hero__head {
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero__title {
+  max-width: 510px;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 44px;
+  margin-bottom: 10px;
+  @include phones {
+    font-size: 26px;
+    line-height: 36px;
+  }
+}
+
+.hero__subtitle {
+  font-size: 18px;
+  line-height: 22px;
+  margin-bottom: 20px;
+}
+
+.hero__btn {
+  display: flex;
+  margin-bottom: 20px;
+  @include phones {
+    flex-direction: column;
+  }
+}
+
+.hero__btn-link {
+  border: 1px solid #fff;
+  padding: 13px 42px;
+  margin-right: 20px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: inherit;
+  transition: 0.3s;
+  border-radius: 34px;
+  background-color: transparent;
+  cursor: pointer;
+  &:hover,
+  &:active {
+    border: 1px solid $color-orange;
+    background-color: $color-orange;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+  @include phones {
+    margin-right: 0px;
+    margin-bottom: 20px;
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+}
+
+.hero__phone {
+  font-size: 24px;
+  line-height: 30px;
+  transition: 0.3s;
+  &:hover,
+  &:active {
+    color: $color-orange;
+  }
+}

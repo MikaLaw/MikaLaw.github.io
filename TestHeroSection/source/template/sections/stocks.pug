@@ -1,0 +1,26 @@
+-   
+    var stocksItems = [
+        {img: "stock-1.jpg", subtitle:"Действует всегда", text:"100 баллов начисляем на карту за регистрацию в системе лояльности"},
+        {img: "stock-2.jpg", subtitle:"Действует всегда", text:"В день рождения мы даём 25% скидку на стоимость входного билета"},
+         {img: "stock-1.jpg", subtitle:"Действует всегда", text:"100 баллов начисляем на карту за регистрацию в системе лояльности"},
+        {img: "stock-2.jpg", subtitle:"Действует всегда", text:"В день рождения мы даём 25% скидку на стоимость входного билета"},
+         {img: "stock-1.jpg", subtitle:"Действует всегда", text:"100 баллов начисляем на карту за регистрацию в системе лояльности"},
+        {img: "stock-2.jpg", subtitle:"Действует всегда", text:"В день рождения мы даём 25% скидку на стоимость входного билета"}
+        
+    ];
+section.stocks 
+    .container 
+        .stocks__head 
+            .stocks__title
+                h2.stocks__title-text Действующие акции
+                .stocks__title-count 10 
+            .stocks__desc Все акции 
+        ul.stocks__list.owl-carousel.owl-theme
+            each stocksItem in stocksItems
+                li.stocks__item 
+                    .stocks__pic 
+                        img.stocks__img(src=`./img/${stocksItem.img}`, alt=`${stocksItem.text}`)
+                    .stocks__subtitle= stocksItem.subtitle
+                    .stocks__text= stocksItem.text
+
+        
