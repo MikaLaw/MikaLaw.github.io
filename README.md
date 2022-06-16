@@ -14,3 +14,4 @@ https://mikalaw.github.io/Cats/build/ - Cats
 https://mikalaw.github.io/TestCharts/dist/ - TestCharts    
 https://mikalaw.github.io/MapsGeo/build/ - MapsGeo    
 https://mikalaw.github.io/TestHeroSection/dist/  - TestHeroSection  
+https://mikalaw.github.io/TestAntd/build/ - TestAntd  
