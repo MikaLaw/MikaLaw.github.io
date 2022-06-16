@@ -1,0 +1,45 @@
+.CarigeDetails .App-button {
+    color: #000;
+    border-color: #FFC53D;
+    background: #FFC53D;
+    padding: 4px 18px;
+    transition: 0.3s;
+}
+
+.CarigeDetails .App-button:hover,
+.CarigeDetails .App-button:active,
+.CarigeDetails .App-button:focus {
+    color: #000;
+    border-color: #eea700;
+    background: #eea700;
+}
+
+.CarigeDetails .ant-input,
+.CarigeDetails .ant-input-number, 
+.CarigeDetails .ant-picker,
+.CarigeDetails .ant-select:not(.ant-select-customize-input) .ant-select-selector
+{
+    border: 1px dashed #A2A8B4;
+    border-radius: 2px;
+}
+
+.CarigeDetails .ant-input:focus, 
+.CarigeDetails .ant-input-focused,
+.CarigeDetails .ant-picker:hover, 
+.CarigeDetails .ant-picker-focused, 
+.CarigeDetails .ant-select:not(.ant-select-customize-input) .ant-select-selector:hover,
+.CarigeDetails .ant-select:not(.ant-select-customize-input) .ant-select-selector:focus
+{
+    border-color: #FFC53D;
+    box-shadow: 0 0 0 2px  rgba(255, 197, 61, 0.2);
+    border-right-width: 1px;
+    outline: 0;
+}
+
+.CarigeDetails .ant-input:hover {
+    border-color: #FFC53D;
+}
+
+.CarigeDetails .ant-form-item-label {
+    text-align: left;
+}

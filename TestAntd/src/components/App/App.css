@@ -1,0 +1,103 @@
+.App {
+  text-align: center;
+  padding: 30px;
+}
+
+.App-controls{
+  margin-top: 20px;
+}
+
+.App .ant-table-column-title{
+  font-size: 10px;
+  line-height: 12px;
+}
+
+.App .ant-table-cell{
+  font-size: 12px;
+  line-height: 14px;
+  padding: 10px 10px;
+}
+
+.App th.ant-table-cell{
+  font-size: 12px;
+  line-height: 14px;
+  padding: 6px 8px;
+}
+
+.App .ant-checkbox-checked .ant-checkbox-inner {
+  background-color: #FFC53D;
+  border-color: #FFC53D;
+}
+
+.App .ant-checkbox-wrapper:hover .ant-checkbox-inner, 
+.App .ant-checkbox:hover .ant-checkbox-inner, 
+.App .ant-checkbox-input:focus + .ant-checkbox-inner {
+    border-color: #FFC53D;
+}
+
+.App .ant-checkbox-checked::after {
+  border: 1px solid #FFC53D;
+}
+.App .ant-checkbox-checked .ant-checkbox-inner::after {
+  position: absolute;
+  display: table;
+  border: 2px solid #000;
+  border-top: 0;
+  border-left: 0;
+  transform: rotate(45deg) scale(1) translate(-50%, -50%);
+  opacity: 1;
+  transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+  content: ' ';
+}
+
+
+.App .App-button {
+  color: #000;
+  border-color: #FFC53D;
+  background: #FFC53D;
+  padding: 4px 18px;
+  transition: 0.3s;
+}
+
+.App .App-button.App-button_gray {
+    border-color: #F0F3F9;
+    background: #F0F3F9;
+}
+
+.App .App-select {
+  width: 284px;
+  margin-right: 10px;
+}
+
+.App .ant-select:not(.ant-select-disabled):hover .ant-select-selector {
+  border-color: #92969e;
+  border-right-width: 1px;
+}
+
+.App .ant-select-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input) .ant-select-selector {
+  border-color: #92969e;
+  border-right-width: 1px;
+  box-shadow: 0 0 0 2px rgba(240, 243, 249, 0.3);
+}
+
+
+.App .App-button:hover,
+.App .App-button:active,
+.App .App-button:focus {
+  color: #000;
+  border-color: #eea700;
+  background: #eea700;
+}
+
+.App .App-button.App-button_gray:hover,
+.App .App-button.App-button_gray:active,
+.App .App-button.App-button_gray:focus  {
+  border-color: #92969e;
+  background: #92969e;
+}
+
+.App .ant-table-column-sorter-up.active, 
+.App .ant-table-column-sorter-down.active {
+  color: #FFC53D;
+}
+

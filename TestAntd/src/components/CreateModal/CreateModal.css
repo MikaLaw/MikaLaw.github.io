@@ -1,0 +1,50 @@
+.CreateModal .App-button {
+    color: #000;
+    border-color: #FFC53D;
+    background: #FFC53D;
+    padding: 4px 18px;
+    transition: 0.3s;
+}
+
+.CreateModal .App-button:hover,
+.CreateModal .App-button:active,
+.CreateModal .App-button:focus {
+    color: #000;
+    border-color: #eea700;
+    background: #eea700;
+}
+
+.CreateModal .ant-input {
+    border: 1px dashed #A2A8B4;
+    border-radius: 2px;
+}
+.CreateModal .ant-form-item-label {
+    text-align: left;
+}
+
+.CreateModal .ant-input-group-addon{
+    position: absolute;
+    right: 4%;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    z-index: 10;
+}
+
+.CreateModal .ant-input:focus, 
+.CreateModal .ant-input-focused {
+    border-color: #FFC53D;
+    box-shadow: 0 0 0 2px  rgba(255, 197, 61, 0.2);
+    border-right-width: 1px;
+    outline: 0;
+}
+
+.CreateModal .ant-input:hover {
+    border-color: #FFC53D;
+}
+
+
+#basic_carriage.ant-input {
+    padding-right: 20px;
+}
