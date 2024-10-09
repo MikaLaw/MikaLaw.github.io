@@ -1,0 +1,1116 @@
+.block_404 {
+  margin-top: 42px;
+  @include media-min($media-xs) {
+    margin-top: 31px;
+  }
+  @include media-min($media-sm) {
+    margin-top: 90px;
+  }
+  @include media-min($media-lg) {
+    margin-top: 106px;
+  }
+}
+.block_catalog-1 {
+  margin-bottom: 52px;
+  @include media-min($media-md) {
+    margin-bottom: 85px;
+  }
+  @include media-min($media-lg) {
+    margin-bottom: 52px;
+  }
+  @include media-min($media-xl) {
+    margin-bottom: 78px;
+  }
+  @include media-min($media-xxxl) {
+    margin-bottom: 73px;
+  }
+}
+.block_catalog-2 {
+  margin-bottom: 34px;
+  @include media-min($media-lg) {
+    margin-bottom: 46px;
+  }
+  @include media-min($media-xl) {
+    margin-bottom: 58px;
+  }
+  @include media-min($media-xxl) {
+    margin-bottom: 50px;
+  }
+  @include media-min($media-xxxl) {
+    margin-bottom: 56px;
+  }
+}
+.block_catalog-3 {
+  margin-bottom: 62px;
+  @include media-min($media-xs) {
+    margin-bottom: 32px;
+  }
+  @include media-min($media-sm) {
+    margin-bottom: 82px;
+  }
+  @include media-min($media-md) {
+    margin-bottom: 74px;
+  }
+  .block__head {
+    margin-bottom: 24px;
+    @include media-min($media-sm) {
+      margin-bottom: 30px;
+    }
+  }
+}
+.block_catalog-4 {
+  margin-bottom: 52px;
+  @include media-min($media-sm) {
+    margin-bottom: 32px;
+  }
+  @include media-min($media-lg) {
+    margin-bottom: 82px;
+  }
+  @include media-min($media-xl) {
+    margin-bottom: 66px;
+  }
+}
+.block_catalog-5 {
+  margin-bottom: 90px;
+}
+.block_search-1 {
+  margin-bottom: 32px;
+  @include media-min($media-md) {
+    margin-bottom: 55px;
+  }
+  @include media-min($media-lg) {
+    margin-bottom: 52px;
+  }
+  @include media-min($media-xl) {
+    margin-bottom: 78px;
+  }
+  @include media-min($media-xxxl) {
+    margin-bottom: 73px;
+  }
+
+  .block__head {
+    margin-bottom: 21px;
+    @include media-min($media-sm) {
+      margin-bottom: 35px;
+    }
+    @include media-min($media-md) {
+      margin-bottom: 20px;
+    }
+    @include media-min($media-xl) {
+      margin-bottom: 10px;
+    }
+    @include media-min($media-xxl) {
+      margin-bottom: 20px;
+    }
+  }
+}
+.block_search-3 {
+  margin-bottom: 62px;
+
+  @include media-min($media-sm) {
+    margin-bottom: 82px;
+  }
+  @include media-min($media-md) {
+    margin-bottom: 74px;
+  }
+  .block__head {
+    margin-bottom: 24px;
+    @include media-min($media-sm) {
+      margin-bottom: 30px;
+    }
+  }
+}
+.block_favorites-1 {
+  margin-bottom: 24px;
+  @include media-min($media-sm) {
+    margin-bottom: 38px;
+  }
+  @include media-min($media-md) {
+    margin-bottom: 30px;
+  }
+  .block__head {
+    margin-bottom: 0;
+  }
+  .block__title_big {
+    @include head-20-700;
+    @include media-min($media-xs) {
+      @include head-28-700-2;
+    }
+    @include media-min($media-sm) {
+      @include head-32-700;
+    }
+    @include media-min($media-lg) {
+      @include head-34-700;
+    }
+  }
+}
+.block_favorites-2 {
+  margin-bottom: 52px;
+  @include media-min($media-md) {
+    margin-bottom: 85px;
+  }
+  @include media-min($media-lg) {
+    margin-bottom: 52px;
+  }
+  @include media-min($media-xl) {
+    margin-bottom: 52px;
+  }
+  @include media-min($media-xxl) {
+    margin-bottom: 58px;
+  }
+  .product-card-list {
+    margin-top: 22px;
+    @include media-min($media-lg) {
+      margin-top: 32px;
+    }
+  }
+}
+.block_favorites-3 {
+  margin-bottom: 30px;
+  @include media-min($media-xs) {
+    margin-bottom: 24px;
+  }
+  @include media-min($media-sm) {
+    margin-bottom: 38px;
+  }
+  @include media-min($media-md) {
+    margin-bottom: 38px;
+  }
+  @include media-min($media-lg) {
+    margin-bottom: 30px;
+  }
+  .block__head {
+    margin-bottom: 0;
+  }
+  .block__title_big {
+    @include head-20-700;
+
+    @include media-min($media-md) {
+      @include head-32-700;
+    }
+    @include media-min($media-lg) {
+      @include head-34-700;
+    }
+  }
+}
+.block_brand-goods-1 {
+  margin-bottom: 52px;
+  @include media-min($media-md) {
+    margin-bottom: 56px;
+  }
+  @include media-min($media-lg) {
+    margin-bottom: 52px;
+  }
+  @include media-min($media-xl) {
+    margin-bottom: 78px;
+  }
+  @include media-min($media-xxxl) {
+    margin-bottom: 73px;
+  }
+  .product-card-list {
+    margin-top: 22px;
+    @include media-min($media-lg) {
+      margin-top: 32px;
+    }
+  }
+}
+.block_brends-1 {
+  margin-bottom: 69px;
+  @include media-min($media-lg) {
+    margin-bottom: 89px;
+  }
+  @include media-min($media-xxxl) {
+    margin-bottom: 64px;
+  }
+}
+.block_brends-2 {
+  .block__head {
+    margin-bottom: 22px;
+    @include media-min($media-sm) {
+      margin-bottom: 30px;
+    }
+  }
+  margin-bottom: 65px;
+  @include media-min($media-sm) {
+    margin-bottom: 31px;
+  }
+  @include media-min($media-lg) {
+    margin-bottom: 55px;
+  }
+}
+.block_news-1 {
+  .block__head {
+    margin-bottom: 10px;
+    @include media-min($media-xs) {
+      margin-bottom: 22px;
+    }
+    @include media-min($media-lg) {
+      margin-bottom: 30px;
+    }
+  }
+  margin-bottom: 72px;
+  @include media-min($media-lg) {
+    margin-bottom: 85px;
+  }
+  @include media-min($media-xl) {
+    margin-bottom: 92px;
+  }
+  @include media-min($media-xxxl) {
+    margin-bottom: 70px;
+  }
+}
+.block_news-2 {
+  margin-bottom: 59px;
+  @include media-min($media-sm) {
+    margin-bottom: 35px;
+  }
+  @include media-min($media-lg) {
+    bottom: 82px;
+  }
+  @include media-min($media-xl) {
+    margin-bottom: 57px;
+  }
+  .block__head {
+    margin-bottom: 30px;
+    @include media-min($media-xxxl) {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.block_knowledge-base-1 {
+  .block__head {
+    margin-bottom: 10px;
+    @include media-min($media-xs) {
+      margin-bottom: 30px;
+    }
+    @include media-min($media-sm) {
+      margin-bottom: 22px;
+    }
+    @include media-min($media-lg) {
+      margin-bottom: 30px;
+    }
+  }
+  margin-bottom: 72px;
+  @include media-min($media-lg) {
+    margin-bottom: 85px;
+  }
+  @include media-min($media-xl) {
+    margin-bottom: 145px;
+  }
+  @include media-min($media-xxl) {
+    margin-bottom: 92px;
+  }
+  @include media-min($media-xxxl) {
+    margin-bottom: 70px;
+  }
+}
+.block_knowledge-base-2 {
+  margin-bottom: 59px;
+  @include media-min($media-sm) {
+    margin-bottom: 35px;
+  }
+  @include media-min($media-lg) {
+    bottom: 82px;
+  }
+  @include media-min($media-xl) {
+    margin-bottom: 57px;
+  }
+  .block__head {
+    margin-bottom: 30px;
+    @include media-min($media-xxxl) {
+      margin-bottom: 20px;
+    }
+  }
+}
+.block_stock-1 {
+  .block__head {
+    margin-bottom: 28px;
+  }
+  margin-bottom: 36px;
+}
+.block_stock-2 {
+  .block__head {
+    margin-bottom: 27px;
+    @include media-min($media-xs) {
+      margin-bottom: 32px;
+    }
+    @include media-min($media-sm) {
+      margin-bottom: 28px;
+    }
+  }
+  .block__title_big {
+    @include head-28-700;
+
+    @include media-min($media-xs) {
+      @include head-34-700;
+    }
+  }
+  margin-bottom: 73px;
+  @include media-min($media-lg) {
+    margin-bottom: 96px;
+  }
+  @include media-min($media-xxxl) {
+    margin-bottom: 72px;
+  }
+}
+.block_stock-3 {
+  .block__head {
+    margin-bottom: 28px;
+    @include media-min($media-xxxl) {
+      margin-bottom: 20px;
+    }
+  }
+  margin-bottom: 58px;
+}
+.block_stock-5 {
+  .block__head {
+    margin-bottom: 27px;
+    @include media-min($media-xs) {
+      margin-bottom: 32px;
+    }
+    @include media-min($media-sm) {
+      margin-bottom: 28px;
+    }
+  }
+  .block__title_big {
+    @include head-28-700;
+    @include media-min($media-sm) {
+      @include head-32-700;
+    }
+    @include media-min($media-lg) {
+      @include head-34-700;
+    }
+  }
+
+  .p-plus-container_tags {
+    margin-bottom: 50px;
+  }
+  .tags_priority {
+    margin-bottom: 32px;
+    @include media-min($media-sm) {
+      margin-bottom: 50px;
+    }
+
+    @include media-min($media-md) {
+      margin-bottom: 0;
+    }
+  }
+  margin-bottom: 73px;
+  @include media-min($media-lg) {
+    margin-bottom: 96px;
+  }
+  @include media-min($media-xxxl) {
+    margin-bottom: 72px;
+  }
+}
+.block_stock-detail-1 {
+  .block__head {
+    margin-bottom: 10px;
+    @include media-min($media-xl) {
+      margin-bottom: 30px;
+    }
+  }
+  margin-bottom: 36px;
+  @include media-min($media-lg) {
+    margin-bottom: 23px;
+  }
+  @include media-min($media-xl) {
+    margin-bottom: 56px;
+  }
+  .block__title_big {
+    @include head-20-700;
+    @include media-min($media-xs) {
+      @include head-28-700-2;
+    }
+    @include media-min($media-sm) {
+      @include head-32-700;
+    }
+    @include media-min($media-lg) {
+      @include head-34-700;
+    }
+  }
+}
+.block_stock-detail-2 {
+  .block__head {
+    margin-bottom: 28px;
+  }
+  margin-bottom: 42px;
+  @include media-min($media-md) {
+    margin-bottom: 30px;
+  }
+  @include media-min($media-lg) {
+    margin-bottom: 60px;
+  }
+}
+.block_stock-detail-3 {
+}
+.block_stock-detail-4 {
+  .block__head {
+    margin-bottom: 40px;
+    @include media-min($media-xl) {
+      margin-bottom: 30px;
+    }
+  }
+  .block__title {
+    @include head-15-700;
+    color: $color-black;
+    text-transform: uppercase;
+    @include media-min($media-sm) {
+      @include head-18-700;
+    }
+    @include media-min($media-md) {
+      @include head-23-700;
+    }
+    @include media-min($media-lg) {
+      @include head-30-700;
+    }
+  }
+  margin-bottom: 87px;
+  @include media-min($media-sm) {
+    margin-bottom: 44px;
+  }
+  @include media-min($media-lg) {
+    margin-bottom: 60px;
+  }
+  @include media-min($media-xl) {
+    margin-bottom: 27px;
+  }
+}
+.block_faqs-1 {
+  .block__head {
+    margin-bottom: 30px;
+  }
+  .block__title_big {
+    @include head-28-700-2;
+
+    @include media-min($media-sm) {
+      @include head-32-700;
+    }
+    @include media-min($media-lg) {
+      @include head-34-700;
+    }
+  }
+}
+.block_sell-with-modern-1 {
+  .block__head {
+    margin-bottom: 24px;
+    @include media-min($media-lg) {
+      margin-bottom: 62px;
+    }
+    @include media-min($media-xxl) {
+      margin-bottom: 30px;
+    }
+  }
+  .block__title_big {
+    @include head-20-700;
+    @include media-min($media-xs) {
+      @include head-28-700-2;
+    }
+    @include media-min($media-sm) {
+      @include head-32-700;
+    }
+    @include media-min($media-lg) {
+      @include head-34-700;
+    }
+  }
+  .block__body {
+    @include media-min($media-xl) {
+      max-width: 1083px;
+    }
+    @include media-min($media-xxl) {
+      max-width: unset;
+    }
+  }
+  margin-bottom: 31px;
+  @include media-min($media-sm) {
+    margin-bottom: 55px;
+  }
+  @include media-min($media-lg) {
+    margin-bottom: 86px;
+  }
+  @include media-min($media-xl) {
+    margin-bottom: 116px;
+  }
+}
+.block_loyalty-program-1 {
+  .block__head {
+    margin-bottom: 28px;
+    @include media-min($media-sm) {
+      margin-bottom: 36px;
+    }
+    @include media-min($media-lg) {
+      margin-bottom: 59px;
+    }
+    @include media-min($media-xl) {
+      margin-bottom: 67px;
+    }
+    @include media-min($media-xxl) {
+      margin-bottom: 56px;
+    }
+  }
+
+  .block__title_big {
+    @include head-20-700;
+    @include media-min($media-xs) {
+      @include head-28-700-2;
+    }
+    @include media-min($media-sm) {
+      @include head-32-700;
+    }
+    @include media-min($media-lg) {
+      @include head-34-700;
+    }
+  }
+}
+.block_delivery-1 {
+  .block__head {
+    margin-bottom: 37px;
+    @include media-min($media-sm) {
+      margin-bottom: 36px;
+    }
+    @include media-min($media-lg) {
+      margin-bottom: 59px;
+    }
+    @include media-min($media-xl) {
+      margin-bottom: 67px;
+    }
+    @include media-min($media-xxl) {
+      margin-bottom: 56px;
+    }
+  }
+
+  .block__title_big {
+    @include head-20-700;
+    @include media-min($media-xs) {
+      @include head-28-700-2;
+    }
+    @include media-min($media-sm) {
+      @include head-32-700;
+    }
+    @include media-min($media-lg) {
+      @include head-34-700;
+    }
+  }
+}
+.block_store-1 {
+  .block__head {
+    margin-bottom: 30px;
+    @include media-min($media-xs) {
+      margin-bottom: 39px;
+    }
+  }
+  .block__title_big {
+    @include head-20-700;
+    @include media-min($media-xs) {
+      @include head-28-700-2;
+    }
+    @include media-min($media-sm) {
+      @include head-30-700;
+      max-width: 1062px;
+    }
+    @include media-min($media-xxl) {
+      @include head-34-700;
+      max-width: unset;
+    }
+  }
+  margin-bottom: 42px;
+  @include media-min($media-xl) {
+    margin-bottom: 52px;
+  }
+}
+.block_store-2 {
+  .block__head {
+    margin-bottom: 20px;
+    @include media-min($media-sm) {
+      margin-bottom: 39px;
+    }
+  }
+
+  margin-bottom: 42px;
+  @include media-min($media-xl) {
+    margin-bottom: 52px;
+  }
+}
+.block_contact-1 {
+  margin-bottom: 28px;
+  @include media-min($media-sm) {
+    margin-bottom: 34px;
+  }
+  @include media-min($media-md) {
+    margin-bottom: 50px;
+  }
+  @include media-min($media-lg) {
+    margin-bottom: 60px;
+  }
+  @include media-min($media-xl) {
+    margin-bottom: 70px;
+  }
+}
+.block_contact-2 {
+  margin-bottom: 24px;
+  @include media-min($media-sm) {
+    margin-bottom: 34px;
+  }
+  @include media-min($media-lg) {
+    margin-bottom: 42px;
+  }
+  @include media-min($media-xl) {
+    margin-bottom: 50px;
+  }
+}
+.block_course-page-1 {
+  .block__head {
+    margin-bottom: 30px;
+    @include media-min($media-sm) {
+      margin-bottom: 53px;
+    }
+    @include media-min($media-md) {
+      margin-bottom: 57px;
+    }
+  }
+  .block__title_big {
+    @include head-28-700-2;
+
+    @include media-min($media-sm) {
+      @include head-32-700;
+    }
+    @include media-min($media-md) {
+      @include head-34-700;
+    }
+  }
+  margin-bottom: 49px;
+  @include media-min($media-sm) {
+    margin-bottom: 66px;
+  }
+  @include media-min($media-md) {
+    margin-bottom: 80px;
+  }
+}
+.block_course-page-2 {
+  .block__head {
+    margin-bottom: 30px;
+  }
+  .block__title {
+    @include head-20-700;
+    color: $color-black;
+    text-transform: uppercase;
+    @include media-min($media-sm) {
+      @include head-28-700;
+    }
+    @include media-min($media-md) {
+      @include head-30-700;
+    }
+  }
+  margin-bottom: 75px;
+  @include media-min($media-sm) {
+    margin-bottom: 90px;
+  }
+  @include media-min($media-md) {
+    margin-bottom: 50px;
+  }
+}
+.block_course-page-3 {
+  margin-bottom: 31px;
+  @include media-min($media-sm) {
+    margin-bottom: 44px;
+  }
+  @include media-min($media-xl) {
+    margin-bottom: 50px;
+  }
+}
+.block_education-1 {
+  .block__head {
+    margin-bottom: 33px;
+    @include media-min($media-lg) {
+      margin-bottom: 27px;
+    }
+  }
+  .block__title_big {
+    @include head-28-700-2;
+
+    @include media-min($media-sm) {
+      @include head-32-700;
+    }
+    @include media-min($media-lg) {
+      @include head-34-700;
+    }
+  }
+  margin-bottom: 32px;
+  @include media-min($media-xl) {
+    margin-bottom: 52px;
+  }
+  @include media-min($media-xxl) {
+    margin-bottom: 32px;
+  }
+}
+.block_education-2 {
+  .block__head {
+    margin-bottom: 30px;
+  }
+  margin-bottom: 50px;
+}
+.block_education-3 {
+  margin-bottom: 64px;
+  @include media-min($media-md) {
+    margin-bottom: 82px;
+  }
+}
+.block_education-4 {
+  .block__head {
+    margin-bottom: 30px;
+    @include media-min($media-xl) {
+      text-align: center;
+    }
+  }
+  margin-bottom: 39px;
+  @include media-min($media-lg) {
+    margin-bottom: 52px;
+  }
+}
+.block_education-5 {
+  margin-bottom: 43px;
+  @include media-min($media-xl) {
+    margin-bottom: 52px;
+  }
+}
+.block_product-page-1 {
+  margin-bottom: 46px;
+  @include media-min($media-lg) {
+    margin-bottom: 56px;
+  }
+  @include media-min($media-xl) {
+    margin-bottom: 86px;
+  }
+}
+.block_product-page-2 {
+  margin-bottom: 68px;
+  @include media-min($media-sm) {
+    margin-bottom: 84px;
+  }
+  @include media-min($media-md) {
+    margin-bottom: 62px;
+  }
+  @include media-min($media-lg) {
+    margin-bottom: 86px;
+  }
+  @include media-min($media-xl) {
+    margin-bottom: 104px;
+  }
+}
+.block_product-page-3 {
+  margin-bottom: 68px;
+  @include media-min($media-sm) {
+    margin-bottom: 84px;
+  }
+}
+.block_product-page-4 {
+  margin-bottom: 72px;
+}
+.block_product-page-5 {
+  margin-bottom: 60px;
+  @include media-min($media-sm) {
+    margin-bottom: 32px;
+  }
+  @include media-min($media-lg) {
+    margin-bottom: 80px;
+  }
+  @include media-min($media-xl) {
+    margin-bottom: 66px;
+  }
+}
+
+.block_main-1 {
+  margin-bottom: 20px;
+  @include media-min($media-xs) {
+    margin-bottom: 10px;
+  }
+  @include media-min($media-sm) {
+    margin-bottom: 20px;
+  }
+  @include media-min($media-md) {
+    margin-bottom: 30px;
+  }
+  @include media-min($media-lg) {
+    margin-bottom: 36px;
+  }
+}
+.block_main-2 {
+  margin-bottom: 31px;
+  @include media-min($media-xs) {
+    margin-bottom: 26px;
+  }
+  @include media-min($media-sm) {
+    margin-bottom: 34px;
+  }
+  @include media-min($media-lg) {
+    margin-bottom: 44px;
+  }
+  @include media-min($media-xl) {
+    margin-bottom: 53px;
+  }
+}
+.block_main-3 {
+  .block__head {
+    @include media-min($media-sm) {
+      margin-bottom: 30px;
+    }
+  }
+  margin-bottom: 60px;
+  @include media-min($media-sm) {
+    margin-bottom: 105px;
+  }
+  @include media-min($media-xl) {
+    margin-bottom: 50px;
+  }
+}
+.block_main-4 {
+  .block__head {
+    @include media-min($media-sm) {
+      margin-bottom: 30px;
+    }
+  }
+  margin-bottom: 75px;
+  @include media-min($media-sm) {
+    margin-bottom: 118px;
+  }
+  @include media-min($media-md) {
+    margin-bottom: 88px;
+  }
+}
+.block_main-5 {
+  margin-bottom: 77px;
+  @include media-min($media-xs) {
+    margin-bottom: 50px;
+  }
+  @include media-min($media-sm) {
+    margin-bottom: 76px;
+  }
+  @include media-min($media-lg) {
+    margin-bottom: 123px;
+  }
+  @include media-min($media-xl) {
+    margin-bottom: 88px;
+  }
+}
+.block_main-6 {
+  margin-bottom: 82px;
+  @include media-min($media-xs) {
+    margin-bottom: 64px;
+  }
+  @include media-min($media-sm) {
+    margin-bottom: 54px;
+  }
+  @include media-min($media-lg) {
+    margin-bottom: 98px;
+  }
+  @include media-min($media-xl) {
+    margin-bottom: 81px;
+  }
+}
+.block_main-7 {
+  margin-bottom: 64px;
+  @include media-min($media-lg) {
+    margin-bottom: 82px;
+  }
+  @include media-min($media-xl) {
+    margin-bottom: 114px;
+  }
+}
+.block_main-8 {
+  .block__head {
+    margin-bottom: 20px;
+    @include media-min($media-sm) {
+      margin-bottom: 30px;
+    }
+  }
+  margin-bottom: 29px;
+  @include media-min($media-sm) {
+    margin-bottom: 78px;
+  }
+  @include media-min($media-md) {
+    margin-bottom: 88px;
+  }
+  @include media-min($media-xl) {
+    margin-bottom: 120px;
+  }
+}
+.block_main-9 {
+  margin-bottom: 30px;
+  @include media-min($media-sm) {
+    margin-bottom: 50px;
+  }
+  @include media-min($media-lg) {
+    margin-bottom: 40px;
+  }
+  @include media-min($media-xl) {
+    margin-bottom: 70px;
+  }
+}
+.block_main-10 {
+  margin-bottom: 64px;
+  @include media-min($media-sm) {
+    margin-bottom: 33px;
+  }
+  @include media-min($media-lg) {
+    margin-bottom: 80px;
+  }
+  @include media-min($media-xl) {
+    margin-bottom: 66px;
+  }
+}
+.block_purchas-1 {
+  .block__head {
+    margin-bottom: 18px;
+    @include media-min($media-sm) {
+      margin-bottom: 6px;
+    }
+  }
+  .block__title_big {
+    @include head-28-700-2;
+    @include media-min($media-sm) {
+      @include head-32-700;
+    }
+    @include media-min($media-md) {
+      @include head-34-700;
+    }
+  }
+}
+.block_order-detail-1 {
+  .block__head {
+    margin-bottom: 11px;
+    @include media-min($media-sm) {
+      margin-bottom: 6px;
+    }
+  }
+  .block__title_big {
+    @include head-28-700-2;
+    @include media-min($media-sm) {
+      @include head-32-700;
+    }
+    @include media-min($media-md) {
+      @include head-34-700;
+    }
+  }
+}
+.block_waiting-1 {
+  .block__title_big {
+    @include head-20-700;
+
+    @include media-min($media-sm) {
+      @include head-30-700;
+    }
+  }
+  .block__head_flex {
+    margin-bottom: 30px;
+    @include media-min($media-sm) {
+      margin-bottom: 42px;
+    }
+    @include media-min($media-lg) {
+      margin-bottom: 38px;
+    }
+    .btn-grey {
+      height: 44px;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      letter-spacing: 1px;
+      padding: 12px;
+    }
+  }
+}
+.block_order-1 {
+  .block__head_flex {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 9px;
+    @include media-min($media-sm) {
+      flex-direction: row;
+      margin-bottom: 31px;
+    }
+    @include media-min($media-lg) {
+      margin-bottom: 38px;
+    }
+    .btn-grey {
+      height: 44px;
+      padding: 10px 11px;
+      @include media-min($media-lg) {
+        padding: 12px 20px;
+      }
+    }
+  }
+  .block__title_big {
+    @include head-28-700-2;
+    @include media-min($media-sm) {
+      @include head-32-700;
+    }
+    @include media-min($media-md) {
+      @include head-34-700;
+    }
+  }
+}
+.block_password-recovery {
+  .block__head {
+    margin-bottom: 28px;
+    @include media-min($media-sm) {
+      margin-bottom: 38px;
+    }
+  }
+  .block__title_big {
+    @include head-20-700;
+    @include media-min($media-sm) {
+      @include head-32-700;
+    }
+    @include media-min($media-md) {
+      @include head-34-700;
+    }
+  }
+}
+.block_profile-1 {
+  .block__title_big {
+    @include head-20-700;
+    @include media-min($media-sm) {
+      @include head-32-700;
+    }
+    @include media-min($media-md) {
+      @include head-34-700;
+    }
+  }
+  .block__head {
+    margin-bottom: 30px;
+    @include media-min($media-sm) {
+      margin-bottom: 15px;
+    }
+    @include media-min($media-md) {
+      margin-bottom: 27px;
+    }
+    @include media-min($media-lg) {
+      margin-bottom: 45px;
+    }
+  }
+}
+.block_reg-1 {
+  .block__head {
+    margin-bottom: 28px;
+    @include media-min($media-sm) {
+      margin-bottom: 41px;
+    }
+  }
+
+  .permission-profile_reg {
+    margin-bottom: 31px;
+  }
+}
+.block_mb-my-card {
+  margin-bottom: 30px;
+  @include media-min($media-sm) {
+    margin-bottom: 40px;
+  }
+}
+.block_mb-my-card-2 {
+  margin-bottom: 53px;
+  @include media-min($media-sm) {
+    margin-bottom: 49px;
+  }
+}

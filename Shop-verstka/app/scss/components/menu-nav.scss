@@ -1,0 +1,100 @@
+.menu-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: $color-background-3;
+  box-shadow: 0px -4px 10px 0px rgba(126, 126, 126, 0.15);
+  height: 56px;
+  z-index: 12;
+
+  @include media-min($media-md) {
+    display: none;
+  }
+}
+.menu-nav__wrap {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0 8px;
+  padding: 0 5px;
+  @include media-min($media-sm) {
+    padding: 0;
+    max-width: 490px;
+    margin: 0 auto;
+  }
+}
+.menu-nav__btn {
+  @include text-9-500;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  text-decoration: none;
+  color: $color-black;
+  transition: $transition;
+
+  &.active,
+  &:hover,
+  &:focus {
+    background-color: $color-background-2;
+  }
+}
+.menu-nav__icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+  &::before {
+    content: '';
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+  &.icon-main {
+    &::before {
+      background-image: icon-main();
+      width: 24px;
+      height: 25px;
+    }
+  }
+  &.icon-catalog {
+    &::before {
+      background-image: icon-catalog();
+      width: 21px;
+      height: 15px;
+    }
+  }
+  &.icon-heart {
+    &::before {
+      background-image: icon-heart($color-black, transparent);
+      width: 21px;
+      height: 18px;
+    }
+  }
+  &.icon-cart {
+    &::before {
+      background-image: icon-cart();
+      width: 24px;
+      height: 24px;
+    }
+  }
+  &.icon-user {
+    &.active {
+      &::before {
+        background-image: icon-user($color-black, $color-black);
+      }
+    }
+    &::before {
+      background-image: icon-user($color-black, transparent);
+      width: 24px;
+      height: 24px;
+    }
+  }
+}

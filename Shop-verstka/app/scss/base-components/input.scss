@@ -1,0 +1,26 @@
+.input__text {
+  @include text-14-500;
+  margin-bottom: 8px;
+}
+
+.input_confirmed {
+  .input__text ~ * {
+    display: none;
+  }
+}
+.input_phone-confirmation {
+  .input__wrap-input {
+    width: 170px;
+    margin-bottom: 10px;
+  }
+}
+.input__control {
+  display: flex;
+  flex-direction: column;
+  gap: 14px 12px;
+  align-items: flex-start;
+  @include media-min($media-xs) {
+    flex-direction: row;
+    align-items: center;
+  }
+}

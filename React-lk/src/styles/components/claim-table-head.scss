@@ -1,0 +1,26 @@
+.claim-table-head {
+  & > * + * {
+    margin-left: 10px;
+  }
+}
+
+.claim-table-head__col {
+  & > * + * {
+    margin-left: 8px;
+  }
+}
+
+.claim-table-head__text {
+  color: $color-black;
+}
+
+.claim-table-head__tag {
+  margin-right: 0;
+  padding: 0 6px;
+  background-color: $color-brand-2;
+  color: $color-white;
+
+  &_number {
+    border-radius: 10px;
+  }
+}

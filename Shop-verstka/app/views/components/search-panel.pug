@@ -1,0 +1,15 @@
+mixin search-panel(data)
+	-
+		data = init(data, {
+			'block': 'search-panel',
+			'text': 'По запросу «And» найдено <span>3 результата</span>'
+		})
+	+b&attributes(data.attributes(attributes))
+		+form-field({
+			'title': '',
+			'component': {
+				'mixin': 'input',
+				'placeholder': 'Поиск'
+			},
+		})._simple-search
+		+e.text !{data.text}

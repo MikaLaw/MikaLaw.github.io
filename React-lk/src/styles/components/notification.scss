@@ -1,0 +1,107 @@
+.notification {
+  margin: 0;
+  padding: 20px 22px;
+  width: 220px;
+
+  .ant-btn {
+    width: 100%;
+  }
+}
+
+.notification-ws {
+  margin: 0;
+  padding: 15px;
+  background: $color-ui-2;
+  border-radius: 4px;
+
+  .ant-notification-notice-icon-success {
+    display: none;
+  }
+
+  .ant-notification-notice-with-icon .ant-notification-notice-message {
+    margin: 0;
+  }
+
+  .ant-notification-notice-close {
+    display: block;
+    color: $color-brand-2;
+    right: 15px;
+  }
+
+  &__message-top {
+    display: flex;
+  }
+
+  &__title {
+    @include text-3-bold();
+
+    color: $color-brand-2;
+    display: flex;
+    align-items: flex-start;
+    flex-basis: 67%;
+
+    .anticon {
+      margin-right: 8px;
+    }
+
+    &.stock {
+      color: $color-main;
+    }
+  }
+
+  &__date {
+    @include text-10-400-inter-sm();
+    align-self: flex-start;
+
+    color: $color-ui-8;
+  }
+
+  &__name {
+    @include text-2-medium-sm();
+
+    color: $color-black;
+    margin-top: 3px;
+  }
+
+  &__message {
+    cursor: pointer;
+  }
+
+  &__message-info {
+    display: flex;
+    cursor: pointer;
+
+    .anticon {
+      margin-right: 8px;
+    }
+
+    .notification-ws__name {
+      flex-basis: 60%;
+    }
+  }
+}
+
+.ant-notification {
+  z-index: 1100;
+}
+
+.ant-notification-notice-closable .ant-notification-notice-message {
+  padding: 0;
+}
+
+.ant-notification-notice-message {
+  padding: 0;
+  font-family: $font-inter;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  margin-bottom: 20px;
+}
+
+.ant-notification-notice-close {
+  display: none;
+}
+
+.ant-notification-hook-holder:not(:last-child) {
+  margin-bottom: 10px;
+}

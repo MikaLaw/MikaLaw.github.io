@@ -1,0 +1,32 @@
+.address {
+  margin-bottom: 15px;
+  position: relative;
+  padding: 15px 10px;
+  background-color: $color-ui-2;
+}
+
+.address__btn {
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  width: auto;
+  height: auto;
+  background-color: transparent !important;
+
+  &:hover {
+    path {
+      fill: $color-brand-2;
+      transition: $transition;
+    }
+  }
+}
+
+.address__text-container {
+  & > * + * {
+    margin-top: 10px;
+  }
+}
+
+.address__text {
+
+}

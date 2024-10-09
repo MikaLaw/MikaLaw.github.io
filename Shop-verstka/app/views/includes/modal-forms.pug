@@ -1,0 +1,276 @@
+include ../components/form-course
+include ../base-components/checkbox
+include ../base-components/loader
+
+div(style='display: none;')
+	+b.modal._registration-education#registration-education
+		+e.head
+			+b.fancybox-close-small(data-fancybox-close)
+			+e.title Записаться на ОБУЧЕНИЕ
+		+e.body
+			+e.text Наш менеджер свяжется с вами
+			+registration-card({
+				'title': 'Теория+Практика <span>24-25 марта</span>',
+				'cost': '13 500 ₽',
+				'stock': '1 200 ₽',
+				'btn': false,
+			})
+			+b.form._registration-education
+				+e.item
+					+form-field({
+						'title': '',
+						'component': {
+							'mixin': 'input',
+							'placeholder': 'ФИО'
+						},
+					})
+				+e.item
+					+form-field({
+						'title': '',
+						'component': {
+							'mixin': 'input',
+							'placeholder': '+ 7 (___) ___-__-__'
+						},
+					})
+				+e.footer 
+					+b.BUTTON.btn-grey Записаться
+					+e.text-agree Нажимая на кнопку «Записаться», я даю свое <a href="#">Согласие на обработку персональных данных</a>
+	+b.modal._discount-calculation#discount-calculation
+		+e.head
+			+b.fancybox-close-small(data-fancybox-close)
+			+e.title Расчет скидок
+		+e.body
+			+b.form._discount-modal
+				+e.text Если ваш заказ соответствует нескольким акциям одновременно, что вы выберите?
+				+b.UL.modal-checkbox__list 
+					+e.LI.item
+						+b.modal-checkbox
+							+e.INPUT.__input(type='radio' id="radio1" name="discount-modal-checkbox" checked)
+							+e.LABEL.__label(for="radio1")
+								+e.icon.icon-bonus 
+								+e.text Бонусы
+					+e.LI.item
+						+b.modal-checkbox
+							+e.INPUT.__input(type='radio' id="radio2" name="discount-modal-checkbox")
+							+e.LABEL.__label(for="radio2")
+								+e.icon.icon-discount
+								+e.text Скидки	
+					+e.LI.item
+						+b.modal-checkbox
+							+e.INPUT.__input(type='radio' id="radio3" name="discount-modal-checkbox")
+							+e.LABEL.__label(for="radio3")
+								+e.icon.icon-gift
+								+e.text Подарки										
+				+checkbox({
+					'label': 'Больше не спрашивать для этого заказа'
+				})
+				+e.footer 	
+					+b.BUTTON.btn-grey.btn-full(type="submit") Выбрать
+	+b.modal._basket-clear#basket-clear
+		+e.head
+			+e.title Очистить корзину
+			+b.fancybox-close-small(data-fancybox-close)
+		+e.body
+			+b.form
+				+e.footer
+					+e.wrap-btn
+						+b.BUTTON.btn-grey(type="submit") Да
+						+b.BUTTON.btn-stroke(type="button" data-fancybox-close) Отмена  
+	+b.modal._basket-clear#waiting-list-clear
+		+e.head
+			+e.title Очистить лист ожидания
+			+b.fancybox-close-small(data-fancybox-close)
+		+e.body
+			+b.form
+				+e.footer
+					+e.wrap-btn
+						+b.BUTTON.btn-grey(type="submit") Да
+						+b.BUTTON.btn-stroke(type="button" data-fancybox-close) Отмена
+	+b.modal._basket-clear#checkout
+		+e.head
+			+e.title Оформить заказ
+			+b.fancybox-close-small(data-fancybox-close)
+		+e.body
+			+b.form
+				+e.footer
+					+e.wrap-btn
+						+b.BUTTON.btn-grey(type="submit") Да
+						+b.BUTTON.btn-stroke(type="button" data-fancybox-close) Отмена
+	+b.modal._basket-clear#logout
+		+e.head
+			+e.title Выйти?
+			+b.fancybox-close-small(data-fancybox-close)
+		+e.body
+			+b.form
+				+e.footer
+					+e.wrap-btn
+						+b.BUTTON.btn-grey(type="submit") Да
+						+b.BUTTON.btn-stroke(type="button" data-fancybox-close) Отмена
+
+	+b.modal._order-reg#order-reg
+		+e.head
+			+b.fancybox-close-small(data-fancybox-close)
+			+e.title Оформить заказ
+		+e.body
+			+b.form._order-reg-modal
+				+e.text Выберите подарок из списка по акции «Подарок при покупке продукции Alfaparf на сумму 6 800 рублей»:
+				+e.item
+					+checkbox({
+						'type':'radio',
+						'name': 'gift-choice',
+						'label': 'Шампунь мицеллярный успокаивающий 250мл'
+					})
+				+e.item
+					+checkbox({
+						'type':'radio',
+						'name': 'gift-choice',
+						'label': 'Шампунь очищающий ABSOLUTE CLEANSING SHAMPOO 1000мл'
+					})
+				+e.item
+					+checkbox({
+						'type':'radio',
+						'name': 'gift-choice',
+						'label': 'Тоник успокаивающий 125мл БОНУС'
+					})
+				+e.item
+					+checkbox({
+						'type':'radio',
+						'name': 'gift-choice',
+						'label': 'Маска разглаживающая для непослушных волос 500мл'
+					})
+				+e.item
+					+checkbox({
+						'type':'radio',
+						'name': 'gift-choice',
+						'label': 'Шампунь для кудрявых и вьющихся волос 1000мл'
+					})
+				+e.item
+					+checkbox({
+						'type':'radio',
+						'name': 'gift-choice',
+						'label': 'Набор LISSE DESIGN'
+					})
+				+e.item
+					+checkbox({
+						'type':'radio',
+						'name': 'gift-choice',
+						'label': 'Лосьон д/всех типов волос, придающий блеск 12х13мл'
+					})
+				+e.footer
+					+e.wrap-btn
+						+b.BUTTON.btn-grey(type="submit") Выбрать
+						+b.BUTTON.btn-stroke(type="button" data-fancybox-close) Регистрация
+						+b.BUTTON.btn-grey(type="submit" disabled) подробнее
+	+b.modal._login#login
+		+e.head
+			+e.title Вход
+			+b.fancybox-close-small(data-fancybox-close)
+		+e.body
+			+b.form._modal
+				+e.body
+					+e.item
+						+form-field({
+							'title': '',
+							'component': {
+								'mixin': 'input',
+								'placeholder': '+ 7 (___) ___-__-__'
+							},
+						})
+					+e.item
+						+form-field({
+							'title': '',
+							'component': {
+								'mixin': 'input',
+								'placeholder': 'Пароль'
+							},
+						})
+
+				+e.footer
+					+e.wrap-link
+						+checkbox({
+							'label': 'Запомнить меня'
+						})
+						+e.A.link(href="#") Забыли пароль?
+					+e.wrap-btn
+						+b.BUTTON.btn-arrow(type="submit") Войти
+						+b.BUTTON.btn-stroke.js-registration-modal(type="button") регистрация
+					+e.text-agree Нажимая на кнопку «Войти», я даю свое <a href="#">Согласие на обработку персональных данных</a>
+	+b.modal._registration#registration
+		+e.head
+			+e.title регистрация
+			+b.fancybox-close-small(data-fancybox-close)
+		+e.body
+			+b.form._modal._registration
+				+e.body
+					+e.item 
+						+e.text Введите ваш номер телефона.<br> На него поступит sms с одноразовым кодом для подтверждения номера.
+					+e.item
+						+form-field({
+							'title': '',
+							'component': {
+								'mixin': 'input',
+								'placeholder': '+ 7 (___) ___-__-__'
+							},
+						}).js-phone-verify
+					+e.item._code-verify 
+						+e.text Код отправлен.
+						+e.text-btn Не пришел код? Отправить повторно
+						+form-field({
+							'title': '',
+							'component': {
+								'mixin': 'input',
+								'placeholder': '----'
+							},
+						}).js-code-verify
+				+e.footer
+					+e.wrap-btn
+						+b.BUTTON.btn-arrow.js-reg-modal-next(type="submit" disabled) продолжить
+					+e.text-agree Нажимая на кнопку «Войти», я даю свое <a href="#">Согласие на обработку персональных данных</a>
+	+b.modal._end-registration#end-registration
+		+e.head
+			+e.title регистрация
+			+b.fancybox-close-small(data-fancybox-close)
+		+e.body
+			+b.form._modal._registration._end-registration
+				+e.body
+					+e.item 
+						+e.text Как вы хотите зарегистрироваться?
+				+e.footer
+					+e.wrap-btn
+						+b.BUTTON.btn-grey(type="submit") Розничный покупатель
+						+b.BUTTON.btn-grey(type="submit") Салоны и мастера
+	+b.modal._registration-confirmation#registration-confirmation
+		+e.head
+			+e.title Регистрация
+			+b.fancybox-close-small(data-fancybox-close)
+		+e.body
+			+b.form
+				+e.body 
+					+e.text Перейдите по ссылке, которую мы отправили вам на email, пожалуйста. После этого Личный кабинет станет доступен
+				+e.footer
+					+b.BUTTON.btn-grey(type="button" data-fancybox-close) ОК	
+	+b.modal._order-registration-confirmation#order-registration-confirmation
+		+e.head
+			+e.title Заявка принята
+			+b.fancybox-close-small(data-fancybox-close)
+		+e.body
+			+b.form
+				+e.body 
+					+e.text После проверки модератором вам будет<br> открыт доступ к Личному кабинету мастера.
+					+e.text В случае срочности можете посетить наш<br> магазин с документом (диплом, сертификат и т.д.)
+					+e.text До подтверждения вашего профессионального профиля вы можете пользоваться Личным кабинетом как розничный покупатель. 
+				+e.footer
+					+b.BUTTON.btn-grey(type="button" data-fancybox-close) ОК	
+	+b.modal._file-exceeds#file-exceeds
+		+e.head
+			+e.title Файл превышает допустимый размер
+			+b.fancybox-close-small(data-fancybox-close)
+		+e.body
+			+b.form
+				+e.footer
+					+b.BUTTON.btn-grey(type="button" data-fancybox-close) Закрыть	
+	+b.modal._discount-preloader#discount-preloader
+		+e.head
+			+e.title Расчитываем ваши скидки
+		+e.body
+			+loader()

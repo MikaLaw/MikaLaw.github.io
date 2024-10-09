@@ -1,0 +1,337 @@
+.pharmacy-orders-table-container {
+  padding: 8px;
+  background-color: $color-white;
+
+  .table-panel-simple {
+    flex-wrap: wrap;
+  }
+
+  .table__head-control, .table-panel__control {
+    .ant-btn-icon-only {
+      &:hover {
+        background-color: transparent;
+
+        .anticon svg path {
+          fill: $color-text-1;
+        }
+      }
+
+      .anticon svg path {
+        fill: $color-apteka-2
+      }
+    }
+  }
+
+  .pagination-container {
+    margin-top: 22px !important;
+  }
+
+  .ant-pagination.mini .ant-pagination-item {
+    &.ant-pagination-item-active {
+      background-color: $color-content-branded;
+
+      a {
+        color: $color-text-1;
+      }
+    }
+  }
+
+  .ant-pagination-item a {
+    color: $color-text-1;
+  }
+
+  .ant-pagination-prev,
+  .ant-pagination-next {
+    .ant-pagination-item-link {
+      color: $color-text-1;
+      border-color: transparent;
+    }
+
+    &:hover {
+      .ant-pagination-item-link {
+        color: $color-text-1;
+        border-color: transparent;
+      }
+    }
+  }
+
+  .table__tags-wrap .ant-tabs-nav-more .anticon-ellipsis:before {
+    background-image: icon-dots($color-text-3);
+  }
+
+  &:not(.detail) {
+
+    .pagination-container {
+      margin-top: 7px !important;
+    }
+    position: sticky;
+    padding-bottom: 11px;
+  }
+}
+
+.pharmacy-orders-table {
+  .ant-table-thead > tr > th {
+    padding: 8.5px 10px;
+    background-color: $color-content-branded;
+  }
+
+  .ant-table-thead > tr > th:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan]) {
+    &:before {
+      height: 100%;
+    }
+  }
+
+  .ant-table-tbody > tr > td {
+    padding: 13px 10px;
+  }
+
+  .ant-table-row {
+    cursor: pointer;
+  }
+
+  .ant-table-filter-trigger {
+    color: $color-text-2;
+
+    &:hover, &.active {
+      color: $color-text-1;
+    }
+  }
+
+  .ant-table-column-sorter-up.active, .ant-table-column-sorter-down.active {
+    color: $color-text-1;
+  }
+}
+
+.pharmacy-orders-table ~ .pagination-container {
+  .ant-pagination.mini .ant-pagination-item {
+    &.ant-pagination-item-active {
+      border: 1px solid $color-text-1;
+      background-color: transparent;
+
+      a {
+        color: $color-text-1;
+      }
+    }
+  }
+
+  .ant-pagination-item a {
+    color: $color-text-1;
+  }
+
+  .ant-pagination-prev,
+  .ant-pagination-next {
+    .ant-pagination-item-link {
+      color: $color-text-1;
+      border-color: transparent;
+    }
+
+    &:hover {
+      .ant-pagination-item-link {
+        color: $color-text-1;
+        border-color: transparent;
+      }
+    }
+  }
+
+  input {
+    border: 1px solid $color-content-branded;
+  }
+
+  .ant-pagination-options-quick-jumper input:focus {
+    border-color: $color-text-1;
+  }
+
+  .ant-select:not(.ant-select-disabled):hover .ant-select-selector {
+    border-color: $color-text-1;
+  }
+
+  .ant-select-item-option-active:not(.ant-select-item-option-disabled) {
+    background-color: $color-content-branded;
+  }
+
+  .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+    background-color: $color-text-1;
+  }
+
+  .ant-pagination-options {
+    .ant-pagination-options-quick-jumper input,
+    .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+      border-radius: 6px;
+      border-color: $color-ui-7;
+      color: $color-ui-6;
+    }
+  }
+}
+
+.pharmacy-orders-table-container.detail {
+  padding: 0;
+
+  .pharmacy-orders-table {
+    .ant-table-thead > tr > th {
+      padding: 8.5px;
+    }
+
+    .ant-table-tbody > tr > td {
+      padding: 9.5px 10px;
+    }
+  }
+}
+
+
+.table-tooltip {
+  &.pharmacy-detail-tooltip {
+    .ant-tooltip-inner {
+      padding: 10px 10.5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: $color-text-1;
+    }
+
+    .ant-tooltip-arrow-content {
+      background: $color-text-1;
+    }
+  }
+}
+
+.pharmacy-draft-table {
+  padding: 15px 20px 20px;
+  border: 1px solid $color-ui-3;
+  border-radius: 4px;
+  background: $color-white;
+}
+
+.pharmacy-draft-table__title {
+  display: flex;
+  align-items: center;
+
+  .katren-icon {
+    margin-left: 10px;
+  }
+}
+
+.pharmacy-draft-table__number {
+  min-width: 26px;
+  height: 16px;
+  //margin-left: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $color-yellow-brand-4;
+  color: $color-black;
+
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  border-radius: 10px;
+
+  //@include media-min($media-xl) {
+  //  font-size: 15px;
+  //  line-height: 22px;
+  //}
+}
+
+.pharmacy-draft-table__number-skeleton {
+  .ant-skeleton-content .ant-skeleton-paragraph {
+    margin-bottom: 0;
+  }
+}
+
+.pharmacy-orders-pagination {
+  input {
+    border: 1px solid $color-content-branded;
+  }
+
+  .ant-pagination-options-quick-jumper input:focus {
+    border-color: $color-text-1;
+  }
+
+  .ant-select:not(.ant-select-disabled):hover .ant-select-selector {
+    border-color: $color-text-1;
+  }
+
+  .ant-select-item-option-active:not(.ant-select-item-option-disabled) {
+    background-color: $color-content-branded;
+  }
+
+  .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+    background-color: $color-text-1;
+  }
+
+  // pagination arrows
+
+  &.mini .ant-pagination-item {
+    &.ant-pagination-item-active {
+      background-color: $color-content-branded;
+
+      a {
+        color: $color-text-1;
+      }
+    }
+  }
+
+  .ant-pagination-item a {
+    color: $color-text-1;
+  }
+
+  .ant-pagination-prev,
+  .ant-pagination-next {
+    .ant-pagination-item-link {
+      color: $color-text-1;
+      border-color: transparent;
+    }
+
+    &:hover {
+      .ant-pagination-item-link {
+        color: $color-text-1;
+        border-color: transparent;
+      }
+    }
+  }
+}
+
+.pharmacy-orders-pagination-wrapper {
+  background-color: $color-white;
+}
+
+.pharmacy-table__tag {
+  border: 1px solid $color-text-3;
+}
+
+.pharmacy-table__btn-reset {
+  .anticon {
+    color: $color-text-1;
+  }
+}
+
+.pharmacy-table__dropdown-btn-reset {
+  border: 1px solid $color-text-3;
+  border-radius: 2px;
+
+  &:hover, &:active, &:focus {
+    border-color: $color-text-3;
+    color: $color-black;
+  }
+}
+
+.pharmacy-table__dropdown-btn-save {
+  background-color: $color-text-1;
+  border-radius: 4px;
+  border-color: $color-text-1;
+  color: $color-white;
+
+  &:hover, &:active, &:focus {
+    background-color: $color-text-1;
+    border-color: $color-text-1;
+    color: $color-white;
+  }
+}
+
+.pharmacy-table__inputs {
+  .ant-input:focus {
+    border-color: $color-text-1;
+  }
+  .ant-input:active {
+    border-color: $color-apteka-2;
+  }
+}

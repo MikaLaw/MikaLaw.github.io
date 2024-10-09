@@ -1,0 +1,32 @@
+mixin order-step-card(data)
+	-
+		data = init(data, {
+			'block': 'order-step-card',
+			'title': 'Получатель',
+			'list' : [
+				{
+					label: 'фио:',
+					value: 'Иванов Иван Иванович'
+				},
+				{
+					label: 'телефон:',
+					value: '+ 7 (913) 812-64-34'
+				},        
+				{
+					label: 'почта',
+					value: 'example@mail.com'
+				},                              
+			]
+
+		})
+	+b&attributes(data.attributes(attributes))
+		+e.wrap
+			+e.head
+				+e.title= data.title
+			+e.body
+				+e.UL.list 
+					each item in data.list 
+						+e.LI.item 
+							+e.item-label= item.label  
+							+e.item-value= item.value
+

@@ -1,0 +1,166 @@
+// color variables
+$color-brand-1: #76c0b3;
+$color-brand-2: #008696;
+$color-brand-2-hover: #00616c;
+$color-brand-3: #fd4e66;
+$color-brand-4: #96b3ec;
+$color-orange: #FA752B;
+$color-landing-1: #1cd6ec;
+$color-brand-2_default: #2C8E9F;
+
+$color-white: #ffffff;
+$color-black: #081718;
+$color-black-2: #20252d;
+$color-ui-2: #e5f3f4;
+$color-ui-3: #d1e3df;
+$color-ui-4: #91b6af;
+$color-ui-5: #5c797b;
+$color-ui-5-1: #5c687b;
+$color-ui-6: #626262;
+$color-ui-7: #bebebe;
+$color-ui-8: #818181;
+$color-ui-9: #5960BB;
+$color-blue-ui-2: #e6f7ff;
+
+$color-border-1: #88888840;
+$color-border-2: #66c3d0;
+$color-border-3: #ffccc7;
+$color-border-4: #ddf9a2;
+$color-border-5: #97d4ff;
+$color-border-6: #d9d9d9;
+$color-border-7: #d1d2e3;
+$color-border-8: #d5e2ea;
+
+$color-disabled-1: #a1c9ce;
+
+$color-active-1: #52c41a;
+
+$color-green-3: #159500;
+$color-green-2: #f6ffed;
+$color-green-ui2: #DDF9A2;
+
+$color-red-2: #fff1f0;
+
+$color-grey-1: #eff1f4;
+$color-grey-2: #d6d6d6;
+$color-grey-3: #aeaeae;
+$color-grey-4: #FAFAFA;
+$color-grey-5: #E1E1E1;
+
+$color-violet-1: #9191b6;
+
+// $color-text-1: #008696;
+$color-text-1: #1c257b;
+$color-text-2: #00000040;
+$color-text-3: #989BC4;
+
+$color-gradient-1: linear-gradient(92.27deg, #0f3d83 13.46%, #018383 72.7%);
+
+$color-warning: #faad14;
+$color-error: #ff1304;
+$color-success: #9fd035;
+$color-info: #2070f9;
+
+$color-yellow: #fffbe6;
+$color-yellow-1: #ffe58f;
+$color-yellow-brand-4: #fff2ab;
+
+$color-orange-1: #FA752B;
+
+$color-tour-mask: #0086964c;
+$color-tour-mask-2: #00879780;
+$color-publication-mask: #0086961A;
+
+$color-apteka-2: #989bc4;
+$color-apteka-2-2: #989BC3;
+$color-apteka-4: #C2BDFD;
+$color-apteka-5: #000857;
+
+$color-hover: #EAEAF9;
+$color-main: #2060CD;
+
+$color-neutral-5-form-border: #A2A8B4;
+$color-neutral-2-disable-button-input: #F0F3F9;
+$color-black-3: #000000A5;
+
+$color-yellow-2: #DFB93C;
+$color-yellow-3: #B58B00;
+
+// gradient
+
+$gradient-1: linear-gradient(95.33deg, #e9dcff 0%, #d9f6ff 99.89%);
+$color-background: #1BC9D7;
+
+
+// shadows variables
+$box-shadow-1: 0 2px 5px #dadadb;
+$box-shadow-2: 0 7px 13px #dadadbcc;
+$box-shadow-3: 0 12px 20px #dadadbb3;
+$box-shadow-4: -5px 0 3px #00000040;
+$box-shadow-5: inset 0 -1px 0 #e1e1e1;
+$box-shadow-6: inset 0 2px 0 #008696, inset 1px 0px 0px #dadadb,
+  inset -1px 1px 0 #dadadb;
+$box-shadow-7: inset 0 2px 0 #008696;
+$box-shadow-8: 0 0 0 2px #1890ff33;
+$box-shadow-9: 0 4px 20px #DADADB7F;
+$box-shadow-10: 0 6px 18px #248E963A;
+$box-shadow-11: inset 0 -1px 0 #d5e2ea;
+$box-shadow-11-1: inset -4.28254px -4.28254px 6.42381px #ABA9E8, inset -8.16155px -18.8747px 15.2079px #DEEDFF;
+$box-shadow-12: inset -4.28254px -4.28254px 6.42381px #1BC9D7, inset -8.16155px -18.8747px 15.2079px rgba(0, 0, 0, 0.2);
+$box-shadow-13: 0 12px 20px #DADADBB2;
+$box-shadow-14: 0 10px 20px #DADADB;
+$box-shadow-15: 0 1px 10px -16px #173A781E;
+$box-shadow-16: 1px 1px 20px #00869626;
+$box-shadow-17: 0 -1px 0 0 #E1E1E1 inset;
+$box-shadow-fixed-column: -2px 2px 4px #0000003F;
+$box-shadow-left-fixed-column: inset 10px 0 8px -8px #00000026;
+$box-shadow-goods: 0 2px 6px 0 #C5D5DE9B;
+$filter-1: drop-shadow(0px 1px 8px #1030683D);
+
+$droplist: 0px 10px 20px 0px #DADADB;
+
+//$drop-shadow-1: drop-shadow(0px 12px 20px rgba(218, 218, 219, 0.7));
+
+// gradient
+
+$gradient-1: linear-gradient(92.27deg, #0F3D83 13.46%, #018383 72.7%);
+$gradient-1-hover: linear-gradient(112.71deg, #0FC0D6 14.75%, #2FE4EF 64.76%, #79CFFF 90.96%);
+$gradient-2: linear-gradient(91.08deg, #1256BC 0.79%, #0AC2C2 72.29%), linear-gradient(92.27deg, #0F3D83 13.46%, #018383 72.7%);
+$gradient-3: linear-gradient(95.33deg, #E9DCFF 0%, #D9F6FF 99.89%);
+$gradient-4: linear-gradient(124.4deg, #0070F0 10.8%, #92C5FF 87.34%);
+$gradient-5: linear-gradient(91.32deg, #199EAE 11.54%, #16BED2 98.68%);
+$gradient-min: linear-gradient(90deg, #FFF1F0 0%, #FFF2D3 100%);
+$gradient-medium: linear-gradient(89.68deg, #FFF2D3 0.25%, #E5F8A4 99.72%);
+$gradient-high: linear-gradient(90deg, #E5F8A4 0%, #DDF9A3 79.17%, #E7E2F6 100%);
+$gradient-max: linear-gradient(90deg, #E7E2F6 0%, #DCF3FF 100%);
+$gradient-text: linear-gradient(134deg, #0F3D83 0%, #018383 100%);
+
+// font-family variables
+$font-roboto: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen-Sans,
+  Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+$font-inter: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen-Sans,
+  Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+$font-helvetica: "Helvetica Neue", Inter, -apple-system, BlinkMacSystemFont,
+  "Segoe UI", Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
+$font-manrope: Manrope, -apple-system, BlinkMacSystemFont, "Segoe UI",
+  Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+
+// transition variables
+$transition: all 0.1s linear;
+$transition-medium: all 0.2s linear;
+$transition-long: all 0.3s ease-out;
+$transition-antd: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+//theme
+$color-content-branded: #e0e1f3;
+
+/* media variables */
+
+$media-xxs: 320px;
+$media-xs: 480px;
+$media-sm: 768px;
+$media-md: 1024px;
+$media-lg: 1280px;
+$media-xl: 1440px;
+$media-xxl: 1600px;
+$media-xxxl: 1920px;

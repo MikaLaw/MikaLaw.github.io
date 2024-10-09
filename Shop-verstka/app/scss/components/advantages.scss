@@ -1,0 +1,29 @@
+.advantages {
+  margin-bottom: 28px;
+}
+
+.advantages__title {
+  @include head-16-700;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  @include media-min($media-sm) {
+    @include head-23-700;
+  }
+}
+
+.advantages__list {
+  @include media-min($media-md) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px 8px;
+  }
+}
+.advantages__item {
+  display: flex;
+  &:not(:last-child) {
+    margin-bottom: 8px;
+    @include media-min($media-md) {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,96 @@
+.course-banner {
+  position: relative;
+  border-radius: 4px;
+  padding: 24px 14px 27px 24px;
+  background: $color-background-2;
+  overflow: hidden;
+  @include media-min($media-xs) {
+    padding: 39px 14px 52px 28px;
+  }
+  @include media-min($media-sm) {
+    padding: 44px 14px 44px 29px;
+  }
+  @include media-min($media-md) {
+    padding: 44px 29px;
+  }
+  @include media-min($media-lg) {
+    padding: 44px 60px;
+  }
+  .social__item {
+    width: 34px;
+    height: 34px;
+    &:not(:last-child) {
+      margin-right: 34px;
+    }
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+.course-banner__wrap {
+  position: relative;
+  z-index: 1;
+  @include media-min($media-sm) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 30px;
+  }
+  @include media-min($media-md) {
+    column-gap: 72px;
+    justify-content: flex-start;
+  }
+  @include media-min($media-lg) {
+    column-gap: 104px;
+  }
+}
+
+.course-banner__content-container {
+  margin-bottom: 14px;
+  @include media-min($media-xs) {
+    margin-bottom: 25px;
+  }
+  @include media-min($media-sm) {
+    margin-bottom: 0;
+  }
+}
+.course-banner__title {
+  @include head-20-700;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  @include media-min($media-xs) {
+    @include head-31-700;
+    margin-bottom: 11px;
+  }
+}
+.course-banner__text {
+  @include text-15-500;
+}
+.course-banner__wrap-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 206px;
+  height: 100%;
+  @include media-min($media-xs) {
+    width: 345px;
+  }
+  @include media-min($media-sm) {
+    width: 302px;
+  }
+  @include media-min($media-md) {
+    width: 370px;
+  }
+  @include media-min($media-xl) {
+    width: 560px;
+  }
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-position: left;
+  }
+}

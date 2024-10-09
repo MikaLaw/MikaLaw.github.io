@@ -1,0 +1,126 @@
+.news-list {
+  .pagination-block {
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid rgba(42, 31, 21, 0.15);
+    @include media-min($media-xs) {
+      padding-top: 40px;
+      margin-top: 40px;
+    }
+  }
+  &_knowledge-base {
+    .news-list__list {
+      gap: 6px 20px;
+      @include media-min($media-md) {
+        gap: 26px 30px;
+      }
+      @include media-min($media-xl) {
+        gap: 50px 30px;
+      }
+    }
+    .news-card__img-container {
+      height: 200px;
+      @include media-min($media-md) {
+        height: 235px;
+      }
+    }
+  }
+  &_article {
+    .news-list__list {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+  }
+}
+.news-list__list {
+  @include media-min($media-xs) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px 20px;
+  }
+  @include media-min($media-sm) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @include media-min($media-lg) {
+    gap: 50px 30px;
+  }
+  @include media-min($media-xl) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.news-list__item {
+  &:not(:last-child) {
+    margin-bottom: 25px;
+    @include media-min($media-xs) {
+      margin-bottom: 0;
+    }
+  }
+}
+.news-card {
+  display: block;
+  text-decoration: none;
+
+  &_knowledge-base {
+    .news-card__wrap {
+      display: flex;
+      flex-direction: column;
+    }
+    .news-card__img-container {
+      order: 1;
+    }
+    .news-card__date {
+      order: 3;
+      margin-bottom: 17px;
+    }
+    .news-card__title {
+      order: 2;
+      margin-bottom: 4px;
+    }
+    .news-card__text {
+      order: 4;
+    }
+  }
+}
+
+.news-card__img-container {
+  border-radius: 4px;
+  overflow: hidden;
+  height: 235px;
+  width: 100%;
+  position: relative;
+  margin-bottom: 18px;
+}
+.news-card__wrap-img {
+  width: 100%;
+  height: 100%;
+}
+.news-card__label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: $color-grey;
+  background-color: $color-background-3;
+  padding: 2px 8px;
+  @include head-10-700;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+.news-card__date {
+  color: $color-grey;
+  @include text-13-500;
+  margin-bottom: 10px;
+}
+.news-card__title {
+  @include head-14-700;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  @include media-min($media-lg) {
+    @include head-16-700;
+  }
+}
+.news-card__text {
+  @include text-14-500;
+  @include media-min($media-lg) {
+    @include text-15-500;
+  }
+}

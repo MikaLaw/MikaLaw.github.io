@@ -1,0 +1,129 @@
+.nature-saturated{
+    @include media-min($media-sm) {
+        background: no-repeat center / contain;
+        background-image: url("data:image/svg+xml,%3csvg width='1534' height='257' viewBox='0 0 1534 257' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%0d%3cpath d='M0.678711 249.515V0H94.6214L160.703 117.272V0H255.717V249.515H163.203L95.693 129.748V249.515H0.678711Z' fill='%23F1F1F1'/%3e%0d%3cpath d='M275.664 249.515L364.606 0H474.622L563.564 249.515H461.049L451.047 213.157H388.181L378.179 249.515H275.664ZM419.614 87.3301L402.112 150.778H437.117L419.614 87.3301Z' fill='%23F1F1F1'/%3e%0d%3cpath d='M616.069 249.515V72.3592H563.562V0H768.592V72.3592H716.084V249.515H616.069Z' fill='%23F1F1F1'/%3e%0d%3cpath d='M791.057 0H891.071V147.214C891.071 172.165 900.24 184.641 918.576 184.641C936.912 184.641 946.08 172.165 946.08 147.214V0H1046.09V144.006C1046.09 151.847 1045.62 159.571 1044.67 167.175C1043.71 174.541 1040.74 184.047 1035.74 195.691C1030.74 207.335 1024.07 217.315 1015.73 225.632C1007.4 233.95 994.777 241.316 977.87 247.732C961.201 253.911 941.436 257 918.576 257C895.715 257 875.831 253.911 858.924 247.732C842.255 241.316 829.753 233.95 821.418 225.632C813.084 217.315 806.416 207.335 801.415 195.691C796.414 184.047 793.438 174.541 792.485 167.175C791.533 159.571 791.057 151.847 791.057 144.006V0Z' fill='%23F1F1F1'/%3e%0d%3cpath d='M1088.66 249.515V0H1227.25C1235.11 0 1242.85 0.712915 1250.47 2.13872C1258.33 3.32689 1266.55 5.82202 1275.12 9.62414C1283.93 13.1886 1291.55 17.9413 1297.98 23.8821C1304.41 29.5853 1309.77 37.4272 1314.05 47.4078C1318.34 57.3883 1320.48 68.7947 1320.48 81.6269C1320.48 99.4494 1316.55 113.945 1308.7 125.114C1300.84 136.045 1288.93 145.075 1272.98 152.204L1336.2 249.515H1221.54L1188.68 172.165V249.515H1088.66ZM1188.68 64.8738V112.282H1198.68C1216.3 112.282 1225.11 104.321 1225.11 88.3995C1225.11 72.7157 1216.3 64.8738 1198.68 64.8738H1188.68Z' fill='%23F1F1F1'/%3e%0d%3cpath d='M1358.65 249.515V0H1533.68V72.3592H1458.67V93.3897H1526.18V153.273H1458.67V177.155H1533.68V249.515H1358.65Z' fill='%23F1F1F1'/%3e%0d%3c/svg%3e%0d");
+    }
+}
+
+.nature-saturated__container {
+    @include media-min($media-sm) {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+}
+
+.nature-saturated__image{
+    display: block;
+    width: 270px;
+    height: 260px;
+    margin-right: auto;
+    margin-bottom: 55px;
+    margin-left: auto;
+
+    @include media-min($media-xs) {
+        width: 410px;
+        height: 390px;
+        margin-bottom: 70px;
+    }
+
+    @include media-min($media-sm) {
+        margin-right: -110px;
+    }
+
+    @include media-min($media-md) {
+        width: 580px;
+        height: 560px;
+        margin-right: -190px;    
+    }
+
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
+
+.nature-saturated__content {
+    @include media-min($media-sm) {
+        width: calc(100% - 300px);
+    }
+
+    @include media-min($media-md) {
+        width: calc(100% - 390px);
+    }
+
+    @include media-min($media-lg) {
+        width: calc(100% - 450px);
+        margin-right: 60px;
+    }
+}
+
+.nature-saturated__title{
+    margin-bottom: 10px;
+    color: $color-black;
+    font-weight: 900;
+    font-size: 30px;
+    font-family: $font-title;
+    font-style: normal;
+    line-height: 40px;
+    text-transform: uppercase;
+
+    @include media-min($media-xs) {
+        margin-bottom: 20px;
+    }
+
+    @include media-min($media-sm) {
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    @include media-min($media-md) {
+        margin-bottom: 30px;
+        font-size: 46px;
+        line-height: 54px;
+    }
+}
+
+.nature-saturated__text{
+    margin-bottom: 15px;
+    color: $color-black;
+    font-weight: 400;
+    font-size: 16px;
+    font-family: $font-default;
+    font-style: normal;
+    line-height: 24px;
+
+    @include media-min($media-xs) {
+        margin-bottom: 40px;
+    }
+
+    @include media-min($media-md) {
+        margin-bottom: 60px;
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+    @include media-min($media-lg) {
+        position: relative;
+        padding-left: 60px;
+
+        &::before {
+            position: absolute;
+            top: 13px;
+            left: 0;
+            width: 37px;
+            height: 1px;
+            background-color: $color-ui-2;
+            background-repeat: no-repeat;
+            background-position: center;
+            transform: translateY(-50%);
+            content: "";
+        }
+
+        p:not(:last-child){
+            margin-bottom: 20px;
+        }
+    }
+}

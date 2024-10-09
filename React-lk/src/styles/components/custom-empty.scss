@@ -1,0 +1,19 @@
+.custom-empty {
+  padding: 84px 0;
+  & > * + * {
+    margin-top: 12px;
+  }
+}
+
+.custom-empty__title,
+.custom-empty__subtitle {
+  color: $color-black;
+}
+
+.custom-empty__title {
+
+}
+
+.custom-empty__subtitle {
+
+}

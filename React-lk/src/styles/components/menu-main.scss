@@ -1,0 +1,47 @@
+.menu-main {
+
+}
+
+.menu-main__link {
+  position: relative;
+  display: inline-flex;
+  align-items: flex-end;
+  padding: 15px;
+  width: 100%;
+  color: $color-black;
+  text-align: left;
+
+  &:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background-color: $color-brand-2;
+    transition: $transition;
+  }
+
+  .anticon {
+    width: 20px;
+    height: 20px;
+    //color: $color-border-2;
+    //color: $color-ui-4;
+    color: $color-brand-2;
+  }
+
+  .anticon + span {
+    margin-left: 10px;
+  }
+
+  &:hover, &:focus, &:active {
+    color: $color-black;
+  }
+
+  &:hover,&.is-active {
+    background-color: $color-ui-2;
+    &:after {
+      width: 3px;
+    }
+  }
+}

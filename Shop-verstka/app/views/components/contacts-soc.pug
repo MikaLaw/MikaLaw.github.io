@@ -1,0 +1,27 @@
+mixin contacts-soc(data)
+	-
+		data = init(data, {
+			'block': 'contacts-soc',
+			'title': 'Задать вопрос о товаре',
+			'list': [
+				{
+					'icon': 'icon-whatsapp',
+					'text': 'Написать в WhatsApp'
+				},
+				{
+					'icon': 'icon-telegram',
+					'text': 'Написать в Telegram'
+				}
+			]
+		})
+	+b&attributes(data.attributes(attributes))
+		+e.head
+			+e.title= data.title 
+		+e.body 
+			+e.UL.list 
+				each item in data.list 
+					+e.LI.item
+						+e.A.item-link(href="#")
+							+e.DIV.icon(class= item.icon)
+							+e.DIV.text= item.text
+

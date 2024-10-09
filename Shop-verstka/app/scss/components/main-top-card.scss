@@ -1,0 +1,177 @@
+.main-top-card {
+  height: 100vh;
+  max-height: 498px;
+  min-height: 498px;
+  position: relative;
+  overflow: hidden;
+  @include media-min($media-xs) {
+    max-height: 504px;
+    min-height: 504px;
+  }
+  @include media-min($media-sm) {
+    max-height: 600px;
+    min-height: 600px;
+  }
+  @include media-min($media-lg) {
+    max-height: 715px;
+    min-height: 715px;
+  }
+}
+.main-top-card__content-container {
+  position: relative;
+  z-index: 1;
+  max-width: 235px;
+  @include media-min($media-xs) {
+    max-width: 245px;
+  }
+  @include media-min($media-sm) {
+    max-width: 370px;
+  }
+  @include media-min($media-lg) {
+    max-width: 400px;
+  }
+}
+.main-top-card__wrap {
+  display: flex;
+  align-items: flex-start;
+  height: 100%;
+  padding-top: 99px;
+  padding-bottom: 60px;
+  @include media-min($media-xs) {
+    padding-top: 105px;
+  }
+  @include media-min($media-sm) {
+    align-items: center;
+    padding-left: 10px;
+    padding-top: 90px;
+    padding-bottom: 106px;
+  }
+  @include media-min($media-md) {
+    padding-left: 0;
+    padding-top: 105px;
+    padding-bottom: 80px;
+  }
+  @include media-min($media-lg) {
+    padding-top: 255px;
+  }
+}
+.main-top-card__title {
+  @include head-32-700;
+  text-transform: uppercase;
+  margin-bottom: 9px;
+  @include media-min($media-sm) {
+    @include head-36-700;
+    margin-bottom: 20px;
+  }
+  @include media-min($media-lg) {
+    @include head-44-700;
+  }
+}
+.main-top-card__text {
+  @include text-13-500;
+  margin-bottom: 29px;
+  @include media-min($media-xs) {
+    @include text-14-500;
+  }
+  @include media-min($media-sm) {
+    margin-bottom: 50px;
+  }
+  @include media-min($media-lg) {
+    @include text-16-500;
+  }
+}
+.main-top-card__btn {
+  @include text-12-600;
+  text-transform: uppercase;
+  border-radius: 4px;
+  padding: 11px;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  transition: $transition;
+  cursor: pointer;
+  @include media-min($media-sm) {
+    padding: 11px 21px;
+    @include text-14-600-2;
+    border: 1px solid $color-black;
+  }
+  &::after {
+    content: '';
+    display: block;
+    background: icon-arrow-right() no-repeat center / contain;
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    margin-left: 12px;
+    transition: $transition;
+  }
+  &::before {
+    content: '';
+    display: block;
+    background: icon-cart() no-repeat center / contain;
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    margin-right: 10px;
+    transition: $transition;
+    @include media-min($media-sm) {
+      content: none;
+    }
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color-background-3;
+    border: 1px solid $color-black;
+    background: $color-black;
+    &::after {
+      background: icon-arrow-right($color-background-3) no-repeat center /
+        contain;
+    }
+    &::before {
+      background: icon-cart($color-background-3) no-repeat center / contain;
+    }
+  }
+  &:disabled {
+    color: $color-grey-2;
+    cursor: not-allowed;
+    &::after {
+      background: icon-arrow-right($color-grey-2) no-repeat center / contain;
+    }
+    &::before {
+      background: icon-cart($color-grey-2) no-repeat center / contain;
+    }
+  }
+}
+.main-top-card__wrap-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  .main-top-card__img {
+    width: 175%;
+    object-position: -183px bottom;
+    @include media-min($media-xs) {
+      object-position: -114px bottom;
+      width: 142%;
+    }
+    @include media-min($media-sm) {
+      object-position: -598px 0;
+      height: 118%;
+      width: 100%;
+    }
+    @include media-min($media-md) {
+      height: 122%;
+      object-position: -485px -18px;
+    }
+    @include media-min($media-lg) {
+      height: 100%;
+      object-position: -285px top;
+    }
+    @include media-min($media-xl) {
+      object-position: top;
+    }
+  }
+}

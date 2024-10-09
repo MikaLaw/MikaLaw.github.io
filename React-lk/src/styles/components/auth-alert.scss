@@ -1,0 +1,27 @@
+.auth-alert {
+  &.ant-alert-error {
+    border-color: $color-border-3;
+    background-color: $color-white;
+
+    .ant-alert-icon {
+      color: $color-error;
+
+      margin-right: 10px;
+
+      svg {
+        width: 22px;
+        height: 22px;
+      }
+    }
+
+    .ant-alert-message {
+      @include text-3();
+      color: $color-black;
+    }
+
+    .ant-alert-description {
+      @include text-3();
+      color: $color-ui-8;
+    }
+  }
+}

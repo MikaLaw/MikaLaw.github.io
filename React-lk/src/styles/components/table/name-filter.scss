@@ -1,0 +1,9 @@
+.name-filter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  .ant-checkbox + span {
+    white-space: nowrap;
+  }
+}

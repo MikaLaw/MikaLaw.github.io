@@ -1,0 +1,109 @@
+.article {
+  @include media-min($media-lg) {
+    display: grid;
+    grid-template-columns: auto 318px;
+    grid-column-gap: 20px;
+  }
+  @include media-min($media-xl) {
+    grid-column-gap: 34px;
+  }
+}
+
+.article__content {
+  img,
+  .wrap-img {
+    position: relative;
+    height: 176px;
+    width: 110%;
+    margin-bottom: 24px;
+    transform: translateX(-50%);
+    left: 50%;
+    @include media-min($media-xs) {
+      height: 281px;
+    }
+    @include media-min($media-sm) {
+      height: 409px;
+    }
+    @include media-min($media-md) {
+      height: 472px;
+    }
+    @include media-min($media-lg) {
+      width: 100%;
+      transform: unset;
+      left: unset;
+    }
+  }
+}
+
+.article__side {
+  display: none;
+  @include media-min($media-lg) {
+    display: block;
+  }
+}
+.article__side-title {
+  @include head-16-700;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.article__additional-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 20px;
+  row-gap: 5px;
+  margin-bottom: 10px;
+}
+.article__tag {
+  color: $color-grey;
+  @include head-10-700;
+  text-transform: uppercase;
+  padding: 2px 4px;
+  border-radius: 4px;
+  background: $color-background-3;
+  width: 100%;
+  @include media-min($media-xs) {
+    width: auto;
+  }
+}
+.article__date {
+  @include text-13-500;
+}
+.article__view {
+  @include text-13-500;
+  display: flex;
+  align-items: center;
+  &::before {
+    content: '';
+    display: block;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin-right: 4px;
+    background: icon-eye() no-repeat center / contain;
+  }
+}
+
+.article-card .article-card__wrap-img {
+  height: 260px;
+  width: 100%;
+  @include media-min($media-xs) {
+    height: 360px;
+  }
+  @include media-min($media-sm) {
+    height: 672px;
+  }
+}
+.article-card__description {
+  color: $color-grey;
+  @include text-15-500;
+  margin-top: 10px;
+}
+.article_stock-version {
+  @include media-min($media-lg) {
+    grid-template-columns: auto 163px;
+  }
+  @include media-min($media-xl) {
+    grid-template-columns: auto 318px;
+  }
+}

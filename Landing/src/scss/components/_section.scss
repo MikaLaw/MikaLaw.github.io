@@ -1,0 +1,74 @@
+.main__bottle-section, 
+.main__instructions-section, 
+.main__stones-system, 
+.main__video-section, 
+.main__water-usefulness {
+    margin-bottom: 50px;
+
+    @include media-min($media-md) {
+        margin-bottom: 100px;
+    }
+}
+
+.main__water-properties {
+    margin-bottom: 100px;
+}
+
+.main__bottle-section{
+    @include media-min($media-sm) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: calc(100vh - 80px);
+        margin-bottom: 0;
+    } 
+}
+
+
+.section__title{
+    color: $color-black;
+    font-weight: 900;
+    font-size: 30px;
+    font-family: $font-title;
+    font-style: normal;
+    line-height: 40px;
+    text-transform: uppercase;    
+  
+    @include media-min($media-md) {
+        font-size: 46px;
+        line-height: 54px;
+    }
+}
+
+ 
+.scroll_container {
+    height: 400vh;
+}
+  
+.horizontal_scroll {
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 400vw;
+    height: 100%;
+    transition:  all 0.15s ease;
+    will-change: transform;
+
+
+    section{
+        display: flex;
+        align-items: center;
+        width: 100vw;
+        height: 100%;
+    }
+      
+}
+  
+
+.sticky_wrap {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+}

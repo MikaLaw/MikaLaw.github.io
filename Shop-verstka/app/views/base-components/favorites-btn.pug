@@ -1,0 +1,11 @@
+mixin favorites-btn(data)
+	-
+		data = init(data, {
+			'block': 'favorites-btn',
+			'num': null
+		})
+	+b.A&attributes(data.attributes(attributes))(href='#')
+		+e.icon-heart
+		if data.num
+			+e.num= data.num
+

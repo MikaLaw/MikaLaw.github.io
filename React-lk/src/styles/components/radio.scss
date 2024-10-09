@@ -1,0 +1,129 @@
+.ant-radio {
+  &-checked {
+    .ant-radio-inner {
+      border-color: $color-brand-1;
+    }
+  }
+}
+
+.ant-radio-input {
+  &:focus + .ant-radio-inner {
+    box-shadow: none;
+    border-color: $color-border-2;
+  }
+}
+
+.ant-radio-inner {
+  &:after {
+    background-color: $color-brand-1;
+  }
+}
+
+.ant-radio-wrapper {
+  @include text-2();
+  font-size: 13px !important;
+
+  @include media-min($media-xl) {
+    font-size: 15px !important;
+  }
+}
+
+.ant-radio-group {
+  display: flex;
+  flex-direction: column;
+
+  & > * + * {
+    margin-top: 15px;
+  }
+}
+
+.radio {
+  padding: 5px 9px;
+  height: auto;
+  @include text-3();
+  font-size: 11px !important;
+  color: $color-brand-2;
+  border-radius: 5px;
+  border: 1px solid $color-brand-2;
+
+  &:not(.ant-radio-button-wrapper-disabled) {
+    &:active,
+    &:hover {
+      color: $color-white;
+      background: $color-brand-2;
+    }
+
+    &:active {
+
+    }
+
+    &:hover {
+
+    }
+  }
+
+  &:first-child,
+  &:last-child {
+    border-radius: 5px;
+  }
+
+  &:first-child {
+    border-color: $color-brand-2;
+  }
+
+  &:not(:first-child) {
+    &:before {
+      content: none;
+    }
+  }
+
+  &.ant-radio-button-wrapper-checked {
+    box-shadow: none;
+    border-color: $color-border-2;
+    background: $color-brand-2;
+    color: $color-white;
+  }
+
+  &.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+    &:first-child {
+      border-color: $color-brand-2;
+    }
+
+    &:focus-within {
+      box-shadow: none;
+    }
+  }
+
+  &.ant-radio-button-wrapper-checked:not([class*=' ant-radio-button-wrapper-disabled']).ant-radio-button-wrapper {
+    &:first-child {
+      border-color: $color-brand-2;
+    }
+  }
+
+  .ant-radio-button {
+    &-checked {
+
+    }
+  }
+
+  &.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+    &:active,
+    &:hover {
+      color: $color-white;
+      background: $color-brand-2-hover;
+    }
+
+    // &:hover {
+    //   color: $color-white;
+    // }
+  }
+}
+
+.radio-row {
+  flex-direction: row;
+
+  & > * + * {
+    margin: 0;
+    margin-left: 10px;
+  }
+}

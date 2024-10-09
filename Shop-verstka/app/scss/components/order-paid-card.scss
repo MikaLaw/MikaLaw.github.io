@@ -1,0 +1,58 @@
+.order-paid-card {
+  margin-bottom: 30px;
+  @include media-min($media-sm) {
+    margin-bottom: 0px;
+  }
+}
+.order-paid-card__head {
+  margin-bottom: 23px;
+}
+.order-paid-card__title {
+  @include head-16-700-2;
+  text-transform: uppercase;
+
+  @include media-min($media-sm) {
+    @include head-18-700;
+  }
+  @include media-min($media-md) {
+    @include head-23-700;
+  }
+}
+.order-paid-card__body {
+  max-width: 432px;
+}
+.order-paid-card__text {
+  @include text-14-500;
+  margin-bottom: 23px;
+  @include media-min($media-md) {
+    margin-bottom: 19px;
+  }
+  p {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+}
+.order-paid-card__phone {
+  display: inline-block;
+  text-decoration: none;
+  color: $color-black;
+  @include head-16-700-2;
+  text-transform: uppercase;
+  transition: $transition;
+  margin-bottom: 10px;
+  @include media-min($media-sm) {
+    @include head-18-700;
+  }
+  @include media-min($media-md) {
+    @include head-23-700;
+  }
+  &:hover {
+    opacity: 0.6;
+  }
+}
+.order-paid-card__subtext {
+  color: $color-grey;
+  @include text-14-500;
+  margin-bottom: 23px;
+}

@@ -1,0 +1,112 @@
+.education-banner {
+  border-radius: 4px;
+  background: $color-background-2;
+  position: relative;
+  min-height: 293px;
+
+  @include media-min($media-md) {
+    min-height: 335px;
+  }
+
+  @include media-min($media-xl) {
+    min-height: 388px;
+  }
+}
+.education-banner__wrap {
+  padding: 36px 18px 35px 18px;
+  @include media-min($media-xs) {
+    padding: 65px 90px 35px 26px;
+    max-width: 494px;
+  }
+
+  @include media-min($media-md) {
+    padding: 58px 90px 55px 52px;
+  }
+  @include media-min($media-lg) {
+    padding: 53px 90px 55px 58px;
+  }
+  @include media-min($media-xl) {
+    padding: 75px 90px 83px 90px;
+  }
+}
+.education-banner__title {
+  text-transform: uppercase;
+  @include head-28-700;
+  margin-bottom: 11px;
+  @include media-min($media-lg) {
+    @include head-30-700;
+  }
+}
+.education-banner__text {
+  @include text-15-500;
+  margin-bottom: 62px;
+  @include media-min($media-md) {
+    margin-bottom: 99px;
+  }
+}
+.education-banner__wrap-img {
+  width: 100%;
+  height: 293px;
+  @include media-min($media-sm) {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 412px;
+    height: unset;
+  }
+  @include media-min($media-md) {
+    width: 551px;
+  }
+  @include media-min($media-lg) {
+    width: 568px;
+  }
+  @include media-min($media-xl) {
+    width: 645px;
+  }
+
+  img {
+    object-position: left top;
+  }
+}
+.education-banner__btn {
+  @include text-14-600-2;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  background: $color-background-2;
+  transition: $transition;
+  cursor: pointer;
+  &::after {
+    content: '';
+    display: block;
+    background: icon-arrow-right() no-repeat center / contain;
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    margin-left: 12px;
+    transition: $transition;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color-background-3;
+    border: 1px solid $color-black;
+    background: $color-black;
+    &::after {
+      background: icon-arrow-right($color-background-3) no-repeat center /
+        contain;
+    }
+  }
+  &:disabled {
+    color: $color-grey-2;
+    cursor: not-allowed;
+    &::after {
+      background: icon-arrow-right($color-grey-2) no-repeat center / contain;
+    }
+  }
+}

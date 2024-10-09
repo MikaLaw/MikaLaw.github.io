@@ -1,0 +1,12 @@
+.page-grey {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  .custom-layout .ant-layout-content {
+    background-color: $color-grey-1;
+  }
+
+  //.ant-breadcrumb > *:first-child .ant-breadcrumb-link:before {
+  //  background-image: icon-home($color-ui-3);
+  //}
+}

@@ -1,0 +1,55 @@
+.discount-system-purchase {
+}
+.discount-system-purchase__head {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.discount-system-purchase__title {
+  @include head-16-700-2;
+  text-transform: uppercase;
+  color: rgba($color-black, 0.9);
+}
+.discount-system-purchase__img-container {
+  width: 130px;
+  height: 24px;
+  flex-shrink: 0;
+  @include media-min($media-sm) {
+    width: 172px;
+    height: 31px;
+  }
+
+  img {
+    object-fit: contain;
+  }
+}
+.discount-system-purchase__amount {
+  @include head-16-700-2;
+  text-transform: uppercase;
+  color: $color-orange-dark;
+  @include media-min($media-sm) {
+    @include head-23-700;
+  }
+}
+.discount-system-purchase__body {
+}
+.discount-system-purchase__list-title {
+  @include text-14-600;
+  color: $color-black;
+  margin-bottom: 6px;
+}
+.discount-system-purchase__list {
+}
+.discount-system-purchase__item {
+  color: $color-black;
+  display: flex;
+  justify-content: space-between;
+  column-gap: 20px;
+}
+.discount-system-purchase__label {
+  @include text-13-500;
+}
+.discount-system-purchase__value {
+  @include text-14-600;
+}

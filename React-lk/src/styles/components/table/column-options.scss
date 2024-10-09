@@ -1,0 +1,87 @@
+.column-options {
+  .ant-modal-title {
+    font-weight: 400;
+  }
+
+  .ant-modal-header {
+    padding: 20px 25px 15px;
+  }
+
+  .ant-modal-body {
+    padding: 15px 25px;
+  }
+
+  .ant-modal-footer {
+    padding: 15px 25px 20px;
+  }
+
+  &.apteka-modal {
+    label.ant-checkbox-wrapper-checked .ant-checkbox-inner, .ant-checkbox-wrapper-checked .ant-checkbox-inner {
+      background-color: $color-text-1;
+      border-color: $color-text-1;
+    }
+
+    label.ant-checkbox-wrapper:hover .ant-checkbox-inner, .ant-checkbox-wrapper:hover .ant-checkbox-inner {
+      border-color: $color-text-1;
+    }
+
+    .column-options__btn {
+      color: $color-text-1;
+    }
+  }
+}
+
+.column-options__grid {
+  .ant-checkbox-group {
+    column-count: 3;
+    //display: grid;
+    //grid-template-columns: repeat(3, 1fr);
+    //gap: 20px 30px;
+
+    & > * + * {
+      margin-top: 20px;
+    }
+  }
+}
+
+.column-options__wrap {
+  display: flex;
+  align-items: center;
+
+  &:not(&:last-child) {
+    break-inside: avoid;
+  }
+
+  & > * + * {
+    margin-left: 8px;
+  }
+}
+
+.column-options__btns {
+  display: flex;
+  flex-direction: column;
+}
+
+.column-options__btn {
+  padding: 2px 4px;
+  width: 16px;
+  height: 12px;
+  border: 0;
+  color: $color-brand-1;
+
+  &.order-up {
+
+  }
+
+  &.order-down {
+    .anticon {
+      transform: rotate(180deg);
+    }
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $color-brand-1;
+  }
+}

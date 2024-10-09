@@ -1,0 +1,73 @@
+include ../base-components/component
+
+mixin menu-list(data)
+	-
+		data = init(data, {
+			'list': [
+				{
+					'name': 'Каталог',
+					'class': 'catalog-icon',
+					'link': false,
+					'data-open': 'catalog'
+				},
+				{
+					'name': 'Sale',
+					'link': true,
+					'class': '_red',
+				},
+				{
+					'name': 'Акции',
+					'link': true				
+				},
+				{
+					'name': 'Новинки',
+					'link': true				
+				},
+				{
+					'name': 'Бренды',
+					'link': true					
+				},
+				{
+					'name': 'Магазины',
+					'link': true
+				},
+				{
+					'name': 'Новости',
+					'link': true					
+				},
+				{
+					'name': 'Обучение',
+					'link': true
+				},        
+				{
+					'name': 'Программа лояльности',
+					'link': true					
+				},
+				{
+					'name': 'База знаний',
+					'link': true
+				},                               
+			],
+
+		})
+
+	+b.NAV.menu-list&attributes(attributes)
+		+e.UL.list
+			each link in data.list
+				if link.submenu
+					+e.LI.item
+						+e.link-container
+							+e.link(class= link.class ) !{link.name}
+							if link.additional
+							| !{link.additional}
+						+e.submenu
+							+component(Object.assign({}, link['item'], link))
+
+				else
+					+e.LI.item
+						if link.link
+							+e.A.link(href='#' class= link.class ) !{link.name}
+						else
+							+e.link(class= link.class data-open=link['data-open']) !{link.name}
+
+

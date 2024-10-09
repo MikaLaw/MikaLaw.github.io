@@ -1,0 +1,29 @@
+mixin rebate-system-card(data)
+	-
+		data = init(data, {
+			'block': 'rebate-system-card',
+			'title': 'Старт',
+			'amount': '3%',
+			'rebate-params': [
+				{
+					'label': 'Сумма покупок',
+					'value': 'от 500 до 5 000 ₽'					
+				},
+				{
+					'label': 'Скидка',
+					'value': '3%'					
+				},	
+			]
+
+
+		})
+	+b&attributes(data.attributes(attributes))
+		+e.head 
+			+e.title= data.title
+			+e.amount= data.amount
+		+e.body
+			+e.UL.params 
+				each param in data['rebate-params']
+					+e.LI.param
+						+e.label= param.label
+						+e.value= param.value

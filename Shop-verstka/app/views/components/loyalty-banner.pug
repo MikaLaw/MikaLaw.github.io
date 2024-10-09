@@ -1,0 +1,22 @@
+mixin loyalty-banner(data)
+	-
+		data = init(data, {
+			'block': 'loyalty-banner',
+			'title': 'Промо-код',
+			'text': 'Генерируемый QR-код, который можно передать любому другому покупателю, зарегистрированному в телеграм-боте программы лояльности. QR-код генерируется нажатием кнопки «Промо-код» в меню Телеграм-бота участника программы лояльности.',
+			'img-qr': './img/components/form/img-1',
+			'img-bg': './img/components/form/img-2',
+		})
+	+b&attributes(data.attributes(attributes))
+		+e.wrap 
+			+e.content-container
+				+e.title= data.title 
+				+e.text= data.text 
+			+picture({
+				src: data['img-qr'],
+				png: true,
+			}).wrap-img-qr
+		+picture({
+			src: data['img-bg'],
+			png: true,
+		}).wrap-img-bg

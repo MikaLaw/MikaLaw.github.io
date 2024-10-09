@@ -1,0 +1,70 @@
+.pharmacies-column {
+
+  &__badge {
+    margin-left: 4px;
+    @include head-6();
+    padding: 4px 6px;
+
+    background: $color-ui-3;
+    border-radius: 2px;
+    color: $color-brand-2;
+    transition: $transition;
+
+    &:hover {
+      background: $color-white;
+    }
+  }
+}
+
+.pharmacies-column__favorite-filter {
+  .ant-table-filter-trigger {
+    margin: 0;
+  }
+}
+
+.pharmacies-column__favorite-btn {
+  background: transparent;
+  border: none;
+  outline: 0;
+
+  .anticon {
+    transition: $transition;
+  }
+
+  &:before,
+  &:after {
+    content: none !important;
+  }
+
+  &:active,
+  &:hover,
+  &:focus,
+  &:disabled {
+    background: transparent;
+  }
+
+  &:hover {
+    svg {
+      path {
+        stroke: $color-brand-2;
+      }
+    }
+  }
+
+  &_hover {
+    svg {
+      path {
+        stroke: $color-brand-2;
+      }
+    }
+  }
+
+  &_active {
+    svg {
+      path {
+        stroke: $color-brand-2;
+        fill: $color-brand-2;
+      }
+    }
+  }
+}

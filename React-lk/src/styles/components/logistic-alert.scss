@@ -1,0 +1,19 @@
+.logistic-alert {
+  padding: 13px 10px;
+  align-items: center;
+
+  .anticon {
+    margin-right: 9px;
+    font-size: 14px;
+    color: $color-brand-2;
+  }
+
+  a {
+    color: $color-black;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

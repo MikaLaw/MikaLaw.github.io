@@ -1,0 +1,18 @@
+mixin pagination(data)
+	-
+		data = init(data, {
+			'list': ['1','2','3','4'],
+		})
+
+	+b.UL.pagination&attributes(attributes)
+		+e.LI.item
+			+e.A.link-prev(href='#!' aria-label='Предыдущая страница')
+		each item, index in data['list']
+			+e.LI.item
+				+e.A.link(href='#!' class=index===0? '_active': '') !{item}
+		+e.LI.item
+			+e.A.link-other(href='#!' aria-label='Другие страницы') ...
+		+e.LI.item
+			+e.A.link(href='#!') 9
+		+e.LI.item
+			+e.A.link-next(href='#!' aria-label='Следующая страница')

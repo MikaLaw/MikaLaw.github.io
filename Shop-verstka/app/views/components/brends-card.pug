@@ -1,0 +1,14 @@
+mixin brends-card(data)
+	-
+		data = init(data, {
+			'block': 'brends-card',
+			'img': './img/components/brends-list/img-1'
+		})
+
+	+b.A&attributes(data.attributes(attributes))(href="#")
+		+e.DIV.wrap-img
+			+picture({
+				src: data.img,
+				webp: true,
+			})
+

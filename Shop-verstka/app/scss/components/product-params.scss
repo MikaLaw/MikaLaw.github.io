@@ -1,0 +1,134 @@
+.product-params {
+  width: 100%;
+  margin-top: 20px;
+  display: none;
+  &.is-show {
+    display: block;
+  }
+}
+
+.product-params__wrap {
+  display: flex;
+  align-items: center;
+  gap: 0 10px;
+  height: 40px;
+}
+
+.product-params__params {
+  max-width: calc(100vw - 40px);
+  width: 100%;
+  padding-bottom: 10px;
+  scrollbar-color: $color-grey-2 $color-background-3;
+  scrollbar-width: thin;
+  &:hover {
+    &::-webkit-scrollbar-thumb {
+      background-color: $color-grey-2;
+    }
+  }
+  &::-webkit-scrollbar {
+    width: 4px;
+    height: 6px;
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    transition: $transition;
+    border-radius: 1px;
+  }
+  @include media-min($media-md) {
+    max-width: calc(100vw - 60px);
+  }
+  @include media-min($media-lg) {
+    max-width: calc(100vw - 80px);
+  }
+  @include media-min($media-xl) {
+    max-width: 1360px;
+  }
+
+  .p-plus {
+    z-index: 2;
+  }
+
+  .p-plus__primary {
+    flex: unset;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+  .p-plus__primary > li {
+    flex-grow: 0;
+  }
+  .p-plus__toggle-btn {
+    @include text-14-500;
+    margin-left: 20px;
+    &::after {
+      content: '';
+      background: icon-drop-down() no-repeat center / contain;
+      width: 12px;
+      height: 6px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 10px;
+    }
+  }
+  .p-plus__overflow {
+    padding: 18px;
+    border-radius: 4px;
+    background: $color-background-2;
+    .product-params__param {
+      background: $color-background;
+    }
+    .product-params__item {
+      &:not(:last-child) {
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+
+.product-params__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  // min-width: 1000px;
+  @include media-min($media-md) {
+    min-width: unset;
+  }
+}
+
+.product-params__item-btn {
+  order: -1;
+  @include media-min($media-md) {
+    margin-right: auto;
+  }
+}
+.product-params__item {
+  transition: $transition;
+  animation: opacityIn 0.3s forwards;
+}
+.product-params__param {
+  @include text-13-500;
+  padding: 7px 12px;
+  border-radius: 1px;
+  background: $color-background-2;
+  display: inline-flex;
+  align-items: center;
+}
+.product-params__btn {
+  margin-left: 10px;
+  transition: $transition;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    opacity: 0.6;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    background: icon-close($color-grey) no-repeat center / contain;
+    width: 10px;
+    height: 10px;
+    flex-shrink: 0;
+  }
+}

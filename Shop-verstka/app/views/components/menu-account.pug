@@ -1,0 +1,49 @@
+include menu-list
+
+mixin menu-account(data)
+	-
+		data = init(data, {})
+	.menu-account-wrapper#account-menu(data-modal="account")
+		+b.menu-account&attributes(attributes)
+			+e.wrap 
+				+e.head
+					+e.title Личный кабинет
+					+b.BUTTON.btn-close(data-close="account")
+				+e.body
+					+menu-list({
+						'list': [
+							{
+								'name': 'Мои покупки',
+								'link': true			
+							},
+							{
+								'name': 'Избранное',
+								'link': true							
+							},
+							{
+								'name': 'Моя карта',
+								'link': true				
+							},
+							{
+								'name': 'Лист ожидания',
+								'link': true				
+							},
+							{
+								'name': 'Заявки на возврат',
+								'link': true				
+							},							
+							{
+								'name': 'Обратная связь',
+								'link': true					
+							},
+							{
+								'name': 'Личные данные',
+								'link': true
+							},
+							{
+								'name': 'Выход',
+								'link': true					
+							},
+							 
+						],
+					})._mobile

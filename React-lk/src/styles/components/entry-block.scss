@@ -1,0 +1,89 @@
+.entry-block {
+  width: 100%;
+  max-width: 690px;
+  border-radius: 20px;
+
+  @include media-min($media-sm) {
+    padding: 55px 50px 60px;
+    border: 1px solid $color-ui-3;
+    background-color: $color-white;
+
+  }
+
+  .ant-btn {
+    width: 100%;
+  }
+}
+
+.entry-block__form,
+.entry-block__top {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.entry-block__form {
+  width: 100%;
+  max-width: 270px;
+}
+
+.entry-block__top {
+  margin-bottom: 25px;
+
+  & > * + * {
+    margin-top: 10px;
+  }
+}
+
+.entry-block__title,
+.entry-block__subtitle,
+.entry-block__text {
+  text-align: center;
+}
+
+.entry-block__text {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.entry-block__subtitle {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 203px;
+
+  & > * + * {
+    margin-top: 20px;
+  }
+}
+
+.entry-block_w_wide {
+  .entry-block__subtitle {
+    max-width: 356px;
+  }
+}
+
+.entry-block_w_medium {
+  .entry-block__form {
+    max-width: 339px;
+  }
+
+  .entry-block__subtitle {
+    max-width: 339px;
+  }
+}
+
+.entry-block.old-data {
+  .entry-block__subtitle {
+    max-width: 440px;
+  }
+}
+
+.entry-block-create-pwd {
+  .entry-block__subtitle {
+    max-width: 283px;
+  }
+
+  .entry-block__text {
+    max-width: 261px;
+    color: $color-brand-2-hover;
+  }
+}

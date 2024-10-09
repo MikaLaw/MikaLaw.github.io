@@ -1,0 +1,16 @@
+@import 'vars';
+
+@import '../libs/slick/slick';
+@import '../libs/slick/slick-theme';
+@import '../libs/jquery-ui.min.css';
+@import '../libs/priorityPlus/priority-plus.css';
+@import '../../node_modules/air-datepicker/dist/css/datepicker';
+
+div.slick-track {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.slick-slide {
+  height: auto;
+}

@@ -1,0 +1,57 @@
+include menu-list
+
+mixin mobile-menu(data)
+	-
+		data = init(data, {})
+	.mobile-menu-wrapper#mobile-menu(data-modal="menu")
+		+b.mobile-menu&attributes(attributes)
+			+e.wrap 
+				+e.head
+					+b.BUTTON.btn-close(data-close="menu")
+				+e.body
+					+menu-list({
+						'list': [
+							{
+								'name': 'Каталог',
+								'link': true			
+							},
+							{
+								'name': 'Sale',
+								'link': true,
+								'class': '_red'
+							},
+							{
+								'name': 'Акции',
+								'link': true				
+							},
+							{
+								'name': 'Новинки',
+								'link': true				
+							},
+							{
+								'name': 'Бренды',
+								'link': true					
+							},
+							{
+								'name': 'Магазины',
+								'link': true
+							},
+							{
+								'name': 'Новости',
+								'link': true					
+							},
+							{
+								'name': 'Обучение',
+								'link': true
+							},        
+							{
+								'name': 'Программа лояльности',
+								'link': true					
+							},
+							{
+								'name': 'База знаний',
+								'link': true
+							},                               
+						],
+					})._mobile
+					+e.A.contact(href="tel:+73852221925") + 7 (3852) 22-19-25

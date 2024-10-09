@@ -1,0 +1,23 @@
+include ../base-components/icons
+
+mixin social(data)
+	-
+		data = init(data, {
+			'block': 'social',
+			'list': [ 'vk', 'inst', 'fb', 'yt', 'ok'],
+		})
+
+	+b&attributes(data.attributes(attributes))
+		+e.list
+			each val in data['list']
+				+e.A.item(href='#')
+					if val === 'vk'
+						+icon-vk()
+					if val === 'inst'
+						+icon-inst()   
+					if val === 'fb'
+						+icon-fb()                                                
+					if val === 'yt'
+						+icon-youtube()
+					if val === 'ok'
+						+icon-ok()

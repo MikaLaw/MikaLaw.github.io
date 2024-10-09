@@ -1,0 +1,319 @@
+.input-file {
+  display: inline-block;
+}
+
+.form-field_simple-search {
+  .input__wrap-input {
+    width: 100%;
+  }
+}
+.form-field {
+  display: flex;
+  flex-direction: column;
+
+  @include media-min($media-sm) {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+  &_align-start {
+    align-items: flex-start;
+    .form-field__title {
+      padding-top: 10px;
+    }
+  }
+  &__error-text {
+    display: none;
+    color: $color-error;
+    @include text-14-500();
+  }
+  &-file {
+    position: relative;
+
+    &.error {
+      margin-bottom: 38px;
+      .form-field__error-text {
+        @include media-min($media-sm) {
+          position: absolute;
+          left: 0;
+          left: 130px;
+          margin-top: 0;
+          bottom: -24px;
+        }
+      }
+    }
+  }
+  &_single-row {
+    flex-direction: row;
+    align-items: center;
+    column-gap: 18px;
+  }
+  &.error {
+    position: relative;
+    margin-bottom: 27px;
+    .form-field__error-text {
+      display: block;
+      margin-top: 10px;
+      position: absolute;
+      top: 100%;
+      @include media-min($media-sm) {
+        left: 130px;
+      }
+    }
+    .select__button {
+      box-shadow: 0px 1px 0px 0px $color-error;
+    }
+    .textarea {
+      border-color: $color-error;
+    }
+  }
+
+  .input,
+  .textarea {
+    display: block;
+    width: 100%;
+    min-height: 44px;
+    padding: 12px 15px 12px 15px;
+    font-size: 14px;
+    line-height: 1;
+    border: 1px solid $color-grey;
+    border-radius: 6px;
+
+    &:hover {
+      border-color: $color-black;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $color-black;
+    }
+    &.error {
+      border: 1px solid $color-grey;
+    }
+
+    @include placeholder {
+      color: $color-grey;
+      font-weight: 500;
+    }
+  }
+  label.error {
+    color: $color-grey;
+    font-size: 14px;
+    line-height: 14px;
+  }
+
+  &_row {
+    display: flex;
+    align-items: center;
+  }
+
+  &__wrap-input.is-datepicker {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      top: 13px;
+      right: 18px;
+      display: block;
+      width: 18px;
+      height: 17px;
+      margin: auto;
+      content: '';
+    }
+
+    .input {
+      padding-right: 48px;
+    }
+  }
+}
+.form-field__title {
+  @include head-10-700;
+  text-transform: uppercase;
+  flex-shrink: 0;
+  @include media-min($media-sm) {
+    width: 120px;
+  }
+}
+.form-field_search {
+  height: 100%;
+  @include media-min($media-md) {
+    display: flex;
+    align-items: center;
+  }
+  .select_search {
+    .input {
+      box-shadow: unset;
+    }
+  }
+  .select__roster {
+    top: calc(80% + 10px);
+    padding: 20px 15px 20px 0px;
+    background: $color-background;
+
+    @include media-min($media-sm) {
+      padding: 20px 18px;
+      padding-right: 24px;
+      padding-bottom: 60px;
+    }
+    @include media-min($media-md) {
+      padding-right: 36px;
+    }
+  }
+
+  .form-field__title {
+    text-transform: uppercase;
+    @include head-16-700;
+    margin-right: 26px;
+    margin-bottom: 0;
+    display: none;
+    @include media-min($media-md) {
+      display: block;
+    }
+  }
+
+  .input {
+    min-height: 40px;
+    border: 0;
+    border-radius: 0px;
+    background: $color-background-3;
+    box-shadow: 0px 2px 0px -1px $color-grey-2;
+    padding-right: 48px;
+  }
+
+  .input__wrap-input {
+    position: relative;
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 16px;
+      width: 18px;
+      height: 18px;
+      background: icon-search() no-repeat center / contain;
+    }
+  }
+  .select__label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 3px 0;
+    @include media-min($media-xs) {
+      align-items: center;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 0 20px;
+    }
+
+    .btn {
+      height: 32px;
+    }
+  }
+  .simplebar-content {
+    position: relative;
+  }
+  .select__item {
+    &:not(:last-child) {
+      padding-bottom: 14px;
+      margin-bottom: 12px;
+      @include media-min($media-xs) {
+        padding-bottom: 20px;
+        margin-bottom: 21px;
+      }
+      @include media-min($media-sm) {
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+      }
+      border-bottom: 1px solid $color-background-2;
+      @include media-min($media-xs) {
+        padding-bottom: 19px;
+        margin-bottom: 19px;
+      }
+    }
+  }
+
+  .select__title {
+    @include text-14-500;
+    margin-left: 10px;
+    @include media-min($media-xs) {
+      margin-left: 16px;
+    }
+    @include media-min($media-md) {
+      margin-left: 12px;
+    }
+  }
+  .select__content-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    @include media-min($media-xs) {
+      max-width: 314px;
+    }
+    @include media-min($media-sm) {
+      max-width: 440px;
+    }
+    picture {
+      width: 51px;
+      height: 51px;
+      flex-shrink: 0;
+    }
+  }
+  .select__cost-container {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column-reverse;
+    @include media-min($media-sm) {
+      flex-direction: row;
+    }
+  }
+  .select__cost {
+    @include head-16-700;
+    @include media-min($media-sm) {
+      @include head-18-700;
+    }
+    @include media-min($media-md) {
+      @include head-23-700;
+    }
+  }
+  .select__stock {
+    @include text-10-500;
+    color: $color-grey;
+    margin-left: 12px;
+    text-decoration: line-through;
+    @include media-min($media-xs) {
+      margin-top: 4px;
+    }
+    @include media-min($media-sm) {
+      margin-right: 12px;
+      margin-top: 0;
+    }
+  }
+}
+.form-field_simple-search {
+  .input__wrap-input {
+    position: relative;
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 16px;
+      width: 18px;
+      height: 18px;
+      background: icon-search() no-repeat center / contain;
+    }
+  }
+  .input {
+    min-height: 40px;
+    padding: 12px 15px 12px 15px;
+    padding-right: 43px;
+    @include text-13-500;
+    border-radius: 0px;
+    border: 0;
+    border-bottom: 1px solid $color-grey-2;
+    background-color: transparent;
+  }
+}

@@ -1,0 +1,138 @@
+.stock-step {
+  display: flex;
+  .product-card-list {
+    margin-top: 20px;
+    max-width: 637px;
+    margin-left: -36px;
+    @include media-min($media-sm) {
+      margin-top: 37px;
+      margin-left: 0;
+    }
+    @include media-min($media-lg) {
+      max-width: unset;
+    }
+  }
+  .product-card__text {
+    @include text-13-500;
+
+    @include media-min($media-sm) {
+      @include text-15-500;
+    }
+  }
+  .product-card__title {
+    @include head-14-700;
+    @include media-min($media-sm) {
+      @include head-16-700;
+    }
+  }
+  .product-card__cost {
+    @include head-16-700-2;
+    @include media-min($media-sm) {
+      @include head-23-700;
+    }
+    @include media-min($media-lg) {
+      @include head-30-700;
+    }
+    @include media-min($media-xl) {
+      @include head-23-700;
+    }
+  }
+  .product-card__img-container {
+    position: relative;
+    height: 210px;
+    background: $color-white;
+    margin-bottom: 9px;
+    @include media-min($media-sm) {
+      height: 310px;
+      margin-bottom: 24px;
+    }
+    @include media-min($media-md) {
+      height: 310px;
+      margin-bottom: 17px;
+    }
+  }
+  .product-card-list__list {
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    border-bottom: 0;
+    @include media-min($media-xs) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px 26px;
+    }
+    @include media-min($media-lg) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  &:not(:last-child) {
+    margin-bottom: 35px;
+  }
+}
+
+.stock-step__content {
+  flex: 1;
+  @include media-min($media-sm) {
+    padding-top: 8px;
+  }
+}
+
+.stock-step__num {
+  border-radius: 50%;
+  border: 1px solid $color-black;
+  flex-shrink: 0;
+  margin-right: 8px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include head-12-700;
+  text-transform: uppercase;
+  color: $color-black;
+  @include media-min($media-sm) {
+    margin-right: 14px;
+  }
+}
+.stock-step__title {
+  @include text-14-500;
+
+  span {
+    font-weight: 700;
+    margin: 0 4px;
+  }
+}
+.stock-step__btn-wrap {
+  display: flex;
+  gap: 10px;
+  margin-top: 24px;
+  flex-direction: column;
+  @include media-min($media-sm) {
+    flex-direction: row;
+  }
+}
+.stock-step__btn {
+  padding: 20px;
+  flex: 1;
+  cursor: pointer;
+  @include head-16-700;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 4px;
+  border: 1px solid $color-black;
+  transition: $transition;
+  &::after {
+    content: '';
+    display: block;
+    background: icon-arrow-right() no-repeat center / contain;
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+  }
+
+  &:hover,
+  &:focus {
+    opacity: 0.6;
+  }
+}

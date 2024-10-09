@@ -1,0 +1,15 @@
+mixin article-card(data)
+	-
+		data = init(data, {
+			'block': 'article-card',
+			'img': './img/components/article/img-3'
+		})
+
+	+b&attributes(data.attributes(attributes))
+		+e.wrap
+			+picture({
+				src: data.img,
+				webp: true,
+			}).article-card__wrap-img
+			+e.description
+				+e.text 2000вт Фен, черный, 294гр, 2 сопла, 2 диффузора IQ2 Perfetto Ga.Ma

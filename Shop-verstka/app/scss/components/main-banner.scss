@@ -1,0 +1,206 @@
+.main-banner {
+  .logo {
+    width: 255px;
+    height: 46px;
+    margin-bottom: 19px;
+    @include media-min($media-md) {
+      margin-bottom: 46px;
+    }
+  }
+  .global-wrapper {
+    @include media-max($media-sm) {
+      width: auto;
+      margin: 0;
+    }
+    @include media-min-max($media-md, $media-lg) {
+      width: auto;
+      margin: 0;
+    }
+  }
+}
+.main-banner__wrap {
+  position: relative;
+  background: $color-ui-4;
+  @include media-min($media-md) {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+.main-banner__content-container {
+  padding: 29px 14px 0px 13px;
+  @include media-min($media-xs) {
+    padding: 35px 19px 38px 19px;
+  }
+  @include media-min($media-sm) {
+    padding: 42px 32px 0px 29px;
+  }
+  @include media-min($media-md) {
+    max-width: 516px;
+    padding: 51px 43px 50px 17px;
+  }
+  @include media-min($media-lg) {
+    max-width: 575px;
+    padding: 78px 17px 85px 17px;
+  }
+  @include media-min($media-xl) {
+    max-width: 722px;
+    padding: 75px 70px 85px 40px;
+  }
+  @include media-min($media-xxl) {
+    max-width: 750px;
+  }
+}
+
+.main-banner__text {
+  @include text-14-500;
+  margin-bottom: 22px;
+  @include media-min($media-xs) {
+    margin-bottom: 40px;
+  }
+  @include media-min($media-lg) {
+    @include text-15-500;
+  }
+  @include media-min($media-xl) {
+    margin-bottom: 75px;
+  }
+  p {
+    &:not(:last-child) {
+      margin-bottom: 17px;
+      @include media-min($media-lg) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+.main-banner__control {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: flex-start;
+  @include media-min($media-xs) {
+    align-items: center;
+    flex-direction: row;
+  }
+
+  @include media-min($media-sm) {
+    gap: 6px;
+  }
+}
+.main-banner__btn {
+  @include text-12-600-2;
+  text-transform: uppercase;
+  border-radius: 4px;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  background-color: $color-background-2;
+  display: flex;
+  align-items: center;
+  transition: $transition;
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    opacity: 0.6;
+  }
+  @include media-min($media-sm) {
+    border: 1px solid $color-black;
+    background-color: transparent;
+    padding: 12px 22px;
+  }
+  @include media-min($media-lg) {
+    @include text-14-600-2;
+  }
+  &::after {
+    content: '';
+    display: block;
+    background: icon-arrow-right() no-repeat center / contain;
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    margin-left: 12px;
+  }
+  &::before {
+    content: '';
+    display: block;
+    background: icon-cart() no-repeat center / contain;
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    margin-right: 10px;
+    @include media-min($media-sm) {
+      content: none;
+    }
+  }
+}
+.main-banner__btn-text {
+  padding: 11px 12px;
+  @include text-12-600-2;
+  text-transform: uppercase;
+  background-color: $color-background-2;
+  display: flex;
+  align-items: center;
+  transition: $transition;
+  margin-bottom: 5px;
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    opacity: 0.6;
+  }
+  @include media-min($media-xs) {
+    margin-bottom: 0;
+  }
+  @include media-min($media-sm) {
+    background-color: transparent;
+    padding: 12px 18px;
+  }
+  @include media-min($media-lg) {
+    @include text-14-600;
+  }
+  &::before {
+    content: '';
+    display: block;
+    background: icon-cart() no-repeat center / contain;
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    margin-right: 10px;
+    @include media-min($media-sm) {
+      content: none;
+    }
+  }
+}
+.main-banner__wrap-img {
+  display: block;
+  height: 249px;
+  width: 293px;
+  margin: 0 auto;
+  @include media-min($media-xs) {
+    height: 305px;
+    width: 364px;
+  }
+  @include media-min($media-sm) {
+    height: 384px;
+    width: 465px;
+  }
+  @include media-min($media-md) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 53%;
+    height: 100%;
+  }
+  @include media-min($media-xl) {
+    width: 55%;
+  }
+  img {
+    @include media-min($media-sm) {
+      object-position: 10px -2px;
+    }
+    @include media-min($media-md) {
+      object-fit: cover;
+      object-position: -5px 0px;
+    }
+    @include media-min($media-xl) {
+      object-position: -18px 0px;
+    }
+  }
+}

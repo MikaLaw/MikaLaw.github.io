@@ -1,0 +1,92 @@
+.claim-info {
+}
+
+.claim-info__container {
+  display: flex;
+  align-items: flex-start;
+  
+  & > * + * {
+    margin-left: 15px;
+  }
+}
+
+.claim-info__item {
+  min-width: 130px;
+  display: flex;
+  flex-direction: column;
+
+  & > * + * {
+    margin-top: 4px;
+  }
+}
+
+.claim-info__key {
+  display: inline-flex;
+  align-items: center;
+  color: $color-ui-8;
+
+}
+
+.claim-info__key-strong {
+  margin-left: 4px;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 22px;
+  color: $color-black;
+}
+
+.claim-info__value {
+  color: $color-black;
+}
+
+.claim-info__right {
+  margin-left: auto;
+  margin-right: 15px;
+  display: flex;
+  flex-direction: column;
+
+  & > * + * {
+    margin-top: 4px;
+  }
+}
+
+.claim-info__date {
+  display: inline-block;
+  //margin-left: auto;
+  color: $color-black;
+}
+
+.claim-info__tag {
+  padding: 1px 16.5px;
+}
+
+.claim-info__btn {
+  margin-right: 0;
+  color: $color-brand-2;
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.corr-docs {
+  color: $color-brand-2;
+  line-height: 22px;
+}
+
+.corr-docs-overlay {
+  .ant-dropdown-menu {
+    padding: 8px 6px;
+  }
+  .ant-dropdown-menu-item {
+    padding: 0;
+    cursor: default;
+    &:hover, &:focus, &:active {
+      background: transparent;
+    }
+  }
+
+  .ant-dropdown-menu-item + .ant-dropdown-menu-item {
+    margin-top: 15px;
+  }
+}

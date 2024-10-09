@@ -1,0 +1,50 @@
+.ant-alert {
+  width: 100%;
+  padding: 10px;
+  @include text-3();
+  color: $color-ui-7;
+}
+
+.ant-alert-message {
+  color: $color-black;
+  .title {
+    color: $color-black;
+  }
+
+  b {
+    font-weight: 500;
+  }
+}
+
+.ant-alert-with-description .ant-alert-message {
+  font-size: 11px;
+  line-height: 14px;
+}
+
+.ant-alert-description {
+  font-size: 11px;
+  line-height: 14px;
+
+  a {
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.ant-alert-info {
+  background-color: $color-blue-ui-2;
+  border-color: $color-border-5;
+}
+
+.ant-alert-error {
+  background-color: $color-red-2;
+  border-color: $color-border-3;
+}
+
+.ant-alert-success {
+  background-color: $color-green-2;
+  border-color: $color-border-4;
+}

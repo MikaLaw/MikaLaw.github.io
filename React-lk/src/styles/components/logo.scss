@@ -1,0 +1,31 @@
+.logo-container {
+  display: flex;
+  align-items: center;
+
+  & > * + * {
+    margin-left: 5px;
+  }
+
+  &_type-2 {
+    opacity: 0.5;
+
+    .logo-text {
+      color: $color-text-1;
+    }
+  }
+}
+
+.logo {
+  max-width: 100%;
+}
+
+.logo-text {
+  max-width: 89px;
+  font-family: $font-inter;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 9px;
+  line-height: 10px;
+  text-transform: uppercase;
+  color: $color-brand-2;
+}

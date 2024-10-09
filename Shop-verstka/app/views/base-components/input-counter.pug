@@ -1,0 +1,21 @@
+mixin input-counter(data)
+	-
+		data = Object.assign({}, common, {
+			'block': 'input-counter',
+			'value': 0,
+			'state': '', // disabled
+			'attr': {},
+			'error-message': 'На складе: 25 шт.'
+		}, data)
+		var isDisabled = false
+		if (data['state'] == 'disabled') {
+			data['class'] += ' disabled'
+			isDisabled = ''
+		}
+
+	+b.input-counter&attributes(attributes)(data-input-counter data-max='100' data-min=0)
+		+e.wrap
+			+e.BUTTON.minus(data-input-counter-button data-sc-change='-1' disabled=isDisabled) -
+			+e.INPUT.input(type="number" value=data['value'] data-input-counter-input disabled=isDisabled)
+			+e.BUTTON.plus(data-input-counter-button data-sc-change='1' disabled=isDisabled) +
+		+e.error-message!=data['error-message']

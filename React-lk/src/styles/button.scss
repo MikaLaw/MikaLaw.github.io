@@ -1,0 +1,525 @@
+.ant-btn {
+  height: auto;
+  min-width: 100px;
+  padding: 11px;
+  @include text-2();
+
+  &.medium {
+    padding: 8px;
+  }
+
+  &.medium-x {
+    padding: 7px;
+  }
+
+  &.small {
+    padding: 7px 16px;
+  }
+}
+
+.ant-btn-primary {
+  border-radius: 4px;
+
+  &, &:focus {
+    border-color: $color-brand-2;
+    background-color: $color-brand-2;
+  }
+
+  &:hover {
+    background-color: $color-brand-2-hover;
+    border-color: transparent;
+  }
+
+  &:focus-visible, &:active {
+    background-color: $color-brand-2;
+    border-color: $color-brand-2-hover;
+  }
+
+  &[disabled],
+  &[disabled]:hover, &[disabled]:focus, &[disabled]:active, &[disabled]:focus-visible {
+    color: $color-white;
+    background-color: $color-disabled-1;
+    border-color: transparent;
+  }
+}
+
+.ant-btn-default,
+.ant-btn-dashed {
+  &, &:focus {
+    color: $color-black;
+    border-color: $color-brand-2;
+    background-color: $color-white;
+  }
+
+  &:hover {
+    border-color: $color-brand-2-hover;
+    color: $color-black;
+    background-color: $color-ui-2;
+  }
+
+  &:focus-visible, &:active {
+    border-color: $color-brand-1;
+    color: $color-black;
+  }
+
+  &[disabled],
+  &[disabled]:hover, &[disabled]:focus, &[disabled]:active, &[disabled]:focus-visible {
+    border-color: $color-disabled-1;
+    color: $color-ui-7;
+  }
+}
+
+.ant-btn-ghost {
+  color: $color-black;
+  border-color: $color-ui-3;
+  background-color: $color-white;
+
+  &:hover {
+    border-color: $color-brand-2-hover;
+    color: $color-black;
+  }
+
+  &:focus, &:active {
+    border-color: $color-brand-1;
+    color: $color-black;
+  }
+
+  &[disabled],
+  &[disabled]:hover, &[disabled]:focus, &[disabled]:active {
+    border-color: $color-disabled-1;
+    color: $color-ui-7;
+  }
+}
+
+.ant-btn-icon-only {
+  min-width: auto;
+  padding: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  border-color: transparent;
+
+  &:hover,
+  &:active,
+  &:focus {
+    border-color: transparent;
+  }
+
+  &:hover {
+    color: currentColor;
+    background-color: $color-ui-2;
+  }
+}
+
+.ant-btn-link {
+  padding: 0;
+  height: auto;
+  border: 0;
+  color: $color-brand-1;
+
+  &:hover {
+    color: $color-brand-2-hover;
+  }
+
+  &:focus, &:active {
+    color: $color-brand-2;
+  }
+
+  &[disabled],
+  &[disabled]:hover, &[disabled]:focus, &[disabled]:active {
+
+  }
+}
+
+.ant-input-password + .ant-btn-link {
+  margin-top: 10px;
+  text-align: left;
+}
+
+.ant-btn-text {
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+  font-size: 11px;
+  line-height: 14px;
+}
+
+.btn_color_brand-1 {
+  color: $color-brand-1;
+}
+.btn_color_brand-2 {
+  color: $color-brand-2;
+}
+.btn_color_brand-2-hover {
+  color: $color-brand-2-hover;
+}
+
+.btn-icon-color-brand-2 {
+  .anticon {
+    color: $color-brand-2;
+  }
+}
+
+.btn-flex {
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn-border-ui-green {
+  border: 1px solid $color-ui-4;
+}
+
+.btn-link {
+  @include text-3();
+  //font-size: 11px;
+  //line-height: 14px;
+
+  &:after {
+    content: '>';
+    margin-left: 5px;
+    display: inline-block;
+  }
+}
+
+.btn-icon-back,
+.btn-icon-save,
+.btn-icon-check,
+.btn-icon-delete,
+.btn-icon-save-white,
+.btn-icon-close,
+.btn-icon-edo {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  line-height: 14px;
+
+  @include media-min($media-xl) {
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  &:before {
+    position: static;
+    opacity: 1;
+    background: transparent;
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 14px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 10px;
+  }
+}
+
+.btn-icon-edo {
+  &:before {
+    background-image: icon-mail($color-brand-2);
+  }
+}
+
+.btn-icon-save-white {
+  &:before {
+    background-image: icon-save-2($color-brand-2);
+  }
+}
+
+.btn-icon-close {
+  &:before {
+    background-image: icon-close-new($color-brand-2);
+  }
+}
+
+.btn-icon-back {
+  &:before {
+    background-image: icon-arrow-left($color-brand-2);
+  }
+}
+
+.btn-icon-save {
+  &:before {
+    background-image: icon-save($color-brand-2);
+  }
+}
+
+.btn-icon-check {
+  &:before {
+    background-image: icon-round-check($color-white);
+  }
+}
+
+.btn-icon-delete {
+  &:before {
+    background-image: icon-delete($color-brand-2);
+  }
+}
+
+.refresh-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $color-brand-2;
+  width: 35px;
+  height: 34px;
+  border-radius: 2px;
+
+  .anticon {
+    width: 15px;
+    height: 15px;
+    svg {
+      width: 100%;
+      height: 100%;
+
+      path {
+        fill: $color-brand-2;
+      }
+    }
+  }
+}
+
+.report-btn {
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn-brand-2 {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 10px 10px 16px;
+  @include text-3();
+  color: $color-black;
+  border-radius: 2px;
+  border: 1px solid $color-brand-2;
+  background-color: $color-white;
+
+  span {
+    margin: 0;
+  }
+
+  .anticon {
+    width: 15px;
+    height: 15px;
+    margin-left: 13px;
+
+    svg {
+      color: $color-brand-2;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &:hover {
+    border-color: $color-brand-2-hover;
+  }
+}
+
+.btn-shadow {
+  box-shadow: $box-shadow-9;
+  border-radius: 4px;
+  border: 0;
+  background-color: $color-white;
+}
+
+.btn-underline {
+  min-width: auto;
+  text-decoration: underline;
+  background: transparent !important;
+}
+
+.btn-link-logistic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  .anticon {
+    width: 18px;
+    height: 18px;
+    color: $color-brand-2;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .anticon {
+
+  }
+
+  &:hover {
+    background: $color-white;
+  }
+}
+
+.btn-text-sm {
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.btn-apteka,
+.btn-apteka-bordered {
+  position: relative;
+  padding: 5px 12px;
+  min-height: 34px;
+  min-width: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-size: 11px;
+  line-height: 14px;
+
+  .anticon {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    transition: $transition;
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.btn-apteka {
+  border: 0;
+  background-color: $color-text-1;
+  color: $color-white;
+
+  .anticon {
+    color: $color-white;
+  }
+
+  &:hover,
+  &:focus,
+  &:active, {
+    background-color: $color-apteka-5;
+    color: $color-white;
+  }
+
+  &[disabled],
+  &[disabled]:hover, &[disabled]:focus, &[disabled]:active {
+    color: $color-white;
+    background: $color-content-branded;
+  }
+}
+
+.btn-apteka-bordered {
+  border: 1px solid $color-apteka-2;
+  background-color: $color-white;
+  color: $color-black;
+
+  .anticon {
+    color: $color-apteka-2;
+  }
+  &:hover,
+  &:focus,
+  &:active, {
+    background-color: $color-white;
+    color: $color-text-1;
+    border-color: $color-text-1;
+
+    .anticon {
+      color: $color-text-1;
+    }
+  }
+
+  &[disabled],
+  &[disabled]:hover, &[disabled]:focus, &[disabled]:active {
+    border-color: $color-grey-2;
+    background-color: $color-white;
+    color: $color-ui-7;
+
+    .anticon {
+      color: $color-ui-7;
+    }
+
+  }
+}
+
+a.btn-apteka {
+  padding: 8.5px 16px !important;
+  font-size: 11px;
+  line-height: 14px;
+
+  @include media-min($media-xl) {
+    font-size: 13px;
+    line-height: 18px;
+  }
+}
+
+.btn-tape {
+  padding: 5px;
+  display: inline-flex;
+  align-items: center;
+  border: 0;
+  border-radius: 4px;
+  background-color: $color-white;
+  box-shadow: none;
+
+  & .anticon {
+    color: $color-brand-2;
+  }
+
+
+  &__counter {
+    padding: 0 4px;
+    margin-left: auto;
+    background-color: $color-yellow-1;
+    border-radius: 10px;
+    font-size: 11px;
+    line-height: 14px;
+
+    @include media-min($media-xl) {
+      font-size: 13px;
+      line-height: 18px;
+    }
+  }
+
+  &:hover {
+    background-color: $color-ui-2;
+  }
+
+  &:focus, &:active {
+
+  }
+
+  &[disabled],
+  &[disabled]:hover, &[disabled]:focus, &[disabled]:active {
+
+  }
+}
+
+.btn-apteka-icon {
+  &.table__saved-filters-remove:hover,
+  &:hover {
+    background-color: $color-content-branded;
+    .anticon {
+      color: $color-text-1;
+    }
+  }
+}
+
+.icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: 0;
+  border: 0;
+  color: $color-brand-2;
+  &,
+  & .anticon {
+    width: 20px;
+    height: 20px;
+  }
+
+  & svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  &:hover, &:focus, &:active {
+    color: $color-brand-2-hover;
+  }
+}

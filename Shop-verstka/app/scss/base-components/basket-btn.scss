@@ -1,0 +1,32 @@
+.basket-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.basket-btn__icon-cart {
+  &::before {
+    content: '';
+    display: block;
+    background: icon-cart() no-repeat center / contain;
+    width: 24px;
+    height: 24px;
+    transition: $transition;
+  }
+  &:hover,
+  &:focus {
+    &::before {
+      background: icon-cart($color-grey-2) no-repeat center / contain;
+    }
+  }
+}
+.basket-btn__num {
+  color: $color-black;
+  font-family: $font-default;
+  font-size: 10.897px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.635px;
+  text-transform: uppercase;
+}

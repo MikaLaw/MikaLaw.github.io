@@ -1,0 +1,15 @@
+include stock-slider-card
+
+
+mixin stock-card-list(data)
+	-
+		data = init(data, {
+			'block': 'stock-card-list',
+			'list': stockList2,
+		})
+
+	+b&attributes(data.attributes(attributes))
+		+e.UL.list
+			for item in data.list
+				+e.LI.item
+					+stock-slider-card(item)

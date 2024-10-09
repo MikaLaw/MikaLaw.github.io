@@ -1,0 +1,75 @@
+.order-control {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  gap: 10px;
+  @include media-min($media-sm) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+.order-control__info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.order-control__date {
+  @include text-13-500;
+
+  span {
+    font-weight: 700;
+    @include media-min($media-lg) {
+      margin-left: 4px;
+    }
+  }
+}
+
+.order-control__label {
+  @include head-10-700;
+  color: $color-black;
+  padding: 2px 8px;
+  text-transform: uppercase;
+  &.pink {
+    background-color: $color-pink;
+  }
+  &.blue {
+    background-color: $color-blue;
+  }
+  &.green {
+    background-color: $color-light-green;
+  }
+  &.beige {
+    background-color: $color-beige;
+  }
+  &.light-beige {
+    background-color: $color-light-beige;
+  }
+}
+.order-control__btns {
+  display: flex;
+  gap: 10px;
+
+  .btn {
+    text-transform: uppercase;
+    min-width: 126px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 1px;
+    @include media-min($media-xs) {
+      min-width: 92px;
+    }
+    @include media-min($media-sm) {
+      min-width: 125px;
+      font-size: 14px;
+      letter-spacing: 1.5px;
+    }
+  }
+  .btn-refresh {
+    padding: 12px 12px;
+    @include media-min($media-sm) {
+      padding: 12px 20px;
+    }
+  }
+}

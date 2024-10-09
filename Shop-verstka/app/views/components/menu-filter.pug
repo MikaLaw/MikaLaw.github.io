@@ -1,0 +1,179 @@
+
+mixin menu-filter(data)
+	-
+		data = init(data, {
+
+		})
+
+	.mobile-filter-wrapper(data-modal="filter")
+		+b.mobile-filter&attributes(attributes)
+			+e.wrap 
+				+e.head
+					+b.BUTTON.btn-close(data-close="filter")
+					+e.title Фильтры
+					+e.btn-text(data-btn-reset) Сбросить все
+				+e.body
+					+b.form._filter-mobile
+						+e.item
+							+form-field({
+								'title': '',
+								'component': {
+									'mixin': 'select',
+									'multiple': true,
+									'array': [
+										{title: 'Окислители и активаторы цвета'},
+										{title: 'Осветление волос'},
+										{title: 'Средства для удаления красителя с кожи', disabled: true},
+										{title: 'Краситель прямого действия'},		
+										{title: 'Стойкий краситель'},
+										{title: 'Специальные средства'},
+										{title: 'Средства для защиты волос во время химических процедур'},
+										{title: 'Безаммиачный краситель'},		
+										{title: 'Мужской краситель для седины'},																	
+									],
+									'placeholder': 'Категория'
+								},
+							})
+						+e.item
+							+form-field({
+								'title': '',
+								'component': {
+									'mixin': 'select',
+									'multiple': true,
+									'array': [
+										{
+											title: 'Все'
+										},
+										{
+											title: 'Alfaparf'
+										},
+										{
+											title: 'Shot'
+										},
+										{
+											title: 'Nirvel'
+										},		
+										{
+											title: 'Constant Delight'
+										},
+										{
+											title: 'Concept'
+										},
+										{
+											title: 'Wella'
+										},
+										{
+											title: 'Matrix'
+										},		
+										{
+											title: 'Kezy'
+										},
+										{
+											title: 'EPICA Professional'
+										},
+										{
+											title: 'BOUTICLE'
+										},
+										{
+											title: 'Nirvel'
+										},		
+										{
+											title: 'Constant Delight'
+										},
+										{
+											title: 'Concept'
+										},
+										{
+											title: 'Wella'
+										},
+										{
+											title: 'Matrix'
+										},																										
+									],
+									'placeholder': 'Бренды'
+								},
+							})
+						+e.item
+							+form-field({
+								'title': '',
+								'component': {
+									'mixin': 'select',
+									'range': true,
+									'block': 'select_range',
+									'placeholder': 'Цена'
+								},
+							})
+						+e.item
+							+form-field({
+								'title': '',
+								'component': {
+									'mixin': 'select',
+									'multiple': true,
+									'array': [
+										{title: 'Пепельные'},
+										{title: 'Золотистые'},
+										{title: 'Медные'},
+										{title: 'Красные'},		
+										{title: 'Махагоновые'},
+										{title: 'Фиолетовые'},
+										{title: 'Коричневый'},
+										{title: 'Блонды'},		
+										{title: 'Жемчужные'},
+										{title: 'Нейтральные'},		
+										{title: 'Коричневый'},
+									],
+									'placeholder': 'Палитра'
+								},
+							})
+						+e.item
+							+form-field({
+								'title': '',
+								'component': {
+									'mixin': 'select',
+									'multiple': true,
+									'array': [
+										{
+											title: 'Abedyabka'
+										},
+										{
+											title: 'Abox'
+										},
+									],
+									'placeholder': 'Линейка'
+								},
+							})
+						+e.item
+							+form-field({
+								'title': '',
+								'component': {
+									'mixin': 'select',
+									'multiple': true,
+									'array': [
+										{
+											title: 'Abedyabka'
+										},
+										{
+											title: 'Abox'
+										},
+									],
+									'placeholder': 'Тип продукта'
+								},
+							})
+						+e.item
+							+form-field({
+								'title': '',
+								'component': {
+									'mixin': 'select',
+									'multiple': true,
+									'array': [
+										{
+											title: 'Abedyabka'
+										},
+										{
+											title: 'Abox'
+										},
+									],
+									'placeholder': 'Страна'
+								},
+							})
+					+b.BUTTON.btn-grey(data-btn-submit) Применить 

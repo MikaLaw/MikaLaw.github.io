@@ -1,0 +1,118 @@
+.slider-preview {
+}
+.slider-preview__list-nav {
+  padding-top: 7px;
+  padding-left: 7px;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  z-index: 1;
+  @include media-min($media-sm) {
+    padding-top: 10px;
+    padding-left: 12px;
+  }
+
+  .slider-preview__wrap-img {
+    position: relative;
+    width: 17px;
+    height: 33px;
+    border: 1px solid $color-grey-2;
+    @include media-min($media-xs) {
+      width: 28px;
+      height: 38px;
+    }
+    @include media-min($media-sm) {
+      width: 45px;
+      height: 58px;
+    }
+    @include media-min($media-md) {
+      width: 30px;
+      height: 48px;
+    }
+    @include media-min($media-lg) {
+      width: 40px;
+      height: 50px;
+    }
+  }
+
+  .slider-preview__list-item {
+    margin-bottom: 3px;
+    @include media-min($media-md) {
+      margin-bottom: 8px;
+    }
+    &:focus-visible {
+      outline: none;
+    }
+  }
+}
+
+.slider-preview__list-content {
+  grid-column: 1/-1;
+  grid-row: 1/2;
+  width: 100%;
+
+  @include media-min($media-md) {
+    grid-column: 1/3;
+    grid-row: 1/2;
+    width: 472px;
+  }
+  @include media-min($media-lg) {
+    width: 585px;
+  }
+  @include media-min($media-xl) {
+    width: 646px;
+  }
+
+  .slider-preview__wrap-img {
+    position: relative;
+    width: 100%;
+    border-radius: 6px;
+    overflow: hidden;
+    height: 317px;
+    @include media-min($media-xs) {
+      height: 444px;
+    }
+    @include media-min($media-sm) {
+      height: 680px;
+    }
+    @include media-min($media-md) {
+      height: 554px;
+    }
+    @include media-min($media-lg) {
+      height: 674px;
+    }
+  }
+}
+.slider-preview__list-item {
+  position: relative;
+}
+
+.slider-preview__wrap {
+  position: relative;
+  display: grid;
+  grid-template-columns: 25px 1fr;
+  @include media-min($media-xs) {
+    display: grid;
+    grid-template-columns: 43px 1fr;
+  }
+  @include media-min($media-sm) {
+    grid-template-columns: 58px 1fr;
+  }
+  @include media-min($media-md) {
+    grid-template-columns: 43px 472px;
+  }
+  @include media-min($media-lg) {
+    grid-template-columns: 53px 585px;
+  }
+  @include media-min($media-xl) {
+    grid-template-columns: 53px 646px;
+  }
+}
+
+.slick-track {
+  display: flex !important;
+}
+.slider-preview {
+  .slick-track {
+    display: block !important;
+  }
+}

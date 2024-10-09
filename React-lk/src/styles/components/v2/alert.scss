@@ -1,0 +1,16 @@
+.alert-v2 {
+  align-items: flex-start;
+  .ant-alert-close-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .ant-alert-message {
+    b {
+      font-weight: 700;
+    }
+    & > * + * {
+      margin-top: 10px;
+    }
+  }
+}

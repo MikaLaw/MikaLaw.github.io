@@ -1,0 +1,26 @@
+mixin course-card(data)
+	-
+		data = init(data, {
+			'block': 'course-card',
+			'img': './img/components/course-page/img-2',
+			'date': '12 марта — 25 марта',
+			'text': 'Дорогие парикмахеры - эта новость для вас!',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽'
+		})
+	+b.A&attributes(data.attributes(attributes))(href="#")
+		+e.DIV.wrap
+			+e.DIV.wrap-img
+				+picture({
+					src: data.img,
+					webp: true,
+					alt: data.title,
+				})
+			+e.DIV.text= data.text
+			if data.date
+				+e.DIV.date= data.date		
+			+e.DIV.cost-container 
+				+e.DIV.cost= data.cost		
+				+e.DIV.stock= data.stock	
+			if data['add-info']
+				+e.DIV.add-info= data['add-info']			

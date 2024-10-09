@@ -1,0 +1,109 @@
+.course-list {
+  border-bottom: 1px solid rgba(42, 31, 21, 0.15);
+  padding-bottom: 20px;
+}
+.js-list {
+  &.is-show {
+    .course-list__btn::after {
+      transform: rotate(270deg);
+    }
+    .course-list__item:nth-of-type(n + 3) {
+      display: block;
+    }
+    @include media-min($media-sm) {
+      .course-list__item:nth-of-type(n + 4) {
+        display: block;
+      }
+    }
+    @include media-min($media-xl) {
+      .course-list__item:nth-of-type(n + 5) {
+        display: block;
+      }
+    }
+  }
+}
+.course-list__list {
+  margin-bottom: 50px;
+  @include media-min($media-xs) {
+    display: grid;
+    gap: 28px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include media-min($media-sm) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @include media-min($media-xl) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.course-list__item {
+  &:nth-of-type(n + 3) {
+    display: none;
+  }
+  @include media-min($media-sm) {
+    &:nth-of-type(n + 3) {
+      display: block;
+    }
+    &:nth-of-type(n + 4) {
+      display: none;
+    }
+  }
+  @include media-min($media-xl) {
+    &:nth-of-type(n + 3) {
+      display: block;
+    }
+    &:nth-of-type(n + 4) {
+      display: block;
+    }
+    &:nth-of-type(n + 5) {
+      display: none;
+    }
+  }
+  &:not(:last-child) {
+    margin-bottom: 20px;
+    @include media-min($media-xs) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.course-list__btn {
+  @include text-14-600-2;
+  text-transform: uppercase;
+  display: flex;
+  padding: 12px 22px;
+  align-items: center;
+  border-radius: 4px;
+  border: 1px solid $color-black;
+  transition: $transition;
+  cursor: pointer;
+  &::after {
+    content: '';
+    display: block;
+    background: icon-arrow-right() no-repeat center / contain;
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    transform: rotate(90deg);
+    margin-left: 10px;
+    transition: $transition;
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color-background-3;
+    border: 1px solid $color-black;
+    background: $color-black;
+    &::after {
+      background: icon-arrow-right($color-background-3) no-repeat center /
+        contain;
+    }
+  }
+  &:disabled {
+    color: $color-grey-2;
+    cursor: not-allowed;
+    &::after {
+      background: icon-arrow-right($color-grey-2) no-repeat center / contain;
+    }
+  }
+}

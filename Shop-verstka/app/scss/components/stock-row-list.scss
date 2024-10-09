@@ -1,0 +1,103 @@
+.stock-row-list__item {
+  padding-top: 8px;
+  border-top: 1px solid rgba(42, 31, 21, 0.2);
+  &:not(:last-child) {
+    margin-bottom: 50px;
+  }
+  @include media-min($media-sm) {
+    display: flex;
+    column-gap: 11px;
+  }
+  @include media-min($media-md) {
+    column-gap: 23px;
+  }
+  img {
+  }
+
+  .stock-table-card__btn {
+    @include text-12-600;
+
+    @include media-min($media-md) {
+      padding: 12px 22px 12px 20px;
+      @include text-14-600;
+    }
+  }
+  .stock-table-card__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @include media-min($media-md) {
+      flex-wrap: nowrap;
+      justify-content: unset;
+    }
+  }
+  .stock-table-card__labels {
+    display: flex;
+    row-gap: 10px;
+    flex-shrink: 0;
+    flex-direction: column;
+  }
+  .stock-table-card__label {
+    order: 1;
+    @include media-min($media-md) {
+      order: unset;
+    }
+  }
+  .stock-table-card__text-container {
+    order: 3;
+    width: 100%;
+    margin: 0;
+    margin-top: 10px;
+    @include media-min($media-md) {
+      order: unset;
+      width: auto;
+      margin-left: 20px;
+      margin-right: auto;
+      margin-top: 0;
+    }
+  }
+  .stock-table-card__controll {
+    order: 2;
+    margin-top: 0;
+    @include media-min($media-md) {
+      order: unset;
+    }
+  }
+}
+.stock-row-list__wrap-img {
+  width: 109px;
+  height: 71px;
+  flex-shrink: 0;
+
+  @include media-min($media-md) {
+    width: 132px;
+    height: 86px;
+    margin-top: 30px;
+  }
+}
+.stock-row-list__control {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-start;
+  gap: 20px 0;
+  margin-top: 20px;
+  @include media-min($media-xs) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @include media-min($media-md) {
+    margin-top: 44px;
+  }
+  @include media-min($media-lg) {
+    margin-top: 36px;
+  }
+  @include media-min($media-xl) {
+    margin-top: 45px;
+  }
+
+  .btn {
+    @include text-14-500;
+  }
+}

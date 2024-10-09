@@ -1,0 +1,11 @@
+mixin store-picture-tab(data)
+	-
+		data = init(data, {
+			'block': 'store-picture-tab',
+			'img': './img/components/article/img-6'
+		})
+	+b&attributes(data.attributes(attributes))
+		+picture({
+			src: data.img,
+			webp: true,
+		}).wrap-img

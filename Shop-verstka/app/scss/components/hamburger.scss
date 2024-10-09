@@ -1,0 +1,18 @@
+.hamburger {
+  bottom: 0;
+  padding: 1px;
+  background: transparent;
+  cursor: pointer;
+  @include media-min($media-md) {
+    display: none;
+  }
+}
+.hamburger__icon {
+  &::before {
+    content: '';
+    display: block;
+    background: icon-burger() no-repeat center / contain;
+    width: 23px;
+    height: 18px;
+  }
+}

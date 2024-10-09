@@ -1,0 +1,40 @@
+include registration-card
+
+mixin form-course(data)
+	-
+		data = init(data, {
+			'block': 'form_course',
+			'list': collapseList1,
+		})
+
+	+b&attributes(data.attributes(attributes))
+		+e.head
+			+e.title Записаться на курс
+		+e.body 
+			+e.text Наш менеджер свяжется с вами
+			+registration-card({
+				'title': 'Теория+Практика <span>24-25 марта</span>',
+				'cost': '13 500 ₽',
+				'stock': '1 200 ₽',
+				'btn': false,
+			})
+			+b.form._registration-education
+				+e.item
+					+form-field({
+						'title': '',
+						'component': {
+							'mixin': 'input',
+							'placeholder': 'ФИО'
+						},
+					})
+				+e.item
+					+form-field({
+						'title': '',
+						'component': {
+							'mixin': 'input',
+							'placeholder': '+ 7 (___) ___-__-__'
+						},
+					})
+				+e.footer 
+					+b.BUTTON.btn-grey Записаться
+					+e.text-agree Нажимая на кнопку «Записаться», я даю свое <a href="#">Согласие на обработку персональных данных</a>

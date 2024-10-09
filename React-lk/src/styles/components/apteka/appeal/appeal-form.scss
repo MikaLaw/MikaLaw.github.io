@@ -1,0 +1,21 @@
+.appeal-form {
+  padding: 10px;
+  background: $color-content-branded;
+  .ant-form-item-label {
+    & > label {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 22px;
+      color: $color-black;
+    }
+  }
+
+  textarea {
+    padding: 5px 12px;
+    min-height: 96px;
+    border: 1px solid $color-border-6;
+    border-radius: 2px;
+    font-size: 15px;
+    line-height: 22px;
+  }
+}

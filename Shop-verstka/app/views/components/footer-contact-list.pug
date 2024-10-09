@@ -1,0 +1,30 @@
+include ../base-components/social
+
+mixin footer-contact-list(data)
+	-
+		data = init(data, {
+			'block': 'footer-contact-list',
+			'list': [
+				{
+					'link': '<a class="footer-contact-list__link" href="mailto:modernshop22@yandex.ru">modernshop22@yandex.ru</a>',
+					'text': 'Напишите нам'
+				},
+				{
+					'link': '<a class="footer-contact-list__link" href="tel:+73852221925">+ 7 (3852) 22-19-25</a>',
+					'text': 'Многоканальный'
+				},
+				{
+					'link': '<a class="footer-contact-list__link" href="tel:+79635243338">+ 7 (963) 524-33-38</a>',
+					'text': '10:00—18:00, Пн—Пт'
+				},				
+			]
+		})
+	+b&attributes(data.attributes(attributes))
+		+e.UL.list 
+			each item in data['list']
+				+e.LI.item
+					+e.item-wrap
+						| !{item['link']}
+						+e.text= item['text']
+			+e.LI.item
+				+social()

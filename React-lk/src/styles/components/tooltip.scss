@@ -1,0 +1,93 @@
+.ant-tooltip {
+  @include text-2();
+}
+
+.ant-tooltip-inner {
+  border: 1px solid $color-ui-2;
+  background-color: $color-white;
+  color: $color-black;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    & > li {
+      position: relative;
+      padding-left: 20px;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 8px;
+        left: 7px;
+        flex-shrink: 0;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background-color: $color-black;
+      }
+    }
+  }
+}
+
+.ant-tooltip-arrow-content {
+  background-color: $color-white;
+}
+
+.tooltip-status {
+  @include head-5();
+  width: 287px;
+  max-width: 287px;
+
+  .ant-tooltip-inner {
+    background-color: $color-brand-3;
+    border-color: $color-brand-3;
+    color: $color-white;
+  }
+
+  .ant-tooltip-arrow-content {
+    background-color: $color-brand-3;
+  }
+}
+
+.tooltip-green {
+  .ant-tooltip-inner {
+    border: 0;
+    padding: 8px 6px;
+    color: $color-white;
+    background-color: $color-brand-2;
+    @include text-3();
+  }
+  .ant-tooltip-arrow-content {
+    background-color: $color-brand-2;
+  }
+}
+
+.tooltip-entry {
+  width: 100%;
+  max-width: 278px;
+
+  font-size: 11px;
+  line-height: 14px;
+
+  @include media-min($media-xl) {
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  .ant-btn-link {
+    font-size: 11px;
+    line-height: 14px;
+    color: $color-white;
+
+    @include media-min($media-xl) {
+      font-size: 13px;
+      line-height: 18px;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

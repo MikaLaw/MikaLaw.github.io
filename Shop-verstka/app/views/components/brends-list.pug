@@ -1,0 +1,20 @@
+mixin brends-list(data)
+	-
+		data = init(data, {
+			'block': 'brends-list',
+		})
+	-
+		var n = 1;
+
+	+b&attributes(data.attributes(attributes))
+		+e.UL.list 
+			while n < 26
+				-	
+					imgName = './img/components/brends-list/img-' + n++ 
+
+				+e.LI.item
+					+picture({
+						src: imgName,
+						webp: true,
+					}).wrap-img
+

@@ -1,0 +1,27 @@
+.button {
+    display: inline-block;
+    min-width: 140px;
+    padding: 15px 18px;
+    color: $color-white;
+    font-weight: 400;
+    font-size: 12px;
+    font-family: $font-default;
+    line-height: 19px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: $color-black;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: $transition;
+
+    &:focus, 
+    &:hover {
+        opacity: .8;
+    }
+}
+
+.button_pdv-sm{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

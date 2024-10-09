@@ -1,0 +1,26 @@
+mixin news-card(data)
+	-
+		data = init(data, {
+			'block': 'news-card',
+			'img': './img/components/news-card/img-1',
+			'label': 'О КОМПАНИИ',
+			'date': '28 мая 2022',
+			'title': 'Дорогие парикмахеры - эта новость для вас!',
+			'text': 'На днях мы запустили интернет-магазин для розницы и дарим всем скидку по этому случаю 20% на первый заказ',
+
+		})
+	+b.A&attributes(data.attributes(attributes))(href="#")
+		+e.DIV.wrap
+			+e.DIV.img-container
+				+e.DIV.wrap-img
+					+picture({
+						src: data.img,
+						webp: true,
+						alt: data.title,
+					})
+				if data.label
+					+e.DIV.label=  data.label
+			+e.DIV.date= data.date
+			+e.DIV.title= data.title
+			+e.DIV.text= data.text
+					

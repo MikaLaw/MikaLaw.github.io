@@ -1,0 +1,99 @@
+.advantages-card {
+  width: 100%;
+  padding: 20px 15px;
+  border-radius: 4px;
+  background: $color-background-3;
+  @include media-min($media-xs) {
+    padding: 31px 22px;
+  }
+  @include media-min($media-sm) {
+    padding: 30px 21px;
+  }
+}
+.advantages-card__wrap {
+  display: grid;
+  grid-template-columns: 46px 1fr;
+  gap: 9px 11px;
+  @include media-min($media-xs) {
+    gap: 9px 21px;
+  }
+  @include media-min($media-sm) {
+    gap: 14px 21px;
+  }
+}
+.advantages-card__icon {
+  width: 46px;
+  height: 46px;
+  border: 2px solid $color-black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  @include media-min($media-xs) {
+    grid-row: 1 / 3;
+  }
+  &::before {
+    content: '';
+    display: block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+  &.icon-lotion-cream {
+    background-color: $color-blue;
+    &::before {
+      background-image: icon-lotion-cream();
+      width: 28px;
+      height: 28px;
+    }
+  }
+  &.icon-makeup {
+    background-color: $color-pink;
+    &::before {
+      background-image: icon-makeup();
+      width: 34px;
+      height: 34px;
+    }
+  }
+  &.icon-box {
+    background-color: $color-violet;
+    &::before {
+      background-image: icon-box();
+      width: 32px;
+      height: 32px;
+    }
+  }
+  &.icon-arrows {
+    background-color: $color-beige;
+    &::before {
+      background-image: icon-arrows();
+      width: 32px;
+      height: 23px;
+    }
+  }
+  &.icon-bag {
+    background-color: $color-light-green;
+    &::before {
+      background-image: icon-bag();
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
+.advantages-card__title {
+  @include head-14-700;
+  text-transform: uppercase;
+  @include media-min($media-xs) {
+    @include head-16-700;
+  }
+}
+.advantages-card__text {
+  @include text-13-500;
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
+  @include media-min($media-xs) {
+    grid-column: 2 / 3;
+  }
+}

@@ -1,0 +1,34 @@
+.input-datepicker {
+  width: 136px;
+}
+.input-datepicker__dash {
+  width: 13px;
+  height: 1px;
+  background-color: $color-black;
+  margin: 0 2px;
+  flex-shrink: 0;
+  @include media-min($media-xs) {
+    margin: 0 10px;
+  }
+}
+.input-datepicker__input-container {
+  position: relative;
+  .input-datepicker.input {
+    padding-right: 40px;
+  }
+}
+.input-datepicker__icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 18px;
+}
+.input-datepicker__icon-calendar {
+  &::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: icon-calendar() no-repeat center / contain;
+  }
+}

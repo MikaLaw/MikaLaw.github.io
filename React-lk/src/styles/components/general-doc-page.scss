@@ -1,0 +1,14 @@
+.general-doc-page {
+  .ant-layout-content {
+    .scrollbar-container {
+      & > * {
+        &:first-child {
+          padding-top: 0 !important;
+        }
+      }
+    }
+    .application {
+      padding-top: 25px !important;
+    }
+  }
+}

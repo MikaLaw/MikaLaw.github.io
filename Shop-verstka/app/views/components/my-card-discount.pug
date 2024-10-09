@@ -1,0 +1,27 @@
+mixin my-card-discount(data)
+	-
+		data = init(data, {
+			'block': 'my-card-discount',
+			'list': [
+				{	
+					'title': 'бонусы',
+					'amount': '111'
+				},
+				{	
+					'title': 'Текущая скидка',
+					'amount': '7%'
+				},			
+				{	
+					'title': 'До уровня «золото»<br> со скидкой 10% нужно купить на сумму: ',
+					'amount': '3 000 ₽',
+					'class': '_gold'
+				},		
+			]
+
+		})
+	+b&attributes(data.attributes(attributes))
+		+e.TABLE.list
+			each item in data.list
+				+e.TR.item(class= item.class)
+					+e.TD.title !{item.title}
+					+e.TD.amount= item.amount

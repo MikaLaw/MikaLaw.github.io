@@ -1,0 +1,296 @@
+@mixin head-44-700() {
+  font-family: $font-default;
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 46px;
+  letter-spacing: 1px;
+}
+@mixin head-36-700() {
+  font-family: $font-default;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: 1px;
+}
+@mixin head-34-700() {
+  font-family: $font-default;
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 38px;
+  letter-spacing: 0.6px;
+}
+@mixin head-32-700() {
+  font-family: $font-default;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 38px;
+  letter-spacing: 0.6px;
+}
+@mixin head-32-700-2() {
+  font-family: $font-default;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: 1px;
+}
+@mixin head-31-700() {
+  font-family: $font-default;
+  font-size: 31px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 35px;
+  letter-spacing: 0.622px;
+  text-transform: uppercase;
+}
+@mixin head-30-700() {
+  font-family: $font-default;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 34px;
+  letter-spacing: 0.6px;
+}
+@mixin head-28-700() {
+  font-family: $font-default;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 34px;
+  letter-spacing: 0.6px;
+}
+@mixin head-28-700-2() {
+  font-family: $font-default;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: 0.6px;
+}
+@mixin head-28-700-2() {
+  font-family: $font-default;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: 0.6px;
+}
+@mixin head-23-700() {
+  font-family: $font-default;
+  font-size: 23px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 0.6px;
+}
+@mixin head-20-700() {
+  font-family: $font-default;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.6px;
+}
+@mixin head-18-700() {
+  font-family: $font-default;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.6px;
+}
+@mixin head-16-700() {
+  font-family: $font-default;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: 1px;
+}
+@mixin head-16-700-2() {
+  font-family: $font-default;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px;
+}
+@mixin head-16-700-3() {
+  font-family: $font-default;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+}
+@mixin head-16-700-4() {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+}
+@mixin head-15-700() {
+  font-family: $font-default;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 19px;
+}
+@mixin head-14-700() {
+  font-family: $font-default;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px;
+}
+@mixin head-12-700() {
+  font-family: $font-default;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 1px;
+}
+@mixin head-10-700() {
+  font-family: $font-default;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 1px;
+}
+@mixin head-8-700() {
+  font-family: $font-default;
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 1px;
+}
+@mixin text-23-500() {
+  font-family: $font-default;
+  font-size: 23px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: 0.6px;
+}
+@mixin text-16-500() {
+  font-family: $font-default;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+}
+@mixin text-16-500-2() {
+  font-family: $font-default;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.405374px;
+}
+@mixin text-15-500() {
+  font-family: $font-default;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 21px;
+}
+@mixin text-14-500() {
+  font-family: $font-default;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 17px;
+}
+
+@mixin text-13-500() {
+  font-family: $font-default;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+@mixin text-12-500() {
+  font-family: $font-default;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+@mixin text-10-500() {
+  font-family: $font-default;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+@mixin text-9-500() {
+  font-family: $font-default;
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+@mixin text-16-600() {
+  font-family: $font-default;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+}
+@mixin text-14-600() {
+  font-family: $font-default;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+@mixin text-14-600-2() {
+  font-family: $font-default;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.5px;
+}
+@mixin text-13-600() {
+  font-family: $font-default;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+@mixin text-12-600() {
+  font-family: $font-default;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.5px;
+}
+@mixin text-12-600-2() {
+  font-family: $font-default;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1px;
+}
+@mixin text-16-600() {
+  font-family: $font-default;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+}
+@mixin text-15-600() {
+  font-family: $font-default;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 21px;
+}

@@ -1,0 +1,117 @@
+.ant-input-number {
+
+}
+
+.ant-input-number-handler {
+  border-color: $color-ui-4;
+  &:hover {
+    .ant-input-number-handler-down-inner,
+    .ant-input-number-handler-up-inner {
+      color: $color-ui-4;
+    }
+  }
+}
+
+.ant-input-number-handler-wrap {
+  width: 22px;
+}
+
+.input-number {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.input-number__btn {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: $color-ui-2;
+  flex-shrink: 0;
+  color: $color-brand-2;
+
+  .anticon {
+    margin: 0 !important;
+    width: 11px;
+    height: 11px;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &:hover {
+    background-color: $color-brand-1;
+    .anticon {
+      color: $color-brand-2;
+    }
+  }
+
+  &:focus, &:active {
+    background-color: $color-ui-4;
+  }
+
+  &[disabled],
+  &[disabled]:hover, &[disabled]:focus, &[disabled]:active {
+    // color: $color-white;
+    background-color: $color-ui-2;
+    border-color: transparent;
+    opacity: .3;
+  }
+
+  &.add {
+
+  }
+
+  &.remove {
+
+  }
+}
+
+.input-number__input {
+  text-align: center;
+  padding: 6px 1px;
+  width: 30px;
+  @include text-3();
+  flex-shrink: 0;
+
+  &[type=number]::-webkit-inner-spin-button,
+  &[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &[type=number] {
+    -moz-appearance: textfield;
+  }
+}
+
+.input-number-table {
+  width: 70px;
+  font-family: $font-inter;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 14px;
+  border-color: $color-ui-4;
+
+  &_full-height {
+    height: 100%;
+  }
+
+  &.ant-input-number-focused {
+    box-shadow: $box-shadow-8;
+  }
+
+  .ant-input-number-input {
+    height: auto;
+    padding: 2px 8px;
+  }
+
+  input {
+    height: 40px !important;
+  }
+}

@@ -1,0 +1,33 @@
+mixin product-params(data)
+	-
+		data = init(data, {
+			'block': 'product-params',
+			'list': [
+				//- 'Alfaparf',
+				//- 'EPICA Professional',
+				//- 'Блонды',
+				//- 'Светло-коричневый',
+				//- 'Пепельные',
+				//- 'Фиолетовые',
+				//- 'Крем-краска EOC Metallics ТМ Alfaparf',
+				//- 'Крем-краска EOC Metallics ТМ Alfaparf',
+				//- 'Фиолетовые',
+				//- 'Светло-коричневый',
+				//- 'Блонды',
+				//- 'Пепельные',
+				//- 'EPICA Professional',
+				//- 'Alfaparf'
+			]
+		})
+	+b&attributes(data.attributes(attributes))
+		+e.wrap
+			+e.params
+				+e.UL.list
+					+e.LI.item-btn
+						+b.BUTTON.btn(data-btn-reset) Сбросить все
+					each item, i in data.list
+						+e.LI.item
+							+e.param
+								span= item
+								+e.BUTTON.btn(id= 'data-param-' + i)
+			

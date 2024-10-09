@@ -1,0 +1,13 @@
+include product-card
+include ../base-components/pagination
+include ../base-components/pagination
+
+mixin pagination-block(data)
+	-
+		data = init(data, {
+			'block': 'pagination-block',
+		})
+
+	+b&attributes(data.attributes(attributes))
+		+b.BUTTON.btn Показать ещё
+		+pagination()

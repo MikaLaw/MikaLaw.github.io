@@ -1,0 +1,35 @@
+include ../base-components/logo
+include ../base-components/favorites-btn
+include ../base-components/basket-btn
+include ../base-components/user-btn
+include ../components/menu-list
+mixin head-dashboard(data)
+	-
+		data = init(data, {
+			logo: {
+				link: true
+			}
+		})
+	+b.head-dashboard&attributes(attributes)
+		+e.top
+			.global-wrapper
+				+e.wrap
+					+b.BUTTON.hamburger(data-open='menu')
+						+e.SPAN.icon 
+					+e.A.contact(href="tel:83852221925") + 7 (3852) 22-19-25
+					+e.logo
+						+logo(data.logo)
+					+e.controls 
+						+e.BUTTON.btn-search(data-open="search")
+						include ../components/menu-search
+						+favorites-btn({
+							num: '5'
+						})
+						+basket-btn({
+							num: '5'
+						})(data-open="basket")
+						+user-btn()(href='#login' data-fancybox='')
+		+e.bottom
+			.global-wrapper
+				+e.wrap
+					+menu-list()

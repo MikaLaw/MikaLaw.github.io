@@ -1,0 +1,29 @@
+.photo-gallery {
+}
+.photo-gallery__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  @include media-min($media-xs) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include media-min($media-sm) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.photo-gallery__item {
+}
+.photo-gallery__img-container {
+  position: relative;
+  width: 100%;
+  height: 332px;
+}
+.photo-gallery__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  margin-bottom: 0 !important;
+}

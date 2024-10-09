@@ -1,0 +1,21 @@
+include ../base-components/social
+
+mixin course-banner(data)
+	-
+		data = init(data, {
+			'block': 'course-banner',
+			'title': 'Мы в соцсетях',
+			'text': 'Узнавайте о наших событиях первыми',
+			'img-bg': './img/components/course-page/img-1',
+		})
+	+b&attributes(data.attributes(attributes))
+		+e.wrap 
+			+e.content-container
+				+e.title= data.title 
+				+e.text= data.text 
+			+social()
+		+e.wrap-img
+			+picture({
+				src: data['img-bg'],
+				webp: true,
+			})

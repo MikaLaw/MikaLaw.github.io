@@ -1,0 +1,11 @@
+[js-animate]{
+    visibility: hidden;
+
+    &.animate__animated {
+        visibility: visible;
+    }
+}
+
+[js-animate-gorizontal] {
+    opacity: 0;
+}

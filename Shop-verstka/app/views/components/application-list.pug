@@ -1,0 +1,21 @@
+include ../base-components/pagination
+include application-list-card
+
+mixin application-list(data)
+	-
+		data = init(data, {
+			'block': 'application-list',
+			'list': applicationList,
+			'pagination': true
+		})
+
+	+b&attributes(data.attributes(attributes))
+		+e.list
+			for item in data.list
+				+application-list-card(item)
+		if data.pagination
+			+e.control 
+				+b.BUTTON.btn Показать ещё
+				+pagination({
+					'list': ['1',],
+				})

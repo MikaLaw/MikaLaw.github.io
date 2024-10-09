@@ -1,0 +1,138 @@
+.ant-checkbox {
+  & + span {
+    padding: 0;
+    padding-left: 8px;
+  }
+}
+
+.ant-checkbox-input {
+  &:focus + .ant-checkbox-inner {
+    border-color: $color-ui-4;
+  }
+}
+
+.ant-checkbox-inner {
+  border-color: $color-ui-7;
+}
+
+.ant-checkbox-indeterminate .ant-checkbox-inner::after {
+  background-color: $color-brand-1;
+}
+label.ant-checkbox-wrapper,
+.ant-checkbox-wrapper {
+  display: flex;
+  @include text-2();
+  color: $color-black;
+
+  &:hover {
+    .ant-checkbox-inner {
+      border-color: $color-brand-1;
+    }
+  }
+
+  &-checked {
+    .ant-checkbox-inner {
+      background-color: $color-brand-1;
+      border-color: transparent;
+    }
+  }
+
+  &.pointer-events-none {
+    .ant-checkbox-input {
+      pointer-events: none;
+    }
+  }
+
+  &.font-14-regular {
+    @include text-2();
+
+    .ant-checkbox + span {
+      padding-left: 20px;
+    }
+  }
+
+  &.font-14 {
+    @include text-2-medium();
+
+    .ant-checkbox + span {
+      padding-left: 20px;
+    }
+  }
+  &.font-11 {
+    @include text-3();
+
+    .ant-checkbox + span {
+      padding-left: 10px;
+    }
+  }
+
+}
+
+.ant-checkbox-group {
+  & > * + * {
+    margin-top: 15px;
+  }
+}
+
+.ant-checkbox-group-item {
+
+}
+
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: $color-brand-1;
+  border-color: $color-brand-1;
+}
+
+.ant-checkbox-checked:hover .ant-checkbox-inner {
+  border-color: $color-brand-1;
+}
+
+.ant-checkbox:hover .ant-checkbox-inner {
+  border-color: $color-brand-1;
+}
+.ant-checkbox-checked::after {
+  border-color: $color-brand-1;
+}
+
+.checkbox-group {
+  width: 100%;
+
+  & > * + * {
+    margin-top: 0;
+  }
+
+  .ant-checkbox-wrapper {
+    padding: 10px;
+    width: 100%;
+    // align-items: center;
+    box-shadow: $box-shadow-5;
+    transition: $transition;
+    @include text-3();
+    //font-size: 11px;
+    //line-height: 14px;
+
+    &:hover {
+      background-color: $color-ui-2;
+    }
+
+    .ant-checkbox-input {
+      width: 16px;
+      height: 16px;
+    }
+
+    .ant-checkbox + span {
+      padding: 0;
+      padding-left: 30px;
+    }
+  }
+}
+
+.checkbox-group-scroll {
+  max-height: 280px !important;
+
+  & > div {
+    &:first-child {
+      max-height: 280px !important;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+mixin order-paid-card(data)
+	-
+		data = init(data, {
+			'block': 'order-paid-card',
+			'title': 'Заказ оплачен',
+			'text': ['Заказ создан! Номер заказа: 362562<br>Отслеживать статус заказа вы можете в Личном кабинете','Если у вас остались вопросы или уточнения по заказу, свяжитесь с нами'],
+			'subtext': 'Телефон горячей линии'
+		})
+	+b&attributes(data.attributes(attributes))
+		+e.head 
+			+e.title= data.title
+		+e.body
+			+e.text 
+				each text in data.text 
+					p !{text}
+			+e.A.phone(href="tel:873852221925") +7 (3852) 22-19-25
+			+e.subtext= data.subtext 
+			+b.BUTTON.btn-arrow перейти к заказу
+

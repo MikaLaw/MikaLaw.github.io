@@ -1,0 +1,35 @@
+mixin store-tab(data)
+	-
+		data = init(data, {
+			'block': 'store-tab',
+			'title': 'Барнаул',
+			'subtext': 'В г. Барнауле для вас открыли свои двери 11 супермаркетов профессиональной косметики и парикмахерского инструмента',
+			'text': 'На сегодняшний день мы располагаем двумя филиалами для обеспечения потребностей наших клиентов в других городах России',
+			'list': [
+				'ул. Власихинская, 91',
+				'ул. Анатолия, 81а',
+				'ул. Попова, 150',
+				'ул. А. Петрова, 219Б (ТРЦ «Огни»)',
+				'ул. Попова, 82 (ТРЦ «Малина»)',
+				'пр-т Ленина, 155 (ТЦ «Норд-Вест»)',
+				'Павловский тракт, 251В (ТРЦ «Европа»)',
+				'пр. Строителей, 117 (ТРЦ Galaxy)',
+				'ул. Балтийская, 103',
+				'пр. Красноармейский, 51а (ТЦ «Гулливер Парк»)' 
+			],
+			'id': 'map1'
+		})
+	+b&attributes(data.attributes(attributes))
+		+b.store._stores
+			+e.wrap
+				+e.text-container
+					+e.text= data.text
+				+e.map-container
+					+e.map(id=data['id'])
+				+e.content-container 
+					+e.title= data.title
+					+e.text= data.subtext
+					+e.UL.list 
+						each store in data.list
+							+e.LI.item
+								+e.A.item-link(href="#")= store

@@ -1,0 +1,68 @@
+.apteka-panel {
+  &.table-panel, &.table-panel-simple {
+    flex-wrap: wrap;
+    gap: 17px 10px;
+
+    .table__tags-wrap {
+      .ant-tabs-nav-more .anticon-ellipsis:before {
+        background-image: icon-dots($color-apteka-2);
+      }
+    }
+    .table__tags-control {
+      margin-left: 0;
+    }
+    .table__tags {
+      margin-bottom: 20px;
+    }
+    .table__btn-save {
+      color: $color-white;
+      background-color: $color-text-1;
+
+      &:hover,
+      &:focus,
+      &:active, {
+        background-color: $color-apteka-5;
+        color: $color-white;
+      }
+
+      &[disabled],
+      &[disabled]:hover, &[disabled]:focus, &[disabled]:active {
+        color: $color-white;
+        background: $color-content-branded;
+      }
+    }
+
+    .table__btn-reset {
+      color: $color-apteka-2;
+      .anticon {
+        color: $color-apteka-2;
+      }
+      &:hover {
+        color: $color-text-1;
+        background: transparent;
+        .anticon {
+          color: $color-text-1;
+        }
+      }
+    }
+
+    .pharmacy-table__tag {
+     .anticon {
+       color: $color-apteka-2;
+       &:hover {
+         color: $color-text-1;
+       }
+     }
+    }
+
+    .table-panel__control .table-panel__control-icon {
+      color: $color-text-1;
+    }
+  }
+  &.saved-filter {
+    margin-bottom: 20px;
+    .table__tags {
+      margin-bottom: 0px;
+    }
+  }
+}

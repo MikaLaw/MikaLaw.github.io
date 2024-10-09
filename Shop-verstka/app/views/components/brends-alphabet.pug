@@ -1,0 +1,157 @@
+include ../base-components/pagination
+include ../base-components/favorites-btn
+
+mixin brends-alphabet(data)
+	-
+		data = init(data, {
+			'block': 'brends-alphabet',
+			'list': [
+				{
+					title: 'A',
+					nameList: [
+						[
+							{text: 'Alphaparf'},
+							{text: 'Alpha pro'},
+							{text: 'Andis'}
+						],
+						[
+							{text: 'Andrea'},
+							{text: 'Angel'},
+							{text: 'Aravia Professional'}
+						],
+						[
+							{text: 'Ardell'},
+							{text: 'Aroma Jazz'}
+						]
+					]
+				},
+				{
+					title: 'B',
+					nameList: [
+						[
+							{text: 'Babyliss'},
+							{text: 'Bal'},
+							{text: 'Be natural'}
+						],
+						[
+							{text: 'Beauty Style'},
+							{text: 'BeauuGreen', icon: 'active'},
+							{text: 'Benovy'}
+						],
+						[
+							{text: 'BIO NATURE'},
+							{text: 'BLUESKY'},
+							{text: 'Born Pretty'}
+						],
+						[
+							{text: 'BOUTICLE'},
+							{text: 'Brow&Go'}
+						],
+					]
+				},
+				{
+					title: 'C',
+					nameList: [
+						[
+							{text: 'Alphaparf'},
+							{text: 'Alpha pro'},
+							{text: 'Andis'}
+						],
+						[
+							{text: 'Andrea'},
+							{text: 'Angel'},
+							{text: 'Aravia Professional'}
+						],
+						[
+							{text: 'Ardell'},
+							{text: 'Aroma Jazz'}
+						]
+					]
+				},
+				{
+					title: 'D',
+					nameList:[
+						[
+							{text: 'Babyliss'},
+							{text: 'Bal'},
+							{text: 'Be natural'}
+						],
+						[
+							{text: 'Beauty Style'},
+							{text: 'BeauuGreen', icon: 'active'},
+							{text: 'Benovy'}
+						],
+						[
+							{text: 'BIO NATURE'},
+							{text: 'BLUESKY'},
+							{text: 'Born Pretty'}
+						],
+						[
+							{text: 'BOUTICLE'},
+							{text: 'Brow&Go'}
+						],
+					]
+				},
+				{
+					title: 'E',
+					nameList: [
+						[
+							{text: 'Alphaparf'},
+							{text: 'Alpha pro'},
+							{text: 'Andis'}
+						],
+						[
+							{text: 'Andrea'},
+							{text: 'Angel'},
+							{text: 'Aravia Professional'}
+						],
+						[
+							{text: 'Ardell'},
+							{text: 'Aroma Jazz'}
+						]
+					]
+				},			
+				{
+					title: 'F',
+					nameList:[
+						[
+							{text: 'Babyliss'},
+							{text: 'Bal'},
+							{text: 'Be natural'}
+						],
+						[
+							{text: 'Beauty Style'},
+							{text: 'BeauuGreen', icon: 'active'},
+							{text: 'Benovy'}
+						],
+						[
+							{text: 'BIO NATURE'},
+							{text: 'BLUESKY'},
+							{text: 'Born Pretty'}
+						],
+						[
+							{text: 'BOUTICLE'},
+							{text: 'Brow&Go'}
+						],
+					]
+				},	
+
+			]
+		})
+
+
+	+b&attributes(data.attributes(attributes))
+		+e.UL.list 
+			each item in data.list 
+				+e.LI.item 
+					+e.title= item.title 
+					+e.name-list     
+						each nameArr in item.nameList 
+							+e.name-row 
+								each nameData in nameArr
+									+e.name-item
+										+favorites-btn()(class= nameData.icon)
+										+e.A.name(href="#")= nameData.text
+
+
+

@@ -1,0 +1,71 @@
+.order-paid__wrap {
+  @include media-min($media-sm) {
+    display: grid;
+    grid-template-columns: 1fr 359px;
+    gap: 10px;
+  }
+  @include media-min($media-md) {
+    grid-template-columns: 1fr 469px;
+    gap: 40px;
+  }
+  @include media-min($media-lg) {
+    grid-template-columns: 1fr 731px;
+  }
+  @include media-min($media-lg) {
+    grid-template-columns: 1fr 835px;
+  }
+}
+
+.order-paid-info {
+}
+.order-paid-info__list {
+  @include media-min($media-lg) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+}
+.order-paid-info__item {
+  &:not(:last-child) {
+    margin-bottom: 10px;
+    @include media-min($media-lg) {
+      margin-bottom: 0px;
+    }
+  }
+}
+.order-paid-info__card {
+  padding: 30px 20px;
+  border-radius: 4px;
+  background: $color-background-2;
+  @include media-min($media-lg) {
+    height: 100%;
+  }
+}
+.order-paid-info__card-row {
+  &:not(:last-child) {
+    margin-bottom: 19px;
+    @include media-min($media-xs) {
+      margin-bottom: 21px;
+    }
+  }
+  @include media-min($media-xs) {
+    display: flex;
+    gap: 30px;
+  }
+}
+.order-paid-info__card-label {
+  @include head-10-700;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  @include media-min($media-xs) {
+    width: 128px;
+    margin-bottom: 0;
+  }
+}
+.order-paid-info__card-value {
+  color: $color-grey;
+  @include text-14-500;
+  @include media-min($media-xs) {
+    flex: 1;
+  }
+}

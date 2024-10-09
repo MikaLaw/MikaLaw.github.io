@@ -1,0 +1,30 @@
+include ../base-components/logo
+
+mixin main-banner(data)
+	-
+		data = init(data, {
+			'block': 'main-banner',
+			'img': './img/components/main-banner/img-1',
+			'text': [
+				'Равным образом реализация намеченных плановых заданий позволяет оценить значение системы обучения кадров, соответствует насущным потребностям.',
+				'Товарищи! новая модель организационной деятельности обеспечивает широкому кругу (специалистов) участие в формировании дальнейших направлений развития.',
+				'Задача организации, в особенности же реализация намеченных плановых заданий требуют от нас анализа соответствующий условий активизации.'
+			]
+		})
+
+	+b&attributes(data.attributes(attributes))
+		.global-wrapper
+			+e.wrap 
+				+e.content-container 
+					+logo()
+					+e.text 
+						each text in data.text 
+							p= text
+					+e.control
+						+e.BUTTON.btn Наши магазины
+						+e.BUTTON.btn-text Работа у нас
+				+e.wrap-img
+					+picture({
+						src: data.img,
+						png: true,
+					})

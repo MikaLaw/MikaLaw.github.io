@@ -1,0 +1,28 @@
+.price-offer {
+  flex: auto;
+  overflow: hidden;
+
+  & > * + * {
+    margin-top: 20px;
+  }
+
+  &_spacing_10 {
+    & > * + * {
+      margin-top: 10px;
+    }
+  }
+}
+
+.price-offer__alert {
+  max-width: 550px;
+
+  .ant-alert-description {
+    color: $color-ui-5;
+  }
+
+  .ant-alert-icon {
+    color: $color-brand-2;
+    font-size: 20px;
+    margin-right: 10px;
+  }
+}

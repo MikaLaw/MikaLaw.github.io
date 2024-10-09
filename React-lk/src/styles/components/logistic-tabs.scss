@@ -1,0 +1,84 @@
+.logistic-tabs {
+  & .ant-tabs-tab + .ant-tabs-tab {
+    margin: 0 0 0 58px !important;
+  }
+
+  .ant-tabs-nav-list {
+    counter-reset: num;
+
+    & > * {
+      &:nth-last-child(2) {
+        &:after {
+          content: none;
+        }
+      }
+    }
+  }
+
+  &.ant-tabs-card > .ant-tabs-nav {
+    &:before {
+      content: none;
+    }
+  }
+
+  &.ant-tabs-card > .ant-tabs-nav .ant-tabs-tab,
+  &.ant-tabs-card > div > .ant-tabs-nav .ant-tabs-tab {
+    position: relative;
+    border: 0;
+    padding: 4px 0 4px 44px;
+    background: transparent;
+  }
+
+  & > .ant-tabs-nav .ant-tabs-tab-active {
+    box-shadow: none;
+
+    .ant-tabs-tab-btn {
+      color: $color-brand-2;
+    }
+
+    &:before {
+      background-color: $color-brand-2;
+      color: $color-white;
+      border-color: $color-brand-2;
+    }
+  }
+
+  .ant-tabs-tab {
+    cursor: default;
+    &:before {
+      content: counter(num);
+      counter-increment: num;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 31px;
+      height: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: transparent;
+      border: 1px solid $color-ui-8;
+      color: $color-ui-8;
+      border-radius: 40px;
+      @include text-14-500-inter();
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: -48px;
+      width: 38px;
+      height: 1px;
+      border-top: 1px dashed $color-brand-2;
+      transform: translateY(-50%);
+    }
+  }
+
+  .ant-tabs-tab-btn {
+    font-weight: 500;
+    font-size: 14px;
+    color: $color-ui-8;
+  }
+}

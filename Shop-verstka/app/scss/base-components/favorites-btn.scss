@@ -1,0 +1,39 @@
+.favorites-btn {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  &:hover,
+  &:focus {
+    .favorites-btn__icon-heart::before {
+      background: icon-heart($color-grey-2) no-repeat center / contain;
+    }
+  }
+  &:active,
+  &.active {
+    .favorites-btn__icon-heart::before {
+      background: icon-heart($color-black, $color-black) no-repeat center /
+        contain;
+    }
+  }
+}
+
+.favorites-btn__icon-heart {
+  &::before {
+    content: '';
+    display: block;
+    background: icon-heart() no-repeat center / contain;
+    width: 23px;
+    height: 18px;
+    transition: $transition;
+  }
+}
+.favorites-btn__num {
+  color: $color-black;
+  font-family: $font-default;
+  font-size: 10.897px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.635px;
+  text-transform: uppercase;
+}

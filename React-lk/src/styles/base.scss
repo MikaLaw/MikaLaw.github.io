@@ -1,0 +1,255 @@
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  min-height: 100%;
+}
+
+body {
+  color: $color-black;
+  line-height: unset;
+  overflow: hidden;
+}
+
+.text-align {
+  &_end {
+    text-align: end !important;
+  }
+
+  &_center {
+    text-align: center !important;
+  }
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.main-alert {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1;
+
+  &.ant-alert-info {
+    background: $color-grey-1;
+    border: 1px solid $color-grey-2;
+    box-sizing: border-box;
+    border-radius: 1px;
+  }
+
+  .ant-alert-close-icon {
+    transition: $transition;
+
+    .anticon {
+      color: $color-ui-5;
+    }
+
+    &:before {
+      content: "Закрыть";
+      @include text-3();
+
+      margin-right: 14px;
+      color: $color-black;
+    }
+
+    &:hover {
+      &:before {
+        color: $color-brand-2-hover;
+      }
+
+      .anticon {
+        color: $color-brand-2-hover;
+      }
+    }
+  }
+
+  a {
+    color: $color-brand-2;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.main-alert + .header {
+  padding-top: 56px;
+}
+
+.main-alert + .page-green,
+.main-alert + .general-doc-page,
+.main-alert + .pharmacy-orders-page,
+.main-alert + .pharmacy-page, {
+  padding-top: 42px;
+}
+
+.main-alert ~ .custom-layout,
+.main-alert ~ .page-green,
+.main-alert ~ .general-doc-page,
+.main-alert ~ .pharmacy-orders-page,
+.main-alert ~ .pharmacy-page {
+  .ant-layout {
+    height: calc(100vh - 98px) !important;
+  }
+}
+
+.main-alert_auth + .header {
+  padding-top: 56px;
+
+  @include media-min($media-xl) {
+    padding-top: 70px;
+  }
+  @include media-min($media-xxl) {
+    padding-top: 56px;
+  }
+}
+
+.brand-style {
+  &.ant-input-search > .ant-input-group > .ant-input-group-addon:last-child .ant-input-search-button:not(.ant-btn-primary) {
+    width: 30px;
+    height: 30px;
+
+    .anticon svg {
+      color: $color-brand-2;
+      fill: $color-brand-2;
+    }
+  }
+}
+
+.ant-layout-sider + .ant-layout {
+  .ant-layout-content {
+    & > .scrollbar-container {
+      transition: all 0.29s ease 0s;
+      //max-width: calc($media-xxxl - 246px);
+
+      .scrollbar-container__body {
+        transition: all 0.29s ease 0s;
+        .main-content {
+          transition: all 0.29s ease 0s;
+          max-width: calc($media-xxxl - 246px);
+        }
+      }
+    }
+  }
+}
+
+.ant-layout-sider.ant-layout-sider-collapsed + .ant-layout {
+  .ant-layout-content {
+    & > .scrollbar-container {
+      //max-width: calc($media-xxxl - 48px);
+
+      .scrollbar-container__body {
+        .main-content {
+          max-width: calc($media-xxxl - 48px);
+        }
+      }
+    }
+  }
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  @include media-min($media-xxxl) {
+    width: 100%;
+    max-width: none !important;
+    padding-right: calc(100vw - 1614px - 246px - 60px);
+  }
+}
+
+.page-height-auto {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  .main-content {
+    height: auto;
+  }
+}
+
+.important-tag {
+  padding: 2px 4px;
+  @include text-3();
+  color: $color-white;
+  background-color: $color-brand-3;
+  border-radius: 2px;
+}
+
+.katren-icon {
+  padding: 7px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $gradient-5;
+  border-radius: 11px;
+  color: $color-white;
+}
+
+.technical-notification-alert {
+  &.ant-alert-info {
+    background: $color-grey-1;
+    border: 1px solid $color-grey-2;
+    box-sizing: border-box;
+    border-radius: 1px;
+  }
+  .ant-alert-close-icon {
+    transition: $transition;
+
+    .anticon {
+      color: $color-ui-5;
+    }
+
+    &:before {
+      content: "Закрыть";
+      @include text-3();
+
+      margin-right: 14px;
+      color: $color-black;
+    }
+
+    &:hover {
+      &:before {
+        color: $color-brand-2-hover;
+      }
+
+      .anticon {
+        color: $color-brand-2-hover;
+      }
+    }
+  }
+
+  a {
+    color: $color-brand-2;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.debt-import-date {
+  position: relative;
+}
+
+.debt-import-date__inner {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.page-margins > * + * {
+  margin-top: 20px;
+}

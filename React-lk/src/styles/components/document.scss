@@ -1,0 +1,7 @@
+.document {
+  max-width: 998px;
+  
+  & > * + * {
+    margin-top: 25px;
+  }
+}

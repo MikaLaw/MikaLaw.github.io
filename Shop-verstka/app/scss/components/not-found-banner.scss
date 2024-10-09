@@ -1,0 +1,60 @@
+.not-found-banner {
+  padding-bottom: 59%;
+  @include media-min($media-xs) {
+    padding-bottom: 259px;
+  }
+  @include media-min($media-sm) {
+    padding-bottom: 29px;
+  }
+  @include media-min($media-md) {
+    padding-bottom: 59px;
+  }
+  @include media-min($media-xl) {
+    padding-bottom: 75px;
+  }
+}
+.not-found-banner__wrap {
+  @include media-min($media-xs) {
+    max-width: 440px;
+  }
+  @include media-min($media-sm) {
+    max-width: 466px;
+  }
+  @include media-min($media-lg) {
+    max-width: 490px;
+  }
+}
+
+.not-found-banner__title {
+  @include head-28-700;
+  margin-bottom: 28px;
+  text-transform: uppercase;
+  @include media-min($media-xs) {
+    margin-bottom: 19px;
+  }
+  @include media-min($media-sm) {
+    @include head-32-700;
+    margin-bottom: 31px;
+  }
+  @include media-min($media-lg) {
+    @include head-34-700;
+  }
+}
+.not-found-banner__text {
+  @include text-14-500;
+  margin-bottom: 38px;
+  @include media-min($media-sm) {
+    margin-bottom: 45px;
+  }
+  @include media-min($media-lg) {
+    margin-bottom: 68px;
+  }
+  @include media-min($media-xl) {
+    margin-bottom: 93px;
+  }
+  p {
+    &:not(:last-child) {
+      margin-bottom: 18px;
+    }
+  }
+}

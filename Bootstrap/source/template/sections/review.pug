@@ -1,0 +1,24 @@
+-   
+    var reviewItems = [
+        {pic:"person_1", name:"John Doe", text:"“Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, maiores? Eos alias fugit eius, repudiandae molestias error”"},
+        {pic:"person_2", name:"Jean Doe", text:"“Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, maiores? Eos alias fugit eius, repudiandae molestias error”"},
+        {pic:"person_3", name:"Claire Dormey", text:"“Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, maiores? Eos alias fugit eius, repudiandae molestias error”"},
+        {pic:"person_4", name:"Jean Doe", text:"“Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, maiores? Eos alias fugit eius, repudiandae molestias error”"},
+        {pic:"person_5", name:"Claire Dormey", text:"“Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, maiores? Eos alias fugit eius, repudiandae molestias error”"},
+        ]
+section.review#testimonials.py-5
+    .container 
+        .row.mb-5
+            .col 
+                .review__head.text-center 
+                    +sectionTitle("Testimony", "Happy Customers", "Testimonials")
+        ul.review__list.row.owl-carousel.owl-theme 
+            each reviewItem in reviewItems
+                li.review__item.text-center
+                    .review__block.d-flex.flex-column.flex-sm-row 
+                        .review__pic.mr-4.mb-3.mb-sm-0
+                            img.review__img.img-fluid(src=`./img/${reviewItem.pic}.jpg`, alt="Фото пользователя")
+                        .review__desc.text-left
+                            blockquote.review__quote= reviewItem.text
+                            .review__name= "— " + reviewItem.name
+                    

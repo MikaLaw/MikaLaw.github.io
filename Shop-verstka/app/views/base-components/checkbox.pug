@@ -1,0 +1,25 @@
+mixin checkbox(data)
+	-
+		data = init(data, {
+			'block': 'checkbox',
+			'type': 'checkbox',
+			'label': 'Название поля',
+			'name': 'name',
+			'value': '0',
+			'class': '',
+			'checked': false,
+			'disabled': false,
+			'error': false,
+		})
+
+		var id = Math.random().toString(36).substring(2);
+		if (data['error']) {
+			data['class'] += ' error';
+		}
+
+	+b.checkbox&attributes(attributes)
+		if data['attr']
+			+e.INPUT.__input(type=data['type'], data-attr= data['attr'] id=id, name=data['name'], checked=data['checked'], disabled=data['disabled'] value=data['value'])
+		else 
+			+e.INPUT.__input(type=data['type'], id=id, name=data['name'], checked=data['checked'], disabled=data['disabled'] value=data['value'])
+		+e.LABEL.__label(for=id class=data['class']) !{data.label}

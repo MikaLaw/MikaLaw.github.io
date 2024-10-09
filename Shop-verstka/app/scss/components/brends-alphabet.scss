@@ -1,0 +1,93 @@
+.brends-alphabet {
+  .favorites-btn {
+    opacity: 0;
+    visibility: hidden;
+    transition: $transition;
+    margin-right: 4px;
+    &.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    @include media-min($media-sm) {
+      margin-right: 10px;
+    }
+    .favorites-btn__icon-heart {
+      &::before {
+        width: 15px;
+        height: 13px;
+      }
+    }
+  }
+}
+.brends-alphabet__list {
+  max-width: 734px;
+}
+.brends-alphabet__item {
+  display: flex;
+  &:not(:last-child) {
+    margin-bottom: 42px;
+  }
+}
+.brends-alphabet__title {
+  @include head-23-700;
+  margin-right: 10px;
+  @include media-min($media-sm) {
+    margin-right: 8px;
+  }
+}
+.brends-alphabet__name-list {
+  @include media-min($media-xs) {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
+  @include media-min($media-sm) {
+    flex-wrap: nowrap;
+    row-gap: unset;
+  }
+}
+.brends-alphabet__name-row {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  &:not(:last-child) {
+    margin-bottom: 13px;
+    @include media-min($media-xs) {
+      margin-bottom: 0;
+    }
+  }
+  @include media-min($media-xs) {
+    width: 190px;
+  }
+  @include media-min($media-sm) {
+    width: 175px;
+  }
+  @include media-min($media-md) {
+    width: 205px;
+  }
+}
+.brends-alphabet__name-item {
+  display: flex;
+  align-items: center;
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
+
+  &:hover {
+    .brends-alphabet__name {
+      color: $color-grey-2;
+    }
+    .favorites-btn {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+.brends-alphabet__name {
+  @include text-14-500;
+  color: inherit;
+  padding: 0;
+  text-decoration: none;
+  transition: $transition;
+}

@@ -1,0 +1,65 @@
+.counter {
+
+}
+
+.counter__title {
+  display: inline-flex;
+  margin-bottom: 15px;
+}
+
+.counter__icon {
+  margin-left: 8px;
+}
+
+.counter__container {
+  & > * + * {
+    margin-top: 5px;
+  }
+}
+
+.counter__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 18px;
+  border-radius: 4px;
+  border: 1px solid $color-hover;
+  transition: $transition;
+
+  &.hover {
+    cursor: pointer;
+
+    &:hover {
+      border-color: $color-text-3;
+      background-color: $color-hover;
+    }
+  }
+
+}
+
+.counter__text {
+
+}
+
+.counter__number {
+  padding: 0 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 26px;
+  height: 26px;
+  background-color: $color-yellow-brand-4;
+  border-radius: 15px;
+
+  .ant-skeleton {
+    width: 50%;
+  }
+
+  .ant-skeleton-content .ant-skeleton-paragraph {
+    margin-bottom: 0;
+
+    li {
+      width: 100% !important;
+    }
+  }
+}

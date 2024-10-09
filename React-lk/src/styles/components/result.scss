@@ -1,0 +1,18 @@
+.result {
+  padding-top: 164px;
+  .ant-result-subtitle {
+    @include text-2();
+    color: $color-black;
+  }
+
+  .ant-result-icon {
+    display: none;
+  }
+
+  .ant-result-extra {
+  }
+}
+
+.result-publication {
+  width: 100%;
+}

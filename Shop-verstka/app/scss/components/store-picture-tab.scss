@@ -1,0 +1,20 @@
+.store-picture-tab {
+  .wrap-img {
+    height: 200px;
+    width: 100%;
+    flex-shrink: 0;
+    @include media-min($media-xs) {
+      height: 268px;
+    }
+    @include media-min($media-sm) {
+      height: 415px;
+    }
+    @include media-min($media-lg) {
+      width: 708px;
+      height: 651px;
+    }
+    @include media-min($media-xl) {
+      width: 760px;
+    }
+  }
+}

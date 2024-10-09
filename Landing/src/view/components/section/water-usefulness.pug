@@ -1,0 +1,16 @@
++b.SECTION.water-usefulness#water-usefulness.main__water-usefulness(js-animate="fadeIn")
+	+e.container.container
+		+e.title.section__title(js-animate="fadeInUp") 
+			span.title-mark Свойства 
+			| и выгоды
+		+e.list-wrap 
+			+e.OL.list 
+				each item in waterUsefulnessList
+					+e.LI.item(js-animate="fadeInUp") 
+						+e.item-inner
+							+e.item-title= item.title
+							+e.UL.item-list
+								each subitem in item.list
+									+e.item-list-item !{subitem}
+							+e.A.item-button.button_pdv-sm(href="#")= item.btn
+

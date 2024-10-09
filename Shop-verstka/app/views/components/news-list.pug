@@ -1,0 +1,18 @@
+include news-card
+include pagination-block
+
+mixin news-list(data)
+	-
+		data = init(data, {
+			'block': 'news-list',
+			'list': newsList1,
+			'pagination': true
+		})
+	+b&attributes(data.attributes(attributes))
+		+e.UL.list 
+			each item in data['list']
+				+e.LI.item 
+					+news-card(item)
+		if data.pagination
+			+pagination-block()
+

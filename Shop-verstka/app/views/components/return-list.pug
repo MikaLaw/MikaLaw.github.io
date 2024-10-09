@@ -1,0 +1,13 @@
+include return-card
+
+mixin return-list(data)
+	-
+		data = init(data, {
+			'block': 'return-list',
+			'list': returnList,
+		})
+
+	+b&attributes(data.attributes(attributes))
+		+e.list
+			for item in data.list
+				+return-card(item)

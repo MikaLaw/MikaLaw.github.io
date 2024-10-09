@@ -1,0 +1,21 @@
+mixin application-list-card(data)
+	-
+		data = init(data, {
+			'block': 'application-list-card',
+			'application': 'Заявка № 232421',
+			'cost': '2 500 ₽',
+			'date': '25.06.23'
+		})
+	+b&attributes(data.attributes(attributes))
+		+e.wrap
+			+e.content-container 
+				+e.title 
+					+e.application= data.application
+					+e.cost= data.cost
+				+e.date= data.date
+			+e.control-container
+				+b.BUTTON.btn-arrow  подробнее
+				
+
+
+				

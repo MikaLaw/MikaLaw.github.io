@@ -1,0 +1,99 @@
+.form {
+
+}
+
+.form__prompt {
+  margin-top: 20px;
+  color: $color-ui-8;
+}
+
+.form__text {
+  text-align: center;
+
+  a {
+    color: $color-brand-1;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &_tooltip {
+    display: inline-block;
+    width: 100%;
+  }
+}
+
+.ant-form-item {
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.form-item-less-help {
+  .ant-form-item-explain-connected {
+    min-height: 0;
+  }
+}
+
+.form-item-require {
+  .ant-form-item-control-input {
+    .ant-form-item-control-input-content {
+      .ant-input {
+        background-color: $color-yellow;
+      }
+    }
+  }
+
+  .ant-form-item-label {
+    label.ant-form-item-required {
+      &:after {
+        color: $color-brand-3;
+      }
+    }
+  }
+}
+
+.form__collapse {
+
+}
+
+.form__collapse-panel {
+  .ant-collapse-header {
+    @include text-3();
+    padding: 10px 0 !important;
+    border-radius: 2px !important;
+    background: $color-ui-2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .anticon {
+      transform: rotate(90deg);
+      margin-right: 10px;
+      transition: $transition;
+
+      svg {
+        path {
+          fill: $color-brand-2;
+        }
+      }
+    }
+  }
+
+  &.ant-collapse-item-active {
+    .anticon {
+      transform: rotate(270deg);
+    }
+  }
+
+  .ant-collapse-content-box {
+    padding: 15px 0 0;
+  }
+}
+
+.entry-link {
+
+}

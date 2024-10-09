@@ -1,0 +1,29 @@
+mixin schedule-card(data)
+	-
+		data = init(data, {
+			'block': 'schedule-card',
+			'img': './img/components/course-page/img-9',
+			'title': 'Искусство депиляции воском',
+			'name': 'Наталья Дивнич',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+			'date': '12 марта — 25 марта',
+		})
+	+b&attributes(data.attributes(attributes))
+		+e.DIV.wrap
+			+e.DIV.coach-avatar 
+				+picture({
+					src: data.img,
+					png: true,
+				}).coach-img
+			+e.DIV.content
+				+e.DIV.title
+					span= data.title
+				+e.DIV.coach-info
+					+e.DIV.name= data.name
+					+e.DIV.cost-wrap
+						+e.DIV.cost= data.cost
+						+e.DIV.stock= data.stock
+			+e.DIV.control 
+				+e.DIV.date= data.date
+				+b.A.btn-grey(href="#registration-education" data-fancybox='' data-options='{"baseClass" : "fancybox-transparent"}') Записаться

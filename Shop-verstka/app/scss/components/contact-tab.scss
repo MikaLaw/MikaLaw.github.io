@@ -1,0 +1,45 @@
+.contact-tab__table {
+  display: table;
+}
+.contact-tab__row {
+  display: table-row;
+}
+.contact-tab__label {
+  @include text-14-600;
+  display: table-cell;
+  padding: 8px 8px 8px 0;
+  min-width: 134px;
+  @include media-min($media-sm) {
+    min-width: 163px;
+    padding: 11px 10px 11px 0;
+    @include text-15-600;
+  }
+  @include media-min($media-md) {
+    min-width: 142px;
+  }
+  @include media-min($media-lg) {
+    min-width: 208px;
+  }
+}
+.contact-tab__value {
+  @include text-14-500;
+  display: table-cell;
+  padding: 8px 0;
+  @include media-min($media-sm) {
+    @include text-15-500;
+    padding: 11px 0;
+  }
+
+  span {
+    display: block;
+    @include media-min($media-xs) {
+      display: inline-block;
+    }
+  }
+  a {
+    display: block;
+    text-decoration: none;
+    color: $color-black;
+    @include text-15-500;
+  }
+}

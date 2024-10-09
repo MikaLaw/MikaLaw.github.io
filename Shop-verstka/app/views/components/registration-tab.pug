@@ -1,0 +1,91 @@
+mixin registration-tab(data)
+	-
+		data = init(data, {
+			'block': 'registration-tab',
+		})
+
+	+b&attributes(data.attributes(attributes))
+		+b.FORM.form_profile._reg 
+			+e.body
+				+e.item
+					+form-field({
+						'title': 'Ваш телефон',
+						'component': {
+							'mixin': 'input',
+							'placeholder': '+ 7 (913) 812-64-34'
+						},
+					})
+				+e.item
+					+form-field({
+						'title': 'ФИО*',
+						'component': {
+							'mixin': 'input',
+							'placeholder': 'Введите ФИО'
+						},
+					})
+				+e.item
+					+form-field({
+						'title': 'Пол',
+						'component': {
+							'mixin': 'select',
+							'placeholder': 'Выберите пол',
+							'multiple': false,
+							'block': 'select_simple',
+						},
+					})
+				+e.item
+					+form-field({
+						'title': 'Дата рождения',
+						'component': {
+							'mixin': 'input',
+							'placeholder': '__.__.____'
+						},
+					})
+				+e.item
+					+form-field({
+						'title': 'Населенный пункт*',
+						'component': {
+							'mixin': 'select-search-simple',
+							'block': 'select_simple',
+							'multiple': false,
+							'placeholder': 'Начните вводить название',	
+						},
+					})
+				+e.item
+					+form-field({
+						'title': 'Любимый магазин',
+						'component': {
+							'mixin': 'select',
+							'block': 'select_simple',
+							'multiple': false,
+							'placeholder': 'Выберите',	
+						},
+					})
+				+e.item
+					+form-field({
+						'title': 'E-mail',
+						'component': {
+							'mixin': 'input',
+							'placeholder': ''
+						},
+					})
+				+e.item
+					+form-field({
+						'title': 'ваш  пароль*',
+						'component': {
+							'mixin': 'input-password',
+							'placeholder': 'ваш  пароль'
+						},
+							})
+				+e.item
+					+form-field({
+						'title': 'Повторите  пароль*',
+						'component': {
+							'mixin': 'input-password',
+							'placeholder': 'Повторите  пароль'
+						},
+					})
+													
+			+e.footer 
+				+b.BUTTON.btn-grey Регистрация
+				+e.text-agree Нажимая на кнопку «Регистрация», я даю свое <a href="#">Согласие на обработку персональных данных</a> и принимаю <a href="#">Договор оферты</a>

@@ -1,0 +1,195 @@
+.btn-v2 {
+  padding: 7px 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  line-height: 14px;
+  border-radius: 4px;
+  min-height: 34px;
+  box-shadow: none;
+
+  .ant-btn-loading-icon {
+    margin-right: 8px;
+  }
+
+  .anticon,
+  .anticon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  &.disabled,
+  &[disabled] {
+    color: $color-ui-7;
+    border-color: $color-border-6;
+    background: $color-white;
+    pointer-events: none;
+    .anticon {
+      color: $color-ui-7;
+    }
+  }
+
+  &-icon {
+    width: 34px;
+  }
+
+  &-sm {
+    min-height: 30px;
+    width: 30px;
+    height: 30px;
+  }
+
+  &.ant-btn-link {
+    padding: 0;
+    min-width: auto;
+    min-height: auto;
+    text-decoration: underline;
+    color: $color-brand-2;
+
+    &:hover {
+      text-decoration: none;
+      color: $color-brand-2;
+    }
+  }
+}
+
+.btn-v2-ghost {
+  .anticon {
+    color: $color-brand-2;
+  }
+}
+
+.btn-v2-primary {
+  .anticon {
+    color: $color-white;
+  }
+}
+
+.btn-back {
+  .anticon {
+    transform: rotate(-90deg);
+  }
+}
+
+.btn-icon-table {
+  background: transparent !important;
+  .anticon {
+    width: 18px;
+    height: 18px;
+    color: $color-brand-2;
+  }
+
+  &:hover .anticon {
+    color: $color-brand-2-hover;
+  }
+}
+
+.btn-v2-border {
+  width: 42px;
+  height: 34px;
+  border: 1px solid $color-ui-2;
+  border-radius: 4px;
+}
+
+.dropdown-btn {
+  @include notification(3px, 3px);
+
+  &.has-notifications {
+    &:after {
+      opacity: 1;
+    }
+  }
+}
+
+.btn-v2-recoding {
+  width: 42px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-color: $color-ui-3;
+}
+
+.invoice-btn {
+  .anticon {
+    transition: $transition;
+  }
+  &.ant-btn > div + span {
+    margin-left: 8px;
+  }
+
+  &.can-load {
+    .anticon {
+      position: relative;
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: -1px;
+        right: 0;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: $color-warning;
+      }
+    }
+  }
+
+  &.apteka-invoice {
+    &:not(.ant-btn-icon-only) {
+      border-color: $color-apteka-2-2;
+    }
+    .anticon {
+      color: $color-text-1;
+    }
+
+    &:hover, &:active, &:focus {
+      background: $color-white;
+
+      .anticon {
+        color: $color-apteka-2-2;
+      }
+    }
+
+    &:after {
+      content: none;
+    }
+  }
+}
+
+.invoice-btn-loading {
+  width: 28px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.apteka-table-btn {
+  background: transparent !important;
+
+  .anticon {
+    &, & > svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &:before, &:after {
+    content: none !important;
+  }
+
+  &.apteka-marked-btn {
+    .anticon {
+      &, & > svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    &:hover {
+      .anticon {
+        color: $color-error !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+doctype html
+include ../bemto/bemto.pug
+include ../includes/data
+include ../components/head-dashboard
+include ../components/mobile-menu
+include ../components/footer
+include ../components/menu-nav
+include ../components/breadcrumbs
+include ../components/basket
+include ../components/menu-catalog  
+include ../base-components/form-field
+include ../base-components/picture
+
+html(lang='ru')
+  head
+    block meta
+      include ../includes/meta
+
+    block links
+      include ../includes/headlinks
+
+    block title
+
+  body
+    .awPageWrapper
+      .awPageWrapper-container
+        header.header#header
+          +head-dashboard()
+
+        main.page
+          .page__main 
+            block content
+
+      +footer()._404
+      +menu-nav()      
+      +menu-catalog
+      +basket()
+      +mobile-menu
+    include ../components/notifications
+    include ../includes/modal-forms
+
+    block bottomlinks
+      include ../includes/footerlinks

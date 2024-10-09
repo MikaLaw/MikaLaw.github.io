@@ -1,0 +1,61 @@
+.discount-system {
+}
+.discount-system__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 20px;
+  column-gap: 36px;
+  @include media-min($media-lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.discount-system-card__head {
+  padding: 20px 15px;
+  background-color: $color-background-3;
+  border-radius: 4px;
+}
+.discount-system-card__body {
+  display: none;
+  padding: 0 10px;
+  @include media-min($media-lg) {
+    display: block;
+    margin-top: 25px;
+    padding: 0;
+  }
+}
+.discount-system-card__btn-more {
+  @include text-13-500;
+  color: $color-black;
+  display: flex;
+  align-items: center;
+  background: $color-background-3;
+  padding: 20px 15px;
+  padding-top: 0px;
+  width: 100%;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+
+  @include media-min($media-lg) {
+    display: none;
+  }
+
+  &.is-open {
+    background: transparent;
+    padding: 0;
+    &::after {
+      transform: rotate(180deg);
+    }
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    width: 12px;
+    height: 6px;
+    flex-shrink: 0;
+    margin-left: 5px;
+    background: icon-drop-down() no-repeat center / contain;
+    transition: $transition;
+  }
+}

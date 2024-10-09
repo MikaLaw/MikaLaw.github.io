@@ -1,0 +1,52 @@
+.ant-table-filter-dropdown-search {
+  .ant-input-affix-wrapper {
+    padding: 8px 8px 8px 12px;
+    box-shadow: none !important;
+
+    &:hover, &:focus, &:active {
+      box-shadow: none;
+    }
+
+    &:hover {
+      border-color: $color-ui-8;
+    }
+
+    &:focus,
+    &-focused {
+      border-color: $color-ui-4;
+      color: $color-black;
+    }
+
+    &:active {
+      border-color: $color-ui-4;
+      color: $color-ui-6;
+    }
+
+    .ant-input-prefix {
+      order: 2;
+      margin: 0;
+    }
+
+    .ant-input {
+      order: 1;
+    }
+  }
+
+  &.scroll-dropdown {
+    padding-right: 0;
+
+    .scrollbar-container {
+      padding-bottom: 8px;
+    }
+
+    & .scrollbar-container__body {
+      .ant-row {
+        padding-right: 16px;
+      }
+
+      & > * + * {
+        margin-top: 10px;
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.timer {
+  position: relative;
+}
+
+.timer__cancel {
+  cursor: pointer;
+  color: $color-brand-2;
+  transition: $transition;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &:hover {
+    color: $color-brand-2-hover;
+  }
+}

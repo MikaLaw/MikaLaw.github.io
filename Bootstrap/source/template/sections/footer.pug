@@ -1,0 +1,45 @@
+-   var instItems = ["insta_1","insta_2","insta_3","insta_4","insta_5","insta_6"]
+-   
+    var menuItems = [
+        {title:"About Us", link: "about"},
+        {title:"Testimonials", link: "testimonials"},
+        {title:"Terms of Service", link: ""},
+        {title:"Privacy", link: ""},
+        {title:"Contact Us", link: "footer"},
+        ]
+footer.footer#footer.bg-light 
+    .container 
+        .row.mb-10
+            .col-lg-3.col-12.mb-lg-0.mb-4
+                .footer__title.mb-3 Instagram
+                ul.instagram-pic__list.row
+                    each instItem in instItems
+                        li.instagram-pic__item.col-4.gal_col
+                            a.instagram-pic__link.d-block(href="#" target="_blank" rel="noopener")
+                                img.instagram-pic__img.img-fluid(src=`./img/${instItem}.jpg`, alt="Картинка из инстаграма")
+
+            .col-lg-8.col-12.m-auto
+                .row 
+                    .col-lg-6.mb-lg-0.mb-4
+                        .footer__title.mb-4 Quick Links
+                        ul.footer-menu__list
+                            each menuItem in menuItems
+                                li.footer-menu__item
+                                    a.footer-menu__link.d-block.py-1(href=`#${menuItem.link}`)= menuItem.title
+                    .col-lg-6
+                        .footer__title.mb-4 Newsletter
+                        .footer__text.mb-3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt odio iure animi ullam quam, deleniti rem!
+                        form.footer__form#footer__form
+                            .d-flex.flex-nowrap
+                                input.form__input.d-inline-block.mr-3(type="email", placeholder="Email", name="email" required) 
+                                button.section__btn-link.d-inline-block.px-4.py-3.form__btn#form__btn-submit( type="submit") Send
+        .row
+            .col.d-flex.justify-content-center
+                .footer__copyright.d-flex.flex-wrap.justify-content-center
+                    .footer__copyright-text.mr-1 Copyright © 
+                        span.footer__copyright-year.mr-1 2022 
+                        | All rights reserved | This template is made with 
+                        svg.footer__copyright-icon.mr-1.d-inline-block(width="16" height="16")
+                            use(xlink:href="./img/sprite.svg#heart")
+                        | by
+                        a.footer__copyright-link.d-inline-block.ml-1(href="#" target="_blank" rel="noopener") Colorlib

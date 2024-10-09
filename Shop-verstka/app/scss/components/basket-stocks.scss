@@ -1,0 +1,93 @@
+.basket-stocks {
+  padding: 10px 0px 5px 15px;
+  border-radius: 4px;
+  background: $color-background-3;
+  margin-bottom: 20px;
+  @include media-min($media-md) {
+    padding: 10px 0px 10px 15px;
+    background: transparent;
+    padding: 0;
+  }
+
+  .basket-stocks__wrap {
+    @include media-min($media-md) {
+      padding: 10px 10px 10px 10px;
+      border-radius: 4px;
+      background: $color-background-3;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+  }
+}
+.basket-stocks__title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  @include media-min($media-md) {
+    margin-bottom: 0;
+  }
+  img {
+    width: 25px;
+    height: 25px;
+    flex-shrink: 0;
+    object-fit: contain;
+    display: block;
+    margin-right: 10px;
+  }
+}
+.basket-stocks__title-text {
+  @include text-14-500;
+}
+.basket-stocks__brends-list {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: auto;
+  padding-bottom: 5px;
+  scrollbar-color: $color-grey-2 $color-background-3;
+  scrollbar-width: thin;
+  &:hover {
+    &::-webkit-scrollbar-thumb {
+      background-color: $color-grey-2;
+    }
+  }
+  &::-webkit-scrollbar {
+    width: 4px;
+    height: 6px;
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    transition: $transition;
+    border-radius: 1px;
+    border-radius: 1px;
+  }
+  @include media-min($media-md) {
+    column-gap: 9px;
+    flex-wrap: wrap;
+    padding-bottom: 0;
+  }
+}
+.basket-stocks__brend {
+  @include head-10-700;
+  color: $color-grey;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: $color-background;
+  margin-right: 9px;
+  @include media-min($media-md) {
+    background: transparent;
+    margin-right: 0;
+  }
+}
+.basket-stocks__link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: $transition;
+  &:hover,
+  &:active {
+    color: $color-black;
+  }
+}

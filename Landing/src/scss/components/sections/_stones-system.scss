@@ -1,0 +1,304 @@
+.stones-system{
+    @include media-min($media-md) {
+        position: relative;
+        height: 720px;
+        background: no-repeat center / auto 100%;
+        background-image: url("../../img/components/stones-system/stones-bg.jpg");
+    }
+
+    @include media-min($media-lg) {
+        height: 900px;
+    }
+    
+}
+
+.stones-system__video {
+    display: none;
+
+    @include media-min($media-md) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.stones-system__container {
+    @include media-min($media-md) {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        height: 100%;
+    }
+}
+
+.stones-system__image{
+    position: relative;
+    height: 310px;
+    margin-right: -20px;
+    margin-bottom: 55px;
+    margin-left: -20px;
+    background: no-repeat center / auto 100%;
+    background-image: url("../img/components/stones-system/stones-bg-sm.jpg"); 
+
+    @include media-min($media-xs) {   
+        height: 480px;
+        margin-right: -30px;
+        margin-bottom: 65px;
+        margin-left: -30px;
+        background-position: center; 
+    }
+
+    @include media-min($media-sm) {
+        height: 670px;
+        margin-right: -40px;
+        margin-left: -40px;
+        background-position: center;
+    }
+
+    @include media-min($media-md) {
+        position: static;
+        height: 0;
+        margin: 0;
+        margin-right: -50px;
+        margin-left: -50px;
+        background: 0 0;
+    }    
+}
+
+.stones-system__container>* {  
+    @include media-min($media-md) {
+        max-width: 100%;
+    }
+}
+
+.stones-system__stones-item{
+    position: absolute;
+    list-style: none;
+
+    &:nth-child(1) {
+        top: 45%;
+        left: 18%;
+
+        @include media-min($media-xs) {
+            left: 22%;
+        }
+
+        @include media-min($media-md) {
+            top: 45%;
+            left: 48%;
+        }
+    }
+
+    &:nth-child(2){
+        top: 70%;
+        left: 30%;
+
+        @include media-min($media-xs) {
+            left: 35%;
+        }
+
+        @include media-min($media-md) {
+            top: 65%;
+            left: 55%;
+        }
+
+        @include media-min($media-lg) {
+            top: 68%;
+        }
+    }
+
+    &:nth-child(3){
+        top: 35%;
+        left: 40%;
+
+        @include media-min($media-md) {
+            top: 35%;
+            left: 64%;
+        }
+    }
+
+    &:nth-child(4){
+        top: 65%;
+        left: 60%;
+
+        @include media-min($media-md) {
+            top: 64%;
+            left: 75%;
+        }
+    }
+
+    &:nth-child(5){
+        top: 42%;
+        left: 65%;
+ 
+        @include media-min($media-xs) {
+            left: 70%;
+        }
+
+        @include media-min($media-md) {
+            top: 43%;
+            left: 85%;
+        }
+
+        @include media-min($media-lg) {
+            left: 83%;
+        }   
+    }
+}
+
+.stones-system__stones-link{
+    position: relative;
+    display: inline-block;
+    padding: 5px 35px 5px 10px;
+    color: $color-white;
+    font-weight: 400;
+    font-size: 12px;
+    font-family: $font-default;
+    font-style: normal;
+    line-height: 19px;
+    text-decoration: none;
+    background-color: $color-ui-3;
+    border-radius: 30px;
+    transition: $transition;
+
+    &:focus, 
+    &:hover {
+        opacity: .8;
+    }
+
+    &::after {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        width: 16px;
+        height: 16px;
+        background-image: url("data:image/svg+xml,%3Csvg width=%2216%22 height=%2217%22 viewBox=%220 0 16 17%22 fill=%22none%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cpath d=%22M8.8 6.00869H7.2V4.40869H8.8V6.00869ZM8 14.8087C11.528 14.8087 14.4 11.9367 14.4 8.40869C14.4 4.88069 11.528 2.00869 8 2.00869C4.472 2.00869 1.6 4.88069 1.6 8.40869C1.6 11.9367 4.472 14.8087 8 14.8087ZM8 0.408691C9.05057 0.408691 10.0909 0.615618 11.0615 1.01766C12.0321 1.41969 12.914 2.00897 13.6569 2.75184C15.1571 4.25213 16 6.28696 16 8.40869C16 10.5304 15.1571 12.5653 13.6569 14.0655C12.914 14.8084 12.0321 15.3977 11.0615 15.7997C10.0909 16.2018 9.05057 16.4087 8 16.4087C5.87827 16.4087 3.84344 15.5658 2.34315 14.0655C0.842854 12.5653 0 10.5304 0 8.40869C0 7.35812 0.206925 6.31783 0.608963 5.34722C1.011 4.37662 1.60028 3.49471 2.34315 2.75184C3.08601 2.00897 3.96793 1.41969 4.93853 1.01766C5.90914 0.615618 6.94942 0.408691 8 0.408691ZM8.8 12.4087H7.2V7.60869H8.8V12.4087Z%22 fill=%22white%22/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: center;
+        transform: translateY(-50%);
+        content: "";
+    }
+}
+
+.stones-system__content{
+    @include media-min($media-xs) {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: flex-start;
+        width: 540px;
+        max-width: 100%;
+        height: 220px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    @include media-min($media-md) {
+        width: 250px;
+        height: auto;
+        margin-left: 0;    
+    }
+
+}
+
+.stones-system__title{
+    margin-bottom: 10px;
+
+    @include media-min($media-md) {
+        margin-bottom: 20px;
+    }
+}
+
+.stones-system__text, 
+.stones-system__title {
+    @include media-min($media-xs) {
+        width: 220px;
+    }
+
+    @include media-min($media-md) {
+        width: auto;
+    }
+}
+
+.stones-system__text{
+    margin-bottom: 15px;
+    color: $color-black;
+    font-weight: 400;
+    font-size: 16px;
+    font-family: $font-default;
+    font-style: normal;
+    line-height: 24px;
+
+    @include media-min($media-xs) {
+        margin-bottom: 35px;
+    }
+
+    @include media-min($media-md) {
+        font-size: 18px;
+        line-height: 26px;
+    }
+}
+
+.stones-system__list{
+    margin-bottom: 20px;
+    list-style: none;
+
+    @include media-min($media-xs) {
+        order: 4;
+    }
+
+    @include media-min($media-md) {
+        order: 0;
+    }
+}
+
+.stones-system__list-item:not(:last-child){
+    margin-bottom: 10px;
+
+    @include media-min($media-sm) {
+        margin-bottom: 5px;
+    }
+}
+
+.stones-system__list-link{
+    color: $color-black;
+    font-weight: 700;
+    font-size: 18px;
+    font-family: $font-title;
+    font-style: normal;
+    line-height: 23px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: $transition;
+
+    &:focus, 
+    &:hover {
+        color: $color-ui-2;
+    }
+
+
+    @include media-min($media-sm) {
+        font-size: 26px;
+        line-height: 38px;
+    }
+
+    @include media-min($media-md) {
+        font-size: 26px;
+        line-height: 38px;
+    }
+}
+
+.stones-system__button {
+    min-width: 220px;
+}
+
+.stones-system__content>* {
+    @include media-min($media-xs) {
+        max-width: 100%;
+    }
+}

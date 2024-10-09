@@ -1,0 +1,93 @@
+.logistic-page {
+  //max-width: 731px;
+  height: calc(100% - 47px);
+  padding-bottom: 47px;
+
+  & > * + * {
+    margin-top: 16px;
+  }
+
+  h1 + *,
+  h2 + *,
+  h3 + *,
+  h4 + *,
+  h5 + *,
+  h6 + * {
+    margin-top: 0;
+  }
+
+  &_md {
+    max-width: 888px;
+  }
+
+  &_lg {
+    max-width: 940px;
+  }
+}
+
+.logistic-page__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & + * {
+    margin-top: 7px;
+  }
+}
+
+.logistic-page__btns {
+  & > * + * {
+    margin-left: 8px;
+  }
+}
+
+.logistic-table-footer {
+  min-height: 40px;
+  box-shadow: none;
+  border-top: 0;
+  .ant-pro-footer-bar-left {
+    display: none;
+  }
+
+  .ant-pro-footer-bar-right {
+    margin: 0;
+    width: 100%;
+
+    .pagination-container {
+      margin-top: 0 !important;
+    }
+  }
+}
+
+.logistic-link {
+  padding: 0 !important;
+  @include text-3();
+  line-height: 14px !important;
+  color: $color-ui-6;
+
+  &:hover {
+    .anticon + span {
+      text-decoration: none;
+    }
+  }
+
+  .anticon {
+    width: 15px;
+    height: 15px;
+    color: $color-brand-2;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .anticon + span {
+    text-decoration: underline;
+  }
+
+  & > .anticon + span {
+    margin-left: 10px;
+  }
+
+}

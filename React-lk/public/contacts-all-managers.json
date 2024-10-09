@@ -1,0 +1,26 @@
+[
+    {
+        "emails": ["qwerty@gmail.com", "ui@gmail.com"],
+        "fullName":"Maria Ivanovna Marinova",
+        "filial": "Уфа",
+        "juridicals": ["ООО"],
+        "isShowTelegram": true,
+        "isShowWhatsapp": true,
+        "phone": "89005651236",
+        "photo": null,
+        "telegramLink": "http",
+        "whatsappLink": "http"
+    },
+    {
+        "emails": ["qwerty@gmail.com", "ui@gmail.com"],
+        "fullName":"Maria Ivanovna Marinova",
+        "filial": "Уфа",
+        "juridicals": ["ООО"],
+        "isShowTelegram": true,
+        "isShowWhatsapp": true,
+        "phone": "89005651236",
+        "photo": null,
+        "telegramLink": "http",
+        "whatsappLink": "http"
+    }
+]

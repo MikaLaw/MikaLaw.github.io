@@ -1,0 +1,27 @@
+.user-btn {
+  display: block;
+}
+
+.user-btn__icon-user {
+  &::before {
+    content: '';
+    display: block;
+    background: icon-user() no-repeat center / contain;
+    width: 24px;
+    height: 24px;
+    transition: $transition;
+  }
+  &:hover,
+  &:focus {
+    &::before {
+      background: icon-user($color-grey-2) no-repeat center / contain;
+    }
+  }
+  &.active,
+  &:active {
+    &::before {
+      background: icon-user($color-black, $color-black) no-repeat center /
+        contain;
+    }
+  }
+}

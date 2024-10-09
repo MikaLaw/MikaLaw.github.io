@@ -1,0 +1,15 @@
+mixin address-card(data)
+	-
+		data = init(data, {
+			'block': 'address-card',
+			'id': 'map2',
+			'title': 'Отдел по работе с клиентами',
+			'text': 'г. Барнаул, ул. Власихинская, д. 91'
+		})
+
+	+b&attributes(data.attributes(attributes))
+		+e.wrap
+			+e.title= data.title
+			+e.text= data.text
+			+e.map-container
+				+e.map(id= data.id)

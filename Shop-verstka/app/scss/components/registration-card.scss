@@ -1,0 +1,79 @@
+.registration-card {
+  padding: 24px 13px;
+  border-radius: 4px;
+  border: 1px solid $color-grey;
+  @include media-min($media-sm) {
+    padding: 24px 20px;
+  }
+  .btn-grey {
+    display: inline-block;
+  }
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+.registration-card__wrap {
+  @include media-min($media-xs) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 5px;
+  }
+}
+.registration-card__content-container {
+  margin-bottom: 10px;
+  @include media-min($media-xs) {
+    margin-bottom: 0;
+  }
+}
+.registration-card__title {
+  @include head-10-700;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  @include media-min($media-sm) {
+    @include head-14-700;
+    margin-bottom: 11px;
+  }
+  span {
+    margin-left: 3px;
+    padding-left: 9px;
+    display: inline-block;
+    position: relative;
+    @include media-min($media-sm) {
+      margin-left: 9px;
+      padding-left: 13px;
+    }
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      width: 2px;
+      height: 80%;
+      background-color: $color-black;
+    }
+  }
+}
+.registration-card__cost-wrap {
+  display: flex;
+  align-items: flex-end;
+}
+.registration-card__cost {
+  @include head-16-700;
+  text-transform: uppercase;
+  @include media-min($media-sm) {
+    @include head-23-700;
+  }
+}
+.registration-card__stock {
+  @include head-14-700;
+  text-transform: uppercase;
+  color: $color-grey;
+  text-decoration: line-through;
+  margin-left: 15px;
+  @include media-min($media-sm) {
+    @include head-16-700;
+  }
+}

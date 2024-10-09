@@ -1,0 +1,59 @@
+.choose-pharmacy {
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 9px;
+  color: $color-black;
+
+  & > * + * {
+    margin-left: 6.5px;
+  }
+
+  &__link {
+    @include head-5();
+    margin-top: 6px;
+    display: flex;
+    align-items: center;
+
+    color: $color-brand-2;
+
+    &:hover {
+      color:  $color-brand-2-hover;
+    }
+  }
+}
+
+.choose-pharmacy-modal {
+  .ant-modal-body {
+    min-height: 300px;
+    padding-bottom: 25px;
+  }
+}
+
+.choose-pharmacy__spacing {
+  margin-left: 6.5px;
+  color: $color-ui-6;
+}
+
+.choose-pharmacy__reset {
+  color: $color-brand-2;
+  font-size: 22px;
+  line-height: 30px;
+  .anticon {
+    display: flex;
+    margin-right: 0 !important;
+    font-size: 15px;
+    color: $color-brand-2;
+
+    svg{
+      transition: $transition;
+    }
+  }
+  .anticon + span {
+    margin-left: 5px;
+  }
+
+  &:hover {
+    color: $color-brand-2-hover;
+  }
+}

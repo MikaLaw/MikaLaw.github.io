@@ -1,0 +1,23 @@
+mixin main-top-card(data)
+	-
+		data = init(data, {
+			'block': 'main-top-card',
+			'img': './img/components/main-banner/img-2.jpg',
+			'img-min': './img/components/main-banner/img-2-mob.jpg',
+			'title': 'DEWAL cosmetics',
+			'text': 'Удовольствие для себя — профессиональная косметика для волос',
+		})
+
+	+b&attributes(data.attributes(attributes))
+		+e.wrap
+			.global-wrapper
+				+e.content-container 			
+					+e.title= data.title
+					+e.text= data.text
+					+e.BUTTON.btn Смотреть
+		+e.wrap-img 
+			picture
+				source(media="(max-width: 767px)" srcset='./img/components/main-banner/' + data['img-min'])
+				source(media="(min-width: 768px)" srcset='./img/components/main-banner/' + data['img'])
+				+e.IMG.img(src='./img/components/main-banner/' + data['img'] alt= data['title'])
+

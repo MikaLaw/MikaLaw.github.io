@@ -1,0 +1,33 @@
+mixin loyalty-table(data)
+	-
+		data = init(data, {
+			'block': 'loyalty-table',
+			'title': 'Условия предоставления разовой скидки:',
+			'list': [
+				{
+					label: 'от 500 рублей',
+					value: '3%'
+				},
+				{
+					label: 'более 5 000 рублей',
+					value: '5%'
+				},
+				{
+					label: 'более 10 000 рублей',
+					value: '7%'
+				},
+				{
+					label: 'более 20 000 рублей',
+					value: '10%'
+				},                
+			]
+		})
+
+	+b&attributes(data.attributes(attributes))
+		+e.wrap 
+			+e.title= data.title
+			+e.UL.list 
+				each item in data.list 
+					+e.LI.item 
+						+e.label= item.label
+						+e.value= item.value

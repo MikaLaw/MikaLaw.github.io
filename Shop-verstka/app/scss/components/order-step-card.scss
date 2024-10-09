@@ -1,0 +1,96 @@
+.order-step {
+  margin-bottom: 30px;
+}
+.order-step-card {
+}
+.order-step__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  counter-reset: num;
+  @include media-min($media-lg) {
+    grid-template-columns: repeat(3, 2fr);
+  }
+}
+.order-step-card {
+  padding: 20px;
+  border-radius: 4px;
+  background: $color-background-2;
+}
+.order-step-card__head {
+  margin-bottom: 20px;
+}
+.order-step-card__title {
+  @include head-14-700;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  @include media-min($media-sm) {
+    @include head-16-700;
+  }
+
+  &::after {
+    content: '';
+    display: inline-block;
+    height: 1px;
+    background-color: rgba(42, 31, 21, 0.2);
+    width: 100%;
+    vertical-align: middle;
+  }
+
+  &::before {
+    content: counter(num);
+    counter-increment: num;
+    display: block;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    border: 1px solid $color-black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-black;
+    @include text-14-500;
+  }
+}
+.order-step-card__item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px 30px;
+  @include media-min($media-xs) {
+    flex-direction: row;
+    align-items: center;
+  }
+  @include media-min($media-lg) {
+    flex-direction: column;
+  }
+  @include media-min($media-xl) {
+    align-items: center;
+    flex-direction: row;
+    align-items: center;
+  }
+  &:not(:last-child) {
+    margin-bottom: 21px;
+  }
+}
+.order-step-card__item-label {
+  @include head-10-700;
+  text-transform: uppercase;
+
+  @include media-min($media-xs) {
+    width: 122px;
+  }
+  @include media-min($media-lg) {
+    width: 100%;
+  }
+  @include media-min($media-xl) {
+    width: 122px;
+  }
+}
+.order-step-card__item-value {
+  @include text-14-500;
+  color: $color-grey;
+  flex: 1;
+}

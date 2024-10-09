@@ -1,0 +1,81 @@
+.contacts-soc {
+  padding: 30px 15px 30px 15px;
+  border-radius: 3px;
+  background: $color-ui-4;
+  width: 290px;
+  flex-shrink: 0;
+  @include media-min($media-xs) {
+    padding: 30px 40px 30px 30px;
+    width: 350px;
+  }
+}
+.contacts-soc__head {
+  border-bottom: 1px solid rgba(42, 31, 21, 0.15);
+  padding-bottom: 14px;
+  margin-bottom: 15px;
+  @include media-min($media-xs) {
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+  }
+}
+.contacts-soc__title {
+  @include head-14-700;
+  text-transform: uppercase;
+  @include media-min($media-xs) {
+    @include head-16-700;
+  }
+}
+.contacts-soc__body {
+}
+.contacts-soc__list {
+}
+.contacts-soc__item {
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+.contacts-soc__item-link {
+  display: block;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  transition: $transition;
+
+  &:hover,
+  &:active {
+    opacity: 0.6;
+  }
+}
+.contacts-soc__icon {
+  &::before {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 28px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    flex-shrink: 0;
+    margin-right: 20px;
+    @include media-min($media-xs) {
+      width: 42px;
+      height: 42px;
+    }
+  }
+  &.icon-whatsapp {
+    &::before {
+      background-image: url('../img/icons/whatsapp.svg');
+    }
+  }
+  &.icon-telegram {
+    &::before {
+      background-image: url('../img/icons/telegram-strocke.svg');
+    }
+  }
+}
+.contacts-soc__text {
+  @include text-14-500;
+  @include media-min($media-xs) {
+    @include text-15-500;
+  }
+}

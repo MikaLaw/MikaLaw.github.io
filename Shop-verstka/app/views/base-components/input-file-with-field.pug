@@ -1,0 +1,20 @@
+include input
+
+mixin input-file-with-field(data)
+	-
+		data = init(data, {
+			label: 'Прикрепить файл(-ы)',
+			'label-multi-not-first': 'Прикрепить файл(-ы)',
+			icon: 'file',
+		})
+	.input-file__wrap.input-file-with-field
+		if data['field-type'] === 'input'
+			+input()
+			+b.input-file.js-input-file-wrap&attributes(attributes)(class=(data.class ? data.class : '') data-input-multi='true')
+				+e.LABEL.body
+					+e.INPUT.input.js-input-file(type='file')
+					+b.btn-file
+						+b.SPAN.js-input-file-name(data-not-first=data['label-multi-not-first'])!=data.label
+		else if data['field-text']
+			.input-file__text= data['field-text']
+

@@ -1,0 +1,62 @@
+.loyalty-banner {
+  position: relative;
+  border-radius: 4px;
+  background: #dde9fb;
+  padding: 25px 20px;
+  overflow: hidden;
+  @include media-min($media-md) {
+    padding: 34px 20px;
+  }
+  .wrap-img-bg {
+    position: absolute;
+    width: 446px;
+    right: -174px;
+    top: unset;
+    bottom: -183px;
+    @include media-min($media-sm) {
+      right: -242px;
+      top: 24px;
+      bottom: 0;
+    }
+    @include media-min($media-md) {
+      right: -192px;
+      top: 33px;
+    }
+  }
+  .wrap-img-qr {
+    width: 124px;
+    height: 124px;
+    flex-shrink: 0;
+  }
+}
+.loyalty-banner__content-container {
+  margin-bottom: 20px;
+  @include media-min($media-sm) {
+    max-width: 441px;
+    margin-bottom: 0;
+  }
+  @include media-min($media-md) {
+    max-width: 530px;
+  }
+}
+.loyalty-banner__wrap {
+  position: relative;
+  z-index: 1;
+  @include media-min($media-sm) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 586px;
+  }
+  @include media-min($media-md) {
+    max-width: 752px;
+  }
+}
+.loyalty-banner__title {
+  @include head-23-700;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.loyalty-banner__text {
+  @include text-15-500;
+}

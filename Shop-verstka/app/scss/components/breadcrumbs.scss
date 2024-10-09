@@ -1,0 +1,35 @@
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+
+  li {
+    &:last-child {
+      a {
+        color: rgba($color-grey-2, 0.6);
+        &::after {
+          display: none;
+        }
+      }
+    }
+
+    a {
+      display: inline-block;
+      color: $color-grey-2;
+      @include text-10-500;
+      text-decoration: none;
+      transition: $transition;
+      margin-right: 4px;
+      &:hover {
+        opacity: 0.6;
+      }
+      &:after {
+        content: '/';
+        display: inline-block;
+        color: $color-grey-2;
+        width: 4px;
+        margin-left: 4px;
+        height: auto;
+      }
+    }
+  }
+}

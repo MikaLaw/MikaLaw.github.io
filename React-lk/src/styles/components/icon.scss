@@ -1,0 +1,140 @@
+.custom-icon {
+  svg {
+    fill: $color-brand-2;
+
+    path {
+      fill: $color-brand-2;
+    }
+  }
+}
+
+.icon-color-info {
+  color: $color-info !important;
+}
+
+.icon-color-green-3 {
+  color: $color-green-3 !important;
+}
+
+.icon-color-white {
+  svg {
+    fill: $color-white;
+    stroke: $color-white;
+
+    path {
+      stroke: $color-white;
+      fill: $color-white;
+    }
+  }
+}
+
+.icon_color-brand {
+  color: $color-brand-2;
+}
+
+.icon-15-white {
+  width: 15px;
+  height: 15px;
+  svg {
+    width: 100%;
+    height: 100%;
+    path {
+      fill: $color-white;
+    }
+  }
+}
+
+.input-number-check-icon {
+  width: 20px;
+  height: 20px;
+  color: $color-ui-4;
+  margin-left: 10px !important;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.icon-15 {
+  width: 15px;
+  height: 15px;
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.icon-16 {
+  width: 16px;
+  height: 16px;
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.icon-18 {
+  width: 18px;
+  height: 18px;
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.icon-13 {
+  width: 13px;
+  height: 13px;
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.menu-collapse-icon {
+  font-size: 20px !important;
+  width: 20px !important;
+  height: 20px !important;
+  transition: $transition-medium !important;
+
+  &.collapsed {
+    transform: rotate(180deg);
+  }
+}
+
+.icon-warning {
+  color: $color-warning !important;
+}
+
+.ant-input-password-icon,
+.icon-20 {
+  width: 20px;
+  height: 20px;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.icon-brand {
+  svg path {
+    stroke: $color-brand-2;
+    fill: $color-brand-2;
+  }
+}
+
+.icon_color-apteka {
+  color: $color-text-1;
+}
+
+.icon-simple {
+  color: $color-brand-2;
+  transition: $transition;
+  cursor: pointer;
+
+  &:hover {
+    color: $color-brand-2-hover;
+  }
+}

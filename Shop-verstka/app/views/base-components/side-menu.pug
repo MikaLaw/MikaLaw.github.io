@@ -1,0 +1,25 @@
+mixin side-menu(data)
+	-
+		data = init(data, {
+			'block': 'side-menu',
+			'list': [			
+				{text: 'Мои покупки', active: true},
+				{text: 'Избранное'},
+				{text: 'Моя карта'},
+				{text: 'Лист ожидания'},
+				{text: 'Заявки на возврат'},
+				{text: 'Обратная связь'},
+				{text: 'Личные данные'},
+				{text: 'Выход'},
+			]
+		})
+
+	+b&attributes(data.attributes(attributes))
+		+e.wrap
+			+e.title Личный кабинет
+			+e.UL.list 
+				each item in data.list 
+					+e.LI.item(class= item.active ? 'is-active' : '')
+						+e.A.link(href="!#")= item.text
+			if data['subtext']
+				+e.subtext !{data['subtext']}

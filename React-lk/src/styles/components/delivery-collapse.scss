@@ -1,0 +1,39 @@
+.delivery-collapse {
+  border: 0;
+  .ant-collapse-header {
+    padding: 10px !important;
+    background-color: $color-ui-2;
+
+    .ant-checkbox + span {
+      padding-left: 30px;
+    }
+    .ant-checkbox-wrapper {
+      @include text-3();
+      color: $color-brand-2;
+    }
+
+    .ant-checkbox {
+      pointer-events: none;
+    }
+  }
+  .ant-collapse-content-box {
+    padding: 0;
+  }
+
+  & > .ant-collapse-item {
+    border-bottom: 0;
+  }
+
+  .ant-collapse-content {
+    border-top-color: $color-grey-5;
+  }
+}
+
+.delivery-collapse__expand {
+  color: $color-grey-3;
+  transform: translateY(-50%) rotate(180deg) !important;
+  transition: $transition;
+  &.rotated {
+    transform: translateY(-50%) rotate(0) !important;
+  }
+}

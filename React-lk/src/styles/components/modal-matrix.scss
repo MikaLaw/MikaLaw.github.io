@@ -1,0 +1,122 @@
+.modal-matrix {
+  .ant-modal-header {
+    padding: 20px 25px;
+    background-color: $color-ui-2;
+  }
+
+  .ant-modal-body {
+    padding: 30px 25px;
+
+    & > * + * {
+      margin-top: 30px;
+    }
+  }
+}
+
+
+.modal-matrix__row {
+  span {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $color-brand-2;
+  }
+
+  b {
+    font-weight: 700;
+  }
+}
+
+.modal-matrix__row-step {
+  & > * + * {
+    &:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: -30.5px;
+      transform: translateY(-50%);
+      height: 8px;
+      width: 61px;
+      background-image: icon-arrow-big($color-brand-2);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+}
+
+.modal-matrix__step {
+  position: relative;
+  padding: 12px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 14px;
+  background-color: $color-ui-2;
+
+  & > * + * {
+    margin-top: 10px;
+  }
+
+  span {
+    font-family: $font-inter;
+    font-weight: 500;
+    font-size: 17.35px;
+    line-height: 25px;
+    color: $color-brand-2;
+    text-align: center;
+  }
+}
+
+.modal-matrix__container {
+  padding: 30px;
+  border-radius: 10px;
+  background-color: $color-ui-2;
+}
+
+.modal-matrix__container-title {
+  margin-bottom: 30px;
+}
+
+.modal-matrix__container-col {
+  & > * + * {
+    margin-top: 20px;
+  }
+}
+
+.modal-matric__col-title {
+  color: $color-brand-2;
+}
+
+.modal-matrix__text {
+  color: $color-black;
+  & > * + * {
+    margin-top: 20px;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+
+    & > * + * {
+      margin-top: 8px;
+    }
+
+    li {
+      position: relative;
+      padding-left: 20px;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 8px;
+        left: 9px;
+        width: 4px;
+        height: 4px;
+        background-color: $color-black;
+        border-radius: 50%;
+      }
+    }
+  }
+}

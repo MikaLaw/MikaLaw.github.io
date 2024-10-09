@@ -1,0 +1,44 @@
+.status {
+  padding: 1px 8px;
+  color: $color-warning;
+  background: $color-yellow;
+  border: 1px solid $color-warning;
+  border-radius: 2px;
+
+  &.default {
+    @include text-3();
+  }
+
+  &.medium {
+    @include text-3-medium();
+  }
+
+  &.solved {
+    color: $color-black-3;
+    background: $color-neutral-2-disable-button-input;
+    border-color: $color-neutral-5-form-border;
+  }
+
+  &.active {
+    color: $color-green-3;
+    background: $color-green-2;
+    border-color: $color-green-3;
+  }
+
+  &.new {
+    color: $color-black;
+    background: $color-green-ui2;
+  }
+
+  &.in-work {
+    border-color: $color-border-5;
+    color: $color-main;
+    background: $color-blue-ui-2;
+  }
+
+  // класс no-border всегда ниже других
+
+  &.no-border {
+    border: 0;
+  }
+}

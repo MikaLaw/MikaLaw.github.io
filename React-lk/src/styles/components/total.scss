@@ -1,0 +1,45 @@
+.total-container {
+
+}
+
+.total {
+  &.general {
+    .total__sum {
+      color: $color-black;
+    }
+  }
+  &.overdue {
+    .total__sum {
+      color: $color-brand-3;
+    }
+  }
+}
+
+.total__top,
+.total__bottom {
+  padding: 10px;
+}
+
+.total__top {
+  background-color: $color-ui-2;
+}
+
+.total__bottom {
+  box-shadow: $box-shadow-11;
+
+  & > * + * {
+    margin-left: 10px;
+  }
+}
+
+.total__title {
+
+}
+
+.total__sum {
+  color: $color-ui-8;
+}
+
+.total__percent {
+  color: $color-ui-8;
+}

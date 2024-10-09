@@ -1,0 +1,41 @@
+.pharmacy-counter {
+  display: flex;
+  align-items: center;
+  & > * + * {
+    margin-left: 9px;
+  }
+  &.orders {
+    .pharmacy-counter__text {
+      color: $color-text-1;
+    }
+  }
+}
+
+.pharmacy-counter__icon {
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $gradient-3;
+  border-radius: 11px;
+  color: $color-text-1;
+}
+
+.pharmacy-counter__text {
+  color: $color-black;
+}
+
+.pharmacy-counter__number {
+  min-width: 26px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $font-roboto;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  color: $color-white;
+  background-color: $color-text-1;
+  border-radius: 10px;
+}

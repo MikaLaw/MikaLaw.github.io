@@ -1,0 +1,28 @@
+mixin input-phone-confirmation(data)
+	-
+		data = init(data, {
+			'block': '',
+			'type': 'text',
+			'placeholder': false,
+			'value': false,
+			'disabled': false,
+			'error': false,
+			'inputmode': false,
+			'name ': null,
+			'text': 'Введите код подтверждения, отправленный на ваш телефон'
+		})
+
+		if (data['error']) {
+			data['class'] += ' error';
+		}
+		var id = data['id'] || Math.random().toString(36).substring(2);
+	+b.input._phone-confirmation(class= data['class-input'])
+		.input__text= data.text 
+		.input__wrap-input&attributes(data.attributes(attributes))
+			+b.INPUT.input(type=data['type'] id=id placeholder=data['placeholder'] value=data['value'] disabled=data['disabled'] inputmode=data.inputmode name=data['name'])
+			if data['error-text']
+				.form-field__error-text !{data['error-text']}
+		.input__control 
+			+b.BUTTON.btn-grey Применить
+			+b.BUTTON.btn-text  Отправить код повторно
+		

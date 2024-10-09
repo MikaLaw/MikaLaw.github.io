@@ -1,0 +1,36 @@
+include component
+
+mixin slider-preview(data)
+	-
+		data = init(data, {
+			'block': 'slider-preview',
+			'init-attr': 'js-slider',
+			'arrows': 'slider-arrows',
+			'dots': 'slider-dots',
+			'item-component': '',
+			'item': {},
+			'array': [{}],
+		})
+
+		data['attr'][data['init-attr']] = ''
+		if (data['item-component']) {
+			data['item']['mixin'] = data['item-component'];
+		}
+
+	+b&attributes(data.attributes(attributes))
+		+e.wrap
+			+e.list-nav
+				each img in data['array']
+					+e.list-item
+						+picture({
+							src: img,
+							webp: true,
+						}).wrap-img
+			+e.list-content
+				each img in data['array']
+					+e.list-item
+						+picture({
+							src: img,
+							webp: true,
+						}).wrap-img
+

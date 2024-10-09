@@ -1,0 +1,9 @@
+{
+    "token": "ldfxcmncmvn",
+    "user": {
+        "id": 56,
+        "email": "examples@com",
+        "name": "User-1",    
+        "avatarUrl": "https://mikalaw.github.io/React-film/build/static/img/avatar.jpg"    
+    }
+}

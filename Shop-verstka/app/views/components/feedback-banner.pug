@@ -1,0 +1,22 @@
+mixin feedback-banner(data)
+	-
+		data = init(data, {
+			'block': 'feedback-banner',
+			'title': 'Обратная связь',
+			'text': ['У вас возникли вопросы по вашему заказу, начислению или списанию бонусов, срокам доставки или вашей скидке?', 'Пожалуйста, свяжитесь с нами в удобном вам формате!'],
+			'img': './img/components/feedback-banner/img-1',
+		})
+	+b&attributes(data.attributes(attributes))
+		+e.wrap 
+			+e.content-container
+				+e.title= data.title 
+				+e.text
+					each text in data.text 
+						p= text 
+				+e.btns 
+					+b.BUTTON.btn.icon-telegram Написать в Telegram
+					+b.BUTTON.btn.icon-whatsapp Написать в WhatsApp
+		+e.wrap-img
+			+picture({
+				src: data['img'],
+			})

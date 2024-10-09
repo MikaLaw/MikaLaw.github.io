@@ -1,0 +1,457 @@
+.custom-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex-grow: 1;
+
+  .ant-menu {
+    @include text-2();
+    color: $color-black;
+  }
+
+  .ant-pro-sider-menu {
+    padding-bottom: 170px;
+
+    &.ant-menu-inline-collapsed {
+
+      .ant-menu-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .ant-menu-title-content {
+        position: relative;
+
+        .menu-item-tag {
+          position: absolute;
+          right: -8px;
+          top: -10px;
+        }
+      }
+    }
+  }
+
+  .ant-pro-sider-logo {
+    &.ant-pro-sider-collapsed {
+      .menu-header {
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+
+  .ant-menu-light {
+    .ant-menu-submenu-title,
+    .ant-menu-item {
+      &:hover {
+
+        &:after {
+          width: 3px !important;
+        }
+
+        a {
+          color: $color-brand-2;
+        }
+      }
+    }
+
+    .ant-menu-submenu-title {
+      &:hover {
+        color: $color-brand-2-hover !important;
+      }
+    }
+
+    .ant-menu-submenu {
+      &-active {
+        color: $color-brand-2-hover !important;
+      }
+    }
+
+    .ant-menu-item {
+      a {
+        color: $color-black;
+      }
+      &-active,
+      &:hover {
+        a {
+          color: $color-brand-2-hover;
+        }
+      }
+    }
+  }
+
+  .ant-menu-submenu-title {
+  }
+
+  .ant-menu-submenu,
+  .ant-menu-item {
+    .anticon {
+      path,
+      rect {
+        transition: $transition;
+        //fill: $color-brand-2;
+      }
+    }
+
+    &-active {
+      .anticon {
+        path,
+        rect {
+          //fill: $color-brand-2;
+        }
+      }
+    }
+
+    .apteka-ru {
+      .path-1 {
+        fill: $color-white;
+      }
+
+      .path-2 {
+        fill: $color-text-1;
+      }
+    }
+  }
+
+  .ant-menu-submenu {
+    &-active {
+      .ant-menu-title-content {
+        color: $color-brand-2-hover;
+      }
+    }
+  }
+
+  .ant-menu-inline {
+    .ant-menu-submenu-title, .ant-menu-item {
+      padding: 10px 15px !important;
+      margin: 0;
+      height: auto;
+      line-height: normal;
+    }
+  }
+
+  .ant-menu-sub.ant-menu-inline {
+    .ant-menu-item {
+      margin: 0;
+      padding: 10px 10px 10px 45px !important;
+      height: auto;
+      line-height: normal;
+    }
+  }
+
+  .ant-menu-sub {
+    color: $color-ui-6;
+    background-color: transparent;
+  }
+
+  .ant-menu-submenu-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &:before {
+      background-color: transparent;
+      width: 12px;
+      height: 6px;
+      background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.41421 0C0.523309 0 0.077142 1.07714 0.707107 1.70711L4.29289 5.29289C4.68342 5.68342 5.31658 5.68342 5.70711 5.29289L9.29289 1.70711C9.92286 1.07714 9.47669 0 8.58579 0L1.41421 0Z' fill='%23818181'/%3E%3C/svg%3E%0A");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      transition: all 0.1s linear;
+      transform: none;
+    }
+
+    &:after {
+      content: none;
+    }
+  }
+
+  .ant-pro-sider-links {
+    position: fixed;
+    bottom: 0;
+    width: 245px;
+  }
+
+  .ant-layout-sider-collapsed {
+    .menu-main__link {
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .ant-pro-sider-links {
+      width: 48px;
+    }
+    .ant-menu-title-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .menu-price-list-icon {
+      margin: 0;
+    }
+    .ant-menu-submenu .ant-menu-submenu-title {
+      padding: 10px;
+      height: 42px;
+      line-height: 0;
+      margin: 0;
+    }
+    .ant-menu-submenu .ant-menu-submenu-title .anticon {
+      height: 20px;
+      font-size: 20px;
+      display: flex;
+    }
+    .ant-pro-menu-item-title {
+      display: none !important;
+    }
+  }
+
+  .ant-menu-submenu-open {
+    &.ant-menu-submenu-inline {
+      .ant-menu-submenu-title {
+        .ant-menu-submenu-arrow {
+          transform: translateY(-50%);
+
+          &:before {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+
+
+  }
+
+  .ant-pro-menu-item {
+    display: flex;
+    align-items: center;
+
+    .anticon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      color: $color-brand-2;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .menu-price-list-icon {
+      line-height: 0;
+
+    }
+  }
+
+  .ant-menu-submenu-selected {
+    &:not(.ant-menu-submenu-inline) {
+      position: relative;
+      background-color: $color-ui-2;
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: -1px;
+        width: 3px;
+        height: 100%;
+        background-color: $color-brand-2;
+      }
+    }
+
+    .ant-pro-menu-item {
+      color: $color-black;
+    }
+  }
+
+  .ant-menu-submenu-active {
+    .ant-menu-submenu-title {
+      background-color: $color-ui-2;
+    }
+
+    .ant-menu-submenu-arrow {
+      &:before {
+        background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.41421 0C0.523309 0 0.077142 1.07714 0.707107 1.70711L4.29289 5.29289C4.68342 5.68342 5.31658 5.68342 5.70711 5.29289L9.29289 1.70711C9.92286 1.07714 9.47669 0 8.58579 0L1.41421 0Z' fill='%23008696'/%3E%3C/svg%3E%0A");
+      }
+    }
+  }
+
+  .ant-menu-item-active {
+    background-color: $color-ui-2;
+  }
+
+  .ant-menu:not(.ant-menu-horizontal) {
+    .ant-menu-item-selected {
+      background-color: $color-ui-2;
+
+      &:after {
+        width: 3px !important;
+      }
+    }
+  }
+
+  .ant-menu-item-selected {
+    .ant-pro-menu-item-title {
+      color: $color-brand-2;
+    }
+
+    &:after {
+      border-color: $color-brand-2;
+    }
+  }
+
+  .ant-layout-sider-children {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ant-menu-inline, .ant-menu-vertical {
+    .ant-pro-sider-collapsed-button {
+      padding: 0 !important;
+      height: auto;
+      background: $color-ui-2;
+      margin: 0 !important;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: normal;
+
+      .anticon {
+        line-height: normal;
+      }
+
+      .ant-btn {
+        padding: 14.5px;
+        //height: 47px;
+        border: none;
+        margin: 0;
+        background-color: transparent;
+        box-shadow: none;
+        display: flex;
+        width: auto;
+        align-items: center;
+        @include text-3();
+
+        color: $color-ui-5;
+
+
+        &:hover,
+        &:after,
+        &:focus {
+          box-shadow: none;
+          color: $color-ui-5;
+        }
+      }
+    }
+  }
+
+  .ant-menu-inline.ant-menu-root {
+    .ant-pro-sider-collapsed-button {
+      .ant-menu-title-content {
+        flex: none
+      }
+    }
+  }
+
+  .ant-menu-inline {
+    border-color: transparent;
+  }
+
+  .ant-layout-sider {
+    border-right: 1px solid $color-border-1;
+  }
+
+  .ant-layout-content {
+    background-color: $color-white;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &_branded {
+    .ant-layout-content {
+      background-color: $color-content-branded;
+    }
+  }
+}
+
+.profile-layout {
+  height: calc(100vh - 58px);
+
+  .ant-layout {
+    background: $color-white;
+  }
+
+  .menu-header {
+    padding: 20px 15px;
+    display: block;
+
+    & > * + * {
+      margin-top: 10px;
+    }
+  }
+
+  .ant-menu-submenu,
+  .ant-menu-item {
+    .anticon {
+      path,
+      rect {
+        transition: $transition;
+      }
+    }
+
+    &-active {
+      .anticon {
+        path,
+        rect {
+          fill: $color-brand-2;
+        }
+      }
+    }
+
+    &-selected:first-child {
+      .anticon {
+        path,
+        rect {
+          fill: none;
+        }
+      }
+    }
+  }
+}
+
+.ant-tooltip-content .ant-pro-menu-item {
+
+  .ant-pro-menu-item-title {
+    padding: 10px 12px;
+    @include text-2();
+    color: $color-black;
+  }
+
+  .anticon {
+    display: none;
+  }
+}
+
+.ant-menu-title-content {
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+}
+
+.ant-layout.ant-layout-has-sider {
+  aside.ant-layout-sider {
+    z-index: 2;
+  }
+
+  .ant-layout {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.ant-menu-vertical.ant-menu-sub {
+  min-width: 200px;
+}
