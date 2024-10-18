@@ -1,0 +1,127 @@
+.product-card-list {
+  margin-top: 23px;
+  &_table {
+    .product-card-list__list {
+      display: block;
+    }
+    margin-bottom: 22px;
+    @include media-min($media-lg) {
+      margin-top: 37px;
+    }
+    @include media-min($media-xxxl) {
+      margin-top: 23px;
+    }
+  }
+  &_article {
+    margin-bottom: 54px;
+    @include media-min($media-lg) {
+      max-width: 673px;
+    }
+    @include media-min($media-xl) {
+      max-width: unset;
+    }
+    .product-card-list__list {
+      padding-bottom: 0px;
+      margin-bottom: 0px;
+      border-bottom: 0;
+
+      gap: 24px 26px;
+      @include media-min($media-xs) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @include media-min($media-sm) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      @include media-min($media-lg) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @include media-min($media-xl) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+  &_backet {
+    .product-card-list__list {
+      @include media-min($media-xl) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+  &_lk {
+    margin-top: 18px;
+    @include media-min($media-lg) {
+      margin-top: 11px;
+    }
+
+    .product-card-list__list {
+      @include media-min($media-sm) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px 22px;
+      }
+      @include media-min($media-md) {
+        gap: 38px 20px;
+      }
+      @include media-min($media-lg) {
+        gap: 50px 30px;
+      }
+    }
+
+    .product-card__img-container {
+      height: 210px;
+      @include media-min($media-sm) {
+        height: 230px;
+      }
+      @include media-min($media-lg) {
+        height: 310px;
+      }
+    }
+  }
+}
+
+.product-card-list__list {
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(42, 31, 21, 0.15);
+  @include media-min($media-xs) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px 26px;
+  }
+  @include media-min($media-sm) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include media-min($media-lg) {
+    gap: 50px 26px;
+    padding-bottom: 30px;
+  }
+  @include media-min($media-xl) {
+    grid-template-columns: repeat(4, 1fr);
+    padding-bottom: 40px;
+  }
+}
+.product-card-list__control {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-start;
+  gap: 20px 0;
+  margin-top: 20px;
+  @include media-min($media-xs) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @include media-min($media-md) {
+    margin-top: 44px;
+  }
+  @include media-min($media-lg) {
+    margin-top: 36px;
+  }
+  @include media-min($media-xl) {
+    margin-top: 45px;
+  }
+
+  .btn {
+    @include text-14-500;
+  }
+}

@@ -1,0 +1,129 @@
+.pagination {
+  margin-right: 0;
+  margin-left: auto;
+  display: flex;
+  & > * {
+    order: 2;
+    &:last-child {
+      order: 1;
+    }
+  }
+
+  input {
+    color: $color-ui-6;
+    border: 1px solid $color-ui-3;
+    &:hover,&:focus,&:active {
+      box-shadow: none;
+    }
+  
+    &:hover {
+      border-color: $color-ui-8;
+    }
+  
+    &:focus {
+      border-color: $color-ui-4;
+      color: $color-black;
+    }
+  
+    &:active {
+      border-color: $color-ui-4;
+      color: $color-ui-6;
+    }
+  
+  }
+}
+
+.ant-pagination.mini .ant-pagination-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 26px;
+  height: 26px;
+  width: auto;
+  border-radius: 50%;
+  border: 0;
+  @include text-2();
+
+  &.ant-pagination-item-active {
+    background-color: $color-brand-2;
+    
+    a {
+      color: $color-white;
+    }
+  }
+}
+
+.ant-pagination-item {
+  &:hover {
+    a {
+      color: $color-brand-2;
+    }
+  }
+}
+
+
+.ant-pagination-prev,
+.ant-pagination-next {
+  .ant-pagination-item-link {
+    color: $color-brand-1;
+    border-color: $color-brand-1;
+  }
+  &:hover {
+    .ant-pagination-item-link {
+      color: $color-brand-2;
+      border-color: $color-brand-2;
+    }
+  }
+}
+
+.ant-pagination-options {
+  display: flex;
+  margin-left: 0;
+  margin-right: 5px;
+
+  .ant-select {
+    order: 2;
+  }
+
+  .ant-pagination-options-quick-jumper {
+    margin-left: 0;
+    margin-right: 5px;
+    order: 1;
+  }
+}
+
+.ant-pagination-options-quick-jumper {
+  font-family: $font-roboto;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px !important;
+  color: $color-ui-6;
+}
+
+.ant-pagination-options-quick-jumper input:focus, .ant-pagination-options-quick-jumper input-focused {
+  box-shadow: none;
+  border-color: $color-ui-4;
+}
+
+.ant-select:not(.ant-select-customize-input) .ant-select-selector {
+  border-color: $color-ui-3;
+}
+
+.ant-select-selection-item {
+  font-size: 11px;
+  line-height: 14px;
+  color: $color-ui-6;
+}
+
+.pagination__small {
+
+}
+
+
+.pagination-simple {
+  & > * {
+    &:last-child {
+      order: 100;
+    }
+  }
+}

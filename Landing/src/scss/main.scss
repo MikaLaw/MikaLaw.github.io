@@ -1,0 +1,9 @@
+/* stylelint-disable scss/at-import-partial-extension */
+@import "vars";
+@import "fonts";
+@import "settings";
+@import "animation";
+
+/* components */
+@import "components/*.scss";
+@import "components/sections/*.scss";

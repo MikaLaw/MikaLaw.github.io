@@ -1,0 +1,11 @@
+[data-animate]{
+    visibility: hidden;
+
+    &.animate__animated {
+        visibility: visible;
+    }
+}
+
+[data-animate-gorizontal] {
+    opacity: 0;
+}

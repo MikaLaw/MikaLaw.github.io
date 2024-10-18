@@ -1,0 +1,14 @@
+include waiting-card
+
+mixin waiting-list(data)
+	-
+		data = init(data, {
+			'block': 'waiting-list',
+			'list': waitingList,
+			'pagination': true
+		})
+
+	+b&attributes(data.attributes(attributes))
+		+e.list
+			for item in data.list
+				+waiting-card(item)

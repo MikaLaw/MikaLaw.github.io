@@ -1,0 +1,27 @@
+extends templates/side-main-template
+
+include components/discount-system
+include components/my-card-list
+
+block title
+	title ЛК - Моя карта(для профессионального покупателя)
+
+block breadcrumbs
+	+b.block_breadcrumbs._breadcrumbs-lk
+		.global-wrapper
+			+breadcrumbs(['Главная', 'Моя карта'])
+
+
+block content
+	+b.SECTION.block._mb-my-card-2
+		+e.head
+			+e.H2.title._big Моя карта
+		+e.body
+			+e.text._my-card Ознакомиться с <a href="#">Полными условиями программы лояльности</a>
+			+my-card-list()
+	+b.SECTION.block
+		+e.head
+			+e.H2.title_small Дисконтная система
+		+e.body
+			+discount-system()
+

@@ -1,0 +1,35 @@
+mixin social(data)
+	-
+		data = init(data, {
+			block: 'social',
+			list: [
+				{
+					link: '#',
+					icon: 'vk',
+					title: 'В контакте'
+				},
+				{
+					link: '#',
+					icon: 'instagram',
+					title: 'Инстаграм'
+				},               
+				{
+					link: '#',
+					icon: 'telegram',
+					title: 'Телеграм'
+				},   
+				{
+					link: '#',
+					icon: 'whatsapp',
+					title: 'Ватсап'
+				},                                
+			]
+		})
+
+	+b&attributes(data.attributes(attributes))
+		+e.UL.list 
+			each social in data.list 
+				+e.LI.item 
+					+e.A.link(href=`${social.link}` target="_blank" aria-label= social.title)
+						svg(viewBox="0 0 100 100" width="100" height="100")
+							use(href=`./img/sprite.svg#${social.icon}`)

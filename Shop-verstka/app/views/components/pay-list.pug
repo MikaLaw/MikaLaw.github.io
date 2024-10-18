@@ -1,0 +1,17 @@
+mixin pay-list(data)
+	-
+		data = init(data, {
+			'block': 'pay-list',
+			'list': [
+				'icon-mir.svg',
+				'icon-visa.svg',    
+				'icon-spb.svg',                               
+			]
+		})
+	+b&attributes(data.attributes(attributes))
+		+e.UL.list 
+			each img in data['list']
+				+e.LI.item
+					+e.wrap
+						+e.IMG.img(src='./img/icons/' + img alt='Товар')
+

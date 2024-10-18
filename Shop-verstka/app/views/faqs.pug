@@ -1,0 +1,71 @@
+extends templates/main-template
+
+include components/collapse
+
+
+block title
+	title Вопросы
+
+block breadcrumbs
+	+b.block_breadcrumbs
+		.global-wrapper
+			+breadcrumbs(['Главная', 'Частые вопросы'])
+
+
+block content
+	+b.SECTION.block._faqs-1
+		.global-wrapper
+			+e.head
+				+e.H2.title._big Частые вопросы
+			+e.body 
+				+b.faqs 
+					+e.wrap 
+						+e.form-block 
+							+b.FORM.form_faqs
+								+e.head(data-drop-next-mobile)
+									+e.title Задать вопрос
+								+e.body-wrap
+									+e.body 
+										+e.item 
+											+form-field({
+												'title': '',
+												'class': 'error',
+												'component': {
+													'mixin': 'input',
+													'placeholder': 'Ваш E-mail',
+													'error-text': 'Ошибка',	
+												},
+											})
+										+e.item 
+											+form-field({
+												'title': '',
+												'class': 'error',
+												'component': {
+													'mixin': 'textarea',
+													'placeholder': 'Ваш вопрос',
+													'error-text': 'Ошибка',													
+												},
+											})
+									+e.footer 
+										+e.BUTTON.btn.btn-arrow   Отправить
+										+e.text-agree Нажимая на кнопку «Отправить», я даю свое <a href="#">Согласие на обработку персональных данных</a>							
+						+e.collaps-block 
+							+e.filter
+								+form-field({
+									'title': '',
+									'component': {
+										'mixin': 'select',
+										'multiple': true,
+										'array': [
+											{
+												title: 'Вариант 1'
+											},
+											{
+												title: 'Вариант 2'
+											},
+										],
+										'placeholder': 'Выбрать тему'
+									},
+								})
+							+collapse()
+							

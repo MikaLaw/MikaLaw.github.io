@@ -1,0 +1,22 @@
+include input
+
+mixin input-datepicker(data)
+	-
+		data = init(data, {
+			'block': 'input-datepicker',
+			'input-data': {
+				'placeholder': 'От',
+				'data-start-day': 1,
+				'data-start-month': 1,
+				'data-start-year': 2022,
+			}
+
+		})
+
+	+b&attributes(data.attributes(attributes))
+		+e.input-container
+			+b.INPUT.input.datepicker-here&attributes(data.attributes(attributes))(data-start-day=data['input-data']['data-start-day'] data-start-month=data['input-data']['data-start-month'] data-start-year=data['input-data']['data-start-year'] readonly=data['input-data']['readonly']  type=data['input-data']['type'] placeholder=data['input-data']['placeholder'] value=data['input-data']['value'] disabled=data['input-data']['disabled'] inputmode=data['input-data']['inputmode'] pattern=data['input-data']['pattern'])
+			+e.icon 
+				+e.icon-calendar
+				+e.icon-clean(data-js-date-clean)
+

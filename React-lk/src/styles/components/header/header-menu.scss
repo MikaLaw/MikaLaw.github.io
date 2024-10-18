@@ -1,0 +1,46 @@
+.header-menu {
+  display: flex;
+  align-items: center;
+
+  & > * + * {
+    margin-left: 4px;
+  }
+}
+
+.header-menu__dropdown-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: default;
+  &.hover {
+    &:after {
+       content: "";
+       position: absolute;
+       bottom: -4px;
+       right: 0;
+       width: 260px;
+       height: 4px;
+       background: transparent;
+       z-index: 1;
+     }
+
+    .header-menu__email {
+      color: $color-brand-2;
+    }
+
+    .header__icon-btn {
+      background-color: $color-ui-2;
+      cursor: default;
+
+      &[ant-click-animating-without-extra-node='true']::after{display:none;}
+    }
+  }
+
+  & > * + * {
+    margin-left: 4px;
+  }
+}
+
+.header-menu__email {
+  color: $color-ui-6;
+}

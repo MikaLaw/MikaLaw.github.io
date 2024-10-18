@@ -1,0 +1,67 @@
+.user-drawer {
+
+  .ant-drawer-header {
+    padding: 15px 20px 10px;
+  }
+
+  .ant-drawer-body {
+    padding: 10px 20px 0;
+  }
+
+  .ant-drawer-footer {
+    padding: 15px 20px 20px;
+  }
+
+}
+
+.user-drawer-scroll {
+  .scrollbar-view {
+    padding-right: 20px;
+    padding-bottom: 20px;
+
+    overflow-y: scroll !important;
+    overflow-x: hidden !important;
+  }
+}
+
+.user-drawer__pharmacy {
+  span {
+    color: $color-brand-2;
+  }
+}
+
+.close-user-drawer-confirm {
+  &.ant-modal-confirm .ant-modal-body {
+    padding: 20px 25px 20px;
+  }
+
+  &.ant-modal-confirm .ant-modal-confirm-btns .ant-btn + .ant-btn {
+    margin: 0;
+  }
+
+  & .ant-modal-confirm-body .ant-modal-confirm-title {
+    @include  text-1();
+    font-weight: 600;
+    color: $color-black;
+  }
+
+  .ant-modal-confirm-btns {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .ant-btn {
+      order: 2;
+    }
+
+    .ant-btn-primary {
+      order: 1;
+
+    }
+  }
+}
+
+.user-drawer__btn {
+  padding-top: 7px;
+  padding-bottom: 7px;
+}

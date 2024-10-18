@@ -1,0 +1,48 @@
+mixin return-card(data)
+	-
+		data = init(data, {
+			'block': 'return-card',
+			'img': 'img-1.jpg',
+			'labels': [
+				{
+					'text': 'New',
+					'class':  'beige'
+				}
+			],
+			'title': 'MATRIX',
+			'text': 'Exquisite Oil Масло питательное для волос 92мл',
+			'subtext': 'Арт.:  <span>CAT00016611</span>',
+			'cost': '750 ₽',
+		})
+	+b&attributes(data.attributes(attributes))
+		if data['checkbox']
+			+e.checkbox
+				+checkbox({
+					'label': null
+				})
+		+e.wrap
+			+e.img-wrap 
+				+e.IMG.img(src='./img/components/product-card/' + data.img, alt="Название")
+				if data.labels
+					+e.labels 
+						.label__wrap
+							each label in data.labels 
+								+b.label._small(class= label.class)= label.text
+								if label.stock
+									.label__stock= label.stock
+			+e.content-wrap
+				+e.product-info 
+					+e.name= data.title 
+					+e.text= data.text 
+					+e.subtext !{data.subtext}
+				+e.control-container
+					+e.cost-container 
+						+e.cost= data.cost 
+						if data.stock
+							+e.stock= data.stock 
+					if data.counter
+						+input-counter({
+							'value': 0,
+						})
+					if data.amount 
+						+e.amount= data.amount

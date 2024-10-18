@@ -1,0 +1,43 @@
+mixin menu-catalog()
+
+	+b.menu-catalog(data-modal="catalog")
+		+e.wrap-outside
+			.global-wrapper
+				+e.block
+					+e.container.js-menu-catalog-section
+						+b.btn.btn-close(data-close="catalog")
+						+e.P.title Каталог
+						+e.wrap
+							+e.UL.menu
+								for item in menuCatalog
+									if 'submenu' in item
+										+e.LI.item_submenu.js-menu-dropdown
+											+e.link-wrap.js-item-menu-catalog.js-menu-dropdown-open
+												+e.A.link(href=item.link)= item.name
+												+e.BUTTON.btn-drop(type='button')
+
+											+e.submenu-wrap.js-menu-dropdown-active
+												+e.UL.submenu
+													for submenuItem in item.submenu
+														if 'submenu' in submenuItem
+															+e.LI.item_submenu.js-menu-dropdown
+																+e.link-wrap.js-item-menu-catalog.js-menu-dropdown-open
+																	+e.A.link(href=submenuItem.link)= submenuItem.name
+																	+e.BUTTON.btn-drop
+						
+																+e.submenu-wrap.js-menu-dropdown-active
+																	+e.UL.submenu_sub
+																		for submenuItem1 in submenuItem.submenu
+																			+e.LI.item_submenu.js-item-menu-catalog
+																				+e.A.link(href=submenuItem.link)= submenuItem1.name
+
+														else
+															+e.LI.item
+																+e.link-wrap.js-item-menu-catalog
+																	+e.A.link(href=submenuItem.link)= submenuItem.name
+									else
+										+e.LI.item
+											+e.link-wrap.js-item-menu-catalog
+												+e.A.link(href=item.link)= item.name
+					+e.container.js-menu-catalog-section
+					+e.container_last-step.js-menu-catalog-section

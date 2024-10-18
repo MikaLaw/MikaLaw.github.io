@@ -1,0 +1,26 @@
+-   
+    var blogItems = [
+        {delay:"0.1s", title:"Lorem ipsum dolor sit amet", date1:"July 17, 2019", date2:"by", author: "Admin",img:"img_1", text:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eos soluta, dolore harum molestias consectetur."},
+        {delay:"0.3s", title:"Lorem ipsum dolor sit amet", date1:"July 17, 2019", date2:"by", author: "Admin",img:"img_2", text:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eos soluta, dolore harum molestias consectetur."},
+        {delay:"0.5s", title:"Lorem ipsum dolor sit amet", date1:"July 17, 2019", date2:"by", author: "Admin",img:"img_3", text:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eos soluta, dolore harum molestias consectetur."},
+        ]
+section.blog#blog.py-5
+    .container 
+        .row.mb-5
+            .col 
+                .blog__head.text-center 
+                    +sectionTitle("Updates", "Our Blog", "Blog")
+        ul.blog__list.row 
+            each blogItem in blogItems
+                li.blog__item.col-lg-4.col-md-6.col-12.mb-4.wow.animate__animated.animate__fadeInUp(data-wow-duration="1.4s"  data-wow-delay=`${blogItem.delay}`) 
+                    .blog__pic.mb-4
+                        img.blog__img.img-fluid(src=`./img/${blogItem.img}.jpg`, alt="Изображение статьи")
+                    .blog__info.px-4.pb-4
+                        a(href="#").d-block.mb-3
+                            h3.blog__title= blogItem.title
+                        .blog__date.d-flex.mb-3
+                            .blog__day= blogItem.date1
+                                .d-inline-block.blog__day.mx-2= blogItem.date2
+                                a(href="#").d-inline-block.blog__author= blogItem.author
+                        .blog__text= blogItem.text
+

@@ -1,0 +1,128 @@
+.ant-picker {
+  border-color: $color-ui-3;
+  &:hover,&:focus,&:active,&-focused {
+    box-shadow: none;
+  }
+
+  &:hover {
+    border-color: $color-ui-8;
+  }
+
+  &:focus,
+  &-focused {
+    border-color: $color-ui-4;
+    color: $color-black;
+  }
+
+  &:active {
+    border-color: $color-ui-4;
+    color: $color-ui-6;
+  }
+}
+
+.ant-picker-cell-in-view {
+  &.ant-picker-cell-selected {
+    .ant-picker-cell-inner {
+      background: $color-brand-1 ;
+    }
+  }
+  &.ant-picker-cell-today {
+    .ant-picker-cell-inner {
+      &:before {
+        border-color: $color-brand-1;
+      }
+    }
+  } 
+}
+
+.ant-picker-today-btn {
+  color: $color-brand-1;
+}
+
+.ant-picker-range {
+  &-focused {
+
+  }
+
+  .ant-picker-active-bar {
+    background: $color-ui-4;
+  }
+
+  &.my-range {
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: -20px;
+      left: 0;
+      height: 20px;
+      width: 100%;
+      background-color: transparent;
+    }
+
+    &.is-close {
+      .ant-picker-active-bar {
+        display: none;
+      }
+    }
+  }
+}
+
+.ant-picker-header-view {
+  button {
+    &:hover {
+      color: $color-brand-2;
+    }
+  }
+}
+
+.ant-picker-header > button {
+  &:hover {
+    color: $color-brand-2;
+  }
+}
+
+.ant-picker-today-btn {
+  &:hover {
+    color: $color-brand-2;
+  }
+}
+
+.ant-picker-cell-in-view.ant-picker-cell-range-end .ant-picker-cell-inner {
+  background-color: $color-brand-1;
+}
+
+.ant-picker-cell-in-view.ant-picker-cell-in-range,
+.ant-picker-cell-in-view.ant-picker-cell-range-start:not(.ant-picker-cell-range-start-single) {
+  &:before {
+    background: $color-ui-2;
+  }
+}
+
+.ant-picker-cell-in-view.ant-picker-cell-range-hover-start:not(.ant-picker-cell-in-range):not(.ant-picker-cell-range-start):not(.ant-picker-cell-range-end),
+.ant-picker-cell-in-view.ant-picker-cell-range-hover:not(.ant-picker-cell-in-range),
+tr > .ant-picker-cell-in-view.ant-picker-cell-range-hover:last-child,
+tr > .ant-picker-cell-in-view.ant-picker-cell-range-hover:first-child {
+  &:after {
+    border-color: $color-brand-1;
+  }
+}
+
+.ant-picker-date-panel .ant-picker-cell-in-view.ant-picker-cell-in-range.ant-picker-cell-range-hover-start .ant-picker-cell-inner {
+  &:after {
+    background: $color-ui-3;
+  }
+}
+
+.ant-picker-cell-in-view.ant-picker-cell-in-range.ant-picker-cell-range-hover {
+  &:before {
+    background: $color-ui-3;
+  }
+}
+
+.ant-picker-input {
+  input {
+    @include placeholder() {
+      color: $color-ui-6;
+    }
+  }
+}

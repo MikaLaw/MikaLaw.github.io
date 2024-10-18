@@ -1,0 +1,12 @@
+include discount-system-card
+
+mixin discount-system(data)
+	-
+		data = init(data, {
+			'block': 'discount-system',
+			'array': discountSystemList
+		})
+	+b&attributes(data.attributes(attributes))
+		+e.list  
+			each item in data.array 
+				+discount-system-card(item)

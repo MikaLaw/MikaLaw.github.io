@@ -1,0 +1,14 @@
+.template-doc-link {
+  span {
+    margin-right: 15px;
+    color: $color-brand-2;
+  }
+
+  a {
+    color: $color-black;
+    transition: $transition;
+    &:hover {
+      color: $color-brand-2-hover;
+    }
+  }
+}

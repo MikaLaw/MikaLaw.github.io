@@ -1,0 +1,246 @@
+extends templates/main-template
+
+include base-components/slider
+include base-components/button-view
+include components/brends-card
+include components/product-card
+include components/product-params
+include components/product-card-list
+include components/product-banner
+
+block title
+	title Каталог(карточки)
+
+block breadcrumbs
+	+b.block_breadcrumbs
+		.global-wrapper
+			+breadcrumbs(['Главная', 'Каталог', 'Окрашивание волос'])
+
+
+block content
+	+b.SECTION.block._catalog-1
+		.global-wrapper
+			+e.head 
+				+e.H2.title._big Окрашивание волос
+			+e.body
+				+e.product-filters.js-product-filters
+					+b.product-panel
+						+e.BUTTON.filter-icon(data-open="filter")
+						+b.form._filter
+							+form-field({
+								'title': '',
+								'component': {
+									'mixin': 'select',
+									'block': 'select_radio',
+									'type': 'radio',
+									'array': [
+										{
+											title: 'По новинкам'
+										},
+										{
+											title: 'По скидкам'
+										},
+										{
+											title: 'Цена по возрастанию'
+										},
+										{
+											title: 'Цен по убыванию'
+										},		
+																									
+									],
+									'placeholder': 'Сортировать'
+								},
+							})
+							+form-field({
+								'title': '',
+								'component': {
+									'mixin': 'select',
+									'multiple': true,
+									'array': [
+										{title: 'Окислители и активаторы цвета'},
+										{title: 'Осветление волос'},
+										{title: 'Средства для удаления красителя с кожи', disabled: true},
+										{title: 'Краситель прямого действия'},		
+										{title: 'Стойкий краситель'},
+										{title: 'Специальные средства'},
+										{title: 'Средства для защиты волос во время химических процедур'},
+										{title: 'Безаммиачный краситель'},		
+										{title: 'Мужской краситель для седины'},																	
+									],
+									'placeholder': 'Категория'
+								},
+							})
+							+form-field({
+								'title': '',
+								'component': {
+									'mixin': 'select',
+									'multiple': true,
+									'array': [
+										{
+											title: 'Все'
+										},
+										{
+											title: 'Alfaparf'
+										},
+										{
+											title: 'Shot'
+										},
+										{
+											title: 'Nirvel'
+										},		
+										{
+											title: 'Constant Delight'
+										},
+										{
+											title: 'Concept'
+										},
+										{
+											title: 'Wella'
+										},
+										{
+											title: 'Matrix'
+										},		
+										{
+											title: 'Kezy'
+										},
+										{
+											title: 'EPICA Professional'
+										},
+										{
+											title: 'BOUTICLE'
+										},
+										{
+											title: 'Nirvel'
+										},		
+										{
+											title: 'Constant Delight'
+										},
+										{
+											title: 'Concept'
+										},
+										{
+											title: 'Wella'
+										},
+										{
+											title: 'Matrix'
+										},																										
+									],
+									'placeholder': 'Бренды'
+								},
+							})
+							+form-field({
+								'title': '',
+								'component': {
+									'mixin': 'select',
+									'range': true,
+									'block': 'select_range',
+									'placeholder': 'Цена'
+								},
+							})
+							+form-field({
+								'title': '',
+								'component': {
+									'mixin': 'select',
+									'multiple': true,
+									'array': [
+										{title: 'Пепельные'},
+										{title: 'Золотистые'},
+										{title: 'Медные'},
+										{title: 'Красные'},		
+										{title: 'Махагоновые'},
+										{title: 'Фиолетовые'},
+										{title: 'Коричневый'},
+										{title: 'Блонды'},		
+										{title: 'Жемчужные'},
+										{title: 'Нейтральные'},		
+										{title: 'Коричневый'},
+									],
+									'placeholder': 'Палитра'
+								},
+							})
+							+form-field({
+								'title': '',
+								'component': {
+									'mixin': 'select',
+									'multiple': true,
+									'array': [
+										{
+											title: 'Abedyabka'
+										},
+										{
+											title: 'Abox'
+										},
+									],
+									'placeholder': 'Линейка'
+								},
+							})
+							+form-field({
+								'title': '',
+								'component': {
+									'mixin': 'select',
+									'multiple': true,
+									'array': [
+										{
+											title: 'Abedyabka'
+										},
+										{
+											title: 'Abox'
+										},
+									],
+									'placeholder': 'Тип продукта'
+								},
+							})
+							+form-field({
+								'title': '',
+								'component': {
+									'mixin': 'select',
+									'multiple': true,
+									'array': [
+										{
+											title: 'Abedyabka'
+										},
+										{
+											title: 'Abox'
+										},
+									],
+									'placeholder': 'Страна'
+								},
+							})
+						+button-view()
+					+product-params()
+				+product-card-list()
+	+b.SECTION.block._catalog-2
+		h2.visually-hidden Продукты
+		.global-wrapper
+			+product-banner()
+	+b.SECTION.block._catalog-3
+		h2.visually-hidden Просмотренное
+		.global-wrapper
+			+e.head 
+				+e.A.title._icon(href="#") Вы смотрели
+			+e.body
+				+slider({
+					'item-component': 'product-card',
+					'init-attr': 'data-product-slider ',
+					'array': productList1
+				})._product
+	+b.SECTION.block._catalog-4
+		.global-wrapper
+			+e.head 
+				+e.H2.title Мы — официальные дистрибьюторы
+			+e.body
+				+slider({
+					'item-component': 'brends-card',
+					'init-attr': 'data-brend-slider',
+					'array': brendsList1
+				})._brend
+	+b.SECTION.block._catalog-5
+		.global-wrapper
+			+e.head 
+				+e.H2.title._seo Место под seo-текст
+			+e.body
+				+e.text._seo 
+					p Идейные соображения высшего порядка, а также постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки дальнейших направлений развития. Не следует, однако забывать, что сложившаяся структура организации обеспечивает широкому кругу (специалистов) участие в формировании существенных финансовых и административных условий. 
+					p Идейные соображения высшего порядка, а также постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки дальнейших направлений развития. Не следует, однако забывать, что сложившаяся структура организации обеспечивает широкому кругу (специалистов) участие в формировании существенных финансовых и административных условий. 					
+					p Идейные соображения высшего порядка, а также постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки дальнейших направлений развития. Не следует, однако забывать, что сложившаяся структура организации обеспечивает широкому кругу (специалистов) участие в формировании существенных финансовых и административных условий. 
+					p Идейные соображения высшего порядка, а также постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки дальнейших направлений развития. Не следует, однако забывать, что сложившаяся структура организации обеспечивает широкому кругу (специалистов) участие в формировании существенных финансовых и административных условий. 

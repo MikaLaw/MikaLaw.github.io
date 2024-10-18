@@ -1,0 +1,51 @@
+include ../base-components/favorites-btn
+include ../base-components/basket-btn
+
+mixin waiting-card(data)
+	-
+		data = init(data, {
+			'block': 'waiting-card',
+			'img': 'img-1.jpg',
+			'labels': [
+				{
+					'text': 'New',
+					'class':  'beige'
+				}
+			],
+			'title': 'MATRIX',
+			'text': 'Exquisite Oil Масло питательное для волос 92мл',
+			'subtext': 'Арт.:  <span>CAT00016611</span>',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+			'status': 'наличии',
+			'basket': false
+
+		})
+	+b&attributes(data.attributes(attributes))
+		+e.close-btn
+		+e.wrap
+			+e.img-wrap 
+				+e.IMG.img(src='./img/components/product-card/' + data.img, alt="Название")
+				+e.labels 
+					.label__wrap
+						each label in data.labels 
+							+b.label._small(class= label.class)= label.text
+							if label.stock
+								.label__stock= label.stock
+			+e.content-wrap
+				+e.product-info 
+					+e.name= data.title 
+					+e.text= data.text 
+					+e.subtext !{data.subtext}
+				+e.control-container
+					+e.status-info(class= data['status-class'])
+						+e.status-text !{data.status}
+						+favorites-btn()
+					+e.cost-container 
+						+e.cost= data.cost 
+						+e.stock= data.stock 
+					if data.basket
+						+e.basket-container 
+							+e.basket-btn
+								+basket-btn()
+								span в корзину

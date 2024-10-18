@@ -1,0 +1,48 @@
+extends templates/main-template
+
+include components/collapse
+include base-components/checkbox
+
+block title
+	title ЛК - Авторизация
+block breadcrumbs
+	+b.block_breadcrumbs
+		.global-wrapper
+			+breadcrumbs(['Главная', 'Личный кабинет', 'Личные данные'])
+
+
+block content
+	+b.SECTION.block
+		.global-wrapper
+			+e.head
+				+e.H2.title._big Авторизация
+			+e.body    
+				+b.form._modal._auth
+					+e.body
+						+e.item
+							+form-field({
+								'title': '',
+								'component': {
+									'mixin': 'input',
+									'placeholder': '+ 7 (___) ___-__-__'
+								},
+							})
+						+e.item
+							+form-field({
+								'title': '',
+								'component': {
+									'mixin': 'input',
+									'placeholder': 'Пароль'
+								},
+							})
+
+					+e.footer
+						+e.wrap-link
+							+checkbox({
+								'label': 'Запомнить меня'
+							})
+							+e.A.link(href="#") Забыли пароль?
+						+e.wrap-btn
+							+b.BUTTON.btn-arrow(type="submit") Войти
+							+b.BUTTON.btn-stroke.js-registration-modal(type="button") регистрация
+						+e.text-agree Нажимая на кнопку «Войти», я даю свое <a href="#">Согласие на обработку персональных данных</a>

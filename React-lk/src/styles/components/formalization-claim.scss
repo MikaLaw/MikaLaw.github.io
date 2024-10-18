@@ -1,0 +1,105 @@
+.formalization-claim {
+
+}
+
+.formalization-claim__head {
+  margin-bottom: 30px;
+  color: $color-black;
+
+  & > * + * {
+    margin-left: 20px;
+  }
+}
+
+.formalization-claim__head-bold {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.formalization-claim__main {
+  display: flex;
+  margin-bottom: 35px;
+
+  & > * + * {
+    margin-left: 20px;
+  }
+}
+
+.formalization-claim__ready-date {
+  margin-bottom: 25px;
+  flex-direction: row !important;
+  align-items: center;
+
+  .ant-form-item-label {
+    margin-bottom: 0px;
+  }
+}
+
+.formalization-claim__textarea {
+  padding: 10px 12px 10px;
+  width: 100%;
+  max-width: 423px;
+  margin-bottom: 0;
+  background-color: $color-ui-2;
+  border-radius: 4px;
+
+  .ant-form-item-control-input {
+    flex-grow: 1;
+    align-items: flex-start;
+  }
+
+  .ant-form-item-control-input-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ant-input {
+    flex-grow: 1;
+  }
+
+  .ant-form-item-required {
+    &:after {
+      content: none !important;
+    }
+  }
+}
+
+.formalization-claim__photo {
+  flex-grow: 1;
+}
+
+.formalization-claim__btn-tooltip {
+  margin-left: 4px;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  width: 14px;
+  height: 14px;
+  color: $color-brand-2;
+
+  .anticon ,.anticon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  &:hover {
+    color: $color-brand-2;
+  }
+
+  &:active,
+  &:focus {
+    background-color: transparent;
+    color: $color-brand-2;
+  }
+
+  &.disabled {
+    background-color: transparent;
+    color: $color-brand-2;
+    width: 14px;
+    height: 14px;
+    opacity: .5;
+    pointer-events: none;
+  }
+}

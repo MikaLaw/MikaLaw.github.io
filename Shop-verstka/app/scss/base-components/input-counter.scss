@@ -1,0 +1,59 @@
+.input-counter__wrap {
+  display: inline-flex;
+  height: 44px;
+  border-radius: 4px;
+  background: $color-background-2;
+}
+.input-counter {
+  position: relative;
+  z-index: 1;
+  &__input {
+    @include text-14-500;
+    text-align: center;
+    border: 1px solid $color-background-2;
+    background: $color-background-3;
+    width: 44px;
+    flex-shrink: 0;
+    @include media-min($media-md) {
+      width: 78px;
+    }
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  button {
+    width: 38px;
+    font-size: 16px;
+    line-height: 22px;
+    cursor: pointer;
+
+    @include media-min($media-lg) {
+      color: $color-grey;
+    }
+  }
+
+  &.is-error {
+    .input-counter__wrap {
+      border: 1px solid #f30101;
+    }
+
+    .input-counter__input {
+      color: #f30101;
+    }
+
+    .input-counter__error-message {
+      display: block;
+    }
+  }
+
+  &__error-message {
+    display: none;
+    color: #e23d3d;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: center;
+  }
+}

@@ -1,0 +1,148 @@
+extends templates/main-template
+
+include components/stock-detail-banner
+include components/stock-detail-card
+include components/stock-step
+include base-components/slider
+
+block title
+	title Акция детально
+
+block breadcrumbs
+	+b.block_breadcrumbs
+		.global-wrapper
+			+breadcrumbs(['Главная', 'Акции','Акции для салонов красоты'])
+
+
+block content
+	+b.SECTION.block._stock-detail-4
+		h2.visually-hidden Акция детально
+		.global-wrapper
+			+e.head._stock 
+				+e.title подарок и бонусные баллы При покупке продукции Alfaparf на сумму 15 500 рублей
+				.article__additional-info
+					.article__tag Салоны и мастера
+					.article__view 200 просмотров  
+				.article-brend-img
+					+picture({
+						src: './img/components/brends-list/img-30',
+						webp: true,
+					})              
+			+e.body
+				+b.article._stock-version
+					+e.content 
+						.user-typography
+							h2 ПОдарки и бонусные баллы
+							p Выполните условия акции и получите подарки и бонусные баллы. Акция действует для клиентов, закупивших продукцию Alfaparf впервые (подробные правила читайте ниже).
+						+stock-detail-banner()
+						.user-typography
+							ul 
+								li Палитра оттенков
+								li Фартук для мастера ALFAPARF
+								li Кисть с логотипом ALFAPARF
+						+slider({
+							'item-component': 'stock-detail-card',
+							'init-attr': 'data-article-slider',
+							'array': articleList2
+						})._stock-detail
+						.user-typography
+							h2 Как получить подарки и баллы?
+							p Купите товары бренда Alfaparf на сумму 15 500 рублей. Обязательное условие — покупка товаров по всем пунктам ниже.
+						+b.stock-step
+							+e.num 1
+							+e.content
+								+e.title <span>20 шт.</span> — Kраска тонирующая (тон в тон) COLOR WEAR 60мл <span>или</span> Kраска Перманентная для волос ЕОС CUBE 3D 60мл
+								+e.btn-wrap 
+									+e.BUTTON.btn COLOR WEAR
+									+e.BUTTON.btn ЕОС CUBE 3D
+						+b.stock-step
+							+e.num 2
+							+e.content  
+								+e.title <span>1шт.</span> — Крем-окислитель 1,5% - 1000мл  
+								+product-card-list({
+									'list': [
+													{
+											'img':'./img/components/product-card/img-1',
+											'labels': null,
+											'title': 'ALFAPARF',
+											'text': 'Крем-окислитель 1,5%',
+											'cost': '750 ₽',
+											'stock': null,
+										},
+									],
+									'pagination': false
+								})
+						+b.stock-step
+							+e.num 3
+							+e.content  
+								+e.title <span>1шт.</span> — Крем-окислитель 3/6/9/12% - 1000мл New (один из четырёх, на выбор)
+								+product-card-list({
+										'list': [
+											{
+												'img':'./img/components/product-card/img-6',
+												'labels': null,
+												'title': 'ALFAPARF',
+												'text': 'Крем-окислитель 3%',
+												'cost': '750 ₽',
+												'stock': null,
+											},
+											{
+												'img':'./img/components/product-card/img-11',
+												'labels': null,
+												'title': 'ALFAPARF',
+												'text': 'Крем-окислитель 6%',
+												'cost': '750 ₽',
+												'stock': null,
+											},			
+											{
+												'img':'./img/components/product-card/img-9',
+												'labels': null,
+												'title': 'ALFAPARF',
+												'text': 'Крем-окислитель 6%',
+												'cost': '750 ₽',
+												'stock': null,
+											},
+											{
+												'img':'./img/components/product-card/img-10',
+												'labels': null,
+												'title': 'ALFAPARF',
+															'text': 'Крем-окислитель 12%',
+												'cost': '750 ₽',
+												'stock': null,
+											},										
+										],
+										'pagination': false
+								})
+						+b.stock-step
+							+e.num 4
+							+e.content  
+								+e.title <span>1шт.</span> — Порошок для обесцвечивания волос до 7 уровней, 400гр BB BLEACH EASY LIFT –<span>1шт.</span>
+								+product-card-list({
+									'list': [
+										{
+											'img':'./img/components/product-card/img-3',
+											'labels': null,
+											'title': 'ALFAPARF',
+											'text': 'Порошок для обесцвечивания волос до 7 уровней',
+											'cost': '750 ₽',
+											'stock': null,
+										},
+									],
+									'pagination': false
+								})
+						.user-typography
+							h2 Правила участия						
+							ul 
+								li Акция действует для клиентов, закупивших продукцию Alfaparf впервые. 
+								li Бонусные Баллы действуют 3 месяца с момента начисления.
+								li Потратить Бонусные Баллы можно будет при следующей покупке, не более 50% от суммы.
+	+b.SECTION.block
+		.global-wrapper
+			+e.head 
+				+e.H2.title._seo Место под seo-текст
+			+e.body
+				+e.text._seo 
+					p Идейные соображения высшего порядка, а также постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки дальнейших направлений развития. Не следует, однако забывать, что сложившаяся структура организации обеспечивает широкому кругу (специалистов) участие в формировании существенных финансовых и административных условий. 
+					p Идейные соображения высшего порядка, а также постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки дальнейших направлений развития. Не следует, однако забывать, что сложившаяся структура организации обеспечивает широкому кругу (специалистов) участие в формировании существенных финансовых и административных условий. 					
+					p Идейные соображения высшего порядка, а также постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки дальнейших направлений развития. Не следует, однако забывать, что сложившаяся структура организации обеспечивает широкому кругу (специалистов) участие в формировании существенных финансовых и административных условий. 
+					p Идейные соображения высшего порядка, а также постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки дальнейших направлений развития. Не следует, однако забывать, что сложившаяся структура организации обеспечивает широкому кругу (специалистов) участие в формировании существенных финансовых и административных условий. 

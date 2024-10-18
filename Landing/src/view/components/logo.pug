@@ -1,0 +1,8 @@
+mixin logo()
+	-
+		data = init(data, {
+			block: 'logo',
+		})
+
+	+b&attributes(data.attributes(attributes))
+		+e.IMG.img(src="./img/icons/logo.svg" alt="True Water")

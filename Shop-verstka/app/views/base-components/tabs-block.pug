@@ -1,0 +1,51 @@
+include link-list
+include component
+include input
+include select
+
+mixin tabs-block(data)
+	-
+		data = init(data, {
+			'block': 'tabs-block',
+			'elements': ['content'],
+			'active': 0,
+			'array': [
+				{
+					'title': 'Ссылка 1',
+					'text': 'Текст 1',
+					'component': {},
+				},
+				{
+					'title': 'Ссылка 2',
+					'text': 'Текст 2',
+					'component': {},
+				},
+			],
+			'tabs-list': {},
+		})
+
+		data['tabs-list']['array-extended'] = [];
+		data['tabs-list']['active'] = data['active'];
+
+		data['array'].forEach(function(item, index){
+			data['tabs-list']['array-extended'][index] = {
+				'link': item['title'],
+				'dataNumber': item['dataNumber'],
+				'link-attr': {
+					'data-button': index,
+				},
+			}
+		})
+
+	+b&attributes(data.attributes(attributes))(data-js-tabs)
+		if data['additional-component'] 
+			+e.link-wrap
+				+link-list(data['tabs-list'])(class=data.elem('__tabs-list'))
+				+component(data['additional-component'] )
+		else
+			+link-list(data['tabs-list'])(class=data.elem('__tabs-list'))
+		+e.content-container
+			each item, index in data['array']
+				+e.__content&attributes(item['content-attr'])&attributes({'class':(data['active'] == index)?'is-active':false})(data-tab=index)
+					if item['component']
+						+component(item['component'])(class=data.elem('__component'))

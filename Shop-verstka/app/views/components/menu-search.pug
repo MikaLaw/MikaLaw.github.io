@@ -1,0 +1,18 @@
+include ../base-components/form-field
+
++b.menu-search(data-modal="search")
+	.global-wrapper
+		+e.block
+			+form-field({
+				'block': 'form-field',
+				'title': 'Поиск',
+				'component': {
+					'mixin': 'select-search',
+					'input-data': {
+						'placeholder': 'Что ищем?',    
+						'btn-search': true                    
+					},		
+					'array': searchList1,
+					'placeholder': 'Что ищем?'
+				},
+			})._search

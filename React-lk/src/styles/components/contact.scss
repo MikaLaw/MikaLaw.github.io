@@ -1,0 +1,188 @@
+.contact-block {
+  max-width: 774px;
+  width: 100%;
+  color: $color-black;
+}
+
+* + .contact-block {
+  margin-top: 40px;
+}
+
+.contact-block__title {
+  color: $color-black;
+}
+
+.contact-block__subtitle {
+  margin-top: 10px;
+  max-width: 640px;
+}
+
+.contact-block__container {
+  margin-top: 25px;
+}
+
+.contact {
+  padding: 20px;
+  display: flex;
+  gap: 28px;
+  border: 1px solid $color-ui-3;
+  border-radius: 4px;
+}
+
+.contact + .contact {
+  margin-top: 12px;
+}
+
+.contact__manager {
+  flex: 0 0 334px;
+  display: flex;
+  gap: 20px;
+}
+
+.contact__img {
+  flex-shrink: 0;
+  position: relative;
+  width: 86px;
+  height: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  border: 1px solid $color-ui-2;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: contain;
+  }
+
+  .anticon {
+    width: 50px;
+    height: 50px;
+    color: $color-ui-2;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.contact__manager-links {
+  flex: 0 0 228px;
+
+  & > * {
+    margin: 0;
+  }
+
+  & > * + * {
+    margin-top: 8px;
+  }
+}
+
+.contact__link {
+  font-size: 13px;
+  line-height: 18px !important;
+  color: $color-brand-2;
+}
+
+.contact__info {
+  flex-grow: 1;
+
+  & > * + * {
+    margin-top: 14px;
+  }
+}
+
+.contact__item {
+  display: flex;
+  & > * + * {
+    margin-left: 6px;
+  }
+}
+
+.contact__key {
+  flex: 0 0 48px;
+  color: $color-ui-8;
+}
+
+.contact__value {
+  flex-grow: 1;
+
+  & > * + * {
+    margin-top: 14px;
+  }
+}
+.contact__img {
+
+}
+.contact__tag {
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: $color-ui-2;
+  color: $color-black;
+  border: 0;
+  border-radius: 4px;
+
+  @include media-min($media-xl) {
+    .menu-item-tag {
+      font-size: 11px;
+      line-height: 14px;
+    }
+  }
+}
+
+.contact__juridicals {
+  padding-left: 8px;
+}
+
+.contact__juridicals,
+.contact__collapse .ant-collapse-content-box {
+  & > * + * {
+    margin-top: 8px;
+  }
+}
+
+.news-inner.contact__collapse.ant-collapse.ant-collapse-icon-position-right > .ant-collapse-item > .ant-collapse-header {
+  font-size: 11px;
+  line-height: 15px;
+  font-weight: 500;
+}
+
+.contact__collapse .ant-collapse-content-box {
+  p {
+    color: $color-black;
+  }
+}
+.contact__info-header {
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  & > * {
+    margin: 0;
+  }
+}
+.contact__collapse {
+  &.collapsed {
+    margin: 0;
+  }
+}
+.contact__social {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: $color-ui-6;
+  text-decoration: none;
+
+  &:hover {
+    color: $color-brand-2-hover
+  }
+}

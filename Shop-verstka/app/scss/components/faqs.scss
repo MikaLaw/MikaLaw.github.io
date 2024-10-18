@@ -1,0 +1,28 @@
+.faqs {
+}
+.faqs__collaps-block {
+  flex: 1;
+}
+.faqs__wrap {
+  @include media-min($media-md) {
+    display: flex;
+    flex-direction: row-reverse;
+    column-gap: 24px;
+  }
+}
+.faqs__filter {
+  display: flex;
+  margin-bottom: 20px;
+  @include media-min($media-sm) {
+    margin-bottom: 26px;
+  }
+  .form-field {
+    min-width: 240px;
+  }
+}
+.faqs__form-block {
+  margin-bottom: 20px;
+  @include media-min($media-md) {
+    margin-bottom: 0;
+  }
+}

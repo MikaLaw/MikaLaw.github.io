@@ -1,0 +1,237 @@
+.tour {
+  .ant-modal-content {
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .ant-modal-close {
+    border-radius: 50%;
+    background-color: $color-white;
+
+    .ant-modal-close-x {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 25px;
+      height: 25px;
+      font-size: 10px;
+      line-height: 25px;
+    }
+  }
+
+  .ant-modal-body {
+    padding: 0;
+  }
+}
+
+
+
+.tour__wrap + * {
+}
+
+
+.tour__title {
+  margin-bottom: 20px;
+  color: $color-brand-2-hover;
+  @include text-16-400-inter();
+}
+
+.tour__text {
+  max-width: 352px;
+
+  b {
+    font-weight: 700;
+  }
+
+  i {
+    font-size: 12px;
+  }
+
+  & > * + * {
+    margin-top: 20px;
+  }
+
+  ul {
+    padding: 0;
+    margin-bottom: 0;
+    list-style-type: none;
+
+    & > * + * {
+      margin-top: 5px;
+    }
+
+    li {
+      &:before {
+        content: "";
+        position: absolute;
+        top: 9px;
+        left: 8px;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background-color: $color-black;
+      }
+    }
+  }
+
+  li {
+    position: relative;
+    padding-left: 24px;
+  }
+}
+
+.tour__img {
+  //margin-top: 20px;
+  max-width: 248px;
+
+  &_max {
+    max-width: 307px;
+  }
+  &_max_2 {
+    max-width: 314px;
+  }
+  &_shadow {
+    box-shadow: $box-shadow-9;
+  }
+
+
+  &_margin {
+    margin: 20px 0;
+  }
+  &_margin_10 {
+    margin: 10px 0;
+  }
+}
+
+.tour__btns {
+  margin-top: 20px;
+}
+
+.tour__btn {
+  padding: 10px 16px;
+  font-size: 11px;
+  line-height: 14px;
+  border: 0;
+  background-color: $color-ui-2;
+  color: $color-black;
+  transition: $transition;
+
+  &:before,
+  &:after {
+    display: inline-block;
+    position: static;
+    top: auto;
+    right: auto;
+    left: auto;
+    bottom: auto;
+    color: $color-black;
+    background: transparent;
+    opacity: 1;
+    transition: $transition;
+  }
+
+  &.back {
+    background-color: $color-white;
+    margin-right: 20px;
+
+    &:before {
+      content: "<";
+      margin-right: 5px;
+    }
+  }
+
+  &.next {
+    &:after {
+      content: ">";
+      margin-left: 5px;
+    }
+  }
+
+  &.simple {
+    &:after,&:before {
+      content: none;
+    }
+  }
+
+  &.hide {
+    display: none;
+
+    & + .tour__btn {
+      margin: 0;
+    }
+  }
+
+  &:hover {
+    background-color: $color-brand-2-hover;
+    color: $color-white;
+
+    &:before, &:after {
+      color: $color-white;
+    }
+  }
+}
+
+.tour-wrapper {
+  display: block !important;
+  stroke: $color-warning;
+  stroke-width: 2px;
+
+  &.mask-color {
+    stroke: none;
+    fill: $color-tour-mask-2 !important;
+    opacity: 1 !important;
+  }
+}
+
+.tour-navigation {
+  padding: 0 20px;
+  width: 100%;
+  max-width: 332px;
+  margin-top: -54px !important;
+}
+
+.reactour__mask {
+  opacity: 1 !important;
+  color: $color-tour-mask !important;
+}
+
+.reactour__popover {
+  padding: 0 !important;
+  width: 100%;
+  max-width: 538px !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  background-color: transparent;
+
+  &.main-page {
+    margin-left: 20px;
+  }
+
+}
+
+.reactour__close-button {
+  top: 0 !important;
+  right: 0 !important;
+  width: 25px !important;
+  height: 25px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: $color-white !important;
+  border-radius: 50%;
+
+  &:before {
+    content: "" !important;
+    display: inline-block !important;
+    width: 10px !important;
+    height: 10px !important;
+    background-image: icon-close-mini($color-ui-5);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  svg {
+    display: none !important;
+  }
+}

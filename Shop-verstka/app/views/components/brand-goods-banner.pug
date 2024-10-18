@@ -1,0 +1,16 @@
+mixin brand-goods-banner(data)
+	-
+		data = init(data, {
+			'block': 'brand-goods-banner',
+			'img': './img/components/brends-list/img-29'
+		})
+
+	+b&attributes(data.attributes(attributes))
+		+e.wrap
+			+picture({
+				src: data.img,
+				webp: true,
+				alt: data.title,
+			}).wrap-img
+			+e.description
+				+e.text Бренду Yellow уже более 30 лет. Постепенно в портфеле компании появились такие бренды, как Yellow — профессиональная косметика для волос эконом-класса, TeN — профессиональная косметика по уходу за телом; открыто направление BEAUTY&BUSINESS, занимающееся бизнес-консалтингом VIP-клиентов. Бренду Yellow уже более 30 лет. Постепенно в портфеле компании появились такие бренды, как Yellow — профессиональная косметика для волос эконом-класса, TeN — профессиональная косметика по уходу за телом; открыто направление BEAUTY&BUSINESS, занимающееся бизнес-консалтингом VIP-клиентов.

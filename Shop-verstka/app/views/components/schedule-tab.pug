@@ -1,0 +1,16 @@
+include pagination-block
+include schedule-card
+
+mixin schedule-tab(data)
+	-
+		data = init(data, {
+			'block': 'schedule-tab',
+			'list': scheduleList1,
+		})
+	+b&attributes(data.attributes(attributes))
+		+e.wrap
+			+e.UL.list 
+				each item in data.list
+					+e.LI.item 
+						+schedule-card(item)
+			+pagination-block()

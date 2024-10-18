@@ -1,0 +1,81 @@
+extends templates/main-template
+
+include base-components/button-view
+include base-components/slider
+include base-components/tabs-block
+include components/product-card
+include components/stock-slider-tab
+include components/tags
+include components/stock-card-list
+
+block title
+	title Акции(карточки)
+
+block breadcrumbs
+	+b.block_breadcrumbs
+		.global-wrapper
+			+breadcrumbs(['Главная', 'Новости',])
+
+
+block content
+	+b.SECTION.block._stock-1
+		.global-wrapper
+			+e.head 
+				+e.H2.title._big Акции для розничных покупателей
+			+e.body
+				+tabs-block({
+					'tabs-list': {
+						'block': 'tabs-list',
+					},
+					'filter': '',
+					'additional-component': {
+						'mixin': 'button-view',
+					},
+					'array': [
+						{
+							'title': 'Розница',
+							'component': {
+								'mixin': 'stock-slider-tab',
+
+							},
+						},
+						{
+							'title': 'Салоны и мастера',
+							'component': {
+								'mixin': 'stock-slider-tab',
+								'array': stockList3					
+							},
+						}
+					],
+				})._stock-1
+	+b.SECTION.block._stock-2
+		.global-wrapper
+			+e.head 
+				+e.H2.title._big Акции брендов					
+		.global-wrapper.global-wrapper_overflow
+			+tags({
+				'list': tagsList2
+			})._priority
+		.global-wrapper
+			+stock-card-list()
+	+b.SECTION.block._stock-3
+		.global-wrapper
+			+e.head 
+				+e.H2.title._icon
+					a(href="#") Вы смотрели
+			+e.body
+				+slider({
+					'item-component': 'product-card',
+					'init-attr': 'data-product-slider ',
+					'array': productList1
+				})._product
+	+b.SECTION.block._stock-4
+		.global-wrapper
+			+e.head 
+				+e.H2.title._seo Место под seo-текст
+			+e.body
+				+e.text._seo 
+					p Идейные соображения высшего порядка, а также постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки дальнейших направлений развития. Не следует, однако забывать, что сложившаяся структура организации обеспечивает широкому кругу (специалистов) участие в формировании существенных финансовых и административных условий. 
+					p Идейные соображения высшего порядка, а также постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки дальнейших направлений развития. Не следует, однако забывать, что сложившаяся структура организации обеспечивает широкому кругу (специалистов) участие в формировании существенных финансовых и административных условий. 					
+					p Идейные соображения высшего порядка, а также постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки дальнейших направлений развития. Не следует, однако забывать, что сложившаяся структура организации обеспечивает широкому кругу (специалистов) участие в формировании существенных финансовых и административных условий. 
+					p Идейные соображения высшего порядка, а также постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки дальнейших направлений развития. Не следует, однако забывать, что сложившаяся структура организации обеспечивает широкому кругу (специалистов) участие в формировании существенных финансовых и административных условий. 

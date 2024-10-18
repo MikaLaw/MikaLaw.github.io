@@ -1,0 +1,128 @@
+extends templates/side-main-template-profile
+include components/waiting-list
+
+block title
+	title ЛК - Личные данные(розница)
+
+block breadcrumbs
+	+b.block_breadcrumbs._breadcrumbs-lk
+		.global-wrapper
+			+breadcrumbs(['Главная', 'Личные данные'])
+
+
+block content
+	+b.SECTION.block._profile-1
+		h2.visually-hidden Личные данные
+		+e.head
+			+b.permission-profile._v2
+				+e.wrap
+					+e.title Подтвердите ваш e-mail
+					+e.A.link(href="#")  Отправить письмо повторно
+			+e.title._big Личные данные
+		+e.body
+			+b.permission-profile
+				+e.title Ваша заявка на регистрацию для салонов и мастеров находится на модерации.
+				+e.text  В случае срочности можете посетить наш магазин с документом (диплом, сертификат и т.п.)
+				+e.text До подтверждения вашего профессионального профиля вы можете пользоваться Личным кабинетом как розничный покупатель. 
+			+b.FORM.form_profile 
+				+e.body
+					+e.item
+						+form-field({
+							'title': 'Ваш телефон',
+							'component': {
+								'mixin': 'input',
+								'placeholder': ''
+							},
+						})
+						+e.text Для привязки другого номера к профилю, <a href="#">обратитесь к нам</a>		
+					+e.item
+						+form-field({
+							'title': 'ФИО',
+							'component': {
+								'mixin': 'input',
+								'placeholder': ''
+							},
+						})
+					+e.item
+						+form-field({
+							'title': 'Пол',
+							'component': {
+								'mixin': 'select',
+								'placeholder': '',
+								'multiple': false,
+								'block': 'select_simple',
+							},
+						})
+					+e.item
+						+form-field({
+							'title': 'Дата рождения',
+							'component': {
+								'mixin': 'input',
+								'placeholder': ''
+							},
+						})
+					+e.item
+						+form-field({
+							'title': 'E-mail',
+							'component': {
+								'mixin': 'input',
+								'placeholder': ''
+							},
+						})
+						+e.email-change.is-show
+							+e.text На введенный e-mail поступит письмо с ссылкой. Перейдите по ссылке для подтверждения адреса.
+							+b.BUTTON.btn-grey Подтвердить e-mail
+					+e.item
+						+form-field({
+							'title': 'Населенный пункт*',
+							'component': {
+								'mixin': 'select-search-simple',
+								'block': 'select_simple',
+								'multiple': false,
+								'placeholder': 'Выберите',	
+							},
+						})
+					+e.item
+						+form-field({
+							'title': 'Любимый магазин',
+							'component': {
+								'mixin': 'select',
+								'block': 'select_simple',
+								'multiple': false,
+								'placeholder': 'Выберите',	
+							},
+						})
+													
+				+e.footer 
+					+b.BUTTON.btn-grey Сохранить изменения
+			+b.FORM.form_profile 
+				+e.head
+					+e.title Изменение пароля
+				+e.body
+					+e.item
+						+form-field({
+							'title': 'Текущий пароль',
+							'component': {
+								'mixin': 'input-password',
+								'placeholder': ''
+							},
+						})
+					+e.item
+						+form-field({
+							'title': 'Новый  пароль',
+							'component': {
+								'mixin': 'input-password',
+								'placeholder': ''
+							},
+						})
+					+e.item
+						+form-field({
+							'title': 'Повторите  пароль',
+							'component': {
+								'mixin': 'input-password',
+								'placeholder': ''
+							},
+						})
+				+e.footer 
+					+b.BUTTON.btn-grey Сохранить изменения
+			

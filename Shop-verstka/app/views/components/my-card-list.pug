@@ -1,0 +1,11 @@
+include my-card-pp
+
+mixin my-card-list(data)
+	-
+		data = init(data, {
+			'block': 'my-card-list',
+			'array': discountSystemList2
+		})
+	+b&attributes(data.attributes(attributes))
+		each item in data.array 
+			+my-card-pp(item)

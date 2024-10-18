@@ -1,0 +1,19 @@
+mixin works-card(data)
+	-
+		data = init(data, {
+			block: 'works-card',
+			title: 'Лендинг',
+			img: 'work.jpg',
+			tech: 'HTML, CSS, JS',
+			href: "../modern-verstka/runtime/main.html"
+		})
+
+	+b.A&attributes(data.attributes(attributes))(href= data.href target="_blank")
+		+e.DIV.wrap
+			+e.DIV.img-container
+				picture
+					source(media="(min-width: 768px)" srcset=`./img/components/${data.img}-2x.jpg`)
+					+e.IMG.img(width="423" height="290"  src=`./img/components/${data.img}-1x.jpg` alt=data.title)
+			+e.DIV.content
+				+e.DIV.title= data.title 
+				+e.DIV.text= data.tech

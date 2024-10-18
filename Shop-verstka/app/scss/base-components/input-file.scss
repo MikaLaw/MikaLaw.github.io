@@ -1,0 +1,222 @@
+.input-file {
+  &__body {
+    display: block;
+
+    & + & {
+      margin-top: 12px;
+    }
+  }
+
+  input {
+    @include visually-hidden();
+  }
+  & > .input-file__body {
+    margin-bottom: 13px;
+    .btn-file {
+      span {
+        font-size: 0;
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        cursor: pointer;
+        transition: $transition;
+
+        &:hover {
+          opacity: 0.6;
+        }
+        &::before {
+          content: '';
+          display: block;
+          background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.19718 15.9997C2.38578 15.9997 1.56733 15.6481 0.944318 14.9644C0.320318 14.2805 0 13.3811 0 12.4915C0 11.6535 0.28708 10.8089 0.867175 10.1734L0.999988 10.0276L8.99555 1.25007C9.7572 0.41352 10.7669 -0.00158705 11.7747 4.55945e-06C12.8449 -0.000524568 13.9269 0.46313 14.753 1.36927C15.5781 2.2754 16 3.46238 16 4.63743C16.0011 5.74357 15.6231 6.85184 14.8614 7.68743L8.14802 15.0566L7.64901 15.6044C7.09272 14.9935 7.09272 14.0217 7.64913 13.4109L13.8625 6.59102C14.3459 6.05925 14.5861 5.36385 14.587 4.63736C14.587 3.86763 14.3116 3.07856 13.7531 2.46596C13.1955 1.85308 12.4759 1.55135 11.7748 1.55095C11.1127 1.55214 10.48 1.81551 9.99564 2.34635L1.99913 11.1239L1.86632 11.2697C1.5646 11.6021 1.4153 12.0328 1.41419 12.4916C1.41419 12.9771 1.58805 13.4775 1.94346 13.8682C2.29898 14.2584 2.75397 14.4478 3.1973 14.4489C3.61521 14.4478 4.00781 14.2828 4.31051 13.9526L9.96829 7.74161L10.4419 7.22186C10.5551 7.09633 10.6119 6.9364 10.6128 6.75423C10.6128 6.56097 10.5443 6.35843 10.398 6.19747C10.2504 6.03595 10.0659 5.96095 9.89004 5.96042C9.72399 5.96188 9.57965 6.02392 9.46445 6.14892L4.25016 11.8733C3.69337 11.2627 3.69324 10.2902 4.24979 9.67916L8.46472 5.05264C8.85719 4.62141 9.37865 4.40895 9.8903 4.41C10.4352 4.40947 10.9821 4.64533 11.3971 5.10103C11.8112 5.55633 12.026 6.15624 12.026 6.75414C12.0271 7.31568 11.8337 7.88859 11.441 8.31812L10.9674 8.83787L5.30871 15.0496C4.73059 15.6838 3.96309 16 3.20157 16H3.1976L3.19718 15.9997Z' fill='%232A1F15'/%3E%3C/svg%3E%0A");
+          width: 16px;
+          height: 16px;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: contain;
+        }
+
+        &::after {
+          position: relative;
+          display: inline;
+          color: $color-black;
+          @include text-14-600;
+          content: attr(data-not-first);
+        }
+      }
+    }
+  }
+  &__body:not(.is-filled) {
+    ~ .input-file__name {
+      display: none;
+    }
+  }
+  &__body.is-filled {
+    + .btn-file span:not([class]) {
+      font-size: 0;
+      line-height: 1;
+
+      &::after {
+        position: relative;
+        content: attr(data-filled);
+      }
+    }
+  }
+
+  &__name {
+    display: flex;
+    margin-top: 12px;
+    .btn-round-close {
+      margin-top: -6px;
+      cursor: pointer;
+      transition: $transition;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+  &__name-text {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    word-break: break-word;
+  }
+
+  &[data-input-multi] {
+    display: inline-flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+    .input-file__wrap {
+      display: flex;
+      width: 170px;
+    }
+    .input-file__body {
+      display: inline-block;
+      width: 100%;
+      order: -1;
+    }
+    .btn-file-close {
+      margin-left: 10px;
+      cursor: pointer;
+      transition: $transition;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+    .btn {
+      font-size: 14px;
+      line-height: 17px;
+      color: $color-black;
+    }
+
+    input.is-filled + .btn {
+      color: $color-black;
+      display: flex;
+    }
+
+    .input-file__body:not(:first-child) {
+      .input-file__input:not(.is-filled) + .btn-file {
+        span {
+          font-size: 0;
+          line-height: 1;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+
+          &::before {
+            content: '';
+            display: block;
+            background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.19718 15.9997C2.38578 15.9997 1.56733 15.6481 0.944318 14.9644C0.320318 14.2805 0 13.3811 0 12.4915C0 11.6535 0.28708 10.8089 0.867175 10.1734L0.999988 10.0276L8.99555 1.25007C9.7572 0.41352 10.7669 -0.00158705 11.7747 4.55945e-06C12.8449 -0.000524568 13.9269 0.46313 14.753 1.36927C15.5781 2.2754 16 3.46238 16 4.63743C16.0011 5.74357 15.6231 6.85184 14.8614 7.68743L8.14802 15.0566L7.64901 15.6044C7.09272 14.9935 7.09272 14.0217 7.64913 13.4109L13.8625 6.59102C14.3459 6.05925 14.5861 5.36385 14.587 4.63736C14.587 3.86763 14.3116 3.07856 13.7531 2.46596C13.1955 1.85308 12.4759 1.55135 11.7748 1.55095C11.1127 1.55214 10.48 1.81551 9.99564 2.34635L1.99913 11.1239L1.86632 11.2697C1.5646 11.6021 1.4153 12.0328 1.41419 12.4916C1.41419 12.9771 1.58805 13.4775 1.94346 13.8682C2.29898 14.2584 2.75397 14.4478 3.1973 14.4489C3.61521 14.4478 4.00781 14.2828 4.31051 13.9526L9.96829 7.74161L10.4419 7.22186C10.5551 7.09633 10.6119 6.9364 10.6128 6.75423C10.6128 6.56097 10.5443 6.35843 10.398 6.19747C10.2504 6.03595 10.0659 5.96095 9.89004 5.96042C9.72399 5.96188 9.57965 6.02392 9.46445 6.14892L4.25016 11.8733C3.69337 11.2627 3.69324 10.2902 4.24979 9.67916L8.46472 5.05264C8.85719 4.62141 9.37865 4.40895 9.8903 4.41C10.4352 4.40947 10.9821 4.64533 11.3971 5.10103C11.8112 5.55633 12.026 6.15624 12.026 6.75414C12.0271 7.31568 11.8337 7.88859 11.441 8.31812L10.9674 8.83787L5.30871 15.0496C4.73059 15.6838 3.96309 16 3.20157 16H3.1976L3.19718 15.9997Z' fill='%232A1F15'/%3E%3C/svg%3E%0A");
+            width: 16px;
+            height: 16px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+          }
+
+          &::after {
+            position: relative;
+            display: inline;
+            color: $color-black;
+            @include text-14-600;
+            content: attr(data-not-first);
+          }
+        }
+
+        .icon {
+          visibility: hidden;
+        }
+      }
+    }
+
+    .input-file__input.is-filled {
+      + .btn-file span[data-name-file] {
+        font-size: 0;
+
+        &::after {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          display: inline-block;
+          max-width: 150px;
+          position: relative;
+          color: $color-black;
+          @include text-13-500;
+          content: attr(data-name-file);
+        }
+      }
+    }
+  }
+}
+.btn-file {
+  display: flex;
+  flex-direction: column;
+  .placeholder {
+    width: 150px;
+    height: 150px;
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --%3E%3Csvg width='800px' height='800px' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19 9V17.8C19 18.9201 19 19.4802 18.782 19.908C18.5903 20.2843 18.2843 20.5903 17.908 20.782C17.4802 21 16.9201 21 15.8 21H8.2C7.07989 21 6.51984 21 6.09202 20.782C5.71569 20.5903 5.40973 20.2843 5.21799 19.908C5 19.4802 5 18.9201 5 17.8V6.2C5 5.07989 5 4.51984 5.21799 4.09202C5.40973 3.71569 5.71569 3.40973 6.09202 3.21799C6.51984 3 7.0799 3 8.2 3H13M19 9L13 3M19 9H14C13.4477 9 13 8.55228 13 8V3' stroke='%23000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin-bottom: 10px;
+  }
+  img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+}
+.input-file-with-field {
+  flex: 1;
+  .input-file[data-input-multi] .input-file__wrap {
+    width: unset;
+  }
+  .input-file[data-input-multi]
+    .input-file__input.is-filled
+    + .btn-file
+    span[data-name-file]::after {
+    max-width: 100%;
+  }
+  .input {
+    padding-top: 0;
+    min-height: 34px;
+  }
+  .input__wrap-input {
+    margin-bottom: 20px;
+  }
+  .input-file__text {
+    padding-top: 10px;
+    @include text-14-500;
+    margin-bottom: 20px;
+  }
+  .input-file[data-input-multi] {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: unset;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}

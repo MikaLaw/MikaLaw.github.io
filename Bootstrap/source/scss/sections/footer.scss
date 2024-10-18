@@ -1,0 +1,47 @@
+.footer {
+  padding: 128px 0;
+}
+
+.row > .gal_col {
+  padding-right: 7.5px;
+  padding-left: 7.5px;
+  margin-bottom: 15px;
+}
+
+.footer-menu__link {
+  color: $contrast-color;
+  transition: 0.3s;
+
+  &:hover,
+  &:active {
+    color: $contrast-hover;
+  }
+}
+
+.form__input {
+  border: 1px solid #e6e6e6;
+  background: #fff;
+  padding: 13px 6px;
+  border-radius: 4px;
+  flex: 1;
+  &:focus {
+    outline: 1px solid #000;
+  }
+}
+
+.footer__copyright-link {
+  color: $contrast-color;
+  transition: 0.3s;
+  &:hover,
+  &:active {
+    color: $contrast-hover;
+  }
+}
+
+.footer__copyright-icon {
+  fill: #dc3545;
+}
+
+.form__btn {
+  border: none;
+}

@@ -1,0 +1,43 @@
+.pharmacy-select-option,
+.pharmacy-select-option__town {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pharmacy-select-option {
+  padding: 10px 10px;
+  border-radius: 2px;
+  transition: $transition;
+  cursor: pointer;
+
+  &:hover {
+    background: $color-ui-2;
+  }
+
+  &.active {
+    background: $color-ui-3;
+    cursor: default;
+  }
+}
+
+.pharmacy-select-option__town {
+  width: 140px;
+
+  .anticon, .anticon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .anticon {
+    color: $color-brand-2;
+  }
+}
+
+.pharmacy-select-option__address {
+  width: 284px;
+}
+
+.pharmacy-select-option__modal-wrap {
+  z-index: 1051;
+}

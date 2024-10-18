@@ -1,0 +1,13 @@
++b.SECTION.natural-section.main__nature-section#natural-section(data-natural-section)
+	h1.visually-hidden Какие бывают камни
+	+e.image-wrap
+		+e.image
+			+e.logo-wrap 
+				+e.logo
+			+e.subtitle-wrap 
+				+e.subtitle
+			+e.title-wrap
+				+e.title
+	each index in [1, 2, 3, 4, 5, 6, 7, 8, 9]
+		div(class=`natural-section__stone-wrap-${index}`)
+			div(class=`natural-section__stone-${index}`)

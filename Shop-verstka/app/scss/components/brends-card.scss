@@ -1,0 +1,27 @@
+.brends-card {
+  display: block;
+  transition: $transition;
+  &:hover,
+  &:active {
+    .brends-card__wrap-img {
+      filter: grayscale(0);
+    }
+  }
+}
+
+.brends-card__wrap-img {
+  position: relative;
+  width: 100%;
+  height: 121px;
+  filter: grayscale(1);
+  transition: $transition;
+
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: contain;
+  }
+}

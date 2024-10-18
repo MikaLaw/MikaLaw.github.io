@@ -1,0 +1,13 @@
+mixin logo(data)
+	-
+		data = init(data, {
+			'img': 'logo.svg',
+			'link': true
+		})
+
+	if data.link
+		+b.A.logo&attributes(attributes)(href="/")
+			+e.IMG.img(src='img/' + data['img'] alt="Logo")
+	else 
+		+b.logo&attributes(attributes)
+			+e.IMG.img(src='img/' + data['img'] alt="Logo")

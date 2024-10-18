@@ -1,0 +1,26 @@
+include stock-table
+
+
+mixin stock-row-list(data)
+	-
+		data = init(data, {
+			'block': 'stock-row-list',
+			'pagination': true,
+			'list': [
+				stockList6,
+				stockList7,
+				stockList8
+			]
+		})
+
+	+b&attributes(data.attributes(attributes))
+		+e.UL.list
+			for item in data.list
+				+e.LI.item
+					+e.wrap-img
+						+e.IMG.img(src= item['-brend'] alt="Название")
+					+stock-table({array: item.list})
+		if data.pagination
+			+e.control 
+				+b.BUTTON.btn Показать ещё
+				+pagination()

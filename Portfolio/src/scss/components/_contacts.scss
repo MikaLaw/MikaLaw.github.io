@@ -1,0 +1,36 @@
+.contacts{
+    margin-bottom: 20px;
+}
+
+.contacts__title{
+    margin-bottom: 10px;
+    color: $color-ui-3;
+    font-size: 18px;
+}
+
+.contacts__item{
+    display: flex;
+    gap: 10px;
+    font-size: 16px;
+}
+
+.contacts__label{
+    color: $color-ui-3;
+}
+
+.contacts__value{
+    color: $color-primary;
+
+    &:focus-visible {
+        outline: 1px dashed #000;
+        outline-offset: 5px;
+    }
+
+    &:hover {
+        color: $color-primary-hover
+    }
+
+    &:active {
+        color: $color-primary-focus-visible;
+    }
+}

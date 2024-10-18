@@ -1,0 +1,25 @@
+mixin my-card-pp(data)
+	-
+		data = init(data, {
+			'block': 'my-card-pp',
+			'text': 'Скидка',
+			'discount': '15%',
+			'info': 'До следующего уровня<br> нужно купить на сумму:',
+			'summ': '9 500 ₽'
+		})
+	+b&attributes(data.attributes(attributes))
+		+e.wrap 
+			+e.discount-wrap 
+				if data.title 
+					+e.title= data.title 
+				if data.img 
+					+e.img-container 
+						+e.IMG.img(src= data.img alt="Название")
+				+e.content-container 
+					if data.text				
+						+e.text= data.text
+					+e.persent= data.discount
+			+e.info-wrap
+				+e.info !{data.info}
+				if data.summ
+					+e.summ= data.summ

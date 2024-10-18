@@ -1,0 +1,10 @@
++b.SECTION.water-properties.main__water-properties(data-animate="fadeIn")
+	h2.visually-hidden О свойствах воды
+	+e.container.container
+		+e.title(data-animate="fadeInUp") Находящиеся в контейнере природные компоненты делают воду —
+		+e.list-wrap 
+			+e.DL.list
+				each item in waterPropertiesList
+					+e.item(data-animate="fadeInUp") 
+						+e.DT.item-title= item.title
+						+e.DD.item-text= item.text 

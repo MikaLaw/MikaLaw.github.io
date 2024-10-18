@@ -1,0 +1,36 @@
+extends templates/side-main-template
+
+include components/my-card
+include components/my-card-discount
+include components/rebate-system-card
+include base-components/slider
+
+block title
+	title ЛК - Моя карта(серебро)
+
+block breadcrumbs
+	+b.block_breadcrumbs._breadcrumbs-lk
+		.global-wrapper
+			+breadcrumbs(['Главная', 'Моя карта'])
+
+
+block content
+	+b.SECTION.block._mb-my-card
+		+e.head
+			+e.H2.title._big Моя карта
+		+e.body
+			+e.text._my-card Ознакомиться с <a href="#">Полными условиями программы лояльности</a>
+			+b.my-card-wrap 
+				+my-card()
+				+my-card-discount()
+	+b.SECTION.block
+		+e.head
+			+e.H2.title_small система СКИДОК	
+		+e.body
+			+slider({
+				'item-component': 'rebate-system-card',
+				'init-attr': 'data-rebate-system-slider',
+				'array': rebateSystemList,
+				'arrows': null,
+				'dots': null
+			})._rebate-system

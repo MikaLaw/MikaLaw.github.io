@@ -1,0 +1,39 @@
+.export-table {
+  .ant-table-thead > tr > th {
+    min-height: 48px;
+  }
+
+  .ant-table-container {
+    border: 1px solid $color-grey-2;
+    border-radius: 0;
+  }
+
+  & + .pagination-container {
+    .ant-pagination-options-quick-jumper {
+      input {
+        padding: 0 12px;
+        border-radius: 6px;
+        width: 50px !important;
+        border-color: $color-ui-7;
+      }
+    }
+
+    .ant-pagination-options {
+
+      .ant-select {
+        width: 84px;
+
+        .ant-select-selector {
+          border-color: $color-ui-7;
+          border-radius: 6px;
+        }
+      }
+    }
+  }
+  
+  &_last {
+    & + .pagination-container {
+      display: none;
+    }
+  }
+}

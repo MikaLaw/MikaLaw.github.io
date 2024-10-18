@@ -1,0 +1,73 @@
+include input
+include picture
+
+mixin select(data)
+	-
+		data = init(data, {
+			'block': 'select',
+			'array': [
+				{
+					title: 'Вариант 1',
+				},
+				{
+					title: 'Вариант 2',
+				},
+				{
+					title: 'Вариант 3',
+				},
+				{
+					title: 'Вариант 4',
+				}
+			],
+			'placeholder': '',
+			'simple': false,
+			'multiple': false,
+			'checkbox': true,
+			//- 'active': 0,
+			'state': '', // disabled, error
+		})
+		var name = Math.random().toString(36).substring(2);
+		var type = data['multiple'] ? 'checkbox' : 'radio'
+		var isDisabled = false
+		data['class'] += 'js__tabselect'
+		if (data['state'] == 'disabled') {
+			data['class'] += ' ' + 'disabled'
+			isDisabled = '';
+		} else if (data['state'] == 'error') {
+			data['class'] += ' ' + 'error'
+		}
+
+	+b&attributes(data.attributes())&attributes(attributes)(data-data-js-tabselect)
+		+e.button(data-dsdd disabled=isDisabled)
+			+e.SPAN.__button-inner(data-display)= data['placeholder']
+			+b.BUTTON.btn-round-close(data-data-js-tabselect-clear)
+		if data.range 
+			+e.__roster.dsdd-menu
+				+e.roster-wrap(data-data-js-tabselect-range-wrap)
+					.slider-range
+					+e.range-inputs
+						input.amount-left(type="text" data-data-js-tabselect-range-left)
+						input.amount-right(type="text" data-data-js-tabselect-range-right)
+					+b.BUTTON.btn(data-data-js-tabselect-range data-id= name + 1) Применить
+				
+		else
+			+e.UL.__roster.dsdd-menu(data-inputs class=data['multiple'] ? 'select-checkbox': '')
+				each label, index in data['array']
+					-
+						var id = name + index
+						var checked = (data['active'] == index) ? '' : false
+					+e.LI.__item(class=(data.simple?'_simple': ''))
+						if type === 'radio'
+							+e.INPUT.__input(type=type, id=id, data-id=name, value=('value' in label? label.value : index), name=name, checked=checked)
+						else 
+							+e.INPUT.__input(type=type, id=id, data-id=id, value=('value' in label? label.value : index), name=name, checked=checked disabled= label.disabled)
+						+e.LABEL.__label(for=id)
+							if 'dataColor' in label
+								+e.icon-color(style=`background-color:${label['dataColor']}`)
+							else if 'icon' in label
+								+e.icon
+									+e.IMG(src=label.icon alt=label['title'])
+							else
+								+e.icon-checkbox
+							| !{label['title']}
+

@@ -1,0 +1,114 @@
+extends templates/main-template-no-product-in-cart
+
+include base-components/slider
+include components/brends-card
+include components/product-card
+include components/news-card
+include components/stock-slider-card
+include components/main-banner
+include components/tags
+include components/main-top-card
+
+block title
+	title Главная(в корзине нет товаров)
+
+block content
+	+b.SECTION.block._main-1
+		h2.visually-hidden Главный баннер
+		+slider({
+			'item-component': 'main-top-card',
+			'init-attr': 'data-main-top-banner',
+			'array': mainTopList
+		})._main-top
+	+b.SECTION.block._main-2
+		h2.visually-hidden Тэги
+		.global-wrapper.global-wrapper_overflow-2
+			+b.tags-block
+				+tags({
+					'list': tagsList3
+				})._main
+	+b.SECTION.block._main-3
+		.global-wrapper
+			+e.head 
+				+e.H2.title._icon
+					a(href="#") Распродажа
+			+e.body
+				+slider({
+					'item-component': 'product-card',
+					'init-attr': 'data-product-main-slider',
+					'array': productList7
+				})._product._product-main
+	+b.SECTION.block._main-4
+		.global-wrapper
+			+e.head 
+				+e.H2.title._icon
+					a(href="#") Новинки
+			+e.body
+				+slider({
+					'item-component': 'product-card',
+					'init-attr': 'data-product-main-slider',
+					'array': productList1
+				})._product._product-main
+	+b.SECTION.block._main-5
+		h2.visually-hidden Товары
+		.global-wrapper
+			+slider({
+				'item-component': 'stock-slider-card',
+				'init-attr': 'data-main-stock-slider',
+				'array': stockList10
+			})._main-stock-big
+	+b.SECTION.block._main-6
+		h2.visually-hidden Товары
+		.global-wrapper
+			+b.tools
+				+e.UL.list 
+					each item in toolsList
+						+e.LI.item
+							+e.A.link(href="#")
+								+picture({
+									src: item.img,
+									png: true,
+								}).innerwrap-img
+								+e.IMG.outerwrap-img(src= item.decor + '.svg' alt="товар")
+	+b.SECTION.block._main-7
+		h2.visually-hidden Товары
+		.global-wrapper
+			+slider({
+				'item-component': 'stock-slider-card',
+				'init-attr': 'data-main-stock-slider',
+				'array': stockList9
+			})._main-stock
+	+b.SECTION.block._main-8
+		.global-wrapper
+			+e.head 
+				+e.H2.title._icon
+					a(href="#") Профессионалы советуют
+			+e.body
+				+slider({
+					'item-component': 'news-card',
+					'init-attr': 'data-main-news-slider',
+					'array': newsList4
+				})._main-news
+	+b.SECTION.block._main-9
+		h2.visually-hidden Товары
+		+main-banner()
+	+b.SECTION.block._main-10
+		.global-wrapper
+			+e.head 
+				+e.H2.title Мы — официальные дистрибьюторы
+			+e.body
+				+slider({
+					'item-component': 'brends-card',
+					'init-attr': 'data-brend-slider',
+					'array': brendsList1
+				})._brend
+	+b.SECTION.block._main-11
+		.global-wrapper
+			+e.head 
+				+e.H2.title._seo Место под seo-текст
+			+e.body
+				+e.text._seo 
+					p Идейные соображения высшего порядка, а также постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки дальнейших направлений развития. Не следует, однако забывать, что сложившаяся структура организации обеспечивает широкому кругу (специалистов) участие в формировании существенных финансовых и административных условий. 
+					p Идейные соображения высшего порядка, а также постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки дальнейших направлений развития. Не следует, однако забывать, что сложившаяся структура организации обеспечивает широкому кругу (специалистов) участие в формировании существенных финансовых и административных условий. 					
+					p Идейные соображения высшего порядка, а также постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки дальнейших направлений развития. Не следует, однако забывать, что сложившаяся структура организации обеспечивает широкому кругу (специалистов) участие в формировании существенных финансовых и административных условий. 
+					p Идейные соображения высшего порядка, а также постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки дальнейших направлений развития. Не следует, однако забывать, что сложившаяся структура организации обеспечивает широкому кругу (специалистов) участие в формировании существенных финансовых и административных условий. 

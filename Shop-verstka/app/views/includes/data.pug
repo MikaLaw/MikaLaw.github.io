@@ -1,0 +1,4359 @@
+-
+	function init(inputData, defaultData) {
+		let data = Object.assign({}, {
+			'attr': {},
+			'class': '',
+			'elements': [],
+			'params': function() {},
+			'todo': function() {},
+		}, defaultData, inputData);
+
+		data['attributes'] = function(object) {
+			object = Object.assign({}, this['attr'], object);
+			if (!object['class']) object['class'] = '';
+			object['class'] = this['block'] + ' ' + this['class'] + ' ' + object['class'];
+			object['class'] = object['class'].replace(/ +/, ' ');
+			return object;
+		}
+		
+		data['elements'].forEach(function(elem){
+			if (!data[elem + '-attr']) {
+				data[elem + '-attr'] = {}
+			}
+		})
+
+		data['elem'] = function(name) {
+			return this['block'] + name;
+		}
+
+		data.params();
+		data.todo();
+		return data
+	}
+
+	const customLabels = {
+		'2+1': {
+			img: './img/components/labels/2+1.jpg',
+			tooltip: 'Сейчас действует акция «2+1» Третий товар бесплатно!'
+		},
+		'3+1': {
+			img: './img/components/labels/3+1.jpg',
+			tooltip: 'Сейчас действует акция «3+1» Четвертый товар бесплатно!'
+		},
+		'4+1': {
+			img: './img/components/labels/4+1.jpg',
+			tooltip: 'Сейчас действует акция «4+1» Пятый товар бесплатно!'
+		},
+		'cashback': {
+			img: './img/components/labels/CASHBACK.jpg',
+			tooltip: 'CASHBACK на Вашу бонусную карту. Смотрите раздел «Акции»',
+		},
+		'hit': {
+			img: './img/components/labels/HIT.jpg',
+			tooltip: 'Хит продаж - это товар любят и выбирают наши покупатели',
+		},
+		'lmtd': {
+			img: './img/components/labels/LMTD.jpg',
+			tooltip: 'Лимитированный выпуск. Уникальный товар с ограниченным тиражом',
+		},
+		'new': {
+			img: './img/components/labels/NEW.jpg',
+			tooltip: 'Новинка - закажите этот товар и будьте первым, кто его попробует!',
+		},
+		'НАША_ЛУЧШАЯ_ЦЕНА': {
+			img: './img/components/labels/НАША_ЛУЧШАЯ_ЦЕНА.jpg',
+			tooltip: 'Нашли дешевле? Мы предложим вам нашу лучшую цену!',
+		},
+		'подарок': {
+			img: './img/components/labels/ПОДАРОК.jpg',
+			tooltip: 'Подарок при покупке этого средства. Смотрите раздел «Акции»',
+		},
+		'скидка': {
+			img: './img/components/labels/СКИДКА.jpg',
+			tooltip: 'Сейчас со скидкой - 10% Успей заказать по выгодной цене!',
+		},
+		'СРОКИ_ГОДНОСТИ': {
+			img: './img/components/labels/СРОКИ_ГОДНОСТИ.jpg',
+			tooltip: 'Срок годности на этот товар ограничен (годен до см. в наименовании)',
+		}
+	}
+
+	let footerMenuList = {
+		'title': 'Покупателям',
+		'list': [
+			'База знаний',
+			'Акции',
+			'Магазины',
+			'Обучение',
+			'Продавать с Модерн',
+			'Программа лояльности',
+			'Новости',
+			'Работа в компании',
+			'Контакты',
+			'Доставка, оплата, возврат',
+			'Частые вопросы',
+		],
+	}
+
+	let productList1 = [
+		{
+			'img':'./img/components/product-card/img-9',
+			'labels': [	
+				{
+					'text': 'new',
+				},
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%'
+				},
+			],
+			'title': 'CUTRIN',
+			'text': 'Кондиционер деликатный д/нормальных и сухих волос без отдушки, 200мл VIENO',
+			'cost': '6 750 ₽',
+			'stock': null,
+		},	
+		{
+			'img':'./img/components/product-card/img-5',
+			'labels': [	
+				{
+					'text': 'new',
+				},
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%'
+				},
+			],
+			'title': 'ALFAPARF',
+			'text': 'Кондиционер для кудрявых и вьющихся волос, 1000мл SDL CURLS ENHANCING CONDITIONER',
+			'cost': '6 750 ₽',
+			'stock': null,
+		},	
+		{
+			'img':'./img/components/product-card/img-6',
+			'labels': [	
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%'
+				},
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%'
+				},
+			],
+			'title': 'ALFAPARF',
+			'text': 'Концентрат для сушки феном, 50мл Blow Dry Concentrate Moroccanoil',
+			'cost': '6 750 ₽',
+			'stock': null,
+		},
+		{
+			'img':'./img/components/product-card/img-7',
+			'labels': [	
+				{
+					'text': 'new',
+				},
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%'
+				},
+			],
+			'title': 'CUTRIN',
+			'text': 'Маска тонирующая "Абрикос", 200мл AURORA COLOR CARE',
+			'cost': '6 750 ₽',
+			'stock': null,
+		},	
+		{
+			'img':'./img/components/product-card/img-9',
+			'labels': [	
+				{
+					'text': 'new',
+				},
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%'
+				},
+			],
+			'title': 'CUTRIN',
+			'text': 'Кондиционер деликатный д/нормальных и сухих волос без отдушки, 200мл VIENO',
+			'cost': '6 750 ₽',
+			'stock': null,
+		},	
+		{
+			'img':'./img/components/product-card/img-5',
+			'labels': [	
+				{
+					'text': 'new',
+				},
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%'
+				},
+			],
+			'title': 'ALFAPARF',
+			'text': 'Кондиционер для кудрявых и вьющихся волос, 1000мл SDL CURLS ENHANCING CONDITIONER',
+			'cost': '6 750 ₽',
+			'stock': null,
+		},	
+		{
+			'img':'./img/components/product-card/img-6',
+			'labels': [	
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%'
+				},
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%'
+				},
+			],
+			'title': 'ALFAPARF',
+			'text': 'Концентрат для сушки феном, 50мл Blow Dry Concentrate Moroccanoil',
+			'cost': '6 750 ₽',
+			'stock': null,
+		},
+		{
+			'img':'./img/components/product-card/img-7',
+			'labels': [	
+				{
+					'text': 'new',
+				},
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%'
+				},
+			],
+			'title': 'CUTRIN',
+			'text': 'Маска тонирующая "Абрикос", 200мл AURORA COLOR CARE',
+			'cost': '6 750 ₽',
+			'stock': null,
+		},		
+	]
+
+	let productList2 = [
+		{
+			'img':'./img/components/product-card/img-1',
+			'labels': [	
+				{
+					'stock': '-35%'
+				},
+				{
+					'text': 'new',
+				},
+				customLabels['2+1']
+
+			],
+			'title': 'MATRIX',
+			'text': 'Exquisite Oil Масло питательное для волос 92мл',
+			'cost': '6 750 ₽',
+			'stock': '2 125,00 ₽',
+		},
+		{
+			'img':'./img/components/product-card/img-2',
+			'labels': [	
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%'
+				},
+				{
+					'text': 'new',
+				},
+				customLabels['3+1']
+			],
+			'title': 'ALFAPARF',
+			'text': 'Mасло, восстанавливающее структуру волос, 6х13мл SDL R SOS EMERGENCY OIL',
+			'cost': '6 750 ₽',
+			'stock': '2 125,00 ₽',
+		},	
+		{
+			'img':'./img/components/product-card/img-3',
+			'labels': [	
+				{
+					'text': 'new',
+				},
+				customLabels['4+1']
+			],
+			'title': 'ALFAPARF',
+			'text': 'Воск разделяющий средней фиксации, 75мл STYLE STORIES DEFINING WAX',
+			'cost': '6 750 ₽',
+			'stock': '2 125,00 ₽',
+		},	
+		{
+			'img':'./img/components/product-card/img-4',
+			'block': 'product-card_disabled',
+			'labels': [	
+				{
+					'text': 'нет в наличии',
+					'class': 'grey'
+				},
+			],
+			'title': 'CUTRIN',
+			'text': 'Кондиционер деликатный д/нормальных и сухих волос без отдушки, 200мл VIENO',
+			'cost': null,
+			'availability': true
+		},		
+		{
+			'img':'./img/components/product-card/img-5',
+			'labels': [	
+				{
+					'text': 'new',
+				},
+				customLabels['lmtd'],
+				customLabels['new']
+			],
+			'title': 'ALFAPARF',
+			'text': 'Кондиционер для кудрявых и вьющихся волос, 1000мл SDL CURLS ENHANCING CONDITIONER',
+			'cost': '6 750 ₽',
+			'stock': null,
+		},	
+		{
+			'img':'./img/components/product-card/img-6',
+			'labels': [	
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%'
+				},
+				customLabels['НАША_ЛУЧШАЯ_ЦЕНА'],
+				customLabels['подарок']
+			],
+			'title': 'ALFAPARF',
+			'text': 'Концентрат для сушки феном, 50мл Blow Dry Concentrate Moroccanoil',
+			'cost': '6 750 ₽',
+			'stock': null,
+		},			
+		{
+			'img':'./img/components/product-card/img-7',
+			'labels': [	
+				{
+					'text': 'new',
+				},
+				customLabels['скидка'],
+				customLabels['СРОКИ_ГОДНОСТИ']
+			],
+			'title': 'CUTRIN',
+			'text': 'Маска тонирующая "Абрикос", 200мл AURORA COLOR CARE',
+			'cost': '6 750 ₽',
+			'stock': null,
+		},	
+		{
+			'img':'./img/components/product-card/img-8',
+			'labels': [
+				customLabels['cashback'],
+				customLabels['hit']
+			],
+			'title': 'ALFAPARF',
+			'text': 'Концентрат для сушки феном, 50мл Blow Dry Concentrate Moroccanoil',
+			'cost': '6 750 ₽',
+			'stock': null,
+		},			
+		{
+			'img':'./img/components/product-card/img-9',
+			'labels': [	
+				{
+					'text': 'new',
+				},
+			],
+			'title': 'CUTRIN',
+			'text': 'Кондиционер деликатный д/нормальных и сухих волос без отдушки, 200мл VIENO',
+			'cost': '6 750 ₽',
+			'stock': null,
+		},		
+		{
+			'img':'./img/components/product-card/img-10',
+			'labels': [	
+				{
+					'text': 'new',
+				},
+			],
+			'title': 'MATRIX',
+			'text': 'Шампунь Антистресс с экстрактом мальвы 250 мл CD СПА',
+			'cost': '6 750 ₽',
+			'stock': '2 125,00 ₽',
+		},		
+		{
+			'img':'./img/components/product-card/img-11',
+			'labels': [	
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%'
+				},
+			],
+			'title': 'MATRIX',
+			'text': 'Шампунь Антистресс с экстрактом мальвы 250 мл CD СПА',
+			'cost': '6 750 ₽',
+			'stock': '2 125,00 ₽',
+		},		
+		{
+			'img':'./img/components/product-card/img-12',
+			'labels': [	
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%'
+				},
+			],
+			'title': 'CUTRIN',
+			'text': 'Маска тонирующая "Абрикос", 200мл AURORA COLOR CARE',
+			'cost': '6 750 ₽',
+			'stock': null,
+		},		
+		{
+			'img':'./img/components/product-card/img-13',
+			'labels': null,
+			'title': 'ALFAPARF',
+			'text': '1.00 Черный крем-краска, 100мл COLOR VIVO',
+			'cost': '6 750 ₽',
+			'stock': null,
+		},		
+		{
+			'img':'./img/components/product-card/img-14',
+			'labels': [	
+				{
+					'text': 'new',
+				},
+			],
+			'title': 'ALFAPARF',
+			'text': 'Концентрат для сушки феном, 50мл Blow Dry Concentrate Moroccanoil',
+			'cost': null,
+			'additional-info' :'Только для салонов красоты'
+		},
+		{
+			'img':'./img/components/product-card/img-15',
+			'labels': [	
+				{
+					'text': 'new',
+				},
+			],
+			'title': 'GEHWOL',
+			'text': 'Бальзам освежающий 75мл-тюбик',
+			'cost': '6 750 ₽',
+			'stock': null,
+		},		
+		{
+			'img':'./img/components/product-card/img-16',
+			'labels': [	
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%'
+				},
+			],
+			'title': 'GA.MA',
+			'text': '2000вт Фен, черный, 294гр, 2 сопла, 2 диффузора IQ2 Perfetto Ga.Ma',
+			'cost': '6 750 ₽',
+			'stock': null,
+		},																				
+	]
+
+	let productList3 = [
+		{
+			'img':'./img/components/product-card/img-1',
+			'labels': [
+				{
+					'stock': '-35%'
+				},
+				{
+					'text': 'new',
+				},
+				customLabels['2+1']
+			],
+			'title': 'MATRIX',
+			'text': 'Exquisite Oil Масло питательное для волос 92мл',
+			'cost': '750 ₽',
+			'stock': '2 125,00 ₽',
+		},
+		{
+			'img':'./img/components/product-card/img-2',
+			'labels': [	
+				{
+					'text': 'new',
+				},
+				customLabels['3+1']
+			],
+			'title': 'ALFAPARF',
+			'text': 'Mасло, восстанавливающее структуру волос, 6х13мл SDL R SOS EMERGENCY OIL',
+			'cost': '6 750 ₽',
+			'stock': '2 125,00 ₽',
+		},	
+		{
+			'img':'./img/components/product-card/img-3',
+			'labels': [	
+				{
+					'text': 'new',
+				},
+				customLabels['4+1']
+			],
+			'title': 'ALFAPARF',
+			'text': 'Воск разделяющий средней фиксации, 75мл STYLE STORIES DEFINING WAX',
+			'cost': '6 750 ₽',
+			'stock': '2 125,00 ₽',
+		},	
+		{
+			'img':'./img/components/product-card/img-4',
+			'block': 'product-row_disabled',
+			'labels': [	
+				{
+					'text': 'нет в наличии',
+					'class': 'grey'
+				},
+			],
+			'title': 'CUTRIN',
+			'text': 'Кондиционер деликатный д/нормальных и сухих волос без отдушки, 200мл VIENO',
+			'cost': null,
+			'availability': true
+		},		
+		{
+			'img':'./img/components/product-card/img-5',
+			'labels': [	
+				{
+					'text': 'new',
+				},
+				customLabels['lmtd'],
+				customLabels['new']
+			],
+			'title': 'ALFAPARF',
+			'text': 'Кондиционер для кудрявых и вьющихся волос, 1000мл SDL CURLS ENHANCING CONDITIONER',
+			'cost': '6 750 ₽',
+			'stock': null,
+		},	
+		{
+			'img':'./img/components/product-card/img-6',
+			'labels': [	
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%'
+				},
+				customLabels['НАША_ЛУЧШАЯ_ЦЕНА'],
+				customLabels['подарок']
+			],
+			'title': 'ALFAPARF',
+			'text': 'Концентрат для сушки феном, 50мл Blow Dry Concentrate Moroccanoil',
+			'cost': '6 750 ₽',
+			'stock': null,
+		},			
+		{
+			'img':'./img/components/product-card/img-7',
+			'labels': [	
+				{
+					'text': 'new',
+				},
+				customLabels['скидка'],
+				customLabels['СРОКИ_ГОДНОСТИ']
+			],
+			'title': 'CUTRIN',
+			'text': 'Маска тонирующая "Абрикос", 200мл AURORA COLOR CARE',
+			'cost': '6 750 ₽',
+			'stock': null,
+		},	
+		{
+			'img':'./img/components/product-card/img-8',
+			'labels': [
+				customLabels['cashback'],
+				customLabels['hit']
+			],
+			'title': 'ALFAPARF',
+			'text': 'Концентрат для сушки феном, 50мл Blow Dry Concentrate Moroccanoil',
+			'cost': '6 750 ₽',
+			'stock': null,
+		},			
+		{
+			'img':'./img/components/product-card/img-9',
+			'labels': [	
+				{
+					'text': 'new',
+				},
+			],
+			'title': 'CUTRIN',
+			'text': 'Кондиционер деликатный д/нормальных и сухих волос без отдушки, 200мл VIENO',
+			'cost': '6 750 ₽',
+			'stock': null,
+		},		
+		{
+			'img':'./img/components/product-card/img-10',
+			'labels': [	
+				{
+					'text': 'new',
+				},
+			],
+			'title': 'MATRIX',
+			'text': 'Шампунь Антистресс с экстрактом мальвы 250 мл CD СПА',
+			'cost': '6 750 ₽',
+			'stock': '2 125,00 ₽',
+		},		
+		{
+			'img':'./img/components/product-card/img-11',
+			'labels': [	
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%'
+				},
+			],
+			'title': 'MATRIX',
+			'text': 'Шампунь Антистресс с экстрактом мальвы 250 мл CD СПА',
+			'cost': '6 750 ₽',
+			'stock': '2 125,00 ₽',
+		},		
+		{
+			'img':'./img/components/product-card/img-12',
+			'labels': [	
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%'
+				},
+			],
+			'title': 'CUTRIN',
+			'text': 'Маска тонирующая "Абрикос", 200мл AURORA COLOR CARE',
+			'cost': '6 750 ₽',
+			'stock': null,
+		},		
+		{
+			'img':'./img/components/product-card/img-13',
+			'labels': null,
+			'title': 'ALFAPARF',
+			'text': '1.00 Черный крем-краска, 100мл COLOR VIVO',
+			'cost': '6 750 ₽',
+			'stock': null,
+		},		
+		{
+			'img':'./img/components/product-card/img-14',
+			'labels': [	
+				{
+					'text': 'new',
+				},
+			],
+			'title': 'ALFAPARF',
+			'text': 'Концентрат для сушки феном, 50мл Blow Dry Concentrate Moroccanoil',
+			'cost': null,
+			'additional-info' :'Только для салонов красоты'
+		},
+		{
+			'img':'./img/components/product-card/img-15',
+			'labels': [	
+				{
+					'text': 'new',
+				},
+			],
+			'title': 'GEHWOL',
+			'text': 'Бальзам освежающий 75мл-тюбик',
+			'cost': '6 750 ₽',
+			'stock': null,
+		},		
+		{
+			'img':'./img/components/product-card/img-16',
+			'labels': [	
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%'
+				},
+			],
+			'title': 'GA.MA',
+			'text': '2000вт Фен, черный, 294гр, 2 сопла, 2 диффузора IQ2 Perfetto Ga.Ma',
+			'cost': '6 750 ₽',
+			'stock': null,
+		},																				
+	]
+
+	let productList4 = [
+		{
+			'img':'./img/components/product-card/img-9',
+			'labels': null,
+			'title': 'CUTRIN',
+			'text': 'Кондиционер деликатный д/нормальных и сухих волос без отдушки, 200мл VIENO',
+			'cost': '750 ₽',
+			'stock': null,
+		},
+		{
+			'img':'./img/components/product-card/img-5',
+			'labels': null,
+			'title': 'ALFAPARF',
+			'text': 'Кондиционер для кудрявых и вьющихся волос, 1000мл SDL CURLS ENHANCING CONDITIONER',
+			'cost': '750 ₽',
+			'stock': null,
+		},		
+		{
+			'img':'./img/components/product-card/img-5',
+			'labels': null,
+			'title': 'ALFAPARF',
+			'text': 'Кондиционер для кудрявых и вьющихся волос, 1000мл SDL CURLS ENHANCING CONDITIONER',
+			'cost': '750 ₽',
+			'stock': null,
+		},
+		{
+			'img':'./img/components/product-card/img-5',
+			'labels': null,
+			'title': 'CUTRIN',
+			'text': 'Кондиционер деликатный д/нормальных и сухих волос без отдушки, 200мл VIENO',
+			'cost': '750 ₽',
+			'stock': null,
+		},			
+		{
+			'img':'./img/components/product-card/img-9',
+			'labels': null,
+			'title': 'ALFAPARF',
+			'text': 'Кондиционер для кудрявых и вьющихся волос, 1000мл SDL CURLS ENHANCING CONDITIONER',
+			'cost': '750 ₽',
+			'stock': null,
+		},					
+	]
+	let productList5 = [
+		{
+			'img':'./img/components/product-card/img-1',
+			'labels': [	
+				{
+					'text': 'new',
+				},
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%'
+				},
+			],
+			'title': 'CUTRIN',
+			'text': 'Кондиционер деликатный д/нормальных и сухих волос без отдушки, 200мл VIENO',
+			'cost': '750 ₽',
+			'stock': null,
+		},	
+		{
+			'img':'./img/components/product-card/img-3',
+			'labels': [	
+				{
+					'text': 'new',
+				},
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%'
+				},
+			],
+			'title': 'ALFAPARF',
+			'text': 'Кондиционер для кудрявых и вьющихся волос, 1000мл SDL CURLS ENHANCING CONDITIONER',
+			'cost': '750 ₽',
+			'stock': null,
+		},	
+		{
+			'img':'./img/components/product-card/img-8',
+			'labels': [	
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%'
+				},
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%'
+				},
+			],
+			'title': 'ALFAPARF',
+			'text': 'Концентрат для сушки феном, 50мл Blow Dry Concentrate Moroccanoil',
+			'cost': '750 ₽',
+			'stock': null,
+		},
+		{
+			'img':'./img/components/product-card/img-12',
+			'labels': [	
+				{
+					'text': 'new',
+				},
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%'
+				},
+			],
+			'title': 'CUTRIN',
+			'text': 'Маска тонирующая "Абрикос", 200мл AURORA COLOR CARE',
+			'cost': '750 ₽',
+			'stock': null,
+		},	
+		{
+			'img':'./img/components/product-card/img-9',
+			'labels': [	
+				{
+					'text': 'new',
+				},
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%'
+				},
+			],
+			'title': 'CUTRIN',
+			'text': 'Кондиционер деликатный д/нормальных и сухих волос без отдушки, 200мл VIENO',
+			'cost': '6 750 ₽',
+			'stock': null,
+		},	
+		{
+			'img':'./img/components/product-card/img-5',
+			'labels': [	
+				{
+					'text': 'new',
+				},
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%'
+				},
+			],
+			'title': 'ALFAPARF',
+			'text': 'Кондиционер для кудрявых и вьющихся волос, 1000мл SDL CURLS ENHANCING CONDITIONER',
+			'cost': '6 750 ₽',
+			'stock': null,
+		},	
+		{
+			'img':'./img/components/product-card/img-6',
+			'labels': [	
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%'
+				},
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%' 
+				},
+			],
+			'title': 'ALFAPARF',
+			'text': 'Концентрат для сушки феном, 50мл Blow Dry Concentrate Moroccanoil',
+			'cost': '6 750 ₽',
+			'stock': null,
+		},
+		{
+			'img':'./img/components/product-card/img-7',
+			'labels': [	
+				{
+					'text': 'new',
+				},
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%'
+				},
+			],
+			'title': 'CUTRIN',
+			'text': 'Маска тонирующая "Абрикос", 200мл AURORA COLOR CARE',
+			'cost': '6 750 ₽',
+			'stock': null,
+		},		
+	]
+	let productList6 = [
+		{
+			'img':'./img/components/product-card/img-2',
+			'labels': [	
+				{
+					'text': 'new',
+				},
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%'
+				},
+			],
+			'title': 'CUTRIN',
+			'text': 'Кондиционер деликатный д/нормальных и сухих волос без отдушки, 200мл VIENO',
+			'cost': '750 ₽',
+			'stock': null,
+		},	
+		{
+			'img':'./img/components/product-card/img-14',
+			'labels': [	
+				{
+					'text': 'new',
+				},
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%'
+				},
+			],
+			'title': 'ALFAPARF',
+			'text': 'Кондиционер для кудрявых и вьющихся волос, 1000мл SDL CURLS ENHANCING CONDITIONER',
+			'cost': '750 ₽',
+			'stock': null,
+		},	
+		{
+			'img':'./img/components/product-card/img-13',
+			'labels': [	
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%' 
+				},
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%'
+				},
+			],
+			'title': 'ALFAPARF',
+			'text': 'Концентрат для сушки феном, 50мл Blow Dry Concentrate Moroccanoil',
+			'cost': '750 ₽',
+			'stock': null,
+		},
+		{
+			'img':'./img/components/product-card/img-4',
+			'labels': [	
+				{
+					'text': 'new',
+				},
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%'
+				},
+			],
+			'title': 'CUTRIN',
+			'text': 'Маска тонирующая "Абрикос", 200мл AURORA COLOR CARE',
+			'cost': '750 ₽',
+			'stock': null,
+		},	
+		{
+			'img':'./img/components/product-card/img-9',
+			'labels': [	
+				{
+					'text': 'new',
+				},
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%'
+				},
+			],
+			'title': 'CUTRIN',
+			'text': 'Кондиционер деликатный д/нормальных и сухих волос без отдушки, 200мл VIENO',
+			'cost': '6 750 ₽',
+			'stock': null,
+		},	
+		{
+			'img':'./img/components/product-card/img-5',
+			'labels': [	
+				{
+					'text': 'new',
+				},
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%'
+				},
+			],
+			'title': 'ALFAPARF',
+			'text': 'Кондиционер для кудрявых и вьющихся волос, 1000мл SDL CURLS ENHANCING CONDITIONER',
+			'cost': '6 750 ₽',
+			'stock': null,
+		},	
+		{
+			'img':'./img/components/product-card/img-6',
+			'labels': [	
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%'
+				},
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%'
+				},
+			],
+			'title': 'ALFAPARF',
+			'text': 'Концентрат для сушки феном, 50мл Blow Dry Concentrate Moroccanoil',
+			'cost': '6 750 ₽',
+			'stock': null,
+		},
+		{
+			'img':'./img/components/product-card/img-7',
+			'labels': [	
+				{
+					'text': 'new',
+				},
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%'
+				},
+				customLabels['2+1']
+			],
+			'title': 'CUTRIN',
+			'text': 'Маска тонирующая "Абрикос", 200мл AURORA COLOR CARE',
+			'cost': '6 750 ₽',
+			'stock': null,
+		},		
+	]	
+	let productList7 = [
+		{
+			'img':'./img/components/product-card/img-1',
+			'labels': [	
+				{
+					'text': 'new',
+				},
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%'
+				},
+				customLabels['3+1']
+			],
+			'title': 'MATRIX',
+			'text': 'Exquisite Oil Масло питательное для волос 92мл',
+			'cost': '750 ₽',
+			'stock': '2 125,00 ₽',
+		},
+		{
+			'img':'./img/components/product-card/img-2',
+			'labels': [	
+				{
+					'text': 'new',
+				},
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%'
+				},
+				customLabels['4+1']
+			],
+			'title': 'ALFAPARF',
+			'text': 'Mасло, восстанавливающее структуру волос, 6х13мл SDL R SOS EMERGENCY OIL',
+			'cost': '750 ₽',
+			'stock': '2 125,00 ₽',
+		},	
+		{
+			'img':'./img/components/product-card/img-3',
+			'labels': [	
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%'
+				},
+				customLabels['cashback'],
+				customLabels['hit']
+			],
+			'title': 'ALFAPARF',
+			'text': 'Воск разделяющий средней фиксации, 75мл STYLE STORIES DEFINING WAX',
+			'cost': null,
+			'additional-info' :'Только для салонов красоты'
+		},	
+		{
+			'img':'./img/components/product-card/img-11',
+			'block': 'product-card_disabled',
+			'labels': [	
+				{
+					'text': 'нет в наличии',
+					'class': 'grey'
+				},
+				customLabels['lmtd'],
+				customLabels['new']
+			],
+			'title': 'MATRIX',
+			'text': 'Пре-кондиционер для экстремального восстановления, 200мл Re-Bond NEW',
+			'cost': null,
+			'availability': true
+		},		
+		{
+			'img':'./img/components/product-card/img-5',
+			'labels': [	
+				{
+					'text': 'new',
+				},
+				customLabels['НАША_ЛУЧШАЯ_ЦЕНА'],
+				customLabels['подарок']
+			],
+			'title': 'ALFAPARF',
+			'text': 'Кондиционер для кудрявых и вьющихся волос, 1000мл SDL CURLS ENHANCING CONDITIONER',
+			'cost': '6 750 ₽',
+			'stock': null,
+		},	
+		{
+			'img':'./img/components/product-card/img-6',
+			'labels': [	
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%'
+				},
+				customLabels['скидка'],
+				customLabels['СРОКИ_ГОДНОСТИ']
+			],
+			'title': 'ALFAPARF',
+			'text': 'Концентрат для сушки феном, 50мл Blow Dry Concentrate Moroccanoil',
+			'cost': '6 750 ₽',
+			'stock': null,
+		},			
+		{
+			'img':'./img/components/product-card/img-7',
+			'labels': [	
+				{
+					'text': 'new',
+				},
+			],
+			'title': 'CUTRIN',
+			'text': 'Маска тонирующая "Абрикос", 200мл AURORA COLOR CARE',
+			'cost': '6 750 ₽',
+			'stock': null,
+		},	
+		{
+			'img':'./img/components/product-card/img-8',
+			'labels': null,
+			'title': 'ALFAPARF',
+			'text': 'Концентрат для сушки феном, 50мл Blow Dry Concentrate Moroccanoil',
+			'cost': '6 750 ₽',
+			'stock': null,
+		},			
+		{
+			'img':'./img/components/product-card/img-9',
+			'labels': [	
+				{
+					'text': 'new',
+				},
+			],
+			'title': 'CUTRIN',
+			'text': 'Кондиционер деликатный д/нормальных и сухих волос без отдушки, 200мл VIENO',
+			'cost': '6 750 ₽',
+			'stock': null,
+		},		
+		{
+			'img':'./img/components/product-card/img-10',
+			'labels': [	
+				{
+					'text': 'new',
+				},
+			],
+			'title': 'MATRIX',
+			'text': 'Шампунь Антистресс с экстрактом мальвы 250 мл CD СПА',
+			'cost': '6 750 ₽',
+			'stock': '2 125,00 ₽',
+		},		
+		{
+			'img':'./img/components/product-card/img-11',
+			'labels': [	
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%'
+				},
+			],
+			'title': 'MATRIX',
+			'text': 'Шампунь Антистресс с экстрактом мальвы 250 мл CD СПА',
+			'cost': '6 750 ₽',
+			'stock': '2 125,00 ₽',
+		},		
+		{
+			'img':'./img/components/product-card/img-12',
+			'labels': [	
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%'
+				},
+			],
+			'title': 'CUTRIN',
+			'text': 'Маска тонирующая "Абрикос", 200мл AURORA COLOR CARE',
+			'cost': '6 750 ₽',
+			'stock': null,
+		},		
+		{
+			'img':'./img/components/product-card/img-13',
+			'labels': null,
+			'title': 'ALFAPARF',
+			'text': '1.00 Черный крем-краска, 100мл COLOR VIVO',
+			'cost': '6 750 ₽',
+			'stock': null,
+		},		
+		{
+			'img':'./img/components/product-card/img-14',
+			'labels': [	
+				{
+					'text': 'new',
+				},
+			],
+			'title': 'ALFAPARF',
+			'text': 'Концентрат для сушки феном, 50мл Blow Dry Concentrate Moroccanoil',
+			'cost': null,
+			'additional-info' :'Только для салонов красоты'
+		},
+		{
+			'img':'./img/components/product-card/img-15',
+			'labels': [	
+				{
+					'text': 'new',
+				},
+			],
+			'title': 'GEHWOL',
+			'text': 'Бальзам освежающий 75мл-тюбик',
+			'cost': '6 750 ₽',
+			'stock': null,
+		},		
+		{
+			'img':'./img/components/product-card/img-16',
+			'labels': [	
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%'
+				},
+			],
+			'title': 'GA.MA',
+			'text': '2000вт Фен, черный, 294гр, 2 сопла, 2 диффузора IQ2 Perfetto Ga.Ma',
+			'cost': '6 750 ₽',
+			'stock': null,
+		},																				
+	]
+	let productList8 = [
+		{
+			'img':'./img/components/product-card/img-5',
+			'labels': [	
+				{
+					'text': 'new',
+				},
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%'
+				},
+			],
+			'title': 'ALFAPARF',
+			'text': 'Кондиционер для кудрявых и вьющихся волос, 1000мл SDL CURLS ENHANCING CONDITIONER',
+			'cost': '750 ₽',
+			'stock': null,
+		},	
+		{
+			'img':'./img/components/product-card/img-6',
+			'labels': [	
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%'
+				},
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%'
+				},
+			],
+			'title': 'ALFAPARF',
+			'text': 'Концентрат для сушки феном, 50мл Blow Dry Concentrate Moroccanoil',
+			'cost': '750 ₽',
+			'stock': null,
+		},
+		{
+			'img':'./img/components/product-card/img-7',
+			'labels': [	
+				{
+					'text': 'new',
+				},
+				{
+					'text': 'sale',
+					'class': 'green',
+					'stock': '-35%'
+				},
+			],
+			'title': 'CUTRIN',
+			'text': 'Маска тонирующая "Абрикос", 200мл AURORA COLOR CARE',
+			'cost': '750 ₽',
+			'stock': null,
+		},	
+
+	]
+	let menuCatalog = [
+		{
+			name: 'Окрашивание волос',
+			link: '#',
+			submenu: [
+				{
+					name: 'Осветлители и активаторы цвета',
+					link: '#',
+					submenu: [
+						{
+							name: 'Alfaparf',
+							link: '',
+						},
+						{
+							name: 'Shot',
+							link: '',
+						},
+						{
+							name: 'Nirvel',
+							link: '',
+						},
+						{
+							name: 'Constant Delight',
+							link: '',
+						},
+						{
+							name: 'Concept',
+							link: '',
+						},
+						{
+							name: 'Wella',
+							link: '',
+						},
+						{
+							name: 'Matrix',
+							link: '',
+						},
+						{
+							name: 'Londa',
+							link: '',
+						},
+						{
+							name: 'Cutrin',
+							link: '',
+						},
+						{
+							name: 'Dewal Cosmetics',
+							link: '',
+						},
+						{
+							name: 'BOUTICLE',
+							link: '',
+						},		
+						{
+							name: 'EPICA Professional',
+							link: '',
+						},
+						{
+							name: 'LISAP MILANO',
+							link: '',
+						},
+						{
+							name: 'Constant Delight',
+							link: '',
+						},		
+						{
+							name: 'Dewal Cosmetics',
+							link: '',
+						},
+						{
+							name: 'Nirvel',
+							link: '',
+						},
+						{
+							name: 'Alfaparf',
+							link: '',
+						},
+						{
+							name: 'Shot',
+							link: '',
+						},
+						{
+							name: 'Nirvel',
+							link: '',
+						},
+						{
+							name: 'Constant Delight',
+							link: '',
+						},
+						{
+							name: 'Concept',
+							link: '',
+						},
+						{
+							name: 'Wella',
+							link: '',
+						},
+						{
+							name: 'Matrix',
+							link: '',
+						},
+						{
+							name: 'Londa',
+							link: '',
+						},
+						{
+							name: 'Cutrin',
+							link: '',
+						},
+						{
+							name: 'Dewal Cosmetics',
+							link: '',
+						},
+						{
+							name: 'BOUTICLE',
+							link: '',
+						},		
+						{
+							name: 'EPICA Professional',
+							link: '',
+						},
+						{
+							name: 'LISAP MILANO',
+							link: '',
+						},
+						{
+							name: 'Constant Delight',
+							link: '',
+						},		
+						{
+							name: 'Dewal Cosmetics',
+							link: '',
+						},
+						{
+							name: 'Nirvel',
+							link: '',
+						},																	
+					],
+				},
+				{
+					name: 'Осветление волос',
+					link: '#',
+				},
+				{
+					name: 'Средства для удаления красителя с кожи',
+					link: '#',
+				},
+				{
+					name: 'Краситель прямого действия',
+					link: '#',
+					submenu: [
+						{
+							name: 'Alfaparf',
+							link: '',
+						},
+						{
+							name: 'Shot',
+							link: '',
+						},
+						{
+							name: 'Nirvel',
+							link: '',
+						},
+						{
+							name: 'Constant Delight',
+							link: '',
+						},
+						{
+							name: 'Concept',
+							link: '',
+						},
+						{
+							name: 'Wella',
+							link: '',
+						},
+						{
+							name: 'Matrix',
+							link: '',
+						},
+						{
+							name: 'Londa',
+							link: '',
+						},
+						{
+							name: 'Cutrin',
+							link: '',
+						},
+						{
+							name: 'Dewal Cosmetics',
+							link: '',
+						},
+						{
+							name: 'BOUTICLE',
+							link: '',
+						},		
+						{
+							name: 'EPICA Professional',
+							link: '',
+						},
+						{
+							name: 'LISAP MILANO',
+							link: '',
+						},
+						{
+							name: 'Constant Delight',
+							link: '',
+						},		
+						{
+							name: 'Dewal Cosmetics',
+							link: '',
+						},
+						{
+							name: 'Nirvel',
+							link: '',
+						},
+						{
+							name: 'Alfaparf',
+							link: '',
+						},
+						{
+							name: 'Shot',
+							link: '',
+						},
+						{
+							name: 'Nirvel',
+							link: '',
+						},
+						{
+							name: 'Constant Delight',
+							link: '',
+						},
+						{
+							name: 'Concept',
+							link: '',
+						},
+						{
+							name: 'Wella',
+							link: '',
+						},
+						{
+							name: 'Matrix',
+							link: '',
+						},
+						{
+							name: 'Londa',
+							link: '',
+						},
+						{
+							name: 'Cutrin',
+							link: '',
+						},
+						{
+							name: 'Dewal Cosmetics',
+							link: '',
+						},
+						{
+							name: 'BOUTICLE',
+							link: '',
+						},		
+						{
+							name: 'EPICA Professional',
+							link: '',
+						},
+						{
+							name: 'LISAP MILANO',
+							link: '',
+						},
+						{
+							name: 'Constant Delight',
+							link: '',
+						},		
+						{
+							name: 'Dewal Cosmetics',
+							link: '',
+						},
+						{
+							name: 'Nirvel',
+							link: '',
+						},																	
+					],
+				},
+				{
+					name: 'Стойкий краситель',
+					link: '#',
+					submenu: [
+						{
+							name: 'Alfaparf',
+							link: '',
+						},
+						{
+							name: 'Shot',
+							link: '',
+						},
+						{
+							name: 'Nirvel',
+							link: '',
+						},
+						{
+							name: 'Constant Delight',
+							link: '',
+						},
+						{
+							name: 'Concept',
+							link: '',
+						},
+						{
+							name: 'Wella',
+							link: '',
+						},
+						{
+							name: 'Matrix',
+							link: '',
+						},
+						{
+							name: 'Londa',
+							link: '',
+						},
+						{
+							name: 'Cutrin',
+							link: '',
+						},
+						{
+							name: 'Dewal Cosmetics',
+							link: '',
+						},
+						{
+							name: 'BOUTICLE',
+							link: '',
+						},		
+						{
+							name: 'EPICA Professional',
+							link: '',
+						},
+						{
+							name: 'LISAP MILANO',
+							link: '',
+						},
+						{
+							name: 'Constant Delight',
+							link: '',
+						},		
+						{
+							name: 'Dewal Cosmetics',
+							link: '',
+						},
+						{
+							name: 'Nirvel',
+							link: '',
+						},
+						{
+							name: 'Alfaparf',
+							link: '',
+						},
+						{
+							name: 'Shot',
+							link: '',
+						},
+						{
+							name: 'Nirvel',
+							link: '',
+						},
+						{
+							name: 'Constant Delight',
+							link: '',
+						},
+						{
+							name: 'Concept',
+							link: '',
+						},
+						{
+							name: 'Wella',
+							link: '',
+						},
+						{
+							name: 'Matrix',
+							link: '',
+						},
+						{
+							name: 'Londa',
+							link: '',
+						},
+						{
+							name: 'Cutrin',
+							link: '',
+						},
+						{
+							name: 'Dewal Cosmetics',
+							link: '',
+						},
+						{
+							name: 'BOUTICLE',
+							link: '',
+						},		
+						{
+							name: 'EPICA Professional',
+							link: '',
+						},
+						{
+							name: 'LISAP MILANO',
+							link: '',
+						},
+						{
+							name: 'Constant Delight',
+							link: '',
+						},		
+						{
+							name: 'Dewal Cosmetics',
+							link: '',
+						},
+						{
+							name: 'Nirvel',
+							link: '',
+						},																	
+					],
+				},
+				{
+					name: 'Специальные средства',
+					link: '#',
+				},
+				{
+					name: 'Средства для защиты волос во время химических процедур',
+					link: '#',
+				},
+				{
+					name: 'Безаммиачный краситель',
+					link: '#',
+					submenu: [
+						{
+							name: 'Alfaparf',
+							link: '',
+						},
+						{
+							name: 'Shot',
+							link: '',
+						},
+						{
+							name: 'Nirvel',
+							link: '',
+						},
+						{
+							name: 'Constant Delight',
+							link: '',
+						},																
+					],
+				},
+			],
+		},
+		{
+			name: 'Профессиональная косметика для волос',
+			link: '#',
+			submenu: [
+				{
+					name: 'Осветление волос',
+					link: '#',
+				},
+				{
+					name: 'Средства для удаления красителя с кожи',
+					link: '#',
+				},
+				{
+					name: 'Краситель прямого действия',
+					link: '#',
+				},
+				{
+					name: 'Стойкий краситель',
+					link: '#',
+				},
+				{
+					name: 'Специальные средства',
+					link: '#',
+				},
+				{
+					name: 'Средства для защиты волос во время химических процедур',
+					link: '#',
+				},
+				{
+					name: 'Безаммиачный краситель',
+					link: '#',
+				},
+			],
+		},
+		{
+			name: 'Парикмахерский инструмент',
+			link: '#',
+			submenu: [
+				{
+					name: 'Осветление волос',
+					link: '#',
+				},
+				{
+					name: 'Средства для удаления красителя с кожи',
+					link: '#',
+				},
+				{
+					name: 'Краситель прямого действия',
+					link: '#',
+				},
+				{
+					name: 'Стойкий краситель',
+					link: '#',
+				},
+				{
+					name: 'Специальные средства',
+					link: '#',
+				},
+				{
+					name: 'Средства для защиты волос во время химических процедур',
+					link: '#',
+				},
+				{
+					name: 'Безаммиачный краситель',
+					link: '#',
+				},
+			],
+		},
+		{
+			name: 'Косметология',
+			link: '#',
+			submenu: [
+				{
+					name: 'Осветление волос',
+					link: '#',
+				},
+				{
+					name: 'Средства для удаления красителя с кожи',
+					link: '#',
+				},
+				{
+					name: 'Краситель прямого действия',
+					link: '#',
+				},
+				{
+					name: 'Стойкий краситель',
+					link: '#',
+				},
+				{
+					name: 'Специальные средства',
+					link: '#',
+				},
+				{
+					name: 'Средства для защиты волос во время химических процедур',
+					link: '#',
+				},
+				{
+					name: 'Безаммиачный краситель',
+					link: '#',
+				},
+			],
+		},
+		{
+			name: 'Средства для маникюра и педикюра',
+			link: '#',
+			submenu: [
+				{
+					name: 'Осветление волос',
+					link: '#',
+				},
+				{
+					name: 'Средства для удаления красителя с кожи',
+					link: '#',
+				},
+				{
+					name: 'Краситель прямого действия',
+					link: '#',
+				},
+				{
+					name: 'Стойкий краситель',
+					link: '#',
+				},
+				{
+					name: 'Специальные средства',
+					link: '#',
+				},
+				{
+					name: 'Средства для защиты волос во время химических процедур',
+					link: '#',
+				},
+				{
+					name: 'Безаммиачный краситель',
+					link: '#',
+				},
+			],
+		},
+		{
+			name: 'Косметика для визажа',
+			link: '#',
+			submenu: [
+				{
+					name: 'Осветление волос',
+					link: '#',
+				},
+				{
+					name: 'Средства для удаления красителя с кожи',
+					link: '#',
+				},
+				{
+					name: 'Краситель прямого действия',
+					link: '#',
+				},
+				{
+					name: 'Стойкий краситель',
+					link: '#',
+				},
+				{
+					name: 'Специальные средства',
+					link: '#',
+				},
+				{
+					name: 'Средства для защиты волос во время химических процедур',
+					link: '#',
+				},
+				{
+					name: 'Безаммиачный краситель',
+					link: '#',
+				},
+			],
+		},
+		{
+			name: 'Средства для загара',
+			link: '#',
+			submenu: [
+				{
+					name: 'Осветление волос',
+					link: '#',
+				},
+				{
+					name: 'Средства для удаления красителя с кожи',
+					link: '#',
+				},
+				{
+					name: 'Краситель прямого действия',
+					link: '#',
+				},
+				{
+					name: 'Стойкий краситель',
+					link: '#',
+				},
+				{
+					name: 'Специальные средства',
+					link: '#',
+				},
+				{
+					name: 'Средства для защиты волос во время химических процедур',
+					link: '#',
+				},
+				{
+					name: 'Безаммиачный краситель',
+					link: '#',
+				},
+			],
+		},
+		{
+			name: 'Материалы для наращивания волос',
+			link: '#',
+			submenu: [
+				{
+					name: 'Осветление волос',
+					link: '#',
+				},
+				{
+					name: 'Средства для удаления красителя с кожи',
+					link: '#',
+				},
+				{
+					name: 'Краситель прямого действия',
+					link: '#',
+				},
+				{
+					name: 'Стойкий краситель',
+					link: '#',
+				},
+				{
+					name: 'Специальные средства',
+					link: '#',
+				},
+				{
+					name: 'Средства для защиты волос во время химических процедур',
+					link: '#',
+				},
+				{
+					name: 'Безаммиачный краситель',
+					link: '#',
+				},
+			],
+		},
+		{
+			name: 'Средства для бровей и ресниц',
+			link: '#',
+			submenu: [
+				{
+					name: 'Осветление волос',
+					link: '#',
+				},
+				{
+					name: 'Средства для удаления красителя с кожи',
+					link: '#',
+				},
+				{
+					name: 'Краситель прямого действия',
+					link: '#',
+				},
+				{
+					name: 'Стойкий краситель',
+					link: '#',
+				},
+				{
+					name: 'Специальные средства',
+					link: '#',
+				},
+				{
+					name: 'Средства для защиты волос во время химических процедур',
+					link: '#',
+				},
+				{
+					name: 'Безаммиачный краситель',
+					link: '#',
+				},
+			],
+		},
+		{
+			name: 'Оборудование для салонов красоты',
+			link: '#',
+			submenu: [
+				{
+					name: 'Осветление волос',
+					link: '#',
+				},
+				{
+					name: 'Средства для удаления красителя с кожи',
+					link: '#',
+				},
+				{
+					name: 'Краситель прямого действия',
+					link: '#',
+				},
+				{
+					name: 'Стойкий краситель',
+					link: '#',
+				},
+				{
+					name: 'Специальные средства',
+					link: '#',
+				},
+				{
+					name: 'Средства для защиты волос во время химических процедур',
+					link: '#',
+				},
+				{
+					name: 'Безаммиачный краситель',
+					link: '#',
+				},
+			],
+		},
+		{
+			name: 'Одноразовые материалы',
+			link: '#',
+			submenu: [
+				{
+					name: 'Осветление волос',
+					link: '#',
+				},
+				{
+					name: 'Средства для удаления красителя с кожи',
+					link: '#',
+				},
+				{
+					name: 'Краситель прямого действия',
+					link: '#',
+				},
+				{
+					name: 'Стойкий краситель',
+					link: '#',
+				},
+				{
+					name: 'Специальные средства',
+					link: '#',
+				},
+				{
+					name: 'Средства для защиты волос во время химических процедур',
+					link: '#',
+				},
+				{
+					name: 'Безаммиачный краситель',
+					link: '#',
+				},
+			],
+		},
+		{
+			name: 'Пирсинг',
+			link: '#',
+			submenu: [
+				{
+					name: 'Осветление волос',
+					link: '#',
+				},
+				{
+					name: 'Средства для удаления красителя с кожи',
+					link: '#',
+				},
+				{
+					name: 'Краситель прямого действия',
+					link: '#',
+				},
+				{
+					name: 'Стойкий краситель',
+					link: '#',
+				},
+				{
+					name: 'Специальные средства',
+					link: '#',
+				},
+				{
+					name: 'Средства для защиты волос во время химических процедур',
+					link: '#',
+				},
+				{
+					name: 'Безаммиачный краситель',
+					link: '#',
+				},
+			],
+		},
+		{
+			name: 'Дезинфекция и стерилизация',
+			link: '#',
+			submenu: [
+				{
+					name: 'Осветление волос',
+					link: '#',
+				},
+				{
+					name: 'Средства для удаления красителя с кожи',
+					link: '#',
+				},
+				{
+					name: 'Краситель прямого действия',
+					link: '#',
+				},
+				{
+					name: 'Стойкий краситель',
+					link: '#',
+				},
+				{
+					name: 'Специальные средства',
+					link: '#',
+				},
+				{
+					name: 'Средства для защиты волос во время химических процедур',
+					link: '#',
+				},
+				{
+					name: 'Безаммиачный краситель',
+					link: '#',
+				},
+			],
+		},
+	]
+
+	let searchList1 = [
+		{
+			'img': './img/components/product-card/img-1',
+			'title': 'Шампуни для  нормальных волос',
+			'btn': true
+		},
+		{
+			'img': './img/components/product-card/img-2',
+			'title': 'Шампунь Антистресс с экстрактом мальвы 250 мл CD СПА',
+			'cost': '6 750 ₽',
+			'stock': '2 125,00 ₽'
+		},	
+		{
+			'img': './img/components/product-card/img-3',
+			'title': 'ENERGY Интенсивный энергетический шампунь с ментолом, 1000мл',
+			'cost': '1 365 ₽',
+			'stock': '2 125,00 ₽'
+		},			
+		{
+			'img': './img/components/product-card/img-4',
+			'title': 'Шампунь Антистресс с экстрактом мальвы 250 мл CD СПА',
+			'cost': '230 ₽',
+			'stock': '2 125,00 ₽'
+		},			
+		{
+			'img': './img/components/product-card/img-2',
+			'title': 'Шампунь Антистресс с экстрактом мальвы 250 мл CD СПА',
+			'cost': '6 750 ₽',
+			'stock': '2 125,00 ₽'
+		},	
+		{
+			'img': './img/components/product-card/img-3',
+			'title': 'ENERGY Интенсивный энергетический шампунь с ментолом, 1000мл',
+			'cost': '1 365 ₽',
+			'stock': '2 125,00 ₽'
+		},			
+		{
+			'img': './img/components/product-card/img-4',
+			'title': 'Шампунь Антистресс с экстрактом мальвы 250 мл CD СПА',
+			'cost': '230 ₽',
+			'stock': '2 125,00 ₽'
+		},		
+	]
+
+	let brendsList1 = [
+		{ 'img': './img/components/brends-list/img-29'},
+		{ 'img': './img/components/brends-list/img-2'},
+		{ 'img': './img/components/brends-list/img-3'},
+		{ 'img': './img/components/brends-list/img-4'},
+		{ 'img': './img/components/brends-list/img-5'},
+		{ 'img': './img/components/brends-list/img-6'},
+		{ 'img': './img/components/brends-list/img-7'},
+		{ 'img': './img/components/brends-list/img-8'},
+		{ 'img': './img/components/brends-list/img-8'},
+		{ 'img': './img/components/brends-list/img-10'},
+		{ 'img': './img/components/brends-list/img-11'},
+		{ 'img': './img/components/brends-list/img-12'},
+		{ 'img': './img/components/brends-list/img-13'},
+		{'img': './img/components/brends-list/img-14'},
+		{'img': './img/components/brends-list/img-15'},
+		{'img': './img/components/brends-list/img-16'},
+		{'img': './img/components/brends-list/img-17'},
+		{'img': './img/components/brends-list/img-18'},	
+		{'img': './img/components/brends-list/img-19'},
+		{'img': './img/components/brends-list/img-20'},
+		{'img': './img/components/brends-list/img-21'},
+		{'img': './img/components/brends-list/img-22'},
+		{'img': './img/components/brends-list/img-23'},
+		{'img': './img/components/brends-list/img-24'},
+		{'img': './img/components/brends-list/img-25'},
+		{'img': './img/components/brends-list/img-26'},
+		{'img': './img/components/brends-list/img-27'},
+		{'img': './img/components/brends-list/img-28'}						
+	]
+
+	let newsList1 = [
+		{
+			'img': './img/components/news-card/img-1',
+			'label': 'О КОМПАНИИ',
+			'date': '28 мая 2022',
+			'title': 'Дорогие парикмахеры - эта новость для вас!',
+			'text': 'На днях мы запустили интернет-магазин для розницы и дарим всем скидку по этому случаю 20% на первый заказ',
+		},
+		{
+			'img': './img/components/news-card/img-2',
+			'label': 'фотоотчет',
+			'date': '28 мая 2022',
+			'title': 'Фотоотчет: Keratin & botox & collagen от Halak Professional',
+			'text': 'На днях мы запустили интернет-магазин для розницы и дарим всем скидку по этому случаю 20% на первый заказ',
+		},		
+		{
+			'img': './img/components/news-card/img-3',
+			'label': 'О КОМПАНИИ',
+			'date': '28 мая 2022',
+			'title': 'ВСЕМИРНЫЙ ДЕНЬ КРАСОТЫ В «МОДЕРН»!',
+			'text': 'На днях мы запустили интернет-магазин для розницы и дарим всем скидку по этому случаю 20% на первый заказ',
+		},
+		{
+			'img': './img/components/news-card/img-4',
+			'label': 'О КОМПАНИИ',
+			'date': '28 мая 2022',
+			'title': 'Встречайте новый бренд VIESO!',
+			'text': 'На днях мы запустили интернет-магазин для розницы и дарим всем скидку по этому случаю 20% на первый заказ',
+		},		
+		{
+			'img': './img/components/news-card/img-3',
+			'label': 'О КОМПАНИИ',
+			'date': '28 мая 2022',
+			'title': 'ВСЕМИРНЫЙ ДЕНЬ КРАСОТЫ В «МОДЕРН»!',
+			'text': 'На днях мы запустили интернет-магазин для розницы и дарим всем скидку по этому случаю 20% на первый заказ',
+		},		
+		{
+			'img': './img/components/news-card/img-4',
+			'label': 'О КОМПАНИИ',
+			'date': '28 мая 2022',
+			'title': 'Встречайте новый бренд VIESO!',
+			'text': 'На днях мы запустили интернет-магазин для розницы и дарим всем скидку по этому случаю 20% на первый заказ',
+		},
+		{
+			'img': './img/components/news-card/img-2',
+			'label': 'фотоотчет',
+			'date': '28 мая 2022',
+			'title': 'Фотоотчет: Keratin & botox & collagen от Halak Professional',
+			'text': 'На днях мы запустили интернет-магазин для розницы и дарим всем скидку по этому случаю 20% на первый заказ',
+		},		
+		{
+			'img': './img/components/news-card/img-1',
+			'label': 'О КОМПАНИИ',
+			'date': '28 мая 2022',
+			'title': 'Дорогие парикмахеры - эта новость для вас!',
+			'text': 'На днях мы запустили интернет-магазин для розницы и дарим всем скидку по этому случаю 20% на первый заказ',
+		},
+		{
+			'img': './img/components/news-card/img-2',
+			'label': 'фотоотчет',
+			'date': '28 мая 2022',
+			'title': 'Фотоотчет: Keratin & botox & collagen от Halak Professional',
+			'text': 'На днях мы запустили интернет-магазин для розницы и дарим всем скидку по этому случаю 20% на первый заказ',
+		},			
+		{
+			'img': './img/components/news-card/img-1',
+			'label': 'О КОМПАНИИ',
+			'date': '28 мая 2022',
+			'title': 'Дорогие парикмахеры - эта новость для вас!',
+			'text': 'На днях мы запустили интернет-магазин для розницы и дарим всем скидку по этому случаю 20% на первый заказ',
+		},
+		{
+			'img': './img/components/news-card/img-3',
+			'label': 'О КОМПАНИИ',
+			'date': '28 мая 2022',
+			'title': 'ВСЕМИРНЫЙ ДЕНЬ КРАСОТЫ В «МОДЕРН»!',
+			'text': 'На днях мы запустили интернет-магазин для розницы и дарим всем скидку по этому случаю 20% на первый заказ',
+		},
+		{
+			'img': './img/components/news-card/img-4',
+			'label': 'О КОМПАНИИ',
+			'date': '28 мая 2022',
+			'title': 'Встречайте новый бренд VIESO!',
+			'text': 'На днях мы запустили интернет-магазин для розницы и дарим всем скидку по этому случаю 20% на первый заказ',
+		},	
+			
+	]	
+	
+	let newsList2 = [
+		{
+			'img': './img/components/news-card/img-5',
+			'block':'news-card_knowledge-base',
+			'label': null,
+			'date': '28 мая 2022',
+			'title': 'Гидрофильное масло. Из Кореи с любовью',
+			'text': 'На днях мы запустили интернет-магазин для розницы и дарим всем скидку по этому случаю 20% на первый заказ',
+		},
+		{
+			'img': './img/components/news-card/img-6',
+			'block':'news-card_knowledge-base',
+			'label': null,
+			'date': '28 мая 2022',
+			'title': 'Несмываемые средства для волос: выбираем правильно',
+			'text': 'На днях мы запустили интернет-магазин для розницы и дарим всем скидку по этому случаю 20% на первый заказ',
+		},		
+		{
+			'img': './img/components/news-card/img-7',
+			'block':'news-card_knowledge-base',
+			'label': null,
+			'date': '28 мая 2022',
+			'title': 'Гидрофильное масло. Из Кореи с любовью',
+			'text': 'На днях мы запустили интернет-магазин для розницы и дарим всем скидку по этому случаю 20% на первый заказ',
+		},
+		{
+			'img': './img/components/news-card/img-8',
+			'label': null,
+			'block':'news-card_knowledge-base',
+			'date': '28 мая 2022',
+			'title': 'Уход за сединой от Cutrin',
+			'text': 'На днях мы запустили интернет-магазин для розницы и дарим всем скидку по этому случаю 20% на первый заказ',
+		},		
+		{
+			'img': './img/components/news-card/img-8',
+			'label': null,
+			'block':'news-card_knowledge-base',
+			'date': '28 мая 2022',
+			'title': 'Уход за сединой от Cutrin',
+			'text': 'На днях мы запустили интернет-магазин для розницы и дарим всем скидку по этому случаю 20% на первый заказ',
+		},		
+		{
+			'img': './img/components/news-card/img-5',
+			'label': null,
+			'block':'news-card_knowledge-base',
+			'date': '28 мая 2022',
+			'title': 'Гидрофильное масло. Из Кореи с любовью',
+			'text': 'На днях мы запустили интернет-магазин для розницы и дарим всем скидку по этому случаю 20% на первый заказ',
+		},
+		{
+			'img': './img/components/news-card/img-7',
+			'label': null,
+			'block':'news-card_knowledge-base',
+			'date': '28 мая 2022',
+			'title': 'Гидрофильное масло. Из Кореи с любовью',
+			'text': 'На днях мы запустили интернет-магазин для розницы и дарим всем скидку по этому случаю 20% на первый заказ',
+		},		
+		{
+			'img': './img/components/news-card/img-6',
+			'label': null,
+			'block':'news-card_knowledge-base',
+			'date': '28 мая 2022',
+			'title': 'Несмываемые средства для волос: выбираем правильно',
+			'text': 'На днях мы запустили интернет-магазин для розницы и дарим всем скидку по этому случаю 20% на первый заказ',
+		},
+		{
+			'img': './img/components/news-card/img-6',
+			'label': null,
+			'block':'news-card_knowledge-base',
+			'date': '28 мая 2022',
+			'title': 'Несмываемые средства для волос: выбираем правильно',
+			'text': 'На днях мы запустили интернет-магазин для розницы и дарим всем скидку по этому случаю 20% на первый заказ',
+		},			
+		{
+			'img': './img/components/news-card/img-8',
+			'label': null,
+			'block':'news-card_knowledge-base',
+			'date': '28 мая 2022',
+			'title': 'Гидрофильное масло. Из Кореи с любовью',
+			'text': 'На днях мы запустили интернет-магазин для розницы и дарим всем скидку по этому случаю 20% на первый заказ',
+		},
+		{
+			'img': './img/components/news-card/img-5',
+			'label': null,
+			'block':'news-card_knowledge-base',
+			'date': '28 мая 2022',
+			'title': 'Гидрофильное масло. Из Кореи с любовью',
+			'text': 'На днях мы запустили интернет-магазин для розницы и дарим всем скидку по этому случаю 20% на первый заказ',
+		},
+		{
+			'img': './img/components/news-card/img-7',
+			'label': null,
+			'block':'news-card_knowledge-base',
+			'date': '28 мая 2022',
+			'title': 'Гидрофильное масло. Из Кореи с любовью',
+			'text': 'На днях мы запустили интернет-магазин для розницы и дарим всем скидку по этому случаю 20% на первый заказ',
+		},	
+			
+	]
+	let newsList3 = [
+		{
+			'img': './img/components/news-card/img-1',
+			'label': 'О КОМПАНИИ',
+			'date': '28 мая 2022',
+			'title': 'Дорогие парикмахеры - эта новость для вас!',
+			'text': 'На днях мы запустили интернет-магазин для розницы и дарим всем скидку по этому случаю 20% на первый заказ',
+		},
+		{
+			'img': './img/components/news-card/img-9',
+			'label': 'О КОМПАНИИ',
+			'date': '28 мая 2022',
+			'title': 'ВСЕМИРНЫЙ ДЕНЬ КРАСОТЫ В «МОДЕРН»!',
+			'text': 'На днях мы запустили интернет-магазин для розницы и дарим всем скидку по этому случаю 20% на первый заказ',
+		},		
+		{
+			'img': './img/components/news-card/img-4',
+			'label': 'О КОМПАНИИ',
+			'date': '28 мая 2022',
+			'title': 'Встречайте новый бренд VIESO!',
+			'text': 'На днях мы запустили интернет-магазин для розницы и дарим всем скидку по этому случаю 20% на первый заказ',
+		},
+	]
+	let newsList4 = [
+		{
+			'img': './img/components/news-card/img-6',
+			'block':'news-card_knowledge-base',
+			'label': null,
+			'date': '28 мая 2022',
+			'title': 'Несмываемые средства для волос: выбираем правильно',
+			'text': 'На днях мы запустили интернет-магазин для розницы и дарим всем скидку по этому случаю 20% на первый заказ',
+		},		
+		{
+			'img': './img/components/news-card/img-7',
+			'block':'news-card_knowledge-base',
+			'label': null,
+			'date': '28 мая 2022',
+			'title': 'Гидрофильное масло. Из Кореи с любовью',
+			'text': 'На днях мы запустили интернет-магазин для розницы и дарим всем скидку по этому случаю 20% на первый заказ',
+		},
+		{
+			'img': './img/components/news-card/img-8',
+			'label': null,
+			'block':'news-card_knowledge-base',
+			'date': '28 мая 2022',
+			'title': 'Уход за сединой от Cutrin',
+			'text': 'На днях мы запустили интернет-магазин для розницы и дарим всем скидку по этому случаю 20% на первый заказ',
+		},		
+		{
+			'img': './img/components/news-card/img-8',
+			'label': null,
+			'block':'news-card_knowledge-base',
+			'date': '28 мая 2022',
+			'title': 'Уход за сединой от Cutrin',
+			'text': 'На днях мы запустили интернет-магазин для розницы и дарим всем скидку по этому случаю 20% на первый заказ',
+		},		
+		{
+			'img': './img/components/news-card/img-5',
+			'label': null,
+			'block':'news-card_knowledge-base',
+			'date': '28 мая 2022',
+			'title': 'Гидрофильное масло. Из Кореи с любовью',
+			'text': 'На днях мы запустили интернет-магазин для розницы и дарим всем скидку по этому случаю 20% на первый заказ',
+		},
+		{
+			'img': './img/components/news-card/img-7',
+			'label': null,
+			'block':'news-card_knowledge-base',
+			'date': '28 мая 2022',
+			'title': 'Гидрофильное масло. Из Кореи с любовью',
+			'text': 'На днях мы запустили интернет-магазин для розницы и дарим всем скидку по этому случаю 20% на первый заказ',
+		},		
+		{
+			'img': './img/components/news-card/img-6',
+			'label': null,
+			'block':'news-card_knowledge-base',
+			'date': '28 мая 2022',
+			'title': 'Несмываемые средства для волос: выбираем правильно',
+			'text': 'На днях мы запустили интернет-магазин для розницы и дарим всем скидку по этому случаю 20% на первый заказ',
+		},
+		{
+			'img': './img/components/news-card/img-6',
+			'label': null,
+			'block':'news-card_knowledge-base',
+			'date': '28 мая 2022',
+			'title': 'Несмываемые средства для волос: выбираем правильно',
+			'text': 'На днях мы запустили интернет-магазин для розницы и дарим всем скидку по этому случаю 20% на первый заказ',
+		},			
+		{
+			'img': './img/components/news-card/img-8',
+			'label': null,
+			'block':'news-card_knowledge-base',
+			'date': '28 мая 2022',
+			'title': 'Гидрофильное масло. Из Кореи с любовью',
+			'text': 'На днях мы запустили интернет-магазин для розницы и дарим всем скидку по этому случаю 20% на первый заказ',
+		},
+		{
+			'img': './img/components/news-card/img-5',
+			'label': null,
+			'block':'news-card_knowledge-base',
+			'date': '28 мая 2022',
+			'title': 'Гидрофильное масло. Из Кореи с любовью',
+			'text': 'На днях мы запустили интернет-магазин для розницы и дарим всем скидку по этому случаю 20% на первый заказ',
+		},
+		{
+			'img': './img/components/news-card/img-7',
+			'label': null,
+			'block':'news-card_knowledge-base',
+			'date': '28 мая 2022',
+			'title': 'Гидрофильное масло. Из Кореи с любовью',
+			'text': 'На днях мы запустили интернет-магазин для розницы и дарим всем скидку по этому случаю 20% на первый заказ',
+		},	
+			
+	]	
+	let stockList1 = [
+		{
+			title: '100 приветственных Бонусных баллов!',
+			img: './img/components/stock-card/img-1'
+		},
+		{
+			title: 'Скидка в день рождения!',
+			img: './img/components/stock-card/img-2'
+		},
+		{
+			title: 'Комплимент от «Модерн»',
+			img: './img/components/stock-card/img-3'
+		},
+		{
+			title: 'Обаяние элегантного возраста!',
+			img: './img/components/stock-card/img-4'
+		},
+		{
+			title: '100 приветственных Бонусных баллов!',
+			img: './img/components/stock-card/img-1'
+		},
+		{
+			title: 'Скидка в день рождения!',
+			img: './img/components/stock-card/img-2'
+		},
+		{
+			title: 'Комплимент от «Модерн»',
+			img: './img/components/stock-card/img-3'
+		},
+		{
+			title: 'Обаяние элегантного возраста!',
+			img: './img/components/stock-card/img-4'
+		},
+	]
+	let stockList2 = [
+		{
+			title: 'скидка при покупке СредствТМ ARAVIA PROFESSIONAL & STAREPIL',
+			img: './img/components/stock-card/img-5',
+			labels: [
+				{
+					icon: 'label-gift violet',
+					text: 'подарок'
+				},
+				{
+					icon: 'label-discount pink',
+					text: 'скидка'
+				},				
+			]
+		},
+		{
+			title: 'подарок При покупке Ресниц коллекции Naked Lashes ТМ ARDELL',
+			img: './img/components/stock-card/img-6',
+			labels: [
+				{
+					icon: 'label-gift violet',
+					text: 'подарок'
+				},
+			]
+		},
+		{
+			title: 'скидка на серию ICE ORGANIC SALON CARE ',
+			img: './img/components/stock-card/img-7',
+			labels: [
+				{
+					icon: 'label-discount pink',
+					text: 'скидка'
+				},	
+			]
+		},
+		{
+			title: 'подарок и бонусные баллы При покупке продукции Alfaparf на сумму 15 500 рублей',
+			img: './img/components/stock-card/img-8',
+			labels: [
+				{
+					icon: 'label-bonus blue',
+					text: 'бонусы'
+				}
+			]
+		},
+		{
+			title: 'подарок и бонусные баллы при покупке ТМ L`oreal Professionеl',
+			img: './img/components/stock-card/img-9',
+			labels: [
+				{
+					icon: 'label-gift violet',
+					text: 'подарок'
+				},
+				{
+					icon: 'label-bonus blue',
+					text: 'бонусы'
+				}
+			]
+		},
+		{
+			title: 'скидка При покупке Средств ТМ DEPILTOUCH ',
+			img: './img/components/stock-card/img-10',
+			labels: [
+				{
+					icon: 'label-discount pink',
+					text: 'скидка'
+				},	
+			]
+		},
+		{
+			title: 'Больше бонусных баллов При покупке двух средств Alfaparf',
+			img: './img/components/stock-card/img-8',
+			labels: [
+				{
+					icon: 'label-bonus blue',
+					text: 'бонусы'
+				}
+			]
+		},
+		{
+			title: 'скидка на серию ICE ORGANIC SALON CARE ',
+			img: './img/components/stock-card/img-7',
+			labels: [
+				{
+					icon: 'label-discount pink',
+					text: 'скидка'
+				},	
+			]
+		},
+	]
+	let stockList3 = [
+		{
+			title: 'Скидка в день рождения!',
+			img: './img/components/stock-card/img-2'
+		},
+		{
+			title: 'Комплимент от «Модерн»',
+			img: './img/components/stock-card/img-3'
+		},
+		{
+			title: '100 приветственных Бонусных баллов!',
+			img: './img/components/stock-card/img-1'
+		},
+		{
+			title: 'Обаяние элегантного возраста!',
+			img: './img/components/stock-card/img-4'
+		},
+		{
+			title: '100 приветственных Бонусных баллов!',
+			img: './img/components/stock-card/img-1'
+		},
+		{
+			title: 'Скидка в день рождения!',
+			img: './img/components/stock-card/img-2'
+		},
+		{
+			title: 'Комплимент от «Модерн»',
+			img: './img/components/stock-card/img-3'
+		},
+		{
+			title: 'Обаяние элегантного возраста!',
+			img: './img/components/stock-card/img-4'
+		},
+	]
+
+	let stockList4 = [
+		{
+			icon: 'icon-stocks',
+			title: 'подарок и бонусные баллы При покупке продукции Alfaparf на сумму 15 500 рублей',
+			text: 'Бонусные баллы начисляются сразу после принятия договора оферты внутри Телеграм-бота.Факт начисления приветственных бонусных баллов сопровождается сообщением от Телеграм-бота со следующим содержанием: «Вам начислено 100 приветственных Бонусных балла». Срок действия приветственных бонусных баллов - 30 дней.',
+		},
+		{
+			icon: 'icon-discount',
+			title: 'Скидка в день рождения!',
+			text: 'Получите скидку – 15% на всю покупку! В Ваш день рождения, а также 3 дня до и 3 дня после него!*',
+		},		
+		{
+			icon: 'icon-gift',
+			title: 'Комплимент от «Модерн»',
+			text: '5% подарочных бонусов на Вашу дисконтную карту от 500₽',
+		},
+		{
+			icon: 'icon-discount',
+			title: 'Обаяние элегантного возраста!',
+			text: 'Получите скидку - 15% на всю покупку!',
+		},	
+	]
+	
+	let stockList5 = [
+		{
+			title: 'Комплимент от «Модерн»',
+			text: '5% подарочных бонусов на Вашу дисконтную карту от 500₽',
+		},
+		{
+			title: 'Обаяние элегантного возраста!',
+			text: 'Получите скидку - 15% на всю покупку!',
+		},	
+		{
+			title: 'подарок и бонусные баллы При покупке продукции Alfaparf на сумму 15 500 рублей',
+			text: 'Бонусные баллы начисляются сразу после принятия договора оферты внутри Телеграм-бота.Факт начисления приветственных бонусных баллов сопровождается сообщением от Телеграм-бота со следующим содержанием: «Вам начислено 100 приветственных Бонусных балла». Срок действия приветственных бонусных баллов - 30 дней.',
+		},
+		{
+			title: 'Скидка в день рождения!',
+			text: 'Получите скидку – 15% на всю покупку! В Ваш день рождения, а также 3 дня до и 3 дня после него!*',
+		},	
+	]
+
+	let stockList6 = {
+		'img-brend': './img/components/brends-list/img-5.jpg',
+		'list': [
+			{
+				label: [{text: 'подарок', icon: 'label-gift violet'}, {text: 'бонусы', icon: 'label-bonus blue'}],
+				title: 'Подарок при покупке продукции Alfaparf на сумму 6 800 рублей',
+				text: 'Спрей очищающий, антисептик для рук 100мл и одно средство из списка на выбор',
+			},
+			{
+				label: [{text: 'бонусы', icon: 'label-bonus blue'}],
+				title: 'Купите стартовый пакет 15/Precions Nature и получи подарок',
+				text: 'Набор аксессуаров Alfaparf+ Палитра оттенков+ Фартук для мастера ALFAPARF+ Пеньюар двухсторонний ALFAPARF+ Миска с логотипом ALFAPARF+ Кисть с логотипом ALFAPARF+ Плойка для волос ALFAPARF, конусная c термочехлом,13-25мм+ Бонусные Баллы в размере 20% от стоимости пакета на Вашу дисконтную карту',
+			},	
+			{
+				label: [{text: 'скидка', icon: 'label-discount pink'}],
+				title: 'Купите стартовый пакет 15/Precions Nature и получи подарок',
+				text: 'Набор аксессуаров Alfaparf+ Палитра оттенков+ Фартук для мастера ALFAPARF+ Пеньюар двухсторонний ALFAPARF+ Миска с логотипом ALFAPARF+ Кисть с логотипом ALFAPARF+ Плойка для волос ALFAPARF, конусная c термочехлом,13-25мм+ Бонусные Баллы в размере 20% от стоимости пакета на Вашу дисконтную карту',
+			},
+		]
+	}
+	let stockList7 = {
+		'img-brend': './img/components/brends-list/img-7.jpg',
+		'list': [
+			{
+				label: [{text: 'подарок', icon: 'label-gift violet'}],
+				title: 'Подарок при покупке кондиционера 250 мл и Маски 250 мл из «Домашней серии» ',
+				text: 'Шампунь обьем 100 мл HALAK в подарок',
+			},
+			{
+				label: [{text: 'скидка', icon: 'label-discount pink'}],
+				title: 'Купите стартовый пакет 15/Precions Nature и получи подарок',
+				text: 'Набор аксессуаров Alfaparf+ Палитра оттенков+ Фартук для мастера ALFAPARF+ Пеньюар двухсторонний ALFAPARF+ Миска с логотипом ALFAPARF+ Кисть с логотипом ALFAPARF+ Плойка для волос ALFAPARF, конусная c термочехлом,13-25мм+ Бонусные Баллы в размере 20% от стоимости пакета на Вашу дисконтную карту',
+			},	
+			{
+				label: [{text: 'скидка', icon: 'label-discount pink'}],
+				title: 'Купите стартовый пакет 15/Precions Nature и получи подарок',
+				text: 'Набор аксессуаров Alfaparf+ Палитра оттенков+ Фартук для мастера ALFAPARF+ Пеньюар двухсторонний ALFAPARF+ Миска с логотипом ALFAPARF+ Кисть с логотипом ALFAPARF+ Плойка для волос ALFAPARF, конусная c термочехлом,13-25мм+ Бонусные Баллы в размере 20% от стоимости пакета на Вашу дисконтную карту',
+			},
+		]
+	}
+
+	let stockList8 = {
+		'img-brend': './img/components/brends-list/img-19.jpg',
+		'list': [
+			{
+				label: [{text: 'подарок', icon: 'label-gift violet'}],
+				title: 'Подарок при покупке кондиционера 250 мл и Маски 250 мл из «Домашней серии» ',
+				text: 'Шампунь обьем 100 мл HALAK в подарок',
+			},
+			{
+				label:[ {text: 'бонусы', icon: 'label-bonus blue'}],
+				title: 'Купите стартовый пакет 15/Precions Nature и получи подарок',
+				text: 'Набор аксессуаров Alfaparf+ Палитра оттенков+ Фартук для мастера ALFAPARF+ Пеньюар двухсторонний ALFAPARF+ Миска с логотипом ALFAPARF+ Кисть с логотипом ALFAPARF+ Плойка для волос ALFAPARF, конусная c термочехлом,13-25мм+ Бонусные Баллы в размере 20% от стоимости пакета на Вашу дисконтную карту',
+			},	
+		]
+	}
+	let stockList9 = [
+		{
+			block: 'stock-slider-card_main',
+			title: 'Продавать с Модерн',
+			text: 'Лучшие условия для наших партнеров',
+			img: './img/components/stock-card/img-11'
+		},
+		{
+			block: 'stock-slider-card_main',
+			title: 'Обучение',
+			text: 'Авторские курсы и самые актуальные техники',
+			img: './img/components/stock-card/img-12'
+		},
+		{
+			block: 'stock-slider-card_main',
+			title: 'Комплимент от «Модерн»',
+			text: 'Лучшие условия для наших партнеров',
+			img: './img/components/stock-card/img-11'
+		},
+		{
+			block: 'stock-slider-card_main',
+			title: 'Обаяние элегантного возраста!',
+			text: 'Лучшие условия для наших партнеров',
+			img: './img/components/stock-card/img-4'
+		},
+		{
+			block: 'stock-slider-card_main',
+			title: '100 приветственных Бонусных баллов!',
+			text: 'Лучшие условия для наших партнеров',
+			img: './img/components/stock-card/img-1'
+		},
+		{
+			block: 'stock-slider-card_main',
+			title: 'Скидка в день рождения!',
+			text: 'Лучшие условия для наших партнеров',
+			img: './img/components/stock-card/img-2'
+		},
+		{
+			block: 'stock-slider-card_main',
+			title: 'Комплимент от «Модерн»',
+			text: 'Лучшие условия для наших партнеров',
+			img: './img/components/stock-card/img-3'
+		},
+		{
+			block: 'stock-slider-card_main',
+			title: 'Обаяние элегантного возраста!',
+			text: 'Лучшие условия для наших партнеров',
+			img: './img/components/stock-card/img-4'
+		},
+	]	
+	let stockList10 = [
+		{
+			block: 'stock-slider-card_main-big',
+			title: '15% бонусных баллов на Вашу дисконтную карту при покупке двух средств Alfaparf',
+			img: './img/components/stock-card/img-8'
+		},
+		{
+			block: 'stock-slider-card_main-big',
+			title: '15% бонусных баллов на Вашу дисконтную карту при покупке Крем-краски стойкой Majirel ТМ L`oreal',
+			img: './img/components/stock-card/img-9'
+		},
+		{
+			block: 'stock-slider-card_main-big',
+			title: '15% бонусных баллов на Вашу дисконтную карту при покупке двух средств Alfaparf',
+			img: './img/components/stock-card/img-8'
+		},
+		{
+			block: 'stock-slider-card_main-big',
+			title: 'Обаяние элегантного возраста!',
+			img: './img/components/stock-card/img-4'
+		},
+		{
+			block: 'stock-slider-card_main-big',
+			title: '100 приветственных Бонусных баллов!',
+			img: './img/components/stock-card/img-1'
+		},
+		{
+			block: 'stock-slider-card_main-big',
+			title: 'Скидка в день рождения!',
+			img: './img/components/stock-card/img-2'
+		},
+		{
+			block: 'stock-slider-card_main-big',
+			title: 'Комплимент от «Модерн»',
+			img: './img/components/stock-card/img-3'
+		},
+		{
+			block: 'stock-slider-card_main-big',
+			title: 'Обаяние элегантного возраста!',
+			img: './img/components/stock-card/img-4'
+		},
+	]
+	let tagsList1 = [
+		{
+			title: 'Все',
+			class: 'is-active'
+		},
+		{
+			title: 'Любимые'
+		},   
+		{
+			title: 'Новые'
+		},      
+		{
+			title: 'A—D'
+		},
+		{
+			title: 'E—H'
+		},   
+		{
+			title: 'I—L'
+		},         
+		{
+			title: 'M—R'
+		},
+		{
+			title: 'S—V'
+		},   
+		{
+			title: 'W—Z'
+		},                
+		{
+			title: 'А—Д'
+		},         
+		{
+			title: 'Е—И'
+		},
+		{
+			title: 'К—О'
+		},   
+		{
+			title: 'П—У'
+		},     
+		{
+			title: 'Ф—Ш'
+		},   
+		{
+			title: 'Щ—Я'
+		},   
+	]
+
+	let tagsList2 = [
+		{
+			title: 'Все',
+			class: 'is-active'
+		},
+		{title: 'Alfaparf'},
+		{title: 'Shot'},
+		{title: 'Nirvel'},
+		{title: 'Constant Delight'},
+		{title: 'Concept'},
+		{title: 'Wella'},
+		{title: 'Matrix'},
+		{title: 'Londa'},
+		{title: 'Cutrin'},
+		{title: 'Dewal Cosmetics'},
+		{title: 'BOUTICLE'},
+		{title: 'EPICA Professional'},
+		{title: 'Alfaparf'},
+		{title: 'Shot'},
+		{title: 'Nirvel'},
+		{title: 'Constant Delight'},
+		{title: 'Concept'},
+		{title: 'Wella'},
+		{title: 'Matrix'},
+		{title: 'Londa'},
+		{title: 'Cutrin'},
+		{title: 'Dewal Cosmetics'},
+		{title: 'BOUTICLE'},
+		{title: 'EPICA Professional'},
+	]
+	let tagsList3 = [
+		{title: 'Окрашивание AirTouch'},
+		{title: 'Омбре'},
+		{title: 'Калифорнийское мелирование'},
+		{title: 'Шатуш'},
+		{title: 'Новинки'},
+		{title: 'Для неё'},
+		{title: 'Тонирование'},
+		{title: 'Идеи подарков'},
+		{title: 'Балаяж'},
+		{title: 'Сомбре'},
+		{title: 'Шатуш'},
+		{title: 'Новинки'},
+		{title: 'Для неё'},
+		{title: 'Тонирование'},
+		{title: 'Идеи подарков'},
+		{title: 'Балаяж'},
+		{title: 'Сомбре'},
+	]
+	let articleList = [
+		{
+			'img': './img/components/article/img-3',
+		},
+		{
+			'img': './img/components/article/img-2',
+		},
+		{
+			'img': './img/components/article/img-3',
+		},		
+	]	
+	let articleList2 = [
+		{
+			'img': './img/components/article/img-4',
+		},
+		{
+			'img': './img/components/article/img-2',
+		},
+		{
+			'img': './img/components/article/img-3',
+		},		
+	]
+	let articleList3 = [
+		{
+			'img': './img/components/article/img-3',
+			'label': [
+				{
+					icon: 'green',
+					text: 'sale',
+					stock: '-35%'
+				},
+				{
+					icon: 'beige',
+					text: 'new',
+				},
+				customLabels['2+1']
+			]
+		},
+		{
+			'img': './img/components/article/img-2',
+			'label': [
+				{
+					icon: 'green',
+					text: 'sale',
+					stock: '-35%'
+				},
+				{
+					icon: 'beige',
+					text: 'new',
+				},
+			]
+		},
+		{
+			'img': './img/components/article/img-3',
+			'label': [
+				{
+					icon: 'green',
+					text: 'sale',
+					stock: '-35%'
+				},
+				{
+					icon: 'beige',
+					text: 'new',
+				},
+			]
+		},
+	]	
+
+	let collapseList1 = [
+		{
+			'title': 'Зачем нужна регистрация?',
+			'subtext': 'Регистрация',
+			'content-title': 'Пример текстового блока',
+			'list': [
+				'Значимость этих проблем настолько очевидна, что постоянный количественный рост и сфера нашей активности способствует подготовки и реализации дальнейших направлений развития. С другой стороны новая модель организационной деятельности требуют от нас анализа форм развития.',
+				'Разнообразный и богатый опыт укрепление и развитие структуры позволяет оценить значение соответствующий условий активизации. Товарищи! консультация с широким активом позволяет оценить значение направлений прогрессивного развития. Повседневная практика показывает, что постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет выполнять важные задания по разработке форм развития. Разнообразный и богатый опыт дальнейшее развитие различных форм деятельности представляет собой интересный эксперимент проверки модели развития.'
+			],
+		},
+		{
+			'title': 'Как восстановить пароль от личного кабинета?',
+			'subtext': 'Регистрация',
+			'content-title': 'Пример текстового блока',
+			'list': [
+				'Значимость этих проблем настолько очевидна, что постоянный количественный рост и сфера нашей активности способствует подготовки и реализации дальнейших направлений развития. С другой стороны новая модель организационной деятельности требуют от нас анализа форм развития.',
+				'Разнообразный и богатый опыт укрепление и развитие структуры позволяет оценить значение соответствующий условий активизации. Товарищи! консультация с широким активом позволяет оценить значение направлений прогрессивного развития. Повседневная практика показывает, что постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет выполнять важные задания по разработке форм развития. Разнообразный и богатый опыт дальнейшее развитие различных форм деятельности представляет собой интересный эксперимент проверки модели развития.'
+			],
+		},	
+		{
+			'title': 'Как понять, что есть в наличии?',
+			'subtext': 'Товары',
+			'content-title': 'Пример текстового блока',
+			'list': [
+				'Значимость этих проблем настолько очевидна, что постоянный количественный рост и сфера нашей активности способствует подготовки и реализации дальнейших направлений развития. С другой стороны новая модель организационной деятельности требуют от нас анализа форм развития.',
+				'Разнообразный и богатый опыт укрепление и развитие структуры позволяет оценить значение соответствующий условий активизации. Товарищи! консультация с широким активом позволяет оценить значение направлений прогрессивного развития. Повседневная практика показывает, что постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет выполнять важные задания по разработке форм развития. Разнообразный и богатый опыт дальнейшее развитие различных форм деятельности представляет собой интересный эксперимент проверки модели развития.'
+			],
+		},
+		{
+			'title': 'Где можно посмотреть подробную информацию о товаре?',
+			'subtext': 'Товары',
+			'content-title': 'Пример текстового блока',
+			'list': [
+				'Значимость этих проблем настолько очевидна, что постоянный количественный рост и сфера нашей активности способствует подготовки и реализации дальнейших направлений развития. С другой стороны новая модель организационной деятельности требуют от нас анализа форм развития.',
+				'Разнообразный и богатый опыт укрепление и развитие структуры позволяет оценить значение соответствующий условий активизации. Товарищи! консультация с широким активом позволяет оценить значение направлений прогрессивного развития. Повседневная практика показывает, что постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет выполнять важные задания по разработке форм развития. Разнообразный и богатый опыт дальнейшее развитие различных форм деятельности представляет собой интересный эксперимент проверки модели развития.'
+			],
+		},		
+		{
+			'title': 'Как узнать о поступлении товара?',
+			'subtext': 'Товары',
+			'content-title': 'Пример текстового блока',
+			'list': [
+				'Значимость этих проблем настолько очевидна, что постоянный количественный рост и сфера нашей активности способствует подготовки и реализации дальнейших направлений развития. С другой стороны новая модель организационной деятельности требуют от нас анализа форм развития.',
+				'Разнообразный и богатый опыт укрепление и развитие структуры позволяет оценить значение соответствующий условий активизации. Товарищи! консультация с широким активом позволяет оценить значение направлений прогрессивного развития. Повседневная практика показывает, что постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет выполнять важные задания по разработке форм развития. Разнообразный и богатый опыт дальнейшее развитие различных форм деятельности представляет собой интересный эксперимент проверки модели развития.'
+			],
+		},	
+		{
+			'title': 'Как зарезервировать понравившийся товар?',
+			'subtext': 'Товары',
+			'content-title': 'Пример текстового блока',
+			'list': [
+				'Значимость этих проблем настолько очевидна, что постоянный количественный рост и сфера нашей активности способствует подготовки и реализации дальнейших направлений развития. С другой стороны новая модель организационной деятельности требуют от нас анализа форм развития.',
+				'Разнообразный и богатый опыт укрепление и развитие структуры позволяет оценить значение соответствующий условий активизации. Товарищи! консультация с широким активом позволяет оценить значение направлений прогрессивного развития. Повседневная практика показывает, что постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет выполнять важные задания по разработке форм развития. Разнообразный и богатый опыт дальнейшее развитие различных форм деятельности представляет собой интересный эксперимент проверки модели развития.'
+			],
+		},							
+	]
+
+	let advantagesList1 = [
+		{
+			icon : 'icon-lotion-cream',
+			title: 'Только проверенная продукция',
+			text: 'Мы представляем эффективные товары, которые дают видимый результат, поэтому сотрудничаем только с ведущими профессиональными брендами.'
+		},
+		{
+			icon : 'icon-makeup',
+			title: 'Широкий ассортимент',
+			text: 'У нас вы найдете более 20 000 наименований товаров для создания и поддержания красоты.'
+		},		
+		{
+			icon : 'icon-box',
+			title: 'Прямые поставки с нашего склада',
+			text: 'Вам не нужно будет самостоятельно искать, закупать и привозить товар. Эту функцию мы берем на себя! Никаких рисков, мы станем для вас надежным партнером!'
+		},	
+		{
+			icon : 'icon-arrows',
+			title: 'Высокий спрос',
+			text: 'Отказаться от любимых косметических средств женщин не заставит ни один экономический кризис.'
+		},			
+		{
+			icon : 'icon-bag',
+			title: 'Большая емкость рынка',
+			text: 'В текущих условиях многие иностранные компании покидают рынок, освобождая место новым игрокам. Займите свое место и постройте свой эффективный бизнес!'
+		},				
+	]
+
+	let loyaltyList1 = {
+		'title': 'Условия предоставления разовой скидки:',
+		'list': [
+			{
+				label: 'от 500 рублей',
+				value: '3%'
+			},
+			{
+				label: 'более 5 000 рублей',
+				value: '5%'
+			},
+			{
+				label: 'более 10 000 рублей',
+				value: '7%'
+			},
+			{
+				label: 'более 20 000 рублей',
+				value: '10%'
+			},                
+		]
+	}
+	
+	let loyaltyList2 = {
+		'title': 'Условия предоставления накопительной скидки:',
+		'list': [
+			{
+				label: 'более 5 000 рублей',
+				value: '5%'
+			},
+			{
+				label: 'более 10 000 рублей',
+				value: '7%'
+			},
+			{
+				label: 'более 20 000 рублей',
+				value: '10%'
+			},                
+		]
+	}	
+	
+	let loyaltyList3 = {
+		'title': 'Условия предоставления накопительной скидки:',
+		'list': [
+			{
+				label: 'от 5 000 рублей',
+				value: '5%'
+			},
+			{
+				label: 'от 10 000 рублей',
+				value: '6%'
+			},
+			{
+				label: 'от 15 000 рублей',
+				value: '7%'
+			},  
+			{
+				label: 'от 20 000 рублей',
+				value: '8%'
+			},
+			{
+				label: 'от 25 000 рублей',
+				value: '9%'
+			},
+			{
+				label: 'от 30 000 рублей',
+				value: '10%'
+			},  	
+			{
+				label: 'от 35 000 рублей',
+				value: '11%'
+			},
+			{
+				label: 'от 40 000 рублей',
+				value: '12%'
+			},
+			{
+				label: 'от 45 000 рублей',
+				value: '13%'
+			},  
+			{
+				label: 'от 60 000 рублей',
+				value: '14%'
+			},
+			{
+				label: 'от 80 000 рублей',
+				value: '15%'
+			},
+			{
+				label: 'от 100 000 рублей',
+				value: '16%'
+			},  
+		]
+	}	
+	
+	let loyaltyList4 = {
+		'title': 'Условия предоставления разовой скидки:',
+		'list': [
+			{
+				label: 'от 500 рублей',
+				value: '3%'
+			},
+			{
+				label: 'более 5 000 рублей',
+				value: '5%'
+			},
+			{
+				label: 'более 10 000 рублей',
+				value: '7%'
+			},           
+			{
+				label: 'более 20 000 рублей',
+				value: '10%'
+			},
+			{
+				label: 'более 25 000 рублей',
+				value: '11%'
+			},
+			{
+				label: 'более 35 000 рублей',
+				value: '12%'
+			},   						
+			{
+				label: 'более 50 000 рублей',
+				value: '12%'
+			},
+			{
+				label: 'более 70 000 рублей',
+				value: '14%'
+			},   
+			{
+				label: 'более 100 000 рублей',
+				value: '15%'
+			},   							     
+		]
+	}		
+	
+	let loyaltyList5 = {
+		'title': 'Условия предоставления разовой скидки:',
+		'list': [
+			{
+				label: 'от 0 до 40 000 рублей',
+				value: '5%'
+			},
+			{
+				label: 'от 40 001-80 000 рублей',
+				value: '7%'
+			},
+			{
+				label: 'от 80 001-150 000 рублей',
+				value: '10%'
+			},           
+			{
+				label: 'от 150 001-200 000 рублей',
+				value: '12%'
+			},
+						     
+		]
+	}
+
+	let storeTab = {
+		'active': 0,
+		'array': [
+			{
+				'component': {
+					'mixin': 'store-picture-tab'
+				}
+			},
+			{
+				'component': {
+					'mixin': 'store-map-tab'
+				}
+			}
+		]
+	}
+
+	let storeList = [
+		'ул. Власихинская, 91',
+		'ул. Анатолия, 81а',
+		'ул. Попова, 150',
+		'ул. А. Петрова, 219Б (ТРЦ «Огни»)',
+		'ул. Попова, 82 (ТРЦ «Малина»)',
+		'пр-т Ленина, 155 (ТЦ «Норд-Вест»)',
+		'Павловский тракт, 251В (ТРЦ «Европа»)',
+		'пр. Строителей, 117 (ТРЦ Galaxy)',
+		'ул. Балтийская, 103',
+		'пр. Красноармейский, 51а (ТЦ «Гулливер Парк»)'
+	]
+
+	let courseList1 = [
+		{
+			'img': './img/components/course-page/img-2',
+			'date': '12 марта — 25 марта',
+			'text': 'Создания красивого блонда на основе метода окрашивания волос AIRTOUCH',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽'
+		},
+		{
+			'img': './img/components/course-page/img-3',
+			'date': '12 марта — 25 марта',
+			'text': 'Создания красивого блонда на основе метода окрашивания волос AIRTOUCH',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽'
+		},	
+		{
+			'img': './img/components/course-page/img-4',
+			'date': '12 марта — 25 марта',
+			'text': 'Создания красивого блонда на основе метода окрашивания волос AIRTOUCH',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽'
+		},
+		{
+			'img': './img/components/course-page/img-5',
+			'date': '12 марта — 25 марта',
+			'text': 'Создания красивого блонда на основе метода окрашивания волос AIRTOUCH',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽'
+		},		
+		{
+			'img': './img/components/course-page/img-3',
+			'date': '12 марта — 25 марта',
+			'text': 'Создания красивого блонда на основе метода окрашивания волос AIRTOUCH',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽'
+		},	
+		{
+			'img': './img/components/course-page/img-4',
+			'date': '12 марта — 25 марта',
+			'text': 'Создания красивого блонда на основе метода окрашивания волос AIRTOUCH',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽'
+		},
+		{
+			'img': './img/components/course-page/img-4',
+			'date': '12 марта — 25 марта',
+			'text': 'Создания красивого блонда на основе метода окрашивания волос AIRTOUCH',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽'
+		},				
+	]
+	let courseList2 = [
+		{
+			'img': './img/components/course-page/img-9',
+			'date': null,
+			'text': 'Создания красивого блонда на основе метода окрашивания волос AIRTOUCH',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+			'add-info': 'лист ожидания'
+		},
+		{
+			'img': './img/components/course-page/img-10',
+			'date': null,
+			'text': 'Создания красивого блонда на основе метода окрашивания волос AIRTOUCH',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+			'add-info': 'лист ожидания'
+		},	
+		{
+			'img': './img/components/course-page/img-11',
+			'date': null,
+			'text': 'Создания красивого блонда на основе метода окрашивания волос AIRTOUCH',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+			'add-info': 'лист ожидания'
+		},
+		{
+			'img': './img/components/course-page/img-2',
+			'date': null,
+			'text': 'Создания красивого блонда на основе метода окрашивания волос AIRTOUCH',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+			'add-info': 'лист ожидания'
+		},	
+		{
+			'img': './img/components/course-page/img-9',
+			'date': null,
+			'text': 'Создания красивого блонда на основе метода окрашивания волос AIRTOUCH',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+			'add-info': 'лист ожидания'
+		},
+		{
+			'img': './img/components/course-page/img-10',
+			'date': null,
+			'text': 'Создания красивого блонда на основе метода окрашивания волос AIRTOUCH',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+			'add-info': 'лист ожидания'
+		},	
+		{
+			'img': './img/components/course-page/img-11',
+			'date': null,
+			'text': 'Создания красивого блонда на основе метода окрашивания волос AIRTOUCH',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+			'add-info': 'лист ожидания'
+		},
+		{
+			'img': './img/components/course-page/img-2',
+			'date': null,
+			'text': 'Создания красивого блонда на основе метода окрашивания волос AIRTOUCH',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+			'add-info': 'лист ожидания'
+		},		
+		{
+			'img': './img/components/course-page/img-9',
+			'date': null,
+			'text': 'Создания красивого блонда на основе метода окрашивания волос AIRTOUCH',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+			'add-info': 'лист ожидания'
+		},
+		{
+			'img': './img/components/course-page/img-10',
+			'date': null,
+			'text': 'Создания красивого блонда на основе метода окрашивания волос AIRTOUCH',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+			'add-info': 'лист ожидания'
+		},	
+		{
+			'img': './img/components/course-page/img-11',
+			'date': null,
+			'text': 'Создания красивого блонда на основе метода окрашивания волос AIRTOUCH',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+			'add-info': 'лист ожидания'
+		},
+		{
+			'img': './img/components/course-page/img-2',
+			'date': null,
+			'text': 'Создания красивого блонда на основе метода окрашивания волос AIRTOUCH',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+			'add-info': 'лист ожидания'
+		},	
+		{
+			'img': './img/components/course-page/img-9',
+			'date': null,
+			'text': 'Создания красивого блонда на основе метода окрашивания волос AIRTOUCH',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+			'add-info': 'лист ожидания'
+		},
+		{
+			'img': './img/components/course-page/img-10',
+			'date': null,
+			'text': 'Создания красивого блонда на основе метода окрашивания волос AIRTOUCH',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+			'add-info': 'лист ожидания'
+		},	
+		{
+			'img': './img/components/course-page/img-11',
+			'date': null,
+			'text': 'Создания красивого блонда на основе метода окрашивания волос AIRTOUCH',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+			'add-info': 'лист ожидания'
+		},
+		{
+			'img': './img/components/course-page/img-2',
+			'date': null,
+			'text': 'Создания красивого блонда на основе метода окрашивания волос AIRTOUCH',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+			'add-info': 'лист ожидания'
+		},	
+		{
+			'img': './img/components/course-page/img-9',
+			'date': null,
+			'text': 'Создания красивого блонда на основе метода окрашивания волос AIRTOUCH',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+			'add-info': 'лист ожидания'
+		},
+		{
+			'img': './img/components/course-page/img-10',
+			'date': null,
+			'text': 'Создания красивого блонда на основе метода окрашивания волос AIRTOUCH',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+			'add-info': 'лист ожидания'
+		},	
+		{
+			'img': './img/components/course-page/img-11',
+			'date': null,
+			'text': 'Создания красивого блонда на основе метода окрашивания волос AIRTOUCH',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+			'add-info': 'лист ожидания'
+		},
+		{
+			'img': './img/components/course-page/img-2',
+			'date': null,
+			'text': 'Создания красивого блонда на основе метода окрашивания волос AIRTOUCH',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+			'add-info': 'лист ожидания'
+		},								
+	]
+	let courseList3 = [
+		{
+			'img': './img/components/course-page/img-6',
+			'date': '12 марта — 25 марта',
+			'text': 'Создания красивого блонда на основе метода окрашивания волос AIRTOUCH',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+		},
+		{
+			'img': './img/components/course-page/img-3',
+			'date': '12 марта — 25 марта',
+			'text': 'Создания красивого блонда на основе метода окрашивания волос AIRTOUCH',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+		},	
+		{
+			'img': './img/components/course-page/img-4',
+			'date': '12 марта — 25 марта',
+			'text': 'Создания красивого блонда на основе метода окрашивания волос AIRTOUCH',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+		},
+		{
+			'img': './img/components/course-page/img-5',
+			'date': '12 марта — 25 марта',
+			'text': 'Создания красивого блонда на основе метода окрашивания волос AIRTOUCH',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+		},	
+		{
+			'img': './img/components/course-page/img-6',
+			'date': '12 марта — 25 марта',
+			'text': 'Создания красивого блонда на основе метода окрашивания волос AIRTOUCH',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+		},
+		{
+			'img': './img/components/course-page/img-3',
+			'date': '12 марта — 25 марта',
+			'text': 'Создания красивого блонда на основе метода окрашивания волос AIRTOUCH',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+		},	
+		{
+			'img': './img/components/course-page/img-4',
+			'date': '12 марта — 25 марта',
+			'text': 'Создания красивого блонда на основе метода окрашивания волос AIRTOUCH',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+		},
+		{
+			'img': './img/components/course-page/img-5',
+			'date': '12 марта — 25 марта',
+			'text': 'Создания красивого блонда на основе метода окрашивания волос AIRTOUCH',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+		},	
+		{
+			'img': './img/components/course-page/img-6',
+			'date': '12 марта — 25 марта',
+			'text': 'Создания красивого блонда на основе метода окрашивания волос AIRTOUCH',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+		},
+		{
+			'img': './img/components/course-page/img-3',
+			'date': '12 марта — 25 марта',
+			'text': 'Создания красивого блонда на основе метода окрашивания волос AIRTOUCH',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+		},	
+		{
+			'img': './img/components/course-page/img-4',
+			'date': '12 марта — 25 марта',
+			'text': 'Создания красивого блонда на основе метода окрашивания волос AIRTOUCH',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+		},
+		{
+			'img': './img/components/course-page/img-5',
+			'date': '12 марта — 25 марта',
+			'text': 'Создания красивого блонда на основе метода окрашивания волос AIRTOUCH',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+		},	
+		{
+			'img': './img/components/course-page/img-6',
+			'date': '12 марта — 25 марта',
+			'text': 'Создания красивого блонда на основе метода окрашивания волос AIRTOUCH',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+		},
+		{
+			'img': './img/components/course-page/img-3',
+			'date': '12 марта — 25 марта',
+			'text': 'Создания красивого блонда на основе метода окрашивания волос AIRTOUCH',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+		},	
+		{
+			'img': './img/components/course-page/img-4',
+			'date': '12 марта — 25 марта',
+			'text': 'Создания красивого блонда на основе метода окрашивания волос AIRTOUCH',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+		},
+		{
+			'img': './img/components/course-page/img-5',
+			'date': '12 марта — 25 марта',
+			'text': 'Создания красивого блонда на основе метода окрашивания волос AIRTOUCH',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+		},	
+		{
+			'img': './img/components/course-page/img-6',
+			'date': '12 марта — 25 марта',
+			'text': 'Создания красивого блонда на основе метода окрашивания волос AIRTOUCH',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+		},
+		{
+			'img': './img/components/course-page/img-3',
+			'date': '12 марта — 25 марта',
+			'text': 'Создания красивого блонда на основе метода окрашивания волос AIRTOUCH',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+		},	
+		{
+			'img': './img/components/course-page/img-4',
+			'date': '12 марта — 25 марта',
+			'text': 'Создания красивого блонда на основе метода окрашивания волос AIRTOUCH',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+		},
+		{
+			'img': './img/components/course-page/img-5',
+			'date': '12 марта — 25 марта',
+			'text': 'Создания красивого блонда на основе метода окрашивания волос AIRTOUCH',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+		},				
+	]	
+	let commonInfoList = [
+		[
+			{
+				label: 'Город проведения',
+				value: 'г. Барнаул'
+			},
+			{
+				label: 'Адрес проведения',
+				value: 'ул. Ленина д.1, офис 145 '
+			},			
+		],
+		[
+			{
+				label: 'Формат',
+				value: 'Теория + практическая отработка на моделях'
+			},	
+		],
+		[
+			{
+				label: 'Продолжительность',
+				value: '5 часов'
+			},
+			{
+				label: 'Аудитория',
+				value: 'Только практикующие мастера'
+			},			
+		],
+		[
+			{
+				label: 'Иметь при себе',
+				value: 'Фен, расчески, зажимы'
+			},	
+		],
+	] 
+	let scheduleList1 = [
+		{
+			'img': './img/components/course-page/img-12',
+			'title': 'Искусство депиляции воском',
+			'name': 'Наталья Дивнич',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+			'date': '12 марта — 25 марта',		
+		},
+		{
+			'img': './img/components/course-page/img-13',
+			'title': 'Обертывания и органический уход за телом от Aravia Professional',
+			'name': 'Юлия Дранникова',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+			'date': '12 марта — 25 марта',		
+		},		
+		{
+			'img': './img/components/course-page/img-14',
+			'title': 'Выход из черного от Constant Delight',
+			'name': 'Елена Чернова',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+			'date': '12 марта — 25 марта',		
+		},
+		{
+			'img': './img/components/course-page/img-15',
+			'title': 'Акценты блонд от Constant Delight',
+			'name': 'Виктор Газенкампф',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+			'date': '12 марта — 25 марта',		
+		},		
+		{
+			'img': './img/components/course-page/img-16',
+			'title': 'Новая коллекция стрижек и окрашиваний LUMINIC "THE ART IN YOU" от Nirvel Professional',
+			'name': 'Вячеслав Латоха и Николай Васильев',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+			'date': '12 марта — 25 марта',		
+		},
+		{
+			'img': './img/components/course-page/img-12',
+			'title': 'Неинвазивная карбокситерапия+карбоновый пилинг- комплекс от ТМ Аравия',
+			'name': 'Наталья Дивнич',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+			'date': '12 марта — 25 марта',		
+		},			
+	]
+
+	let scheduleList2 = [
+		{
+			'img': './img/components/course-page/img-13',
+			'title': 'Обертывания и органический уход за телом от Aravia Professional',
+			'name': 'Юлия Дранникова',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+			'date': '12 марта — 25 марта',		
+		},		
+		{
+			'img': './img/components/course-page/img-14',
+			'title': 'Выход из черного от Constant Delight',
+			'name': 'Елена Чернова',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+			'date': '12 марта — 25 марта',		
+		},
+	]
+	let scheduleList3 = [
+		{
+			'img': './img/components/course-page/img-15',
+			'title': 'Акценты блонд от Constant Delight',
+			'name': 'Виктор Газенкампф',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+			'date': '12 марта — 25 марта',		
+		},		
+		{
+			'img': './img/components/course-page/img-16',
+			'title': 'Новая коллекция стрижек и окрашиваний LUMINIC "THE ART IN YOU" от Nirvel Professional',
+			'name': 'Вячеслав Латоха и Николай Васильев',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+			'date': '12 марта — 25 марта',		
+		},
+		{
+			'img': './img/components/course-page/img-12',
+			'title': 'Неинвазивная карбокситерапия+карбоновый пилинг- комплекс от ТМ Аравия',
+			'name': 'Наталья Дивнич',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+			'date': '12 марта — 25 марта',		
+		},	
+	]
+	let toolsList = [
+		{img: './img/components/tools/img-1', decor: './img/components/tools/img-text-1'},
+		{img: './img/components/tools/img-2', decor: './img/components/tools/img-text-2'},
+		{img: './img/components/tools/img-3', decor: './img/components/tools/img-text-3'},
+		{img: './img/components/tools/img-4', decor: './img/components/tools/img-text-4'},
+	]
+
+	let mainTopList = [
+		{
+			'img': 'img-2.jpg',
+			'img-min': 'img-2-mob.jpg',
+			'title': 'DEWAL cosmetics',
+			'text': 'Удовольствие для себя — профессиональная косметика для волос',
+		},
+		{
+			'img': 'img-1.png',
+			'img-min': 'img-1.png',
+			'title': 'DEWAL cosmetics',
+			'text': 'Новая коллекция стрижек и окрашиваний LUMINIC "THE ART IN YOU"',
+		},		
+	]
+	let purchasList = [
+		{
+			'title': 'Заказ № 232421',
+			'cost': '2 500 ₽',
+			'date': '25.06.23',
+			'label': 'Принят',
+			'label-class': 'pink',
+			'img': [{img: 'img-6.jpg'}, {img: 'img-1.jpg'}, {img: 'img-9.jpg'},{img: 'img-5.jpg'},]
+		},
+		{
+			'title': 'Заказ № 232421',
+			'cost': '2 500 ₽',
+			'date': '25.06.23',
+			'label': 'Оплачен',
+			'label-class': 'blue',
+			'img': [{img: 'img-6.jpg'}, {img: 'img-1.jpg'}, {img: 'img-9.jpg'},{img: 'img-5.jpg'},]
+		},		
+		{
+			'title': 'Заказ № 232421',
+			'cost': '2 500 ₽',
+			'date': '25.06.23',
+			'label': 'В сборке',
+			'date-text': 'Ожидаемая дата: <span>25.07.23</span>',
+			'label-class': 'green',
+			'img': [{img: 'img-6.jpg'}, {img: 'img-1.jpg'}, {img: 'img-9.jpg'},{img: 'img-5.jpg'},]
+		},
+		{
+			'title': 'Заказ № 232421',
+			'cost': '2 500 ₽',
+			'date': '25.06.23',
+			'label': 'Оплачен',
+			'label-class': 'blue',
+			'img': [{img: 'img-6.jpg'}, {img: 'img-1.jpg'}, {img: 'img-9.jpg'},{img: 'img-5.jpg'},]
+		},		
+		{
+			'title': 'Заказ № 232421',
+			'cost': '2 500 ₽',
+			'date': '25.06.23',
+			'label': 'Готов к отправке',
+			'date-text': 'Ожидаемая дата: <span>25.07.23</span>',
+			'label-class': 'beige',
+			'img': [{img: 'img-6.jpg'}, {img: 'img-1.jpg'}, {img: 'img-9.jpg'},{img: 'img-5.jpg'},]
+		},
+		{
+			'title': 'Заказ № 232421',
+			'cost': '2 500 ₽',
+			'date': '25.06.23',
+			'label': 'В пути',
+			'date-text': 'Ожидаемая дата: <span>25.07.23</span>',
+			'label-class': 'light-beige',
+			'img': [{img: 'img-6.jpg'}, {img: 'img-1.jpg'}, {img: 'img-9.jpg'},{img: 'img-5.jpg'},]
+		},		
+		{
+			'title': 'Заказ № 232421',
+			'cost': '2 500 ₽',
+			'date': '25.06.23',
+			'label': 'Доставлен',
+			'label-class': 'dark-green',
+			'img': [{img: 'img-6.jpg'}, {img: 'img-1.jpg'}, {img: 'img-9.jpg'},{img: 'img-5.jpg'},]
+		},
+		{
+			'title': 'Заказ № 232421',
+			'cost': '2 500 ₽',
+			'date': '25.06.23',
+			'label': 'Доставлен',
+			'label-class': 'dark-green',
+			'img': [{img: 'img-6.jpg'}, {img: 'img-1.jpg'}, {img: 'img-9.jpg'},{img: 'img-5.jpg'},]
+		},				
+	]
+
+	let orderStepList = [
+	
+		{
+			'title': 'Получатель',
+			'list' : [
+				{
+					label: 'фио:',
+					value: 'Иванов Иван Иванович'
+				},
+				{
+					label: 'телефон:',
+					value: '+ 7 (913) 812-64-34'
+				},        
+				{
+					label: 'почта',
+					value: 'example@mail.com'
+				},                              
+			]
+		},		
+		{
+			'title': 'доставка',
+			'list' : [
+				{
+					label: 'Метод доставки:',
+					value: 'Почта России'
+				},
+				{
+					label: 'адрес:',
+					value: 'Новосибирск, ул. Красина 23, кв. 67'
+				},        
+				{
+					label: 'Дата, время:',
+					value: '20.06.2023, 10:00-14:00'
+				},           
+				{
+					label: 'номер для отслеживания:',
+					value: '80072712238264'
+				},				                   
+			]
+		},
+		{
+			'title': 'оплата',
+			'list' : [
+				{
+					label: 'Способ оплаты:',
+					value: 'Mastercard  ****  4567'
+				},                            
+			]
+		},		
+	]
+
+	let orderTableList = [
+		{
+			'img': 'img-7.jpg',
+			'labels': [
+				{
+					'text': 'sale',
+					'class':  'green',
+					'stock': '-35%'
+				}
+			],
+			'title': 'MATRIX',
+			'text': 'Exquisite Oil Масло питательное для волос 92мл',
+			'subtext': 'Арт.:  <span>CAT00016611</span>',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+			'amount': '22 шт.',
+			'summ': '16 750 ₽'
+		},
+		{
+			'img': 'img-7.jpg',
+			'labels': [
+				{
+					'text': 'sale',
+					'class':  'green',
+					'stock': '-35%'
+				}
+			],
+			'title': 'MATRIX',
+			'text': 'Exquisite Oil Масло питательное для волос 92мл',
+			'subtext': 'Арт.:  <span>CAT00016611</span>',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+			'amount': '22 шт.',
+			'summ': '16 750 ₽'
+		},		
+	]
+
+	let waitingList = [
+		{
+			'img': 'img-1.jpg',
+			'labels': [
+				{
+					'text': 'sale',
+					'class':  'green',
+					'stock': '-35%'
+				}
+			],
+			'title': 'MATRIX',
+			'text': 'Exquisite Oil Масло питательное для волос 92мл',
+			'subtext': 'Арт.:  <span>CAT00016611</span>',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+			'status': 'В наличии',
+			'status-class': 'orange',
+			'basket': true
+		},
+		{
+			'img': 'img-1.jpg',
+			'labels': [
+				{
+					'text': 'New',
+					'class':  'beige'
+				}
+			],
+			'title': 'MATRIX',
+			'text': 'Exquisite Oil Масло питательное для волос 92мл',
+			'subtext': 'Арт.:  <span>CAT00016611</span>',
+			'cost': '750 ₽',
+			'stock': '1 200 ₽',
+			'status': 'Ожидается:<span>через 5 дн.</span>',
+			'basket': false,
+			'status-class': 'waiting',
+		},		
+	]
+
+	let arrayContacts1 = [
+		{
+			'link': 'Барнаул',
+			'link-attr': {
+				'data-button': 0,
+			}
+		},
+		{
+			'link': 'Новоалтайск',
+			'link-attr': {
+				'data-button': 1,
+			}
+		},
+		{
+			'link': 'Бийск',
+			'link-attr': {
+				'data-button': 2,
+			}
+		}
+	]
+
+	let applicationList = [
+		{
+			'application': 'Заявка № 232421',
+			'cost': '2 500 ₽',
+			'date': '25.06.23'
+		},
+		{
+			'application': 'Заявка № 232421',
+			'cost': '2 500 ₽',
+			'date': '25.06.23'
+		},
+		{
+			'application': 'Заявка № 232421',
+			'cost': '2 500 ₽',
+			'date': '25.06.23'
+		},
+		{
+			'application': 'Заявка № 232421',
+			'cost': '2 500 ₽',
+			'date': '25.06.23'
+		},
+		{
+			'application': 'Заявка № 232421',
+			'cost': '2 500 ₽',
+			'date': '25.06.23'
+		},
+		{
+			'application': 'Заявка № 232421',
+			'cost': '2 500 ₽',
+			'date': '25.06.23'
+		},
+		{
+			'application': 'Заявка № 232421',
+			'cost': '2 500 ₽',
+			'date': '25.06.23'
+		},
+		{
+			'application': 'Заявка № 232421',
+			'cost': '2 500 ₽',
+			'date': '25.06.23'
+		},
+		{
+			'application': 'Заявка № 232421',
+			'cost': '2 500 ₽',
+			'date': '25.06.23'
+		},
+		{
+			'application': 'Заявка № 232421',
+			'cost': '2 500 ₽',
+			'date': '25.06.23'
+		},
+		{
+			'application': 'Заявка № 232421',
+			'cost': '2 500 ₽',
+			'date': '25.06.23'
+		},
+		{
+			'application': 'Заявка № 232421',
+			'cost': '2 500 ₽',
+			'date': '25.06.23'
+		},
+	]
+
+	let returnList = [
+		{
+			'img': 'img-1.jpg',
+			'title': 'MATRIX',
+			'text': 'Exquisite Oil Масло питательное для волос 92мл',
+			'subtext': 'Арт.:  <span>CAT00016611</span>',
+			'cost': '750 ₽',		
+			'checkbox': true,
+			'counter': true
+		},
+		{
+			'img': 'img-1.jpg',
+			'labels': [
+				{
+					'text': 'New',
+					'class':  'beige'
+				}
+			],
+			'title': 'MATRIX',
+			'text': 'Exquisite Oil Масло питательное для волос 92мл',
+			'subtext': 'Арт.:  <span>CAT00016611</span>',
+			'cost': '750 ₽',	
+			'checkbox': true,
+			'counter': true
+		},		
+	]
+
+	let returnList2 = [
+		{
+			'img': 'img-1.jpg',
+			'title': 'MATRIX',
+			'text': 'Exquisite Oil Масло питательное для волос 92мл',
+			'subtext': 'Арт.:  <span>CAT00016611</span>',
+			'cost': '750 ₽',	
+			'checkbox': null,
+			'counter': null,
+			'amount': '1 шт.'
+			
+		},
+		{
+			'img': 'img-1.jpg',
+			'labels': [
+				{
+					'text': 'New',
+					'class':  'beige'
+				}
+			],
+			'title': 'MATRIX',
+			'text': 'Exquisite Oil Масло питательное для волос 92мл',
+			'subtext': 'Арт.:  <span>CAT00016611</span>',
+			'cost': '750 ₽',	
+			'checkbox': null,
+			'counter': null,
+			'amount': '1 шт.'		
+		},		
+	]
+
+	let rebateSystemList = [
+		{
+			'title': 'Старт',
+			'amount': '3%',
+			'discount-params': [
+				{
+					'label': 'Сумма покупок',
+					'value': 'от 500 до 5 000 ₽'					
+				},
+				{
+					'label': 'Скидка',
+					'value': '3%'					
+				}
+			]
+		},
+		{
+			'title': 'Бронза',
+			'amount': '5%',
+			'discount-params': [
+				{
+					'label': 'Сумма покупок',
+					'value': 'от 5 000 до 10 000 ₽'					
+				},
+				{
+					'label': 'Скидка',
+					'value': '5%'					
+				}
+			]
+		},
+		{
+			'title': 'Серебро',
+			'amount': '7%',
+			'discount-params': [
+				{
+					'label': 'Сумма покупок',
+					'value': 'от 10 000 до 20 000 ₽'					
+				},
+				{
+					'label': 'Скидка',
+					'value': '7%'					
+				}
+			]
+		},
+		{
+			'title': 'Золото',
+			'amount': '10%',
+			'discount-params': [
+				{
+					'label': 'Сумма покупок',
+					'value': 'от 20 000 ₽'					
+				},
+				{
+					'label': 'Скидка',
+					'value': '10%'					
+				}
+			]
+		},					
+	]
+
+	let discountSystemList = [
+		{
+			'img': './img/components/my-card/img-5.png',
+			'amount': '15%',
+			'purchase-title': 'Сумма покупок',
+			'purchase': [
+				{
+					'label': 'за прошлый квартал:',
+					'value': '31 900 ₽'
+				},
+				{
+					'label': 'за текущий квартал:',
+					'value': '1 900 ₽'
+				},				
+			],
+			'table': {
+				'head': ['Сумма покупки за прошлый/текущий квартал', 'Скидка'],
+				'row': [
+					{
+						'label':'5 000 ₽',
+						'value': '5%'
+					},
+					{
+						'label':'10 000 ₽',
+						'value': '6%'
+					},		
+					{
+						'label':'15 000 ₽',
+						'value': '7%'
+					},
+					{
+						'label':'20 000 ₽',
+						'value': '8%'
+					},		
+					{
+						'label':'25 000 ₽',
+						'value': '9%'
+					},
+					{
+						'label':'30 000 ₽',
+						'value': '10%'
+					},		
+					{
+						'label':'35 000 ₽',
+						'value': '11%'
+					},
+					{
+						'label':'45 000 ₽',
+						'value': '12%'
+					},		
+					{
+						'label':'60 000 ₽',
+						'value': '13%'
+					},		
+					{
+						'label':'80 000 ₽',
+						'value': '14%'
+					},															
+				]
+			}
+		},
+		{
+			'img': './img/components/my-card/img-6.png',
+			'amount': '5%',
+			'purchase-title': 'Сумма покупок',
+			'purchase': [
+				{
+					'label': 'за прошлый квартал:',
+					'value': '9 500 ₽'
+				},
+				{
+					'label': 'за текущий квартал:',
+					'value': '1 900 ₽'
+				},				
+			],
+			'table': {
+				'head': ['Сумма покупки за прошлый/текущий квартал', 'Скидка'],
+				'row': [
+					{
+						'label':'15 000 ₽',
+						'value': '5%'
+					},
+					{
+						'label':'30 000 ₽',
+						'value': '10%'
+					},		
+					{
+						'label':'35 000 ₽',
+						'value': '20%'
+					},						
+				]
+			}
+		},
+		{
+			'title': 'Оборудование',
+			'amount': '0%',
+			'purchase-title': 'Сумма покупок',
+			'purchase': [
+				{
+					'label': 'за прошлый квартал:',
+					'value': '0 ₽'
+				},
+				{
+					'label': 'за текущий квартал:',
+					'value': '0 ₽'
+				},				
+			],
+			'table': {
+				'head': ['Сумма покупки за прошлый/текущий квартал', 'Скидка'],
+				'row': [
+					{
+						'label':'Любая сумма',
+						'value': '5%'
+					},
+					{
+						'label':'40 000 ₽',
+						'value': '7%'
+					},		
+					{
+						'label':'80 000 ₽',
+						'value': '10%'
+					},		
+					{
+						'label':'150 000 ₽',
+						'value': '12%'
+					},		
+					{
+						'label':'200 000 ₽',
+						'value': '15%'
+					},											
+				]
+			}
+		}
+	]
+	
+	let discountSystemList2 = [
+		{
+			'img': './img/components/my-card/img-5.png',
+			'text': 'Скидка',
+			'discount': '15%',
+			'info': 'У вас максимальный уровень скидки',
+			'summ': null
+		},
+		{
+			'img': './img/components/my-card/img-6.svg',
+			'text': 'Скидка',
+			'discount': '5%',
+			'info': 'До следующего уровня<br> нужно купить на сумму:',
+			'summ': '15 500 ₽'
+		},		
+		{
+			'title': 'Оборудование',
+			'text': 'Скидка',
+			'discount': '0%',
+			'info': 'До следующего уровня<br> нужно купить на сумму:',
+			'summ': 'любая'
+		},
+		{
+			'block': 'my-card-pp_bonus',
+			'title': 'бонусы',
+			'text': null,
+			'discount': '111',
+			'info': 'Бонусами можно оплатить <span>до 50%</span> от суммы покупки',
+			'summ': null
+		},				
+	]

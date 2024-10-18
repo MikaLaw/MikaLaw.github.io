@@ -1,0 +1,17 @@
++b.SECTION.water-usefulness#water-usefulness.main__water-usefulness(data-animate="fadeIn")
+	h2.visually-hidden О применении воды
+	+e.container.container
+		+e.title.section__title(data-animate="fadeInUp") 
+			span.title-mark Свойства 
+			| и выгоды
+		+e.list-wrap 
+			+e.OL.list 
+				each item in waterUsefulnessList
+					+e.LI.item(data-animate="fadeInUp") 
+						+e.item-inner
+							+e.item-title= item.title
+							+e.UL.item-list
+								each subitem in item.list
+									+e.item-list-item !{subitem}
+							+e.A.item-button.button_pdv-sm(href="#")= item.btn
+

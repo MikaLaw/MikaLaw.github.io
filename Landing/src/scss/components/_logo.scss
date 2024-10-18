@@ -1,0 +1,36 @@
+
+
+.logo,
+.logo > img {
+    display: block;
+    width: 130px;
+    height: 30px
+}
+
+.logo{
+    @include media-min($media-xs) {
+        width:216px;
+        height:50px     
+    }    
+}
+
+.logo > img{ 
+    width: 100%;
+    height: 100%;
+    object-fit: contain
+}
+
+@media all and (-ms-high-contrast:none),(-ms-high-contrast:active){
+    .logo{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        overflow:hidden;
+    }
+
+    .logo > img {
+        height: auto
+    }
+}
+
+

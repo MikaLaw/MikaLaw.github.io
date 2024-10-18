@@ -1,0 +1,46 @@
+.side-menu {
+}
+
+.side-menu__wrap {
+}
+
+.side-menu__title {
+  @include text-14-600();
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.side-menu__subtext {
+  @include text-14-500;
+  color: $color-black;
+  margin-top: 10px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  background: $color-light-beige;
+  a {
+    font-weight: 700;
+  }
+}
+
+.side-menu__item {
+  border-bottom: 1px solid rgba(42, 31, 21, 0.2);
+  &:not(:last-child) {
+    margin-bottom: 15px;
+  }
+  &.is-active {
+    .side-menu__link {
+      color: $color-grey;
+    }
+  }
+}
+.side-menu__link {
+  display: block;
+  color: $color-black;
+  @include text-14-500;
+  transition: $transition;
+  padding-bottom: 10px;
+
+  &:hover {
+    color: $color-grey;
+  }
+}

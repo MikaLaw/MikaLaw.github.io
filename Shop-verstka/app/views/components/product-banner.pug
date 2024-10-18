@@ -1,0 +1,47 @@
+mixin product-banner(data)
+	-
+		data = init(data, {
+			'block': 'product-banner',
+			'img':'./img/components/product-banner/img-1',
+			'tags': [
+				'Окрашивание AirTouch',
+				'Омбре',
+				'Калифорнийское мелирование',
+				'Шатуш',
+				'Новинки',
+				'Для неё',
+				'Тонирование',
+				'Идеи подарков',
+				'Балаяж',
+				'Сомбре',
+				'Омбре',
+				'Калифорнийское мелирование',
+				'Шатуш',
+				'Новинки',
+				'Для него',
+				'Шатуш',
+				'Новинки',
+				'Тонирование',
+				'Для неё',
+			]
+		})
+	+b&attributes(data.attributes(attributes))
+		+e.wrap
+			+e.title Подборки От МоDЕрн
+			+e.content-wrap
+				+e.tags
+					each tag in data.tags 
+						+e.A.tag(href="#") !{tag}
+		+e.wrap-img
+			+picture({
+				src: data.img,
+				png: true,
+				alt: data.title,
+			})
+
+
+
+
+					
+
+				

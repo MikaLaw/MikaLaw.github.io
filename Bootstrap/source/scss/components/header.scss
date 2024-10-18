@@ -1,0 +1,67 @@
+.header {
+  padding: 16px 0;
+  background: #fff;
+  color: $black-color;
+}
+
+.logo {
+  width: 73px;
+}
+
+.logo__pic {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.nav {
+  @include laptop {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: white;
+    width: 300px;
+    box-shadow: -10px 0 20px -10px rgb(0 0 0 / 10%);
+    transform: translateX(310px);
+    transition: transform 0.3s;
+
+    &.active {
+      transform: translateX(0%);
+    }
+  }
+}
+
+.navbar-toggler {
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.navbar-close {
+  opacity: 1;
+  &:hover,
+  &:active {
+    .navbar-close__icon {
+      fill: #ced4da;
+    }
+  }
+}
+
+.navbar-close__icon {
+  fill: $text-color;
+  transition: fill 0.3s;
+}
+
+.nav__link {
+  transition: color 0.3s;
+
+  &:hover,
+  &:active {
+    color: $contrast-color;
+  }
+  @include laptop {
+    font-size: 20px;
+  }
+}

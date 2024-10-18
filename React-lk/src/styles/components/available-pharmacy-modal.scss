@@ -1,0 +1,22 @@
+.available-pharmacy-modal {
+  .ant-modal-title {
+    @include head-4();
+    span {
+      color: $color-brand-2;
+    }
+  }
+}
+
+.available-pharmacy-modal__check-all {
+  .ant-checkbox-disabled.ant-checkbox-checked .ant-checkbox-inner {
+    &:after {
+      border-color: $color-white;
+    }
+  }
+}
+
+.pharmacy-modal {
+  .ant-modal-body {
+    padding: 10px;
+  }
+}

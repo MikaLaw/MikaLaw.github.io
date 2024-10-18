@@ -1,0 +1,75 @@
+extends templates/side-main-template
+
+include components/return-list
+include base-components/checkbox
+
+block title
+	title ЛК - Новый возврат
+
+block breadcrumbs
+	+b.block_breadcrumbs._breadcrumbs-lk
+		.global-wrapper
+			+breadcrumbs(['Главная', 'Заявки на возврат', 'Новый возврат'])
+
+
+block content
+	+b.SECTION.block
+		+e.head
+			+e.H2.title._big Новый возврат
+		+e.body
+			+e.text._return
+				p По вопросам обмена и возврата Вы всегда можете обратиться по телефону +7 (3852) 22-19-25 или написать нам на электронную почту <a href="mailto:modernshop22@yandex.ru">modernshop22@yandex.ru</a>
+				p С полными правилами обмена и возврата Вы можете ознакомиться в <a href="#">Договоре оферты</a>.
+			+b.FORM.form_order.form-return
+				+e.body
+					+e.item._return-head
+						+form-field({
+							'title': 'выберите заказ',
+							'component': {
+								'mixin': 'select',
+								'array': [
+									{title: 'Вариант 1',},
+									{title: 'Вариант 2',},
+									{title: 'Вариант 3',},
+									{title: 'Вариант 4',},
+									{title: 'Вариант 1',},
+									{title: 'Вариант 2',},
+									{title: 'Вариант 3',},
+									{title: 'Вариант 4',},
+									{title: 'Вариант 1',},
+									{title: 'Вариант 2',},
+									{title: 'Вариант 3',},
+									{title: 'Вариант 4',},
+								],
+								'placeholder': 'Номер заказа'
+							},
+						})._single-row
+					+e.item
+						+b.form._order._return
+							+e.head 
+								+e.title что хотите вернуть?
+							+e.body
+								+return-list()
+						+b.form._order._return
+							+e.head 
+								+e.title причина возврата
+							+e.body 
+								+e.item._file-return
+									+form-field({
+										'title': 'укажите* причину',
+										'component': {
+											'mixin': 'input-file-with-field',
+											'field-type': 'input'
+										},
+									})._align-start
+					+e.item._return-footer
+						+e.text Менеджер свяжется с вами по вашей заявке и в случае ее одобрения уточнит способы возврата
+				+e.footer 
+					+b.return-result
+						+e.head 
+							+e.label Итого к возврату:
+							+e.value 1 500 ₽
+						+checkbox({
+							'label': 'Согласен с условиями <a href="#">договора оферты</a>'
+						})
+						+b.BUTTON.btn-grey(type="submit") оформить возврат

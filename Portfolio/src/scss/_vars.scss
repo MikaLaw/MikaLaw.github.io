@@ -1,0 +1,40 @@
+$color-bg: linear-gradient(to right, #fee7ef, #c5c9f9);
+$color-gradient: linear-gradient(to right, #f9a0bf, #c5c9f9);
+$color-gradient-2: linear-gradient(#fea5cc, #727cf0);
+$color-gradient-3: linear-gradient(#fea5cc, #94d7f5);
+$color-text: #111;
+$color-text-2: #424049;
+$color-ui-1: #333;
+$color-ui-2: #727cf0;
+$color-ui-3: #f9f9f9;
+$color-primary: #f01965;
+$color-primary-hover: #b70041;
+$color-primary-focus-visible: #7a002c;
+$color-white: #fff;
+$color-black: #000;
+$font-default: roboto,  sans-serif;
+$font-title: "Montserrat", -apple-system, blinkmacsystemfont, "Segoe UI",
+  roboto, oxygen-sans, ubuntu, cantarell, "Helvetica Neue", sans-serif;
+$transition: all 0.1s linear;
+$transition-long: all 0.3s ease-out;
+$border-radius-20: 20px;
+$media-xxs: 320px;
+$media-xs: 480px;
+$media-sm: 768px;
+$media-md: 1024px;
+$media-lg: 1280px;
+$media-xl: 1440px;
+$media-xxl: 1600px;
+$media-xxxl: 1920px;
+
+@mixin media-min($media) {
+  @media screen and (min-width: $media) {
+    @content;
+  }
+}
+
+@mixin media-max($media) {
+  @media screen and (max-width: $media - 1px) {
+    @content;
+  }
+}

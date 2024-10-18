@@ -1,0 +1,94 @@
+.certified-products {
+    position: relative;
+    height: 360px;
+    overflow: hidden;
+    background: no-repeat center;
+
+    &::before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 250px;
+        height: 250px;
+        background: no-repeat center / contain;
+        background-image: url("../img/components/certified-products/certificate-seal.png");
+        transform: translate(-50%, -50%);
+        content: '';
+    }
+
+    @include media-min($media-xs) {
+        height: 420px;
+    }
+}
+
+.certified-products__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+
+}
+
+.certified-products__container>* {
+    max-width: 100%;
+}
+
+.certified-products__title{
+    width: 670px;
+    max-width: 100%;
+    margin-bottom: 20px;
+    color: $color-black;
+    font-weight: 700;
+    font-size: 18px;
+    font-family: $font-title;
+    font-style: normal;
+    line-height: 23px;
+    text-align: center;
+    text-transform: uppercase;
+
+    @include media-min($media-sm) {
+        font-size: 26px;
+        line-height: 38px;
+    }
+
+    @include media-min($media-md) {
+        font-size: 26px;
+        line-height: 38px;
+    }
+
+    .title-mark {
+        color: $color-ui-4;
+    }
+}
+
+.certified-products__text{
+    margin-bottom: 15px;
+    color: $color-ui-4;
+    font-weight: 400;
+    font-size: 16px;
+    font-family: $font-default;
+    font-style: normal;
+    line-height: 24px;
+
+    @include media-min($media-md) {
+        font-size: 18px;
+        line-height: 26px;
+    }
+}
+
+.certified-products__link{
+    color: $color-ui-2;
+    font-weight: 400;
+    font-size: 14px;
+    font-family: $font-default;
+    font-style: normal;
+    line-height: 22px;
+
+    @include media-min($media-sm) {
+        font-size: 16px;
+        line-height: 24px;
+    }
+}

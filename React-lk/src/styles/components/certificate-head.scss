@@ -1,0 +1,23 @@
+.certificate-head {
+  display: grid;
+  grid-template-columns: auto 200px 123px 230px 73px;
+  width: 100%;
+}
+
+.certificate-head__cell {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px;
+}
+
+.certificate-head__content {
+  &_color-brand-2 {
+    color: $color-brand-2;
+  }
+}
+
+.certificate-head__btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 2px;
+}

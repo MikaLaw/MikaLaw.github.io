@@ -1,0 +1,182 @@
+.main-connected {
+
+  & > * + * {
+    margin-top: 20px;
+  }
+
+
+  &.pharmacy-orders-top {
+    .main-connected__logo-container,
+    .main-connected__container {
+      min-height: 90px;
+      background-color: $color-white;
+      color: $color-black;
+    }
+  }
+
+  &.aptekaru {
+    margin-bottom: 12px;
+    .main-connected__top {
+      grid-template-columns: auto 1fr;
+      gap: 0 8px;
+
+      @include media-min($media-lg) {
+        grid-template-columns: 408px 1fr;
+      }
+      @include media-min($media-xl) {
+        grid-template-columns: 480px 1fr;
+      }
+    }
+
+    .main-connected__logo-container,
+    .main-connected__container {
+      min-height: auto;
+    }
+
+    .main-connected__logo-container {
+      padding: 7px 20px;
+      justify-content: flex-start;
+      width: 100%;
+      max-width: 100%;
+      border-radius: 4px;
+
+      &.branded {
+        background-color: $color-text-1;
+
+        .main-connected__logo {
+          color: $color-white;
+        }
+      }
+    }
+
+    .main-connected__logo {
+      padding: 0;
+      width: 116px;
+      height: 26.9px;
+      color: $color-text-1;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+.main-connected__top {
+  display: grid;
+  align-items: stretch;
+  grid-template-columns: 98px auto calc((100% - 52px) / 3);
+  gap: 0 26px;
+}
+
+.main-connected__logo-container,
+.main-connected__container {
+  border: 1px solid $color-ui-3;
+}
+
+.main-connected__logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 98px;
+  width: 100%;
+  flex-shrink: 0;
+  border-radius: 17px;
+}
+
+.main-connected__logo {
+  padding: 10px;
+  width: 100%;
+}
+
+.main-branded__icon {
+  width: 91px;
+  height: 91px;
+
+  &.shadow {
+    box-shadow: $box-shadow-15;
+    filter: $filter-1;
+  }
+}
+
+.main-connected__container {
+  padding: 17px 20px;
+  flex-grow: 1;
+  background: $color-ui-2;
+  border-radius: 4px;
+}
+
+.main-connected__container_branded {
+  background: $color-text-1;
+  color: $color-white;
+
+  .main-connected__title {
+    color: $color-white;
+  }
+}
+
+.main-connected__title {
+  //max-width: 445px;
+}
+
+.main-connected__body {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 26px;
+}
+
+.main-connected__table {
+  background: $color-white;
+  // padding: 20px;
+  // border: 1px solid $color-ui-3;
+  // border-radius: 4px ;
+
+  &_no-bc {
+    background: transparent;
+  }
+
+  .pharmacy-orders-table-container {
+    border-radius: 4px;
+  }
+
+  &.hide {
+    display: none;
+  }
+}
+
+.main-branded {
+
+}
+
+.main-connected__logo-text {
+  font-family: $font-inter;
+  font-weight: 800;
+  font-size: 19px;
+  line-height: 22px;
+  color: $color-brand-2;
+  text-transform: uppercase;
+}
+
+.main-connected__skeleton {
+  .ant-skeleton-content .ant-skeleton-paragraph {
+    li {
+      height: 16px;
+    }
+    li + li {
+      margin-top: 5px;
+    }
+
+    ul {
+      margin: 0;
+    }
+  }
+}
+
+.main-connected__box {
+  border-radius: 4px;
+}
+
+.main-connected__orders-row {
+  margin-top: 8px;
+}

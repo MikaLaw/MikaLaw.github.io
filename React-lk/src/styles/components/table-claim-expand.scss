@@ -1,0 +1,157 @@
+.table-claim-expand {
+
+  .ant-table-container table > thead > tr:first-child {
+    th:first-child {
+      border-top-left-radius: 4px;
+    }
+
+    th:last-child {
+      border-top-right-radius: 4px;
+    }
+  }
+
+  .table__row-expand:first-child .ant-table-cell {
+    padding-top: 10px;
+  }
+
+  .table__row-expand > .ant-table-cell:after {
+    content: none;
+  }
+
+  .table__row-expand.active .ant-table-cell {
+    background-color: $color-brand-2;
+    padding-bottom: 10px;
+  }
+
+  .ant-table-thead > tr > th,
+  .ant-table-tbody > tr > td {
+    padding: 10px;
+    font-size: 11px;
+    line-height: 14px;
+  }
+
+  .ant-table-tbody > tr > td {
+    border-bottom: 1px solid $color-grey-5;
+  }
+
+  .ant-table-thead > tr > th {
+    border-bottom: 1px solid $color-border-8;
+  }
+
+  th.ant-table-cell {
+    &:nth-last-child(2) {
+      &:before {
+        content: none !important;
+      }
+    }
+  }
+
+  .ant-table-thead > tr > th:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan]) {
+    &:before {
+      z-index: 100;
+      height: 100%;
+      background-color: $color-border-7;
+    }
+  }
+
+  .ant-table-row-expand-icon {
+    width: 26px;
+    height: 26px;
+    background-color: $color-ui-2;
+    transform: none;
+
+    &:before {
+      top: 50%;
+      left: 50%;
+      right: auto;
+      transform: translate(-50%, -50%);
+      width: 18px;
+      height: 18px;
+      background-color: transparent;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.32255 14.4017C3.36719 14.4017 3.41183 14.3972 3.45647 14.3905L7.21094 13.732C7.25558 13.7231 7.29799 13.703 7.32924 13.6695L16.7913 4.20749C16.812 4.18684 16.8284 4.16231 16.8396 4.1353C16.8508 4.1083 16.8566 4.07935 16.8566 4.05012C16.8566 4.02089 16.8508 3.99194 16.8396 3.96494C16.8284 3.93793 16.812 3.9134 16.7913 3.89275L13.0815 0.180699C13.0391 0.138288 12.9833 0.115967 12.923 0.115967C12.8627 0.115967 12.8069 0.138288 12.7645 0.180699L3.30246 9.64275C3.26897 9.67624 3.24888 9.71642 3.23996 9.76106L2.58147 13.5155C2.55976 13.6351 2.56752 13.7582 2.60408 13.8741C2.64064 13.99 2.7049 14.0952 2.7913 14.1807C2.93862 14.3236 3.12389 14.4017 3.32255 14.4017ZM4.82701 10.5088L12.923 2.41507L14.5592 4.05124L6.46317 12.145L4.4788 12.4954L4.82701 10.5088ZM17.2132 16.2767H0.784598C0.389509 16.2767 0.0703125 16.5959 0.0703125 16.991V17.7945C0.0703125 17.8928 0.15067 17.9731 0.248884 17.9731H17.7489C17.8471 17.9731 17.9275 17.8928 17.9275 17.7945V16.991C17.9275 16.5959 17.6083 16.2767 17.2132 16.2767Z' fill='%235C797B'/%3E%3C/svg%3E%0A");
+    }
+
+    &:after {
+      content: none;
+    }
+
+    &-expanded {
+
+    }
+
+    &-collapsed {
+
+    }
+  }
+
+  tr.ant-table-expanded-row > td {
+    padding: 0;
+    background: $color-white;
+  }
+
+  .ant-table-row-expand-icon-cell {
+    // padding: 0 !important;
+  }
+}
+
+.table-claim-expand-row {
+  display: flex;
+  align-items: center;
+
+  &:after {
+    content: 'Было';
+    color: $color-error;
+    @include text-3-medium();
+    margin-right: 10px;
+    margin-left: auto;
+  }
+}
+
+.table-claim-expand-name,
+.table-claim-expand-series,
+.table-claim-expand-quantity,
+.table-claim-expand-price,
+.table-claim-expand-price,
+.table-claim-expand-shortfall,
+.table-claim-expand-action,
+.table-claim-expand-defect,
+.table-claim-expand-over {
+  padding: 10px;
+  color: $color-ui-6;
+}
+
+.table-claim-expand-name {
+  padding-left: 40px;
+  width: 175px;
+}
+
+.table-claim-expand-series {
+  width: 70px;
+}
+
+.table-claim-expand-quantity {
+  width: 85px;
+}
+
+.table-claim-expand-price {
+  width: 130px;
+}
+
+.table-claim-expand-shortfall {
+  width: 80px;
+}
+
+.table-claim-expand-action {
+  width: 80px;
+}
+
+.table-claim-expand-defect {
+  width: 80px;
+}
+
+.table-claim-expand-over {
+  width: auto;
+}

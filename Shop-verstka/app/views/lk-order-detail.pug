@@ -1,0 +1,33 @@
+extends templates/side-main-template
+
+include components/order-step
+include components/order-table
+
+block title
+	title ЛК - Заказ
+
+block breadcrumbs
+	+b.block_breadcrumbs._breadcrumbs-lk
+		.global-wrapper
+			+breadcrumbs(['Главная', 'Мои покупки', 'Заказ'])
+
+
+block content
+	+b.SECTION.block._order-detail-1
+		+e.head
+			+e.H2.title._big Заказ № 232421
+		+e.body
+			+b.order-control
+				+e.info 
+					+e.label.blue Оплачен
+					+e.date Ожидаемая дата: <span>25.07.23</span>
+				+e.btns 
+					+b.BUTTON.btn Возврат
+					+b.BUTTON.btn-refresh Повторить
+			+order-step() 
+			+order-table({
+				'list': orderTableList,
+			})
+					
+
+

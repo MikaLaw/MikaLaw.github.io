@@ -1,0 +1,228 @@
+extends templates/main-template
+
+include base-components/checkbox
+include components/order-list
+
+block title
+	title ЛК - Оформление заказа
+
+block breadcrumbs
+	+b.block_breadcrumbs
+		.global-wrapper
+			+breadcrumbs(['Главная', 'Оформление заказа'])
+
+
+block content
+	+b.SECTION.block._order-1
+		.global-wrapper
+			+e.head._flex 
+				+e.H2.title._big Оформление заказа
+				+b.BUTTON.btn-grey Вернуться в корзину
+			+e.body 
+				+b.order    
+					+e.wrap 
+						+b.FORM.form.js-form-order 
+							+e.body
+								+b.form._order._user
+									+e.head 
+										+e.title Получатель
+									+e.body 
+										+e.row
+											+e.cell 
+												+form-field({
+													'title': 'ФИО',
+													'error-text': 'Ошибка',
+													'class': 'error',
+													'component': {
+														'mixin': 'input',														
+														'placeholder': 'Иванов Иван Иванович',
+													},
+												})
+										+e.row
+											+e.cell 
+												+form-field({
+													'title': 'Ваш телефон',
+													'component': {
+														'mixin': 'input',
+														'placeholder': '+ 7 (913) 812-64-34',
+													},
+												})
+										+e.row
+											+e.cell 
+												+form-field({
+													'title': 'подтверждение телефона',
+													'component': {
+														'mixin': 'input-phone-confirmation',
+														'placeholder': 'Код подтверждения',
+													},
+												})._align-start
+										+e.row
+											+e.cell 
+												+form-field({
+													'title': 'E-mail',
+													'component': {
+														'mixin': 'input',
+														'placeholder': 'example@mail.com',
+													},
+												})
+								+b.form._order._delivery
+									+e.head 
+										+e.title Доставка
+									+e.body 
+										+e.row
+											+e.cell.js-order-trigger
+												+form-field({
+													'title': 'населенный пункт',
+													'error-text': 'Ошибка',
+													'class': 'error',
+													'component': {
+														'mixin': 'select',
+														'placeholder': 'Населенный пункт',
+													},
+												})
+										+e.row_payment  
+											+e.cell 
+												.form-field
+													.form-field__title Способ 
+													+e.checkbox-wrap 
+														+checkbox({
+															'label': 'Самовывоз',
+															'type': 'radio',
+															'attr': 'pickup'
+														})
+														+checkbox({
+															'label': 'Курьером',
+															'type': 'radio',
+															'attr': 'courier'
+														})
+														+checkbox({
+															'label': 'СDEK (Постамат)',
+															'type': 'radio',
+															'attr': 'PostoCDEK'
+														})
+														+checkbox({
+															'label': 'СDEK (Самовывоз)',
+															'type': 'radio',
+															'attr': 'CDEK'
+														})
+
+														+checkbox({
+															'label': 'Почта России (Доставка в отделение)',
+															'type': 'radio',
+															'attr': 'courier'
+														})
+										+e.row._map 
+											+e.map-container
+												+e.map(id='map1')
+										+e.row._address 
+											+e.cell 
+												+form-field({
+													'title': 'Улица и дом',
+													'component': {
+														'mixin': 'input',
+														'placeholder': 'Улица и дом',
+														'attr-input': 'street'
+													},
+												})
+
+											+e.cell 
+												+form-field({
+													'title': 'Квартира/офис',
+													'component': {
+														'mixin': 'input',
+														'placeholder': 'Квартира/офис',
+														'attr-input': 'flat'
+													},
+												})
+											+e.cell 
+												+form-field({
+													'title': 'Подъезд',
+													'component': {
+														'mixin': 'input',
+														'placeholder': 'Подъезд',
+														'attr-input': 'entrance'
+													},
+												})
+											+e.cell 
+												+form-field({
+													'title': 'Желаемая дата',
+													'component': {
+														'mixin': 'select',
+														'placeholder': 'Желаемая дата',
+													},
+												})
+											+e.cell 
+												+form-field({
+													'title': 'Домофон',
+													'component': {
+														'mixin': 'input',
+														'placeholder': 'Домофон',
+														'attr-input': 'domophone'
+													},
+												})
+											+e.cell 
+												+form-field({
+													'title': 'Этаж',
+													'component': {
+														'mixin': 'input',
+														'placeholder': 'Этаж',
+														'attr-input': 'floor'
+													},
+												})
+											+e.cell 
+												+form-field({
+													'title': 'Желаемое время',
+													'component': {
+														'mixin': 'select',
+														'placeholder': 'Желаемое время',
+													},
+												})
+								+b.form._order._pay
+									+e.head 
+										+e.title Оплата
+									+e.body
+										+e.row_checkbox 
+											+e.item
+												+checkbox({
+													'label': 'Карта',
+													'type': 'radio',
+												})
+											+e.item
+												+checkbox({
+													'label': 'Картой при получении',
+													'type': 'radio',
+												})
+											+e.item
+												+checkbox({
+													'label': 'Наличными при получении',
+													'type': 'radio',
+												})
+											+e.item
+												+checkbox({
+													'label': 'СБП',
+													'type': 'radio',
+												})
+										+e.row._bonus
+											+e.item
+												+checkbox({
+													'label': 'Использовать бонусы',
+												})
+												+form-field({
+													'title': '',
+													'component': {
+														'mixin': 'input',
+														'placeholder': 'Введите количество ',
+													},
+												})
+												+e.text У вас есть 245 бонусов, вы можете использовать 110 
+											+e.item 
+												+e.text-label 
+													+e.text 
+														span.text-sample Промокод применен: 
+														span 123456GHTY
+
+							+e.footer 
+								+b.BUTTON.btn-grey Оформить заказ
+						+order-list()
+block extraContent
+	include includes/mapscript-yandex 

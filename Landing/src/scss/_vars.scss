@@ -1,0 +1,43 @@
+$color-text: #111;
+$color-white: #fff;
+$color-black: #000;
+$color-blue: #0763b4;
+$color-green: #b8db35;
+
+// $color-pink: #cf46c2;
+$color-pink: #f3579b;
+$color-ui-1: #e5e5e5;
+$color-ui-2: #21d9c7;
+$color-ui-3: #08111f;
+$color-ui-4: #686475;
+$color-ui-5: #fefefe;
+$color-ui-6: #fafafa;
+$color-ui-7: #f1f1f1;
+$color-ui-8: #dde7f3;
+$font-default: "Montserrat", -apple-system, blinkmacsystemfont, "Segoe UI",
+  roboto, oxygen-sans, ubuntu, cantarell, "Helvetica Neue", sans-serif;
+$font-title: "FuturaFuturisC", -apple-system, blinkmacsystemfont, "Segoe UI",
+  roboto, oxygen-sans, ubuntu, cantarell, "Helvetica Neue", sans-serif;
+$transition: all 0.1s linear;
+$transition-long: all 0.3s ease-out;
+$border-radius-20: 20px;
+$media-xxs: 360px;
+$media-xs: 480px;
+$media-sm: 768px;
+$media-md: 960px;
+$media-lg: 1240px;
+$media-xl: 1440px;
+$media-xxl: 1800px;
+
+@mixin media-min($media) {
+  @media screen and (min-width: $media) {
+    @content;
+  }
+}
+
+@mixin media-max($media) {
+  @media screen and (max-width: $media - 1px) {
+    @content;
+  }
+}
+

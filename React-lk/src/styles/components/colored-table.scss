@@ -1,0 +1,12 @@
+.colored-table,
+.colored-table-v2 {
+  padding: 5px;
+  border: 1px solid $color-ui-3;
+  border-radius: 6px 6px 0 0;
+  background-color: $color-white;
+
+  .ant-table-thead > tr > th:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before {
+    height: 100%;
+    background-color: $color-white;
+  }
+}

@@ -1,0 +1,40 @@
+.order-history-multiple-repeat-collapse {
+  padding-right: 10px;
+  background: $color-white;
+  &.ant-collapse > .ant-collapse-item > .ant-collapse-header {
+    padding: 8px 12px;
+  }
+
+  &.ant-collapse-borderless > .ant-collapse-item:last-child {
+    border-radius: 8px;
+  }
+}
+
+
+.order-history-multiple-repeat-panel {
+  border: 1px solid $color-ui-3;
+  border-radius: 8px;
+  background: $color-white;
+  margin-bottom: 12px;
+
+
+}
+
+.order-history-multiple-repeat__expand-icon {
+  color: #2C8E9F;
+  transform: rotate(90deg);
+  transition: $transition-medium;
+  position: absolute;
+  right: 0;
+
+  &_active {
+    transform: rotate(270deg);
+  }
+}
+
+.order-history-multiple-repeat-badge {
+  @include text-13-18-inter-400();
+  border-radius: 4px;
+  background: $color-ui-3;
+  padding: 4px 8px;
+}

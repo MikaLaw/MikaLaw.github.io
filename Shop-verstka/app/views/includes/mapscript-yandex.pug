@@ -1,0 +1,35 @@
+script(src='http://api-maps.yandex.ru/2.1/?apikey=c1074274-4737-40a9-a3c0-17980ead146d&lang=ru_RU')
+script(src='libs/yandex-map-function.js')
+script.
+	document.addEventListener("DOMContentLoaded", () => {
+		const points = [
+			{
+				title: 'Точка', 
+				geo: [54.87199682345579, 83.10449663196138], 
+			}, 
+			{
+				title: 'Точка', 
+				geo: [54.87199682345579, 83.50449663196138], 
+			},
+			{
+				title: 'Точка', 
+				geo: [54.87199682345579, 83.20449663196138], 
+			}, 
+			{
+				title: 'Точка', 
+				geo: [54.87199682345579, 83.40449663196138], 
+			},
+		];
+		
+		$(document).ready(function() {
+			const map1 = new BaseMap('map1', points);
+			const map2 = new BaseMap('map2', points);
+			const map3 = new BaseMap('map3', points);
+			const map4 = new BaseMap('map4', points);
+			const map5 = new BaseMap('map5', points);
+			const map6 = new BaseMap('map6', points);
+			const map7 = new BaseMap('map7', points);
+			const map8 = new BaseMap('map8', points);
+			const map9 = new BaseMap('map9', points);			
+		})
+	});

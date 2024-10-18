@@ -1,0 +1,70 @@
+extends templates/side-main-template
+include components/purchas-list
+block title
+	title ЛК - Мои покупки
+
+block breadcrumbs
+	+b.block_breadcrumbs._breadcrumbs-lk
+		.global-wrapper
+			+breadcrumbs(['Главная', 'Мои покупки'])
+
+
+block content
+	+b.SECTION.block._purchas-1
+		+e.head._flex 
+			+e.H2.title._big Мои покупки
+		+e.body
+			+b.FORM.form._purchas 
+				+e.item
+					+form-field({
+						'title': '',
+						'component': {
+							'mixin': 'input',
+							'placeholder': 'Номер заказа'
+						},
+					})
+				+e.item
+					+form-field({
+						'title': '',
+						'component': {
+							'mixin': 'select',
+							'multiple': false,
+							'array': [
+								{title: 'Принят'},
+								{title: 'Оплачен'},
+								{title: 'В сборке'},
+								{title: 'В пути'},		
+								{title: 'Доставлен'},															
+							],
+							'placeholder': 'Статус заказа'
+						},
+					}) 
+				+e.item._flex
+					+form-field({
+						'title': '',
+						'component': {
+							'mixin': 'input-datepicker',
+							'input-data': {
+								'placeholder': 'От',
+								'data-start-day': 1,
+								'data-start-month': 1,
+								'data-start-year': 2022,
+							}
+						},
+					}) 			
+					.input-datepicker__dash
+					+form-field({
+						'title': '',
+						'component': {
+							'mixin': 'input-datepicker',
+							'input-data': {
+								'placeholder': 'До',
+								'data-start-day': 1,
+								'data-start-month': 1,
+								'data-start-year': 2022,
+							}
+						},
+					}) 	
+				+e.item._btn
+					+b.BUTTON.btn-grey Искать
+			+purchas-list()

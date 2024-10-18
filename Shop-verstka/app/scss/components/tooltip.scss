@@ -1,0 +1,15 @@
+.tooltip {
+  @include text-12-500;
+
+  position: absolute;
+  z-index: 12;
+  display: block;
+  max-width: 300px;
+  overflow: hidden;
+  padding: 6px 8px;
+  border: 1px solid rgba(42, 31, 21, 0.15);
+  border-radius: 4px;
+  background-color: $color-white;
+  pointer-events: none;
+  transform: translateY(-100%) translateX(-10%);
+}

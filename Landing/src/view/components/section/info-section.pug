@@ -1,0 +1,15 @@
++b.SECTION.info-section.main__info-section(data-animate="fadeIn")
+	h2.visually-hidden О пользе продукта
+	+e.container.container
+		+e.header(data-animate="fadeInLeft") 
+			+e.title.section__title Для 
+				span.title-mark чего?
+			+e.text 
+				p Узнайте про водородный показатель и окислительно- восстановительный потенциал и их влияние на организм.
+		+e.content(data-animate="fadeInRight")
+			+e.UL.list 
+				each item, i in infoSectionList
+					+e.LI.item
+						+e.A.link(href="#modal-" + (i + 1)  data-fancybox)
+							+e.DIV.link-title= item
+							+e.DIV.link-text Читать дальше

@@ -1,0 +1,205 @@
+extends templates/side-main-template
+
+include base-components/slider
+include base-components/button-view
+include components/brends-card
+include components/product-card
+include components/product-params
+include components/product-card-list
+include components/product-banner
+
+block title
+	title ЛК - Избранное
+
+block breadcrumbs
+	+b.block_breadcrumbs._breadcrumbs-lk
+		.global-wrapper
+			+breadcrumbs(['Главная', 'Избранное'])
+
+
+block content
+	+b.SECTION.block
+		+e.head._flex 
+			+e.H2.title._big Избранное
+			+b.BUTTON.btn-grey Очистить
+		+e.body
+			+e.product-filters.js-product-filters
+				+b.product-panel_lk
+					+e.BUTTON.filter-icon(data-open="filter")
+					+b.form._filter
+							+form-field({
+								'title': '',
+								'component': {
+									'mixin': 'select',
+									'block': 'select_radio',
+									'type': 'radio',
+									'array': [
+										{
+											title: 'По новинкам'
+										},
+										{
+											title: 'По скидкам'
+										},
+										{
+											title: 'Цена по возрастанию'
+										},
+										{
+											title: 'Цен по убыванию'
+										},		
+																									
+									],
+									'placeholder': 'Сортировать'
+								},
+							})
+							+form-field({
+								'title': '',
+								'component': {
+									'mixin': 'select',
+									'multiple': true,
+									'array': [
+										{
+											title: 'Abedyabka'
+										},
+										{
+											title: 'Abox'
+										},
+									],
+									'placeholder': 'Категория'
+								},
+							})
+							+form-field({
+								'title': '',
+								'component': {
+									'mixin': 'select',
+									'multiple': true,
+									'array': [
+										{
+											title: 'Все'
+										},
+										{
+											title: 'Alfaparf'
+										},
+										{
+											title: 'Shot'
+										},
+										{
+											title: 'Nirvel'
+										},		
+										{
+											title: 'Constant Delight'
+										},
+										{
+											title: 'Concept'
+										},
+										{
+											title: 'Wella'
+										},
+										{
+											title: 'Matrix'
+										},		
+										{
+											title: 'Kezy'
+										},
+										{
+											title: 'EPICA Professional'
+										},
+										{
+											title: 'BOUTICLE'
+										},
+										{
+											title: 'Nirvel'
+										},		
+										{
+											title: 'Constant Delight'
+										},
+										{
+											title: 'Concept'
+										},
+										{
+											title: 'Wella'
+										},
+										{
+											title: 'Matrix'
+										},																										
+									],
+									'placeholder': 'Бренды'
+								},
+							})
+							+form-field({
+								'title': '',
+								'component': {
+									'mixin': 'select',
+									'range': true,
+									'block': 'select_range',
+									'placeholder': 'Цена'
+								},
+							})
+							+form-field({
+								'title': '',
+								'component': {
+									'mixin': 'select',
+									'multiple': true,
+									'array': [
+										{
+											title: 'Abedyabka'
+										},
+										{
+											title: 'Abox'
+										},
+									],
+									'placeholder': 'Палитра'
+								},
+							})
+							+form-field({
+								'title': '',
+								'component': {
+									'mixin': 'select',
+									'multiple': true,
+									'array': [
+										{
+											title: 'Abedyabka'
+										},
+										{
+											title: 'Abox'
+										},
+									],
+									'placeholder': 'Линейка'
+								},
+							})
+							+form-field({
+								'title': '',
+								'component': {
+									'mixin': 'select',
+									'multiple': true,
+									'array': [
+										{
+											title: 'Abedyabka'
+										},
+										{
+											title: 'Abox'
+										},
+									],
+									'placeholder': 'Тип продукта'
+								},
+							})
+							+form-field({
+								'title': '',
+								'component': {
+									'mixin': 'select',
+									'multiple': true,
+									'array': [
+										{
+											title: 'Abedyabka'
+										},
+										{
+											title: 'Abox'
+										},
+									],
+									'placeholder': 'Страна'
+								},
+							})
+					+button-view()
+				+product-params()
+			+product-card-list({
+                'pagination': false
+            })._lk

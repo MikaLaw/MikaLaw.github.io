@@ -1,0 +1,13 @@
+.todos__item{
+    display: block;
+    position: relative;
+}
+  
+.todos__item:not(:last-child){
+    border-bottom: 1px solid #ededed;
+}
+  
+.todos__item:hover .todos__remove{
+    opacity: 1;
+    visibility: visible;
+}

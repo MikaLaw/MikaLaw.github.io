@@ -1,0 +1,22 @@
+.pay-list {
+}
+.pay-list__list {
+  display: flex;
+  align-items: center;
+}
+
+.pay-list__item {
+  &:not(:last-child) {
+    margin-right: 12px;
+  }
+}
+
+.pay-list__wrap {
+  position: relative;
+  width: 51px;
+  height: 32px;
+}
+.pay-list__img {
+  @include img-responsive('contain');
+  filter: saturate(0);
+}

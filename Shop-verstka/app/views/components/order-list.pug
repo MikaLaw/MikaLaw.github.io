@@ -1,0 +1,78 @@
+mixin order-list(data)
+	-
+		data = init(data, {
+			'block': 'order-list',
+			'list': [
+				{
+					'img': 'img-1.jpg',
+					'name': 'MATRIX',
+					'text': 'Exquisite Oil Масло питательное для волос 92мл',
+					'cost': '750 ₽',
+					'amount': '2 шт.',
+					'summ': '1 500 ₽'
+				},
+				{
+					'img': 'img-1.jpg',
+					'name': 'MATRIX',
+					'text': 'Exquisite Oil Масло питательное для волос 92мл',
+					'cost': '750 ₽',
+					'amount': '2 шт.',
+					'summ': '1 500 ₽'
+				},			
+				{
+					'img': 'img-1.jpg',
+					'name': 'MATRIX',
+					'text': 'Exquisite Oil Масло питательное для волос 92мл',
+					'cost': '750 ₽',
+					'amount': '2 шт.',
+					'summ': '1 500 ₽'
+				},
+				{
+					'img': 'img-1.jpg',
+					'name': 'MATRIX',
+					'text': 'Exquisite Oil Масло питательное для волос 92мл',
+					'cost': '750 ₽',
+					'amount': '2 шт.',
+					'summ': '1 500 ₽'
+				},							
+			],
+			'result-stock': '1 200 ₽',
+			'result-cost': '13 500 ₽'
+		})
+	+b&attributes(data.attributes(attributes))
+		+e.wrap
+			+e.head
+				+e.title Состав заказа
+			+e.body
+				each row in data.list
+					+e.row
+						+e.cell 
+							+e.cell-wrap 
+								+e.img-wrap 	
+									+e.IMG.img(src="./img/components/product-card/" + row.img alt="Название")
+								+e.content-wrap 
+									+e.info 
+										+e.name= row.name  
+										+e.text= row.text
+									+e.digit-container
+										+e.cost-container 
+											+e.cost= row.cost
+										+e.amount-container
+											+e.amount= row.amount 
+										+e.summ-container 
+											+e.summ= row.summ
+
+			+e.footer
+				+e.delivery 	
+					+e.delivery-info 
+						+e.delivery-title Доставка
+						+e.delivery-text Почта России, 5-7 дней, 20.06.2023, 10:00-14:00
+					+e.delivery-summ 280 ₽ 
+				+e.result 
+					+e.result-text Итого:
+					+e.result-summ
+						+e.result-stock= data['result-stock']
+						+e.result-cost= data['result-cost']
+
+
+

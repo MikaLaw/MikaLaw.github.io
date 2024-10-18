@@ -1,0 +1,167 @@
+.schedule-tab__list {
+  border-bottom: 1px solid rgba(42, 31, 21, 0.15);
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+}
+.schedule-tab__item {
+  &:not(:last-child) {
+    border-bottom: 1px solid rgba(42, 31, 21, 0.15);
+  }
+}
+.schedule-card {
+  padding: 20px 10px 20px 0;
+  background: transparent;
+  display: block;
+  text-decoration: none;
+  @include media-min($media-md) {
+    padding: 20px 11px 20px 20px;
+  }
+  &:hover,
+  &:focus {
+    background: $color-background-3;
+    transition: $transition;
+  }
+  .coach-img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    @include media-min($media-xs) {
+      width: 100px;
+      height: 100px;
+    }
+  }
+}
+.schedule-card__wrap {
+  display: grid;
+  grid-template-columns: 45px 1fr;
+  column-gap: 16px;
+  row-gap: 15px;
+  @include media-min($media-xs) {
+    grid-template-columns: 100px 1fr;
+    column-gap: 30px;
+    row-gap: 15px;
+  }
+  @include media-min($media-md) {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+}
+.schedule-card__coach-avatar {
+  grid-column: 1/2;
+  grid-row: 1/3;
+  @include media-min($media-md) {
+    grid-column: inset;
+    grid-row: unset;
+  }
+}
+
+.schedule-card__content {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  @include media-min($media-md) {
+    max-width: 578px;
+    grid-column: inset;
+    grid-row: unset;
+  }
+  @include media-min($media-lg) {
+    max-width: 725px;
+  }
+}
+.schedule-card__title {
+  @include head-18-700;
+  word-break: break-word;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include media-min($media-md) {
+    justify-content: unset;
+  }
+  @include media-min($media-lg) {
+    @include head-23-700;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    background: icon-arrow-right() no-repeat center / contain;
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    margin-left: 10px;
+  }
+}
+.schedule-card__coach-info {
+  @include media-min($media-sm) {
+    display: flex;
+    align-items: center;
+  }
+}
+.schedule-card__name {
+  @include text-16-500;
+}
+.schedule-card__cost-wrap {
+  display: flex;
+  align-items: center;
+  position: relative;
+  @include media-min($media-sm) {
+    margin-left: 13px;
+    padding-left: 11px;
+    &::before {
+      content: '';
+      display: block;
+      background: $color-grey;
+      width: 1px;
+      position: absolute;
+      height: 80%;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+  }
+}
+.schedule-card__cost {
+  @include head-16-700;
+}
+.schedule-card__stock {
+  @include text-14-500;
+  color: $color-grey;
+  text-decoration: line-through;
+  margin-left: 13px;
+}
+.schedule-card__control {
+  display: flex;
+  grid-column: 2/3;
+  grid-row: 2/3;
+  flex-direction: column;
+  align-items: flex-start;
+  @include media-min($media-sm) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    align-items: center;
+  }
+  @include media-min($media-md) {
+    grid-column: inset;
+    grid-row: unset;
+    flex-direction: column;
+    margin-left: auto;
+    align-items: flex-end;
+    justify-content: unset;
+  }
+  .btn-grey {
+    padding: 13px 26px;
+  }
+}
+.schedule-card__date {
+  @include head-14-700;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  @include media-min($media-lg) {
+    @include head-16-700;
+  }
+}

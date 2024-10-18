@@ -1,0 +1,94 @@
+extends templates/main-template
+
+include base-components/tabs-block
+include base-components/link-list
+include base-components/social
+include components/contact-tab
+include components/address-card
+
+block title
+	title Контакты
+
+block breadcrumbs
+	+b.block_breadcrumbs
+		.global-wrapper
+			+breadcrumbs(['Главная', 'Контакты'])
+
+
+block content
+	div(data-js-tabs)
+		+b.SECTION.block._contact-1
+			+b.contacts   
+				+e.wrap 
+					+b.contacts-card
+						+e.wrap
+							+e.H2.title Контакты
+							+b.tabs-block._border._contacts
+								+b.tabs-list.tabs-block__tabs-list
+									+e.UL.__wrap 
+										each item, index in arrayContacts1
+											+e.LI.__item(class=(0 === index) ? 'is-active' : false)
+												+e.A.__link(data-button= index) !{item['link']}
+								+e.content-container
+									each item, index in arrayContacts1
+										+e.__content&attributes({'class': 0 == index ?'is-active':false})(data-tab=index)
+											+component({'mixin': 'contact-tab'}).tabs-block__component
+							+e.BUTTON.btn магазины
+							+e.social-block
+								+e.sutitle Мы в соцсетях
+								+social()
+					+e.map-container
+						+e.map.is-active(id='map1' data-tab="0")
+						+e.map(id='map2' data-tab="1")
+						+e.map(id='map3' data-tab="2")
+		+b.SECTION.block._contact-2
+			h2.visually-hidden Адреса
+			.global-wrapper
+				+b.addresses
+					+e.UL.list.is-active(data-tab="0")
+						+e.LI.item 
+							+address-card({
+								'id': 'map7'
+							})
+						+e.LI.item 
+							+address-card({
+								'id': 'map4',
+								'title': 'Учебный центр',
+								'text': 'г. Барнаул, ул. Власихинская, д. 91'
+							})
+					+e.UL.list(data-tab="1")
+						+e.LI.item 
+							+address-card({
+								'id': 'map8'
+							})
+						+e.LI.item 
+							+address-card({
+								'id': 'map5',
+								'title': 'Учебный центр',
+								'text': 'г. Барнаул, ул. Власихинская, д. 91'
+							})
+					+e.UL.list(data-tab="2") 
+						+e.LI.item 
+							+address-card({
+								'id': 'map9'
+							})
+						+e.LI.item 
+							+address-card({
+								'id': 'map6',
+								'title': 'Учебный центр',
+								'text': 'г. Барнаул, ул. Власихинская, д. 91'
+							})
+	+b.SECTION.block
+		.global-wrapper
+			+e.head 
+				+e.H2.title._seo Место под seo-текст
+			+e.body
+				+e.text._seo 
+					p Идейные соображения высшего порядка, а также постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки дальнейших направлений развития. Не следует, однако забывать, что сложившаяся структура организации обеспечивает широкому кругу (специалистов) участие в формировании существенных финансовых и административных условий. 
+					p Идейные соображения высшего порядка, а также постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки дальнейших направлений развития. Не следует, однако забывать, что сложившаяся структура организации обеспечивает широкому кругу (специалистов) участие в формировании существенных финансовых и административных условий. 					
+					p Идейные соображения высшего порядка, а также постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки дальнейших направлений развития. Не следует, однако забывать, что сложившаяся структура организации обеспечивает широкому кругу (специалистов) участие в формировании существенных финансовых и административных условий. 
+					p Идейные соображения высшего порядка, а также постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки дальнейших направлений развития. Не следует, однако забывать, что сложившаяся структура организации обеспечивает широкому кругу (специалистов) участие в формировании существенных финансовых и административных условий. 
+
+
+block extraContent
+	include includes/mapscript-yandex 

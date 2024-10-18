@@ -1,0 +1,17 @@
+mixin main-menu(data)
+	-
+		data = init(data, {
+			block: 'main-menu',
+			list: [
+				{title: 'Для кого и для чего', href: '#bottle-section-1'},
+				{title: 'Принцип действия', href: '#natural-section'},
+				{title: 'Механизм использования', href: '#video-section'},
+				{title: 'Свойства и выгоды', href: '#water-usefulness'},                                
+			]
+		})
+
+	+b.NAV&attributes(data.attributes(attributes))
+		+e.UL.list 
+			each item in data.list 
+				+e.LI.item 
+					+e.A.link(href= item.href data-scroll)= item.title

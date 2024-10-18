@@ -1,0 +1,29 @@
+mixin contact-tab(data)
+	-
+		data = init(data, {
+			'block': 'contact-tab',
+			'list': [
+				{
+					label: 'Адрес:',
+					value: 'Новоалтайск, ул. Деповская, 22 (ТРЦ «Park»)'
+				},
+				{
+					label: 'Режим работы:',
+					value: '<div>Пн—Пт <span>с 10:00 до 21:00,</span></div><div> Сб—Вс  <span>с 10:00 до 20:00</span></div>'
+				},
+				{
+					label: 'Телефон:',
+					value: '<a href="tel:88003336514">8 (800) 333-65-14</a> <span>с 9-00 до 17-00</span>'
+				},
+				{
+					label: 'E-mail:',
+					value: '<a href="mailto:info@modern.ru">info@modern.ru</a>'
+				}
+			]
+		})
+	+b&attributes(data.attributes(attributes))
+		+e.table 
+			each row in data.list 
+				+e.row
+					+e.label !{row.label}
+					+e.value !{row.value}	

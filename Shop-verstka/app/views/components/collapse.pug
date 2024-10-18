@@ -1,0 +1,13 @@
+include collapse-item 
+
+mixin collapse(data)
+	-
+		data = init(data, {
+			'block': 'collapse',
+			'list': collapseList1,
+		})
+
+	+b&attributes(data.attributes(attributes))
+		+e.list
+			each item in data['list']
+				+collapse-item(item)

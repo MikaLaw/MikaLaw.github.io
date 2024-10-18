@@ -1,0 +1,95 @@
+include ../base-components/input-counter
+
+mixin basket-table(data)
+	-
+		data = init(data, {
+			'block': 'basket-table',
+			'column': [
+				{
+					'title': 'Фото',
+				},
+				{
+					'title': 'Товар',
+				},
+				{
+					'title': 'Акция',
+				},
+				{
+					'title': 'Количество',
+				},
+				{
+					'title': 'Стоимость',
+				},
+			],
+			'row': [
+				{
+					img: './img/components/product-card/img-1',
+					labels: [{class: 'beige', text: 'new'}],
+					title: 'MATRIX',
+					text: 'Exquisite Oil Масло питательное для волос 92мл',
+					cost: '750 ₽',
+					stock: 'icon-discount',
+					summ: '750 ₽',
+					discount: '1 200 ₽'
+				},
+				{
+					img: './img/components/product-card/img-1',
+					labels: [{class: 'beige', text: 'new'}],
+					title: 'MATRIX',
+					text: 'Exquisite Oil Масло питательное для волос 92мл',
+					cost: '750 ₽',
+					stock: 'icon-gift',
+					summ: '15 750 ₽',
+					discount: '17 200 ₽',
+					error: true
+				},		
+				{
+					img: './img/components/product-card/img-1',
+					labels: [{class: 'beige', text: 'new'}],
+					title: 'MATRIX',
+					text: 'Exquisite Oil Масло питательное для волос 92мл',
+					cost: '750 ₽',
+					summ: '750 ₽',
+					discount: '1 200 ₽'
+				},							
+			]
+		})
+
+	+b&attributes(data.attributes(attributes))
+		+e.head
+			each column in data['column']
+				+e.th= column.title
+		+e.body
+			each row in data['row']
+				+e.row
+					+e.cell
+						+e.img-container 
+							+picture({
+								src: row.img,
+								webp: true,
+							}).wrap-img
+							+e.labels 
+								each label in row['labels']
+									+b.label_small(class= label.class)= label.text
+								if row['stock']
+									+e.IMG.icon(src="./img/icons/" + row['stock'] + '.svg' alt="icon")
+					+e.cell 
+						+e.title= row['title']
+						+e.text= row['text']
+						+e.cost= row['cost'] 
+							span за шт.
+					+e.cell._icon
+						if row['stock']
+							+e.IMG.icon(src="./img/icons/" + row['stock'] + '.svg' alt="icon")
+					+e.cell-block
+						+e.cell
+							if row['error']
+								+input-counter({
+									'error-message': 'На складе: 3 шт.'
+								}).is-error
+							else 
+								+input-counter()
+						+e.cell
+							+e.summ= row['summ']
+							+e.discount= row['discount']
+					+e.close-btn

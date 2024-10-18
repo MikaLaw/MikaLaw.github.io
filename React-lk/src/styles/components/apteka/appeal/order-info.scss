@@ -1,0 +1,10 @@
+.order-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 70px;
+
+  @include media-min($media-xl) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px 70px;
+  }
+}

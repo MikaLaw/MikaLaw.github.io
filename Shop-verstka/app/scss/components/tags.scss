@@ -1,0 +1,204 @@
+.tags {
+  margin-bottom: 20px;
+
+  @include media-min($media-xl) {
+    margin-bottom: 24px;
+  }
+
+  &_simple {
+    margin-bottom: 12px;
+    @include media-min($media-xs) {
+      margin-bottom: 30px;
+    }
+    @include media-min($media-md) {
+      gap: 11px 5px;
+    }
+    .tag {
+      background: transparent;
+      &:not(:last-child) {
+        margin-right: 5px;
+
+        @include media-min($media-md) {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  &_priority {
+    margin-bottom: 27px;
+    @include media-min($media-xs) {
+      margin-bottom: 50px;
+    }
+    @include media-min($media-sm) {
+      margin-bottom: 59px;
+    }
+    @include media-min($media-md) {
+      margin-bottom: 0;
+    }
+
+    .tag {
+      &:not(:last-child) {
+        margin-right: 17px;
+        @include media-min($media-md) {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  &_main {
+    margin-bottom: 0;
+    @include media-min($media-sm) {
+      gap: 11px 23px;
+    }
+    .tags__list {
+      @include media-min($media-sm) {
+        gap: 11px 23px;
+      }
+    }
+
+    .p-plus__overflow {
+      .tag {
+        &:not(:last-child) {
+          margin-bottom: 8px;
+        }
+      }
+    }
+
+    .tag {
+      padding: 0;
+      background-color: transparent;
+      @include text-13-500;
+      @include media-min($media-md) {
+        @include text-14-500;
+      }
+
+      padding-right: 12px;
+      @include media-min($media-xs) {
+        padding-right: 17px;
+      }
+      @include media-min($media-sm) {
+        padding-right: 0;
+      }
+
+      &.is-active {
+        padding: 4px 8px;
+        border: 1px solid transparent;
+        background-color: transparent;
+      }
+    }
+  }
+}
+.tags-block {
+  border-bottom: 1px solid rgba(42, 31, 21, 0.15);
+  padding-bottom: 10px;
+  @include media-min($media-sm) {
+    padding-bottom: 20px;
+  }
+  @include media-min($media-md) {
+    padding-bottom: 30px;
+  }
+  @include media-min($media-lg) {
+    padding-bottom: 35px;
+  }
+  .p-plus-container_tags {
+    margin-bottom: 0;
+    .p-plus__toggle-btn {
+      @include text-13-500;
+      padding: 7px 14px;
+      width: 163px;
+      white-space: nowrap;
+      @include media-min($media-md) {
+        @include text-14-500;
+      }
+    }
+  }
+}
+.p-plus-container_tags {
+  z-index: 1;
+  margin-bottom: 60px;
+  .p-plus__toggle-btn {
+    @include text-13-600;
+    padding: 4px 6px;
+    border-radius: 2px;
+    border: 1px solid $color-black;
+  }
+  .p-plus__overflow {
+    padding: 18px;
+    border-radius: 4px;
+    background: $color-background-2;
+    max-height: 194px;
+    min-width: 250px;
+    overflow: auto;
+    scrollbar-color: $color-grey-2 $color-background-3;
+    scrollbar-width: thin;
+    &::-webkit-scrollbar {
+      width: 4px;
+      background-color: $color-background-3;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: $color-grey-2;
+      border-radius: 1px;
+    }
+
+    .product-params__item {
+      &:not(:last-child) {
+        margin-bottom: 5px;
+      }
+    }
+    .tag {
+      white-space: normal;
+      word-break: break-all;
+    }
+  }
+}
+.tags__list {
+  display: flex;
+  align-items: center;
+  overflow: auto;
+  padding-bottom: 8px;
+  scrollbar-color: $color-grey-2 $color-background-3;
+  scrollbar-width: thin;
+  &:hover {
+    &::-webkit-scrollbar-thumb {
+      background-color: $color-grey-2;
+    }
+  }
+  &::-webkit-scrollbar {
+    width: 4px;
+    height: 6px;
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    transition: $transition;
+    border-radius: 1px;
+  }
+
+  @include media-min($media-md) {
+    gap: 11px 17px;
+    padding-bottom: 0;
+  }
+}
+.tag {
+  display: block;
+  @include text-13-500;
+  border-radius: 2px;
+  padding: 4px 8px;
+  white-space: nowrap;
+  background: $color-background-2;
+  &:not(:last-child) {
+    margin-right: 12px;
+    @include media-min($media-xs) {
+      margin-right: 17px;
+    }
+    @include media-min($media-md) {
+      margin-right: 0;
+    }
+  }
+
+  &.is-active {
+    padding: 4px 11px;
+    border: 1px solid $color-black;
+    background-color: transparent;
+  }
+}

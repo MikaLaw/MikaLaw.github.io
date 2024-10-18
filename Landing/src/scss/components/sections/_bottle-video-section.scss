@@ -1,0 +1,14 @@
+.bottle-video-section{
+    position: relative;
+}
+
+.bottle-video-section__image{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 0;
+    padding-top: 45.347%;
+    background-color: $color-black;
+    background-image: url("img/components/bottle-video-section/scene00015.jpg");
+    background-size: cover;
+}

@@ -1,0 +1,17 @@
+extends templates/side-main-template-feedback
+
+include components/feedback-banner
+
+block title
+	title ЛК - Обратная связь
+
+block breadcrumbs
+	+b.block_breadcrumbs._breadcrumbs-lk
+		.global-wrapper
+			+breadcrumbs(['Главная', 'Обратная связь'])
+
+
+block content
+	+b.SECTION.block
+		h2.visually-hidden Обратная связь
+		+feedback-banner()

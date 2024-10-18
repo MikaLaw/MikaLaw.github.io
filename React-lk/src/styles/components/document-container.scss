@@ -1,0 +1,13 @@
+.document-container {
+
+}
+
+.document-container__title {
+  margin-bottom: 15px;
+}
+
+.document-container__wrap {
+  & > * + * {
+    margin-top: 15px;
+  }
+}

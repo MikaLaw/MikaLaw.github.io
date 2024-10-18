@@ -1,0 +1,54 @@
+extends templates/side-main-template
+include components/return-list
+include base-components/checkbox
+
+block title
+	title ЛК - Заявка на возврат детально
+
+block breadcrumbs
+	+b.block_breadcrumbs._breadcrumbs-lk
+		.global-wrapper
+			+breadcrumbs(['Главная', 'Заявки на возврат', 'Заявка № 232421'])
+
+
+block content
+	+b.SECTION.block._mb 
+		+e.head._flex 
+			+e.H2.title Заявка № 232421
+			+e.date 25.06.23
+		+e.body
+			+b.FORM.form_order.form-return
+				+e.body
+					+e.item
+						+b.form._order._return
+							+e.head 
+								+e.title Товары к возврату
+							+e.body
+								+return-list({
+									'list': returnList2,
+								})
+						+b.form._order._return
+							+e.head 
+								+e.title причина возврата
+							+e.body 
+								+e.item._file-return
+									+form-field({
+										'title': 'причина',
+										'component': {
+											'mixin': 'input-file-with-field',
+											'field-type': 'text',
+											'field-text': 'Описание причины'
+										},
+									})._align-start
+								
+								.form__doc-list.form__doc-list_return
+									.form__text Прикрепленные  файл(-ы)
+									.form__doc-link-wrap
+										a(href="#" download).form__doc-link  Filenamesomerealllylonпname1.jpg
+										a(href="#" download).form__doc-link  Filenamesomerealllylonпname2.jpg
+										a(href="#" download).form__doc-link  Filenamesomerealllylonпname3.jpg
+				+e.footer 
+					+b.return-result.return-result_simple
+						+e.head 
+							+e.label Итого к возврату:
+							+e.value 1 500 ₽

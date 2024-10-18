@@ -1,0 +1,23 @@
+mixin bottle-section(data)
+	-
+		data = init(data, {
+			block: 'bottle-section',
+			bottleId: 'bottle-1',
+			image: 'image-1.jpg',
+			bottle: 'bottle-1.png',
+			title: 'Молодость и <span class="title-mark">красота</span>',
+			text: 'Для тех, кто ведёт активный образ жизни, имеет большой круг общения, заботится о своей внешности и красоте.',
+			button: 'ЗАКАЗАТЬ'
+		})
+		
+	+b.SECTION&attributes(data.attributes(attributes))
+		h2.visually-hidden Для кого 
+		+e.container.container
+			+e.image
+				img(src='./img/components/bottle-section/' + data.image alt= data.title )
+				+e.bottle-img(id=bottleId)
+					img(src='./img/components/bottle-section/' + data.bottle alt= data.title )
+			+e.content
+				+e.title.section__title !{data.title}  
+				+e.text= data.text 
+				+e.BUTTON.button_pdv-sm.button= data.button

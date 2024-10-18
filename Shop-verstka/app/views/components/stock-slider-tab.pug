@@ -1,0 +1,14 @@
+include stock-slider-card
+
+mixin stock-slider-tab(data)
+	-
+		data = init(data, {
+			'block': 'stock-slider-tab',
+			'array': stockList1
+		})
+	+b&attributes(data.attributes(attributes))
+		+slider({
+			'item-component': 'stock-slider-card',
+			'init-attr': 'data-stock-slider',
+			'array': data['array']
+		})._stock

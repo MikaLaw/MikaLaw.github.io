@@ -1,0 +1,95 @@
+extends templates/main-template
+
+include base-components/tabs-block
+include components/course-banner
+include components/course-card
+include components/education-banner
+include components/schedule-tab
+
+block title
+	title Обучение
+
+block breadcrumbs
+	+b.block_breadcrumbs
+		.global-wrapper
+			+breadcrumbs(['Главная', 'Обучение'])
+
+
+block content
+	+b.SECTION.block._education-1
+		.global-wrapper
+			+e.head 
+				+e.H2.title._big Обучение
+			+e.body 
+				+education-banner()
+	+b.SECTION.block._education-2
+		.global-wrapper
+			+e.head 
+				+e.H2.title авторские курсы
+			+e.body
+				+b.course-list.js-list 
+					+e.UL.list
+						each item in courseList3
+							+e.LI.item
+								+course-card(item)
+					+e.control 
+						+e.BUTTON.btn.js-list-trigger весь список
+	+b.SECTION.block._education-3
+		.global-wrapper
+			+e.head 
+				+e.H2.title расписание
+			+e.body
+				+tabs-block({
+					'tabs-list': {
+						'block': 'tabs-list',
+					},
+					'array': [
+						{
+							'title': 'Все',
+							'component': {
+								'mixin': 'schedule-tab',
+								'list': scheduleList1
+							},
+						},
+						{
+							'title': 'Барнаул',
+							'component': {
+								'mixin': 'schedule-tab',
+								'list': scheduleList2
+							},
+						},
+						{
+							'title': 'Бийск',
+							'component': {
+								'mixin': 'schedule-tab',
+								'list': scheduleList3
+							},
+						},                        
+					],
+				})._border._education
+	+b.SECTION.block._education-4
+		.global-wrapper
+			+e.head 
+				+e.H2.title скоро
+			+e.body
+				+b.course-list.js-list
+					+e.UL.list
+						each item in courseList2
+							+e.LI.item
+								+course-card(item)
+					+e.control 
+						+e.BUTTON.btn.js-list-trigger весь список
+	+b.SECTION.block._education-5
+		h2.visually-hidden Курсы
+		.global-wrapper
+			+course-banner()
+	+b.SECTION.block
+		.global-wrapper
+			+e.head 
+				+e.H2.title._seo Место под seo-текст
+			+e.body
+				+e.text._seo 
+					p Идейные соображения высшего порядка, а также постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки дальнейших направлений развития. Не следует, однако забывать, что сложившаяся структура организации обеспечивает широкому кругу (специалистов) участие в формировании существенных финансовых и административных условий. 
+					p Идейные соображения высшего порядка, а также постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки дальнейших направлений развития. Не следует, однако забывать, что сложившаяся структура организации обеспечивает широкому кругу (специалистов) участие в формировании существенных финансовых и административных условий. 					
+					p Идейные соображения высшего порядка, а также постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки дальнейших направлений развития. Не следует, однако забывать, что сложившаяся структура организации обеспечивает широкому кругу (специалистов) участие в формировании существенных финансовых и административных условий. 
+					p Идейные соображения высшего порядка, а также постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки дальнейших направлений развития. Не следует, однако забывать, что сложившаяся структура организации обеспечивает широкому кругу (специалистов) участие в формировании существенных финансовых и административных условий. 

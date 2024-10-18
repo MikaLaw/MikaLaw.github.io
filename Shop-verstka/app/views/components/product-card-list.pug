@@ -1,0 +1,25 @@
+include product-card
+include ../base-components/pagination
+include ../base-components/component
+
+mixin product-card-list(data)
+	-
+		data = init(data, {
+			'block': 'product-card-list',
+			'list': productList2,
+			'item-component': 'product-card',
+			'item': {},
+			'pagination': true
+		})
+
+		if (data['item-component']) {
+			data['item']['mixin'] = data['item-component'];
+		}
+	+b&attributes(data.attributes(attributes))
+		+e.list
+			for item in data.list
+				+component(Object.assign({}, data['item'], item))
+		if data.pagination
+			+e.control 
+				+b.BUTTON.btn Показать ещё
+				+pagination()

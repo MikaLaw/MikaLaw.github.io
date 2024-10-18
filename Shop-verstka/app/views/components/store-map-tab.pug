@@ -1,0 +1,9 @@
+mixin store-map-tab(data)
+	-
+		data = init(data, {
+			'block': 'store-map-tab',
+			'id': 'map1'
+		})
+	+b&attributes(data.attributes(attributes))
+		+e.map-container
+			+e.map(id=data['id'])

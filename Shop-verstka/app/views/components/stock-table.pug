@@ -1,0 +1,13 @@
+include stock-table-card
+
+mixin stock-table(data)
+	-
+		data = init(data, {
+			'block': 'stock-table',
+			'array': stockList1
+		})
+	+b&attributes(data.attributes(attributes))
+		+e.UL.list  
+			each item in data.array
+				+e.LI.item 
+					+stock-table-card(item)

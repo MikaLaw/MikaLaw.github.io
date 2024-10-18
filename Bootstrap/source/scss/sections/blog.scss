@@ -1,0 +1,22 @@
+.blog__title {
+  font-size: 22px;
+  transition: 0.3s;
+  &:hover,
+  &:active {
+    color: $contrast-color;
+  }
+}
+
+.blog__day {
+  color: #ccc;
+  font-weight: 300;
+}
+
+.blog__author {
+  color: $contrast-color;
+  transition: 0.3s;
+  &:hover,
+  &:active {
+    color: $contrast-hover;
+  }
+}

@@ -1,0 +1,23 @@
+mixin link-list(data)
+	-
+		data = init(data, {
+			'block': 'link-list',
+			'array': [],
+			'array-extended': [],
+			'active': -1,
+			'no-href': -1,
+			'href': [],
+		})
+
+		data['array'].forEach(function(link, index){
+			if (data['array-extended'][index] === undefined) {
+				data['array-extended'][index] = {}
+			}
+			data['array-extended'][index]['link'] = link;
+		})
+
+	+b&attributes(data.attributes(attributes))
+		+e.UL.__wrap 
+			each item, index in data['array-extended']
+				+e.LI.__item&attributes(item['item-attr'])(class=(data['active'] === index) ? 'is-active' : false)
+					+e.A.__link&attributes(item['link-attr'])(href=(data['no-href'] == index) ? false : data['href'][index] data-number=item['dataNumber']) !{item['link']}

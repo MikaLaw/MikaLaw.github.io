@@ -1,0 +1,150 @@
+.white-table-separator {
+  .ant-table-thead > tr > th:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before {
+    height: 100%;
+    background-color: $color-white;
+  }
+}
+
+.table-container {
+  & > * + * {
+    margin-top: 10px;
+  }
+}
+
+.table-fixed-column:not(.table-skeleton) {
+  .ant-table-cell-fix-right-first {
+    box-shadow: $box-shadow-fixed-column !important;
+    &:after {
+      box-shadow: none !important;
+    }
+  }
+
+  .ant-table-cell-fix-left-last {
+    &:after {
+      box-shadow: $box-shadow-left-fixed-column !important;
+    }
+
+    &:before {
+      content: none !important;
+    }
+  }
+}
+
+.table-row_grey {
+  background: $color-grey-1;
+
+  .ant-table-cell-fix-left,
+  .ant-table-cell-fix-right,
+  .ant-table-column-sort {
+    background: $color-grey-1;
+  }
+}
+
+.table-row_empty {
+  .ant-table-cell:not(.ant-table-cell-fix-left, .ant-table-cell-fix-right) {
+    opacity: .5;
+  }
+}
+
+.price-old {
+  font-size: 10px;
+  line-height: 14px;
+  color: $color-ui-8;
+  text-decoration: line-through;
+}
+
+.table-cell__error-calculate {
+  .ant-table-cell {
+    background: $color-red-2 !important;
+  }
+
+  .input-number__input {
+    color: $color-error;
+    border-color: $color-brand-3;
+  }
+}
+
+.favorite-column {
+  background-color: $color-ui-2;
+
+  .ant-btn {
+    width: 20px;
+    height: 20px;
+  }
+
+  .ant-table-filter-trigger {
+    margin-left: 4px;
+  }
+}
+
+.update-debt-row .ant-table-cell,
+.update-debt-row .ant-table-cell-fix-left,
+.update-debt-row .ant-table-cell-fix-right {
+  animation: goToNormalBackground steps(1, end) 7s;
+  transition: $transition !important;
+}
+
+.update-debt-row {
+  &:hover .ant-table-cell,
+  &:hover .ant-table-cell-fix-left,
+  &:hover .ant-table-cell-fix-right {
+    background: $color-grey-1 !important;
+  }
+}
+
+.table-tooltip_w_auto {
+  &.ant-tooltip {
+    max-width: none;
+  }
+}
+
+.table-horizontal-scroll {
+  opacity: 1 !important;
+}
+
+.cart-count-cell {
+  gap: 2px;
+}
+
+.date-table-filter {
+  .ant-picker {
+    width: 190px;
+  }
+}
+
+.ant-table-tbody > tr > td.cart-count-items {
+  position: relative;
+  padding: 0;
+}
+
+th.table-head-cell-center {
+  text-align: center !important;
+}
+
+.juridical-table {
+  .table-panel + .ant-spin-nested-loading .ant-spin-container {
+    display: flex;
+    flex-direction: column;
+
+    .ant-table-wrapper {
+      order: 1;
+    }
+
+    .pagination-container {
+      order: 3;
+    }
+
+    .ant-spin-nested-loading {
+      order: 2;
+      //height: 48px !important;
+    }
+  }
+}
+
+.pharmacies-table,
+.juridical-table {
+  border: 1px solid $color-ui-3;
+  background-color: $color-white;
+  padding: 20px;
+  border-radius: 12px;
+}

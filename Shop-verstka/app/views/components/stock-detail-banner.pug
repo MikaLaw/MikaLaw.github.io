@@ -1,0 +1,16 @@
+mixin stock-detail-banner(data)
+	-
+		data = init(data, {
+			'block': 'stock-detail-banner',
+			'title': '+ 20% бонусных баллов',
+			'text': 'Можно оплачивать до 50% от суммы покупки',
+			'img': './img/components/product-banner/img-2.png'
+		})
+	+b&attributes(data.attributes(attributes))
+		+e.wrap 
+			+e.title= data.title 
+			+e.text= data.text 
+		+e.wrap-img
+			+e.IMG.img(src= data.img  alt="Название")
+
+

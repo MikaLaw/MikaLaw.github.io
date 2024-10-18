@@ -1,0 +1,137 @@
+.table-alert {
+  max-width: 550px;
+
+  &__btn {
+    padding: 4px 16px;
+  }
+
+  &__close-icon {
+    color: $color-ui-5;
+    transition: $transition;
+
+    &:hover {
+      color: $color-brand-2-hover;
+    }
+  }
+
+  &_flex {
+    .ant-alert-message {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &_tag {
+    .ant-alert-message {
+      display: flex;
+      align-items: center;
+    }
+
+    .table-alert__btn {
+      margin-right: 0;
+      margin-left: auto;
+    }
+  }
+
+  &.align-start {
+    align-items: flex-start;
+  }
+  
+
+  .ant-alert-description {
+    color: $color-ui-5;
+  }
+
+  .ant-alert-icon {
+    color: $color-brand-2;
+    font-size: 20px;
+    margin-right: 10px;
+  }
+
+  .ant-alert-close-icon {
+    margin-left: 18px;
+  }
+
+  &.ant-alert-warning,
+  &.ant-alert-error,
+  &.ant-alert-info {
+    max-width: none;
+
+    .ant-alert-close-icon {
+      align-self: center;
+    }
+  }
+  
+
+  &.ant-alert-warning {
+    max-width: none;
+    background: $color-yellow;
+
+    .ant-alert-icon {
+      color: $color-warning;
+      font-size: 14px;
+      margin-right: 9px;
+    }
+  }
+
+  &.ant-alert-info {
+    background: $color-grey-1;
+    border: 1px solid $color-ui-7;
+    box-sizing: border-box;
+    border-radius: 4px;
+
+    .ant-alert-icon {
+      color: $color-brand-1;
+      font-size: 14px;
+      margin-right: 9px;
+    }
+
+    .ant-alert-message {
+      b {
+        font-weight: 700;
+      }
+    }
+  }
+
+  &.ant-alert-error {
+    background: $color-red-2;
+    .ant-alert-icon {
+      //color: $color-error;
+      font-size: 14px;
+      margin-right: 9px;
+    }
+  }
+
+  &.colored-alert {
+    &.ant-alert-warning {
+
+      .ant-alert-icon {
+        font-size: 20px;
+      }
+
+
+    }
+  }
+}
+
+.table-alert__tag {
+  padding: 1px 4px;
+  border: 0;
+  border-radius: 2px;
+  font-size: 10px;
+  line-height: 12px;
+}
+
+.ant-alert-warning {
+}
+.ant-alert-info {
+
+}
+.ant-alert-error {
+  
+}
+
+.table-alert + .table-alert {
+  margin-top: 8px;
+}

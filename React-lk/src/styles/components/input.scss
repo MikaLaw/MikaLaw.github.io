@@ -1,0 +1,406 @@
+\.ant-form-vertical {
+  .ant-form-item-label {
+    padding: 0;
+    margin-bottom: 5px;
+  }
+}
+
+
+.ant-input {
+  padding: 7px 12px;
+  color: $color-ui-6;
+  border: 1px solid $color-ui-7;
+
+  &:hover, &:focus, &:active {
+    box-shadow: none;
+  }
+
+  &:hover {
+    border-color: $color-ui-8;
+  }
+
+  &:focus {
+    border-color: $color-ui-4;
+    color: $color-black;
+  }
+
+  &:active {
+    border-color: $color-ui-4;
+    color: $color-ui-6;
+  }
+
+  &.dashed {
+    border: 1px dashed $color-ui-7;
+  }
+
+  &.dashed-light {
+    border: 1px dashed $color-grey-1;
+  }
+
+  &.background_green {
+    background-color: $color-ui-2;
+    border-color: transparent;
+  }
+
+  &.grey {
+    border: 1px solid $color-ui-7;
+  }
+
+  &.dashed,
+  &.background_green,
+  &.grey {
+    &:hover, &:active, &:focus {
+      box-shadow: none;
+    }
+  }
+}
+
+.ant-input-search {
+  .ant-input-affix-wrapper {
+    border-color: $color-ui-3;
+
+    &:hover, &:focus, &:active, &-focused {
+      box-shadow: none;
+    }
+
+    &:not(.ant-input-affix-wrapper-disabled) {
+      &:hover {
+        border-color: $color-ui-8;
+      }
+    }
+  }
+}
+
+.ant-input-search .ant-input {
+  padding: 7px 12px;
+  color: $color-ui-6;
+  border: 1px solid $color-ui-3;
+
+  &:hover, &:focus, &:active {
+    box-shadow: none;
+    border-color: $color-ui-3;
+  }
+}
+
+.ant-input-group {
+  & > .ant-input-affix-wrapper:not(:last-child) {
+    .ant-input {
+      @include placeholder() {
+        color: $color-ui-6;
+      }
+    }
+  }
+}
+
+.ant-input-search > .ant-input-group > .ant-input-group-addon:last-child {
+  border: 1px solid $color-ui-3;
+
+  svg {
+    fill: $color-ui-4;
+  }
+}
+
+.ant-input-search > .ant-input-group > .ant-input-group-addon:last-child .ant-input-search-button:not(.ant-btn-primary) {
+  border-left-color: transparent;
+  box-shadow: none;
+}
+
+.ant-select-single:not(.ant-select-customize-input) .ant-select-selector .ant-select-selection-search-input,
+.ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+  // height: auto;
+}
+
+.ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+  padding: 0 12px;
+  height: 34px;
+}
+
+.ant-select:not(.ant-select-disabled) {
+  &:hover {
+    .ant-select-selector {
+      border-color: $color-ui-8;
+    }
+  }
+}
+
+.ant-select-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input) .ant-select-selector {
+  box-shadow: none;
+  border-color: $color-ui-4;
+  color: $color-black;
+}
+
+.ant-input-password {
+  position: relative;
+  padding: 7px 12px;
+
+  &:before {
+    content: none;
+  }
+
+  .ant-input {
+    padding: 0;
+  }
+
+  .ant-input-suffix {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+  }
+
+  &.ant-input-affix-wrapper {
+    border-color: $color-ui-2;
+
+    &-focused,
+    &:focus,
+    &:hover,
+    &:active {
+      box-shadow: none
+    }
+
+    &:hover {
+      border-color: $color-ui-8;
+    }
+
+    &-focused,
+    &:focus {
+      border-color: $color-ui-4;
+      color: $color-black;
+    }
+
+    &:active {
+      border-color: $color-ui-4;
+      color: $color-ui-6;
+    }
+  }
+}
+
+.ant-select-selection-search-input,
+.ant-input,
+.ant-select-selection-item,
+.ant-picker-input > input {
+  @include text-2();
+}
+
+.ant-input-textarea-show-count {
+  &:after {
+    margin: 5px 0 0 !important;
+    @include text-3();
+    color: $color-ui-6;
+  }
+}
+
+.ant-form-item {
+  &.large {
+    .ant-input {
+      padding: 10px 12px;
+    }
+
+    .ant-input-password {
+      padding: 10px 12px;
+
+      .ant-input {
+        padding: 0;
+      }
+    }
+  }
+}
+
+.ant-form-item-label,
+.ant-form-item-required,
+.ant-form-item-label > label {
+  @include text-3();
+  color: $color-ui-8;
+}
+
+.ant-form-item-label {
+  label.ant-form-item-required:not(.ant-form-item-required-mark-optional) {
+    &:before {
+      content: none;
+    }
+  }
+}
+
+.ant-form-item-label {
+  label.ant-form-item-required:not(.ant-form-item-required-mark-optional) {
+    &:after {
+      content: '*';
+      display: inline-block;
+      @include text-3();
+      color: $color-black;
+      margin-left: 4px;
+    }
+  }
+}
+
+.input-search-xs {
+  & > .ant-input-group {
+    & > .ant-input-group-addon {
+      &:last-child {
+        border: 0;
+        left: 0;
+        width: 117px;
+      }
+
+      .ant-input-search-button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        font-size: 11px;
+        line-height: 14px;
+      }
+    }
+  }
+
+  .ant-input-wrapper {
+    display: flex;
+  }
+
+  .ant-input-affix-wrapper {
+    width: 50px;
+    padding-right: 2px;
+    padding-left: 10px;
+  }
+
+  .ant-input-suffix {
+    margin-left: auto;
+    margin-right: 0;
+
+    .ant-input-clear-icon {
+      font-size: 10px;
+    }
+  }
+
+  .ant-input {
+    width: 25px;
+  }
+}
+
+.ant-input-number-group-wrapper.input-number-xs {
+  .ant-input-number {
+    width: 50px;
+    border-color: $color-ui-3;
+
+    &-focused {
+      box-shadow: none;
+    }
+  }
+
+  .ant-input-number-group-addon {
+    width: 117px;
+    padding-left: 0;
+    padding-right: 0;
+    border: 0;
+
+    .ant-btn {
+      padding: 7px 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      font-size: 11px;
+      line-height: 14px;
+
+      .anticon {
+        font-size: 15px;
+        line-height: 0;
+      }
+    }
+  }
+
+  .ant-input-number-handler-wrap {
+    width: 12px;
+  }
+
+  .ant-input-number-handler {
+    display: flex;
+    align-items: center;
+    width: 12px;
+
+    .anticon {
+      right: auto;
+    }
+  }
+}
+
+.input-password {
+  input[type="text"] {
+    & + .ant-input-suffix .anticon {
+      svg path {
+        fill: $color-brand-2;
+      }
+    }
+  }
+
+  input[type="password"] {
+    & + .ant-input-suffix .anticon {
+      svg path {
+        fill: $color-ui-4;
+      }
+    }
+  }
+}
+
+.input-color-brand-2 {
+  input,
+  .ant-input-group input.ant-input {
+    color: $color-brand-2;
+  }
+}
+
+.input1-color-brand-2 {
+  border-color: $color-ui-2;
+  color: $color-brand-2;
+
+  &:focus, &:hover {
+    border-color: $color-brand-2;
+    color: $color-brand-2;
+  }
+}
+
+.autocomplete-color-brand-2 {
+  border-color: $color-ui-2;
+  color: $color-brand-2;
+
+  .ant-select-arrow {
+    margin-top: -10px;
+  }
+
+  &:hover {
+    .ant-select-selector {
+      border-color: $color-brand-2 !important;
+      color: $color-brand-2;
+    }
+  }
+
+  &.ant-select-focused {
+    .ant-select-selector {
+      border-color: $color-brand-2 !important;
+      color: $color-brand-2;
+
+      .ant-select-selection-search-input {
+        color: $color-brand-2;
+      }
+    }
+  }
+
+  .ant-select-selection-placeholder {
+    color: $color-ui-8 !important;
+  }
+}
+
+textarea.ant-input {
+  @include placeholder() {
+    color: $color-ui-6;
+  }
+}
+
+.ant-select {
+  @include media-min($media-xl) {
+    font-size: 15px;
+  }
+}

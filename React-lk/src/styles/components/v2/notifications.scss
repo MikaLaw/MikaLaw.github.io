@@ -1,0 +1,282 @@
+.notifications-overlay {
+  left: auto !important;
+  right: 0 !important;
+  bottom: 0 !important;
+}
+
+.notifications {
+  padding: 20px 0 0;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $color-ui-2;
+  box-shadow: $box-shadow-14;
+  background: $color-white;
+
+  &.full-height {
+    .notifications__btn {
+      margin-top: auto;
+    }
+
+    .notifications__list {
+      .scrollbar-container,
+      .scrollbar-container__body {
+        max-height: calc(100vh - 47px - 20px - 22px - 20px - 40px) !important;
+      }
+    }
+  }
+
+  &.collapsed {
+    .notifications__btn {
+      margin-top: auto;
+    }
+
+    .notifications__list {
+      .scrollbar-container,
+      .scrollbar-container__body {
+        //height: auto !important;
+        //max-height: 100% !important;
+        max-height: calc(100vh - 47px - 20px - 22px - 59px - 20px - 40px) !important;
+      }
+    }
+  }
+
+  &.short {
+    .notifications__list {
+      padding-bottom: 20px;
+    }
+  }
+}
+
+.notifications__header,
+.notifications__title,
+.notifications__list {
+  padding: 0 20px;
+}
+
+.notifications__header {
+}
+
+.notifications__title {
+  display: flex;
+  align-items: center;
+
+  .menu-item-tag {
+    margin-left: 5px;
+  }
+}
+
+.notifications__subtitle {
+  margin-top: 5px;
+  font-family: $font-inter;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 10px;
+  line-height: 12px;
+}
+
+.notifications__row {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+
+  & > * + * {
+    margin-left: 12px;
+  }
+}
+
+label.notifications__checkbox.ant-checkbox-wrapper, .ant-checkbox-wrapper {
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.notifications__checkbox {
+  display: flex;
+  align-items: center;
+
+  .ant-checkbox {
+    top: 0;
+  }
+}
+
+.notifications__text-btn {
+  color: $color-brand-2;
+  cursor: pointer;
+  transition: $transition;
+
+  &:hover {
+    color: $color-brand-2-hover;
+  }
+}
+
+.notifications__item {
+  padding: 15px;
+  border-radius: 4px;
+  transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+  &.green {
+    background: $color-ui-2;
+
+    .notifications__item-name {
+      font-weight: 500;
+    }
+  }
+
+  &:not(.green) {
+    border-radius: 0;
+    box-shadow: $box-shadow-5;
+  }
+
+  &-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &-stock {
+    display: inline-flex;
+    align-items: flex-start;
+    max-width: 212px;
+    color: $color-brand-2;
+    @include text-3-sm();
+
+    &.unread {
+      @include text-3-bold();
+
+      color: #00616C;
+    }
+
+    &.stock {
+      color: $color-main;
+    }
+  }
+
+  &-row {
+    display: flex;
+    align-items: flex-start;
+
+    .anticon {
+      margin-right: 8px;
+      width: 20px;
+      height: 20px;
+      color: $color-main;
+      flex-basis: 25.68px;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &-date {
+    @include text-10-400-inter();
+    color: $color-ui-8;
+  }
+
+  &-name {
+    @include text-2-medium();
+    margin-top: 3px;
+
+    &:not(.unread) {
+      font-weight: 400;
+    }
+  }
+
+  &-btn {
+    margin-top: 3px;
+  }
+}
+
+.notifications__list {
+  margin: 10px 0 0;
+  padding-right: 0;
+  list-style: none;
+  flex-grow: 1;
+
+  &-item + &-item {
+    margin-top: 20px;
+  }
+
+  .scrollbar-container,
+  .scrollbar-container__body {
+    height: auto !important;
+    max-height: 590px !important;
+  }
+}
+
+.notifications__btn {
+  padding: 7px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px 4px 0 0;
+  border: 1px solid $color-ui-3;
+  transition: none;
+  @include text-3-sm();
+  color: $color-black;
+
+  &:hover,
+  &:focus {
+    border-color: $color-ui-3;
+  }
+
+  & > .anticon + span, .ant-btn > span + .anticon {
+    margin-left: 0;
+  }
+
+  .anticon {
+    width: 18px;
+    height: 18px;
+    color: $color-brand-2;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  &.down-icon {
+    .anticon {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.notifications-pharmacy-not-selected {
+  padding: 30px 20px 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.notifications-pharmacy-not-selected__title {
+  @include text-2();
+  color: $color-ui-6;
+  margin-bottom: 20px;
+
+  a {
+    font-weight: 700;
+    text-decoration: underline;
+    color: $color-brand-2;
+  }
+}
+
+.notifications-empty {
+  padding: 30px 20px 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.notifications-empty__title {
+  @include text-2();
+  color: $color-ui-6;
+  margin-bottom: 20px;
+}

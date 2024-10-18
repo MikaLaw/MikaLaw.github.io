@@ -1,0 +1,9 @@
+mixin purchas-img(data)
+	-
+		data = init(data, {
+			'block': 'purchas-img',
+			'img': 'img-6.jpg'
+		})
+
+	+b&attributes(data.attributes(attributes))
+		+e.IMG.img(src='./img/components/product-card/' + data.img, alt="Название")

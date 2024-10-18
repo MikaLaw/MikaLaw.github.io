@@ -1,0 +1,136 @@
+mixin registration-tab-2(data)
+	-
+		data = init(data, {
+			'block': 'registration-tab',
+		})
+
+	+b&attributes(data.attributes(attributes))
+		+e.text Для подтверждения статуса мастера в программе лояльности, необходимо указать те же данные, что и при регистрации в Telegram-боте @ModernLSBot. Регистрация Вас в качестве мастера происходит в течение 24 часов с момента отправки формы в рабочие дни.
+		+b.FORM.form_profile._reg
+			+e.body
+				+e.item
+					+form-field({
+						'title': 'Ваш телефон',
+						'component': {
+							'mixin': 'input',
+							'placeholder': '+ 7 (913) 812-64-34'
+						},
+					})
+				+e.item
+					+form-field({
+						'title': 'ФИО*',
+						'component': {
+							'mixin': 'input',
+							'placeholder': 'Введите ФИО'
+						},
+					})
+				+e.item
+					+form-field({
+						'title': 'Пол',
+						'component': {
+							'mixin': 'select',
+							'placeholder': 'Выберите пол',
+							'multiple': false,
+							'block': 'select_simple',
+						},
+					})
+				+e.item
+					+form-field({
+						'title': 'Документы*',
+						'component': {
+							'mixin': 'input-file',
+						},
+					})
+					+e.text Загрузите не более 3 файлов, подтверждающие профессиональные навыки (диплом, сертификат и т.д.) в форматах jpg, jpeg, png, pdf. Размер файла, который вы можете загрузить, не должен превышать ???? Мб. 
+					+e.text Ранее загруженные документы:
+					+e.doc-list 
+						+e.doc-link-wrap
+							+e.A.doc-link(href="#" download)
+								img(src="./img/components/product-card/img-1.jpg" alt="товар")
+							+e.A.doc-link(href="#" download)
+								img(src="./img/components/product-card/img-1.jpg" alt="товар")
+							+e.A.doc-link(href="#" download)
+								img(src="./img/components/product-card/img-1.jpg" alt="товар")
+						+e.A.doc-link(href="#" download)  privacy-policy.pdf  
+				+e.item
+					+form-field({
+						'title': 'Дата рождения',
+						'component': {
+							'mixin': 'input',
+							'placeholder': '__.__.____'
+						},
+					})
+				+e.item
+					+form-field({
+						'title': 'Населенный пункт*',
+						'component': {
+							'mixin': 'select-search-simple',
+							'block': 'select_simple',
+							'multiple': false,
+							'placeholder': 'Выберите',	
+						},
+					})
+				+e.item
+					+form-field({
+						'title': 'Место работы*',
+						'component': {
+							'mixin': 'input',
+							'placeholder': ''
+						},
+					}) 
+				+e.item
+					+form-field({
+						'title': 'Адрес работы*',
+						'component': {
+							'mixin': 'select-search-simple',
+							'block': 'select_simple',
+							'multiple': false,
+							'placeholder': 'Выберите',	
+						},
+					})        
+				+e.item
+					+form-field({
+						'title': 'Должность',
+						'component': {
+							'mixin': 'input',
+							'placeholder': ''
+						},
+					})  
+				+e.item
+					+form-field({
+						'title': 'Любимый магазин',
+						'component': {
+							'mixin': 'select',
+							'block': 'select_simple',
+							'multiple': false,
+							'placeholder': 'Выберите',	
+						},
+					})
+				+e.item
+					+form-field({
+						'title': 'E-mail',
+						'component': {
+							'mixin': 'input',
+							'placeholder': ''
+						},
+					})
+				+e.item
+					+form-field({
+						'title': 'ваш  пароль*',
+						'component': {
+							'mixin': 'input-password',
+							'placeholder': 'ваш  пароль'
+						},
+					})
+				+e.item
+					+form-field({
+						'title': 'Повторите  пароль*',
+						'component': {
+							'mixin': 'input-password',
+							'placeholder': 'Повторите  пароль'
+						},
+					})
+															
+			+e.footer 
+				+b.BUTTON.btn-grey Регистрация
+				+e.text-agree Нажимая на кнопку «Регистрация», я даю свое <a href="#">Согласие на обработку персональных данных</a> и принимаю <a href="#">Договор оферты</a>

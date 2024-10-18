@@ -1,0 +1,30 @@
+mixin stock-slider-card(data)
+	-
+		data = init(data, {
+			'block': 'stock-slider-card',
+			'title': '100 приветственных Бонусных баллов!',
+			'img': './img/components/stock-card/img-1',
+			'img-brend': './img/components/brends-list/img-30'
+		})
+	+b.A&attributes(data.attributes(attributes))(href="#")
+		+e.DIV.wrap
+			+e.DIV.head
+				+e.DIV.title= data.title
+				+e.btn
+			if data.text
+				+e.DIV.text= data.text
+			+e.DIV.wrap-img
+				+picture({
+					src: data.img,
+					webp: true,
+					alt: data.title,
+				})
+				if data.labels 
+					+e.DIV.labels 
+						+picture({
+							src: data['img-brend'],
+							webp: true,
+						}).label_brend
+						+e.labels-block
+							each label in data.labels 
+								+b.DIV.label._small(class= label.icon)= label.text

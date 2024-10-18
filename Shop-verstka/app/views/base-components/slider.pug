@@ -1,0 +1,29 @@
+include component
+
+mixin slider(data)
+	-
+		data = init(data, {
+			'block': 'slider',
+			'init-attr': 'js-slider',
+			'arrows': 'slider-arrows',
+			'dots': 'slider-dots',
+			'item-component': '',
+			'item': {},
+			'array': [{}],
+		})
+
+		data['attr'][data['init-attr']] = ''
+		if (data['item-component']) {
+			data['item']['mixin'] = data['item-component'];
+		}
+
+	+b&attributes(data.attributes(attributes))
+		if data['arrows'] 
+			+e.controls.slider-controls
+				+b.slider-arrow_prev
+				+b.slider-arrow_next
+		+e.list
+			each item in data['array']			
+				+component(Object.assign({}, data['item'], item))(class=data.elem('__slide'))
+		if data['dots'] 
+			+e.__dots(class=data['dots'])

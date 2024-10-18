@@ -1,0 +1,5 @@
+.collapse-table-container {
+  & > * + * {
+    margin-top: 10px;
+  }
+}

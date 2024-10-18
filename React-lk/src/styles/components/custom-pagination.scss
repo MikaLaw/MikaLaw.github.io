@@ -1,0 +1,118 @@
+.custom-pagination {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: $color-ui-2;
+  column-gap: 10px;
+
+  @include media-min($media-xl) {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  @include media-min($media-xxxl) {
+    padding-right: calc(100% - 1909px);
+  }
+
+  & > * + * {
+    margin-left: 0;
+    margin-top: 6px;
+  }
+
+  .ant-pro-footer-bar-left,
+  .ant-pro-footer-bar-right {
+    width: 100%;
+
+    @include media-min($media-xl) {
+      width: auto;
+    }
+  }
+
+  .pagination-container__info {}
+
+  .pagination-container__profit {
+    flex-grow: 1;
+    .ant-btn {
+      padding-right: 20px;
+      padding-left: 20px;
+      margin-left: 20px;
+      width: 100%;
+      max-width: 320px;
+
+      @include media-min($media-xl) {
+        width: 249px;
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .pagination-container__profit-number {
+    margin-right: auto;
+
+    @include media-min($media-xl) {
+      margin-right: 0;
+    }
+  }
+
+  .ant-pagination-options {
+    margin-left: 0;
+    margin-right: auto;
+
+    .ant-select {
+      width: 84px;
+
+      .ant-select-selector {
+        border-color: $color-ui-7;
+        border-radius: 6px;
+      }
+    }
+  }
+
+  .ant-pagination-options-quick-jumper {
+    flex-shrink: 0;
+    input {
+      padding: 0 12px;
+      border-radius: 6px;
+      width: 50px !important;
+      border-color: $color-ui-7;
+    }
+  }
+
+  &.has-left {
+    @include media-min($media-xl) {
+      // KTR-1649: добавил адаптивность
+      flex-wrap: wrap;
+      row-gap: 6px;
+    }
+    & > * + * {
+      @include media-min($media-xl) {
+        // KTR-1649: добавил адаптивность
+        margin-left: 0;
+        margin-top: 0;
+      }
+    }
+
+    // KTR-1649: добавил адаптивность
+    @include media-min-max($media-xl, $media-xxl) {
+      .ant-pro-footer-bar-left,
+      .ant-pro-footer-bar-right {
+        flex-grow: 1;
+      }
+
+      .pagination-container__profit .ant-btn {
+        margin-left: auto;
+      }
+    }
+  }
+
+  &.no-pagination {
+    .pagination-container__profit .ant-btn {
+      margin-left: 10px;
+    }
+
+    .ant-pro-footer-bar-right {
+      display: none;
+    }
+  }
+}

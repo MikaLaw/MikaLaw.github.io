@@ -1,0 +1,8 @@
+include block
+
+mixin component(data)
+	-
+		data = init(data, {
+			'mixin': 'block',
+		})
+	+#{data['mixin']}(data)&attributes(attributes)

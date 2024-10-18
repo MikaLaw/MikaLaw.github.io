@@ -1,0 +1,21 @@
+mixin stock-table-card(data)
+	-
+		data = init(data, {
+			'block': 'stock-table-card',
+			'title': 'подарок и бонусные баллы При покупке продукции Alfaparf на сумму 15 500 рублей',
+			'text': 'Бонусные баллы начисляются сразу после принятия договора оферты внутри Телеграм-бота.Факт начисления приветственных бонусных баллов сопровождается сообщением от Телеграм-бота со следующим содержанием: «Вам начислено 100 приветственных Бонусных балла». Срок действия приветственных бонусных баллов - 30 дней.',
+		})
+	+b&attributes(data.attributes(attributes))
+		+e.wrap
+			if data.label
+				+e.labels
+					each label in data.label
+						+b.label(class= label.icon)= label.text
+			if data.icon 
+				+e.icon(class= data.icon)
+			+e.text-container 
+				+e.title= data.title 
+				+e.text= data.text
+
+			+e.controll 
+				+e.BUTTON.btn Подробнее

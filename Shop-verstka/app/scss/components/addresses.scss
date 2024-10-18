@@ -1,0 +1,59 @@
+.addresses {
+}
+.addresses__list {
+  @include media-min($media-sm) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+  @include media-min($media-md) {
+    gap: 34px;
+  }
+  display: none;
+  &.is-active {
+    display: grid;
+  }
+}
+.addresses__item {
+  &:not(:last-child) {
+    margin-bottom: 20px;
+    @include media-min($media-sm) {
+      margin-bottom: 0;
+    }
+  }
+}
+.address-card__title {
+  @include head-16-700-2;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  @include media-min($media-sm) {
+    @include head-18-700;
+  }
+  @include media-min($media-md) {
+    margin-bottom: 4px;
+  }
+  @include media-min($media-lg) {
+    @include head-23-700;
+  }
+}
+.address-card__text {
+  @include text-14-500;
+  margin-bottom: 28px;
+  @include media-min($media-md) {
+    @include text-15-500;
+  }
+  @include media-min($media-lg) {
+    @include text-16-500;
+  }
+}
+.address-card__map-container {
+  width: 100%;
+  height: 200px;
+  @include media-min($media-xs) {
+    height: 300px;
+  }
+}
+.address-card__map {
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,79 @@
+.checkbox {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.checkbox__input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  &:checked + .checkbox__label {
+    &::before {
+      background: $color-black;
+    }
+    &::after {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  &[type='radio']:checked + .checkbox__label {
+  }
+
+  &[type='radio'] + .checkbox__label {
+    &:before {
+      border-radius: 50%;
+      width: 14px;
+      height: 14px;
+      margin-right: 15px;
+    }
+    &:after {
+      left: calc(14px / 2);
+      width: 8px;
+      height: 6px;
+      top: 51%;
+    }
+  }
+}
+
+.checkbox__label {
+  @include text-14-500;
+  display: inline-flex;
+  align-items: center;
+
+  a {
+    color: currentColor;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    margin-right: 7px;
+    transition: $transition;
+    background: $color-background;
+    border: 1px solid $color-black;
+    border-radius: 4px;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: calc(16px / 2);
+    width: 12px;
+    height: 9px;
+    background: transparent icon-check() 50% 50% no-repeat;
+    background-size: contain;
+    transform: translate(-50%, -50%) scale(0);
+    transition: $transition;
+  }
+
+  &::selection {
+    color: currentColor;
+  }
+}

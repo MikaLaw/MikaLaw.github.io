@@ -1,0 +1,161 @@
+extends templates/side-main-template-profile
+
+include components/waiting-list
+
+block title
+	title ЛК - Личные данные(салон)
+
+block breadcrumbs
+	+b.block_breadcrumbs._breadcrumbs-lk
+		.global-wrapper
+			+breadcrumbs(['Главная', 'Личные данные'])
+
+
+block content
+	+b.SECTION.block._profile-1
+		+e.head
+			+e.H2.title._big Личные данные
+		+e.body
+			+b.FORM.form_profile 
+				+e.body
+					+e.item
+						+form-field({
+							'title': 'ФИО',
+							'component': {
+								'mixin': 'input',
+								'placeholder': ''
+							},
+						})
+					+e.item
+						+form-field({
+							'title': 'Пол',
+							'component': {
+								'mixin': 'select',
+								'placeholder': '',
+								'multiple': false,
+								'block': 'select_simple',
+							},
+						})
+					+e.item
+						+form-field({
+							'title': 'Дата рождения',
+							'component': {
+								'mixin': 'input',
+								'placeholder': ''
+							},
+						})
+					+e.item
+						+form-field({
+							'title': 'E-mail',
+							'component': {
+								'mixin': 'input',
+								'placeholder': ''
+							},
+						})
+					+e.item
+						+form-field({
+							'title': 'Населенный пункт*',
+							'component': {
+								'mixin': 'select-search-simple',
+								'block': 'select_simple',
+								'multiple': false,
+								'placeholder': 'Выберите',	
+							},
+						})
+					+e.item
+						+form-field({
+							'title': 'Место работы*',
+							'component': {
+								'mixin': 'input',
+								'placeholder': ''
+							},
+						}) 
+					+e.item
+						+form-field({
+							'title': 'Адрес работы*',
+							'component': {
+								'mixin': 'select-search-simple',
+								'block': 'select_simple',
+								'multiple': false,
+								'placeholder': 'Выберите',	
+							},
+						})        
+					+e.item
+						+form-field({
+							'title': 'Должность',
+							'component': {
+								'mixin': 'input',
+								'placeholder': ''
+							},
+						})                                                                 
+					+e.item
+						+form-field({
+							'title': 'Любимый магазин',
+							'component': {
+								'mixin': 'select',
+								'block': 'select_simple',
+								'multiple': false,
+								'placeholder': 'Выберите',	
+							},
+						})
+					+e.item
+						+form-field({
+							'title': 'Ваш телефон',
+							'component': {
+								'mixin': 'input',
+								'placeholder': ''
+							},
+						})
+						+e.text Для привязки другого номера к профилю, обратитесь к нам		
+					+e.item._file
+						+form-field({
+							'title': 'Загруженные документы',
+							'error-text': 'Прикрепите документы',
+							'class': 'form-field-file error',
+							'component': {
+								'mixin': 'input-file',
+							},
+						})      
+						+e.text Ранее загруженные документы:
+						+e.doc-list 
+							+e.doc-link-wrap
+								+e.A.doc-link(href="#" download)
+									img(src="./img/components/product-card/img-1.jpg" alt="картинка")
+								+e.A.doc-link(href="#" download)
+									img(src="./img/components/product-card/img-1.jpg" alt="картинка")
+								+e.A.doc-link(href="#" download)
+									img(src="./img/components/product-card/img-1.jpg" alt="картинка")
+							+e.A.doc-link(href="#" download)  privacy-policy.pdf       													
+				+e.footer 
+					+b.BUTTON.btn-grey(id="btn-test") Сохранить изменения
+			+b.FORM.form_profile 
+				+e.head
+					+e.title Изменение пароля
+				+e.body
+					+e.item
+						+form-field({
+							'title': 'Текущий пароль',
+							'component': {
+								'mixin': 'input-password',
+								'placeholder': ''
+							},
+						})
+					+e.item
+						+form-field({
+							'title': 'Новый  пароль',
+							'component': {
+								'mixin': 'input-password',
+								'placeholder': ''
+							},
+						})
+					+e.item
+						+form-field({
+							'title': 'Повторите  пароль',
+							'component': {
+								'mixin': 'input-password',
+								'placeholder': ''
+							},
+						})
+				+e.footer 
+					+b.BUTTON.btn-grey Сохранить изменения
+			

@@ -1,0 +1,15 @@
+mixin my-card(data)
+	-
+		data = init(data, {
+			'block': 'my-card',
+			'img': './img/components/my-card/img-1.jpg',
+			'tariff-name': 'Серебро',
+			'tariff-amount': '7%',
+		})
+	+b&attributes(data.attributes(attributes))
+		+e.img-container 
+			+e.IMG.img(src= data.img alt="товар")
+		+e.logo                 
+		+e.tariff 
+			+e.tariff-name= data['tariff-name']
+			+e.tariff-amount= data['tariff-amount']

@@ -1,0 +1,26 @@
+mixin menu-nav(data)
+	-
+		data = init(data, { 
+			block: 'menu-nav',
+		})
+
+	+b&attributes(data.attributes(attributes))
+		+e.wrap
+			+e.A.btn(href="#")
+				+e.icon.icon-main
+				+e.SPAN Главная
+			+e.A.btn(href="#" data-open="catalog")
+				+e.icon.icon-catalog
+				+e.SPAN Каталог
+			+e.A.btn(href="#")
+				+e.icon.icon-heart
+				+e.SPAN Избранное
+			+e.A.btn(href="#" data-open="basket")
+				+e.icon.icon-cart
+				+e.SPAN Корзина
+			+e.A.btn(href="#" data-open="account")
+				+e.icon.icon-user
+				+e.SPAN Кабинет
+
+
+

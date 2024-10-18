@@ -1,0 +1,25 @@
+mixin education-banner(data)
+	-
+		data = init(data, {
+			'block': 'education-banner',
+			'img': './img/components/course-page/img-17',
+			'title': 'Ищем моделей',
+			'text': [
+				'Вы нам немного своего времени,',
+				'мы вам великолепный образ!'
+			]
+		})
+
+	+b&attributes(data.attributes(attributes))
+		+e.wrap
+			+e.title= data.title
+			+e.text 
+				each text in data.text 
+					p= text
+			+e.BUTTON.btn Подробнее
+		+e.wrap-img
+			+picture({
+				src: data.img,
+				webp: true,
+			})
+

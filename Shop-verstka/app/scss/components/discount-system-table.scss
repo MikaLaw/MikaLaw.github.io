@@ -1,0 +1,38 @@
+.discount-system-table {
+  width: 100%;
+}
+
+.discount-system-table__row {
+  &:not(:last-child) {
+    .discount-system-table__cell {
+      border-bottom: 1px solid rgba(42, 31, 21, 0.2);
+    }
+  }
+}
+.discount-system-table__cell {
+  @include text-13-500;
+  color: $color-black;
+  padding: 8px 0;
+  text-align: left;
+  &_label {
+  }
+  &_value {
+    text-align: right;
+  }
+  &_head {
+    @include head-10-700;
+    text-transform: uppercase;
+    color: $color-black;
+    @include media-min($media-lg) {
+      padding: 0;
+      padding-top: 8px;
+    }
+    span {
+      display: block;
+      max-width: 212px;
+    }
+  }
+  &:last-child {
+    text-align: right;
+  }
+}

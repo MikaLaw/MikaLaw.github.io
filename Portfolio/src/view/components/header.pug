@@ -1,0 +1,45 @@
++b.HEADER.header.page__header 
+	+e.container.container
+		+b.BUTTON.burger(aria-label="Открыть меню сайта" data-burger)
+			+e.SPAN.line
+			+e.SPAN.line
+			+e.SPAN.line
+		+b.NAV.menu(data-menu)
+			+e.UL.list 
+				+e.LI.item
+					+e.A.link(href="#home") Главная
+				+e.LI.item
+					+e.A.link(href="#about") Обо мне
+				+e.LI.item
+					+e.A.link(href="#skill") Технологии		
+				+e.LI.item
+					+e.A.link(href="#portfolio") Портфолио					
+		+social({
+			list: [
+				{
+					link: 'https://vk.com/feoktisn',
+					icon: 'vk',
+					title: 'В контакте'
+				},
+				{
+					link: 'https://www.instagram.com/nadezhda.feo/',
+					icon: 'instagram',
+					title: 'Инстаграм'
+				},               
+				{
+					link: 'https://t.me/FeoktusN',
+					icon: 'telegram',
+					title: 'Телеграм'
+				},   
+				{
+					link: 'https://wa.me/79105691916',
+					icon: 'whatsapp',
+					title: 'Ватсап'
+				},   
+				{
+					link: 'https://github.com/MikaLaw',
+					icon: 'github',
+					title: 'Гитхаб'
+				},                              
+			]
+		})

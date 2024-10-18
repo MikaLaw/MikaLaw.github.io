@@ -1,0 +1,14 @@
+mixin advantages-card(data)
+	-
+		data = init(data, {
+			'block': 'advantages-card',
+			'icon' : 'icon-lotion-cream',
+			'title': 'Только проверенная продукция',
+			'text': 'Мы представляем эффективные товары, которые дают видимый результат, поэтому сотрудничаем только с ведущими профессиональными брендами.'
+		})
+
+	+b&attributes(data.attributes(attributes))
+		+e.wrap
+			+e.icon(class= data.icon)
+			+e.title= data.title 
+			+e.text= data.text

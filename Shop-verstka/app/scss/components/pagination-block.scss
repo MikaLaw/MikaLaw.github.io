@@ -1,0 +1,15 @@
+.pagination-block {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-start;
+  gap: 20px 0;
+  @include media-min($media-xs) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .btn {
+    @include text-14-500;
+  }
+}

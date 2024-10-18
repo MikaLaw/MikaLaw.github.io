@@ -1,0 +1,12 @@
+mixin tags(data)
+	-
+		data = init(data, {
+			'block': 'tags',
+			'list': tagsList1
+		})
+		
+	+b&attributes(data.attributes(attributes))
+		+e.list
+			each tag in data.list 
+				+b.A.tag(href="#" class= tag.class)= tag.title
+

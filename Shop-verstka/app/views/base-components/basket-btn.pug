@@ -1,0 +1,12 @@
+mixin basket-btn(data)
+	-
+		data = init(data, {
+			'block': 'basket-btn',
+			'num:': null
+		})
+	+b.A&attributes(data.attributes(attributes))(href='#')
+		+e.icon-cart
+		if data.num
+			+e.num= data.num
+
+

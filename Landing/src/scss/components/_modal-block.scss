@@ -1,0 +1,169 @@
+.fancybox__backdrop {
+    background: #1e1e1e;
+    opacity: 0.9;
+}
+
+
+.page__modal {
+    width: 920px;
+    max-width: 100%;
+}
+
+.modal-block {
+    position: relative;
+    padding: 45px 25px 90px;
+    background: $color-white no-repeat;
+    background-image: url("data:image/svg+xml,%3csvg width='349' height='396' viewBox='0 0 349 396' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%0d%3cpath d='M30.2952 309.758L33.0406 161.245L165.739 34.7898L262.833 73.6847L314.049 270.577L163.449 363.098L30.2952 309.758Z' stroke='%23F1F1F1' stroke-width='59'/%3e%0d%3c/svg%3e%0d");
+    background-position: -120px -130px;
+    background-size: 350px auto;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgb(0 0 0 / 10%);
+
+    @include media-min($media-xs) {
+        background-image: url("data:image/svg+xml,%3csvg width='730' height='830' viewBox='0 0 730 830' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%0d%3cpath d='M30.5247 670.364L36.9404 323.293L339.698 34.7803L577.746 130.14L695.217 581.745L345.554 796.561L30.5247 670.364Z' stroke='%23F1F1F1' stroke-width='59'/%3e%0d%3c/svg%3e%0d");
+        background-position: -200px -320px;
+        background-size: 730px auto;
+    }
+
+    @include media-min($media-sm) {
+        padding-right: 45px;
+        padding-left: 45px;
+    }
+
+    .f-button.is-close-btn{
+        top: 15px;
+        right: 15px;
+        color: #333;
+        background: transparent;
+
+        svg {
+            fill: currentcolor;
+        }
+    }
+    
+
+}
+
+.modal-block__title {
+    margin-bottom: 20px;
+    color: $color-black;
+    font-weight: 700;
+    font-size: 18px;
+    font-family: $font-title;
+    font-style: normal;
+    line-height: 23px;
+    text-transform: uppercase;
+
+    @include media-min($media-xs) {
+        font-weight: 900;
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    @include media-min($media-md) {
+        margin-bottom: 40px;
+        font-size: 42px;
+        line-height: 46px;
+    }
+}
+
+.modal-block__content{
+    color: $color-ui-3;
+    font-weight: 400;
+    font-size: 16px;
+    font-family: $font-default;
+    font-style: normal;
+    line-height: 24px;
+
+    p{
+        &:not(:last-child){
+            margin-bottom: 20px;
+        }
+    }
+
+    dl, 
+    img, 
+    ol, 
+    ul {
+        margin-bottom: 20px;
+    }
+
+    @include media-min($media-md) {
+        font-size: 18px;
+        line-height: 26px;
+    }
+}
+
+.modal-block__arrows {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+}
+
+.modal-block__arrow-next,
+.modal-block__arrow-prev {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: no-repeat center;
+    cursor: pointer;
+    transition: $transition;
+}
+
+.modal-block__arrow-prev {
+    background-image: url("data:image/svg+xml,%3Csvg width=%2241%22 height=%2240%22 viewBox=%220 0 41 40%22 fill=%22none%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cpath fill-rule=%22evenodd%22 clip-rule=%22evenodd%22 d=%22M24.0328 15.4L22.6328 14L16.6328 20L22.6328 26L24.0328 24.6L19.4328 20L24.0328 15.4Z%22 fill=%22%2382868C%22/%3E%3C/svg%3E");
+}
+
+.modal-block__arrow-next {
+    background-image: url("data:image/svg+xml,%3Csvg width=%2241%22 height=%2240%22 viewBox=%220 0 41 40%22 fill=%22none%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cpath fill-rule=%22evenodd%22 clip-rule=%22evenodd%22 d=%22M18.0328 14L16.6328 15.4L21.2328 20L16.6328 24.6L18.0328 26L24.0328 20L18.0328 14Z%22 fill=%22%2382868C%22/%3E%3C/svg%3E");
+}
+
+.stones-info {
+    @include media-min($media-sm) {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.stones-info__text {
+    margin-bottom: 25px;
+    color: $color-ui-3;
+    font-weight: 400;
+    font-size: 16px;
+    font-family: $font-default;
+    font-style: normal;
+    line-height: 24px;
+
+    @include media-min($media-sm) {
+        margin-right: 10px;
+        margin-bottom: 0;
+    }
+
+    @include media-min($media-md) {
+        font-size: 18px;
+        line-height: 26px;
+    }
+}
+
+.stones-info__image {
+    display: block;
+    width: 220px;
+    height: 180px;
+
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    @include media-min($media-sm) {
+        flex-shrink: 0;
+    }
+
+    @include media-min($media-md) {
+        display: block;
+        width: 290px;
+        height: 240px;
+    }
+}

@@ -1,0 +1,123 @@
+.icons-demonstration {
+  padding: 50px;
+  background-color: lightgray;
+}
+.icons-demonstration__grid-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -5px;
+}
+.icons-demonstration__grid-item {
+  margin: 20px;
+  display: flex;
+  align-items: center;
+}
+[class*='icons-demonstration__icon'] {
+  width: 20px;
+  height: 20px;
+  background: no-repeat center;
+  background-size: contain;
+}
+.icons-demonstration__title {
+  margin-left: 20px;
+}
+
+.icons-demonstration__icon-eye {
+  background-image: icon-eye();
+}
+.icons-demonstration__icon-user {
+  background-image: icon-user();
+}
+.icons-demonstration__icon-check {
+  background-image: icon-check();
+}
+.icons-demonstration__icon-drop-up {
+  background-image: icon-drop-up();
+}
+.icons-demonstration__icon-drop-down {
+  background-image: icon-drop-down();
+}
+.icons-demonstration__icon-drop-right {
+  background-image: icon-drop-right();
+}
+.icons-demonstration__icon-arrow-right {
+  background-image: icon-arrow-right();
+}
+.icons-demonstration__icon-arrow-left {
+  background-image: icon-arrow-left();
+}
+.icons-demonstration__icon-close {
+  background-image: icon-close();
+}
+.icons-demonstration__icon-download {
+  background-image: icon-download();
+}
+.icons-demonstration__icon-heart {
+  background-image: icon-heart();
+}
+.icons-demonstration__icon-plus {
+  background-image: icon-plus();
+}
+.icons-demonstration__icon-trash {
+  background-image: icon-trash();
+}
+.icons-demonstration__icon-reload {
+  background-image: icon-reload();
+}
+.icons-demonstration__icon-catalog {
+  background-image: icon-catalog();
+}
+.icons-demonstration__icon-cart {
+  background-image: icon-cart();
+}
+.icons-demonstration__icon-search {
+  background-image: icon-search();
+}
+.icons-demonstration__icon-gift {
+  background-image: icon-gift();
+}
+.icons-demonstration__icon-discount {
+  background-image: icon-discount();
+}
+.icons-demonstration__icon-stock {
+  background-image: icon-stock();
+}
+.icons-demonstration__icon-stocks {
+  background-image: icon-stocks();
+}
+.icons-demonstration__icon-box {
+  background-image: icon-box();
+}
+.icons-demonstration__icon-lotion-cream {
+  background-image: icon-lotion-cream();
+}
+.icons-demonstration__icon-makeup {
+  background-image: icon-makeup();
+}
+.icons-demonstration__icon-bag {
+  background-image: icon-bag();
+}
+.icons-demonstration__icon-arrows {
+  background-image: icon-arrows();
+}
+.icons-demonstration__icon-burger {
+  background-image: icon-burger();
+}
+.icons-demonstration__icon-main {
+  background-image: icon-main();
+}
+.icons-demonstration__icon-list {
+  background-image: icon-list();
+}
+.icons-demonstration__icon-panel {
+  background-image: icon-panel();
+}
+.icons-demonstration__icon-filter {
+  background-image: icon-filter();
+}
+.icons-demonstration__icon-calendar {
+  background-image: icon-calendar();
+}
+.icons-demonstration__icon-discount-2 {
+  background-image: icon-discount-2();
+}

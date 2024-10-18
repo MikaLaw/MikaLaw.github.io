@@ -1,0 +1,62 @@
+mixin order-table(data)
+	-
+		data = init(data, {
+			'block': 'order-table',
+			'list': [
+				{
+					'img': 'img-7.jpg',
+					'labels': [
+						{
+							text: 'sale',
+							class:  'green'
+						}
+					],
+					'title': 'MATRIX',
+					'text': 'Exquisite Oil Масло питательное для волос 92мл',
+					'subtext': 'Арт.:  <span>CAT00016611</span>',
+					'cost': '750 ₽',
+					'stock': '1 200 ₽',
+					'amount': '22 шт.',
+					'summ': '16 750 ₽'
+				}
+			],
+			'result-stock': '1 200 ₽',
+			'result-cost': '33 500 ₽'
+		})
+
+	+b&attributes(data.attributes(attributes))
+		+e.head 
+			+e.title Состав заказа
+		+e.body
+			+e.row
+				for item in data.list
+					+e.cell
+						+e.cell-wrap 
+							+e.img-wrap 
+								+e.IMG.img(src='./img/components/product-card/' + item.img, alt="Название")
+								+e.labels 
+									.label__wrap
+										each label in item.labels 
+											+b.label._small(class= label.class)= label.text
+											if label.stock
+												.label__stock= label.stock
+							+e.content-wrap
+								+e.product-info 
+									+e.name= item.title 
+									+e.text= item.text 
+									+e.subtext !{item.subtext}
+								+e.cost-container 
+									+e.cost= item.cost 
+									+e.stock= item.stock 
+								+e.amount-container
+									+e.amount= item.amount 
+								+e.summ-container 
+									+e.summ= item.summ
+
+		+e.footer 
+			+e.result 
+				+e.result-text Итого:
+				+e.result-cost-container 
+					+e.stock= data['result-stock']
+					+e.cost= data['result-cost']
+

@@ -1,0 +1,30 @@
+mixin stock-detail-card(data)
+	-
+		data = init(data, {
+			'block': 'stock-detail-card',
+			'img': './img/components/article/img-4',
+			'label':[ 
+				{
+					text: 'подарок',
+					icon: 'label-gift violet'
+				}
+			]
+		})
+
+	+b&attributes(data.attributes(attributes))
+		+e.wrap
+			+picture({
+				src: data.img,
+				webp: true,
+			}).wrap-img
+			+e.labels 				
+				each label in data.label
+					if 'img' in label
+						+b.label_img(data-tooltip=label.tooltip)
+							img(src=label.img alt="название")
+					else
+						.label__wrap
+							+b.label(class= label.icon)= label.text
+							if label.stock
+								.label__stock= label.stock
+				

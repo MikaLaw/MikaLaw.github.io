@@ -1,0 +1,8 @@
+mixin user-btn(data)
+	-
+		data = init(data, {
+			'block': 'user-btn',
+		})
+
+	+b&attributes(data.attributes(attributes))
+		+e.icon-user

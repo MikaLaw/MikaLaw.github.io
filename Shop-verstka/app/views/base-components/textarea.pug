@@ -1,0 +1,17 @@
+mixin textarea(data)
+	-
+		data = init(data, {
+			'block': 'textarea',
+			'type': 'text',
+			'placeholder': false,
+			'value': false,
+			'disabled': false,
+			'error': false,
+		})
+		if (data['error']) {
+			data['class'] += ' error';
+		}
+
+	+b.TEXTAREA&attributes(data.attributes(attributes))(placeholder=data['placeholder'] value=data['value'] disabled=data['disabled'])
+	if data['error-text']
+		.form-field__error-text !{data['error-text']}

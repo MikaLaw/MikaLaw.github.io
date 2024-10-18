@@ -1,0 +1,114 @@
+.apteka-modal {
+  .ant-modal-close .anticon {
+    color: $color-text-1;
+    &:focus,
+    &:hover {
+      color: $color-text-3;
+    }
+  }
+
+  &__ok {
+    min-width: 67px;
+  }
+}
+
+.apteka-tooltip,
+.apteka-tooltip-lg {
+  .ant-tooltip-inner {
+    padding: 8px 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $color-text-1;
+    color: $color-white;
+    border-color: $color-text-1;
+  }
+
+  .ant-tooltip-arrow-content {
+    background: $color-text-1;
+  }
+}
+
+.apteka-tooltip {
+  font-size: 11px;
+  line-height: 14px;
+}
+
+.apteka-confirm {
+  .ant-modal-content {
+    box-shadow: none;
+    border-radius: 6px;
+  }
+  &.ant-modal-confirm {
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: $font-inter;
+    font-style: normal;
+    color: $color-black;
+
+    .ant-modal-body {
+      padding: 20px 25px;
+    }
+
+    .ant-modal-confirm-btns {
+      margin-top: 25px;
+      float: left;
+      display: flex;
+      flex-direction: row-reverse;
+
+      .ant-btn + .ant-btn {
+        margin-left: 0;
+        margin-right: 15px;
+      }
+    }
+  }
+
+  .ant-modal-confirm-body {
+    .ant-modal-confirm-title {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 22px;
+    }
+    .ant-modal-confirm-content {
+      margin-top: 20px;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 18px;
+    }
+  }
+  &_success {
+    .ant-btn-default {
+      display: none;
+    }
+  }
+}
+
+th.column-nowrap {
+  white-space: nowrap;
+}
+
+.apteka-confirm-table {
+  .ant-modal-confirm-btns {
+    width: 100%;
+    .ant-btn {
+      width: calc(50% - 7.5px);
+    }
+  }
+}
+
+.appeal-modal-counter {
+  .ant-modal-title {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+}
+
+.apteka-btn-changer {
+  .anticon {
+    color: $color-text-1;
+  }
+
+  &:hover {
+    background: $color-apteka-2;
+  }
+}

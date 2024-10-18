@@ -1,0 +1,579 @@
+@mixin head-1 {
+  font-family: $font-roboto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 46px;
+  line-height: 50px;
+}
+
+@mixin head-2 {
+  font-family: $font-roboto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 38px;
+  line-height: 49px;
+}
+
+@mixin head-3 {
+  font-family: $font-roboto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 30px;
+  line-height: 46px;
+}
+
+@mixin head-4 {
+  font-family: $font-roboto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 22px;
+  line-height: 30px;
+}
+
+@mixin head-5 {
+  font-family: $font-roboto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+@mixin head-5-500 {
+  font-family: $font-roboto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+@mixin head-6 {
+  font-family: $font-roboto;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 20px;
+}
+
+@mixin head-20-roboto {
+  font-family: $font-roboto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 26px;
+}
+
+@mixin text-1 {
+  font-family: $font-inter;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+@mixin text-1-md {
+  font-family: $font-inter;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 15px;
+  line-height: 22px;
+}
+
+@mixin text-1-600 {
+  font-family: $font-inter;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+@mixin text-2 {
+  font-family: $font-inter;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 13px;
+  line-height: 18px;
+
+  @include media-min($media-xl) {
+    font-size: 15px;
+    line-height: 22px;
+  }
+}
+
+@mixin text-2-sm {
+  font-family: $font-inter;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+@mixin text-2-lg {
+  font-family: $font-inter;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+  line-height: 22px;
+}
+
+@mixin text-2-medium {
+  font-family: $font-inter;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 18px;
+
+  @include media-min($media-xl) {
+    font-size: 15px;
+    line-height: 22px;
+  }
+}
+@mixin text-2-medium-sm {
+  font-family: $font-inter;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 18px;
+}
+@mixin text-2-bold {
+  font-family: $font-inter;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 18px;
+}
+@mixin text-2-1 {
+  font-family: $font-inter;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+  line-height: 18px;
+}
+
+@mixin text-3 {
+  font-family: $font-inter;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 11px;
+  line-height: 14px;
+
+  @include media-min($media-xl) {
+    font-size: 13px;
+    line-height: 18px;
+  }
+}
+
+@mixin text-3-sm {
+  font-family: $font-inter;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 11px;
+  line-height: 14px;
+}
+
+@mixin text-3-medium {
+  font-family: $font-inter;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 11px;
+  line-height: 15px;
+
+  @include media-min($media-xl) {
+    font-size: 13px;
+    line-height: 18px;
+  }
+}
+
+@mixin text-3-bold{
+  font-family: $font-inter;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 11px;
+  line-height: 14px;
+}
+
+@mixin text-3-medium-sm {
+  font-family: $font-inter;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 11px;
+  line-height: 15px;
+}
+
+@mixin text-4 {
+  font-family: $font-inter;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 15px;
+  line-height: 22px;
+}
+
+@mixin text-4-10 {
+  font-family: $font-inter;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 10px;
+  line-height: 12px;
+}
+
+@mixin text-5 {
+  font-family: $font-inter;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 13px;
+  line-height: 13px;
+}
+
+@mixin text-5-bold {
+  font-family: $font-inter;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 13px;
+  line-height: 13px;
+}
+
+@mixin text-12-400-helvetica {
+  font-family: $font-helvetica;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 15px;
+}
+@mixin text-14-500-inter {
+  font-family: $font-inter;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 18px;
+
+  @include media-min($media-xl) {
+    font-size: 15px;
+    line-height: 22px;
+  }
+}
+@mixin text-10-400-inter {
+  font-family: $font-inter;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 10px;
+  line-height: 12px;
+
+  @include media-min($media-xl) {
+    font-size: 11px;
+    line-height: 14px;
+  }
+}
+
+@mixin text-10-400-inter-sm {
+  font-family: $font-inter;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 10px;
+  line-height: 12px;
+}
+
+@mixin text-12-18-700-inter {
+  font-family: $font-inter;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 18px;
+}
+@mixin text-10-14-400-inter {
+  font-family: $font-inter;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 10px;
+  line-height: 14px;
+
+  @include media-min($media-xl) {
+    font-size: 11px;
+    line-height: 14px;
+  }
+}
+@mixin text-10-500-inter {
+  font-family: $font-inter;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 10px;
+  line-height: 12px;
+
+  @include media-min($media-xl) {
+    font-size: 11px;
+    line-height: 14px;
+  }
+}
+@mixin text-10-500-inter-sm {
+  font-family: $font-inter;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 10px;
+  line-height: 12px;
+}
+@mixin text-16-400-inter {
+  font-family: $font-inter;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 22px;
+}
+@mixin text-16-600-inter {
+  font-family: $font-inter;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 22px;
+}
+@mixin text-16-20-600-inter {
+  font-family: $font-inter;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 20px;
+}
+@mixin text-16-700-inter {
+  font-family: $font-inter;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+@mixin text-16-18-700-inter {
+  font-family: $font-inter;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+
+@mixin text-13-18-700-inter {
+  font-family: $font-inter;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+@mixin head-12-600-inter {
+  font-family: $font-inter;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 17px;
+}
+@mixin head-14-600-inter {
+  font-family: $font-inter;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+}
+@mixin head-11-16-600-inter {
+  font-family: $font-inter;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 16px;
+}
+@mixin head-15-22-600-inter {
+  font-family: $font-inter;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 22px;
+}
+
+@mixin text-link {
+  font-family: $font-roboto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+@mixin text-link-bold {
+  font-family: $font-roboto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+@mixin crop-text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+@mixin head-27-manrope {
+  font-family: $font-manrope;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 27px;
+  line-height: 30px;
+}
+@mixin head-37-manrope {
+  font-family: $font-manrope;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 37px;
+  line-height: 43px;
+}
+@mixin head-47-manrope {
+  font-family: $font-manrope;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 47px;
+  line-height: 53px;
+}
+@mixin text-13-manrope {
+  font-family: $font-manrope;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+}
+@mixin text-21-manrope {
+  font-family: $font-manrope;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 26px;
+}
+@mixin head-22-manrope {
+  font-family: $font-manrope;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 28px;
+}
+@mixin head-32-manrope {
+  font-family: $font-manrope;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 38px;
+}
+@mixin head-35-manrope {
+  font-family: $font-manrope;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 35px;
+  line-height: 46px;
+}
+@mixin head-14-manrope-600 {
+  font-family: $font-manrope;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 14px;
+}
+@mixin head-15-manrope-600 {
+  font-family: $font-manrope;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 15px;
+}
+@mixin head-20-manrope-600 {
+  font-family: $font-manrope;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 25px;
+}
+@mixin head-22-manrope-600 {
+  font-family: $font-manrope;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 28px;
+}
+
+@mixin text-11-manrope-500 {
+  font-family: $font-manrope;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 15px;
+}
+
+@mixin text-21-inter {
+  font-family: $font-inter;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 26px;
+}
+@mixin text-18-inter {
+  font-family: $font-inter;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+@mixin text-20-24-inter-600 {
+  font-family: $font-inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+@mixin text-20-22-inter-600 {
+  font-family: $font-inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22px;
+}
+
+@mixin text-18-14-inter-400 {
+  font-family: $font-inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px;
+}
+
+@mixin text-13-14-inter-400 {
+  font-family: $font-inter;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px;
+}
+
+@mixin text-13-18-inter-400 {
+  font-family: $font-inter;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+
+@mixin text-12-roboto {
+  font-family: $font-roboto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+@mixin publication-content {
+  font-family: $font-inter;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+@mixin title-36 {
+  font-family: $font-inter;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 30px;
+  line-height: 36px;
+}

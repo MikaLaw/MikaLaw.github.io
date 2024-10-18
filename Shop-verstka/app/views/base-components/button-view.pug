@@ -1,0 +1,9 @@
+mixin button-view(data)
+    -
+        data = init(data,{
+            active: 2
+        })
+    +b.button-view
+        +b.BUTTON.btn.btn-view.icon-list(class=(data.active === 1? 'is-active':''))
+        +b.BUTTON.btn.btn-view.icon-panel(class=(data.active === 2? 'is-active':''))
+

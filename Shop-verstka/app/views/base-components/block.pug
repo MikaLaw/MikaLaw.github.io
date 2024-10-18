@@ -1,0 +1,7 @@
+mixin block(data)
+	-
+		data = init(data, {
+			'block': 'block',
+		})
+
+	+b&attributes(data.attributes(attributes))

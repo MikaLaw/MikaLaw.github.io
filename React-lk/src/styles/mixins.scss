@@ -1,0 +1,72 @@
+@mixin media-min($media) {
+  @media screen and (min-width: $media) {
+    @content;
+  }
+}
+@mixin media-max($media) {
+  @media screen and (max-width: $media) {
+    @content;
+  }
+}
+
+@mixin media-min-max($media-min, $media-max) {
+  @media screen and (min-width: $media-min) and (max-width: $media-max) {
+    @content;
+  }
+}
+@mixin border-left-hover($color: $color-brand-1) {
+  position: relative;
+  transition: $transition;
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 0;
+    background-color: $color;
+    transition: $transition;
+  }
+
+  &:hover {
+    background-color: $color-ui-2;
+    &:after {
+      width: 3px;
+    }
+  }
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+@mixin notification($top, $right) {
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute !important;
+    top: $top !important;
+    right: $right !important;
+    bottom: auto;
+    left: auto;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: $color-warning;
+    opacity: 0;
+    transition: $transition-antd;
+    box-shadow: none;
+    animation: none !important;
+  }
+}

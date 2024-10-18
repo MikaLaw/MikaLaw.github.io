@@ -1,0 +1,43 @@
+extends templates/main-template
+
+include base-components/tabs-block
+include components/registration-tab
+include components/registration-tab-2
+
+block title
+	title ЛК - Регистрация
+
+block breadcrumbs
+	+b.block_breadcrumbs
+		.global-wrapper
+			+breadcrumbs(['Главная', 'Регистрация'])
+
+
+block content
+	+b.SECTION.block
+		.global-wrapper
+			+e.head 
+				+e.H2.title._big Регистрация
+			+e.body 
+				+b.permission-profile_reg
+					+e.text Мы уже заполнили часть данных, так как нашли ваш аккаунт в «Модерн».   
+					+e.text Заполните недостающую информацию и обновите данные в случае необходимости.
+				+tabs-block({
+					'tabs-list': {
+						'block': 'tabs-list',
+					},
+					'array': [
+						{
+							'title': 'Зарегистрироваться как розничный покупатель',
+							'component': {
+								'mixin': 'registration-tab',
+							},
+						},
+						{
+							'title': 'Зарегистрироваться как салон или мастер',
+							'component': {
+								'mixin': 'registration-tab-2',			
+							},
+						}
+					],
+				})._reg

@@ -1,0 +1,10 @@
+.aos-init {
+    animation-fill-mode: both;
+    will-change: transform, opacity;
+}
+
+[data-aos][data-aos][data-aos-duration="1000"], body[data-aos-duration="1000"] [data-aos] {
+    @include media-max($media-sm) {
+        transition-duration: 0.5s;
+    }
+}

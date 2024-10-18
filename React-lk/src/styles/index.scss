@@ -1,0 +1,206 @@
+@import 'var-encode';
+@import 'icons';
+@import 'mixins';
+@import 'spacing';
+@import 'fonts';
+@import 'vars';
+@import 'text-styles';
+@import 'atomic';
+@import 'base';
+@import 'button';
+@import 'animation';
+@import "rc-image";
+
+// layouts
+
+@import 'components/layout';
+@import 'components/entry-layout';
+
+// components
+
+@import 'components/test';
+@import 'components/header';
+@import 'components/logo';
+@import 'components/menu';
+@import 'components/icon';
+@import 'components/entry-block';
+@import 'components/input';
+@import 'components/select';
+@import 'components/upload';
+@import 'components/form';
+@import 'components/profile';
+@import 'components/form-section';
+@import 'components/drawer';
+@import 'components/checkbox';
+@import 'components/notification';
+@import 'components/divider';
+@import 'components/alert';
+@import 'components/tag';
+@import 'components/table';
+@import 'components/table/filters';
+@import 'components/tooltip';
+@import 'components/price-offer';
+@import 'components/table-alert';
+@import 'components/auth-alert';
+@import 'components/pagination';
+@import 'components/radio';
+@import 'components/datepicker';
+@import 'components/input-number';
+@import 'components/pagination-container';
+@import 'components/document-head';
+@import 'components/collapse-table';
+@import 'components/collapse-table-container';
+@import 'components/collapse-table-head';
+@import 'components/custom-tabs';
+@import 'components/choose-pharmacy';
+@import 'components/confirm-modal';
+@import 'components/loader';
+@import 'components/footer';
+@import 'components/recoding';
+@import 'components/custom-tree';
+@import 'components/skeleton/skeleton';
+
+@import 'components/address';
+@import 'components/modal';
+@import 'components/info-card';
+@import 'components/document-card';
+@import 'components/document-container';
+@import 'components/custom-pagination';
+@import 'components/contact';
+@import 'components/menu-main';
+@import 'components/page-container';
+@import 'components/breadcrumb';
+@import 'components/certificate';
+@import 'components/certificate-head';
+@import 'components/logistic-container';
+@import 'components/table-nested';
+@import 'components/table-inner';
+@import 'components/logistic-filter';
+@import 'components/logistic-alert';
+@import 'components/report-form';
+@import 'components/formalization-claim';
+@import 'components/table-selection';
+@import 'components/report-btn';
+@import 'components/claim-info';
+@import 'components/claim-main';
+@import 'components/message';
+@import 'components/chat';
+@import 'components/claim-table-head';
+@import 'components/table-claim-expand';
+@import 'components/template-doc-link';
+@import 'components/generation';
+@import 'components/doc-list';
+@import 'components/delivery-collapse';
+@import 'components/news/news';
+@import 'components/news/news-list';
+@import 'components/news/news-control';
+@import 'components/news/news-inner';
+@import 'components/news/news-tag';
+@import 'components/news/news-detail';
+@import 'components/news/publications-goods';
+@import 'components/news/publications-selection';
+@import 'components/pin-panel';
+@import 'components/pinned-control';
+// @import 'components/typography';
+@import 'components/result';
+@import 'components/custom-empty';
+@import 'components/tour';
+@import 'components/user-drawer';
+@import 'components/available-pharmacy-modal';
+@import 'components/total';
+@import 'components/pharmacy-counter';
+@import 'components/review-stats';
+@import 'components/pharmacy-table';
+@import 'components/order-modal';
+@import 'components/edrug/edrug';
+@import "components/logistic-tabs";
+@import "components/table-new";
+@import "components/table/table-panel";
+@import "components/table/saved-filters";
+@import "components/table/name-filter";
+@import "components/colored-table";
+@import "components/modal-matrix";
+@import "components/password-field";
+
+@import "components/employee/employee-form";
+
+@import "components/apteka/base";
+@import "components/apteka/apteka-tag";
+@import "components/apteka/loyalty";
+@import "components/apteka/scale";
+@import "components/apteka/apteka-panel";
+@import "components/apteka/appeal/appeal";
+@import "components/apteka/appeal/order-info";
+@import "components/apteka/appeal/appeal-form";
+
+@import "components/table/table-skeleton";
+@import "components/table/column-options";
+@import "components/table/table-decoration";
+@import "components/table/footer";
+@import "components/table/tab-panel";
+@import "components/table/panel-search";
+
+@import "components/pdf/pdf";
+
+@import "components/pharmacy/dropdown";
+@import "components/pharmacy/counter";
+@import "components/pharmacy/orders";
+@import "components/pharmacy/pharmacies-column";
+@import "components/pharmacy/pharmacy-select-option";
+@import "components/header/header-menu";
+
+@import "components/juridicals/juridicals";
+
+
+@import "components/ui/base";
+@import "components/ui/status";
+
+// pages
+
+@import 'components/main/main';
+@import 'components/main/main-publications';
+@import 'components/main/main-banner';
+
+@import 'components/main-connected';
+@import 'components/document';
+@import 'components/protocol';
+@import 'components/application';
+@import 'components/user-management';
+@import 'components/general-doc-page';
+@import 'components/matrix';
+@import 'components/logistic-page';
+@import 'components/news/news-page';
+@import 'components/pharmacy-page';
+@import 'components/landing';
+@import 'components/page-green';
+@import 'components/pharmacy-page';
+@import 'components/new-version-page';
+
+// v2
+
+@import "components/v2/btn";
+@import 'components/v2/header-notifications';
+@import 'components/v2/cart';
+@import 'components/v2/export-table';
+@import 'components/v2/breadcrumb';
+@import 'components/v2/table-not-found';
+@import 'components/v2/alert';
+@import 'components/v2/modal';
+@import 'components/v2/order';
+@import 'components/v2/order-collapse';
+@import 'components/v2/tooltip';
+@import 'components/v2/notifications';
+@import 'components/v2/recording';
+@import 'components/v2/progress';
+@import 'components/page-grey';
+@import 'components/v2/timer';
+@import 'components/v2/search-dropdown';
+
+// good
+
+@import 'components/good/good';
+@import 'components/good/good-card';
+@import 'components/good/goods-slider';
+@import 'components/good/goods-img';
+
+@import 'components/order-history-multiple-repeat-collapse';

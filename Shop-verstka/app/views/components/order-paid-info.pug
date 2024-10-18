@@ -1,0 +1,58 @@
+mixin order-paid-info(data)
+	-
+		data = init(data, {
+			'block': 'order-paid-info',
+			'list': [
+				[
+					{
+						'label': 'Заказ:',
+						'value': '362562'
+					},
+					{
+						'label': 'Дата заказа:',
+						'value': '01.03.2023'
+					},       
+					{
+						'label': 'Способ оплаты:',
+						'value': 'Mastercard  ****  4567'
+					},
+					{
+						'label': 'Метод доставки:',
+						'value': 'CDEK'
+					},       
+					{
+						'label': 'Адрес доставки:',
+						'value': 'Бийск, Ленина, 1'
+					},                                                        
+				],
+				[
+					{
+						'label': 'E-mail:',
+						'value': 'mail@mail.ru'
+					},
+					{
+						'label': 'Телефон:',
+						'value': '+7 (999) 999-99-99'
+					},       
+					{
+						'label': 'Статус заказа:',
+						'value': 'Принят'
+					},
+					{
+						'label': 'Сумма заказа:',
+						'value': '2 600 ₽'
+					},                                                         
+				],                
+			]
+		})
+	+b&attributes(data.attributes(attributes))
+		+e.UL.list 
+			each card in data['list']
+				+e.LI.item
+					+e.card 
+						each row in card
+							+e.card-row 
+								+e.card-label= row.label
+								+e.card-value= row.value
+
+

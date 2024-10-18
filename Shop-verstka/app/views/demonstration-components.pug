@@ -1,0 +1,49 @@
+extends templates/main-template
+
+
+block title
+	title Демонстрация - Компоненты
+
+block content
+	style.
+		.demo-grid {
+			display: flex;
+			flex-direction: column;
+			padding-top: 50px;
+			padding-bottom: 50px;
+		}
+		.demo-grid__row {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: flex-start;
+			margin: 30px 0;
+		}
+
+		.demo-grid__item {
+			margin: 0 15px;
+		}
+
+		.demo-grid__item_m-0 {
+			margin: 0;
+		}
+
+		.demo-grid__item .button {
+			width: 300px;
+		}
+
+		.demo-grid__item_w {
+			width: 300px;
+		}
+
+		.demo-grid__item_black {
+			background-color: #000;
+		}
+	+b.SECTION.block
+		.global-wrapper
+			+e.head
+				+e.H2.title Демонстрация - Компоненты
+			+e.body
+				+b.demo-grid
+					+e.row 
+						+e.item
+							+b.BUTTON.btn Кнопка

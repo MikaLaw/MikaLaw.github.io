@@ -1,0 +1,52 @@
+.product-tab {
+}
+.product-tab__wrap {
+}
+
+.product-tab__title {
+  @include head-20-700;
+  margin-bottom: 22px;
+  text-transform: uppercase;
+
+  @include media-min($media-sm) {
+    @include head-30-700;
+    margin-bottom: 26px;
+  }
+  &_mini {
+    @include head-16-700;
+    @include media-min($media-xs) {
+      @include head-23-700;
+    }
+  }
+}
+.product-tab__text {
+  @include text-14-500;
+  margin-bottom: 28px;
+  @include media-min($media-xs) {
+    @include text-15-500;
+  }
+}
+.product-tab__list {
+  margin-bottom: 50px;
+}
+.product-tab__item {
+  display: flex;
+  &:not(:last-child) {
+    margin-bottom: 12px;
+  }
+
+  @include text-14-500;
+  @include media-min($media-xs) {
+    @include text-15-500;
+  }
+  &::before {
+    content: '';
+    display: block;
+    width: 15px;
+    height: 1px;
+    background-color: $color-grey-2;
+    margin-right: 12px;
+    margin-top: 12px;
+    flex-shrink: 0;
+  }
+}

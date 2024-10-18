@@ -1,0 +1,22 @@
++b.SECTION.instructions-section.main__instructions-section(data-animate="fadeIn")
+	+e.container.container
+		+e.content(data-animate="fadeInLeft")
+			+e.H2.title.section__title 
+				span.title-mark Инструкция 
+				| по применению
+			+e.content-inner 
+				+e.UL.list 
+					each item, i in instructionSectionList
+						+e.LI.item 
+							+e.item-icon 
+								img(src="./img/components/instructions-section/icon-" + (i + 1) +  ".svg" alt="")
+							+e.item-text= item
+				+e.text Вода становится «живой» – чистой, <b>слабощелочной</b>, структурированной.
+				+b.A.stones-system__button.button_pdv-sm(href="#") Видеоинструкции
+		+e.image(data-animate="fadeInRight") 
+			img(src="./img/components/instructions-section/bottle.png" alt="")
+			+e.image-content
+				+e.image-title 
+					span.title-mark 40 
+					| минут
+				+e.image-text Уровень pH воды приходит в норму.

@@ -1,0 +1,20 @@
+extends templates/side-main-template
+
+include components/waiting-list
+
+block title
+	title ЛК - Лист ожидания
+
+block breadcrumbs
+	+b.block_breadcrumbs._breadcrumbs-lk
+		.global-wrapper
+			+breadcrumbs(['Главная', 'Лист ожидания'])
+
+
+block content
+	+b.SECTION.block._waiting-1
+		+e.head._flex 
+			+e.H2.title._big Лист ожидания
+			+b.BUTTON.btn-grey Очистить
+		+e.body
+			+waiting-list()

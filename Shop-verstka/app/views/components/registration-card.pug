@@ -1,0 +1,20 @@
+mixin registration-card(data)
+	-
+		data = init(data, {
+			'block': 'registration-card',
+			'title': 'Теория+Практика <span>24-25 марта</span>',
+			'cost': '13 500 ₽',
+			'stock': '1 200 ₽',
+			'btn': 'Записаться'
+		})
+
+	+b&attributes(data.attributes(attributes))
+		+e.wrap 
+			+e.content-container
+				+e.title !{data.title} 
+				+e.cost-wrap 
+					+e.cost= data.cost
+					if data.stock
+						+e.stock= data.stock
+			if data.btn
+				+b.A.btn-grey(href='#registration-education' data-fancybox='' data-options='{"baseClass" : "fancybox-transparent"}')= data.btn

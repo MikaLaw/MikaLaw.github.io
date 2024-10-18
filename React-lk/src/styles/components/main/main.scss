@@ -1,0 +1,51 @@
+.main {
+  & > * + * {
+    margin-top: 22px;
+  }
+
+  .ant-table-thead {
+    .ant-table-cell {
+      padding: 16px 10px;
+    }
+  }
+}
+
+.main__header {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+
+  @include media-min($media-lg) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .main-banner_incoming,
+  .main__publications {
+    grid-column: 1/3;
+  }
+
+  .main__publications {
+    @include media-min($media-lg) {
+      grid-column: 3/5;
+      grid-row: 1/3;
+    }
+  }
+}
+
+.main__banners,
+.main__publications {
+  flex: 1;
+}
+
+.main__banners {
+  width: 100%;
+}
+
+.main__publications {
+  width: 100%;
+  align-self: flex-start;
+  border: 1px solid $color-ui-3;
+  background-color: $color-white;
+  padding: 20px;
+  border-radius: 12px;
+}

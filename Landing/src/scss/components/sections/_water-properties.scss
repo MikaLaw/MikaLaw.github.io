@@ -1,0 +1,130 @@
+.water-properties__title {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 160px;
+    margin-bottom: 60px;
+    color:$color-black;
+    font-weight: 700;
+    font-size: 18px;
+    font-family: $font-title;
+    font-style: normal;
+    line-height: 23px;
+    text-align: center;
+    text-transform: uppercase;
+
+    &::before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 180px;
+        height: 160px;
+        background: no-repeat center / contain;
+        background-image: url("data:image/svg+xml,%3csvg width='180' height='184' viewBox='0 0 180 184' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%0d%3cg opacity='0.2'%3e%0d%3cpath d='M83.0607 173.061C83.6464 172.475 83.6464 171.525 83.0607 170.939L73.5147 161.393C72.9289 160.808 71.9792 160.808 71.3934 161.393C70.8076 161.979 70.8076 162.929 71.3934 163.515L79.8787 172L71.3934 180.485C70.8076 181.071 70.8076 182.021 71.3934 182.607C71.9792 183.192 72.9289 183.192 73.5147 182.607L83.0607 173.061ZM83.0607 13.0607C83.6464 12.4749 83.6464 11.5251 83.0607 10.9393L73.5147 1.3934C72.9289 0.807612 71.9792 0.807612 71.3934 1.3934C70.8076 1.97918 70.8076 2.92893 71.3934 3.51472L79.8787 12L71.3934 20.4853C70.8076 21.0711 70.8076 22.0208 71.3934 22.6066C71.9792 23.1924 72.9289 23.1924 73.5147 22.6066L83.0607 13.0607ZM82 170.5C38.6456 170.5 3.5 135.354 3.5 92H0.5C0.5 137.011 36.9888 173.5 82 173.5V170.5ZM3.5 92C3.5 48.6456 38.6456 13.5 82 13.5V10.5C36.9888 10.5 0.5 46.9888 0.5 92H3.5Z' fill='black'/%3e%0d%3cpath d='M96.9393 10.9393C96.3536 11.5251 96.3536 12.4749 96.9393 13.0607L106.485 22.6066C107.071 23.1924 108.021 23.1924 108.607 22.6066C109.192 22.0208 109.192 21.0711 108.607 20.4853L100.121 12L108.607 3.51473C109.192 2.92894 109.192 1.97919 108.607 1.39341C108.021 0.80762 107.071 0.80762 106.485 1.39341L96.9393 10.9393ZM96.9393 170.939C96.3535 171.525 96.3535 172.475 96.9393 173.061L106.485 182.607C107.071 183.192 108.021 183.192 108.607 182.607C109.192 182.021 109.192 181.071 108.607 180.485L100.121 172L108.607 163.515C109.192 162.929 109.192 161.979 108.607 161.393C108.021 160.808 107.071 160.808 106.485 161.393L96.9393 170.939ZM98 13.5C141.354 13.5 176.5 48.6457 176.5 92L179.5 92C179.5 46.9888 143.011 10.5 98 10.5L98 13.5ZM176.5 92C176.5 135.354 141.354 170.5 98 170.5L98 173.5C143.011 173.5 179.5 137.011 179.5 92L176.5 92Z' fill='black'/%3e%0d%3c/g%3e%0d%3c/svg%3e%0d");
+        transform: translate(-50%, -50%);
+        content: '';
+
+        @include media-min($media-xs) {
+            width: 210px;
+            height: 190px;
+        } 
+    }
+
+    @include media-min($media-xs) {
+        height: 190px;
+    } 
+
+    @include media-min($media-sm) {
+        font-size: 26px;
+        line-height: 38px;
+    }    
+}
+
+.water-properties__item>* {
+    max-width: 100%;
+}
+
+.water-properties__list>* {
+    width: 100%;
+    margin: 20px 0; 
+
+    @include media-min($media-sm) {
+        width: calc(50% - 30px);
+        margin: 20px 15px;
+    } 
+
+    @include media-min($media-md) {
+        width: calc(50% - 30px);
+        margin: 30px 15px;
+    }    
+}
+
+.water-properties__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -20px 0;
+
+    @include media-min($media-md) {
+        margin: -30px -15px;
+    } 
+}
+
+.water-properties__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    text-align: center;    
+
+    &::before {
+        width: 56px;
+        height: 56px;
+        margin-bottom: 30px;
+        background: $color-ui-2 no-repeat center;
+        background-image: url("data:image/svg+xml,%3Csvg width=%2240%22 height=%2240%22 viewBox=%220 0 40 40%22 fill=%22none%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg id=%22ok%22%3E%3Cpath id=%22Vector (Stroke)%22 fill-rule=%22evenodd%22 clip-rule=%22evenodd%22 d=%22M32 11.807L17.5574 29L8 19.8467L9.98745 17.8154L17.3301 24.8475L29.8024 10L32 11.807Z%22 fill=%22white%22/%3E%3C/g%3E%3C/svg%3E");
+        border-radius: 50%;
+        content: '';
+    }
+
+    @include media-min($media-lg) {
+        align-items: flex-start;
+        text-align: left;
+    }
+}
+
+.water-properties__item-text, 
+.water-properties__item-title {
+    width: 330px;
+    max-width: 100%;
+}
+
+.water-properties__item-title{
+    margin-bottom: 10px;
+    color: $color-black;
+    font-weight: 700;
+    font-size: 18px;
+    font-family: $font-default;
+    font-style: normal;
+    line-height: 23px;
+    text-transform: uppercase;
+
+    @include media-min($media-sm) {
+        font-size: 26px;
+        line-height: 38px;
+    }
+}
+
+.water-properties__item-text{
+    color:  $color-black;
+    font-weight: 400;
+    font-size: 16px;
+    font-family:$font-default;;
+    font-style: normal;
+    line-height: 24px;
+
+    @include media-min($media-md) {
+        font-size: 18px;
+        line-height: 26px;
+    }
+}

@@ -1,0 +1,90 @@
+.my-card {
+  width: 100%;
+  height: 120px;
+  flex-shrink: 0;
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  z-index: 0;
+  @include media-min($media-xs) {
+    padding: 8px 18px;
+  }
+  @include media-min($media-sm) {
+    width: 345px;
+    height: 200px;
+    padding: 16px 14px;
+  }
+  @include media-min($media-lg) {
+    width: 465px;
+    height: 292px;
+    padding: 20px;
+  }
+  @include media-min($media-xl) {
+    width: 511px;
+  }
+}
+
+.my-card__img-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.my-card__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top right;
+}
+.my-card__logo {
+  &::before {
+    content: "";
+    display: block;
+    background: url("../img/logo-grey.svg") no-repeat center / contain;
+    width: 78px;
+    height: 14px;
+    @include media-min($media-sm) {
+      width: 116px;
+      height: 21px;
+    }
+    @include media-min($media-lg) {
+      width: 172px;
+      height: 31px;
+    }
+  }
+}
+.my-card__tariff {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  @include text-12-500;
+  text-transform: uppercase;
+  color: $color-background-3;
+  @include media-min($media-sm) {
+    @include text-16-500-2;
+  }
+  @include media-min($media-lg) {
+    @include text-23-500;
+  }
+}
+.my-card-wrap {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  column-gap: 16px;
+  row-gap: 8px;
+  @include media-min($media-sm) {
+    flex-direction: row;
+  }
+  @include media-min($media-lg) {
+    column-gap: 30px;
+  }
+}

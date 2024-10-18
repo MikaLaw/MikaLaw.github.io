@@ -1,0 +1,9 @@
+mixin picture(data)
+	-
+		data = init(data, {
+			src: '',
+			className: '',
+		})
+		
+	+b.IMG(src=data['png'] ? `${data['src']}.png` : `${data['src']}.jpg` alt='Товар' class=data['className'])&attributes(attributes)
+			

@@ -1,0 +1,6 @@
+mixin breadcrumbs(data)
+    +b.UL.breadcrumbs(itemscope="" itemtype="http://schema.org/BreadcrumbList")
+        for item, index in data
+            +e.LI(itemscope="" itemtype="http://schema.org/ListItem")
+                +e.A(href="#") #{item}
+                meta(itemprop="position" content=index)

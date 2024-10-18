@@ -1,0 +1,14 @@
+mixin photo-gallery(data)
+	-
+		data = init(data, {
+			'block': 'photo-gallery',
+			'list': ['img-1.jpg','img-2.jpg','img-3.jpg','img-4.jpg','img-5.jpg','img-6.jpg','img-7.jpg','img-8.jpg'],
+		})
+
+	+b&attributes(data.attributes(attributes))
+		+e.list  
+			each item in data.list 
+				+e.A.item(href= './img/components/photo-gallery/' + item data-touch='false' data-fancybox="gallery"  data-options='{"baseClass" : "fancybox-gallery", "touch" : false}') 
+					+e.DIV.img-container
+						+e.IMG.img(src="./img/components/photo-gallery/" + item alt="Название" )
+

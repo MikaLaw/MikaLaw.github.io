@@ -1,0 +1,20 @@
++b.SECTION.stones-system.main__stones-system(data-animate="fadeIn")
+	h2.visually-hidden О пользе каждого минерала
+	+e.VIDEO.video(loop="loop" autoplay="autoplay" preload="auto" playsinline muted)
+		source(src="./img/video/water-stone.webm" type="video/webm")
+		source(src="./img/video/water-stone.mp4" type="video/mp4")
+	+e.container.container
+		+e.image 
+			+e.UL.stones-list
+				each item, i in stonesList
+					+e.LI.stones-item
+						+e.A.stones-link(href="javascript:;" data-fancybox-trigger="stone-modals" data-fancybox-index= i)= item
+		+e.content(data-animate="fadeInLeft")
+			+e.title.section__title 5 stones 
+				span.title-mark system
+			+e.text 100 % натуральный фильтр
+			+e.UL.list
+				each item, i in stonesList
+					+e.LI.list-item
+						+e.A.list-link(href="#stone-modal-" + (i + 1) data-fancybox="stone-modals")= item
+			+e.BUTTON.button.button._pdv-sm Купить картридж

@@ -1,0 +1,185 @@
+.profile {
+
+  &__change-pwd-title {
+    margin-bottom: 25px;
+  }
+}
+
+.profile__form {
+  margin-top: 25px;
+  max-width: 267px;
+
+  .ant-input {
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  .ant-form-item {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .ant-form-item-label {
+    & > label {
+      color: $color-black;
+    }
+  }
+
+  &_owner {
+
+  }
+}
+
+.profile__form-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.profile__form-text {
+  display: flex;
+  color: $color-ui-8;
+}
+
+.profile__form-icon {
+  display: block;
+  margin-right: 10px;
+  width: 14px;
+  height: 14px;
+  color: $color-brand-2;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.profile__edit-pwd-form {
+  margin-top: 0;
+}
+
+.profile__prompt {
+  padding-left: 24px;
+  margin-bottom: 25px;
+  color: $color-ui-8;
+
+  .anticon {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    svg {
+      fill: $color-brand-1;
+    }
+  }
+}
+
+.profile__btn {
+  display: inline-flex;
+  align-items: center;
+
+  .anticon {
+    color: $color-brand-2;
+    width: 15px;
+    height: 15px;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.profile__tabs {
+  min-width: 384px;
+  width: auto;
+  max-width: fit-content;
+
+  & > .ant-tabs-nav {
+    .ant-tabs-tab {
+      padding: 19px 0;
+
+      .ant-tabs-tab-btn {
+      }
+    }
+
+    &:before {
+      border-color: $color-brand-1;
+      //min-width: 718px;
+      //width: 100%;
+    }
+  }
+
+  &.custom-tabs .ant-tabs-tab-btn {
+    color: $color-ui-6;
+  }
+
+  .ant-tabs-tab {
+    &:hover {
+      .ant-tabs-tab-btn {
+        color: $color-brand-2;
+      }
+    }
+  }
+
+  &.custom-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: $color-brand-2-hover;
+  }
+
+  .ant-tabs-tab + .ant-tabs-tab {
+    margin: 0 0 0 28px;
+  }
+
+}
+
+.profile-divider {
+  width: 718px;
+  min-width: 718px;
+}
+
+.profile-item-hidden {
+  display: none;
+}
+
+.profile-confirm-modal {
+  .ant-modal-content {
+    border-radius: 6px;
+    box-shadow: $box-shadow-3;
+  }
+
+  .ant-modal-confirm-title {
+    @include text-1-600();
+  }
+
+  .ant-modal-body {
+    padding: 20px 25px 34px;
+  }
+
+  .ant-modal-confirm-btns {
+    display: none;
+  }
+}
+
+.profile-confirm-modal__text {
+  color: $color-black
+}
+
+.profile-confirm-modal__prompt {
+  margin-top: 10px;
+  color: $color-ui-6;
+
+}
+
+.profile-confirm-modal__prompt-link {
+  color: $color-brand-2;
+  text-decoration: underline;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.profile-notification {
+  z-index: 1200;
+}

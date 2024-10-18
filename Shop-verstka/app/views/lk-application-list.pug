@@ -1,0 +1,18 @@
+extends templates/side-main-template
+include components/application-list
+block title
+	title ЛК - Заявки на возврат
+
+block breadcrumbs
+	+b.block_breadcrumbs._breadcrumbs-lk
+		.global-wrapper
+			+breadcrumbs(['Главная', 'Заявки на возврат'])
+
+
+block content
+	+b.SECTION.block._mb 
+		+e.head._flex 
+			+e.H2.title._big Заявки на возврат
+			+b.BUTTON.btn-grey создать заявку
+		+e.body
+			+application-list()

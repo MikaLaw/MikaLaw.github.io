@@ -1,0 +1,141 @@
+.feedback-banner {
+  background: $color-ui-6;
+  @include media-min($media-xs) {
+    position: relative;
+    padding-bottom: 120px;
+  }
+  @include media-min($media-sm) {
+    padding-bottom: 0;
+  }
+}
+.feedback-banner__wrap {
+  padding: 30px 15px;
+  @include media-min($media-xs) {
+    padding: 30px 20px;
+  }
+  @include media-min($media-md) {
+    padding: 31px;
+  }
+}
+.feedback-banner__content-container {
+  @include media-min($media-xs) {
+    max-width: 412px;
+    position: relative;
+    z-index: 1;
+  }
+  @include media-min($media-lg) {
+    max-width: 670px;
+  }
+}
+.feedback-banner__title {
+  color: $color-black;
+  @include head-20-700;
+  text-transform: uppercase;
+  margin-bottom: 21px;
+  @include media-min($media-xs) {
+    font-size: 30px;
+    line-height: 34px;
+    margin-bottom: 30px;
+  }
+}
+.feedback-banner__text {
+  color: $color-black;
+  @include text-14-500;
+  margin-bottom: 20px;
+
+  p {
+    &:not(:last-child) {
+      margin-bottom: 18px;
+    }
+  }
+}
+
+.feedback-banner__btns {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  @include media-min($media-sm) {
+    flex-direction: row;
+  }
+  .icon-telegram,
+  .icon-whatsapp {
+    background: $color-background-3;
+    border: 0;
+    display: flex;
+    align-items: center;
+    width: 225px;
+    height: 45px;
+    flex-shrink: 0;
+    color: $color-black;
+    @include head-10-700;
+    text-transform: uppercase;
+    padding: 0 10px 0 0;
+
+    &::before {
+      content: '';
+      display: block;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      width: 45px;
+      height: 45px;
+      margin-right: 8px;
+    }
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  .icon-telegram {
+    &::before {
+      background-image: url("data:image/svg+xml,%3Csvg width='45' height='45' viewBox='0 0 45 45' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 22.5C0 10.0736 10.0736 0 22.5 0C34.9264 0 45 10.0736 45 22.5C45 34.9264 34.9264 45 22.5 45C10.0736 45 0 34.9264 0 22.5Z' fill='%23FCFCFC'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M16.0649 24.2953C15.7992 24.4418 15.4822 24.454 15.2034 24.3342C14.1849 23.8965 13.3429 23.5274 12.6668 23.2267C11.857 22.8666 11.9075 21.7291 12.7402 21.4256C20.2617 18.6836 25.2515 16.7214 27.7098 15.7318C28.4632 15.4284 29.2554 16.0986 29.0789 16.8914C27.6673 23.2308 26.7315 27.4338 26.2714 29.5005C26.1142 30.2069 25.2807 30.5138 24.6969 30.0862C22.1893 28.2491 20.4669 27.0493 19.4689 26.3697C18.9348 26.006 18.8642 25.2362 19.3297 24.7882C23.8443 20.4434 25.9376 18.4287 25.9376 18.4287C20.5458 21.7865 17.187 23.6766 16.0649 24.2953Z' fill='%232A1F15'/%3E%3C/svg%3E%0A");
+    }
+  }
+
+  .icon-whatsapp {
+    &::before {
+      background-image: url("data:image/svg+xml,%3Csvg width='45' height='45' viewBox='0 0 45 45' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 22.5C0 10.0736 10.0736 0 22.5 0C34.9264 0 45 10.0736 45 22.5C45 34.9264 34.9264 45 22.5 45C10.0736 45 0 34.9264 0 22.5Z' fill='%23FCFCFC'/%3E%3Cpath d='M34.8934 18.2053C33.7354 13.7662 30.1648 10.1957 25.6778 9.08567C21.1908 7.97564 16.3173 9.42342 13.2292 12.8974C9.41747 17.1435 8.93497 23.5125 12.023 28.3376C11.7817 30.0746 11.5887 31.8116 11.3475 33.5486C11.251 34.1758 12.023 34.6101 12.5537 34.4653C14.2425 33.9828 15.9795 33.5486 17.6683 33.0661C22.2521 34.9478 27.5599 34.0793 31.2269 30.7018C34.6527 27.5655 36.0519 22.6443 34.8939 18.2053H34.8934ZM31.5158 27.5178C28.6208 31.7639 22.9273 33.3564 18.2473 31.2331H18.199C18.006 31.1366 17.7648 31.0884 17.4753 31.1366C16.1243 31.5226 14.7733 31.8604 13.4222 32.2464C13.567 31.0884 13.7118 29.9786 13.8565 28.8206C13.9048 28.4346 14.0013 28.0004 13.8083 27.6143C13.6635 27.3731 13.4705 27.1318 13.3257 26.8423C12.988 26.2633 12.6985 25.6361 12.4572 25.0088C11.6852 22.7893 11.637 20.3285 12.3607 18.1093C13.6153 14.201 17.1858 11.2578 21.2388 10.7753C25.4366 10.1963 29.6344 12.2228 31.8053 15.745C34.0249 19.3638 33.8801 23.9956 31.5158 27.5181V27.5178Z' fill='%232A1F15'/%3E%3Cpath d='M29.3484 22.9834L27.1771 21.2947C26.5016 20.7639 25.5848 20.8604 25.0058 21.4394L24.3786 22.0667C23.8961 21.7772 23.4618 21.4394 23.0276 21.0534C22.6416 20.6674 22.3038 20.1849 22.0143 19.7024L22.6416 19.0752C23.2206 18.4961 23.2688 17.5794 22.7863 16.9039L21.0976 14.6844C20.7598 14.2019 20.2291 13.9124 19.6501 13.9124C19.0711 13.8641 18.492 14.1054 18.106 14.4914L16.2243 16.3731C15.1628 17.4346 14.9215 19.0752 15.597 20.4262C16.5138 22.1632 17.6718 23.7072 19.0228 25.0582C20.3738 26.4092 21.9661 27.5672 23.6548 28.484C24.1856 28.7735 24.7163 28.87 25.2471 28.87C26.1156 28.87 27.0324 28.5322 27.6596 27.8567L29.5414 25.9749C29.9274 25.5889 30.1686 25.0099 30.1204 24.4309C30.1204 23.8519 29.8309 23.3212 29.3484 22.9834ZM28.1904 24.6239L26.3086 26.5057C25.8261 26.9882 25.1023 27.0847 24.5233 26.7952C22.9793 25.9749 21.5801 24.9617 20.3256 23.7072C19.0711 22.4527 18.0578 21.0534 17.2375 19.5094C16.948 18.9304 17.0445 18.2066 17.527 17.7241L19.4088 15.8424H19.4571C19.5053 15.8424 19.5053 15.8424 19.5053 15.8906L21.0493 17.9171L20.4221 18.4961C19.9396 18.9787 19.7948 19.7507 20.1326 20.3779C20.5186 21.1499 21.0493 21.8254 21.6283 22.4044C22.2073 22.9834 22.8828 23.5142 23.6548 23.9002C24.2821 24.2379 25.0058 24.0932 25.4883 23.6107L26.1638 22.9352L28.1421 24.4792C28.1421 24.4792 28.1904 24.4792 28.1904 24.5274V24.6239Z' fill='%232A1F15'/%3E%3C/svg%3E%0A");
+    }
+  }
+}
+.feedback-banner__wrap-img {
+  height: 203px;
+  width: 100%;
+  position: relative;
+  @include media-min($media-xs) {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  @include media-min($media-sm) {
+    bottom: unset;
+    top: 47%;
+    transform: translateY(-50%);
+    height: 178px;
+    width: 348px;
+  }
+  @include media-min($media-lg) {
+    bottom: unset;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 185px;
+    width: 397px;
+  }
+  @include media-min($media-xl) {
+    height: 263px;
+    width: 609px;
+  }
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right;
+    @include media-min($media-lg) {
+      object-position: left;
+    }
+  }
+}

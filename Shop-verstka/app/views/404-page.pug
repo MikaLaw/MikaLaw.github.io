@@ -1,0 +1,17 @@
+extends templates/404-template
+
+
+block title
+	title Страница не найдена
+
+
+block content
+	+b.SECTION.block._404
+		.global-wrapper
+			+b.not-found-banner
+				+e.wrap 
+					+e.H2.title Страница не найдена
+					+e.text 
+						p Неправильно набран адрес или такой страницы на сайте больше не существует.
+						p Вы можете вернуться назад или перейти на главную, нажав на кнопку ниже. 
+					+b.BUTTON.btn-arrow  На главную

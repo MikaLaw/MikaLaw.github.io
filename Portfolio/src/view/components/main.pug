@@ -1,0 +1,52 @@
+include works-card
+
+main.page__main 	
+	+b.SECTION.section._hero#home
+		h1.visually-hidden Кто я
+		+b.hero-block 
+			+e.bg(data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out")  
+			+e.description(data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000" data-aos-easing="ease-in-out")  
+				+e.text Меня зовут надежда Феоктистова
+				+e.title.section__title Я Frontend разработчик
+	+b.SECTION.section._about#about
+		+b.about
+			+e.container
+				+e.avatar-container(data-aos="fade-right"  data-aos-offset="100" data-aos-duration="1000" data-aos-easing="ease-in-sine")
+					picture
+						source(srcset="./img/components/portfolio-2.webp" type="image/webp")
+						+e.IMG.avatar(src="./img/components/portfolio-2.jpg" alt="Мое фото")
+				+e.description-container(data-aos="fade-left"  data-aos-offset="100" data-aos-delay="100" data-aos-duration="1000" data-aos-easing="ease-in-sine")
+					+e.description
+						+e.H2.title.section__title Обо м​не
+						+e.text 
+							each text in aboutText
+								p !{text}							
+
+	+b.SECTION.section_skill#skill
+		.container 
+			+e.header
+				+e.H2.title(data-aos="fade-left"  data-aos-offset="100" data-aos-duration="1000" data-aos-easing="ease-in-sine") Мой стек технологий:				 
+			+b.skills 
+				+e.UL.list(data-aos="fade-up" data-aos-offset="50" data-aos-duration="1000" data-aos-easing="ease-in-out")  
+					each item, i in skillsList
+						+e.LI.item
+							+e.icon 
+								svg(viewBox="0 0 100 100" width="100" height="100")
+									use(href=`./img/sprite.svg#${item.icon}`)
+							+e.title= item.title
+				+e.description(data-aos="fade-up"  data-aos-offset="100" data-aos-duration="1000" data-aos-easing="ease-in-sine")
+					+e.subtitle Мой процесс работы c ними
+					+e.text
+						each text in description
+							+e.text-wrap
+								p !{text}
+	+b.SECTION.section_portfolio#portfolio
+		.container
+			+e.header
+				+e.H2.title(data-aos="fade-left" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="1000") Мои работы
+			+b.works 
+				+e.UL.list 
+					each item in worksList
+						+e.LI.item(data-aos="zoom-in" data-aos-offset="50" data-aos-duration="1000" data-aos-easing="ease-in-out")  
+							+works-card(item)
+

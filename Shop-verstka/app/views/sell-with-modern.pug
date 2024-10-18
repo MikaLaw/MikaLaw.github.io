@@ -1,0 +1,81 @@
+extends templates/main-template
+
+include base-components/slider
+include components/brends-card
+include components/advantages-card
+
+block title
+	title Продавать с Модерн
+
+block breadcrumbs
+	+b.block_breadcrumbs
+		.global-wrapper
+			+breadcrumbs(['Главная', 'Продавать с Модерн'])
+
+
+block content
+	+b.SECTION.block._sell-with-modern-1
+		.global-wrapper
+			+e.head 
+				+e.H2.title._big Продавать с Модерн
+			+e.body
+				+b.advantages 
+					+e.title Почему продавать с Модерн — это выгодно?
+					+e.UL.list 
+						each item in advantagesList1
+							+e.LI.item
+								+advantages-card(item)
+				+b.FORM.form_connecting 
+					+e.wrap
+						+e.head 
+							+e.title Хотите узнать больше о нашем предложении?
+						+e.body 
+							+e.item 
+								+form-field({
+									'title': '',
+									'component': {
+										'mixin': 'input',
+										'placeholder': '*Ваше имя'
+									},
+								})
+							+e.item 
+								+form-field({
+									'title': '',
+									'component': {
+										'mixin': 'input',
+										'placeholder': '*Ваш E-mail'
+									},
+								})
+							+e.item 
+								+form-field({
+									'title': '',
+									'component': {
+										'mixin': 'input',
+										'placeholder': '*+ 7 (___) ___-__-__'
+									},
+								})
+							+e.item 
+								+form-field({
+									'title': '',
+									'component': {
+										'mixin': 'textarea',
+										'placeholder': '*Комментарий'
+									},
+								})
+						+e.footer 
+							+e.BUTTON.btn.btn-arrow   Отправить
+							+e.text-agree Нажимая на кнопку «Отправить», я даю свое <a href="#">Согласие на обработку персональных данных</a>	
+					+picture({
+						src: './img/components/form/form-bg-3',
+						webp: true,
+					}).img-wrap
+	+b.SECTION.block
+		.global-wrapper
+			+e.head 
+				+e.H2.title Мы — официальные дистрибьюторы
+			+e.body
+				+slider({
+					'item-component': 'brends-card',
+					'init-attr': 'data-brend-slider',
+					'array': brendsList1
+				})._brend

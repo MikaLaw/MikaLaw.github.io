@@ -1,0 +1,112 @@
+.tooltip-list-overlay {
+  &.ant-tooltip {
+    max-width: 441px;
+    width: 100%;
+
+    .ant-tooltip-inner {
+      position: relative;
+      padding: 32px 0 8px 10px;
+      background-color: $color-ui-2;
+      border: 1px solid $color-ui-3;
+    }
+  }
+
+  &_guids {
+    &.ant-tooltip {
+      .ant-tooltip-inner {
+        padding-top: 6px;
+      }
+    }
+
+    .tooltip-list-overlay__top {
+      position: relative;
+      padding-right: 30px;
+    }
+
+    .tooltip-list-overlay__close {
+      top: 2px;
+      right: 10px;
+    }
+
+    .tooltip-list__item {
+      padding-left: 0;
+    }
+  }
+}
+
+.tooltip-list-overlay_w_sm {
+  &.ant-tooltip {
+    max-width: 350px;
+  }
+  .tooltip-list__name {
+    max-width: 300px;
+  }
+}
+
+.tooltip-list-overlay__top {
+
+}
+
+.tooltip-list-overlay__prompt {
+  display: inline-flex;
+}
+
+.tooltip-list-overlay__close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+
+  .anticon {
+    color: $color-brand-2;
+  }
+
+  &:hover {
+    color: $color-brand-2-hover;
+  }
+}
+
+.tooltip-scroll {
+  .scrollbar-container__body {
+  }
+}
+
+.tooltip-list {
+  padding-right: 10px;
+  & > * + * {
+    margin-top: 1px;
+  }
+}
+
+.tooltip-list__item {
+  padding: 9px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tooltip-list__item:not(:last-child) {
+  box-shadow: $box-shadow-5;
+}
+
+.tooltip-list__name,
+.tooltip-list__quantity {
+  display: inline-block;
+  color: $color-black;
+}
+
+.tooltip-list__name {
+  max-width: 236px;
+}
+
+
+.tooltip-position {
+  font-family: $font-inter;
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 15px;
+  color: $color-brand-2;
+  text-decoration: underline;
+}

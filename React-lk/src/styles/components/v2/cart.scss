@@ -1,0 +1,359 @@
+.cart,
+.cart__icon:before {
+  transition: $transition-antd;
+}
+
+.cart {
+  padding: 7px 11px;
+  display: flex;
+  align-items: center;
+  border: 1px solid $color-ui-3;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover,
+  &.active {
+    border-color: $color-ui-3;
+  }
+
+  &:hover {
+    background-color: $color-ui-2;
+  }
+
+  &.active {
+    background-color: $color-brand-2-hover;
+    border-color: $color-ui-3;
+    .cart-icon:before {
+      background-image: icon-cart($color-white);
+    }
+  }
+
+  & > * + * {
+    margin-left: 10px;
+  }
+
+  &.multi {
+    padding-right: 19px;
+  }
+}
+
+.cart-icon {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: icon-cart($color-brand-2);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: $transition;
+  }
+
+  &.no-access {
+    &:after {
+      content: "";
+      position: absolute;
+      top: -3px;
+      right: -4px;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: $color-error;
+    }
+  }
+}
+
+.cart-count {
+  position: relative;
+  padding: 0.5px 4px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    background-color: $color-yellow-1;
+    z-index: 3;
+  }
+
+  &__count,
+  &__icon {
+    position: relative;
+  }
+
+  &__count {
+    @include text-3-sm();
+    color: $color-black;
+    z-index: 4;
+  }
+
+  &__icon {
+    color: $color-brand-2;
+    width: 10px;
+    height: 10px;
+    z-index: 4;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &.multi {
+    span:not(.cart-count__count, .cart-count__icon) {
+      &:after,
+      &:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: -4px;
+        width: 100%;
+        height: 100%;
+        transform: translateY(-50%);
+        border-radius: 10px;
+      }
+
+      &:after {
+        background-color: $color-yellow-2;
+        z-index: 2;
+      }
+
+      &:before {
+        right: -8px;
+        background-color: $color-yellow-3;
+        z-index: 1;
+      }
+    }
+  }
+}
+
+.cart-page {
+  .table {
+    .ant-table-tbody > tr.ant-table-row-selected > td {
+      background: $color-white;
+      border-color: $color-blue-ui-2;
+    }
+
+    .ant-table-cell.ant-table-selection-column {
+      .ant-checkbox-wrapper-checked {
+        .ant-checkbox-inner {
+          background-color: $color-brand-2;
+        }
+      }
+
+      .ant-checkbox-checked .ant-checkbox-inner {
+        background-color: $color-brand-2;
+      }
+    }
+  }
+}
+
+.cart-location,
+.cart-total {
+  padding: 10px 15px;
+  background: $color-ui-2;
+  border-radius: 4px;
+}
+
+.cart-location {
+  margin-top: 20px;
+  & > * + * {
+    margin-top: 10px;
+  }
+}
+
+.cart-location + .cart-total {
+  margin-top: 10px;
+}
+
+.cart-location__address,
+.cart-location__time {
+  display: flex;
+  align-items: center;
+  @include text-2-sm();
+
+  & > * + * {
+    margin-left: 5px;
+  }
+}
+
+.cart-location__address-title,
+.cart-location__mark {
+  font-weight: 600;
+}
+
+.cart-location__address {
+  .cart-location__icon {
+    align-self: flex-start;
+  }
+}
+.cart-location__icon {
+  width: 20px;
+  height: 20px;
+  color: $color-brand-2;
+ svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+.cart-location__address-title {
+  display: inline-block;
+}
+.cart-location__time {}
+.cart-location__date {}
+.cart-location__mark {}
+
+.cart-total {
+  display: flex;
+  align-items: center;
+}
+
+.cart-total__price {
+  &:before {
+    content: none;
+  }
+
+  .new {
+    margin-left: 0;
+  }
+}
+.cart-total__profit {
+  margin-left: 10px;
+  &:before {
+    content: none;
+  }
+}
+.cart-total__position {
+  display: inline-flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 0;
+  @include text-3-sm;
+  mark {
+    padding: 0;
+    margin-left: 10px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    background: transparent;
+  }
+}
+
+.cart-column-wrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 26px;
+    border-radius: 4px;
+    background: transparent;
+    transition: $transition;
+    z-index: 1;
+  }
+
+  &:hover {
+    &:after {
+      background: $color-brand-2;
+    }
+
+    .cart-icon {
+      &:before {
+        background-image: icon-cart($color-white);
+      }
+    }
+  }
+}
+
+.cart-column {
+  position: relative;
+  padding: 8px 10px;
+  width: 100%;
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+  flex-grow: 1;
+  gap: 2px;
+  z-index: 2;
+
+  .cart-icon {
+    flex-shrink: 0;
+  }
+}
+
+.cart-pdf-btn {
+  min-width: auto;
+
+  span:not(.anticon, .ant-btn-loading-icon) {
+    display: none;
+
+    @include media-min($media-lg) {
+      display: block;
+    }
+  }
+
+  .ant-btn-loading-icon {
+    height: 18px;
+    width: 18px;
+    margin-right: 0;
+    @include media-min($media-lg) {
+      margin-right: 8px;
+    }
+  }
+
+  &.menu-collapsed {
+    span:not(.anticon, .ant-btn-loading-icon) {
+      display: block;
+    }
+    .ant-btn-loading-icon {
+      margin-right: 8px;
+    }
+  }
+
+  &.ant-tooltip-disabled-compatible-wrapper {
+    padding: 0;
+    display: flex !important;
+
+    .ant-btn {
+      min-width: auto;
+      padding: 7px 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $color-border-6;
+      border-color: $color-border-6;
+      pointer-events: none;
+      border-radius: 4px;
+      background: transparent;
+      font-size: 11px;
+      line-height: 14px;
+      .anticon {
+        color: $color-border-6;
+      }
+    }
+  }
+}

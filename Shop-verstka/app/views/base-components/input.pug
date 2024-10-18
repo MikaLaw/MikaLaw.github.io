@@ -1,0 +1,24 @@
+mixin input(data)
+	-
+		data = init(data, {
+			'block': '',
+			'type': 'text',
+			'placeholder': false,
+			'value': false,
+			'disabled': false,
+			'error': false,
+			'inputmode': false,
+			'name ': null,
+		})
+
+		if (data['error']) {
+			data['class'] += ' error';
+		}
+		var id = data['id'] || Math.random().toString(36).substring(2);
+	+b.input__wrap-input&attributes(data.attributes(attributes))
+		if data['attr-input']
+			+b.INPUT.input(type=data['type'] id=id data-attr= data['attr-input'] placeholder=data['placeholder'] value=data['value'] disabled=data['disabled'] inputmode=data.inputmode name=data['name'])
+		else
+			+b.INPUT.input(type=data['type'] id=id placeholder=data['placeholder'] value=data['value'] disabled=data['disabled'] inputmode=data.inputmode name=data['name'])
+		if data['error-text']
+			.form-field__error-text !{data['error-text']}

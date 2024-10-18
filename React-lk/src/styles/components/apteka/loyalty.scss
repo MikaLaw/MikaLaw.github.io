@@ -1,0 +1,25 @@
+.loyalty {
+  min-width: 55px;
+  padding: 3px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: $color-red-2;
+  border: 1px solid $color-border-3;
+  border-radius: 4px;
+
+  &.medium {
+    background: $color-yellow-1;
+    border-color: $color-warning;
+  }
+
+  &.high {
+    background: $color-border-4;
+    border-color: $color-success;
+  }
+
+  &.max {
+    background: $gradient-3;
+    border-color: $color-apteka-4;
+  }
+}

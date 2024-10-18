@@ -1,0 +1,24 @@
+extends templates/main-template
+
+include components/order-paid-card
+include components/order-paid-info
+
+block title
+	title ЛК - Оформление заказа(заказ оплачен)
+
+block breadcrumbs
+	+b.block_breadcrumbs
+		.global-wrapper
+			+breadcrumbs(['Главная', 'Оформление заказа'])
+
+
+block content
+	+b.SECTION.block
+		h2.visually-hidden Оформление заказа
+		.global-wrapper
+			+e.body 
+				+b.order-paid 
+					+e.wrap 
+						+order-paid-card()
+						+order-paid-info()
+				

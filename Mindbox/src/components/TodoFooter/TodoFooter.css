@@ -1,0 +1,39 @@
+.todos__filters{
+    display: flex;
+    align-items: center;
+    column-gap: 6px;
+}
+  
+.todos__filter{
+    padding: 3px 7px;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    transition: 0.1s linear;
+}
+  
+.todos__filter:hover,
+.todos__filter_active {
+    border: 1px solid #646464;
+}
+  
+.todos__footer{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    padding: 10px 15px;
+    border-top: 1px solid #e6e6e6;
+}
+  
+.todos__clear-btn{
+    text-align: right;
+}
+  
+.todos__clear{
+   transition: 0.1s linear;
+}
+  
+.todos__clear:hover{
+    opacity: 0.5;
+}

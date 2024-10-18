@@ -1,0 +1,58 @@
+// ----
+// libsass (v3.3.6)
+// ----
+
+// =====================================================================
+//
+//  SVG ENCODER FOR SASS
+//  -------------------------
+//  Indrek Paas <@indrekpaas>
+//
+//  Inspired by Taylor Hunt's "Optimizing SVGs in data URIs"
+//  http://codepen.io/tigt/post/optimizing-svgs-in-data-uris
+//
+//
+//  10.12.2016 Remove unnecessary encodings
+//  09.11.2016 Add encoding for all reserved and unsafe characters
+//  01.11.2016 Convert double quotes to single quotes
+//  30.10.2016 Add missing namespace support
+//  30.10.2016 Initial release
+//
+// =====================================================================
+
+@function var-encode($svg) {
+
+  // Encode characters
+  $encode: (
+    '"': "%22",
+    "#": "%23",
+    "%": "%25",
+    "<": "%3C",
+    ">": "%3E",
+    "{": "%7B",
+    "}": "%7D",
+  );
+
+  $string: "";
+  $character: "";
+
+  @for $i from 1 through str-length($svg) {
+    $character: str-slice($svg, $i, $i);
+
+    @if index(map-keys($encode), $character) {
+      $character: map-get($encode, $character);
+    }
+
+    $string: $string + $character;
+  }
+
+  // Return data URI
+  @return $string;
+}
+
+
+// Usage ---------------------------------------------------------------
+
+// element {
+//   background-image: svg-encode('<svg></svg>');
+// }

@@ -1,0 +1,225 @@
+.head-1 {
+  @include head-1();
+}
+
+.head-2 {
+  @include head-2();
+}
+
+.head-3 {
+  @include head-3();
+}
+
+.head-4 {
+  @include head-4();
+}
+
+.head-5 {
+  @include head-5();
+}
+
+.head-20-roboto {
+  @include head-20-roboto();
+}
+
+
+.text-1 {
+  @include text-1();
+}
+
+.text-1-md {
+  @include text-1-md();
+}
+
+.text-1-600 {
+  @include text-1-600();
+}
+
+.text-2 {
+  @include text-2();
+}
+
+.text-2-sm {
+  @include text-2-sm();
+}
+
+.text-2-medium {
+  @include text-2-medium();
+}
+
+.text-2-medium-sm {
+  @include text-2-medium-sm();
+}
+
+.text-2-bold {
+  @include text-2-bold();
+}
+
+.text-3 {
+  @include text-3();
+}
+
+.text-3-sm {
+  @include text-3-sm();
+}
+
+.text-3-medium {
+  @include text-3-medium();
+}
+
+.text-3-medium-sm {
+  @include text-3-medium-sm();
+}
+
+.text-4 {
+  @include text-4();
+}
+
+.text-5 {
+  @include text-5();
+}
+.text-5-bold {
+  @include text-5-bold();
+}
+
+
+.text-12-helvetica {
+  @include text-12-400-helvetica();
+}
+
+.text-14-500-inter {
+  @include text-14-500-inter();
+}
+.text-10-400-inter {
+  @include text-10-400-inter();
+}
+.text-10-14-400-inter {
+  @include text-10-14-400-inter();
+}
+.text-16-400-inter {
+  @include text-16-400-inter();
+}
+.text-16-600-inter {
+  @include text-16-600-inter();
+}
+
+.text-16-18-700-inter {
+  @include text-16-18-700-inter();
+}
+
+.text-12-18-700-inter {
+  @include text-12-18-700-inter();
+}
+
+.text-12-roboto {
+  @include text-12-roboto();
+}
+
+.text-link {
+  @include text-link();
+}
+
+.text-link-bold {
+  @include text-link-bold();
+}
+
+.title-36 {
+  @include title-36();
+}
+
+.text-20-24-inter-600 {
+  @include text-20-24-inter-600();
+}
+
+.text-20-22-inter-600 {
+  @include text-20-22-inter-600();
+}
+
+.head-11-16-600-inter {
+  @include head-11-16-600-inter();
+}
+
+.head-15-22-600-inter {
+  @include head-15-22-600-inter();
+}
+
+.text-13-18-700-inter {
+  @include text-13-18-700-inter();
+}
+
+.text-13-14-inter-400 {
+  @include text-13-14-inter-400();
+}
+
+.text-10-500-inter-sm {
+  @include text-10-500-inter-sm();
+}
+
+.text-13-18-inter-400 {
+  @include text-13-18-inter-400();
+}
+
+.publication-content {
+  @include publication-content();
+}
+
+.color-black {
+  color: $color-black;
+}
+
+.color-brand {
+  color: $color-brand-1;
+}
+
+.color-brand-2 {
+  color: $color-brand-2 !important;
+}
+
+.color-brand-2-hover {
+  color: $color-brand-2-hover;
+}
+
+.color-ui-5 {
+  color: $color-ui-5;
+}
+
+.color-ui-8 {
+  color: $color-ui-8;
+}
+
+.color-ui-6 {
+  color: $color-ui-6 !important;
+}
+
+.color-error {
+  color: $color-error;
+}
+
+.pointer-event-none {
+  pointer-events: none;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.crop-text {
+  @include crop-text();
+}
+
+.copy-text {
+  display: inline-flex;
+  align-items: center;
+
+  .anticon {
+    margin-left: 5px;
+  }
+}
+
+.bold {
+  font-weight: 600;
+}
+
+th.table-head-center {
+  text-align: center !important;
+}

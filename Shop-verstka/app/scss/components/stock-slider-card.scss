@@ -1,0 +1,145 @@
+.data-stock-slider-card {
+  display: block;
+
+  &:hover {
+    .data-stock-slider-card__title {
+      text-decoration: underline;
+    }
+    .data-stock-slider-card__btn {
+      &::after {
+        background: icon-arrow-right($color-grey-2) no-repeat center / contain;
+      }
+    }
+  }
+}
+.data-stock-slider-card__wrap {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.data-stock-slider-card__head {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.data-stock-slider-card__title {
+  @include head-14-700;
+  text-transform: uppercase;
+  transition: $transition;
+  text-decoration: none;
+  @include media-min($media-xs) {
+    @include head-16-700;
+  }
+}
+.data-stock-slider-card__btn {
+  cursor: pointer;
+  padding: 7px 0px 7px 20px;
+  &::after {
+    content: '';
+    display: block;
+    background: icon-arrow-right() no-repeat center / contain;
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    transition: $transition;
+  }
+}
+.data-stock-slider-card__wrap-img {
+  width: 100%;
+  height: 200px;
+  margin-top: auto;
+  transform: translateY(0);
+  transition: $transition-long;
+  position: relative;
+  @include media-min($media-xs) {
+    height: 256px;
+  }
+}
+.data-stock-slider-card__labels {
+  position: absolute;
+  top: 14px;
+  left: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+.data-stock-slider-card__labels-block {
+  padding-right: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  .label {
+    width: 100%;
+  }
+}
+.data-stock-slider-card__text {
+  @include text-14-500;
+  margin-bottom: 9px;
+  @include media-min($media-sm) {
+    margin-bottom: 19px;
+  }
+  @include media-min($media-lg) {
+    @include text-16-500;
+  }
+  @include media-min($media-xl) {
+    margin-bottom: 23px;
+  }
+}
+.data-stock-slider-card_main {
+  .data-stock-slider-card__wrap-img {
+    height: 204px;
+    @include media-min($media-xs) {
+      height: 214px;
+    }
+    @include media-min($media-sm) {
+      height: 300px;
+    }
+  }
+  .data-stock-slider-card__title {
+    justify-content: unset;
+    margin-bottom: 10px;
+    @include head-16-700-2;
+    @include media-min($media-sm) {
+      @include head-18-700;
+    }
+    @include media-min($media-lg) {
+      @include head-23-700;
+    }
+    &::after {
+      margin-left: 20px;
+    }
+  }
+}
+.data-stock-slider-card_main-big {
+  .data-stock-slider-card__wrap-img {
+    height: 204px;
+    @include media-min($media-xs) {
+      height: 214px;
+    }
+    @include media-min($media-sm) {
+      height: 340px;
+    }
+  }
+  .data-stock-slider-card__title {
+    justify-content: unset;
+    margin-bottom: 26px;
+    @include head-14-700;
+    @include media-min($media-sm) {
+      @include head-18-700;
+      margin-bottom: 26px;
+    }
+    @include media-min($media-lg) {
+      margin-bottom: 0px;
+      @include head-23-700;
+    }
+    @include media-min($media-xl) {
+      margin-bottom: 54px;
+    }
+    &::after {
+      margin-left: 20px;
+    }
+  }
+}

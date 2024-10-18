@@ -1,0 +1,38 @@
+include component
+include input
+include select
+include select-search
+include select-search-simple
+include textarea
+include input-password
+include input-file
+include input-datepicker
+include input-phone-confirmation
+include input-file-with-field
+
+
+mixin form-field(data)
+    -
+        data = init(data, {
+            'block': 'form-field',
+            'title': 'Название поля',
+            'error-text': '',
+            'disabled': false,
+            'component': {
+                'mixin': 'input',
+            },
+        })
+
+        var id = Math.random().toString(36).substring(2);
+
+        if (data['disabled']) {
+            data['class'] += ' disabled';
+            data['field']['disabled'] = data['disabled'];
+        }
+
+    +b&attributes(data.attributes(attributes))(data-js-form-field)
+        if data['title']
+            +e.__title !{data['title']}
+        +component(data['component'])(class=data.elem('__component'))
+        if data['error-text']
+            +e.__error-text !{data['error-text']}

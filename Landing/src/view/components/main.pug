@@ -1,0 +1,46 @@
+include section/bottle-section
+
+main.main 
+	include section/main-banner
+	.global-wrapper
+		+bottle-section()._theme-pink.main__bottle-section#bottle-section-1
+		+bottle-section({
+			title: 'Дoстигать <span class="title-mark">целей</span>',
+			image: 'image-5.jpg',
+			bottle: 'bottle-5.png',
+			bottleId: 'bottle-2',
+			text: 'Для тех, кто следует современным тенденциям, энергичен и мобилен, живет в плотном графике событий, достигает своих целей.',
+		})._theme-black._dir-reverse.main__bottle-section
+		+bottle-section({
+			title: 'Здоровая <span class="title-mark">семья</span>',
+			image: 'image-3.jpg',
+			bottleId: 'bottle-3',
+			bottle: 'bottle-3.png',
+			text: 'Для тех, кто заботится о себе и своих близких, поддерживает иммунитет, принимает витамины, выбирает натуральные и качественные продукты.',
+		})._theme-blue.main__bottle-section
+		+bottle-section({
+			title: 'Счастливое <span class="title-mark">долголетие</span>',
+			image: 'image-4.jpg',
+			bottle: 'bottle-4.png',
+			bottleId: 'bottle-4',
+			text: 'Для тех, кто ценит своё здоровье, предпочитает полезные продукты и соблюдает режим дня.',
+		})._theme-gray._dir-reverse.main__bottle-section
+		include section/nature-section-1
+		include section/info-section
+		include section/bottle-video-section
+		include section/natural-section
+		include section/nature-saturated
+		include section/recreated-mechanism-1
+		include section/stones-system
+	.scroll_container
+		.sticky_wrap
+			.horizontal_scroll
+				include section/recreated-mechanism-2
+				include section/eastman-tritan
+				include section/certified-products
+				include section/video-section				
+	.global-wrapper
+		include section/instructions-section
+		include section/water-properties
+		include section/water-usefulness
+	include section/habit-creating	

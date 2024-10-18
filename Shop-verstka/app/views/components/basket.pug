@@ -1,0 +1,77 @@
+include basket-table
+include product-card-list
+
+mixin basket(data)
+	-
+		data = init(data, {
+			'block': 'basket js-basket',
+			'brends-list': [
+				'Alfaparf',
+				'HALAK',
+				'MATRIX',
+				'CUTRIN',
+				'GEHWOL',
+				'Ga.MA',
+				'HALAK',
+				'MATRIX'
+			],
+			'is-product': true
+		})
+
+	+b&attributes(data.attributes(attributes))(data-modal="basket")
+		+e.wrap 
+			if data['is-product']
+				+e.head
+					+e.block-wrapper
+						+b.BUTTON.btn-close(data-close="basket")
+						+e.title Корзина
+						+b.BUTTON.btn-grey Очистить
+				+e.body
+					+b.basket-stocks
+						.basket__block-wrapper 
+							+e.wrap
+								+e.title 
+									+e.IMG(src="./img/icons/icon-discount.svg" alt="акции")
+									+e.title-text Выгодные акции по брендам:
+								+e.UL.brends-list
+									each brend in data['brends-list']
+										+e.LI.brend
+											+e.A.link(href="#")= brend
+					+e.block-wrapper
+						+basket-table
+				+e.footer
+					+e.block-wrapper
+						+e.footer-wrap 
+							+e.total-summ 
+								+e.total-text Итого:
+								+e.total-cost 
+									+e.stock 1 200 ₽
+									+e.cost 750 ₽ 
+							+e.code
+								+form-field({
+									'title': 'Ввести промокод',
+									'error-text': 'Срок действия промокода истек',
+									'class': 'error',
+									'component': {
+										'mixin': 'input',														
+										'placeholder': 'Промокод',
+									},
+								})
+							+e.bonus
+								+e.bonus-text У вас есть 245 бонусов, вы можете использовать 110 
+								+e.bonus-num + 670 бонусов 
+							+b.BUTTON.btn-grey.js-discount-preloader Рассчитать скидки и оформить заказ
+			else 
+				+e.head
+					+e.block-wrapper
+						+b.BUTTON.btn-close.js-basket-close
+						+e.title Корзина
+				+e.body
+					+e.block-wrapper
+						+e.subtext В корзине нет товаров
+						+e.subtitle Новинки
+						+product-card-list({
+							'list': productList8,
+							'pagination': false
+						})._basket
+						+e.BUTTON.btn-arrow Смотреть все

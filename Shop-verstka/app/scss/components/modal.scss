@@ -1,0 +1,370 @@
+.fancybox-gallery {
+  .modal {
+    width: 288px !important;
+    height: 276px !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    @include media-min($media-xs) {
+      width: 440px !important;
+      height: 378px !important;
+    }
+    @include media-min($media-sm) {
+      height: 554px !important;
+      width: 728px !important;
+    }
+    @include media-min($media-sm) {
+      height: 652px !important;
+      width: 896px !important;
+    }
+    @include media-min($media-xl) {
+      width: 1078px !important;
+      height: 780px !important;
+    }
+    .fancybox-navigation {
+      margin-top: -54px;
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      @include media-min($media-sm) {
+        margin-top: -65px;
+      }
+      @include media-min($media-md) {
+        margin-top: -74px;
+      }
+      @include media-min($media-xl) {
+        margin-top: -86px;
+      }
+      .fancybox-button--arrow_left,
+      .fancybox-button--arrow_right {
+        padding: 0;
+        border: 1px solid $color-black;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    .fancybox-button.fancybox-close-small {
+      display: block;
+      right: 1px;
+      top: -3px;
+      background-color: transparent;
+      @include media-min($media-xl) {
+        right: 7px;
+        top: 2px;
+      }
+      svg {
+        width: 32px;
+        height: 32px;
+        color: $color-black;
+      }
+    }
+  }
+  .modal__body {
+    padding: 32px 12px;
+    padding-bottom: 60px;
+    background-color: $color-background;
+    height: 100%;
+    @include media-min($media-sm) {
+      padding: 40px 20px 20px 20px;
+      padding-bottom: 76px;
+    }
+    @include media-min($media-md) {
+      padding: 50px 30px 30px 30px;
+      padding-bottom: 91px;
+    }
+    @include media-min($media-xl) {
+      padding: 60px 40px;
+      padding-bottom: 103px;
+    }
+  }
+  .fancybox-image {
+    object-fit: cover;
+    position: static;
+    object-position: top left;
+  }
+}
+
+.modal {
+  width: 290px;
+  max-width: calc(100% - 30px);
+  padding: 28px 20px;
+  border-radius: 4px;
+  background: $color-background;
+  @include media-min($media-sm) {
+    width: 430px;
+    padding: 28px 40px;
+  }
+}
+.fancybox-transparent {
+  @include media-max($media-sm) {
+    top: 59px;
+    height: calc(100vh - 56px - 59px);
+    .fancybox-slide--html {
+      padding: 0;
+    }
+  }
+  @include media-max($media-xs) {
+    top: 50px;
+    height: calc(100vh - 56px - 50px);
+  }
+
+  .fancybox-bg {
+    @include media-max($media-sm) {
+      background: transparent;
+    }
+  }
+}
+.fancybox-slide--html .fancybox-close-small {
+  padding: 4px;
+  right: 5px;
+  top: 6px;
+}
+.modal__title {
+  @include head-16-700;
+  text-transform: uppercase;
+  @include media-min($media-sm) {
+    @include head-23-700;
+  }
+}
+.modal__head {
+  margin-bottom: 20px;
+}
+.modal_discount-calculation {
+  width: 440px;
+  padding: 28px 20px;
+
+  @include media-min($media-sm) {
+    padding: 28px 40px;
+    width: 583px;
+  }
+}
+.modal-checkbox__list {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  @include media-min($media-xs) {
+    flex-wrap: nowrap;
+  }
+  @include media-min($media-sm) {
+    gap: 16px;
+  }
+}
+.modal-checkbox__input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.modal-checkbox__input:checked + .modal-checkbox__label {
+  border: 1px solid $color-black;
+}
+.modal-checkbox__label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  width: 126px;
+  height: 95px;
+  flex-shrink: 0;
+  background: $color-background-3;
+  border: 1px solid transparent;
+  transition: $transition;
+
+  @include media-min($media-sm) {
+    width: 157px;
+    height: 127px;
+  }
+}
+.modal-checkbox__icon {
+  margin-bottom: 12px;
+  &::before {
+    content: '';
+    display: block;
+    width: 38px;
+    height: 38px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    @include media-min($media-sm) {
+      width: 46px;
+      height: 46px;
+    }
+  }
+
+  &.icon-bonus {
+    &::before {
+      background-image: icon-stock();
+    }
+  }
+  &.icon-discount {
+    &::before {
+      background-image: icon-discount($color-pink);
+    }
+  }
+  &.icon-gift {
+    &::before {
+      background-image: icon-gift($color-violet);
+    }
+  }
+}
+.modal-checkbox__text {
+  @include text-16-600;
+}
+.modal_basket-clear {
+  .modal__head {
+    margin-bottom: 20px;
+    @include media-min($media-sm) {
+      margin-bottom: 50px;
+    }
+  }
+}
+.modal_order-reg {
+  width: 440px;
+  @include media-min($media-sm) {
+    width: 560px;
+  }
+}
+.modal_registration-education {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  background: $color-background;
+  padding: 28px 40px 32px 40px;
+  @include media-min($media-sm) {
+    max-height: 440px;
+    height: auto;
+    width: 500px;
+  }
+  @include media-min($media-lg) {
+    max-height: 476px;
+  }
+  .modal__head {
+    margin-bottom: 16px;
+  }
+  .modal__title {
+    @include head-15-700;
+    text-transform: uppercase;
+    @include media-min($media-xs) {
+      @include head-16-700;
+    }
+    @include media-min($media-sm) {
+      @include head-18-700;
+    }
+    @include media-min($media-lg) {
+      max-width: 215px;
+      @include head-23-700;
+    }
+  }
+  .modal__text {
+    @include text-14-500;
+    margin-bottom: 40px;
+  }
+  .registration-card {
+    padding: 0;
+    border: 0;
+    padding-bottom: 10px;
+    border-radius: 0;
+    border-bottom: 1px solid $color-grey-2;
+    .registration-card:not(:last-child) {
+      margin-bottom: 18px;
+    }
+  }
+  .registration-card__title {
+    @include head-14-700;
+    margin-bottom: 12px;
+    span {
+      margin-left: 0;
+      padding-left: 0;
+      display: block;
+      @include head-10-700;
+      @include media-min($media-sm) {
+        @include head-14-700;
+        display: inline-block;
+        margin-left: 9px;
+        padding-left: 13px;
+      }
+      &::before {
+        content: none;
+        @include media-min($media-sm) {
+          content: '';
+        }
+      }
+    }
+  }
+  .input__wrap-input,
+  .form-field {
+    width: 100%;
+  }
+}
+.modal_registration {
+  .modal__head {
+    margin-bottom: 25px;
+  }
+}
+.modal_end-registration {
+  @include media-min($media-sm) {
+    width: 597px;
+    padding: 28px 40px;
+  }
+}
+.modal_order-registration-confirmation,
+.modal_registration-confirmation {
+  width: 440px;
+  @include media-min($media-sm) {
+    width: 620px;
+  }
+  .form__text {
+    @include text-14-500;
+  }
+  .form__body {
+    margin-bottom: 20px;
+  }
+  .btn-grey {
+    min-width: 120px;
+  }
+}
+.modal_order-registration-confirmation {
+  width: 440px;
+  @include media-min($media-sm) {
+    width: 590px;
+  }
+  .form__text {
+    &:not(:last-child) {
+      margin-bottom: 17px;
+    }
+  }
+}
+.modal_discount-preloader {
+  @include media-min($media-sm) {
+    width: 438px;
+    padding: 28px 31px 28px 40px;
+  }
+  .modal__body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal__title {
+    display: flex;
+    align-items: center;
+    column-gap: 9px;
+    @include media-min($media-sm) {
+      @include head-18-700;
+    }
+    &::before {
+      content: '';
+      display: block;
+      background: icon-discount-2() no-repeat center / contain;
+      width: 25px;
+      height: 25px;
+      flex-shrink: 0;
+    }
+  }
+}

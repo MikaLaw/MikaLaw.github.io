@@ -1,0 +1,21 @@
+include ../base-components/pagination
+include purchas-card
+
+mixin purchas-list(data)
+	-
+		data = init(data, {
+			'block': 'purchas-list',
+			'list': purchasList,
+			'pagination': true
+		})
+
+	+b&attributes(data.attributes(attributes))
+		+e.list
+			for item in data.list
+				+purchas-card(item)
+		if data.pagination
+			+e.control 
+				+b.BUTTON.btn Показать ещё
+				+pagination({
+					'list': ['1',],
+				})

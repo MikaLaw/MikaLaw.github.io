@@ -1,0 +1,107 @@
+.table-not-found {
+  padding: 60px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &.subtitle-center {
+    .table-not-found__subtitle {
+      max-width: 414px;
+      text-align: center;
+    }
+  }
+
+  &.price-forbidden {
+    .table-not-found__img {
+      margin-top: 60px;
+      width: 622px;
+      height: 283px;
+    }
+
+    .table-not-found__subtitle {
+      max-width: 598px;
+      text-align: center;
+    }
+  }
+
+  &.orders-empty {
+    .table-not-found__img {
+      margin-top: 50px;
+      width: 275px;
+      height: 285px;
+    }
+  }
+
+  &.pharmacy {
+    padding: 40px 12px;
+
+    .table-not-found__title {
+      display: none;
+    }
+
+    .table-not-found__subtitle {
+      margin: 0;
+    }
+
+    .table-not-found__img {
+      margin-top: 20px;
+      width: 52px;
+      height: 52px;
+    }
+  }
+
+  &.text-center {
+    .table-not-found__subtitle {
+      text-align: center;
+    }
+  }
+
+  &.tape .table-not-found__img,
+  &.apteka-appeal .table-not-found__img {
+    width: 224px;
+    height: 224px;
+  }
+
+  &.tape {
+    padding-top: 30px;
+  }
+
+  &.apteka-appeal {
+    padding-bottom: 0;
+    .table-not-found__title {
+      font-weight: 500;
+      color: $color-text-1;
+    }
+
+    .table-not-found__img {
+      margin-top: 28px;
+    }
+  }
+}
+
+.table-not-found__subtitle {
+  margin-top: 10px;
+
+  a {
+    font-weight: 700;
+    color: $color-brand-2;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.table-not-found__img {
+  margin-top: 20px;
+  width: 380px;
+  height: 320px;
+  object-fit: contain;
+}
+
+.table-not-found__complex-title {
+  text-align: center;
+  color: $color-brand-2;
+}

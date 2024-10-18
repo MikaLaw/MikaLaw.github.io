@@ -1,0 +1,73 @@
+.add-to-cart {
+  position: relative;
+  &:after {
+    content: '+';
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -30px;
+    left: 5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: $color-brand-2;
+    opacity: 0;
+    font-family: $font-inter;
+    font-weight: 500;
+    font-size: 19px;
+    list-style: 19px;
+    color: $color-white;
+    transition: all 0.3s ease-out;
+    z-index: 2;
+  }
+  &.animation {
+    &:after {
+      transform: translateY(-30px);
+      opacity: 1;
+    }
+  }
+
+  &.animation2 {
+    &:after {
+      transform: translateY(0);
+      opacity: 0;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn2 {
+  100% {
+    height: 0;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: -200% 50%;
+  }
+  100% {
+    background-position: 300% 50%;
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes goToNormalBackground {
+  0% {
+    background-color: $color-yellow;
+  }
+  100% {
+    background-color: $color-white;
+  }
+}

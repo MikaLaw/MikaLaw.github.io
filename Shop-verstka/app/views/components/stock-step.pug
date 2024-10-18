@@ -1,0 +1,91 @@
+include product-card-list
+
+mixin stock-step(data)
+	-
+		data = init(data, {
+			'block': 'stock-step',
+		})
+	+b&attributes(data.attributes(attributes))
+		+e.list 
+			+e.item 
+				+e.num 
+				+e.content
+					+e.title <span>20 шт.</span> — Kраска тонирующая (тон в тон) COLOR WEAR 60мл <span>или</span> Kраска Перманентная для волос ЕОС CUBE 3D 60мл
+					+e.btn-wrap 
+						+e.BUTTON.btn COLOR WEAR
+						+e.BUTTON.btn ЕОС CUBE 3D
+			+e.item 
+				+e.num 
+				+e.content  
+					+e.title <span>1шт.</span> — Крем-окислитель 1,5% - 1000мл  
+					+product-card-list({
+						'list': [
+							{
+								'img':'./img/components/product-card/img-1',
+								'labels': null,
+								'title': 'ALFAPARF',
+								'text': 'Крем-окислитель 1,5%',
+								'cost': '750 ₽',
+								'stock': null,
+							},
+						],
+						'pagination': false
+					})
+			+e.item 
+				+e.num 
+				+e.content  
+					+e.title <span>1шт.</span> — Крем-окислитель 3/6/9/12% - 1000мл New (один из четырёх, на выбор)
+					+product-card-list({
+							'list': [
+								{
+									'img':'./img/components/product-card/img-6',
+									'labels': null,
+									'title': 'ALFAPARF',
+									'text': 'Крем-окислитель 3%',
+									'cost': '750 ₽',
+									'stock': null,
+								},
+								{
+									'img':'./img/components/product-card/img-11',
+									'labels': null,
+									'title': 'ALFAPARF',
+									'text': 'Крем-окислитель 6%',
+									'cost': '750 ₽',
+									'stock': null,
+								},			
+								{
+									'img':'./img/components/product-card/img-9',
+									'labels': null,
+									'title': 'ALFAPARF',
+									'text': 'Крем-окислитель 6%',
+									'cost': '750 ₽',
+									'stock': null,
+								},
+								{
+									'img':'./img/components/product-card/img-10',
+									'labels': null,
+									'title': 'ALFAPARF',
+									'text': 'Крем-окислитель 12%',
+									'cost': '750 ₽',
+									'stock': null,
+								},										
+							],
+							'pagination': false
+					})
+			+e.item 
+				+e.num 
+				+e.content  
+					+e.title <span>1шт.</span> — Порошок для обесцвечивания волос до 7 уровней, 400гр BB BLEACH EASY LIFT –<span>1шт.</span>
+					+product-card-list({
+						'list': [
+							{
+								'img':'./img/components/product-card/img-3',
+								'labels': null,
+								'title': 'ALFAPARF',
+								'text': 'Порошок для обесцвечивания волос до 7 уровней',
+								'cost': '750 ₽',
+								'stock': null,
+							},
+						],
+						'pagination': false
+					})

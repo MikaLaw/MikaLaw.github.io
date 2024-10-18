@@ -1,0 +1,36 @@
+include social
+
++b.FOOTER.footer.page__footer 
+	+e.container.container
+		+b.contacts 
+			+e.title Со мной можно связаться:
+			+e.list 
+				+e.item 
+					+e.label Телефон:
+					+e.A.value(href="tel:89105691916") +7(910) 569 19 16
+				+e.item 
+					+e.label Почта:
+					+e.A.value(href="mailto:feoktis.n@gmail.com") feoktis.n@gmail.com
+				+e.item 
+		+social({
+			list: [
+				{
+					link: 'https://vk.com/feoktisn',
+					icon: 'vk',
+					title: 'В контакте'
+				},
+      
+				{
+					link: 'https://t.me/FeoktusN',
+					icon: 'telegram',
+					title: 'Телеграм'
+				},   
+				{
+					link: 'https://wa.me/79105691916',
+					icon: 'whatsapp',
+					title: 'Ватсап'
+				},    
+                            
+			]
+		})
+			

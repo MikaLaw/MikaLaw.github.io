@@ -1,0 +1,67 @@
+// color variables
+
+// color variables
+
+$color-black: #2a1f15;
+$color-white: #ffffff;
+$color-grey: #717070;
+$color-grey-2: #979696;
+$color-light-green: #d3e2c8;
+$color-green: #9bbc89;
+$color-light-beige: #f4e4d5;
+$color-beige: #e5cdb5;
+$color-orange-light: #fca083;
+$color-orange-dark: #e97b58;
+$color-blue: #c3d0ef;
+$color-violet: #d2c3e5;
+$color-pink: #eec4d3;
+$color-error: #cb3100;
+$color-background: #f8f7f5;
+$color-background-2: #e8e5e2;
+$color-background-3: #fcfcfc;
+$color-ui-1: #f8f7f2;
+$color-ui-2: #d3b394;
+$color-ui-3: #d2d7e3;
+$color-ui-4: #f1f0ec;
+$color-ui-5: #999999;
+$color-ui-6: #e7e7ef;
+$color-ui-7: #dcd9d6;
+$color-ui-8: #e95858;
+$color-ui-9: #fbe4dd;
+$color-ui-10: #dac0ab;
+/* media variables */
+
+$media-xxs: 320px;
+$media-xs: 480px;
+$media-sm: 768px;
+$media-md: 1024px;
+$media-lg: 1280px;
+$media-xl: 1440px;
+$media-xxl: 1600px;
+$media-xxxl: 1920px;
+
+@mixin media-min($media) {
+  @media screen and (min-width: $media) {
+    @content;
+  }
+}
+@mixin media-max($media) {
+  @media screen and (max-width: #{$media - 1px} ) {
+    @content;
+  }
+}
+@mixin media-min-max($min, $max) {
+  @media screen and (min-width: $min) and (max-width: #{$max - 1px}) {
+    @content;
+  }
+}
+// font-family variables
+
+$font-default: 'Montserrat', 'Open Sans', -apple-system, BlinkMacSystemFont,
+  'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue',
+  sans-serif;
+// transition variables
+$transition: all 0.1s linear;
+$transition-long: all 0.3s ease-out;
+
+$box-shadow-1: 0px 4px 14px rgba(0, 0, 0, 0.09);

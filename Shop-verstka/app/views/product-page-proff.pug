@@ -1,0 +1,151 @@
+extends templates/main-template
+
+include base-components/slider
+include base-components/tabs-block
+include base-components/basket-btn
+include base-components/favorites-btn
+include components/brends-card
+include components/product-card
+include components/product-tab
+include components/contacts-soc
+include components/stock-detail-card
+
+block title
+	title Детальная страница товара(только проф.пользователям)
+
+block breadcrumbs
+	+b.block_breadcrumbs
+		.global-wrapper
+			+breadcrumbs(['Главная', 'Каталог', 'Окрашивание волос'])
+block content
+	+b.SECTION.block._product-page-1
+		h2.visually-hidden Товары
+		+b.product 
+			.global-wrapper
+				+e.slider-container 
+					+slider({
+						'item-component': 'stock-detail-card',
+						'init-attr': 'data-article-slider',
+						'array': articleList3
+					})._product-card
+				+e.info-container 
+					+e.info-wrap
+						+e.brends-info 
+							+e.A.brends-title(href="#") ALFAPARF
+							+e.berends-label Официальный дистрибьютор
+						+e.title Шампунь Антистресс с экстрактом мальвы 250 мл CD СПА
+						+e.detail-wrap
+							+e.cost-wrap 
+								+e.cost 1 417 ₽
+								+e.stock 2 125,00 ₽
+							+e.properties.data-js-tabs-active
+								+e.property.is-active 90 мл.
+								+e.property 150 мл.
+								+e.property 200 мл.
+						+e.common-info 
+							p Розничная цена:  7 000 ₽
+							p Страна-производитель:  Италия
+							p Артикул:  CAT00016611
+						+e.control-panel 	
+							+e.cost-wrap 
+								+e.cost 689 417 ₽
+								+e.stock 2 125,00 ₽
+							+e.control-container 
+								+input-counter({
+									'value': 1,
+								}).js-info-input-counter
+								+e.basket-btn.js-info-backet.disabled
+									+basket-btn()
+									span в корзину
+							+favorites-btn()
+							+b.A.return-btn(href='#')
+								+e.icon-return
+						+e.text-link
+							a(href="#") Получить доступ к специальным ценам для салонов
+						+e.text Доступно к заказу для мастеров только на территории Алтайского края и Республики Алтай
+			.global-wrapper 
+				+e.tabs-container
+					+tabs-block({
+						'tabs-list': {
+							'block': 'tabs-list',
+						},
+						'array': [
+							{
+								'title': 'Описание',
+								'component': {
+									'mixin': 'product-tab',
+								},
+							},
+							{
+								'title': 'Состав',
+								'component': {
+									'mixin': 'product-tab',
+								},
+							},
+							{
+								'title': 'Бренд',
+								'component': {
+									'mixin': 'product-tab',
+								},
+							},     
+							{
+								'title': 'Доставка и оплата',
+								'component': {
+									'mixin': 'product-tab',
+								},
+							},                                                
+						],
+					})._border._product
+					+contacts-soc() 
+	+b.SECTION.block._product-page-2
+		.global-wrapper
+			+e.head 
+				+e.H2.title._line._icon Вся линейка Revolution
+			+e.body
+				+slider({
+					'item-component': 'product-card',
+					'init-attr': 'data-product-slider ',
+					'array': productList6
+				})._product
+	+b.SECTION.block._product-page-3
+		.global-wrapper
+			+e.head 
+				+e.H2.title._icon
+					a(href="#") С этим товаром покупают
+			+e.body
+				+slider({
+					'item-component': 'product-card',
+					'init-attr': 'data-product-slider ',
+					'array': productList5
+				})._product
+	+b.SECTION.block._product-page-4
+		.global-wrapper
+			+e.head 
+				+e.H2.title._icon
+					a(href="#") Вы смотрели
+			+e.body
+				+slider({
+					'item-component': 'product-card',
+					'init-attr': 'data-product-slider ',
+					'array': productList1
+				})._product
+	+b.SECTION.block._product-page-5
+		.global-wrapper
+			+e.head 
+				+e.H2.title Мы — официальные дистрибьюторы
+			+e.body
+				+slider({
+					'item-component': 'brends-card',
+					'init-attr': 'data-brend-slider',
+					'array': brendsList1
+				})._brend
+	+b.SECTION.block._catalog-5
+		.global-wrapper
+			+e.head 
+				+e.H2.title._seo Место под seo-текст
+			+e.body
+				+e.text._seo 
+					p Идейные соображения высшего порядка, а также постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки дальнейших направлений развития. Не следует, однако забывать, что сложившаяся структура организации обеспечивает широкому кругу (специалистов) участие в формировании существенных финансовых и административных условий. 
+					p Идейные соображения высшего порядка, а также постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки дальнейших направлений развития. Не следует, однако забывать, что сложившаяся структура организации обеспечивает широкому кругу (специалистов) участие в формировании существенных финансовых и административных условий. 					
+					p Идейные соображения высшего порядка, а также постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки дальнейших направлений развития. Не следует, однако забывать, что сложившаяся структура организации обеспечивает широкому кругу (специалистов) участие в формировании существенных финансовых и административных условий. 
+					p Идейные соображения высшего порядка, а также постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки дальнейших направлений развития. Не следует, однако забывать, что сложившаяся структура организации обеспечивает широкому кругу (специалистов) участие в формировании существенных финансовых и административных условий. 

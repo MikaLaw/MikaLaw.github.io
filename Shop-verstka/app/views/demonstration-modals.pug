@@ -1,0 +1,92 @@
+extends templates/main-template
+
+block title
+	title Демонстрация - Модалки
+
+block content
+	style.
+		.demo-grid {
+			display: flex;
+			flex-direction: column;
+			padding-top: 50px;
+			padding-bottom: 50px;
+		}
+		.demo-grid__row {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			margin: 30px 0;
+		}
+
+		.demo-grid__item {
+			margin: 0 15px;
+		}
+
+		.demo-grid__item .button {
+			width: 200px;
+		}
+
+		.demo-grid__item_w {
+			width: 200px;
+		}
+
+		.demo-grid__item_black {
+			background-color: #000;
+		}
+	+b.SECTION.block
+		.global-wrapper
+			+e.head
+				+e.H2.title Демонстрация - Модалки
+			+b.demo-grid
+					+e.row
+						+e.item
+							+e.A.btn.js-add-product(href='#') Товар добавлен в корзину
+					+e.row
+						+e.item
+							+e.A.btn.js-remove-product(href='#') Товар удален из корзины
+					+e.row
+						+e.item
+							+e.A.btn.js-add-favorites(href='#') Товар добавлен в избранное
+					+e.row
+						+e.item
+							+e.A.btn.js-remove-favorites(href='#') Товар удален из избранного							
+					+e.row
+						+e.item
+							+e.A.btn.js-basket-clear(href='#') Корзина очищена
+					+e.row
+						+e.item
+							+e.A.btn.js-be-registered(href='#') Нужно войти в личный кабинет
+					+e.row
+						+e.item
+							+e.A.btn.js-pay-gift(href='#') Купи и получи подарок
+					+e.row
+						+e.item
+							+e.A.btn(href='#discount-calculation' data-fancybox='') Расчет скидок
+					+e.row
+						+e.item
+							+e.A.btn(href='#basket-clear' data-fancybox='') Очистить корзину
+					+e.row
+						+e.item
+							+e.A.btn(href='#waiting-list-clear' data-fancybox='') Очистить лист ожидания						
+					+e.row
+						+e.item
+							+e.A.btn(href='#checkout' data-fancybox='') Оформить заказ
+					+e.row
+						+e.item
+							+e.A.btn(href='#logout' data-fancybox='') выйти?					
+					+e.row
+						+e.item
+							+e.A.btn(href='#order-reg' data-fancybox='') Оформление заказа
+					+e.row
+						+e.item
+							+e.A.btn(href='#registration-education' data-fancybox='' data-options='{"baseClass" : "fancybox-transparent"}') Запись на обучение
+					+e.row
+						+e.item
+							+e.A.btn(href='#registration-confirmation' data-fancybox='') Подтверждение регистрации
+					+e.row
+						+e.item
+							+e.A.btn(href='#order-registration-confirmation' data-fancybox='') Заявка на регистрацию принята
+					+e.row
+						+e.item
+							+e.A.btn(href='#file-exceeds' data-fancybox='') Файл превышает допустимый размер
+							

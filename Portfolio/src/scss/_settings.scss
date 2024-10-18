@@ -1,0 +1,100 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;  
+  scroll-behavior: smooth;
+}
+
+body {
+  color: $color-text;
+  font-size: 16px;
+  font-family: $font-default;
+  line-height: 1.2;
+  background-image: $color-bg;
+
+}
+
+img {
+  display: block;
+  object-fit: cover;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  display: block;
+}
+
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.page__main{
+  overflow: hidden;
+}
+
+.input-reset {
+  background-color: #fff;
+  border: none;
+  border-radius: 0;
+  appearance: none;  
+
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+    display: none;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
+.container {
+  max-width: 1430px;
+  margin: 0 auto;
+  padding: 0 20px;
+  
+  @include media-min($media-xs) {
+    padding: 0 40px;
+  }
+
+  @include media-min($media-md) {
+    padding: 0 60px;
+  }
+}

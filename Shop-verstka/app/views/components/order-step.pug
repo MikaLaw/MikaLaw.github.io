@@ -1,0 +1,13 @@
+include order-step-card
+
+mixin order-step(data)
+	-
+		data = init(data, {
+			'block': 'order-step',
+			'list': orderStepList,
+		})
+
+	+b&attributes(data.attributes(attributes))
+		+e.list
+			for item in data.list
+				+order-step-card(item)

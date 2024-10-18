@@ -1,0 +1,38 @@
+extends templates/main-template
+
+include components/stock-detail-banner
+
+block title
+	title Акция детально(виды баннеров)
+
+block breadcrumbs
+	+b.block_breadcrumbs
+		.global-wrapper
+			+breadcrumbs(['Главная', 'Акции','Акции для салонов красоты'])
+
+
+block content
+	+b.SECTION
+		h2.visually-hidden Акция
+		.global-wrapper          
+			+e.body
+				+b.article._stock-version
+					+e.content 
+						.user-typography
+							+stock-detail-banner({
+								img: './img/components/product-banner/img-7.jpg'
+							})._beige
+							+stock-detail-banner({
+								img: './img/components/product-banner/img-6.png'
+							})
+							+stock-detail-banner({
+								img: './img/components/product-banner/img-5.png'
+							})
+							+stock-detail-banner({
+								img: './img/components/product-banner/img-4.jpg'
+							})._pink
+							+stock-detail-banner({
+								title: 'скидка 20%',
+								img: './img/components/product-banner/img-3.jpg'
+							})
+							+stock-detail-banner()

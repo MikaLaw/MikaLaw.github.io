@@ -1,0 +1,45 @@
+.logistic-container {
+
+}
+
+.logistic-container__head {
+  display: grid;
+  grid-template-columns: 100px 200px 123px 230px 74px;
+  background-color: $color-ui-2;
+}
+
+.logistic-container__head-cell {
+  position: relative;
+  padding: 10px;
+  color: $color-black;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -0.5px;
+    width: 1px;
+    height: 100%;
+    background-color: $color-white;
+  }
+
+  &:last-child {
+    &:after {
+      content: none;
+    }
+  }
+}
+
+.logistic-container__content {
+
+}
+
+.logistic-container__pagination {
+  // display: flex;
+  // justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.logistic-container__positions {
+  color: $color-ui-6;
+}

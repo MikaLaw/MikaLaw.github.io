@@ -1,0 +1,63 @@
+.loyalty-table-wrap {
+  @include media-min($media-sm) {
+    display: flex;
+    gap: 10px;
+  }
+}
+.loyalty-table-wrap_2 {
+  @include media-min($media-sm) {
+    display: grid;
+    grid-template-columns: 350px 350px;
+  }
+}
+.loyalty-table-wrap_3 {
+  margin-bottom: 47px;
+  flex-wrap: wrap;
+  @include media-min($media-md) {
+    flex-wrap: nowrap;
+  }
+  & > * {
+    flex: 1;
+    @include media-min($media-md) {
+      flex: unset;
+    }
+    &:last-child {
+      width: 100%;
+      flex: unset;
+      @include media-min($media-md) {
+        width: auto;
+      }
+    }
+  }
+}
+.loyalty-table {
+  padding: 20px;
+  border-radius: 4px;
+  background: $color-background-3;
+  &:not(:last-child) {
+    margin-bottom: 10px;
+    @include media-min($media-sm) {
+      margin-bottom: 0;
+    }
+  }
+}
+.loyalty-table__title {
+  @include head-12-700;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+.loyalty-table__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &:not(:last-child) {
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid rgba(42, 31, 21, 0.2);
+  }
+}
+.loyalty-table__label,
+.loyalty-table__value {
+  @include text-13-500;
+}

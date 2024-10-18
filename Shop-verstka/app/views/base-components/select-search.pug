@@ -1,0 +1,66 @@
+include picture
+
+mixin select-search(data)
+	-
+		data = init(data, {
+			'block': 'select_search',
+			'array': [
+				{
+					title: 'Вариант 1',
+				},
+				{
+					title: 'Вариант 2',
+				},
+				{
+					title: 'Вариант 3',
+				},
+				{
+					title: 'Вариант 4',
+				}
+			],
+			'placeholder': '',
+			'simple': false,
+			'multiple': false,
+			'checkbox': true,
+			//- 'active': 0,
+			'state': '', // disabled, error
+		})
+		var name = Math.random().toString(36).substring(2);
+		var type = data['multiple'] ? 'checkbox' : 'radio'
+		var isDisabled = false
+		data['class'] += 'js__tabselect'
+		if (data['state'] == 'disabled') {
+			data['class'] += ' ' + 'disabled'
+			isDisabled = '';
+		} else if (data['state'] == 'error') {
+			data['class'] += ' ' + 'error'
+		}
+
+	+b&attributes(data.attributes())&attributes(attributes)(data-data-js-tabselect)
+		+b.input__wrap-input(data-dsdd)
+			+e.BUTTON.btn-back(data-close="search")
+			+b.INPUT.input(data-display id=data['id'] placeholder=data['input-data']['placeholder'] value=data['input-data']['value'] disabled=data['input-data']['disabled'] name=data['input-data']['name'])
+			
+		+e.roster-wrap.dsdd-menu(data-inputs)
+			+e.UL.__roster(class=data['multiple'] ? 'select-checkbox': '')
+				each label, index in data['array']
+					-
+						var id = name + index
+						var checked = (data['active'] == index) ? '' : false
+					+e.LI.__item(class=(data.simple?'_simple': ''))
+						+e.INPUT.__input(type=type, id=id, value=('value' in label? label.value : index), name=name, checked=checked)
+						+e.LABEL.__label(for=id)
+							+e.content-container
+								+picture({
+									src: label.img,
+									webp: true,
+									alt: label.title,
+								}) 
+								+e.title !{label['title']}
+							if label['btn']
+								+b.SPAN.btn Смотреть
+							else
+								+e.cost-container
+									+e.stock= label['stock']
+									+e.cost= label['cost']				
+			+b.BUTTON.btn Смотреть все

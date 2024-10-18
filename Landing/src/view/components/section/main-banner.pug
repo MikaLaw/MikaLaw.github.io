@@ -1,0 +1,15 @@
++b.SECTION.main-banner     
+	h1.visually-hidden True Water
+	+e.container.container
+		+e.image 
+		+e.content
+			+e.logo 
+				img(src="./img/components/main-banner/main-banner-logo.svg", alt="True Water")
+			+e.subtext Комплект для регуляции pН воды 100% natural
+			+e.H1.title Что такое 
+				span.title-mark True Water
+			+e.UL.list 
+				each item in mainBannerList
+					+e.LI.item
+						+e.A.link(href="#")= item
+			+e.button.button СОЗДАТЬ СВОЮ ПОЛЕЗНУЮ ПРИВЫЧКУ

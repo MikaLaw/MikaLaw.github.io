@@ -1,0 +1,39 @@
+include purchas-img
+include ../base-components/slider
+
+mixin purchas-card(data)
+	-
+		data = init(data, {
+			'block': 'purchas-card',
+			'title': 'Заказ № 232421',
+			'cost': '2 500 ₽',
+			'date': '25.06.23',
+			'label': 'Принят',
+			'label-class': 'green',
+			'img': [{img: 'img-6.jpg'}, {img: 'img-1.jpg'}, {img: 'img-9.jpg'},{img: 'img-5.jpg'},]
+		})
+	+b&attributes(data.attributes(attributes))
+		+e.wrap
+			+e.head
+				+e.info 
+					+e.info-container
+						+e.title= data.title 
+							span= data.cost
+						+e.date-container 
+							+e.date= data.date 
+							+e.label(class= data['label-class'])= data.label
+					if data['date-text']
+						+e.info-container
+							+e.date-text !{data['date-text']}
+				+e.btn-container 
+					+b.BUTTON.btn-refresh Повторить 
+			+e.body 
+				+slider({
+					'item-component': 'purchas-img',
+					'init-attr': 'data-purchas-slider',
+					'array': data['img']
+				})._purchas
+
+					
+
+				

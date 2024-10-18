@@ -1,0 +1,24 @@
+.ant-divider {
+
+}
+
+.ant-divider-inner-text {
+  @include text-2();
+  color: $color-ui-8;
+}
+
+.divider-color-light-green-2 {
+  border-color: $color-ui-2;
+}
+
+.divider-color-light-green-3 {
+  border-color: $color-ui-3;
+}
+
+.divider-color-grey {
+  border-color: $color-ui-7;
+}
+
+.divider-apteka {
+  border-color: $color-content-branded;
+}
