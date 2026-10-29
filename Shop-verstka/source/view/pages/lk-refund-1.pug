@@ -1,0 +1,41 @@
+extends ../components/base/layout
+
+block variables
+	- const title = "ЛК-Заявки на возврат" //- на страницах кроме главной используйте О нас — ProjectName
+	- const wrapperMods = ""
+	- const hasHeader = true
+	- const headerMods = ""
+	- const hasFooter = true
+	- const hasFooterPanel = true 
+	- const footerMods = ""
+	- const currentUrl = "" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+	- const page = "./lk-refund-1.html" //- обозначение страницы для проброса в панели подвала
+
+block main
+	main.page__main
+		+breadcrumbs({
+			list: [{title: 'Главная', href: './main.html'}, {title: 'Заявки на возврат'}],
+		})
+		section.section
+			.container
+				.section__wrapper 
+					.section__sidebar
+						+sidebar-menu({
+							page: page,
+						})
+					.section__content
+						.section__head
+							h1.section__title Заявки на возврат
+							+button({
+								text: 'создать заявку',
+								ariaLabel: 'создать заявку на возврат'
+							}).button--base
+						.refund-row   
+							ul.refund-row__list 
+								each item in refunRequests1
+									li.refund-row__item 
+										+refund-row-card(item)
+							+list-controls({
+								btnAriaLabel: 'Показать ещё следующие 10 заявок',
+							}).refund-row__controls
+

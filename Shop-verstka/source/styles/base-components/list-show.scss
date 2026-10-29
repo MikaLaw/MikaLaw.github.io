@@ -1,0 +1,27 @@
+[data-list-show] {
+  [class*="__item"] {
+    display: none;
+  }
+
+  [class*="__item"]:nth-child(-n+2) {
+    display: block;
+  }
+
+  @include vp-768 {
+    [class*="__item"]:nth-child(-n+3) {
+      display: block;
+    }
+  }
+
+  @include vp-1440 {
+    [class*="__item"]:nth-child(-n+4) {
+      display: block;
+    }
+  }
+
+  &:has([data-list-show-trigger][aria-expanded="true"]) {
+    [class*="__item"] {
+      display: block;
+    }
+  }
+}

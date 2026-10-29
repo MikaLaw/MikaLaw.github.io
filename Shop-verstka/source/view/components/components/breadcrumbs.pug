@@ -1,0 +1,22 @@
+mixin breadcrumbs(options = {})
+	-
+		const {
+			list = [
+				{title: 'Главная', href: './main.html'}, 
+				{title: 'Новости', href: './news.html'}
+			],
+		} = options;
+
+	.breadcrumbs&attributes(attributes)
+		.container
+			nav.breadcrumbs__nav
+				ol.breadcrumbs__list(itemscope itemtype="https://schema.org/BreadcrumbList" data-scroll-block)
+					each item, ind in list 
+						li.breadcrumbs__item(itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem")
+							#{ind + 1 === list.length ? 'span' : 'a'}.breadcrumbs__link(
+								href=ind + 1 === list.length ? null : item.href 
+								itemprop=ind + 1 === list.length ? null : "item"
+								aria-current=ind + 1 === list.length ? "page" : null
+							)
+								span(itemprop="name")!= item.title
+							meta(itemprop="position" content=ind+1)

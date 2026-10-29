@@ -1,0 +1,41 @@
+mixin menu-hover(options={})
+  -
+    const {
+      id = `menu-hover-${Math.random().toString(36).substr(2, 9)}`,
+      navItems = navData,
+      micro = true,
+    } = options;
+
+  .menu-hover(data-menu-hover)&attributes(attributes)
+    nav.menu-hover__nav(aria-label="Главное меню" itemscope=micro ? '' : false itemtype=micro ? "https://schema.org" : false)
+      ul.menu-hover__list(
+        data-priority-tags				
+        data-mode="dropdown"
+        data-accordion
+        data-lazy        
+      )
+        each item, index in navItems
+          - const hasSub = !!item.submenus
+          - const subMenuId = `submenu-${id}-${index}`
+          li.menu-hover__item(data-accordion-item=item.href ? false : '' data-menu-item)
+            if hasSub
+              +button({
+                ariaExpanded: 'false',
+                ariaControls: subMenuId,
+                ariaHaspopup: "true",
+                text: item.title,
+                iconRight: 'icon-dropdown',
+              }).menu-hover__link(data-accordion-trigger)
+              if item.submenus
+                .menu-hover__submenu(
+                  id=subMenuId
+                  data-accordion-content
+                  role="region"
+                )
+                  .menu-hover__submenu-inner
+                    ul.menu-hover__list
+                      each subItem in item.submenus
+                        li.menu-hover__item
+                          a.button.menu-hover__link(href= subItem.href itemprop=micro ? "siteNavigationElement" : false)!= subItem.text
+            else  
+              a.button.menu-hover__link(href= item.href itemprop=micro ? "siteNavigationElement" : false)!= item.title

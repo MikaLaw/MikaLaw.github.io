@@ -1,0 +1,21 @@
+mixin contacts-panel(options={})
+	-
+		const {
+			list = [
+				{
+					label: 'Режим работы',
+					content: '<span><b>Пн — Пт</b><time datetime="09:00">9:00</time> до <time datetime="20:00">20:00</time></span> <span><b>Сб — Вс</b><time datetime="10:00">10:00</time> до <time datetime="20:00">20:00</time></span>'
+				},
+				{
+					label: 'Телефон',
+					content: '<a href="tel:73852221925" class="contacts-panel__link"><b>+7 (3852) 22-19-25</b></a>'
+				},
+			]
+		} = options;
+
+	.contacts-panel&attributes(attributes)
+		dl.contacts-panel__wrapper
+			each contact in list
+				.contacts-panel__col
+					dt.contacts-panel__label!= contact.label
+					dd.contacts-panel__info!= contact.content

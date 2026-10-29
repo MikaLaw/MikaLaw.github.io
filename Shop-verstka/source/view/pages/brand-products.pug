@@ -1,0 +1,82 @@
+extends ../components/base/layout
+
+block variables
+	- const title = "Товары бренда" //- на страницах кроме главной используйте О нас — ProjectName
+	- const wrapperMods = ""
+	- const hasHeader = true
+	- const headerMods = ""
+	- const hasFooter = true
+	- const hasFooterPanel = true 
+	- const footerMods = ""
+	- const currentUrl = "" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+	main.page__main
+		+breadcrumbs({
+			list: [{title: 'Главная', href: './main.html'}, {title: 'Бренды', href: './brands.html'}, {title: 'Yellow'}],
+		})
+		section.section
+			.container
+				.section__head
+					h1.section__title Yellow
+				.section__content
+					.brand-block 
+						.brand-block__wrapper 
+							.brand-block__img-wrapper
+								+picture({
+									format: "jpg",
+									path: './img/components/brands-list/img-29',
+									alt: "Логотип бренда Yellow",
+									isLazyLoading: "lazy",
+									isDecoding: "async",
+									width: "320",
+									height: "310",
+									noneMediaSource: true,
+								})
+							.brand-block__content 
+								+text-cut({
+									text: ['Бренду Yellow уже более 30 лет. Постепенно в портфеле компании появились такие бренды, как Yellow — профессиональная косметика для волос эконом-класса, TeN — профессиональная косметика по уходу за телом; открыто направление BEAUTY&BUSINESS, занимающееся бизнес-консалтингом VIP-клиентов.'],
+								})
+		section.section
+			.container
+				.section__content
+					.products
+						h2.visually-hidden Список товаров и фильтры
+						.products__filters
+							+button({
+								iconLeft: 'icon-filter',
+								text: null,
+								ariaLabel: 'Отфильтровать',
+								ariaExpanded: "false",
+								ariaControls: 'catalog-filter-controls',
+							}).button--icon.products__filters-show(data-slider-panel-show='catalog-filter')
+							+catalog-filters()(data-da=`[data-slider-panel="catalog-filter"] .slider-panel__body,767,last`)
+						+list({
+							list: productList2,
+							component: 'product-card',
+							componentData: { titleTag: 'h2' },
+						}).products__list
+						+list-controls().products__controls
+		section.section
+			.container
+				.section__content
+					+banner({	title: 'Подборки От МоDЕрн', titleTag: 'h2', text: null, img: 'img/components/product-banner/img-1' })
+						.banner__content.categories
+							ul.categories__list
+								each link in miniBannerMainData
+									li.categories__item
+										a.categories__link(href="#")!= link
+		section.section
+			.container
+				.section__content
+					+slider({
+						name: 'card',
+						title: '<h2  class="section__title"><a href="#" class="section__title-link">Вы смотрели <i class="icon icon-arrow-right"></i></a></h2>',
+						optionList: productList1,
+					}).slider--product
+		section.section
+			.container
+				.section__head
+					h2.section__title Мы — официальные дистрибьюторы
+				.section__content
+					+distributors()

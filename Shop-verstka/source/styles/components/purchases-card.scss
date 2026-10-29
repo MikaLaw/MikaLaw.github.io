@@ -1,0 +1,105 @@
+.purchases-card {
+  position: relative;
+  padding: var(--space-5x) var(--space-2-5x);
+  font-family: var(--ff-default);
+  line-height: var(--line-height-default);
+  background: var(--color-neutral-gray-4);
+  border-radius: var(--radius-1x);
+
+  @include vp-768 {
+    padding: var(--space-5x);
+  }
+
+  .purchase-meta {
+    width: 100%;
+    margin-block-end: var(--space-2-5x);
+  }
+}
+
+.purchases-card__info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @include vp-480 {
+    flex-flow: row wrap;
+  }
+}
+
+.purchases-card__head {
+  display: flex;
+  align-items: center;
+  margin-block-end: var(--space-2-5x);
+}
+
+.purchases-card__title {
+  margin: 0;
+}
+
+.purchases-card__link {
+  --purchases-list-card-color-link: var(--color-neutral-gray-9);
+
+  display: block;
+  color: var(--purchases-list-card-color-link);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--fz-default);
+  transition: color var(--trans-default);
+
+  @include hover {
+    &:hover {
+      --purchases-list-card-color-link: var(--color-neutral-gray-7);
+    }
+  }
+
+  &:active {
+    --purchases-list-card-color-link: var(--color-neutral-gray-7);
+  }
+}
+
+.purchases-card__cost {
+  margin-inline-start: var(--space-2x);
+  padding-inline-start: var(--space-2x);
+  color: var(--color-neutral-gray-9);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--fz-default);
+  border-inline-start: 1px solid var(--color-neutral-gray-7);
+}
+
+.purchases-card__products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: var(--space-2-5x);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.purchases-card__img-wrapper {
+  position: relative;
+  display: block;
+  aspect-ratio: 1/1;
+
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    inset: 0;
+  }
+}
+
+.purchases-card__control {
+  position: relative;
+  z-index: 2;
+  margin-block-end: var(--space-2-5x);
+
+  @include vp-479 {
+    order: 1;
+  }
+
+  @include vp-480 {
+    margin-block-end: 0;
+    margin-inline-start: auto;
+  }
+}

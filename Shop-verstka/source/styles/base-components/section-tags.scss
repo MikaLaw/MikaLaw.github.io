@@ -1,0 +1,38 @@
+.section-tags {
+  display: flex;
+  gap: var(--space-0-5x);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.section-tags__tag {
+  padding: var(--space-0-5x);
+
+  &:has([aria-current="true"]),
+  &.is-active {
+    .section-tags__tag-link {
+      --button-color-border: var(--color-neutral-gray-9);
+    }
+  }
+}
+
+.section-tags__tag-link {
+  --button-ls: var(--letter-spacing-0x);
+  --button-tt: var(--text-transform-normal);
+  --button-padding: var(--space-1x) var(--space-3x);
+  --button-fw: var(--font-weight-medium);
+  --button-fz: var(--fz-1x);
+
+  white-space: nowrap;
+
+  @include hover {
+    &:hover {
+      --button-color-border: var(--color-neutral-gray-9);
+    }
+  }
+
+  &:active {
+    --button-color-border: var(--color-neutral-gray-9);
+  }
+}

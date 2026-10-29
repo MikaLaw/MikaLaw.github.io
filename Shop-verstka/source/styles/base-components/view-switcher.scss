@@ -1,0 +1,21 @@
+.view-switcher {
+  display: flex;
+  gap: var(--space-1-5x);
+
+  @include vp-480 {
+    gap: var(--space-2-5x);
+  }
+
+  .button {
+    &.is-active,
+    &[aria-pressed="true"] {
+      --button-color-text: var(--color-neutral-gray-2);
+      --button-color-bg: var(--color-neutral-gray-9);
+      --button-color-border: var(--color-neutral-gray-9);
+    }
+
+    @include vp-479 {
+      --button-padding: var(--space-2x);
+    }
+  }
+}

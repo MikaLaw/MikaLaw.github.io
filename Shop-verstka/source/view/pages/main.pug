@@ -1,0 +1,87 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "ProjectName" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = "header--main"
+  - const hasFooter = true
+  - const hasFooterPanel = true 
+  - const footerMods = ""
+  - const currentUrl = "index.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+  - const isMain = true //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+  main.page__main.page__main--main
+    h1.visually-hidden Модерн - магазин косметики
+    section.section.section--default
+      +slider-full-size({
+        isAsync: true
+      })
+    section.section.section--default 
+      +marquee()
+    section.section
+      .container
+        .section__content
+          +slider({
+            title: '<h2  class="section__title"><a href="#" class="section__title-link">Распродажа <i class="icon icon-arrow-right"></i></a></h2>',
+            optionList: productList2,
+          }).slider--product
+    section.section
+      .container
+        .section__content
+          +slider({
+            title: '<h2  class="section__title"><a href="#" class="section__title-link">Новинки <i class="icon icon-arrow-right"></i></a></h2>',           
+          }).slider--product
+    section.section
+      .container
+        h2.section__title.visually-hidden Акции
+        .section__content
+          +slider({
+            component: 'stock-card',
+            optionList: stockList3,
+            name: 'card-stock-main',
+          }).slider--stock-main
+    section.section
+      .container
+        h2.section__title.visually-hidden Оборудование
+        .section__content
+          +circle-text()
+    section.section
+      .container
+        h2.section__title.visually-hidden Статьи
+        .section__content
+          +slider({
+            component: 'stock-card',
+            optionList: stockList1,
+            name: 'card-stock-main'
+          }).slider--stock-main
+    section.section
+      .container
+        h2.section__title.visually-hidden Советы
+        .section__content
+          +slider({
+            title: '<h2  class="section__title"><a href="#" class="section__title-link">Проффесионалы советуют <i class="icon icon-arrow-right"></i></a></h2>',
+            component: 'article-card',
+            optionList: articlesList,
+          })
+    section.section
+      .container
+        h2.section__title.visually-hidden Реклама
+        .section__content
+          +main-banner()
+    section.section
+      .container
+        .section__head
+          h2.section__title Мы — официальные дистрибьюторы
+        .section__content
+          +distributors()
+    section.section
+      .container
+        .section__head
+          h2.section__title Место под seo-текст
+        .section__content
+          +text-cut()
+
+
+

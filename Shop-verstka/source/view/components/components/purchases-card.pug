@@ -1,0 +1,44 @@
+mixin purchases-card(options = {})
+  -
+    const {
+      title = 'Заказ № 232421',
+      cost = '2 500 ₽',
+      date = '25.06.23',
+      label = 'Принят',
+      labelClass = 'accept',
+      deliveryDate = false,
+      sliderImg = [{pic: 'img-6'}, {pic: 'img-1'}, {pic: 'img-9'},{pic: 'img-5'},]
+    } = options;
+
+  article.purchases-card&attributes(attributes)
+    .purchases-card__info
+      .purchases-card__head 
+        h2.purchases-card__title
+          a.purchases-card__link(href="./lk-my-purchase.html")!= title
+        .purchases-card__cost!= cost 
+      +button({
+        text: 'Повторить',
+        iconLeft: 'icon-reload',
+        ariaLabel: 'Повторить заказ'
+      }).button--base.purchases-card__control 
+      +purchase-meta({
+        date: date,
+        label: label,
+        deliveryDate : deliveryDate, 
+        labelClass:labelClass,
+      }).purchases-card__meta
+    ul.purchases-card__products
+      each img in sliderImg
+        li.purchases-card__product
+          a.purchases-card__img-wrapper(href="./product.html")
+            +picture({
+              format: "jpg",
+              path: `./img/components/product-card/${img.pic}`,
+              alt: "Товар",
+              isLazyLoading: "eager",
+              isDecoding: "async",
+              width: "80",
+              height: "80",
+              desktopSource: `./img/components/product-card/${img.pic}`,
+              mobileSource: `./img/components/product-card/${img.pic}-mobile`,
+            })

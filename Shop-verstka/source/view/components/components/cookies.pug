@@ -1,0 +1,20 @@
+mixin cookies(options = {})
+  -
+    const {
+      title = 'Мы уважаем вашу конфиденциальность',
+      text = 'Используем файлы cookie для улучшения работы сайта и анализа трафика.',
+      btnOkText = 'Принять все',
+      btnResetText = 'Отклонить',
+    } = options;
+
+  - const titleId = `cookie-title-${Math.random().toString(36).substring(2, 9)}`;
+
+  dialog.dialog.dialog--fade.cookie-banner(data-cookie aria-labelledby=titleId)&attributes(attributes)
+    .cookie-banner__container
+      header.cookie-banner__header
+        h2.cookie-banner__title(id=titleId)!= title
+      .cookie-banner__content
+        p!= text
+      footer.cookie-banner__actions
+        +button({text: btnResetText}).button--outline(data-cookie-action="reject")
+        +button({text: btnOkText}).button--base(data-cookie-action="accept")

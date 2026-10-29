@@ -1,0 +1,129 @@
+/*
+  Global
+  ---------------------------------
+*/
+
+@import "global/mixins";
+@import "global/variables";
+@import "global/fonts";
+@import "global/reboot";
+@import "global/utils";
+@import "global/container";
+
+/*
+  Base Components
+  ---------------------------------
+*/
+
+@import "base-components/accordion";
+@import "base-components/bg-video";
+@import "base-components/counter";
+@import "base-components/field";
+@import "base-components/fieldset-accordion";
+@import "base-components/fieldset";
+@import "base-components/input";
+@import "base-components/input-counter";
+@import "base-components/input-datapicker";
+@import "base-components/input-password";
+@import "base-components/input-search";
+@import "base-components/input-upload";
+@import "base-components/list-controls";
+@import "base-components/list-show";
+@import "base-components/list";
+@import "base-components/pagination";
+@import "base-components/priority-tags";
+@import "base-components/product-attribute";
+@import "base-components/range";
+@import "base-components/rating-panel";
+@import "base-components/scroll-block";
+@import "base-components/section-tags";
+@import "base-components/section";
+@import "base-components/select-search";
+@import "base-components/select";
+@import "base-components/step";
+@import "base-components/tabs";
+@import "base-components/text-cut";
+@import "base-components/toggle";
+@import "base-components/tooltip";
+@import "base-components/user-typography";
+@import "base-components/view-switcher";
+
+/*
+  Components
+  ---------------------------------
+*/
+
+@import "components/advantages-card";
+@import "components/advantages";
+@import "components/article-card";
+@import "components/article";
+@import "components/articles";
+@import "components/balloon";
+@import "components/banner";
+@import "components/brand-block";
+@import "components/brand-stocks";
+@import "components/brands-catalog";
+@import "components/brands";
+@import "components/breadcrumbs";
+@import "components/catalog-filters";
+@import "components/categories";
+@import "components/circle-text";
+@import "components/city-list";
+@import "components/contacts-panel";
+@import "components/contacts";
+@import "components/course-card";
+@import "components/course-schedule-card";
+@import "components/course-schedule";
+@import "components/course";
+@import "components/discount-system";
+@import "components/distributors";
+@import "components/education-banner";
+@import "components/education-card";
+@import "components/education";
+@import "components/faq";
+@import "components/field-code";
+@import "components/filters";
+@import "components/form";
+@import "components/main-banner";
+@import "components/map-address-card";
+@import "components/map-block";
+@import "components/map-modal";
+@import "components/map-select";
+@import "components/marquee";
+@import "components/not-found-banner";
+@import "components/operation-history";
+@import "components/order-item";
+@import "components/order-mini";
+@import "components/order-step";
+@import "components/order-success";
+@import "components/order";
+@import "components/payment-method";
+@import "components/personal-data";
+@import "components/product-stickers";
+@import "components/product-card";
+@import "components/product-contacts";
+@import "components/product-params";
+@import "components/product-row";
+@import "components/product";
+@import "components/products";
+@import "components/purchase-meta";
+@import "components/purchase-step";
+@import "components/purchase-steps";
+@import "components/purchase";
+@import "components/purchases-card";
+@import "components/purchases-filters";
+@import "components/purchases";
+@import "components/refund-form";
+@import "components/refund-row-card";
+@import "components/refund-row";
+@import "components/shop";
+@import "components/slider";
+@import "components/small-form";
+@import "components/steps-form";
+@import "components/stock-card";
+@import "components/stock-row-mini";
+@import "components/stock-stickers";
+@import "components/stocks";
+@import "components/tier-card";
+@import "components/upload-files";
+@import "components/user-card";

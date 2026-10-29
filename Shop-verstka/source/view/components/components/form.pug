@@ -1,0 +1,209 @@
+mixin form(options={})
+	.form-block(data-form)&attributes(attributes)
+		form.form
+			.form__wrapper
+				.form__header
+				.form__body
+					+field({
+						fieldLabel: 'Фио',
+						validationType: "name",
+						componentData: {
+							required: true,
+							pattern: "^[а-яёА-ЯЁa-zA-Z]+([ \\-][а-яёА-ЯЁa-zA-Z]+)+$",
+							autocomplete: 'name'
+						}
+					})
+					+field({
+						fieldLabel: 'Любимый цвет',
+						name: "color",
+					})
+					+field({
+						fieldLabel: 'Пол',
+						id: 'sexField1',					
+						component: 'select',
+						componentData: {
+							required: true,
+							btnId: 'sexField1',			
+							optionsList: [
+								{ label: "Женский", value: "female", },
+								{ label: "Мужской", value: "male", },
+							],
+							placeholder: '',              
+						}
+					})
+					+field({
+						fieldLabel: 'Дата рождения',
+						component: 'input-datapicker',
+						componentData: {
+							required: true,
+						}
+					})
+					+field({
+						fieldLabel: 'Количество подписок',
+						componentData: {
+							required: true,
+							type: 'number',
+							min: 3,
+							max: 7,
+						}
+					})
+					+field({
+						fieldLabel: 'Проверочное слово',
+						componentData: {
+							required: true,
+							minLength: 3,
+							maxLength: 7,
+						}            
+					})
+					+field({
+						fieldLabel: 'Только кирилица',
+						validationType: "cyrillic",
+						componentData: {
+							required: true,
+							pattern: '^[а-яА-ЯёЁ]+$',
+						}             
+					})
+					+field({
+						fieldLabel: 'Только латиница',
+						validationType: "latin",
+						componentData: {
+							required: true,
+							pattern: '^[a-zA-Z]+$',
+						}
+					})
+					+field({
+						fieldLabel: 'Только цифры',						
+						validationType: "digit",
+						componentData: {
+							required: true,
+							pattern: '^\\d+$',
+						}
+					})
+					+field({
+						fieldLabel: 'Только буквы',
+						validationType: "symbols",
+						componentData: {
+							required: true,
+							pattern: '^[a-zA-Zа-яА-ЯёЁ]+$',
+						}
+					})
+					+field({
+						fieldLabel: 'Только буквы и цифры',
+						validationType: "letters-and-digit",
+						componentData: {
+							required: true,
+							pattern: '^[a-zA-Zа-яА-ЯёЁ0-9]+$',
+						}
+					})
+					+field({
+						fieldLabel: 'Email',
+						componentData: {
+							required: true,
+							type: 'email',
+						},
+					})
+					+field({
+						fieldLabel: 'Пароль',
+						component: 'input-password',
+						componentData: {
+							required: true,
+						},
+						validationType: "match",
+						matchName: 'password'
+					})
+					+field({
+						fieldLabel: 'Новый пароль',
+						component: 'input-password',
+							componentData: {
+								required: true,
+						},
+						validationType: "match",
+						matchName: 'password'
+					})
+					+field({
+						fieldLabel: 'Телефон',						
+						componentData: {
+							required: true,
+							mask: 'phone',
+							type: "tel",
+							autocomplete: "tel",
+						},
+					})
+					+field({
+						fieldLabel: 'Номер карты',
+						componentData: {
+							required: true,
+							mask: 'card',
+							type: "text",
+						},
+					})
+					+field({
+						fieldLabel: 'Url',
+						validationType: "url",
+						componentData: {
+							required: true,
+							type: "url",
+						},
+					})
+					+field({
+						component: 'toggle',
+						validationType: "checkbox",						
+						componentData: {
+							required: true,
+							name: 'accept',
+							label: 'Принимаю условия соглашения',
+							value: '1',
+						},
+					})
+					+field({
+						component: 'fieldset',
+						validationType: "toggle-group",
+						componentData: {
+							name: 'set1',
+							required: true,
+							optionsList: [
+								{label: 'то', value: '1'},
+								{label: 'сё', value: '2'}
+							]
+						},
+					})
+					+field({
+						component: 'fieldset',	
+						validationType: "toggle-group",
+						componentData: {
+							name: 'set2',
+							required: true,
+							type: 'radio',
+							optionsList: [
+								{label: 'это', value: '1'},
+								{label: 'пятое', value: '2'},
+								{label: 'десятое', value: '3'}
+							]
+						},
+					})
+					+field({
+						fieldLabel: 'Место работы',
+						component: 'select-search',
+						componentData: {							
+							required: true,
+						}		
+					})
+					+field({
+						component: 'input-upload',
+						validationType: 'upload',
+						componentData: {							
+							required: true,
+							label: 'Выберите файлы',
+						}					
+					})
+				.form__footer 
+					+button({
+						text: "Сбросить все",
+						ariaLabel: "Сбросить все поля",
+						type: "reset",
+					}).button--base(data-form-reset)
+					+button({
+						text: "Отправить",
+						type: 'submit',
+						ariaLabel: "Отправить данные на сервер"
+					}).button--base(data-form-submit)

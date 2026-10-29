@@ -1,0 +1,36 @@
+mixin map-select(options = {})
+  -
+    const {
+      id = `map-${Math.random().toString(36).substr(2, 9)}`,
+      mode = "store",
+      data = mapStoreInfo,
+      isPoint = options.mode === 'point',
+      lazy = false,
+    } = options;
+
+  .map-select(
+    data-map=mode
+    data-json= data 
+    data-id=id
+  )&attributes(attributes)
+    .map-select__header 
+      .map-select__title Выберите адрес
+    .map-select__body 
+      .map-select__content
+        form.map-select__form(
+          data-tabs=isPoint
+          lazy= isPoint
+        )
+          if mode === 'point'
+            .map-select__control(data-tabs-controls)
+          +input-search().input-search--icon
+          if mode === 'point'
+            .map-select__address(data-tabs-content)
+          else 
+            ul.map-select__list.custom-scroll(data-map-list)
+          +button({
+            text: "Выбрать место",
+            ariaLabel: "Выбрать место"
+          }).button--base(data-map-button)
+      .map-select__wrapper
+        .map-select__instance(data-map-element)

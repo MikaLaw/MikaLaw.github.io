@@ -1,0 +1,1351 @@
+
+extends ../components/base/layout
+
+block variables
+	- const title = "Ui - kit"
+
+block main
+	style.
+		.page {
+			display: flex;
+			flex-direction: column;
+			flex: 1;
+		}
+		.page__head {
+			padding: 40px 30px 80px;
+			border-bottom: 4px solid #E3292C;
+		}
+
+		.page__menu{
+			margin: 0;
+			padding: 0
+		}
+
+		.page__body {
+			flex: 1;
+			padding: 40px 30px 80px;
+			font-family: "Montserrat", "Arial", sans-serif;
+		}
+
+		h1 {
+			text-align: center;
+			font-size: 30px;
+			line-height: 28px;
+			font-weight: 800;
+			margin-block-end: 50px;
+		}
+
+		ol ul {
+			padding-inline-start: 20px;
+		}
+
+		ul {
+			list-style: disc;
+		}
+
+		li {
+			font-weight: 500;
+		}
+
+		a {
+			font-weight: 400;
+			color: #2c39f2;
+			font-size: 16px;
+			line-height: 26px;
+		}
+
+		.uikit__component{
+			margin-block-end: 20px;
+		}
+
+		.uikit__component--width-1 {
+			max-inline-size: 640px;
+			width: 100%;
+		}
+
+		.uikit__flex {
+			display: flex;		
+			align-items: center;
+			gap: 10px;
+		}
+
+		.uikit__flex-wrap {
+			display: flex;		
+			align-items: center;
+			gap: 10px;
+			flex-wrap: wrap;
+		}
+
+		.uikit__colors {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+			gap: 14px;
+		}
+
+		.uikit__color-wrapper {
+			background: #FFFFFF;
+			border: 1px solid #E8E5E2;
+			border-radius: 4px;
+		}
+
+		.uikit__color {
+			width: 100%;
+			height: 100px;
+			border-bottom: 1px solid #E8E5E2;
+			border-radius: 4px;
+		}
+
+		.uikit__box {
+			width: 100%;
+			height: 100px;
+			border: 1px solid #E8E5E2;
+		}
+
+		.uikit__margin {
+			width: 50px;
+			height: 25px;
+			border: 1px solid #2a1f15;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.uikit__color-title {
+			padding: 10px;
+		}
+
+		.uikit__color-1 { background-color:  #f8f7f5}
+		.uikit__color-2 { background-color:  #fcfcfc;}
+		.uikit__color-3 { background-color:  #f1f0ec}
+		.uikit__color-4 { background-color:  #e8e5e2}
+		.uikit__color-5 { background-color:  #d2d7e3}
+		.uikit__color-6 { background-color:  #cdcdcd}
+		.uikit__color-7 { background-color:  #979696}
+		.uikit__color-8 { background-color:  #717070}
+		.uikit__color-9 { background-color:  #2a1f15}
+		.uikit__color-white { background-color:  #fff}
+		.uikit__color-black { background-color:  #000}
+		.uikit__color-error { background-color:  #d90606}
+		.uikit__color-valid { background-color:  #22b259}
+		.uikit__color-transparent { background-color: rgb(255 255 255 / 0%)}
+		.uikit__color-green-1 { background-color: #9bbc89}
+		.uikit__color-green-2 { background-color: #d3e2c8 }
+		.uikit__color-beige-1 { background-color: #d3b394 }
+		.uikit__color-beige-2 { background-color: #f4e4d5 }
+		.uikit__color-orange-1 { background-color: #e97b58 }
+		.uikit__color-orange-2 { background-color: #fca083 }
+		.uikit__color-blue-1 { background-color: #c3d0ef }
+		.uikit__color-violet-1 { background-color: #d2c3e5 }
+		.uikit__color-pink-1 { background-color: #eec4d3 }
+		.uikit__color-gold-1 { background-color: #dfd7b4 }
+		.uikit__color-neon-blue { background-color: #2c39f2 }
+		.uikit__color-torch-red { background-color: #ff1553 }
+		.uikit__text--font-1 { font-size: calc((12 / 16) * 1rem) }
+		.uikit__text--font-2 { font-size: calc((14 / 16) * 1rem) }
+		.uikit__text--font-3 { font-size: calc((15 / 16) * 1rem) }
+		.uikit__text--font-4 { font-size: calc((16 / 16) * 1rem) }
+		.uikit__text--font-5 { font-size: calc((18 / 16) * 1rem) }
+		.uikit__text--font-6 { font-size: calc((20 / 16) * 1rem) }
+		.uikit__text--font-7 { font-size: calc((22 / 16) * 1rem) }
+		.uikit__text--font-8 { font-size: calc((23 / 16) * 1rem) }
+		.uikit__text--font-9 { font-size: calc((24 / 16) * 1rem) }
+		.uikit__text--font-10 { font-size: calc((26 / 16) * 1rem) }
+		.uikit__text--font-11 { font-size: calc((28 / 16) * 1rem) }
+		.uikit__text--font-12 { font-size: calc((30 / 16) * 1rem) }
+		.uikit__text--font-13 { font-size: calc((32 / 16) * 1rem) }
+		.uikit__text--font-14 { font-size: calc((34 / 16) * 1rem) }
+		.uikit__text--font-15 { font-size: calc((36 / 16) * 1rem) }
+		.uikit__text--font-16 { font-size: calc((38 / 16) * 1rem) }
+		.uikit__text--font-17 { font-size: calc((40 / 16) * 1rem) }
+		.uikit__text--font-18 { font-size: calc((42 / 16) * 1rem) }
+		.uikit__text--font-19 { font-size: calc((44 / 16) * 1rem) }
+		.uikit__text--weight-1 { font-weight: 400 }
+		.uikit__text--weight-2 { font-weight: 500 }
+		.uikit__text--weight-3 { font-weight: 600 }
+		.uikit__text--weight-4 { font-weight: 700 }
+		.uikit__text--line-height-1 { line-height: 1.2 }
+		.uikit__text--line-height-2 { line-height: 1.5 }
+		.uikit__text--spacing-1 { letter-spacing: 0px }
+		.uikit__text--spacing-2 { letter-spacing: 0.6px }
+		.uikit__text--spacing-3 { letter-spacing: 1px }
+		.uikit__text--spacing-4 { letter-spacing: 1.5px }
+		.uikit__text--spacing-5 { letter-spacing: 2px }
+		.uikit__text--transform-1 { text-transform: none }
+		.uikit__text--transform-2 { text-transform: uppercase }
+		.uikit__box--radius-1 { border-radius: 2px }
+		.uikit__box--radius-2 { border-radius: 4px }
+		.uikit__box--radius-3 { border-radius: 6px }
+		.uikit__box--radius-4 { border-radius: 8px }
+		.uikit__box--radius-5 { border-radius: 10px }
+		.uikit__box--radius-6 { border-radius: 12px }
+		.uikit__box--radius-7 { border-radius: 14px }
+		.uikit__box--radius-8 { border-radius: 16px }
+		.uikit__box--radius-9 { border-radius: 20px }
+		.uikit__box--radius-10 { border-radius: 24px }
+		.uikit__box--shadow-1 { box-shadow: 0 2px 10px color-mix(in srgb, #cdcdcd, transparent 60%) }
+		.uikit__box--shadow-2 { box-shadow: 0 6px 10px color-mix(in srgb, #cdcdcd, transparent 60%) }
+		.uikit__box--shadow-3 { box-shadow: 0 -4px 6px color-mix(in srgb, #cdcdcd, transparent 60%) }
+		.uikit__margin--1 { margin-inline-start: calc((2 / 16) * 1rem)}
+		.uikit__margin--2 { margin-inline-start: calc((4 / 16) * 1rem)}
+		.uikit__margin--3 { margin-inline-start: calc((6 / 16) * 1rem)}
+		.uikit__margin--4 { margin-inline-start: calc((8 / 16) * 1rem)}
+		.uikit__margin--5 { margin-inline-start: calc((10 / 16) * 1rem)}
+		.uikit__margin--6 { margin-inline-start: calc((12 / 16) * 1rem)}
+		.uikit__margin--7 { margin-inline-start: calc((14 / 16) * 1rem)}
+		.uikit__margin--8 { margin-inline-start: calc((16 / 16) * 1rem)}
+		.uikit__margin--9 { margin-inline-start: calc((18 / 16) * 1rem)}
+		.uikit__margin--10 { margin-inline-start: calc((20 / 16) * 1rem)}
+		.uikit__margin--11 { margin-inline-start: calc((22 / 16) * 1rem)}
+		.uikit__margin--12 { margin-inline-start: calc((24 / 16) * 1rem)}
+		.uikit__margin--13 { margin-inline-start: calc((28 / 16) * 1rem)}
+		.uikit__margin--14 { margin-inline-start: calc((30 / 16) * 1rem)}
+		.uikit__margin--15 { margin-inline-start: calc((32 / 16) * 1rem)}
+		.uikit__margin--16 { margin-inline-start: calc((36 / 16) * 1rem)}
+		.uikit__margin--17 { margin-inline-start: calc((40 / 16) * 1rem)}
+		.uikit__margin--18 { margin-inline-start: calc((44 / 16) * 1rem)}
+		.uikit__margin--19 { margin-inline-start: calc((48 / 16) * 1rem)}
+		.uikit__margin--20 { margin-inline-start: calc((52 / 16) * 1rem)}
+		.uikit__margin--21 { margin-inline-start: calc((56 / 16) * 1rem)}
+		.uikit__margin--22 { margin-inline-start: calc((60 / 16) * 1rem)}
+		.uikit__margin--23 { margin-inline-start: calc((64 / 16) * 1rem)}
+		.uikit__margin--24 { margin-inline-start: calc((68 / 16) * 1rem)}
+		.uikit__margin--25 { margin-inline-start: calc((72 / 16) * 1rem)}
+		.uikit__margin--26 { margin-inline-start: calc((76 / 16) * 1rem)}
+		.uikit__margin--27 { margin-inline-start: calc((80 / 16) * 1rem)}
+		.uikit__margin--28 { margin-inline-start: calc((84 / 16) * 1rem)}
+		.uikit__margin--29 { margin-inline-start: calc((88 / 16) * 1rem)}
+		.uikit__margin--30 { margin-inline-start: calc((92 / 16) * 1rem)}
+		.uikit__margin--31 { margin-inline-start: calc((96 / 16) * 1rem)}
+		.uikit__margin--32 { margin-inline-start: calc((100 / 16) * 1rem)}
+
+	.page
+		.page__head
+			ol.page__menu
+				li 
+					a(href="#global") Глобальные стили (Основа)
+				li 
+					a(href="#atoms") Базовые элементы интерфейса (Атомы)
+				li 
+					a(href="#navigations") Компоненты навигации
+				li 
+					a(href="#components") Специфичные компоненты интернет-магазина (Молекулы)
+				li 
+					a(href="#modals") Системные и всплывающие уведомления, модальные окна (Modals)
+		.page__body
+			section.uikit__section(id="global")
+				h1 Глобальные стили - Цветовая палитра, Типографика, Тени и скругления, Сетка и отступы, 
+				section.uikit__section 
+					h2 Цветовая палитра
+					.uikit__colors 
+						.uikit__color-wrapper
+							.uikit__color.uikit__color-1 
+							.uikit__color-title --color-neutral-gray-1
+						.uikit__color-wrapper
+							.uikit__color.uikit__color-2 
+							.uikit__color-title --color-neutral-gray-2
+						.uikit__color-wrapper
+							.uikit__color.uikit__color-3 
+							.uikit__color-title --color-neutral-gray-3
+						.uikit__color-wrapper
+							.uikit__color.uikit__color-4 
+							.uikit__color-title --color-neutral-gray-4
+						.uikit__color-wrapper
+							.uikit__color.uikit__color-5 
+							.uikit__color-title --color-neutral-gray-5
+						.uikit__color-wrapper
+							.uikit__color.uikit__color-6 
+							.uikit__color-title --color-neutral-gray-6
+						.uikit__color-wrapper
+							.uikit__color.uikit__color-7 
+							.uikit__color-title --color-neutral-gray-7
+						.uikit__color-wrapper
+							.uikit__color.uikit__color-8 
+							.uikit__color-title --color-neutral-gray-8
+						.uikit__color-wrapper
+							.uikit__color.uikit__color-9 
+							.uikit__color-title --color-neutral-gray-9
+						.uikit__color-wrapper
+							.uikit__color.uikit__color-white
+							.uikit__color-title --color-default-white
+						.uikit__color-wrapper
+							.uikit__color.uikit__color-black
+							.uikit__color-title --color-default-black
+						.uikit__color-wrapper
+							.uikit__color.uikit__color-error
+							.uikit__color-title --color-brand-error
+						.uikit__color-wrapper
+							.uikit__color.uikit__color-valid
+							.uikit__color-title --color-brand-valid
+						.uikit__color-wrapper
+							.uikit__color.uikit__color-transparent
+							.uikit__color-title --color-transparent
+						.uikit__color-wrapper
+							.uikit__color.uikit__color-green-1
+							.uikit__color-title --color-brand-green-1
+						.uikit__color-wrapper
+							.uikit__color.uikit__color-green-2
+							.uikit__color-title --color-brand-green-2
+						.uikit__color-wrapper
+							.uikit__color.uikit__color-beige-1
+							.uikit__color-title --color-brand-beige-1
+						.uikit__color-wrapper
+							.uikit__color.uikit__color-beige-2
+							.uikit__color-title --color-brand-beige-2
+						.uikit__color-wrapper
+							.uikit__color.uikit__color-orange-1
+							.uikit__color-title --color-brand-orange-1
+						.uikit__color-wrapper
+							.uikit__color.uikit__color-orange-2
+							.uikit__color-title --color-brand-orange-2
+						.uikit__color-wrapper
+							.uikit__color.uikit__color-blue-1
+							.uikit__color-title --color-brand-blue-1
+						.uikit__color-wrapper
+							.uikit__color.uikit__color-violet-1
+							.uikit__color-title --color-brand-violet-1
+						.uikit__color-wrapper
+							.uikit__color.uikit__color-pink-1
+							.uikit__color-title --color-brand-pink-1
+						.uikit__color-wrapper
+							.uikit__color.uikit__color-gold-1
+							.uikit__color-title --color-brand-gold-1
+						.uikit__color-wrapper
+							.uikit__color.uikit__color-neon-blue
+							.uikit__color-title --color-neon-blue
+						.uikit__color-wrapper
+							.uikit__color.uikit__color-torch-red
+							.uikit__color-title --color-torch-red
+				section.uikit__section
+					h2 Типографика
+					h3 Кегль
+					.uikit__component
+						.uikit__text--font-1 Пример текста
+						.uikit__title --fz-0-5x: 12px;
+					.uikit__component
+						.uikit__text--font-2 Пример текста
+						.uikit__title --fz-1x: 14px;
+					.uikit__component
+						.uikit__text--font-3 Пример текста
+						.uikit__title --fz-1-5x: 15px;
+					.uikit__component
+						.uikit_textx--font-4 Пример текста
+						.uikit__title --fz-default: 16px;
+					.uikit__component
+						.uikit__text--font-5 Пример текста
+						.uikit__title --fz-3x: 18px;
+					.uikit__component
+						.uikit__text--font-6 Пример текста
+						.uikit__title --fz-4x: 20px;
+					.uikit__component
+						.uikit__text--font-7 Пример текста
+						.uikit__title --fz-5x: 22px;
+					.uikit__component
+						.uikit__text--font-8 Пример текста
+						.uikit__title --fz-5-5x: 23px;
+					.uikit__component
+						.uikit__text--font-9 Пример текста
+						.uikit__title --fz-6x: 24px;
+					.uikit__component
+						.uikit__text--font-10 Пример текста
+						.uikit__title --fz-7x: 26px;
+					.uikit__component
+						.uikit__text--font-11 Пример текста
+						.uikit__title --fz-8x: 28px;
+					.uikit__component
+						.uikit__text--font-12 Пример текста
+						.uikit__title --fz-9x: 30px;
+					.uikit__component
+						.uikit__text--font-13 Пример текста
+						.uikit__title --fz-10x: 32px;
+					.uikit__component
+						.uikit__text--font-14 Пример текста
+						.uikit__title --fz-11x: 34px;
+					.uikit__component
+						.uikit__text--font-15 Пример текста
+						.uikit__title --fz-12x: 36px;
+					.uikit__component
+						.uikit__text--font-16 Пример текста
+						.uikit__title --fz-13x: 38px;
+					.uikit__component
+						.uikit__text--font-17 Пример текста
+						.uikit__title --fz-14x: 40px;
+					.uikit__component
+						.uikit__text--font-18 Пример текста
+						.uikit__title --fz-15x: 42px;
+					.uikit__component
+						.uikit__text--font-19 Пример текста
+						.uikit__title --fz-16x: 44px;
+					h3 Насыщенность (вес) шрифта
+					.uikit__component
+						.uikit__text--weight-1 Пример текста
+						.uikit__title --font-weight-regular: 400;
+					.uikit__component
+						.uikit__text--weight-2 Пример текста
+						.uikit__title --font-weight-medium: 500;
+					.uikit__component
+						.uikit__text--weight-3 Пример текста
+						.uikit__title --font-weight-semibold: 600;
+					.uikit__component
+						.uikit__text--weight-4 Пример текста
+						.uikit__title --font-weight-bold: 700;
+					h3 Интерлиньяж 
+					.uikit__component
+						.uikit__text--line-height-1 Пример<br> текста
+						.uikit__title --line-height-default: 1.2;
+					.uikit__component
+						.uikit__text--line-height-2 Пример<br> текста
+						.uikit__title --line-height-1x: 1.5;
+					h3 Трекинг 
+					.uikit__component
+						.uikit__text--spacing-1 Пример текста
+						.uikit__title --letter-spacing-0x: 0;
+					.uikit__component
+						.uikit__text--spacing-2 Пример текста
+						.uikit__title --letter-spacing-0-5x: 0.6px;
+					.uikit__component
+						.uikit__text--spacing-3 Пример текста
+						.uikit__title --letter-spacing-1x: 1px;
+					.uikit__component
+						.uikit__text--spacing-4 Пример текста
+						.uikit__title --letter-spacing-1-5x: 1.5px;
+					.uikit__component
+						.uikit__text--spacing-5 Пример текста
+						.uikit__title --letter-spacing-2x: 2px;
+					h3 Регистр 
+					.uikit__component
+						.uikit__text--transform-1 Пример текста
+						.uikit__title --text-transform-normal: none;
+					.uikit__component
+						.uikit__text--transform-2 Пример текста
+						.uikit__title --text-transform-uppercase: uppercase;
+				section.uikit__section
+					h2 Скругления
+					.uikit__colors
+						.uikit__component
+							.uikit__box.uikit__box--radius-1
+							.uikit__title --radius-0-5x: 2px;
+						.uikit__component
+							.uikit__box.uikit__box--radius-2
+							.uikit__title --radius-1x: 4px;
+						.uikit__component
+							.uikit__box.uikit__box--radius-3
+							.uikit__title --radius-1-5x: 6px;
+						.uikit__component
+							.uikit__box.uikit__box--radius-4
+							.uikit__title --radius-2x: 8px;
+						.uikit__component
+							.uikit__box.uikit__box--radius-5
+							.uikit__title --radius-2-5x: 10px;
+						.uikit__component
+							.uikit__box.uikit__box--radius-6
+							.uikit__title --radius-3x: 12px;
+						.uikit__component
+							.uikit__box.uikit__box--radius-7
+							.uikit__title --radius-3-5x: 14px;
+						.uikit__component
+							.uikit__box.uikit__box--radius-8
+							.uikit__title --radius-4x: 16px;
+						.uikit__component
+							.uikit__box.uikit__box--radius-9
+							.uikit__title --radius-5x: 20px;
+						.uikit__component
+							.uikit__box.uikit__box--radius-10
+							.uikit__title --radius-6x: 24px;
+				section.uikit__section
+					h2 Тени
+					.uikit__colors
+						.uikit__component
+							.uikit__box.uikit__box--shadow-1
+							.uikit__title --box-shadow-1: 0 2px 10px #d2d7e3;
+						.uikit__component
+							.uikit__box.uikit__box--shadow-2
+							.uikit__title --box-shadow-bottom: 0 6px 10px #d2d7e3;
+						.uikit__component
+							.uikit__box.uikit__box--shadow-3
+							.uikit__title --box-shadow-top: 0 -4px 6px #d2d7e3;
+				section.uikit__section
+					h2 Сетка и отступы
+					.uikit__component
+						.uikit__margin col-1
+						.uikit__margin.uikit__margin--1 col-2
+						.uikit__title --space-0-5x: 2px;
+					.uikit__component
+						.uikit__margin col-1
+						.uikit__margin.uikit__margin--2 col-2
+						.uikit__title --space-1x: 4px;
+					.uikit__component
+						.uikit__margin col-1
+						.uikit__margin.uikit__margin--3 col-2
+						.uikit__title --space-1-5x: 6px;
+					.uikit__component
+						.uikit__margin col-1
+						.uikit__margin.uikit__margin--4 col-2
+						.uikit__title --space-2x: 8px;
+					.uikit__component
+						.uikit__margin col-1
+						.uikit__margin.uikit__margin--5 col-2
+						.uikit__title --space-2-5x: 10px;
+					.uikit__component
+						.uikit__margin col-1
+						.uikit__margin.uikit__margin--6 col-2
+						.uikit__title --space-3x: 12px;
+					.uikit__component
+						.uikit__margin col-1
+						.uikit__margin.uikit__margin--7 col-2
+						.uikit__title --space-3-5x: 14px;
+					.uikit__component
+						.uikit__margin col-1
+						.uikit__margin.uikit__margin--8 col-2
+						.uikit__title --space-4x: 16px;
+					.uikit__component
+						.uikit__margin col-1
+						.uikit__margin.uikit__margin--9 col-2
+						.uikit__title --space-4-5x: 18px;
+					.uikit__component
+						.uikit__margin col-1
+						.uikit__margin.uikit__margin--10 col-2
+						.uikit__title --space-5x: 20px;
+					.uikit__component
+						.uikit__margin col-1
+						.uikit__margin.uikit__margin--11 col-2
+						.uikit__title --space-5-5x: 22px;
+					.uikit__component
+						.uikit__margin col-1
+						.uikit__margin.uikit__margin--12 col-2
+						.uikit__title --space-6x: 24px;
+					.uikit__component
+						.uikit__margin col-1
+						.uikit__margin.uikit__margin--13 col-2
+						.uikit__title --space-7x: 28px;
+					.uikit__component
+						.uikit__margin col-1
+						.uikit__margin.uikit__margin--14 col-2
+						.uikit__title --space-7-5x: 30px;
+					.uikit__component
+						.uikit__margin col-1
+						.uikit__margin.uikit__margin--15 col-2
+						.uikit__title --space-8x: 32px;
+					.uikit__component
+						.uikit__margin col-1
+						.uikit__margin.uikit__margin--16 col-2
+						.uikit__title --space-9x: 36px;
+					.uikit__component
+						.uikit__margin col-1
+						.uikit__margin.uikit__margin--17 col-2
+						.uikit__title --space-10x: 40px;
+					.uikit__component
+						.uikit__margin col-1
+						.uikit__margin.uikit__margin--18 col-2
+						.uikit__title --space-11x: 44px;
+					.uikit__component
+						.uikit__margin col-1
+						.uikit__margin.uikit__margin--19 col-2
+						.uikit__title --space-12x: 48px;
+					.uikit__component
+						.uikit__margin col-1
+						.uikit__margin.uikit__margin--20 col-2
+						.uikit__title --space-13x: 52px;
+					.uikit__component
+						.uikit__margin col-1
+						.uikit__margin.uikit__margin--21 col-2
+						.uikit__title --space-14x: 56px;
+					.uikit__component
+						.uikit__margin col-1
+						.uikit__margin.uikit__margin--22 col-2
+						.uikit__title --space-15x: 60px;
+					.uikit__component
+						.uikit__margin col-1
+						.uikit__margin.uikit__margin--23 col-2
+						.uikit__title --space-16x: 64px;
+					.uikit__component
+						.uikit__margin col-1
+						.uikit__margin.uikit__margin--24 col-2
+						.uikit__title --space-17x: 68px;
+					.uikit__component
+						.uikit__margin col-1
+						.uikit__margin.uikit__margin--25 col-2
+						.uikit__title --space-18x: 72px;
+					.uikit__component
+						.uikit__margin col-1
+						.uikit__margin.uikit__margin--26 col-2
+						.uikit__title --space-19x: 76px;
+					.uikit__component
+						.uikit__margin col-1
+						.uikit__margin.uikit__margin--27 col-2
+						.uikit__title --space-20x: 80px;
+					.uikit__component
+						.uikit__margin col-1
+						.uikit__margin.uikit__margin--28 col-2
+						.uikit__title --space-21x: 84px;
+					.uikit__component
+						.uikit__margin col-1
+						.uikit__margin.uikit__margin--29 col-2
+						.uikit__title --space-22x: 88px;
+					.uikit__component
+						.uikit__margin col-1
+						.uikit__margin.uikit__margin--30 col-2
+						.uikit__title --space-23x: 92px;
+					.uikit__component
+						.uikit__margin col-1
+						.uikit__margin.uikit__margin--31 col-2 
+						.uikit__title --space-24x: 96px;
+					.uikit__component
+						.uikit__margin col-1
+						.uikit__margin.uikit__margin--32 col-2
+						.uikit__title --space-25x: 100px;		
+			section.uikit__section(id="atoms")
+				h1 Базовые элементы интерфейса - Кнопки, Поля ввода, Иконки, Теги и бейджи, Тултипы
+				section.uikit__section
+					h2 Кнопки
+					.uikit__component
+						+button({
+							text: "Смотреть",
+							ariaLabel: "Смотреть новости"
+						}).button--base
+						.uikit__title Кнопка базовая
+					.uikit__component
+						+button({
+							text: "Смотреть",
+							ariaLabel: "Смотреть новости"
+						}).button--outline
+						.uikit__title Кнопка с обводкой
+					.uikit__component
+						+button({
+							text: "Смотреть",
+							ariaLabel: "Смотреть новости"
+						}).button--outline.button--small
+						.uikit__title Кнопка базовая маленькая
+					.uikit__component
+						+button({
+							text: "Посмотреть",
+							ariaLabel: "Посмотреть документ",
+							iconRight: 'icon-eye',
+						}).button--outline.button--small
+						.uikit__title Кнопка базовая маленькая с иконкой
+					.uikit__component
+						+button({
+							text: "Смотреть",
+							ariaLabel: "Смотреть предидущие 10 новостей",
+							iconLeft: 'icon-arrow-left',
+						}).button--base
+						.uikit__title Кнопка базовая с иконкой
+					.uikit__component
+						+button({
+							text: "Смотреть",
+							ariaLabel: "Смотреть следующие 10 новостей",
+							iconRight: 'icon-arrow-right',
+						}).button--outline
+						.uikit__title Кнопка с обводкой с иконкой
+					.uikit__component
+						+button({
+							iconLeft: 'icon-cart',
+							text: null,
+							ariaLabel: 'Добавить в корзину',
+						}).button--base.button--icon
+						.uikit__title Кнопка иконка
+					.uikit__component
+						+button({
+							iconLeft: 'icon-arrow-left',
+							text: null,
+							ariaLabel: 'Влево',
+						}).button--outline.button--icon
+						.uikit__title Кнопка иконка с обводкой
+					.uikit__component
+						+button({
+							iconLeft: 'icon-favorite',
+							text: null,
+							ariaLabel: 'Добавить в избранное',
+							ariaPressed: "false"
+						}).button--icon.button--transparent
+						.uikit__title Кнопка иконка без обводкой и заливки
+					.uikit__component
+						+button({
+							href: '#',
+							tag: 'a',
+							rel: 'nofollow noopener noreferrer', 
+							iconLeft: 'icon-redirect',
+							text: null,
+							ariaLabel: 'Перейти на страницу акции',
+						}).button--icon.button--transparent
+						.uikit__title Ссылка иконка без обводкой с заливкой
+				section.uikit__section
+					h2 Поля ввода
+					.uikit__component.uikit__component--width-1
+						.uikit__title Поле ввода базовое
+						+field({
+							fieldLabel: 'Фио',
+							componentData: {
+								required: true,
+								pattern: "^[а-яёА-ЯЁa-zA-Z]+([ \\-][а-яёА-ЯЁa-zA-Z]+)+$",
+								autocomplete: 'name',
+								ariaDescribedby: "fio-hint-1"
+							}
+						})
+					.uikit__component.uikit__component--width-1
+						.uikit__title Поле ввода базовое недоступное
+						+field({
+							fieldLabel: 'Фио',
+							componentData: {
+								required: true,
+								pattern: "^[а-яёА-ЯЁa-zA-Z]+([ \\-][а-яёА-ЯЁa-zA-Z]+)+$",
+								autocomplete: 'name',
+								ariaDescribedby: "fio-hint-2",
+								disabled: true,
+								ariaDisabled: true,
+							}
+						})
+					.uikit__component.uikit__component--width-1
+						.uikit__title Поле ввода c ошибкой
+						+field({
+							fieldLabel: 'Фио',									
+							componentData: {
+								required: true,
+								pattern: "^[а-яёА-ЯЁa-zA-Z]+([ \\-][а-яёА-ЯЁa-zA-Z]+)+$",
+								autocomplete: "name",
+								ariaLabel: 'Введите ваше Фио',
+								ariaDescribedby: "fio-hint-4",
+								ariaInvalid: String(true),
+							}
+						}).is-invalid
+					.uikit__component.uikit__component--width-1
+						.uikit__title Поле ввода многострочное
+						+field({
+							fieldLabel: 'Комментарий',
+							component: 'textarea',
+							componentData: {
+								required: true,
+								ariaLabel: 'Ведите ваш комментарий',
+								ariaDescribedby: "comment-hint"
+							}
+						})
+					.uikit__component.uikit__component--width-1
+						.uikit__title Поле ввода базовое без лейбла
+						+field({													
+							componentData: {
+								required: true,
+								placeholder: '* Фио',
+								pattern: "^[а-яёА-ЯЁa-zA-Z]+([ \\-][а-яёА-ЯЁa-zA-Z]+)+$",
+								autocomplete: "name",
+								ariaLabel: 'Введите ваше Фио',
+								ariaDescribedby: "fio-hint-3"
+							}
+						})
+					.uikit__component.uikit__component--width-1
+						.uikit__title  Поле ввода даты
+						+field({
+							fieldLabel: 'Дата рождения',
+							component: 'input-datapicker',
+							componentData: {
+								required: true,
+								ariaDescribedby: "birthday-hint"
+							}
+						})
+					.uikit__component.uikit__component--width-1
+						.uikit__title Поле ввода телефона
+						+field({
+							fieldLabel: 'Телефон',						
+							componentData: {
+								required: true,
+								mask: 'phone',
+								name:"phone",
+								type: "tel",
+								autocomplete: "tel",
+								ariaDescribedby: "tel-hint"
+							},
+						})
+					.uikit__component.uikit__component--width-1
+						.uikit__title Поле ввода пароля
+						+field({
+							fieldLabel: 'Пароль',
+							component: 'input-password',
+							componentData: {
+								required: true,
+								autocomplete: "new-password",
+								spellcheck: 'false',
+								ariaDescribedby: 'new-pass-1',	
+							},
+						})
+					.uikit__component.uikit__component--width-1
+						.uikit__title  Поле выбора мультивариант
+						+field({
+							fieldLabel: 'Выберите несколько вариантов',
+							id: 'choiseField1',	
+							component: 'select',
+							componentData: {
+								required: true,
+								multiple: true,
+								btnId: 'choiseField1',			
+								optionsList: [
+									{ label: "Утром", value: "1", },
+									{ label: "Вечером", value: "2", },
+									{ label: "После обеда", value: "3", },
+									{ label: "Завтра", value: "4", },
+								],
+								ariaDescribedby: "choise-hint",	
+								placeholder: '',      
+							}
+						})
+					.uikit__component.uikit__component--width-1
+						.uikit__title Поле выбора одиночное
+						+field({
+							fieldLabel: 'Пол',
+							id: 'sexField1',	
+							component: 'select',
+							componentData: {
+								required: true,
+								btnId: 'sexField1',			
+								optionsList: [
+									{ label: "Женский", value: "female", },
+									{ label: "Мужской", value: "male", },
+								],
+								ariaDescribedby: "sex-hint",	
+								placeholder: '',      
+							}
+						})
+					.uikit__component.uikit__component--width-1
+						.uikit__title Поле поиска
+						+field({
+							fieldLabel: 'Населенный пункт',
+							component: 'select-search',
+							componentData: {							
+								required: true,
+								ariaDescribedby: "city-hint"
+							}		
+						})
+					.uikit__component
+						.uikit__title Поле загрузки картинки
+						+input-upload()
+					.uikit__component
+						.uikit__title Поле загрузки файла
+						+input-upload({
+							type: 'file',
+							label: 'Загрузить файл',
+						})
+					.uikit__component
+						.uikit__title Поле загрузки картинки с перетаскиванием картинки
+						+input-upload({
+							type: 'img-drop',
+							drop: true
+						})
+					.uikit__component
+						.uikit__title Поле загрузки картинки с перетаскиванием файла
+						+input-upload({
+							type: 'file-drop',
+							drop: true
+						})
+					.uikit__component
+						.uikit__title Чекбокс
+						+toggle({
+							label: 'Выбери'
+						})
+					.uikit__component
+						.uikit__title Чекбокс выбранный
+						+toggle({
+							label: 'Выбери',
+							checked: true
+						})
+					.uikit__component
+						.uikit__title Чекбокс неактивный
+						+toggle({
+							label: 'Выбери',
+							checked: true,
+							disabled: true
+						})
+					.uikit__component
+						.uikit__title Чекбокс переключатель
+						+toggle({
+							label: 'Переключатель',
+						}).toggle--switch
+					.uikit__component
+						.uikit__title Чекбокс выбранный переключатель
+						+toggle({
+							checked: true,
+							label: 'Переключатель',
+						}).toggle--switch
+					.uikit__component
+						.uikit__title Чекбокс неактивный переключатель
+						+toggle({
+							disabled: true,
+							label: 'Переключатель',
+						}).toggle--switch
+					.uikit__component
+						.uikit__title Радиобатон
+						.uikit__flex
+							+toggle({
+								type: 'radio',
+								name: 'box',
+								value: 1,
+								label: 'Радио 1',
+								checked: true
+							})
+							+toggle({
+								type: 'radio',
+								name: 'box',
+								value: 2,
+								label: 'Радио 2',
+							})
+					.uikit__component
+						.uikit__title Набор туглеров
+						+fieldset({
+							title: 'Выбор вариантов с чекбоксами',
+						})
+					.uikit__component
+						.uikit__title Набор туглеров
+						+fieldset({
+							title: 'Выбор варианта с радио',
+							type: 'radio'
+						})
+				section.uikit__section
+					h2 Иконки
+					.uikit__component
+						.uikit__flex-wrap
+							i.icon.icon-arrow-down
+							i.icon.icon-arrow-left
+							i.icon.icon-arrow-right
+							i.icon.icon-arrow-up
+							i.icon.icon-burger
+							+icon('icon-calendar', '16', '16')
+							i.icon.icon-cart
+							i.icon.icon-check
+							i.icon.icon-close
+							i.icon.icon-download
+							i.icon.icon-dropdown
+							i.icon.icon-eye-crossed
+							i.icon.icon-eye
+							i.icon.icon-favorite
+							i.icon.icon-favorite-fill.is-active
+							i.icon.icon-filter
+							i.icon.icon-geo
+							i.icon.icon-home
+							i.icon.icon-map
+							i.icon.icon-menu
+							i.icon.icon-minus
+							i.icon.icon-pause
+							i.icon.icon-phone
+							i.icon.icon-play
+							i.icon.icon-plus
+							i.icon.icon-redirect
+							i.icon.icon-reload
+							i.icon.icon-search
+							i.icon.icon-star
+							i.icon.icon-upload  
+							i.icon.icon-user 
+							i.icon.icon-view-card
+							i.icon.icon-view-list
+					.uikit__component
+						.uikit__flex-wrap
+							include ../../img/icons/icon-advantages-1.svg
+							include ../../img/icons/icon-advantages-2.svg
+							include ../../img/icons/icon-advantages-3.svg
+							include ../../img/icons/icon-advantages-4.svg
+							include ../../img/icons/icon-bonus.svg
+							include ../../img/icons/icon-discount.svg
+							include ../../img/icons/icon-gift.svg
+							include ../../img/icons/icon-inst.svg
+							include ../../img/icons/icon-vk.svg
+							include ../../img/icons/icon-youtube.svg
+							include ../../img/icons/logo.svg
+							include ../../img/icons/map-icons.svg
+				section.uikit__section
+					h2 Теги и бейджи
+					.uikit__component
+						.uikit__title Метки для товаров 
+						+product-stickers({list: [{'text': 'new', 'class': 'new',}, {'text': 'sale',	'class': 'sale',}, {'text': 'нет в наличии',	'class': 'not-available',},], ariaLabel: "Метки товара"})
+					.uikit__component
+						.uikit__title Метки для акций 
+						+stock-stickers({
+							list: [{text: 'подарок', class: 'gift'}, {text: 'бонусы', class: 'bonuses'}, {text: 'скидка', class: 'discount'}],
+						})
+					.uikit__component
+						.uikit__title Метки для статусов заказа
+						.purchase-meta__status.purchase-meta__status--accept Принят
+						.purchase-meta__status.purchase-meta__status--assemble В сборке
+						.purchase-meta__status.purchase-meta__status--paid Оплачен
+						.purchase-meta__status.purchase-meta__status--ready Готов к отправке
+						.purchase-meta__status.purchase-meta__status--transit В пути
+						.purchase-meta__status.purchase-meta__status--delivered Доставлен
+					.uikit__component
+						.uikit__title Панель рейтинга по единице
+						+rating-panel()
+					.uikit__component
+						.uikit__title Панель рейтинга по процентам
+						+rating-panel({
+							mode: 'percent',
+							colorActive: '#e97b58',
+							colorBg: '#717070',
+							active: 2.5,
+						})
+					.uikit__component
+						.uikit__title Панель рейтинга с выбором
+						+rating-panel({
+							mode: 'interactive',
+						})
+					.uikit__component
+						.uikit__title Счетчик
+						.counter 2
+				section.uikit__section
+					h2 Тултипы
+					.uikit__component
+						.uikit__title Тултип внизу
+						+tooltip({
+							text: "Тултип внизу",
+							position: "bottom"
+						})
+					.uikit__component
+						.uikit__title Тултип наверху
+						+tooltip({
+							text: "Тултип наверху",
+							position: "top"
+						})
+					.uikit__component
+						.uikit__title Тултип справа
+						+tooltip({
+							text: "Тултип справа",
+							position: "right"
+						})
+					.uikit__component
+						.uikit__title Тултип слева
+						+tooltip({
+							text: "Тултип слева",
+							position: "left"
+						})
+			section.uikit__section(id="navigations")
+				h1 Компоненты навигации - Хлебные крошки, Пагинация, Список тэгов для секции, Аккордеоны и Табы, Переполнение контента
+				section.uikit__section
+					h2 Хлебные крошки
+					.uikit__component
+						.uikit__title Хлебные крошки
+						+breadcrumbs()
+					.uikit__component
+						.uikit__title Хлебные крошки с переполнением
+						+breadcrumbs({
+							list: [
+								{ title: 'Главная', href: "#"}, 
+								{ title: 'Каталог', href: "#"}, 
+								{ title: 'Окрашивание волос', href: "#"}, 
+								{ title: 'Безаммиачный краситель', href: "#"}, 
+								{ title: 'Окрашивание волос', href: "#"}, 
+								{ title: 'Безаммиачный краситель' , href: "#"},
+								{ title: 'Безаммиачный краситель: Alfaparf', href: "#"}, 
+								{ title: 'SV (Супер-фиолетовый) Крем-краска с экстрактом жемчуга и Алоэ Вера', href: "#"}, 
+								{ title: 'Безаммиачный краситель: Alfaparf', href: "#"}, 
+								{ title: 'SV (Супер-фиолетовый) Крем-краска с экстрактом жемчуга и Алоэ Вера', href: "#"}
+							],
+						})
+				section.uikit__section
+					h2 Пагинация
+					.uikit__component
+						.uikit__title Пагинация
+						+pagination({
+							current: 5, 
+							total:20
+						})
+				section.uikit__section
+					h2 Список тэгов для секции
+					+section-tags({
+						list: ['Все', 'О компании', 'Товары', 'Фотоотчеты', 'Мероприятия'] 
+					})
+				section.uikit__section
+					h2 Аккордеоны и Табы
+					.uikit__component.uikit__component--width-1
+						.uikit__title Аккордеон базовый
+						+accordion()
+					.uikit__component.uikit__component--width-1 
+						.uikit__title Аккордеон базовый c раскрытым пунктом
+						+accordion({
+							indexChain: [2, 3, 1],
+						})
+					.uikit__component.uikit__component--width-1
+						.uikit__title Табы базовые вложенные
+						+tabs()
+					.uikit__component.uikit__component--width-1
+						.uikit__title Табы базовые вложенные с мобильным аккордеоном
+						+tabs({
+							mode: 'accordion'
+						})
+				section.uikit__section
+					h2 Переполнение контента
+					.uikit__component
+						.uikit__title Скролл			
+						+scroll-block()
+					.uikit__component
+						.uikit__title Раскрывающийся список	c кнопкой сокрытия		
+						+priority-tags()
+					.uikit__component
+						.uikit__title Раскрывающийся список	c кнопкой и дропдауном
+						+priority-tags({
+							mode: 'dropdown'
+						})
+			section.uikit__section(id="components")
+				h1 Специфичные компоненты интернет-магазина - Карточка товара, Счетчик количества,  Элементы фильтра, Мини-корзина
+				section.uikit__section
+					h2 Карточка товара
+					.uikit__component
+						.uikit__title Карточка товара
+						+list({
+							list: [{
+								img: './img/components/product-card/img-1',
+								title: 'ALFAPARF',
+								text: 'Порошок для обесцвечивания волос до 7 уровней',
+								cost: '750 ₽',
+								stock: '10 750 ₽',
+								labels: [{ 'text': 'new', 'class': 'new', }, {	'text': 'sale',	'class': 'sale'	},],
+							}],
+							component: 'product-card',
+						})
+					.uikit__component
+						.uikit__title Карточка товара горизонтальная
+						+product-row({
+							img: './img/components/product-card/img-1',
+							title: 'ALFAPARF',
+							text: 'Порошок для обесцвечивания волос до 7 уровней',
+							cost: '750 ₽',
+							stock: '10 750 ₽',
+							labels: [{'text': 'new', 'class': 'new',}, {	'text': 'sale', 'class': 'sale',},],
+						})
+					.uikit__component
+						.uikit__title Карточка новости
+						+list({
+							list: [{
+								'img': './img/components/news-card/img-1',
+								'labels': ['О КОМПАНИИ'],
+								'date': '28 мая 2022',
+								'title': 'Дорогие парикмахеры - эта новость для вас!',
+								'text': 'На днях мы запустили интернет-магазин для розницы и дарим всем скидку по этому случаю 20% на первый заказ',
+							}],
+							component: 'article-card',
+						})
+					.uikit__component
+						.uikit__title Карточка акции
+						+list({
+							list: [{
+								title: 'Скидка при покупке STAREPIL',
+								img: './img/components/stock-card/img-5',
+								brand: './img/components/brands-list/img-1',
+								labels: [{	class: 'gift', text: 'подарок'},{	class: 'discount', text: 'скидка'}]
+							}],
+							component: 'stock-card',
+						})
+					.uikit__component
+						.uikit__title Карточка акции горизонтальная
+						+stock-row-mini({
+							labels: [{text: 'подарок', class: 'gift'}, {text: 'бонусы', class: 'bonuses'}],
+							title: 'Подарок при покупке продукции Alfaparf на сумму 6 800 рублей',
+							text: 'Спрей очищающий, антисептик для рук 100мл и одно средство из списка на выбор',
+						}).stock-row-mini--brand
+					.uikit__component
+						.uikit__title Карточка курса
+						+list({
+							list: [{
+								'img': './img/components/course-page/img-6',
+								'text': 'Создания красивого блонда на основе метода окрашивания волос AIRTOUCH',
+								'cost': '750 ₽',
+								'stock': '1 200 ₽',
+								'start': '12 марта', 
+								'end': '25 марта',
+							}],
+							component: 'education-card',
+						})
+					.uikit__component
+						.uikit__title Карточка записи на курса
+						+course-schedule-card({
+							'img': './img/components/course-page/img-12',
+							'title': 'Искусство депиляции воском',
+							'text': 'Наталья Дивнич',
+							'cost': '750 ₽',
+							'stock': '1 200 ₽',
+							'start': '12 марта', 
+							'end': '25 марта',	
+						})
+					.uikit__component
+						.uikit__title Карточка заказа
+						.purchases__list
+							.purchases__item
+								+purchases-card({
+									'title': 'Заказ № 232421',
+									'cost': '2 500 ₽',
+									'date': '25.06.23',
+									'label': 'Принят',
+									'labelClass': 'accept',
+									'sliderImg': [{pic: 'img-6'}, {pic: 'img-1'}, {pic: 'img-9'},{pic: 'img-5'},{pic: 'img-6'}, {pic: 'img-1'}, {pic: 'img-9'},{pic: 'img-5'},]
+								})
+				section.uikit__section
+					h2 Счетчик количества
+					.uikit__component
+						.uikit__title Каунтер
+						+input-counter() 
+					.uikit__component
+						.uikit__title Каунтер с подписью
+						+input-counter({
+							message: '100 шт'
+						})
+				section.uikit__section
+					h2 Элементы фильтра
+					.uikit__component.uikit__component--width-1
+						.uikit__title Диапазон
+						+range()
+					.uikit__component
+						.uikit__title Фильтры каталога
+						.products__filters
+							+button({
+								iconLeft: ['icon-filter','20','20'],
+								text: null,
+								ariaLabel: 'Отфильтровать',
+								ariaExpanded: "false",
+								ariaControls: 'catalog-filter-controls',
+							}).button--icon.products__filters-show(data-slider-panel-show='catalog-filter')
+							+catalog-filters()(data-da=`[data-slider-panel="catalog-filter"] .slider-panel__body,767,last`)
+					.uikit__component
+						.uikit__title Фильтры в личном кабинете
+						.purchases-filters
+							form.purchases-filters__form
+								.purchases-filters__field
+									+input({
+										placeholder: 'Номер заказа',
+										ariaLabel: 'Введите номер заказа'
+									})
+								.purchases-filters__field
+									+select({
+										placeholder: 'Статус заказа',
+										optionsList: [
+											{label: 'Принят', value: '1'},
+											{label: 'В сборке', value: '2'},
+											{label: 'Оплачен', value: '3'},
+											{label: 'Готов к отправке', value: '4'},
+											{label: 'В пути', value: '5'},
+											{label: 'Доставлен', value: '6'},
+										],
+									})
+								.purchases-filters__field
+									.purchases-filters__row 
+										.purchases-filters__cell
+											+field({
+												component: 'input-datapicker',
+												componentData: {
+													placeholder: 'От',
+													ariaLabel: 'Введите начало периода'
+												}
+											})
+										.purchases-filters__cell-separator —
+										.purchases-filters__cell
+											+field({
+												component: 'input-datapicker',
+												componentData: {
+													placeholder: 'До',
+													ariaLabel: 'Введите конец периода'
+												}
+											})
+								.purchases-filters__field
+									+button({
+										text: 'Искать',
+										type: 'submit'
+									}).button--base
+				section.uikit__section
+					h2 Мини-корзина
+					.uikit__component
+						.uikit__title Корзина
+						form.slider
+							.slider-panel__body
+								+basket()
+					.uikit__component
+						.uikit__title Пустая корзина
+						form.slider
+							.slider-panel__body
+								.basket__empty
+									p В корзине нет товаров
+								.basket__subtitle Новинки
+								+list({
+									list: productList1,
+									component: 'product-card',
+								})
+				section.uikit__section
+					h2 Футер
+					+footer()
+			section.uikit__section(id="modals")
+				h1 Системные и всплывающие уведомления - Окно быстрой покупки, авторизации, Торговые уведомления
+				section.uikit__section
+					h2 Окно быстрой покупки, авторизации, изменения города.
+					.uikit__component
+						.uikit__title Запись на курс
+						+button({
+							text: "Записаться",
+							ariaLabel: "Записаться на курс",
+							ariaExpanded: "false",
+							ariaHaspopup: "dialog",
+						}).button--base(data-modal-show="course-education")
+					.uikit__component
+						.uikit__title Войти в личный кабинет
+						+button({ 
+							ariaExpanded: "false",
+							ariaHaspopup: "dialog",
+							text: "Войти",
+							ariaLabel: 'Личный кабинет',
+						}).button--base(data-modal-show='login-modal')
+					.uikit__component
+						.uikit__title Выйти из личного кабинета
+						+button({ 
+							ariaExpanded: "false",
+							ariaHaspopup: "dialog",
+							text: "Выйти",
+							ariaLabel: 'Выйти из личного кабинета',
+						}).button--base(data-modal-show='logout-modal')
+					.uikit__component
+						.uikit__title Оформить заказ
+						+button({ 
+							ariaExpanded: "false",
+							ariaHaspopup: "dialog",
+							text: "Оформить заказ",
+						}).button--base(data-modal-show='order-modal')
+					.uikit__component
+						.uikit__title Оформление заказа
+						+button({ 
+							ariaExpanded: "false",
+							ariaHaspopup: "dialog",
+							text: "Оформление заказа",
+						}).button--base(data-modal-show='order-create-modal')
+					.uikit__component
+						.uikit__title Очистить лист ожидания
+						+button({ 
+							ariaExpanded: "false",
+							ariaHaspopup: "dialog",
+							text: "Очистить лист ожидания",
+						}).button--base(data-modal-show='wishlist-modal')
+					.uikit__component
+						.uikit__title Очистить корзину
+						+button({ 
+							ariaExpanded: "false",
+							ariaHaspopup: "dialog",
+							text: "Очистить корзину",
+						}).button--base(data-modal-show='basket-clear-modal')
+				section.uikit__section(id="alert-modal")
+					h2 Торговые уведомления
+					.uikit__component
+						.uikit__title Попап добавления в корзину
+						+button({
+							text: "Вызвать попап",
+							ariaLabel: "Вызвать попапа"
+						}).button--base(data-toast-notification-show="toast-cart-add-template")
+					.uikit__component
+						.uikit__title Попап удаления из корзины
+						+button({
+							text: "Вызвать попап",
+							ariaLabel: "Вызвать попапа"
+						}).button--base(data-toast-notification-show="toast-cart-remove-template")
+					.uikit__component
+						.uikit__title Попап добавления в избранное
+						+button({
+							text: "Вызвать попап",
+							ariaLabel: "Вызвать попапа"
+						}).button--base(data-toast-notification-show="toast-favorite-add-template")
+					.uikit__component
+						.uikit__title Попап удаления из избранного
+						+button({
+							text: "Вызвать попап",
+							ariaLabel: "Вызвать попапа"
+						}).button--base(data-toast-notification-show="toast-favorite-remove-template")
+					.uikit__component
+						.uikit__title Корзина очищена
+						+button({
+							text: "Вызвать попап",
+							ariaLabel: "Вызвать попапа"
+						}).button--base(popovertarget="my-popover-5")

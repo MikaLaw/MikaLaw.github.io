@@ -1,0 +1,13 @@
+.purchase-steps__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2-5x);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: purchase-step;
+
+  @include vp-1280 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

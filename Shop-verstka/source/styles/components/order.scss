@@ -1,0 +1,23 @@
+.order {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: var(--space-2x);
+
+  @include vp-1280 {
+    flex-direction: row;
+    gap: var(--space-13x);
+    align-items: flex-start;
+  }
+}
+
+.order__steps {
+  @include vp-1280 {
+    flex: 1;
+  }
+}
+
+.order__content {
+  @include vp-1280 {
+    width: 540px;
+  }
+}

@@ -1,0 +1,44 @@
+mixin input-counter(options = {})
+	-
+		const {
+			id = Math.random().toString(36).substring(2),
+			inputValue = 1,
+			inputMin = 1,
+			inputMax = 100,
+			inputStep = false,
+			inputDisabled = false,
+			inputAriaLabel = 'Количество',
+			message = false,
+			decrementAriaLable = "Уменьшить количество",
+			incrementAriaLable = "Увеличить количество",   
+		} = options;
+
+	.input-counter(data-counter)&attributes(attributes)
+		.input-counter__wrapper
+			+button({
+				iconLeft: 'icon-minus',
+				text: null,
+				ariaLabel: decrementAriaLable,
+			}).button--base.input-counter__btn(data-btn-minus)
+			input.input.input-counter__input(
+				id=inputId,
+				type="number",
+				value=inputValue,
+				min=inputMin,
+				max=inputMax, 
+				disabled=inputDisabled,
+				aria-label=inputAriaLabel,
+				step=inputStep
+			)
+			+button({
+				iconLeft: 'icon-plus',
+				text: null,
+				ariaLabel: incrementAriaLable,
+			}).button--base.input-counter__btn(data-btn-plus)
+		if message
+			.input-counter__info!= message
+		.counter-announcer.visually-hidden(
+			aria-live="polite" 
+			aria-atomic="true"
+			data-counter-announcer
+		)

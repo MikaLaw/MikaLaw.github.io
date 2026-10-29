@@ -1,0 +1,46 @@
+extends ../components/base/layout
+
+block variables
+	- const title = "Портфолио"
+	- const hasHeader = true
+
+block main
+	main.page__main
+		section.section.section--hero
+			.container
+				.hero
+					.hero__content
+						h1.hero__title Привет.
+						.hero__subtitle Нужен Frontend?
+						.hero__text Меня зовут Надя, и я — тот самый Frontend-разработчик, которого вы ищете.
+		section.section.section--work 
+			.work
+				ul.work__list 
+					each item in workList 
+						li.work__item 
+							+work-card(item)
+		section.section.section--about 
+			.container.container--sm 
+				.about
+					.about__title.section__title Обо мне
+					.about__text.section__text
+						each txt in aboutDeskription
+							p!= txt
+		section.section.section--experience
+			.container.container--sm 
+				.experience
+					.experience__title.section__title Коммерческий опыт
+					.experience__text.section__text
+						each txt in experience
+							p!= txt
+		section.section.section--contacts
+			.container.container--sm 
+				.contacts
+					.contacts__title.section__title Я на связи
+					ul.contacts__list 
+						each contact in contacts
+							li.contacts__item
+								a.contacts__link(class=`contacts__link--${contact.icon}` href= contact.link target="_blank" rel="noopener noreferrer")!= contact.text
+
+
+

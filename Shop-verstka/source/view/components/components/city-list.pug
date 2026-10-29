@@ -1,0 +1,13 @@
+mixin city-list(options = {})
+  -
+    const {
+      title = 'Москва',
+      list = ['ул. Есенина, д. 62, кв. 123', 'ул. Первомайская, д. 65, кв. 123'],
+    } = options;
+
+  .city-list&attributes(attributes)
+    h2.city-list__title(data-city)!= title
+    ul.city-list__list(data-data-city-list)
+      each item in list 
+        li.city-list__item
+          a.city-list__link(href="./shop.html")!= item

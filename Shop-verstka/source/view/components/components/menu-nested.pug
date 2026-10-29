@@ -1,0 +1,49 @@
+mixin menu-level(options = {})
+	-
+		const {
+			items = []
+		} = options;
+
+	ul.menu-nested__list.custom-scroll
+		each item in items
+			li.menu-nested__item(data-menu-item)
+				if !!item.submenus
+					- const itemId = `menu-level-${Math.random().toString(36).substring(2, 9)}`;
+
+					+button({
+						ariaExpanded: "false",
+						ariaHaspopup: "true",
+						ariaControls: itemId,
+						text: item.title || item.text,
+						iconRight: 'icon-dropdown',
+					}).menu-nested__link(data-slider-panel-show=`sidebar-menu-${itemId}`)
+					+slider-panel({	
+						name: `sidebar-menu-${itemId}`,	
+						title: item.title || item.text,
+						isTitleHide: true, 
+						ariaControlsId: itemId,
+						iconClose: ['icon-arrow-left','14','14'],
+						textClose: item.title || item.text,
+						classClose: 'slider-panel__back',
+						query: "max-width: 1023px",
+					}).slider-panel--slide
+						+menu-level({ items: item.submenus })
+				else
+					+button({
+						text: item.text,
+						href: './product.html',
+						tag: 'a',
+						type: null,
+					}).menu-nested__link
+
+
+mixin menu-nested(options = {})
+	-
+		const {
+			menuItems = menuData,
+		} = options;
+
+	nav.menu-nested(data-menu-nested aria-label="Каталог товаров")&attributes(attributes)
+		.container
+			.menu-nested__list-wrapper
+				+menu-level({ items: menuItems	})

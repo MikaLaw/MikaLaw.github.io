@@ -1,0 +1,16 @@
+.brands {
+  font-family: var(--ff-default);
+  line-height: var(--line-height-default);
+}
+
+.brands__nav {
+  margin-block-end: var(--space-3x);
+
+  @include vp-480 {
+    margin-block-end: var(--space-7-5x);
+  }
+}
+
+.brands__search {
+  margin-block-end: var(--space-5x);
+}

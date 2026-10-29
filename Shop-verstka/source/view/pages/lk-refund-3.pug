@@ -1,0 +1,113 @@
+extends ../components/base/layout
+
+block variables
+	- const title = "ЛК-Новый возврат" //- на страницах кроме главной используйте О нас — ProjectName
+	- const wrapperMods = ""
+	- const hasHeader = true
+	- const headerMods = ""
+	- const hasFooter = true
+	- const hasFooterPanel = true 
+	- const footerMods = ""
+	- const currentUrl = "" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+	- const page = "./lk-refund-3.html" //- обозначение страницы для проброса в панели подвала
+
+block main
+	main.page__main
+		+breadcrumbs({
+			list: [{title: 'Главная', href: './main.html'}, {title: 'Заявки на возврат'}],
+		})
+		section.section
+			.container
+				.section__wrapper 
+					.section__sidebar
+						+sidebar-menu({
+							page: page,
+						})
+					.section__content
+						.section__head
+							h1.section__title Новый возврат
+						.section__description
+							p По вопросам обмена и возврата Вы всегда можете обратиться по телефону <a href="tel:+73852221925" class="section__link">+7 (3852) 22-19-25</a> или написать нам на электронную почту <a href="mailto:modernshop22@yandex.ru" class="section__link">modernshop22@yandex.ru</a> 
+							p С полными правилами обмена и возврата Вы можете ознакомиться <a href="#" class="section__link">Договор оферты</a>.
+						form.refund-form
+							.refund-form__header
+								+field({
+									fieldLabel: 'выберите заказ',
+									component: 'select-search',
+									componentData: {							
+										required: true,
+										placeholder: 'Номер заказа'
+									}		
+								})
+							.refund-form__body
+								fieldset.refund-form__step
+									legend.refund-form__step-title что хотите вернуть?
+									.refund-form__fieldset 
+										each product, ind in productList2
+											.refund-form__toggle 
+												+toggle({
+													label: null,
+													checked: ind === 0
+												})
+												article.product-row.product-row--refund
+													.product-row__wrapper 
+														.product-row__img-wrapper
+															a.product-row__img(href="./product.html" tabindex="-1" aria-hidden="true")
+																+picture({
+																	format: "jpg",
+																	path: product.img,
+																	alt: "Товар",
+																	isLazyLoading: "lazy",
+																	isDecoding: "async",
+																	width: "320",
+																	height: "310",
+																	desktopSource: product.img,
+																	mobileSource: `${product.img}-mobile`,
+																})
+														.product-row__content-wrapper
+															.product-row__info-wrapper
+																h2.product-row__title
+																	a.product-row__link(href="./product.html")!= product.title
+																.product-row__description!= product.text
+															if product.cost
+																.product-row__price-wrapper
+																	.product-row__price-actual
+																		span.visually-hidden Текущая цена:
+																		!= product.cost
+																	if product.stock
+																		.product-row__price-old
+																			span.visually-hidden Старая цена:
+																			s!= product.stock
+														.product-row__control-wrapper
+															+input-counter()
+								fieldset.refund-form__step
+									legend.refund-form__step-title причина возврата
+									+field({
+										fieldLabel: 'Укажите причину',
+										component: 'textarea',              
+										componentData: {							
+											required: true,
+											label: 'Опишите причину',
+										}					
+									})
+									+field({
+										component: 'input-upload',
+										validationType: 'upload',                    
+										componentData: {							
+											required: true,
+											label: 'Прикрепить файл(-ы)',
+										}					
+									})
+							.refund-form__footer 
+								.refund-form__head 
+									.refund-form__title Итого к возврату:
+									.refund-form__summ 1 500 ₽
+								+toggle({
+									label: 'Согласен с условиями <a href="#">договора оферты</a>',
+									checked: true
+								})
+								+button({
+									text: 'оформить возврат',
+									type: 'submit'
+								}).button--base
+							.refund-form__text Менеджер свяжется с вами по вашей заявке и в случае ее одобрения уточнит способы возврата 

@@ -1,0 +1,41 @@
+extends ../components/base/layout
+
+block variables
+	- const title = "Страница не найдена" //- на страницах кроме главной используйте О нас — ProjectName
+	- const wrapperMods = ""
+	- const hasHeader = true
+	- const headerMods = ""
+	- const hasFooter = true
+	- const hasFooterPanel = true 
+	- const footerMods = ""
+	- const currentUrl = "" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+	main.page__main.page__main--not-found
+		section.section.section--not-found
+			.container
+				.not-found-banner 
+					.not-found-banner__content 
+						h1.not-found-banner__title.section__title Страница не найдена
+						.not-found-banner__text
+							p Неправильно набран адрес или такой страницы на сайте больше не существует.
+							p Вы можете вернуться назад или перейти на главную, нажав на кнопку ниже.
+						+button({
+							tag: 'a',
+							href: '/',
+							type: null,
+							text: 'На главную',
+							iconRight: 'icon-arrow-right'
+						}).button--base.not-found-banner__button 
+			.section__pic
+				+picture({
+					format: "png",
+					path: './img/components/404/404',
+					alt: "Иллюстрация ошибки 404",
+					isLazyLoading: "eager",
+					fetchpriority: "high",
+					isDecoding: "async",
+					width: "320",
+					height: "310",
+					noneMediaSource: true,
+				})

@@ -1,0 +1,26 @@
+mixin dialog-wrapper(options={})
+	-
+		const {
+			id = false,
+			modalId = false,
+			title = false,
+			lazy = true,
+			popovermode = true,
+			btnClass = 'dialog__button-close',
+			btnText = null,
+			btnAriaLabel = 'Закрыть модальное окно',
+			btnIcon = ['icon-close','20','20'],
+			animationClass = 'dialog--slide',
+		} = options;
+
+	dialog.dialog.dialog--panel.dialog--space(class=animationClass id=id data-modal=modalId data-popovermode=popovermode	data-lazy=lazy)&attributes(attributes)
+		.dialog__head
+			if title
+				.dialog__title!= title
+			+button({
+				iconLeft: btnIcon,
+				text: btnText,
+				ariaLabel: btnAriaLabel,
+			})(data-modal-close=modalId class= btnClass)
+		.dialog__body.custom-scroll
+			block

@@ -1,0 +1,20 @@
+.search {
+  margin-block-end: var(--space-5x);
+  font-family: var(--ff-default);
+  line-height: var(--line-height-default);
+}
+
+.search__component {
+  margin-block-end: var(--space-3x);
+}
+
+.search__text {
+  color: var(--color-neutral-gray-9);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--fz-1x);
+
+  span {
+    margin-inline-end: var(--space-2x);
+    color: var(--color-neutral-gray-8);
+  }
+}

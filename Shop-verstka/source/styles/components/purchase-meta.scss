@@ -1,0 +1,69 @@
+.purchase-meta__info {
+  display: flex;
+  gap: var(--space-2x);
+  align-items: center;
+  margin-block-end: var(--space-2-5x);
+
+  @include vp-480 {
+    width: 100%;
+  }
+}
+
+.purchase-meta__date {
+  color: var(--color-neutral-gray-9);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--fz-1x);
+}
+
+.purchase-meta__status {
+  --purchases-list-card-bg-status: var(--color-neutral-gray-6);
+
+  display: inline-block;
+  padding: var(--space-0-5x) var(--space-2x);
+  color: var(--color-neutral-gray-9);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--fz-0-5x);
+  letter-spacing: var(--letter-spacing-1x);
+  text-transform: var(--text-transform-uppercase);
+  background: var(--purchases-list-card-bg-status);
+  border-radius: var(--radius-1x);
+}
+
+.purchase-meta__status--accept {
+  --purchases-list-card-bg-status: var(--color-brand-pink-1);
+}
+
+.purchase-meta__status--assemble {
+  --purchases-list-card-bg-status: var(--color-brand-green-1);
+}
+
+.purchase-meta__status--paid {
+  --purchases-list-card-bg-status: var(--color-brand-blue-1);
+}
+
+.purchase-meta__status--ready {
+  --purchases-list-card-bg-status: var(--color-brand-beige-2);
+}
+
+.purchase-meta__status--transit {
+  --purchases-list-card-bg-status: var(--color-brand-beige-1);
+}
+
+.purchase-meta__status--delivered {
+  --purchases-list-card-bg-status: var(--color-brand-green-2);
+}
+
+.purchase-meta__delivery {
+  color: var(--color-neutral-gray-9);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--fz-1x);
+
+  @include vp-480 {
+    width: 100%;
+  }
+}
+
+.purchase-meta__delivery-date {
+  margin-inline-start: var(--space-1x);
+  font-weight: var(--font-weight-semibold);
+}

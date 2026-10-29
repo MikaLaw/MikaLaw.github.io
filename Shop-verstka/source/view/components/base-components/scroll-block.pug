@@ -1,0 +1,13 @@
+mixin scroll-block(options = {})
+	-
+		const {
+			tagsList = tags,
+		} = options;
+
+	.scroll-block(data-scroll-block)&attributes(attributes)
+		each tag in tagsList
+			+button({
+				type: null,
+				text: tag
+			})
+

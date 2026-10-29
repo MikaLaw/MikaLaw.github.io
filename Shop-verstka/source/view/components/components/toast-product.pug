@@ -1,0 +1,50 @@
+mixin toast-product(options = {})
+	-
+		const {
+			id = `toast-product-${Math.random().toString(36).substring(2, 9)}`,
+			title = 'Товар добавлен в корзину',
+			img = './img/components/product-card/img-9',
+			name = 'Шампунь Антистресс с экстрактом...',
+			cost = '6 750 ₽',
+			stock = '2 125,00 ₽',
+			controlBtnText = false,
+		} = options;
+
+	template(data-toast-notification=id)
+		.toast-product&attributes(attributes)
+			.toast-product__wrapper(data-popup-content)
+				.toast-product__head
+					.toast-product__title!= title
+					.toast-product__close
+						+button({
+							text: null,
+							iconLeft: 'icon-close',
+						}).button--transparent(aria-label="Закрыть уведомление" data-toast-notification-close)
+				.toast-product__body
+					.toast-product__img-wrapper
+						+picture({
+							format: "jpg",
+							path: img,
+							alt: "Товар",
+							isLazyLoading: "lazy",
+							isDecoding: "async",
+							width: "320",
+							height: "310",
+							desktopSource: img,
+							mobileSource: `${img}-mobile`,
+						})
+					.toast-product__content 
+						.toast-product__name!= name
+						.toast-product__price
+							.toast-product__price-actual
+								span.visually-hidden Текущая цена:
+								!= cost
+							.toast-product__price-old
+								span.visually-hidden Старая цена:
+								s!= stock 
+				if controlBtnText
+					.toast-product__footer 
+						+button({
+							text: controlBtnText
+						}).button--base
+

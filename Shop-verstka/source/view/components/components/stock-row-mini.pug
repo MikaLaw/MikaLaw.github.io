@@ -1,0 +1,28 @@
+mixin stock-row-mini(options={})
+  -
+    const {
+      labels = false,
+      title = '',
+      titleTag = 'h3',
+      text = '',
+      icon = false,
+    } = options;
+
+    const id = `stock-${Math.random().toString(36).substr(2, 9)}`;
+
+  a.stock-row-mini(href="./stock-detail.html" aria-labelledby=id)&attributes(attributes)
+    if labels
+      +stock-stickers({
+        list: labels
+      }).stock-row-mini__stickers
+    if icon 
+      .stock-row-mini__icon
+        img(src=`./img/icons/${icon}.svg` aria-hidden="true" alt=title width="48" height="48")
+    .stock-row-mini__content
+      #{titleTag}.stock-row-mini__title(id=id)!= title
+      .stock-row-mini__description
+        p!= text
+    .stock-row-mini__control
+      .stock-row-mini__button.button.button--outline(aria-hidden="true")
+        .button__text Подробнее
+        i.icon.icon-arrow-right

@@ -1,0 +1,68 @@
+.section--hero {
+  display: flex;
+  height: 100svh;
+  background-image: url("../img/components/img-1.jpg");
+  background-repeat: no-repeat;
+  background-position: 100% 45%;
+  background-size: cover;
+
+  @include vp-1024 {
+    background-size: 50%;
+    background-attachment: fixed;
+  }
+}
+
+.section--about,
+.section--experience,
+.section--contacts {
+  padding-top: var(--space-10x);
+
+  @include vp-480 {
+    padding-top: var(--space-16x);
+  }
+
+  @include vp-1024 {
+    padding-top: var(--space-25x);
+  }
+}
+
+.section--contacts {
+  padding-bottom: var(--space-16x);
+}
+
+.section__title {
+  --section-size-title: var(--fz-11x);
+
+  color: var(--color-neutral-gray-1);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--section-size-title);
+  font-family: var(--ff-title);
+  line-height: var(--line-height-default);
+  text-align: center;
+
+  @include vp-480 {
+    --section-size-title: var(--fz-16x);
+  }
+}
+
+.section__text {
+  --section-size-text: var(--fz-default);
+
+  color: var(--color-neutral-gray-2);
+  font-weight: var(--font-weight-light);
+  font-size: var(--section-size-text);
+  font-family: var(--ff-default);
+  line-height: var(--line-height-2x);
+
+  @include vp-480 {
+    --section-size-text: var(--fz-3x);
+  }
+
+  p {
+    margin: 0;
+
+    &:not(:last-child) {
+      margin-bottom: var(--space-5x);
+    }
+  }
+}

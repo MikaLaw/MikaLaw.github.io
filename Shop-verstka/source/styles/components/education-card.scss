@@ -1,0 +1,138 @@
+.education-card {
+  color: var(--color-neutral-gray-9);
+  font-family: var(--ff-default);
+  line-height: var(--line-height-default);
+
+  @include hover {
+    &:hover {
+      .education-card__title {
+        --education-card-color-title: var(--color-neutral-gray-7);
+      }
+
+      .education-card__img-wrapper img {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  &:active {
+    .education-card__title {
+      --education-card-color-title: var(--color-neutral-gray-7);
+    }
+
+    .education-card__img-wrapper img {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.education-card__img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 310px;
+  overflow: hidden;
+  margin-block-end: var(--space-6x);
+
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left top;
+    transition: transform var(--trans-default);
+    inset: 0;
+  }
+}
+
+.education-card__title {
+  --education-card-size-title: var(--fz-1x);
+  --education-card-color-title: var(--color-neutral-gray-9);
+
+  margin: 0;
+  margin-block-end: var(--space-5x);
+  color: var(--education-card-color-title);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--education-card-size-title);
+  transition: color var(--trans-default);
+
+  @include vp-1280 {
+    --education-card-size-title: var(--fz-default);
+  }
+}
+
+.education-card__date-wrapper {
+  --education-card-size-date: var(--fz-1x);
+
+  display: flex;
+  gap: var(--space-2x);
+  align-items: center;
+  margin-block-end: var(--space-6x);
+  color: var(--color-neutral-gray-9);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--education-card-size-date);
+  text-transform: var(--text-transform-uppercase);
+
+  @include vp-1280 {
+    --education-card-size-date: var(--fz-default);
+  }
+}
+
+.education-card__footer-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.education-card__price {
+  display: flex;
+  gap: var(--space-2-5x);
+  align-items: baseline;
+}
+
+.education-card__price-actual {
+  --education-card-size-price-actual: var(--fz-8x);
+
+  color: var(--color-neutral-gray-9);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--education-card-size-price-actual);
+  letter-spacing: var(--letter-spacing-0-5x);
+  text-transform: var(--text-transform-uppercase);
+
+  @include vp-1280 {
+    --education-card-size-price-actual: var(--fz-9x);
+  }
+}
+
+.education-card__price-old {
+  --education-card-size-price-old: var(--fz-3x);
+
+  color: var(--color-neutral-gray-8);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--education-card-size-price-old);
+  letter-spacing: var(--letter-spacing-0-5x);
+  text-decoration: line-through;
+
+  @include vp-1280 {
+    --education-card-size-price-old: var(--fz-6x);
+  }
+}
+
+.education-card__arrow {
+  margin-inline-end: var(--space-2-5x);
+
+  .icon {
+    &::before {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+.education-card__label {
+  margin-block-start: var(--space-6x);
+  color: var(--color-neutral-gray-9);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--fz-1x);
+  letter-spacing: var(--letter-spacing-1-5x);
+  text-transform: var(--text-transform-uppercase);
+}

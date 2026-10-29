@@ -1,0 +1,27 @@
+mixin map-modal(options = {})
+  -
+    const {
+      id = `map-modal-${Math.random().toString(36).substr(2, 9)}`,
+      btnText = "Выбрать пункт доставки",
+      type = 'store',
+      lazy = false,
+    } = options;
+
+  .map-modal
+    +button({
+      text: btnText,
+      ariaLabel: btnText
+    }).button--base(data-modal-show=id)
+    dialog.dialog.map-modal__dialog(data-modal=id)
+      .map-modal__wrapper
+        .map-modal__header
+          +button({
+            iconLeft: 'icon-close',
+            text: null,
+            ariaLabel: 'Закрыть',
+          }).button--icon(data-modal-close=id)
+        .map-modal__body
+          if type === 'store'
+            +map-select()
+          else 
+            +map-block()

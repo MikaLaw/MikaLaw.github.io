@@ -1,0 +1,112 @@
+mixin registration-panel-1()
+	.section__form
+		.form-block(data-form data-validate-on-input data-validate-on-change data-validate-on-blur)
+			form.form
+				.form__wrapper
+					.form__body
+						+field({
+							fieldLabel: 'Фио',
+							validationType: "name",
+							componentData: {
+								required: true,
+								pattern: "^[а-яёА-ЯЁa-zA-Z]+([ \\-][а-яёА-ЯЁa-zA-Z]+)+$",
+								autocomplete: 'name',
+								ariaDescribedby: "fio-hint"
+							}
+						})
+						+field({
+							fieldLabel: 'Пол',
+							id: 'sexField111',	
+							component: 'select',
+							componentData: {
+								required: true,
+								btnId: 'sexField111',			
+								optionsList: [
+									{ label: "Женский", value: "female", },
+									{ label: "Мужской", value: "male", },
+								],
+								ariaDescribedby: "sex-hint",	
+								placeholder: '',      
+							}
+						})
+						+field({
+							fieldLabel: 'Дата рождения',
+							component: 'input-datapicker',
+							componentData: {
+								required: true,
+								ariaDescribedby: "birthday-hint"
+							}
+						})
+						+field({
+							fieldLabel: 'Email',
+							componentData: {
+								required: true,
+								type: 'email',
+								ariaDescribedby: "email-hint",
+							},
+						})
+						+field({
+							fieldLabel: 'Населенный пункт',
+							component: 'select-search',
+							componentData: {							
+								required: true,
+								ariaDescribedby: "city-hint"
+							}		
+						})
+						+field({
+							fieldLabel: 'Любимый магазин',
+							id: 'shopField1',					
+							component: 'select',
+							componentData: {
+								required: true,
+								btnId: 'shopField1',			
+								optionsList: [
+									{ label: "Первый", value: "1", },
+									{ label: "Второй", value: "2", },
+								],
+								placeholder: '',
+								ariaDescribedby: "shop-hint"             
+							}
+						})
+						+field({
+							fieldLabel: 'Телефон',						
+							componentData: {
+								required: true,
+								mask: 'phone',
+								type: "tel",
+								autocomplete: "tel",
+								ariaDescribedby: "tel-hint"
+							},
+						})
+						+field({
+							fieldLabel: 'Пароль',
+							component: 'input-password',
+							componentData: {
+								required: true,
+								autocomplete: "new-password",
+								spellcheck: 'false',
+								ariaDescribedby: 'new-pass-1',	
+							},
+							validationType: "match",
+							matchName: 'password'
+						})
+						+field({
+							fieldLabel: 'Повторите пароль',
+							component: 'input-password',
+							componentData: {
+								required: true,
+								autocomplete: "new-password",
+								spellcheck: 'false',
+								ariaDescribedby: 'new-pass-2',
+							},
+							validationType: "match",
+							matchName: 'password'
+						})
+					.form__footer 
+						+button({
+							text: "Регистрация",
+							type: 'submit',
+							ariaLabel: "Отправить данные на сервер",
+							iconRight: 'icon-arrow-right',
+						}).button--base(data-form-submit)
+						.form__subtext Нажимая на кнопку «Регистрация», я даю свое <a href="#">Согласие на обработку персональных данных</a> и принимаю <a href="#">Договор оферты</a>

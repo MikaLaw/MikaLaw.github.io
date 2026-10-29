@@ -1,0 +1,18 @@
+mixin work-card(options = {})
+	-
+		const {
+			title = 'Лендинг для пекарни',
+			text = 'Аппетитный сайт для булочек',
+			img = 'project-1',
+			link = []
+		} = options;
+
+	article.work-card&attributes(attributes)(style=`background-image: url('./img/components/${img}.png')`)
+		.container
+			.work-card__wrapper
+				.work-card__title!= title
+				.work-card__text
+					each txt in text 
+						p!= txt
+				each item in link 
+					a.work-card__link(href=item.href nofollow noopener noreferrer target="_blank")!= item.text

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Портфолио</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="ProjectName — описание">
+    <link rel="icon" type="image/png" href="/img/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/img/favicon/favicon.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="/img/favicon/site.webmanifest" crossorigin="use-credentials">
+    <link rel="stylesheet" href="css/vendor.min.css">
+    <link rel="stylesheet" href="css/style.min.css">
+    <script src="scripts/main.min.js" defer></script>
+  </head>
+  <body>
+    <div class="page">
+      <header class="header page__header">
+        <div class="container">
+          <div class="header__logo logo">
+            <div class="logo__link"><img class="logo__img" src="./img/icons/logo.svg" alt="" width="220" height="63"></div>
+          </div>
+        </div>
+      </header>
+      <main class="page__main">
+        <section class="section section--hero">
+          <div class="container">
+            <div class="hero">
+              <div class="hero__content">
+                <h1 class="hero__title">Привет.</h1>
+                <div class="hero__subtitle">Нужен Frontend?</div>
+                <div class="hero__text">Меня зовут Надя, и я — тот самый Frontend-разработчик, которого вы ищете.</div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="section section--work"> 
+          <div class="work">
+            <ul class="work__list"> 
+              <li class="work__item"> 
+                <article class="work-card" style="background-image: url('./img/components/project-2.png')">
+                  <div class="container">
+                    <div class="work-card__wrapper">
+                      <div class="work-card__title">Интернет-магазин косметики Modern</div>
+                      <div class="work-card__text">
+                        <p>Высокопроизводительный многостраничный магазин на чистом JS с акцентом на архитектуру, доступность (A11Y) и скорость рендеринга.</p>
+                        <p>Стек: HTML5 (A11Y), CSS3 (SCSS, Grid, БЭМ), Pug, JS (ES6+), Gulp 5, ESLint, StyleLint, Swiper, GLightbox.</p>
+                        <p><ul>
+        <li><b>Архитектура:</b> Чистый JS (MVVM), паттерны Pub-Sub/Observer, Strategy, Factory, Composite, Facade.</li>
+        <li><b>Оптимизация:</b> Защита от Layout Thrashing, пакетные мутации через DocumentFragment, кэширование вычислений.</li>
+        <li><b>A11Y и SEO:</b> Семантика, ARIA-атрибуты, visually-hidden текст для скринридеров.</li>
+        <li><b>UI/UX:</b> Резиновая верстка, логические свойства, устранение гонки событий через :focus-visible.</li>
+        <li><b>Автоматизация:</b> Сборка на Gulp 5, автоматическая генерация WebP/AVIF и SVG-спрайтов.</li>
+      </ul></p>
+                      </div><a class="work-card__link" href="https://mikalaw.github.io/Shop-verstka/build/main.html" nofollow noopener noreferrer target="_blank">смотреть главную</a><a class="work-card__link" href="https://mikalaw.github.io/Shop-verstka/build/" nofollow noopener noreferrer target="_blank">смотреть список страниц</a>
+                    </div>
+                  </div>
+                </article>
+              </li>
+              <li class="work__item"> 
+                <article class="work-card" style="background-image: url('./img/components/project-1.png')">
+                  <div class="container">
+                    <div class="work-card__wrapper">
+                      <div class="work-card__title">Лендинг для агропрома "Казань"</div>
+                      <div class="work-card__text">
+                        <p>Интерактивный веб-интерфейс с плавной анимацией и автоматизированной сборкой.</p>
+                        <p>Стек: HTML5 (A11Y), CSS3 (SCSS, Grid, БЭМ), Pug, JS (ES6+), Gulp 5, ESLint, StyleLint, GSAP, Swiper.</p>
+                        <p><ul>
+        <li><b>Интерфейс:</b> Плавные UI/UX анимации на базе GSAP и CSS3.</li>
+        <li><b>Код и структура:</b> Модульная архитектура на Pug и SCSS (БЭМ) с контролем качества через ESLint и StyleLint.</li>          
+        <li><b>Автоматизация:</b> Сборка на Gulp 5, автоматическая генерация WebP/AVIF и SVG-спрайтов.</li>
+      </ul></p>
+                      </div><a class="work-card__link" href="https://mikalaw.github.io/Gsap-landing/build/" nofollow noopener noreferrer target="_blank">смотреть лендинг</a>
+                    </div>
+                  </div>
+                </article>
+              </li>
+              <li class="work__item"> 
+                <article class="work-card" style="background-image: url('./img/components/project-3.png')">
+                  <div class="container">
+                    <div class="work-card__wrapper">
+                      <div class="work-card__title">Лендинг для системы фильтров Natural Water</div>
+                      <div class="work-card__text">
+                        <p>Промо-страница с высокопроизводительной покадровой скролл-анимацией без использования сторонних библиотек.</p>
+                        <p>Стек: HTML5 (A11Y), CSS3 (SCSS, Grid, БЭМ), Pug, JS (ES6+), Gulp 5, ESLint, StyleLint, GLightbox.</p>
+                        <p><ul>
+        <li><b>Анимация:</b> Кастомный Scroll Sequence скрипт с динамическим расчетом кадров от позиции скролла.</li>
+        <li><b>Производительность:</b> Оптимизация через requestAnimationFrame, IntersectionObserver и ResizeObserver (кэширование геометрии).</li>
+        <li><b>Мобильный UX:</b> Адаптивный запуск анимаций через matchMedia, плавный скролл без блокировки потока ({passive: true}).</li>
+      </ul></p>
+                      </div><a class="work-card__link" href="https://mikalaw.github.io/Landing/build/" nofollow noopener noreferrer target="_blank">смотреть лендинг</a>
+                    </div>
+                  </div>
+                </article>
+              </li>
+              <li class="work__item"> 
+                <article class="work-card" style="background-image: url('./img/components/project-5.png')">
+                  <div class="container">
+                    <div class="work-card__wrapper">
+                      <div class="work-card__title">Проект "Меломан" - сборник альбомов</div>
+                      <div class="work-card__text">
+                        <p>Многостраничное SPA для поиска музыкальных альбомов. Написано на чистом JS с нуля без фреймворков для точечного управления состоянием.</p>
+                        <p>Стек: HTML5, CSS3, JS (ES6+), ООП, Webpack</p>
+                        <p><ul>
+        <li><b>Архитектура MVP/MVC:</b> Четкое разделение приложения на слои данных (Model), интерфейса (View) и логики (Presenter).</li>
+        <li><b>Стейт-менеджмент:</b> Собственный реактивный стейт на паттерне Observer для автообновления компонентов.</li>
+        <li><b>Компоненты:</b> Классовый подход с базовым жизненным циклом и Data Binding на основе абстрактных View.</li>
+        <li><b>API и UI:</b> Сетевой слой на async/await и fetch; раздельные презентеры для фильтрации, сортировки и пагинации.</li>
+      </ul></p>
+                      </div><a class="work-card__link" href="https://mikalaw.github.io/Javascript/build/" nofollow noopener noreferrer target="_blank">смотреть приложение</a>
+                    </div>
+                  </div>
+                </article>
+              </li>
+              <li class="work__item"> 
+                <article class="work-card" style="background-image: url('./img/components/project-4.png')">
+                  <div class="container">
+                    <div class="work-card__wrapper">
+                      <div class="work-card__title">Проект "Киноман"</div>
+                      <div class="work-card__text">
+                        <p>Каталог фильмов в формате SPA на React с компонентной архитектурой, строгой типизацией и централизованным стейтом.</p>
+                        <p>Стек: React, Redux Toolkit, TypeScript, Vite, Eslint</p>
+                        <p><ul>
+        <li><b>Стейт (RTK):</b> Глобальное состояние через слайсы Redux Toolkit, асинхронные запросы в createApi.</li>
+        <li><b>Типизация:</b> 100% покрытие TypeScript (модели API, пропсы, стор), исключающее ошибки разработки.</li>
+        <li><b>API и UX:</b> Слой запросов с обработкой состояний загрузки (скелетоны, спиннеры) и ошибок.</li>
+        <li><b>Оптимизация:</b> Быстрая сборка на Vite, поддержка HMR и автоматическое разделение кода (code-splitting).</li>
+      </ul></p>
+                      </div><a class="work-card__link" href="https://mikalaw.github.io/React-film/dist/" nofollow noopener noreferrer target="_blank">смотреть приложение</a>
+                    </div>
+                  </div>
+                </article>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="section section--about"> 
+          <div class="container container--sm"> 
+            <div class="about">
+              <div class="about__title section__title">Обо мне</div>
+              <div class="about__text section__text">
+                <p>Я фронтенд-разработчик из Рязани. В веб-разработке уже 5 лет — за это время прошла путь от верстки адаптивных сайтов до проектирования клиентской логики сложных модулей для CDP-платформ.</p>
+                <p>Работаю в коммерческих командах по методологии Agile: в зависимости от проекта применяла чистый Scrum, Kanban или их гибридные форматы. Для управления задачами и репозиториями использовала Jira, Redmine и GitLab. Привычна к плотной связке с дизайнерами, бэкендерами и QA, а также к ежедневным митингам и спринтам. Умею быстро адаптироваться к новым задачам, ответственно отношусь к дедлайнам и всегда дорабатываю интерфейсы до предсказуемого, качественного результата.</p>
+                <p>В свободное время переключаюсь на активный отдых, чтобы разгрузить голову и вернуться к коду со свежим взглядом. Зимой катаюсь на сноуборде и лыжах, летом — на велосипеде. Люблю поездки выходного дня, фестивали, выставки современного искусства и природу.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="section section--experience">
+          <div class="container container--sm"> 
+            <div class="experience">
+              <div class="experience__title section__title">Коммерческий опыт</div>
+              <div class="experience__text section__text">
+                <p>В верстке я всегда закладываю прочную базу: пишу чистый семантический код и проектирую интерфейсы с учетом доступности (a11y), чтобы сайты были удобны для управления с клавиатуры и корректно считывались скринридерами. Свободно использую современные методы стилизации, селекторы и сетки на Flexbox и Grid. Умею оживлять интерфейсы анимациями — от базовых переходов на чистом CSS3 до сложных интерактивных сценариев с помощью GSAP. Хорошо знаю, как оптимизировать графику под Retina-дисплеи и собирать спрайты ради производительности, а также не боюсь специфических задач вроде табличной верстки email-рассылок.</p>
+                <p>Если говорить про JavaScript, то я глубоко понимаю работу с DOM, логику обработки данных и паттерны проектирования, которые помогают оптимизировать процессы и не писать лишний код. В React я застала еще классовые компоненты, но сейчас, конечно, полностью перешла на функциональный подход и хуки, с типизацией компонентов на TypeScript. Для управления сложным состоянием приложений применяла разные инструменты — экосистему Redux (включая Toolkit, Thunk и Saga), MobX. В стилизации успела поработать с CSS-модулями и Styled Components. Также имею хороший опыт построения интерфейсов по готовым дизайн-системам, основанным на дизайн-токенах и атомарной архитектуре, активно используя популярные UI-библиотеки, такие как Ant Design (Antd) и Semantic UI. Для автоматизации и сборки проектов под конкретные задачи настраивала менеджер задач Gulp, работала с классическим Webpack и собирала современные приложения на Vite.</p>
+                <p>Для автоматизации и сборки проектов я использовала разные инструменты под разные задачи: настраивала менеджер задач Gulp, работала с классическим Webpack и собирала современные приложения на Vite.</p>
+                <p>За 5 лет я поработала в трех компаниях, где мой стек развивался параллельно со сложностью задач:</p>
+                <p><ul>
+    <li><b>Frontend / React Developer (Веб-сервис, продуктовая разработка)</b> Занималась разработкой клиентской логики, стейт-менеджмента и валидацией сложных динамических форм для модулей CDP-платформы. Интерфейс строила на базе Semantic UI. Работала в Agile-команде. Стек: React (функциональные компоненты, хуки), TypeScript, MobX, Semantic UI.</li>
+    <li><b>Frontend Developer / Верстальщик (Заказная разработка: многостраничные сайты и личные кабинеты).</b> Создавала контентные многостраничные сайты на чистом JS с использованием классов, паттернов проектирования и плавных анимаций на GSAP. Также проектировала интерфейсы личных кабинетов на React с интеграцией библиотеки Ant Design. Стек: HTML5, CSS3 (Flexbox, Grid), SCSS, БЭМ, Pug, Gulp, Webpack, JavaScript (ES6+, DOM), jQuery, GSAP, React, TypeScript, Redux (Toolkit, Thunk, Saga), Axios, Ant Design (Antd), Postman, Git (GitHub, GitLab).</li>
+    <li><b>Junior Frontend Developer / Верстальщик (Заказная разработка: лендинги и личные кабинеты).</b> Начинала с адаптивной и отзывчивой верстки лендингов по Figma с точностью Pixel Perfect, настройки анимаций и оптимизации скорости загрузки. Позже переключилась на разработку модулей для личных кабинетов пользователей. Стек: HTML5, CSS3 (Flexbox, Grid), SCSS, БЭМ, Pug, Gulp, JavaScript (ES6+), jQuery, Figma, React, Redux (Thunk), Axios, Postman, Swagger, Ant Design (Antd), Git.</li>
+  </ul></p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="section section--contacts">
+          <div class="container container--sm"> 
+            <div class="contacts">
+              <div class="contacts__title section__title">Я на связи</div>
+              <ul class="contacts__list"> 
+                <li class="contacts__item"><a class="contacts__link contacts__link--email" href="mailto:feoktis.n@gmail.com" target="_blank" rel="noopener noreferrer">feoktis.n@gmail.com</a></li>
+                <li class="contacts__item"><a class="contacts__link contacts__link--vk" href="https://vk.ru/feoktisn" target="_blank" rel="noopener noreferrer">vk.ru/feoktisn</a></li>
+                <li class="contacts__item"><a class="contacts__link contacts__link--telegram" href="https://t.me/FeoktusN " target="_blank" rel="noopener noreferrer">@FeoktusN</a></li>
+                <li class="contacts__item"><a class="contacts__link contacts__link--whatsapp" href="https://wa.me/79105691916" target="_blank" rel="noopener noreferrer">+7 (910) 569-19-16</a></li>
+                <li class="contacts__item"><a class="contacts__link contacts__link--github" href="https://github.com/MikaLaw" target="_blank" rel="noopener noreferrer">MikaLaw</a></li>
+                <li class="contacts__item"><a class="contacts__link contacts__link--inst" href="https://www.instagram.com/nadezhda.feo" target="_blank" rel="noopener noreferrer">@nadezhda.feo</a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

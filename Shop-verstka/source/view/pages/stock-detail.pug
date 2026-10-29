@@ -1,0 +1,96 @@
+extends ../components/base/layout
+
+block variables
+	- const title = "Акция детально" //- на страницах кроме главной используйте О нас — ProjectName
+	- const wrapperMods = ""
+	- const hasHeader = true
+	- const headerMods = ""
+	- const hasFooter = true
+	- const hasFooterPanel = true 
+	- const footerMods = ""
+	- const currentUrl = "" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+	main.page__main
+		+breadcrumbs({
+			list: [{title: 'Главная', href: './main.html'}, {title: 'Акции', href: './stock-cards.html'}, {title: 'Подарок и бонусные баллы При покупке продукции Alfaparf на сумму 15 500 рублей'}],
+		})
+		section.section
+			.container
+				.section__head
+					h1.section__title Подарок и бонусные баллы При покупке продукции Alfaparf на сумму 15 500 рублей
+				.section__content
+					.article
+						.article__block
+							.article__info
+								.article__tag О КОМПАНИИ
+								.article__viewed
+									i.icon.icon-eye 
+									| 200 просмотров
+						.user-typography
+							h2 ПОдарки и бонусные баллы
+							p Выполните условия акции и получите подарки и бонусные баллы. Акция действует для клиентов, закупивших продукцию Alfaparf впервые (подробные правила читайте ниже).
+							.article__banner
+								+banner()
+							ul
+								li Палитра оттенков
+								li Фартук для мастера ALFAPARF
+								li Кисть с логотипом ALFAPARF
+							.article__slider 
+								+slider-pic()
+							h2 Как получить подарки и баллы?
+							p Купите товары бренда Alfaparf на сумму 15 500 рублей. Обязательное условие — покупка товаров по всем пунктам ниже.
+							ol.article__steps
+								li.article__step
+									.article__step-wrapper
+										.article__step-text <b>20 шт.</b> — Kраска тонирующая (тон в тон) COLOR WEAR 60мл <b>или</b> Kраска Перманентная для волос ЕОС CUBE 3D 60мл
+										.article__step-links 
+											a.article__step-link(href="#") COLOR WEAR
+												i.icon.icon-arrow-right
+											a.article__step-link(href="#") ЕОС CUBE 3D
+												i.icon.icon-arrow-right
+								li.article__step
+									.article__step-wrapper
+										.article__step-text <b>1шт.</b> — Крем-окислитель 1,5% - 1000мл
+										.article__products
+											+list({
+												list: [{
+													img: './img/components/product-card/img-1',
+													title: 'ALFAPARF',
+													text: 'Крем-окислитель 1,5%',
+													cost: '750 ₽',
+												}],
+												component: 'product-card',
+											})
+								li.article__step
+									.article__step-wrapper
+										.article__step-text <b>1шт.</b> — Крем-окислитель 3/6/9/12% - 1000мл New <b>(один из четырёх, на выбор)</b>
+										.article__products 
+											+list({
+												list: productList1,
+												component: 'product-card',
+											})
+								li.article__step
+									.article__step-wrapper
+										.article__step-text <b>1шт.</b> — Порошок для обесцвечивания волос до 7 уровней, 400гр BB BLEACH EASY LIFT – 1шт.
+										.article__products 
+											+list({
+												list: [{
+													img: './img/components/product-card/img-1',
+													title: 'ALFAPARF',
+													text: 'Порошок для обесцвечивания волос до 7 уровней',
+													cost: '750 ₽',
+												}],
+												component: 'product-card',
+											})
+							h3 Правила участия
+							ul
+								li Акция действует для клиентов, закупивших продукцию Alfaparf впервые. 
+								li Бонусные Баллы действуют 3 месяца с момента начисления.
+								li Потратить Бонусные Баллы можно будет при следующей покупке, не более 50% от суммы.
+		section.section
+			.container
+				.section__head
+					h2.section__title Место под seo-текст
+				.section__content
+					+text-cut()

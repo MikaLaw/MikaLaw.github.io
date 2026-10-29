@@ -1,0 +1,67 @@
+extends ../components/base/layout
+
+block variables
+	- const title = "Бренды" //- на страницах кроме главной используйте О нас — ProjectName
+	- const wrapperMods = ""
+	- const hasHeader = true
+	- const headerMods = ""
+	- const hasFooter = true
+	- const hasFooterPanel = true 
+	- const footerMods = ""
+	- const currentUrl = "" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+	main.page__main
+		+breadcrumbs({
+			list: [{title: 'Главная', href: './main.html'}, {title: 'Бренды', href: './brands.html'}],
+		})
+		section.section
+			.container
+				.section__head
+					h1.section__title Бренды
+				.section__content
+					.brands
+						nav.brands__nav(aria-label="Алфавитный указатель")
+							+section-tags({
+								tagName: 'a',
+								href: '#',
+								list: ['Все', 'Любимые', 'Новые', 'A—D', 'E—H', 'I—L', 'M—R', 'S—V', 'W—Z', 'А—Д', 'Е—И', 'К—О', 'П—У', 'Ф—Ш', 'Щ—Я'] 
+							})
+						.brands__search
+							+search-field({
+								ariaLabel: "Поиск на странице брендов",
+								optionList: [
+									{ label:'Babyliss', value: '1'},
+									{ label:'Bal', value: '2'},
+									{ label:'Be natural', value: '3'},
+									{ label:'Beauty Style', value: '5'},
+									{ label:'BeauuGreen', value: '4'},
+								],
+							})
+						.brands__catalog.brands-catalog 
+							each alphabet in brendsList1
+								section.brands-catalog__section(id=`letter-${alphabet.title}` aria-labelledby=`title-letter-${alphabet.title}`)
+									h2.brands-catalog__letter(id=`title-letter-${alphabet.title}`)!= alphabet.title
+									.brands-catalog__content
+										ul.brands-catalog__list
+											each brand in alphabet.list 
+												li.brands-catalog__item
+													a.brands-catalog__link(href="./brand-products.html")
+														i.icon(class= brand.isFavorite ? 'icon-favorite-fill is-active' : 'icon-favorite')
+														| #{brand.text}
+														if brand.isFavorite
+															span.visually-hidden в любимых брендах
+		section.section
+			.container
+				.section__content
+					+slider({
+						name: 'card',
+						title: '<h2  class="section__title"><a href="#" class="section__title-link">Вы смотрели <i class="icon icon-arrow-right"></i></a></h2>',
+						optionList: productList1,
+					}).slider--product
+		section.section
+			.container
+				.section__head
+					h2.section__title Место под seo-текст
+				.section__content
+					+text-cut()

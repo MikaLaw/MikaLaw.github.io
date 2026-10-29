@@ -1,0 +1,48 @@
+mixin course-schedule-card(options={})
+  -
+    const {
+      img = '',
+      title = 'Искусство депиляции воском',
+      start = '12 марта', 
+      end = '25 марта',
+      text = 'Юлия Дранникова',
+      cost = '750 ₽',
+      stock = '1 200 ₽',
+    } = options;
+
+  article.course-schedule-card&attributes(attributes)
+    .course-schedule-card__img-wrapper(aria-hidden="true")
+      .course-schedule-card__img(aria-hidden="true")
+        +picture({
+          format: "jpg",
+          path: img,
+          alt: "",
+          isLazyLoading: "lazy",
+          isDecoding: "async",
+          width: "100",
+          height: "100",
+          noneMediaSource: true,
+        })
+    .course-schedule-card__content
+      h3.course-schedule-card__title
+        a.course-schedule-card__link(href="./education-detail.html")!= title
+          i.icon.icon-arrow-right
+      .course-schedule-card__info
+        .course-schedule-card__text!= text
+        .course-schedule-card__price
+          .course-schedule-card__price-actual
+            span.visually-hidden Текущая цена:
+            != cost
+          if stock
+            .course-schedule-card__price-old
+              span.visually-hidden Старая цена:
+              s!= stock
+    .course-schedule-card__controls
+      .course-schedule-card__date-wrapper
+        time.course-schedule-card__date(datetime="2026-03-12")!= start
+        span.course-schedule-card__date-separator —
+        time.course-schedule-card__date(datetime="2026-03-25")!= end
+      +button({
+        text: 'Записаться',
+        ariaLabel: `Записаться на курс ${title}`,
+      }).button--base.course-schedule-card__button(data-modal-show="course-education")

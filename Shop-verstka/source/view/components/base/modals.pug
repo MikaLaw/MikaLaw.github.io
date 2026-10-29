@@ -1,0 +1,253 @@
+mixin modals(options={})
+	-
+		const {
+			page = false,
+		} = options;
+
+	div
+		.toast-container(aria-live="polite" role="status" aria-atomic="true")
+		.tooltip#shared-tooltip(role="tooltip" aria-hidden="true")
+		+button-top()
+
+		+slider-panel({	name: 'sidebar-menu',	title: 'Личный кабинет', ariaControlsId: 'sidebar-menu-controls',}).slider-panel--slide
+			+sidebar-menu({title: false})
+
+		+slider-panel({	name: 'menu-hover',	title: 'Меню', ariaControlsId: 'menu-hover-controls', query: "max-width: 767px"}).slider-panel--slide
+
+		+slider-panel({	name: 'menu-catalog',	title: 'Каталог', ariaControlsId: 'menu-catalog-controls'}).slider-panel--menu-catalog.slider-panel--slide
+			+menu-nested()
+
+		+slider-panel({	name: 'catalog-filter',	title: 'Фильтры', ariaControlsId: 'catalog-filter-controls', query: "max-width: 767px"}).slider-panel--slide
+
+		+slider-panel({	name: 'search-panel',	title: "Поиск", isTitleHide: true, ariaControlsId: 'search-panel-controls',}).slider-panel--search.slider-panel--fade
+			search.search-modal(itemscope itemtype="https://schema.org")
+				.container
+					form.search-modal__form(itemprop="potentialAction" itemscope itemtype="https://schema.org")
+						meta(itemprop="target" content="https://example.comsearch/?q={g6fe1onxdqs}")
+						.search-modal__title Поиск
+						+select-search({
+							component: 'mini-cart',	
+							optionList: productList1,	
+							inputClassName: 'input-search--icon', 
+							ariaInputLabel: 'Поиск по сайту', 
+							name: "g6fe1onxdqs",
+							itemprop: 'itemprop'
+						})
+
+		+slider-panel({	
+			name: 'basket',	
+			title: 'Корзина', 
+			headerComponent: 'button',
+			headerComponentData: { text: "Очистить", ariaLabel: "Очистить корзину",	class: 'button--base',	},
+			ariaControlsId: 'basket-controls',
+		}).slider-panel--basket.slider-panel--slide
+			+basket()
+
+		+toast-product({
+			id: "toast-cart-add-template"
+		})
+		+toast-product({
+			id: "toast-cart-remove-template",
+			title: 'Товар удален из корзины',
+			controlBtnText: 'вернуть в корзину'
+		})
+		+toast-product({
+			id: "toast-favorite-add-template",
+			title: 'Товар добавлен в избранное'
+		})
+		+toast-product({
+			id: "toast-favorite-remove-template",
+			title: 'Товар удален из избранного',
+		})
+		+popup({
+			id: 'my-popover-5',
+			text: 'Корзина очищена'
+		})
+
+		dialog.dialog--fade.dialog.modal.modal--course(data-modal="course-education" aria-labelledby='course-education-1')
+			.small-form(data-form data-validate-on-input data-validate-on-blur data-validate-on-change)
+				form.small-form__form
+					.small-form__header
+						.small-form__title(id="course-education-1") Записаться на курс
+						+button({
+							text: null,
+							iconLeft: 'icon-close',
+							ariaLabel: "Закрыть модальное окно"
+						}).button--icon.button--transparent.modal__close(data-modal-close='course-education')
+					.small-form__body
+						.small-form__text Наш менеджер свяжется с вами
+						.small-form__field
+							+field({			
+								component: 'select',
+								componentData: {
+									required: true,
+									btnId: 'sexField1',			
+									optionsList: [
+										{ label: "Теория + практика", value: "1", },
+										{ label: "Теория", value: "2", },
+									],
+									placeholder: '* Выберите курс',
+									ariaDescribedby: 'courseField10',          
+								}
+							})
+						.small-form__field
+							+field({
+								component: 'input-datapicker',
+								componentData: {
+									required: true,
+									placeholder: '* Выберите дату',
+									ariaDescribedby: 'dataField10',   
+								}
+							})
+						.small-form__field
+							+field({				
+								componentData: {
+									required: true,
+									mask: 'phone',
+									type: "tel",
+									autocomplete: "tel",
+									placeholder: '* Телефон',
+									ariaDescribedby: 'phoneField10', 
+								},
+							})
+					.small-form__footer
+						+button({
+							text: "Записаться",
+							type: 'submit',
+							ariaLabel: "Отправить данные на сервер"
+						}).button--base(data-form-submit)
+						.small-form__subtext Нажимая на кнопку «Записаться», я даю свое <a href="#" class="small-form__link">Согласие на обработку персональных данных</a>
+
+		dialog.dialog--fade.dialog.modal.modal--login(data-modal="login-modal" aria-labelledby='login-modal-1')
+			.small-form(data-form data-validate-on-input data-validate-on-blur data-validate-on-change)
+				form.small-form__form
+					.small-form__header
+						.small-form__title(id="login-modal-1") Вход
+						+button({
+							text: null,
+							iconLeft: 'icon-close',
+							ariaLabel: "Закрыть модальное окно"
+						}).button--icon.button--transparent.modal__close(data-modal-close='login-modal')
+					.small-form__body
+						.small-form__field
+							+field({
+								componentData: {
+									required: true,
+									type: 'email',
+									ariaDescribedby: "email-hint1",
+									placeholder: '* Email',
+								},
+							})
+						.small-form__field
+							+field({
+								component: 'input-password',
+								componentData: {
+									required: true,
+									autocomplete: "new-password",
+									spellcheck: 'false',
+									ariaDescribedby: 'new-pass-10',
+									placeholder: '* Пароль',
+								},
+								validationType: "match",
+								matchName: 'password'
+							})
+						.small-form__field
+							.small-form__row
+								+toggle({
+									label: "Запомнить меня",
+									checked: true
+								})
+								a(href="./password-recovery-1.html").small-form__link Забыли пароль?
+					.small-form__footer
+						.small-form__controls
+							+button({
+								text: "Войти",
+								type: 'submit',
+							}).button--base(data-form-submit)
+							+button({
+								text: "Регистрация",
+								type: null,
+								tag: 'a',
+								href: "./registration.html",
+							}).button--outline
+						.small-form__subtext Нажимая на кнопку «Войти», я даю свое <a href="#" class="small-form__link">Согласие на обработку персональных данных</a>
+
+		dialog.dialog--fade.dialog.modal.modal--login(data-modal="order-create-modal" aria-labelledby='order-create-modal-1')
+			.small-form(data-form data-validate-on-input data-validate-on-blur data-validate-on-change)
+				form.small-form__form
+					.small-form__header
+						.small-form__title(id="order-create-modal-1") Оформить заказ
+						+button({
+							text: null,
+							iconLeft: 'icon-close',
+							ariaLabel: "Закрыть модальное окно"
+						}).button--icon.button--transparent.modal__close(data-modal-close='order-create-modal')
+					.small-form__body
+						.small-form__text Выберите подарок из списка по акции «Подарок при покупке продукции Alfaparf на сумму 6 800 рублей»:
+						.small-form__field
+							+field({
+								component: 'fieldset',
+								componentData: {
+									required: true,
+									isLegendHidden: true,
+									type: "radio",
+									optionsList: [
+										{value: '1', label: 'Шампунь мицеллярный успокаивающий 250мл', checked: true},
+										{value: '2', label: 'Шампунь очищающий ABSOLUTE CLEANSING SHAMPOO 1000мл'},
+										{value: '3', label: 'Тоник успокаивающий 125мл БОНУС'},
+										{value: '4', label: 'Маска разглаживающая для непослушных волос 500мл'},		
+										{value: '5', label: 'Шампунь для кудрявых и вьющихся волос 1000мл'},
+										{value: '6', label: 'Набор LISSE DESIGN'},
+										{value: '7', label: 'Лосьон д/всех типов волос, придающий блеск 12х13мл'},
+									],	
+									ariaDescribedby: "gift-hint",
+								},
+							})
+					.small-form__footer
+						.small-form__controls
+							+button({
+								text: "Выбрать",
+								type: 'submit',
+							}).button--base(data-form-submit)
+							+button({
+								text: "Регистрация",
+								type: null,
+								tag: 'a',
+								href: "./registration.html",
+							}).button--outline
+							+button({
+								text: "Подробнее",
+								type: null,
+								tag: 'a',
+								href: "./order.html",
+							}).button--base
+
+		+modal({
+			title: 'выйти?',
+			name: "logout-modal",
+			text: 'Вы точно хотите выйти из личного кабинета?',
+			submitBtnText: 'Да',
+		}).modal--small
+
+		+modal({
+			title: 'Оформить заказ?',
+			name: "order-modal",
+			text: 'Вы точно хотите оформить заказ?',
+			submitBtnText: 'Да',
+		}).modal--small
+
+		+modal({
+			title: 'Очистить лист ожидания?',
+			name: "wishlist-modal",
+			text: 'Вы точно хотите очистить лист ожидания?',
+			submitBtnText: 'Да',
+		})
+
+		+modal({
+			title: 'Очистить корзину?',
+			name: "basket-clear-modal",
+			text: 'Вы точно хотите очистить корзину?',
+			submitBtnText: 'Да',
+		}).modal--small
+
+		+cookies()

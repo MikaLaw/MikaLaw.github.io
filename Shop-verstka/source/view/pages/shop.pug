@@ -1,0 +1,75 @@
+extends ../components/base/layout
+
+block variables
+	- const title = "Магазин" //- на страницах кроме главной используйте О нас — ProjectName
+	- const wrapperMods = ""
+	- const hasHeader = true
+	- const headerMods = ""
+	- const hasFooter = true
+	- const hasFooterPanel = true 
+	- const footerMods = ""
+	- const currentUrl = "" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+	main.page__main
+		+breadcrumbs({
+			list: [{title: 'Главная', href: './main.html'}, {title: 'Магазины', href: './shops.html'}, {title: 'Супермаркет профессиональной косметики, и оборудования «Модерн» на ул. Власихинская, 91я, 91'}],
+		})
+		section.section
+			.container
+				.section__head
+					h1.section__title Супермаркет профессиональной косметики, и оборудования «Модерн» на ул. Власихинская, 91я, 91
+				.section__content
+					.shop(data-tabs='init')
+						.shop__contacts
+							+contacts-panel()
+						.shop__description
+							p На сегодняшний день мы располагаем двумя филиалами для обеспечения потребностей наших клиентов в других городах России
+						.shop__map-controls(data-tabs-controls)
+							+button({
+								text: 'На фото',
+								iconLeft: 'icon-arrow-left'
+							}).shop__map-control(data-tabs-control)
+							+button({
+								text: 'На карте',
+								iconLeft: 'icon-geo'
+							}).shop__map-control(data-tabs-control)
+						.shop__views()
+							.shop__view(data-tabs-content)
+								.shop__view-wrapper(data-tabs-element)
+									.shop__img
+										+picture({
+											format: "jpg",
+											path: './img/components/article/img-6',
+											alt: "Товар",
+											isLazyLoading: "lazy",
+											isDecoding: "async",
+											width: "320",
+											height: "310",
+											noneMediaSource: true,
+										})
+							.shop__view(data-tabs-content)
+								.shop__view-wrapper(data-tabs-element data-map="block" data-json= mapBlockInfo2)
+									.map-block__map(data-map-element)
+									+map-controls()
+						+city-list({
+							title: 'Другие магазины',
+							list: [
+								'ул. Власихинская, 91',
+								'ул. Анатолия, 81а',
+								'ул. Попова, 150',
+								'ул. А. Петрова, 219Б (ТРЦ «Огни»)',
+								'ул. Попова, 82 (ТРЦ «Малина»)',
+								'пр-т Ленина, 155 (ТЦ «Норд-Вест»)',
+								'Павловский тракт, 251В (ТРЦ «Европа»)',
+								'пр. Строителей, 117 (ТРЦ Galaxy)',
+								'ул. Балтийская, 103',
+								'пр. Красноармейский, 51а (ТЦ «Гулливер Парк»)',
+							]
+						})
+		section.section
+			.container
+				.section__head
+					h2.section__title Место под seo-текст
+				.section__content
+					+text-cut()

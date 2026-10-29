@@ -1,0 +1,18 @@
+mixin input-datapicker(options = {})
+  -
+    const {
+      min = 0,
+      max = 365,
+      disabled = false,
+      value = false,
+    } = options;
+
+  .input-datapicker(
+    data-datepicker
+    data-datepicker-min= min
+    data-datepicker-max= max
+    data-datepicker-disabled-days = disabled
+  )&attributes(attributes)
+    +input({...options}).input-datapicker__input
+    .input-datapicker__icon
+      +icon('icon-calendar', '26', '26')

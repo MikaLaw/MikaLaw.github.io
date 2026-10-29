@@ -1,0 +1,47 @@
+extends ../components/base/layout
+
+block variables
+	- const title = "Оформление заказа" //- на страницах кроме главной используйте О нас — ProjectName
+	- const wrapperMods = ""
+	- const hasHeader = true
+	- const headerMods = ""
+	- const hasFooter = true
+	- const hasFooterPanel = true 
+	- const footerMods = ""
+	- const currentUrl = "" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+	main.page__main
+		+breadcrumbs({
+			list: [{title: 'Главная', href: './main.html'}, {title: 'Оформление заказа'}],
+		})
+		section.section
+			.container
+				.section__content
+					.order-success
+						.order-success__main 
+							h1.order-success__title.section__title Заказ оплачен
+							.order-success__text
+								p Заказ создан! Номер заказа: <span class="order-success__highlight">362562</span>.
+								p Отслеживать статус заказа вы можете в <a href="#">Личном кабинете</a>
+							.order-success__text
+								p Если у вас остались вопросы или уточнения по заказу, свяжитесь с нами
+							address.order-success__contacts
+								a.order-success__phone(href="tel:+73852221925") +7 (3852) 22-19-25
+								.order-success__subtext Телефон горячей линии
+							+button({
+								tag: 'a',
+								href: "./",
+								type: null,
+								iconRight: 'icon-arrow-right',
+								text: 'перейти к заказу',
+							}).button--base.order-success__button
+						.order-success__details
+							each card in orderPaidParams1
+								dl.order-success__card
+									each item in card
+										.order-success__card-row
+											dt.order-success__card-label!= item.label 
+											dd.order-success__card-value!= item.value 
+
+

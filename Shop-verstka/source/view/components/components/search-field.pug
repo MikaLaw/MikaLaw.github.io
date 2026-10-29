@@ -1,0 +1,20 @@
+mixin search-field(options = {})
+	-
+		const {
+			id = `search-field-${Math.random().toString(36).substr(2, 9)}`,
+			optionList = [],
+			component = false,
+			ariaLabel = "Поиск в шапке",
+			ariaInputLabel = "Введите поисковый запрос",
+			ariaDescribedby = false,
+		} = options;
+
+	search.search-field(aria-label=ariaLabel)&attributes(attributes)
+		form.search-field__form
+			+select-search({
+				component: component,
+				optionList: optionList,
+				ariaDescribedby: ariaDescribedby,
+				ariaInputLabel: ariaInputLabel,
+				inputClassName: 'input-search--icon'
+			})

@@ -1,0 +1,40 @@
+mixin toggle(options = {})
+  -
+    const {
+      id = `tg-${Math.random().toString(36).substr(2, 9)}`,
+      type = 'checkbox',
+      name = false,
+      value = false,
+      required = false,
+      checked = false,
+      disabled = false,
+      readonly = false,  
+      ariaInvalid = false,
+      ariaRequired = false,
+      label = false,
+      component = false,
+      componentData = false,
+    } = options;
+
+  - const isSwitch = attributes.class && attributes.class.includes('toggle--switch');
+
+  .toggle&attributes(attributes)
+    input.toggle__input.visually-hidden(
+      id=id,
+      type=type,
+      name=name,
+      value=value,
+      required=required,
+      checked=checked,
+      disabled=disabled,
+      readonly=readonly,
+      aria-invalid=ariaInvalid,
+      aria-required=ariaRequired
+      role=isSwitch ? "switch" : null
+    )
+    label.toggle__label(for=id)
+      span.toggle__icon
+      if label
+        span.toggle__text!= label
+      if component
+        +#{component}({...componentData})

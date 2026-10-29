@@ -1,0 +1,12 @@
+mixin step(options={})
+	- const step = options.step || 5;
+	- const ariaLabel = "Прогресс заполнения формы";
+	- let i = 0
+
+	.step&attributes(attributes)(data-step aria-label=ariaLabel)
+		ul.step__list
+			while i < step
+				li.step__item(class=((i+1) === 1 ? 'is-active': '') data-step-item aria-current=(i+1) === 1 ? "step" : null)
+					.step__number!= i+1
+					-
+						i++

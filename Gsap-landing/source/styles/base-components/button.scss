@@ -1,0 +1,93 @@
+.button {
+  --button-color-text: var(--color-default-white);
+  --button-color-bg: var(--color-transparent);
+  --button-color-border: var(--color-transparent);
+  --button-padding: 0;
+  --button-radius: var(--radius-10x);
+  --button-gap: var(--space-2-5x);
+  --button-fz: var(--fz-1x);
+  --button-fw: var(--font-weight-semibold);
+  --button-ls: var(--letter-spacing-1-5x);
+  --button-tt: var(--text-transform-uppercase);
+  --button-justify: center;
+
+  position: relative;
+  display: inline-flex;
+  gap: var(--button-gap);
+  align-items: center;
+  justify-content: var(--button-justify);
+  width: fit-content;
+  padding: var(--button-padding);
+  color: var(--button-color-text);
+  font-weight: var(--button-fw);
+  font-size: var(--button-fz);
+  font-family: var(--ff-default);
+  line-height: var(--line-height-default);
+  letter-spacing: var(--button-ls);
+  white-space: nowrap;
+  text-transform: var(--button-tt);
+  background-color: var(--button-color-bg);
+  border: 1px solid var(--button-color-border);
+  border-radius: var(--button-radius);
+  cursor: pointer;
+  transition: all var(--trans-default);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  font-feature-settings: "pnum" on, "lnum" on;
+
+  &:disabled,
+  &.disabled,
+  &[aria-disabled="true"] {
+    cursor: not-allowed;
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  &[aria-pressed="true"] {
+    .icon-favorite-fill {
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.button--primary {
+  --button-fw: 700;
+  --button-fz: var(--fz-4x);
+  --button-color-text: var(--color-brand-green-2);
+
+  padding-left: var(--space-8x);
+  font-family: var(--ff-title);
+
+  @include vp-768 {
+    --button-fz: var(--fz-5-5x);
+  }
+
+  @include hover {
+    &:hover:not(:disabled):not(.disabled):not([aria-disabled="true"]) {
+      --button-color-text: color-mix(in srgb, var(--color-brand-green-2), black  40%);
+    }
+  }
+
+  &:active:not(:disabled):not(.disabled):not([aria-disabled="true"]) {
+    --button-color-text: color-mix(in srgb, var(--color-brand-green-2), black  40%);
+  }
+
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 0;
+    display: block;
+    width: 68px;
+    height: 68px;
+    transform: translate(0, -50%);
+    content: "";
+  }
+}
+
+.button__text {
+  position: relative;
+  z-index: 1;
+}

@@ -1,0 +1,14 @@
+mixin purchase-step(options={})
+	-
+		const {
+			title = 'Получатель',
+			list = [{label: 'фио', value: 'Иванов Иван Иванович'}],
+		} = options;
+
+	.purchase-step&attributes(attributes)
+		h2.purchase-step__title!= title
+		dl.purchase-step__table
+			each row in list
+				.purchase-step__row 
+					dt.purchase-step__label!= row.label
+					dd.purchase-step__value!= row.value

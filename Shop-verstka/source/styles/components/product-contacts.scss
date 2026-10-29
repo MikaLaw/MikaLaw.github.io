@@ -1,0 +1,96 @@
+.product-contacts {
+  --product-padding-contacts: var(--space-7-5x) var(--space-6x);
+
+  padding: var(--product-padding-contacts);
+  overflow: hidden;
+  font-family: var(--ff-default);
+  line-height: var(--line-height-default);
+  background: var(--color-neutral-gray-3);
+  border-radius: var(--radius-1x);
+
+  @include vp-480 {
+    --product-padding-contacts: var(--space-8x);
+
+    max-inline-size: 350px;
+    width: 100%;
+  }
+}
+
+.product-contacts__title {
+  --product-contacts-size-title: var(--fz-1x);
+  --product-contacts-padding-block-end-title: var(--space-4x);
+  --product-contacts-margin-block-end-title: var(--space-4x);
+
+  margin: 0;
+  margin-block-end: var(--product-contacts-margin-block-end-title);
+  padding-block-end: var(--product-contacts-padding-block-end-title);
+  color: var(--color-neutral-gray-9);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--product-contacts-size-title);
+  letter-spacing: var(--letter-spacing-1x);
+  text-transform: var(--text-transform-uppercase);
+  border-block-end: 1px solid var(--color-neutral-gray-6);
+
+  @include vp-480 {
+    --product-contacts-size-title: var(--fz-default);
+    --product-contacts-padding-block-end-title: var(--space-6x);
+    --product-contacts-margin-block-end-title: var(--space-6x);
+  }
+}
+
+.product-contacts__list {
+  --product-contacts-gap-list: var(--space-3x);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--product-contacts-gap-list);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @include vp-480 {
+    --product-contacts-gap-list: var(--space-4x);
+  }
+}
+
+.product-contacts__link {
+  --product-contacts-gap-link: var(--space-2x);
+  --product-contacts-size-link: var(--fz-1x);
+  --product-contacts-color-link: var(--color-neutral-gray-9);
+
+  display: flex;
+  gap: var(--product-contacts-gap-link);
+  align-items: center;
+  color: var(--product-contacts-color-link);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--product-contacts-size-link);
+  transition: color var(--trans-default);
+
+  @include vp-480 {
+    --product-contacts-gap-link: var(--space-3x);
+    --product-contacts-size-link: var(--fz-default);
+  }
+
+  @include hover {
+    &:hover {
+      --product-contacts-color-link: var(--color-neutral-gray-7);
+    }
+  }
+
+  &:active {
+    --product-contacts-color-link: var(--color-neutral-gray-7);
+  }
+}
+
+.product-contacts__icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+}

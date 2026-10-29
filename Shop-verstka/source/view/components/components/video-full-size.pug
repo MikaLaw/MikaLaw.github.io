@@ -1,0 +1,16 @@
+mixin video-full-size(options={})
+  .video-full-size(data-video-full-size)&attributes(attributes)
+    .video-full-size__video-wrapper.video-full-size__video-wrapper--mask
+      +bg-video({
+        mobileSrc: './video/product-3-mobile.mp4',
+        desktopSrc: './video/product-3.mp4',
+        mobilePosterSrc: './img/components/main-banner/img-5.png',
+        desktopPosterSrc: './img/components/main-banner/img-5.png',
+        loop: true,
+        buttonControl: true,
+      })
+    .video-full-size__content.container
+      .video-full-size__content-wrapper
+        h2.video-full-size__title DEWAL cosmetics
+        .video-full-size__description
+          p Удовольствие для себя — профессиональная косметика для волос. Cкидка вырастет до −20% с этим промокодом

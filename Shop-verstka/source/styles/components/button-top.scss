@@ -1,0 +1,48 @@
+.button-top {
+  --button-color-bg: var(--color-neutral-gray-5);
+
+  position: fixed;
+  right: 30px;
+  bottom: 100px;
+  z-index: var(--z-index-100);
+  border-radius: 50%;
+  transform: scale(1);
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
+  pointer-events: none;
+
+  @include vp-768 {
+    bottom: 30px;
+  }
+
+  @include hover {
+    &:hover {
+      --button-color-text: var(--color-neutral-gray-2);
+      --button-color-bg: var(--color-neutral-gray-9);
+      --button-color-border: var(--color-neutral-gray-9);
+
+      transform: scale(1.1);
+
+      svg {
+        fill: var(--color-neutral-gray-2);
+      }
+    }
+  }
+
+  &:active {
+    --button-color-text: var(--color-neutral-gray-2);
+    --button-color-bg: var(--color-neutral-gray-9);
+    --button-color-border: var(--color-neutral-gray-9);
+
+    transform: scale(1.1);
+
+    svg {
+      fill: var(--color-neutral-gray-2);
+    }
+  }
+
+  &.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}

@@ -1,0 +1,21 @@
+mixin refund-row-card(options={})
+  -
+    const {
+      title = 'Заявка № 232421',
+      cost = '2 500 ₽', 
+      date = '25.06.23',
+    } = options;
+
+    const id = `refund-${Math.random().toString(36).substr(2, 9)}`;
+
+  a.refund-row-card(href="./lk-refund-4.html" aria-labelledby=id)&attributes(attributes)
+    .refund-row-card__wrapper 
+      .refund-row-card__content
+        h2.refund-row-card__title(id=id)!= title
+        .refund-row-card__cost!= cost
+      .refund-row-card__date!= date
+    .refund-row-card__controls
+      .refund-row-card__button.button.button--outline
+        .button__text Подробнее
+        .button__icon
+          i.icon.icon-arrow-right

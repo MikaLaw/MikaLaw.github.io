@@ -1,0 +1,28 @@
+mixin balloon(options={})
+	-
+		const {
+			isBtn = false,
+		} = options;
+
+	.balloon
+		h3.balloon__title
+		h4.balloon__subtitle Режим работы:
+		.balloon__working-hours
+			p.balloon__text
+		h4.balloon__subtitle Контактная информация:
+		.balloon__contact
+			+icon('icon-geo', '16', '16')
+			p.balloon__contact-text.balloon__contact-text--address
+		.balloon__contact
+			+icon('icon-phone', '16', '16')
+			a.balloon__contact-text.balloon__contact-text--phone(href="tel:+")
+		+button({
+			iconLeft: 'icon-close',
+			text: null,
+			ariaLabel: 'Закрыть информацию',
+		}).button--icon.button--transparent.balloon__close
+		if isBtn
+			.balloon__control
+				+button({
+					text: 'Выбрать пункт',
+				}).button--base.button--small(data-map-point-trigger)

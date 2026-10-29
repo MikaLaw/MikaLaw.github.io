@@ -1,0 +1,33 @@
+include ./slider-controls
+
+mixin slider(options={})
+	-
+		const {
+			title = false,
+			name = "card",
+			ariaLabel = "Акционные предложения",
+			optionList = productList1,
+			sliderImg = false,
+			component = 'product-card',
+			className = false,
+			componentData = {
+				sliderImg: options.sliderImg,
+				trigger: 'hover',
+			}
+		} = options;
+
+	.slider.swiper(
+		data-slider=name
+		class= className
+	)&attributes(attributes)
+		.slider__head
+			if title
+				.slider__title!= title
+			+slider-controls()
+		.slider__wrapper.swiper-wrapper
+			each product in optionList
+				.slider__slide.swiper-slide
+					+#{component}({...componentData, ...product})
+		.slider__pagination
+			.slider__pagination-inner
+				.swiper-pagination

@@ -1,0 +1,10 @@
+mixin stock-stickers(options={})
+  -
+    const {
+      ariaLabel = 'Статус акции',
+      list = [],
+    } = options;
+
+  ul.stock-stickers(aria-label=ariaLabel)&attributes(attributes)
+    each sticker in list
+      li.stock-stickers__sticker(class=`stock-stickers__sticker--${sticker.class}`)!= sticker.text

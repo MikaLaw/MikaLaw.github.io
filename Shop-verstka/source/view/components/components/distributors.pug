@@ -1,0 +1,23 @@
+mixin distributors(options={})
+	-
+		const {
+			list = brandsList1
+		} = options;
+
+	.distributors&attributes(attributes)
+		ul.distributors__list 
+			each brand in list
+				li.distributors__item 
+					a.distributors__link(href="./brand-products.html" aria-label=`Перейти на страницу товаров бренда${brand.title}`)
+						.distributors__img-wrapper(aria-hidden="true")
+							+picture({
+								format: "jpg",
+								path: brand.img,
+								alt: '',
+								isLazyLoading: "lazy",
+								isDecoding: "async",
+								width: "130",
+								height: "80",
+								noneMediaSource: true,
+							}) 
+

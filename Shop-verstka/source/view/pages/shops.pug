@@ -1,0 +1,32 @@
+extends ../components/base/layout
+
+block variables
+	- const title = "Магазины" //- на страницах кроме главной используйте О нас — ProjectName
+	- const wrapperMods = ""
+	- const hasHeader = true
+	- const headerMods = ""
+	- const hasFooter = true
+	- const hasFooterPanel = true 
+	- const footerMods = ""
+	- const currentUrl = "" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+	main.page__main
+		+breadcrumbs({
+			list: [{title: 'Главная', href: './main.html'}, {title: 'Магазины'}],
+		})
+		section.section
+			.container
+				.section__head
+					h1.section__title Магазины
+				.section__content
+					h2.visually-hidden Список статей
+					.section__description 
+						p На сегодняшний день мы располагаем двумя филиалами для обеспечения потребностей наших клиентов в других городах России
+					+map-block()
+		section.section
+			.container
+				.section__head
+					h2.section__title Место под seo-текст
+				.section__content
+					+text-cut()

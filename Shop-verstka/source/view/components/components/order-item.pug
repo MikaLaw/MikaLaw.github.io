@@ -1,0 +1,43 @@
+mixin order-item(options = {})
+  -
+    const {
+      img ='./img/components/product-card/img-9',
+      title = 'BLITHETARGETED TIGHTENING SERUM RETINOL 0.1',
+      text = 'Кондиционер деликатный д/нормальных и сухих волос без отдушки, 200мл VIENO',
+      price = '6 750 ₽',
+      amount = '2',
+      summ = '10 750 ₽',
+    } = options;
+
+  .order-item&attributes(attributes)
+    a.order-item__img-wrapper(href="./product.html" tabindex="-1" aria-hidden="true")
+      +picture({
+        format: "jpg",
+        path: img,
+        alt: "Товар",
+        isLazyLoading: "lazy",
+        isDecoding: "async",
+        width: "320",
+        height: "310",
+        noneMediaSource: true,
+      })
+    .order-item__content
+      .order-item__info
+        h3.order-item__title
+          a.order-item__link(href="./product.html")!= title
+        .order-item__description!= text								
+      .order-item__meta
+        .order-item__price-box
+          .order-item__price-actual
+            span.visually-hidden Текущая цена:
+            | #{price}
+          if stock
+            .order-item__price-old
+              span.visually-hidden Старая цена:
+              s stock									
+        .order-item__amount
+          span.visually-hidden Количество:
+          | #{amount} шт.									
+        .order-item__total
+          span.visually-hidden Сумма общая за товар:
+          | #{summ}

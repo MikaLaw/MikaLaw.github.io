@@ -1,0 +1,42 @@
+.input-search {
+  position: relative;
+
+  &.is-not-empty {
+    .input-search__button {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+.input-search--icon {
+  &::before {
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-start: var(--space-1x);
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: var(--color-neutral-gray-9);
+    transform: translateY(-50%);
+    content: "";
+    mask: url("../img/sprite.svg#icon-search") no-repeat center / contain;
+  }
+
+  .input-search__input {
+    padding-inline-start: var(--space-8x);
+  }
+}
+
+.input-search__input {
+  padding-inline-end: var(--space-8x);
+}
+
+.input-search__button {
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-end: 4px;
+  transform: translateY(-50%);
+  visibility: hidden;
+  opacity: 0;
+}

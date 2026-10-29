@@ -1,0 +1,16 @@
+.purchases__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5x);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.purchases__controls {
+  margin-block-start: var(--space-6x);
+
+  @include vp-480 {
+    margin-block-start: var(--space-10x);
+  }
+}

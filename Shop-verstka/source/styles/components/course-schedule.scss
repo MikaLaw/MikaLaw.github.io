@@ -1,0 +1,21 @@
+.course-schedule__tags {
+  margin-block-end: var(--space-3x);
+
+  @include vp-480 {
+    margin-block-end: var(--space-7-5x);
+  }
+}
+
+.course-schedule__item {
+  &:not(:last-child) {
+    border-block-end: 1px solid var(--color-neutral-gray-6);
+  }
+}
+
+.course-schedule__controls {
+  margin-block-start: var(--space-6x);
+
+  @include vp-480 {
+    margin-block-start: var(--space-10x);
+  }
+}

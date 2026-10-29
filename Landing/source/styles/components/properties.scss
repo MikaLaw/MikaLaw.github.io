@@ -1,0 +1,114 @@
+.properties {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-15x) 0;
+
+  @include vp-1024 {
+    padding: var(--space-25x) 0;
+  }
+}
+
+.properties__head {
+  --properties-size-head: var(--fz-3x);
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 600px;
+  min-height: 190px;
+  margin-bottom: var(--space-15x);
+  color: var(--color-neutral-gray-1);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--properties-size-head);
+  font-family: var(--ff-title);
+  line-height: var(--line-height-default);
+  text-align: center;
+  text-transform: var(--text-transform-uppercase);
+
+  @include vp-768 {
+    --properties-size-head: var(--fz-7x);
+  }
+
+  svg {
+    position: absolute;
+    z-index: -1;
+    color: #ccc;
+    transform: translate(-50%, -50%);
+    inset: 50%;
+  }
+}
+
+.properties__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-9x);
+  width: 100%;
+
+  @include vp-768 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.properties__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include vp-1280 {
+    align-items: flex-start;
+  }
+
+  &::before {
+    display: block;
+    width: 56px;
+    height: 56px;
+    margin-bottom: var(--space-7-5x);
+    background: url("../img/icons/icon-check.svg") no-repeat center / 40px;
+    background-color: var(--color-brand-blue-1);
+    border-radius: 50%;
+    content: "";
+  }
+}
+
+.properties__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 420px;
+
+  @include vp-1280 {
+    align-items: flex-start;
+  }
+}
+
+.properties__title {
+  --properties-size-title: var(--fz-3x);
+
+  margin-bottom: var(--space-3x);
+  color: var(--color-neutral-gray-1);
+  font-weight: var(--font-weight-black);
+  font-size: var(--properties-size-title);
+  font-family: var(--ff-title);
+  line-height: var(--line-height-default);
+  text-transform: var(--text-transform-uppercase);
+
+  @include vp-768 {
+    --properties-size-title: var(--fz-7x);
+  }
+}
+
+.properties__text {
+  color: var(--color-neutral-gray-2);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--fz-3x);
+  font-family: var(--ff-default);
+  line-height: var(--line-height-default);
+  text-align: center;
+
+  @include vp-1280 {
+    text-align: left;
+  }
+}

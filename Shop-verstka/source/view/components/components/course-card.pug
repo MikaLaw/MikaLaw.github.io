@@ -1,0 +1,31 @@
+mixin course-card(options={})
+  -
+    const {
+      title = 'Теория+Практика',
+      start = '12 марта', 
+      end = '25 марта',
+      cost = '750 ₽',
+      stock = '1 200 ₽',
+    } = options;
+
+  .course-card&attributes(attributes)
+    .course-card__content-wrapper 
+      .course-card__info
+        h2.course-card__title!= title
+        .course-card__date-wrapper
+          time.course-card__date(datetime="2026-03-12")!= start
+          span.course-card__date-separator —
+          time.course-card__date(datetime="2026-03-25")!= end
+      .course-card__price
+        .course-card__price-actual
+          span.visually-hidden Текущая цена:
+          != cost
+        if stock
+          .course-card__price-old
+            span.visually-hidden Старая цена:
+            s!= stock	
+    .course-card__control-wrapper 
+      +button({
+        text: "Записаться",
+        ariaLabel: `Записаться на курс ${title}`,
+      }).button--base(data-modal-show="course-education")

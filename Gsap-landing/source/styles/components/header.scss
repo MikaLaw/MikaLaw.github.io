@@ -1,0 +1,57 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: var(--space-6x) 0;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__logo {
+  flex-shrink: 0;
+  animation: fade-in 1s ease both;
+}
+
+.header__nav {
+  margin-left: auto;
+
+  &--open {
+    @include vp-1023 {
+      .nav__menu {
+        transform: translateY(0%);
+        transition: transform 0.2s ease;
+      }
+
+      .nav__item {
+        animation: slide-in 0.8s ease both;
+
+        @for $i from 1 through 6 {
+          &:nth-child(#{$i}) {
+            animation-delay: 0.3s + ($i - 1) * 0.15s;
+          }
+        }
+      }
+
+      .burger__line:nth-child(1) {
+        transform: scaleX(0);
+      }
+
+      .burger__line:nth-child(2) {
+        transform: rotate(45deg);
+      }
+
+      .burger__line:nth-child(3) {
+        transform: rotate(-45deg);
+      }
+
+      .burger__line:nth-child(4) {
+        transform: scaleX(0);
+      }
+    }
+  }
+}

@@ -1,0 +1,129 @@
+.stocks__tags {
+  margin-block-end: var(--space-3x);
+
+  @include vp-480 {
+    margin-block-end: var(--space-7-5x);
+  }
+}
+
+.stocks__controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3x);
+  align-items: center;
+  justify-content: space-between;
+  margin-block-end: var(--space-10x);
+
+  @include vp-480 {
+    flex-wrap: nowrap;
+  }
+
+  .view-switcher {
+    margin-inline-start: auto;
+  }
+
+  .section-tags {
+    margin-block-end: 0;
+  }
+}
+
+.stocks__list {
+  --stock-columns-list: 1fr;
+  --stock-gap-list: var(--space-7-5x) var(--space-5x);
+
+  display: grid;
+  grid-template-columns: var(--stock-columns-list);
+  gap: var(--stock-gap-list);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @include vp-480 {
+    --stock-columns-list: repeat(2, 1fr);
+  }
+
+  @include vp-1024 {
+    --stock-gap-list: var(--space-9x) var(--space-5x);
+  }
+
+  @include vp-1280 {
+    --stock-gap-list: var(--space-9x) var(--space-10x);
+    --stock-columns-list: repeat(16, 1fr);
+  }
+}
+
+.stocks__list--row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3x);
+
+  .stocks__item {
+    display: block;
+    grid-row: unset;
+    grid-column: unset;
+  }
+}
+
+.stocks__item {
+  display: flex;
+  margin: 0;
+
+  &:nth-child(3n) {
+    @include vp-480 {
+      grid-column: 2 span;
+    }
+
+    .stock-card__image-wrapper {
+      @include vp-480 {
+        height: 340px;
+      }
+    }
+  }
+
+  &:nth-child(4n + 1),
+  &:nth-child(4n + 2) {
+    @include vp-1280 {
+      grid-column: 8 span;
+    }
+  }
+
+  &:nth-child(8n + 3),
+  &:nth-child(8n + 8) {
+    @include vp-1280 {
+      grid-column: 7 span;
+    }
+
+    @include vp-1440 {
+      grid-column: 6 span;
+    }
+
+    .stock-card__image-wrapper {
+      @include vp-1280 {
+        height: 455px;
+      }
+    }
+  }
+
+  &:nth-child(8n + 4),
+  &:nth-child(8n + 7) {
+    @include vp-1280 {
+      grid-column: 9 span;
+    }
+
+    @include vp-1440 {
+      grid-column: 10 span;
+    }
+
+    .stock-card__image-wrapper {
+      @include vp-1280 {
+        height: 455px;
+      }
+    }
+  }
+}
+
+.stocks__sections {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12x);
+}

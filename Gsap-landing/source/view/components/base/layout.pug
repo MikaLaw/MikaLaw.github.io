@@ -1,0 +1,51 @@
+doctype html
+
+include ../index
+
+block variables
+
+html(lang="ru")
+	head
+		title= title
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible" content="ie=edge")
+		meta(name="description" content="ProjectName — описание")
+		//- генерируйте favicon тут - https://realfavicongenerator.net/
+		//- в подключение фавикон манифеста обязательно добавьте строчки crossorigin="use-credentials"
+		//- используйте только для шрифта находящегося на первом экране
+		link(rel="icon" type="image/png" href="/img/favicon/favicon-96x96.png" sizes="96x96")
+		link(rel="icon" type="image/svg+xml" href="/img/favicon/favicon.svg")
+		link(rel="shortcut icon" href="/favicon.ico")
+		link(rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png")
+		link(rel="manifest" href="/img/favicon/site.webmanifest" crossorigin="use-credentials")
+		//- link(rel="preload" href="fonts/placeholder.woff2" as="font" crossorigin="anonymous")
+		//- При необходимости вы можете добавить разметку Open graf. - const Open graf = true
+		if (openGraf)
+			//- Обязательно измените содержание контента на тот что необходим!
+			//- Введите заголовок
+			meta(property="og:title" content="Модерн")
+			//- Введите заголовок путь к картинке
+			meta(property="og:image" content="https://24fortest.ru/img/content/sharing.png")
+			//- Введите необходимый тип
+			meta(property="og:type" content="article")
+			//- Введите адрес сайта
+			meta(property="og:url" content="https://24fortest.ru/")
+			//- Введите описание
+			meta(property="og:description" content="Магазин косметики")
+		link(rel="stylesheet" href="css/vendor.min.css")
+		link(rel="stylesheet" href="css/style.min.css")
+		script(src="scripts/vendor.min.js" defer)
+		script(src="scripts/main.min.js" defer)
+
+	body
+		#smooth-wrapper
+			#smooth-content
+				.page
+					if (hasHeader)
+						+header(headerMods, currentUrl).page__header
+
+					block main
+
+					if (hasFooter)
+						+footer(footerMods).page__footer

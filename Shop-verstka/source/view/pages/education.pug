@@ -1,0 +1,90 @@
+extends ../components/base/layout
+
+block variables
+	- const title = "Обучение" //- на страницах кроме главной используйте О нас — ProjectName
+	- const wrapperMods = ""
+	- const hasHeader = true
+	- const headerMods = ""
+	- const hasFooter = true
+	- const hasFooterPanel = true 
+	- const footerMods = ""
+	- const currentUrl = "" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+	main.page__main
+		+breadcrumbs({
+			list: [{title: 'Главная', href: './main.html'}, {title: 'Обучение'}],
+		})
+		section.section
+			.container
+				.section__head
+					h1.section__title Обучение
+				.section__content
+					+education-banner()
+		section.section
+			.container
+				.section__head
+					h2.section__title Авторские курсы
+				.section__content
+					.education(data-list-show)
+						+list({
+							list: scheduleList2,
+							component: 'education-card',
+						}).education__list
+						.list-controls.education__controls
+							+button({
+								text: 'Весь список',
+								ariaLabel: 'Показать весь список предложений',
+								iconRight: 'icon-arrow-down',
+								ariaExpanded: 'false',
+							}).button--small.button--outline.education__control(data-list-show-trigger)
+		section.section
+			.container
+				.section__head
+					h2.section__title Расписание
+				.section__content
+					.course-schedule
+						.course-schedule__tags
+							+section-tags({
+								list: ['Все', 'Барнаул', 'Бийск'] 
+							})
+						ul.course-schedule__list 
+							each item in scheduleList1
+								li.course-schedule__item 
+									+course-schedule-card(item)
+						+list-controls({
+							btnAriaLabel: 'Показать ещё следующие 10 новостей'
+						}).course-schedule__controls
+		section.section
+			.container
+				.section__head
+					h2.section__title Скоро
+				.section__content
+					.education(data-list-show)
+						+list({
+							list: scheduleList3,
+							component: 'education-card',
+						}).education__list
+						.list-controls.education__controls
+							+button({
+								text: 'Весь список',
+								ariaLabel: 'Показать весь список предложений',
+								iconRight: 'icon-arrow-down',
+								ariaExpanded: 'false',
+							}).button--small.button--outline.education__control(data-list-show-trigger)
+		section.section
+			.container
+				.section__content
+					+banner({
+						title: 'Мы в соцсетях',
+						titleTag: 'h2',
+						text: 'Узнавайте о наших событиях первыми',
+						img: './img/components/product-banner/img-5',
+					})
+						+socials()
+		section.section
+			.container
+				.section__head
+					h2.section__title Место под seo-текст
+				.section__content
+					+text-cut()

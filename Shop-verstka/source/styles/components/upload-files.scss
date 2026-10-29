@@ -1,0 +1,49 @@
+.upload-files {
+  font-family: var(--ff-default);
+  line-height: var(--line-height-default);
+}
+
+.upload-files__text {
+  margin-block-end: var(--space-3x);
+  color: var(--color-neutral-gray-9);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--fz-1x);
+}
+
+.upload-files__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1-5x);
+}
+
+.upload-files__link {
+  --upload-files-color-link: var(--color-neutral-gray-9);
+
+  display: flex;
+  gap: var(--space-3x);
+  align-items: center;
+  color: var(--upload-files-color-link);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--fz-1x);
+  transition: color var(--trans-default);
+
+  &::after {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: currentcolor;
+    transition: all var(--trans-default);
+    content: "";
+    mask: url("../img/sprite.svg#icon-download") no-repeat center;
+  }
+
+  @include hover {
+    &:hover {
+      --upload-files-color-link: var(--color-neutral-gray-7);
+    }
+  }
+
+  &:active {
+    --upload-files-color-link: var(--color-neutral-gray-7);
+  }
+}

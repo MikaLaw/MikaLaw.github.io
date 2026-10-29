@@ -1,0 +1,102 @@
+mixin render-filter-core(filter, selectType)
+  if selectType === "accordion" || selectType === "inline"
+    +select({
+      multiple: true,
+      placeholder: filter.title,
+      optionsList: filter.options,
+    })(data-custom-filter class= selectType === "accordion" ? 'select--accordion' : '')
+
+  if selectType === "fieldset"
+    +fieldset({
+      title: filter.title,
+      name: filter.name,
+      optionsList: filter.options,
+    })(data-custom-filter)
+
+mixin filters(options = {})
+  -
+    const {
+      id = `dialog-${Math.random().toString(36).substr(2, 9)}`,
+      name = `filters-${Math.random().toString(36).substr(2, 9)}`,
+      ariaId = `dialog-modal-title-${Math.random().toString(36).substr(2, 9)}`,
+      selectType = "inline",
+      filterList = filterData,
+      mobileSlide = false,
+      tagsOverflow = false, //scroll, rows, dropdown
+    } = options;
+
+  .filters(data-filters data-slide=mobileSlide data-name=name)&attributes(attributes)
+    dialog.filter__dialog.dialog.dialog--slide(data-modal=id data-filter-dialog=name data-lazy aria-labelledby=ariaId)
+    .filter__selected
+      .filter__tags-status.visually-hidden(data-filter-tags-status aria-live="polite" aria-atomic="true")
+      if tagsOverflow === 'scroll'
+        ul.filter__tags-list(data-filters-tags=name data-scroll-block)
+      if tagsOverflow === 'rows'
+        ul.filter__tags-list(data-filters-tags=name data-priority-tags)
+      if tagsOverflow === 'dropdown'
+        ul.filter__tags-list(data-filters-tags=name data-priority-tags data-mode="dropdown")
+      if tagsOverflow !== 'scroll' && tagsOverflow !== 'rows' && tagsOverflow !== 'dropdown'
+        ul.filter__tags-list.filter__tags-list--default(data-filters-tags=name)
+    .filter__wrapper(data-da=`[data-modal=${id}],767,last`)
+      form.filter__form
+        .filter__head
+          .filter__title(id=ariaId) Фильтры
+          +button({
+            iconLeft: 'icon-close',
+            text: null,
+            ariaLabel: 'Закрыть',
+          }).filter__button-close.button--icon(data-modal-close=id)
+        .filter__body
+          if selectType !== "inline"
+            .filter__field
+              +fieldset({
+                name: 'delivery',
+                type: 'radio',
+                optionsList:[
+                  { value: '1', label: 'Курьером' },
+                  { value: '2', label: 'Самовывоз' }
+                ],
+              })(data-custom-filter)
+            .filter__field
+              +toggle({ name: 'sdsd', label: 'Срочно' }).toggle--switch
+          .filter__field
+            .filter__label Цена
+            +range()(data-custom-filter)
+          each filter in filterList
+            - const filterId = `slider-${Math.random().toString(36).substr(2, 9)}`;
+
+            .filter__field
+              if mobileSlide
+                .filter-slider(data-filters-field-wrapper)
+                  +button({
+                    text: filter.title, 
+                    iconRight: 'icon-dropdown',
+                  }).filter-slider__trigger(data-modal-show=filterId)
+                  dialog.filter-slider__dialog.dialog.dialog--slide(data-modal=filterId lazy)
+                  .filter-slider__content(data-da=`[data-modal=${filterId}],767,last`)
+                    .filter-slider__head
+                      +button({
+                        text: null,
+                        ariaLabel: "Назад",
+                        iconRight: 'icon-arrow-left',
+                      }).filter-slider__back(data-modal-close=filterId)
+                      .filter-slider__title!= filter.title
+                    +render-filter-core(filter, selectType)
+                    .filter-slider__footer
+                      +button({
+                        text: 'Применить',
+                        type: 'submit'
+                      }).button--base.filter-slider__submit(data-filters-submit)
+              else 
+                +render-filter-core(filter, selectType)
+        .filter__controls 	
+          +button({
+            text: "Сбросить все",
+            ariaLabel: "Сбросить все фильтры",
+            type: 'reset',
+          }).button--outline(data-filters-reset)
+          +button({
+            text: "Показать",
+            type: 'submit',
+            ariaLabel: "Показать товары по фильтрам"
+          }).button--base(data-filters-submit)

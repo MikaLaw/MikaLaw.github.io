@@ -1,0 +1,105 @@
+.order-mini {
+  --order-mini-padding: var(--space-5x) var(--space-2-5x);
+  --order-mini-bg: var(--color-neutral-gray-2);
+  --order-mini-radius: var(--radius-1x);
+
+  padding: var(--order-mini-padding);
+  font-family: var(--ff-default);
+  line-height: var(--line-height-default);
+  background: var(--order-mini-bg);
+  border-radius: var(--order-mini-radius);
+
+  @include vp-768 {
+    padding: var(--space-5x);
+  }
+}
+
+.order-mini__title {
+  --order-mini-size-title: var(--fz-default);
+
+  margin: 0;
+  margin-block-end: var(--space-5x);
+  color: var(--color-neutral-gray-9);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--order-mini-size-title);
+  text-transform: var(--text-transform-uppercase);
+
+  @include vp-768 {
+    --order-mini-size-title: var(--fz-5-5x);
+  }
+}
+
+.order-mini__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5x);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.order-mini__footer {
+  display: flex;
+  gap: var(--space-2x);
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-block-start: var(--space-5x);
+  padding-block-start: var(--space-5x);
+  border-block-start: 1px solid var(--color-neutral-gray-6);
+}
+
+.order-mini__footer-title {
+  --order-mini-size-footer-title: var(--fz-default);
+
+  color: var(--color-neutral-gray-9);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--order-mini-size-footer-title);
+  text-transform: var(--text-transform-uppercase);
+
+  @include vp-768 {
+    --order-mini-size-footer-title: var(--fz-5-5x);
+  }
+}
+
+.order-mini__footer-values {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: var(--space-2x);
+  align-items: baseline;
+}
+
+.order-mini__price-old {
+  color: var(--color-neutral-gray-8);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--fz-1x);
+}
+
+.order-mini__price-actual {
+  --order-mini-size-price-actual: var(--fz-default);
+
+  color: var(--color-neutral-gray-9);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--order-mini-size-price-actual);
+
+  @include vp-768 {
+    --order-mini-size-price-actual: var(--fz-default);
+  }
+}
+
+.order-mini__bonus {
+  grid-column: 2 span;
+  width: 100%;
+  padding: var(--space-0-5x) var(--space-2x);
+  color: var(--color-neutral-gray-8);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--fz-0-5x);
+  text-transform: var(--text-transform-uppercase);
+  background: var(--color-brand-beige-2);
+  border-radius: var(--radius-1x);
+}
+
+.order-mini--purchase {
+  --order-mini-padding: 0;
+  --order-mini-bg: var(--color-transparent);
+  --order-mini-radius: 0;
+}

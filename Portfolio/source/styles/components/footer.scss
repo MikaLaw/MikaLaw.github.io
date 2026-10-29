@@ -1,0 +1,10 @@
+.footer {
+  padding: var(--space-10x) 0;
+  color: var(--color-neutral-gray-1);
+
+  .container {
+    display: flex;
+    gap: var(--space-2x);
+    justify-content: flex-end;
+  }
+}

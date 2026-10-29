@@ -1,0 +1,42 @@
+mixin fieldset(options = {})
+	-
+		const {
+			id = `fs-${Math.random().toString(36).substr(2, 9)}`, 
+			title = 'Выбор варианта',
+			isLegendHidden = false,
+			name = `fs-${Math.random().toString(36).substr(2, 9)}`,
+			type = 'checkbox',
+			className = false,
+			required = false,
+			optionsList = [
+				{value: '1', label: 'Пепельные'},
+				{value: '2', label: 'Золотистые'},
+				{value: '3', label: 'Медные'},
+				{value: '4', label: 'Красные'},		
+				{value: '5', label: 'Махагоновые'},
+				{value: '6', label: 'Фиолетовые'},
+				{value: '7', label: 'Коричневый'},
+				{value: '8', label: 'Блонды'},		
+				{value: '9', label: 'Жемчужные'},
+				{value: '10', label: 'Нейтральные'},		
+				{value: '11', label: 'Коричневый'},
+			],			
+		} = options;
+
+	fieldset.fieldset(
+		data-fieldset
+		data-name=name
+		data-required= required
+		)&attributes(attributes)
+		legend.fieldset__title(class= isLegendHidden ? 'visually-hidden' : null)!= title
+		.fieldset__options
+			each option in optionsList
+				+toggle({
+					label: option.label,
+					value: option.value,
+					type: type,
+					name: name,
+					checked: option.checked,
+					required: (type === 'radio') && required,
+					id: `${name}-${option.value}-${id}`
+				})(class= className)

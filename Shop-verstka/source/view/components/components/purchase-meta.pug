@@ -1,0 +1,16 @@
+mixin purchase-meta(options= {})
+  -
+    const {
+      date = '25.06.23',
+      label = 'В пути',
+      deliveryDate = '25.07.23',
+      labelClass = 'light-beige',
+    } = options;
+
+  .purchase-meta
+    .purchase-meta__info
+      time.purchase-meta__date(datetime="2022-05-28")!= date
+      .purchase-meta__status(class= `purchase-meta__status--${labelClass}`)!= label
+    if deliveryDate
+      .purchase-meta__delivery Ожидаемая дата:
+        time.purchase-meta__delivery-date(datetime="2022-05-28")!= deliveryDate

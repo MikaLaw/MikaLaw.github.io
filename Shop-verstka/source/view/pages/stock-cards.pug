@@ -1,0 +1,70 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Акции-карточки" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const hasFooterPanel = true 
+  - const footerMods = ""
+  - const currentUrl = "" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+  main.page__main
+    +breadcrumbs({
+      list: [{title: 'Главная', href: './main.html'}, {title: 'Акции'}],
+    })
+    section.section
+      .container
+        .section__head
+          h1.section__title Акции для розничных покупателей
+        .section__content
+          .stocks
+            h2.visually-hidden Актуальные предложения для розницы
+            .stocks__controls
+              +section-tags({
+                tagName: 'a',
+                href: '#',
+                list: ['Розница', 'Салонам и мастерам'] 
+              })
+              +view-switcher({
+                activeIndex: 1,
+              })
+            +slider({
+              name: 'card-bleed',
+              component: 'stock-card',
+              componentData: {
+                titleTag: 'h2',
+                className: 'stock-card--mini'
+              },
+              optionList: stockList3,
+            }).slider--stock
+    section.section
+      .container
+        .section__head
+          h2.section__title Акции брендов
+        .section__content
+          .stocks
+            .stocks__tags
+              +section-tags({
+                list: tags2
+              })
+            ul.stocks__list 
+              each stock in stockList2
+                li.stocks__item 
+                  +stock-card(stock)
+    section.section
+      .container
+        .section__content
+          +slider({
+            name: 'card',
+            title: '<h2  class="section__title"><a href="#" class="section__title-link">Вы смотрели <i class="icon icon-arrow-right"></i></a></h2>',
+            optionList: productList1,
+          }).slider--product
+    section.section
+      .container
+        .section__head
+          h2.section__title Место под seo-текст
+        .section__content
+          +text-cut()

@@ -1,0 +1,43 @@
+mixin small-form(options={})
+  .small-form(data-form)&attributes(attributes)
+    form.small-form__form
+      .small-form__header
+        .small-form__title Записаться на курс
+        .small-form__text Наш менеджер свяжется с вами
+      .small-form__body
+        +field({
+          id: 'sexField1',					
+          component: 'select',
+          componentData: {
+            required: true,
+            btnId: 'sexField1',			
+            optionsList: [
+              { label: "Теория + практика", value: "1", },
+              { label: "Теория", value: "2", },
+            ],
+            placeholder: 'Выберите курс',              
+          }
+        })
+        +field({
+          component: 'input-datapicker',
+          componentData: {
+            required: true,
+            placeholder: 'Выберите дату'
+          }
+        })
+        +field({				
+          componentData: {
+            required: true,
+            mask: 'phone',
+            type: "tel",
+            autocomplete: "tel",
+            placeholder: 'Телефон'
+          },
+        })
+      .small-form__footer
+        +button({
+          text: "Записаться",
+          type: 'submit',
+          ariaLabel: "Отправить данные на сервер"
+        }).button--base(data-form-submit)
+        .small-form__subtext Нажимая на кнопку «Записаться», я даю свое <a href="#" class="small-form__link">Согласие на обработку персональных данных</a>

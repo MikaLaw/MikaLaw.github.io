@@ -1,0 +1,134 @@
+.work-card {
+  position: relative;
+  display: flex;
+  min-height: 100svh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80%;
+  counter-increment: works;
+
+  @include vp-1024 {
+    background-size: 80%;
+    background-attachment: fixed;
+  }
+
+  @include vp-1440 {
+    background-size: 60%;
+  }
+
+  &::before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 60%);
+    content: "";
+
+    @include vp-1024 {
+      width: 50%;
+      background-color: rgb(0 0 0 / 75%);
+    }
+  }
+}
+
+.work-card__wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: var(--space-10x) 0;
+
+  @include vp-1024 {
+    align-items: start;
+    width: 50%;
+    padding: var(--space-10x) var(--space-10x) var(--space-10x) 0;
+  }
+
+  &::before {
+    color: var(--color-default-white);
+    font-weight: var(--font-weight-regular);
+    font-size: var(--fz-23x);
+    font-family: var(--ff-title);
+    line-height: var(--line-height-default);
+    content: "0" counter(works);
+  }
+}
+
+.work-card__title {
+  margin-bottom: var(--space-6x);
+  color: var(--color-default-white);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--fz-16x);
+  font-family: var(--ff-default);
+  line-height: var(--line-height-default);
+}
+
+.work-card__text {
+  margin-bottom: var(--space-4x);
+  color: var(--color-neutral-gray-3);
+  font-weight: var(--font-weight-light);
+  font-size: var(--fz-3x);
+  font-family: var(--ff-default);
+  line-height: var(--line-height-1x);
+}
+
+.work-card__link {
+  position: relative;
+  display: flex;
+  gap: var(--space-2x);
+  align-items: center;
+  padding-bottom: var(--space-2x);
+  color: var(--color-default-white);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--fz-default);
+  font-family: var(--ff-default);
+  line-height: var(--line-height-default);
+
+  &::after {
+    display: block;
+    width: 20px;
+    height: 18px;
+    background-color: currentcolor;
+    content: "";
+    mask-image: url("../img/sprite.svg#icon-arrow-right");
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+  }
+
+  &::before {
+    position: absolute;
+    bottom: 0;
+    left: 0%;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-default-white);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform var(--trans-default);
+    content: "";
+  }
+
+  @include hover {
+    &:hover {
+      &::before {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+    }
+  }
+
+  &:active {
+    &::before {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+  }
+}

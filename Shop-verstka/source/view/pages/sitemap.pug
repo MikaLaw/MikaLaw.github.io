@@ -1,0 +1,78 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Список страниц"
+
+block main
+  style.
+    .page {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .page__head {
+      padding: 30px 30px 40px;
+      border-bottom: 4px solid #E3292C;
+    }
+
+    .page__body {
+      padding: 40px 30px 80px;
+      flex: 1
+    }
+
+    .menu {
+      width: 400px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 30px;
+      line-height: 28px;
+      font-weight: 800;
+      margin-block-end: 50px;
+    }
+
+    a {
+      font-weight: 400;
+      color: #252525;
+      font-size: 16px;
+      line-height: 26px;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    ul {
+      padding-inline-start: 20px;
+    }
+
+    .page__footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px 30px 40px;
+      border-top: 4px solid #E3292C;
+      border-bottom: 4px solid #E3292C;
+      text-align: center;
+    }
+
+    .page__date {
+      font-size: 18px; 
+    }
+
+  .page
+    .page__head
+      .logo
+    .page__body
+      h1 Проект
+      ul.menu
+        li.menu__link
+          a(href="./index.html") Страницы
+        li.menu__link
+          a(href="./ui-kit.html") Ui - kit
+    .page__footer
+      p
+        | Дата измненений 
+        span.page__date  

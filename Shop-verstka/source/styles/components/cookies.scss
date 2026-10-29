@@ -1,0 +1,54 @@
+.cookie-banner {
+  z-index: var(--z-index-200);
+  height: fit-content;
+  padding: var(--space-5x);
+  font-family: var(--ff-default);
+  line-height: var(--line-height-default);
+  background-color: var(--color-neutral-gray-1);
+  box-shadow: var(--box-shadow-1);
+  inset: auto var(--space-4x) var(--space-25x) auto;
+  max-inline-size: calc(100% - var(--space-4x) * 2);
+
+  @include vp-480 {
+    max-inline-size: 400px;
+    inset: auto var(--space-5x) var(--space-25x) auto;
+  }
+
+  @include vp-768 {
+    inset: auto var(--space-5x) var(--space-5x) auto;
+  }
+}
+
+.cookie-banner__container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4x);
+}
+
+.cookie-banner__title {
+  margin: 0;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--fz-default);
+}
+
+.cookie-banner__content p {
+  margin: 0;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--fz-1x);
+}
+
+.cookie-banner__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2x);
+
+  & > * {
+    flex: 1;
+    width: auto;
+  }
+
+  @include vp-480 {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}

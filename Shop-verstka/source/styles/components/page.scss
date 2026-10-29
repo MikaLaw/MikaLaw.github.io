@@ -1,0 +1,30 @@
+.page {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  width: 100%;
+
+  @include vp-767 {
+    padding-block-end: var(--space-19x);
+  }
+}
+
+.page__main {
+  flex: 1;
+  padding-block-end: var(--space-16x);
+  overflow: hidden;
+
+  @include vp-767 {
+    padding-block-start: var(--space-13x);
+  }
+}
+
+.page__main--main {
+  padding-block-start: 0;
+}
+
+.page__main--not-found {
+  display: flex;
+  flex-direction: column;
+  padding-block-end: 0;
+}

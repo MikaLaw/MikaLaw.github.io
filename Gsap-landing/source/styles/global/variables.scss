@@ -1,0 +1,181 @@
+:root {
+  /*
+    Colors
+    ---------------------------------
+  */
+  --color-neutral-gray-1: #2f4237;
+  --color-default-white: #fff;
+  --color-default-black: #000;
+  --color-brand-error: #d90606;
+  --color-brand-valid: #22b259;
+  --color-transparent: rgb(255 255 255 / 0%);
+
+  /*
+    Project palette
+    ---------------------------------
+  */
+  --color-brand-green-1: #ddf3d5;
+  --color-brand-green-2: #00a649;
+  --color-brand-beige-1: #f3f0da;
+  --color-brand-beige-2: #eae7d9;
+  --color-brand-beige-3: #ded9c0;
+  --color-brand-beige-4: #a59f85;
+  --color-brand-beige-5: #e3da9d;
+  --color-brand-orange-1: #ffac17;
+  --color-brand-pink-1: #ecc6c6;
+
+  /*
+    Spaces
+    ---------------------------------
+  */
+  --space-0-5x: #{rem(2px)};
+  --space-1x: #{rem(4px)};
+  --space-1-5x: #{rem(6px)};
+  --space-2x: #{rem(8px)};
+  --space-2-5x: #{rem(10px)};
+  --space-3x: #{rem(12px)};
+  --space-3-5x: #{rem(14px)};
+  --space-4x: #{rem(16px)};
+  --space-4-5x: #{rem(18px)};
+  --space-5x: #{rem(20px)};
+  --space-5-5x: #{rem(22px)};
+  --space-6x: #{rem(24px)};
+  --space-7x: #{rem(28px)};
+  --space-7-5x: #{rem(30px)};
+  --space-8x: #{rem(32px)};
+  --space-9x: #{rem(36px)};
+  --space-10x: #{rem(40px)};
+  --space-11x: #{rem(44px)};
+  --space-12x: #{rem(48px)};
+  --space-13x: #{rem(52px)};
+  --space-14x: #{rem(56px)};
+  --space-15x: #{rem(60px)};
+  --space-16x: #{rem(64px)};
+  --space-17x: #{rem(68px)};
+  --space-18x: #{rem(72px)};
+  --space-19x: #{rem(76px)};
+  --space-20x: #{rem(80px)};
+  --space-21x: #{rem(84px)};
+  --space-22x: #{rem(88px)};
+  --space-23x: #{rem(92px)};
+  --space-24x: #{rem(96px)};
+  --space-25x: #{rem(100px)};
+
+  /*
+    Radius
+    ---------------------------------
+  */
+  --radius-0-5x: 2px;
+  --radius-1x: 4px;
+  --radius-1-5x: 6px;
+  --radius-2x: 8px;
+  --radius-2-5x: 10px;
+  --radius-3x: 12px;
+  --radius-3-5x: 14px;
+  --radius-4x: 16px;
+  --radius-5x: 20px;
+  --radius-6x: 24px;
+  --radius-7x: 28px;
+  --radius-8x: 32px;
+  --radius-9x: 36px;
+  --radius-10x: 40px;
+
+  /*
+    Box-shadow
+    ---------------------------------
+  */
+
+  /*
+    Z - index
+    ---------------------------------
+  */
+
+  --z-index-100: 100;
+  --z-index-200: 200;
+
+  /*
+    Typography
+    ---------------------------------
+  */
+
+  /*
+    Font size
+  */
+  --fz-0-5x: #{rem(12px)};
+  --fz-1x: #{rem(14px)};
+  --fz-1-5x: #{rem(15px)};
+  --fz-default: #{rem(16px)};
+  --fz-3x: #{rem(18px)};
+  --fz-4x: #{rem(20px)};
+  --fz-5x: #{rem(22px)};
+  --fz-5-5x: #{rem(23px)};
+  --fz-6x: #{rem(24px)};
+  --fz-7x: #{rem(26px)};
+  --fz-8x: #{rem(28px)};
+  --fz-9x: #{rem(30px)};
+  --fz-10x: #{rem(32px)};
+  --fz-11x: #{rem(34px)};
+  --fz-12x: #{rem(36px)};
+  --fz-13x: #{rem(38px)};
+  --fz-14x: #{rem(40px)};
+  --fz-15x: #{rem(42px)};
+  --fz-16x: #{rem(44px)};
+  --fz-32x: #{rem(88px)};
+
+  /*
+    Font family
+  */
+  --ff-default: "Manrope", "Arial", sans-serif;
+  --ff-title: "Buyan", "Arial", sans-serif;
+
+  /*
+    Font weight
+  */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /*
+    Line-height
+  */
+  --line-height-default: 1.2;
+  --line-height-1x: 1.5;
+
+  /*
+    Letter-spacing
+  */
+  --letter-spacing-0x: 0;
+  --letter-spacing-0-5x: 0.6px;
+  --letter-spacing-1x: 1px;
+  --letter-spacing-1-5x: 1.5px;
+  --letter-spacing-2x: 2px;
+
+  /*
+    Text-transform
+  */
+  --text-transform-normal: none;
+  --text-transform-uppercase: uppercase;
+
+  /*
+    Animation
+    ---------------------------------
+  */
+  --tf-default: ease;
+  --trans-default: 0.3s var(--tf-default);
+  --trans-400: 0.4s var(--tf-default);
+  --trans-600: 0.6s var(--tf-default);
+}
+
+/*
+  Viewports
+  ---------------------------------
+*/
+$vp-320: 320px;
+$vp-480: 480px;
+$vp-768: 768px;
+$vp-1024: 1024px;
+$vp-1280: 1280px;
+$vp-1440: 1440px;
+$vp-1600: 1600px;
+$vp-1920: 1920px;

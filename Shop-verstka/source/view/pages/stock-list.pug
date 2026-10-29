@@ -1,0 +1,80 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Акции-список" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const hasFooterPanel = true 
+  - const footerMods = ""
+  - const currentUrl = "" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+  main.page__main
+    +breadcrumbs({
+      list: [{title: 'Главная', href: './main.html'}, {title: 'Акции'}],
+    })
+    section.section
+      .container
+        .section__head
+          h1.section__title Акции для розничных покупателей
+        .section__content
+          .stocks
+            .stocks__controls
+              +section-tags({
+                tagName: 'a',
+                href: '#',
+                list: ['Розница', 'Салонам и мастерам'] 
+              })
+              +view-switcher({
+                activeIndex: 0,
+              })
+            ul.stocks__list.stocks__list--row
+              each item in stockList5
+                li.stocks__item
+                  +stock-row-mini({...item, titleTag: 'h2',})
+    section.section
+      .container
+        .section__head
+          h2.section__title Акции брендов
+        .section__content
+          .stocks
+            .stocks__tags
+              +section-tags({
+                list: tags2
+              })
+            .stocks__sections
+              each stock in stockList4
+                section.brand-stocks(aria-labelledby=`brand-${stock.img.title}`)
+                  .brand-stocks__header
+                    h2.visually-hidden(id=`brand-${stock.img.title}`) Акции бренда #{stock.img.title}
+                    .brand-stocks__img
+                      +picture({
+                        format: "jpg",
+                        path: stock.img.img,
+                        alt: "Логотип бренда",
+                        isLazyLoading: "lazy",
+                        isDecoding: "async",
+                        width: "320",
+                        height: "310",
+                        noneMediaSource: true,
+                      })
+                  ul.brand-stocks__list
+                    each item in stock.list
+                      li.brand-stocks__item
+                        +stock-row-mini(item).stock-row-mini--brand
+    section.section
+      .container
+        .section__content
+          +slider({
+            name: 'card',
+            title: '<h2  class="section__title"><a href="#" class="section__title-link">Вы смотрели <i class="icon icon-arrow-right"></i></a></h2>',
+            optionList: productList1,
+          }).slider--product
+    section.section
+      .container
+        .section__head
+          h2.section__title Место под seo-текст
+        .section__content
+          +text-cut()

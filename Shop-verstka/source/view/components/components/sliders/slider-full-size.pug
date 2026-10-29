@@ -1,0 +1,79 @@
+mixin slider-full-controls()
+  .slider__controls-container.container
+    .slider__controls
+      +button({ iconLeft: 'icon-arrow-left', text: null, ariaLabel: 'Назад' }).button--control.button--outline.slider__button.swiper-button-prev
+      .slider__pagination
+        .slider__pagination-inner
+          .swiper-pagination
+      +button({ iconLeft: 'icon-arrow-right', text: null, ariaLabel: 'Вперед' }).button--control.button--outline.slider__button.swiper-button-next
+
+mixin slider-full-background(slide)
+  .slider__background(aria-hidden="true")
+    if slide.video
+      +bg-video({ 
+        mobileSrc: slide.video.mobile, 
+        desktopSrc: slide.video.desktop, 
+        mobilePosterSrc: slide.imgData.path + '.png', 
+        desktopPosterSrc: slide.imgData.path + '.png', 
+        priority: slide.imgData.isPriority 
+      }).bg-video--slider-full-size
+    else
+      +picture({ 
+        format: "jpg", 
+        path: slide.imgData.path, 
+        isLazyLoading: slide.imgData.isPriority ? "eager" : "lazy", 
+        isDecoding: "async", 
+        width: "1440", 
+        height: "600", 
+        fetchpriority: slide.imgData.isPriority ? "high" : "low", 
+        desktopSource: slide.imgData.path,
+        mobileSource: `${slide.imgData.path}-mobile`,
+      })
+
+mixin slider-full-content(slide)
+  .slider__content.container
+    .slider__content-wrapper
+      h2.slider__title= slide.title
+      .slider__description
+        p= slide.description
+      +button({ 
+        href: "#",
+        tag: 'a',
+        type: null,
+      }).button--outline
+
+mixin slider-full-size(options={})
+  - 
+    const { 
+      slides = sliderFullSize, 
+      isAsync = false 
+    } = options;
+
+  if isAsync
+    .slider.slider--full(data-slider-full-size-async)&attributes(attributes)
+      //- Слайдер только для фонов
+      .slider.swiper(data-slider-full-size-async-bg aria-hidden="true")
+        .slider__wrapper.swiper-wrapper
+          each slide in slides
+            .slider__slide.slider__slide--full.swiper-slide
+              +slider-full-background(slide)
+
+      //- Слайдер только для текстового контента и управления
+      .slider.swiper(data-slider-full-size-async-content)
+        .slider__wrapper.swiper-wrapper(aria-live="polite")
+          each slide in slides
+            .slider__slide.slider__slide--full.swiper-slide
+              +slider-full-content(slide)
+        +slider-full-controls()
+
+  else
+    //- Стандартный вариант (все в одном слайдере)
+    .slider.slider--full.swiper(data-slider-full-size)&attributes(attributes)
+      .slider__wrapper.swiper-wrapper(aria-live="polite")
+        each slide in slides
+          .slider__slide.slider__slide--full.swiper-slide
+            +slider-full-background(slide)          
+            +slider-full-content(slide)
+      +slider-full-controls()
+
+

@@ -1,0 +1,70 @@
+mixin catalog-filters(options = {})
+	-
+		const {
+			id = `filters-inline-${Math.random().toString(36).substr(2, 9)}`,
+			filterList = filterData,
+		} = options;
+
+	.catalog-filters(data-filters=id data-slide="true")&attributes(attributes)
+		form.catalog-filters__form
+			.catalog-filters__field-wrapper
+				.catalog-filters__field(data-da='.products__filters,767,last')
+					+select({
+						multiple: false,
+						placeholder: "Сортировка",
+						optionsList: [{label: 'По умолчанию', value: '1'}, {label: 'По возрастанию', value: '2'}, {label: 'По убыванию', value: '3'}],
+					})
+				.catalog-filters__field
+					+select({
+						multiple: false,
+						placeholder: `<span>Цена</span><span class="counter" data-filter-counter hidden></span>`,
+						component: 'range',
+						optionsList: []
+					}).select--filters(data-custom-filter)
+				each filter in filterList
+					.catalog-filters__field
+						- const filterId = `slider-${Math.random().toString(36).substr(2, 9)}`;
+						.catalog-filters-slider(data-filters-slider)
+							+button({
+								text: `<span class="catalog-filters-slider__trigger-text">${filter.title}</span><span class="counter" data-filter-counter hidden></span>`, 
+								ariaExpanded: "false",
+								ariaHaspopup: "dialog",
+								ariaControls: filterId,
+								id: null
+							}).catalog-filters-slider__trigger(data-slider-panel-show=`sidebar-menu-${filterId}`)
+							+slider-panel({	
+								name: `sidebar-menu-${filterId}`,	
+								title: filter.title,
+								isTitleHide: true,
+								ariaControlsId: filterId,
+								iconClose: ['icon-arrow-left','14','14'],
+								textClose: filter.title, 
+								classClose: 'slider-panel__back',
+							}).slider-panel--slide
+								+select({
+									multiple: false,
+									placeholder: `<span class="select__text-wrapper">${filter.title}</span><span class="counter" data-filter-counter hidden></span>`,
+									optionsList: filter.options,
+									multiple: true,
+								}).select--filters(data-custom-filter)
+								+button({
+									text: 'Применить',
+								}).button--base.catalog-filters-slider__submit(data-filters-apply data-slider-panel-close=`sidebar-menu-${filterId}`)
+			.catalog-filters__component-wrapper
+				+view-switcher()(data-da='.products__filters,767,last')
+			.catalog-filters__selected.filter-tags
+				.filter-tags__status.visually-hidden(data-filter-tags-status=id aria-live="polite" aria-atomic="true")
+				ul.filter-tags__list(data-filters-tags=id data-lazy)
+			.catalog-filters__controls
+				+button({
+					text: "Сбросить все",
+					ariaLabel: "Сбросить все фильтры",
+					type: 'reset',
+				}).button--outline(data-filters-reset)
+				+button({
+					text: "Показать",
+					type: 'submit',
+					ariaLabel: "Показать товары по фильтрам",
+				}).button--base(data-filters-submit)
+
+

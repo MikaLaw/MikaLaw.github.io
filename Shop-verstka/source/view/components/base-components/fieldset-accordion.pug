@@ -1,0 +1,31 @@
+mixin fieldset-accordion(options={})
+	-
+		const {
+			id = `fs-${Math.random().toString(36).substr(2, 9)}`, 
+			title = 'Выбор варианта',
+			name = `fs-${Math.random().toString(36).substr(2, 9)}`,
+			type = 'checkbox',
+			requaired= false,
+			optionsList = [
+				{value: '1', label: 'Пепельные'},
+				{value: '2', label: 'Золотистые'},
+				{value: '3', label: 'Медные'},
+				{value: '4', label: 'Красные'},		
+				{value: '5', label: 'Махагоновые'},
+				{value: '6', label: 'Фиолетовые'},
+				{value: '7', label: 'Коричневый'},
+				{value: '8', label: 'Блонды'},		
+				{value: '9', label: 'Жемчужные'},
+				{value: '10', label: 'Нейтральные'},		
+				{value: '11', label: 'Коричневый'},
+			],			
+		} = options;
+	.fieldset-accordion&attributes(attributes)
+		details.fieldset-accordion__details
+			summary.fieldset-accordion__summary
+				.fieldset-accordion__title!= title
+		.fieldset-accordion__content
+			+fieldset({
+				...options,
+				isLegendHidden: true
+			})

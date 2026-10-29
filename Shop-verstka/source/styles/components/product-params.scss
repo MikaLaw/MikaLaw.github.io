@@ -1,0 +1,179 @@
+.product-params {
+  font-family: var(--ff-default);
+  line-height: var(--line-height-default);
+}
+
+.product-params__brand {
+  display: flex;
+  gap: var(--space-2x);
+  align-items: center;
+  margin-block-end: var(--space-3-5x);
+}
+
+.product-params__brand-name {
+  --product-params-size-brand-name: var(--fz-1x);
+
+  color: var(--color-neutral-gray-9);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--product-params-size-brand-name);
+  text-transform: var(--text-transform-uppercase);
+
+  @include vp-768 {
+    --product-params-size-brand-name: var(--fz-default);
+  }
+}
+
+.product-params__brand-status {
+  padding: var(--space-1x) var(--space-1-5x);
+  color: var(--color-neutral-gray-9);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--fz-0-5x);
+  background: var(--color-neutral-gray-4);
+  border-radius: var(--radius-0-5x);
+}
+
+.product-params__title {
+  --product-params-size-title: var(--fz-default);
+  --product-params-margin-block-end-title: var(--space-5x);
+
+  margin: 0;
+  margin-block-end: var(--product-params-margin-block-end-title);
+  color: var(--color-neutral-gray-9);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--product-params-size-title);
+  text-transform: var(--text-transform-uppercase);
+
+  @include vp-768 {
+    --product-params-margin-block-end-title: var(--space-7-5x);
+    --product-params-size-title: var(--fz-3x);
+  }
+
+  @include vp-1280 {
+    --product-params-size-title: var(--fz-5-5x);
+  }
+}
+
+.product-params__attribute {
+  --product-params-margin-block-end-attribute: var(--space-5x);
+
+  margin-block-end: var(--product-params-margin-block-end-attribute);
+
+  @include vp-768 {
+    --product-params-margin-block-end-attribute: var(--space-7-5x);
+  }
+
+  @include vp-1024 {
+    --product-params-margin-block-end-attribute: var(--space-10x);
+  }
+}
+
+.product-params__price {
+  --product-params-gap-price: var(--space-2x);
+  --product-params-margin-block-end-price: var(--space-5x);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--product-params-gap-price);
+  margin-block-end: var(--product-params-margin-block-end-price);
+
+  @include vp-768 {
+    --product-params-margin-block-end-price: var(--space-7-5x);
+  }
+
+  @include vp-1024 {
+    --product-params-gap-price: var(--space-3x);
+
+    flex-direction: row;
+    align-items: baseline;
+  }
+}
+
+.product-params__price-actual {
+  --product-params-size-price-actual: var(--fz-10x);
+
+  color: var(--color-neutral-gray-9);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--product-params-size-price-actual);
+  letter-spacing: var(--letter-spacing-1x);
+
+  @include vp-480 {
+    --product-params-size-price-actual: var(--fz-12x);
+  }
+
+  @include vp-1024 {
+    --product-params-size-price-actual: var(--fz-16x);
+  }
+}
+
+.product-params__price-old {
+  color: var(--color-neutral-gray-8);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--fz-default);
+  line-height: 21px;
+  text-decoration: line-through;
+}
+
+.product-params__info-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1x);
+  margin-block-end: var(--space-5x);
+  color: var(--color-neutral-gray-9);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--fz-1x);
+
+  dd {
+    margin: 0;
+  }
+}
+
+.product-params__info-item {
+  display: flex;
+  gap: var(--space-2x);
+  align-items: baseline;
+}
+
+.product-params__info {
+  color: var(--color-neutral-gray-9);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--fz-1x);
+
+  p {
+    margin: 0;
+
+    &:not(:last-child) {
+      margin-block-end: var(--space-1-5x);
+    }
+  }
+}
+
+.product-params__controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1-5x);
+  align-items: center;
+  margin-block-end: var(--space-5x);
+}
+
+.product-params__button-link {
+  --product-params-color-button-link: var(--color-neutral-gray-9);
+
+  display: inline-block;
+  margin-block-end: var(--space-5x);
+  color: var(--product-params-color-button-link);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--fz-1x);
+  text-decoration: underline;
+  text-underline-position: under;
+  transition: color var(--trans-default);
+
+  @include hover {
+    &:hover {
+      --product-params-color-button-link: var(--color-neutral-gray-7);
+    }
+  }
+
+  &:active {
+    --product-params-color-button-link: var(--color-neutral-gray-7);
+  }
+}

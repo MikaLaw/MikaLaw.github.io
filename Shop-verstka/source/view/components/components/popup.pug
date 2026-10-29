@@ -1,0 +1,21 @@
+mixin popup(options = {})
+  -
+    const {
+      id = `popup-${Math.random().toString(36).substring(2, 9)}`,
+      text = 'Это попап информирования',
+    } = options;
+
+  .popup(
+    id=id 
+    popover="manual" 
+    role="status" 
+    data-popup
+    tabindex="-1"
+  )&attributes(attributes)
+    .popup__wrapper(data-popup-content)
+      .popup__text!= text
+      .popup__close
+        +button({
+          text: null,
+          iconLeft: 'icon-close',
+        }).button--transparent(popovertarget=id popovertargetaction="hide" aria-label="Закрыть уведомление")

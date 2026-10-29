@@ -1,0 +1,52 @@
+.bg-video {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    background: transparent;
+  }
+}
+
+.bg-video__control {
+  position: absolute;
+  inset-inline-end: 20px;
+  inset-block-end: 20px;
+  z-index: 1;
+
+  &::before {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: var(--color-neutral-gray-9);
+    transition: background-color var(--trans-default);
+    content: "";
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-image: url("../img/sprite.svg#icon-pause");
+  }
+
+  &.is-paused {
+    &::before {
+      mask-image: url("../img/sprite.svg#icon-play");
+    }
+  }
+
+  @include hover {
+    &:hover:not(:disabled) {
+      &::before {
+        background-color: var(--color-neutral-gray-1);
+      }
+    }
+  }
+}
+
+.bg-video--slider-full-size {
+  video {
+    object-position: left bottom;
+  }
+}

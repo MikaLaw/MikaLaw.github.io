@@ -1,0 +1,10 @@
+mixin product-stickers(options={})
+  -
+    const {
+      ariaLabel = 'Статус товара',
+      list = [],
+    } = options;
+
+  ul.product-stickers(aria-label=ariaLabel)&attributes(attributes)
+    each sticker in list
+      li.product-stickers__sticker(class=`product-stickers__sticker--${sticker.class}`)!= sticker.text

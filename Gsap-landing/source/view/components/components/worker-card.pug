@@ -1,0 +1,31 @@
+mixin worker-card(options={})
+	-
+		const {
+			img = './img/components/workers-1',
+			city = 'Татарстан',
+			name = 'Евгений петров',
+			tags = ['Молочные продукты', 'Мясо']
+		} = options;
+
+	article.worker-card&attributes(attributes)
+		.worker-card__wrapper
+			.worker-card__img
+				+picture({
+					format: "jpg",
+					path: img,
+					alt: name,
+					isLazyLoading: "lazy",
+					isDecoding: "async",
+					width: "320",
+					height: "310",
+					noneMediaSource: true,
+				})
+			.worker-card__content
+				.worker-card__content-wrapper
+					.worker-card__city.icon-geo
+						span.visually-hidden Регион:
+						| #{city}
+					h3.worker-card__name!= name
+					ul.worker-card__tags(aria-label="Продукция")
+						each tag in tags
+							li.worker-card__tag!= tag

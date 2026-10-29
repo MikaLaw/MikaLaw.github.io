@@ -1,0 +1,48 @@
+extends ../components/base/layout
+
+block variables
+	- const title = "ЛК-Избранное" //- на страницах кроме главной используйте О нас — ProjectName
+	- const wrapperMods = ""
+	- const hasHeader = true
+	- const headerMods = ""
+	- const hasFooter = true
+	- const hasFooterPanel = true 
+	- const footerMods = ""
+	- const currentUrl = "" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+	- const page = "./lk-favorite.html" //- обозначение страницы для проброса в панели подвала
+
+block main
+	main.page__main
+		+breadcrumbs({
+			list: [{title: 'Главная', href: './main.html'}, {title: 'Избранное'}],
+		})
+		section.section
+			.container
+				.section__wrapper 
+					.section__sidebar
+						+sidebar-menu({
+							page: page,
+						})
+					.section__content
+						.section__head
+							h1.section__title Избранное
+							+button({
+								text: 'Очистить',
+								ariaLabel: 'Удалить все товары из избранного'
+							}).button--base
+						.products
+							.products__filters
+								+button({
+									iconLeft: 'icon-filter',
+									text: null,
+									ariaLabel: 'Отфильтровать',
+									ariaExpanded: "false",
+									ariaControls: 'catalog-filter-controls',
+								}).button--icon.products__filters-show(data-slider-panel-show='catalog-filter')
+								+catalog-filters()(data-da=`[data-slider-panel="catalog-filter"] .slider-panel__body,767,last`)
+							+list({
+								list: productList2,
+								component: 'product-card',
+								componentData: { titleTag: 'h2', isFavorite: true },
+							}).products__list
+							+list-controls().products__controls

@@ -1,0 +1,98 @@
+.purchase-step {
+  height: 100%;
+  padding: var(--space-5x);
+  font-family: var(--ff-default);
+  line-height: var(--line-height-default);
+  background: var(--color-neutral-gray-4);
+  border-radius: var(--radius-1x);
+}
+
+.purchase-step__title {
+  --purchase-step-size-title: var(--fz-1x);
+
+  display: flex;
+  gap: var(--space-2-5x);
+  align-items: center;
+  margin: 0;
+  margin-block-end: var(--space-5x);
+  color: var(--color-neutral-gray-9);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--purchase-step-size-title);
+  text-transform: var(--text-transform-uppercase);
+
+  @include vp-768 {
+    --purchase-step-size-title: var(--fz-default);
+  }
+
+  &::after {
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-neutral-gray-6);
+    content: "";
+  }
+
+  &::before {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    overflow: hidden;
+    border: 1px solid var(--color-neutral-gray-9);
+    border-radius: 50%;
+    content: counter(purchase-step);
+    counter-increment: purchase-step;
+  }
+}
+
+.purchase-step__table {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5x);
+}
+
+.purchase-step__row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2-5x);
+
+  @include vp-480 {
+    grid-template-columns: 150px 1fr;
+  }
+
+  @include vp-1280 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.purchase-step__label {
+  color: var(--color-neutral-gray-9);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--fz-0-5x);
+  letter-spacing: var(--letter-spacing-1x);
+  text-transform: var(--text-transform-uppercase);
+}
+
+.purchase-step__value {
+  margin: 0;
+  color: var(--color-neutral-gray-8);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--fz-1x);
+
+  a {
+    color: var(--color-neutral-gray-8);
+    transition: color var(--trans-default);
+
+    @include hover {
+      &:hover {
+        color: var(--color-neutral-gray-9);
+      }
+    }
+
+    &:active {
+      color: var(--color-neutral-gray-9);
+    }
+  }
+}

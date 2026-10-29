@@ -1,0 +1,158 @@
+mixin registration-panel-2()
+	.section__form
+		.section__text
+			p Для подтверждения статуса мастера в программе лояльности, необходимо указать те же данные, что и при регистрации в Telegram-боте @ModernLSBot.
+			p Регистрация Вас в качестве мастера происходит в течение 24 часов с момента отправки формы в рабочие дни.
+		.form-block(data-form data-validate-on-input data-validate-on-change data-validate-on-blur)
+			form.form
+				.form__wrapper
+					.form__body
+						+field({
+							fieldLabel: 'Фио',
+							validationType: "name",
+							componentData: {
+								required: true,
+								pattern: "^[а-яёА-ЯЁa-zA-Z]+([ \\-][а-яёА-ЯЁa-zA-Z]+)+$",
+								autocomplete: 'name',
+								ariaDescribedby: "fio-2-hint"
+							}
+						})
+						+field({
+							fieldLabel: 'Пол',
+							id: 'sexField2',					
+							component: 'select',
+							componentData: {
+								required: true,
+								btnId: 'sexField2',			
+								optionsList: [
+									{ label: "Женский", value: "female", },
+									{ label: "Мужской", value: "male", },
+								],
+								placeholder: '',
+								ariaDescribedby: "sex-2-hint",        
+							}
+						})
+						+field({
+							fieldLabel: 'Дата рождения',
+							component: 'input-datapicker',
+							componentData: {
+								required: true,
+								ariaDescribedby: "birthday-2-hint"
+							}
+						})
+						+field({
+							fieldLabel: 'Email',
+							componentData: {
+								required: true,
+								type: 'email',
+								autocomplete: 'email',
+								ariaDescribedby: "email-2-hint",
+							},
+						})
+						+field({
+							fieldLabel: 'Населенный пункт',
+							component: 'select-search',
+							componentData: {							
+								required: true,
+								ariaDescribedby: "city-2-hint"
+							}		
+						})
+						+field({
+							fieldLabel: 'Место работы',
+							component: 'select-search',
+							componentData: {							
+								required: true,
+								ariaDescribedby: "work-2-hint"
+							}		
+						})
+						+field({
+							fieldLabel: 'Адресс работы',
+							component: 'select-search',
+							componentData: {							
+								required: true,
+								ariaDescribedby: "address-2-hint"
+							}		
+						})
+						+field({
+							fieldLabel: 'Должность',
+							id: 'specField1',					
+							component: 'select',
+							componentData: {
+								required: true,
+								btnId: 'specField1',			
+								optionsList: [
+									{ label: "Консультант", value: "1", },
+									{ label: "Парикмахер", value: "2", },
+								],
+								placeholder: '',
+								ariaDescribedby: "spec-2-hint",            
+							}
+						})
+						+field({
+							fieldLabel: 'Любимый магазин',
+							id: 'shopField2',					
+							component: 'select',
+							componentData: {
+								required: true,
+								btnId: 'shopField2',			
+								optionsList: [
+									{ label: "Первый", value: "1", },
+									{ label: "Второй", value: "2", },
+								],
+								placeholder: '',
+								ariaDescribedby: "shop-2-hint",           
+							}
+						})
+						+field({
+							fieldLabel: 'Телефон',						
+							componentData: {
+								required: true,
+								mask: 'phone',
+								type: "tel",
+								autocomplete: "tel",
+								ariaDescribedby: "tel-2-hint"
+							},
+						})
+						+field({
+							fieldLabel: 'Пароль',
+							component: 'input-password',
+							componentData: {
+								required: true,
+								autocomplete: "new-password",
+								spellcheck: 'false',
+								ariaDescribedby: 'new-pass-3',	
+							},
+							validationType: "match",
+							matchName: 'password'
+						})
+						+field({
+							fieldLabel: 'Повторите пароль',
+							component: 'input-password',
+								componentData: {
+									required: true,
+									autocomplete: "new-password",
+									spellcheck: 'false',
+									ariaDescribedby: 'new-pass-4',	
+								},
+							validationType: "match",
+							matchName: 'password'
+						})
+						+field({
+							fieldLabel: 'Документы',
+							component: 'input-upload',
+							validationType: 'upload',
+							text: 'Загрузите файлы, подтверждающие профессиональные навыки (диплом, сертификат и т.д.) в форматах jpg, jpeg, png, pdf. Размер файла, который вы можете загрузить, не должен превышать 5 Мб. Загрузить можно не более 5 файлов.',
+							componentData: {							
+								required: true,
+								label: 'Прикрепить файл(-ы)',
+								ariaDescribedby: 'file-hint',
+							}					
+						})
+					.form__footer 
+						+button({
+							text: "Регистрация",
+							type: 'submit',
+							ariaLabel: "Отправить данные на сервер",
+							iconRight: 'icon-arrow-right',
+						}).button--base(data-form-submit)
+						.form__subtext Нажимая на кнопку «Регистрация», я даю свое <a href="#">Согласие на обработку персональных данных</a> и принимаю <a href="#">Договор оферты</a>

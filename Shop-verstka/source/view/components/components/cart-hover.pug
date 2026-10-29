@@ -1,0 +1,32 @@
+mixin cart-hover(options = {})
+	-
+		const {
+			id = `anchor-${Math.random().toString(36).substr(2, 9)}`,
+			ariaControls = Math.random().toString(36).substring(2),
+			cartList = productList1,
+		} = options;
+
+	.cart-hover&attributes(attributes)
+		+button({
+			iconLeft: 'icon-cart',
+			text: null,
+			ariaLabel: 'Добавить в корзину',
+			ariaExpanded: "false",
+			ariaControls: ariaControls,
+			id: id,
+		}).button--base.button--icon.cart-hover__trigger
+		.cart-hover__content(id=ariaControls)
+			.cart-hover__wrapper
+				ul.cart-hover__list.custom-scroll 
+					each item in cartList
+						li.cart-hover__item
+							+mini-cart(item)
+							+button({
+								text: null,
+								iconLeft: 'icon-close',
+								ariaLabel: "далить товар из корзины"
+							}).button--icon.cart-hover__remove 
+				.cart-hover__control
+					+button({
+						text: "Очистить корзину",
+					}).button--base.cart-hover__control-button

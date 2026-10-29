@@ -1,0 +1,43 @@
+/* stylelint-disable scss/at-rule-no-unknown */
+
+.tooltip {
+  --tt-top: 0;
+  --tt-left: 0;
+
+  position: absolute;
+  inset-block-start: var(--tt-top);
+  inset-inline-start: var(--tt-left);
+  z-index: 10000;
+  width: max-content;
+  max-inline-size: 250px;
+  padding: var(--space-2-5x) var(--space-3x);
+  color: var(--color-neutral-gray-9);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--fz-1x);
+  font-family: var(--ff-default);
+  line-height: var(--line-height-default);
+  background-color: var(--color-neutral-gray-1);
+  border: 1px solid var(--color-neutral-gray-9);
+  border-radius: var(--radius-1-5x);
+  box-shadow: var(--box-shadow-1);
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    opacity 0.15s ease,
+    scale 0.15s ease,
+    visibility 0.15s ease allow-discrete;
+  pointer-events: none;
+  scale: 0.95;
+}
+
+.tooltip--visible {
+  visibility: visible;
+  opacity: 1;
+  scale: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tooltip {
+    transition: none !important;
+  }
+}

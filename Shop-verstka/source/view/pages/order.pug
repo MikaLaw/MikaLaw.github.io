@@ -1,0 +1,240 @@
+extends ../components/base/layout
+
+block variables
+	- const title = "Оформление заказа" //- на страницах кроме главной используйте О нас — ProjectName
+	- const wrapperMods = ""
+	- const hasHeader = true
+	- const headerMods = ""
+	- const hasFooter = true
+	- const hasFooterPanel = true 
+	- const footerMods = ""
+	- const currentUrl = "" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+	main.page__main
+		+breadcrumbs({
+			list: [{title: 'Главная', href: './main.html'}, {title: 'Оформление заказа'}],
+		})
+		section.section
+			.container
+				.section__head
+					h1.section__title Оформление заказа
+					+button({
+						ariaLabel: 'Вернуться корзину',
+						text: 'Вернуться в корзину',
+						ariaExpanded: "false",
+						ariaHaspopup: "dialog",
+						ariaControls: 'basket-dialog'
+					}).button--base(data-modal-show='basket')
+				.section__content
+					.order
+						section.order__steps
+							h2.visually-hidden Форма оформления заказа
+							.order-step(data-order-step)
+								form.order-step__form
+									.order-step__status.visually-hidden(role="status" aria-live="polite" data-form-status)
+									fieldset.order-step__step.is-active(data-steps-section="1" aria-label="Шаг 1 из 3: Получатель")
+										legend.order-step__title Получатель
+										.order-step__content
+											.order-step__item
+												+field({													
+													validationType: "name",
+													componentData: {
+														required: true,
+														placeholder: '* Фио',
+														pattern: "^[а-яёА-ЯЁa-zA-Z]+([ \\-][а-яёА-ЯЁa-zA-Z]+)+$",
+														autocomplete: "name",
+														ariaLabel: 'Введите ваше Фио',
+														ariaDescribedby: "fio-hint"
+													}
+												})
+											.order-step__item
+												+field({				
+													componentData: {
+														required: true,
+														placeholder: '* Телефон',
+														name:"phone",
+														mask: 'phone',
+														type: "tel",
+														autocomplete: "tel",
+														ariaLabel: 'Введите ваш телефон',
+														ariaDescribedby: "tel-hint"
+													},
+												})
+											.order-step__item
+												+field({
+													componentData: {
+														placeholder: '* Email',
+														required: true,
+														type: 'email',
+														autocomplete: "email",
+														ariaLabel: 'Введите ваш email',
+														ariaDescribedby: "email-hint"
+													},
+												})
+									fieldset.order-step__step(data-steps-section="2" aria-label="Шаг 2 из 3: Доставка")
+										legend.order-step__title Доставка
+										.order-step__content
+											.order-step__item
+												+field({
+													component: 'select-search',
+													componentData: {
+														placeholder: '* Населенный пункт',				
+														required: true,
+														ariaLabel: 'Введите населенный пункт',
+														ariaDescribedby: "city-hint"
+													}		
+												})
+											.order-step__item.order-step__item--delivery
+												+field({
+													component: 'fieldset',	
+													validationType: "toggle-group",
+													componentData: {
+														name: 'delivery-type',
+														title: 'Способ',
+														required: true,
+														type: 'radio',
+														optionsList: [
+															{label: 'Почта России', value: '1', checked: true },
+															{label: 'СДЕК', value: '2'},
+															{label: 'Самовывоз', value: '3'},
+															{label: 'Курьером', value: '4'}
+														]
+													},
+												})
+											.order-step__item
+												.order-step__row
+													.order-step__col.order-step__col--strech
+														+field({				
+															componentData: {
+																placeholder: '* Улица и дом',
+																required: true,
+																ariaLabel: 'Введите улицу и дом',
+																ariaDescribedby: "street-hint"
+															},
+														})
+												.order-step__row
+													.order-step__col.order-step__col--strech
+														+field({					
+															componentData: {
+																placeholder: '* Квартира/офис',
+																required: true,
+																ariaLabel: 'Введите квартиру или офис',
+																ariaDescribedby: "ofice-hint"
+															},
+														})
+													.order-step__col.order-step__col--strech
+														+field({						
+															componentData: {
+																placeholder: '* Домофон',
+																required: true,
+																ariaLabel: 'Введите код от домофона',
+																ariaDescribedby: "domofon-hint"
+															},
+														})
+												.order-step__row
+													.order-step__col.order-step__col--strech
+														+field({					
+															componentData: {
+																placeholder: '* Подьезд',
+																required: true,
+																type: 'number',
+																ariaLabel: 'Введите номер подьезда',
+																ariaDescribedby: "podezd-hint"
+															},
+														})
+													.order-step__col.order-step__col--strech
+														+field({			
+															componentData: {
+																placeholder: '* Этаж',
+																required: true,
+																type: 'number',
+																ariaLabel: 'Введите этаж',
+																ariaDescribedby: "flat-hint"
+															},
+														})
+												.order-step__row
+													.order-step__col.order-step__col--strech
+														+field({				
+															component: 'input-datapicker',
+															componentData: {
+																required: true,
+																placeholder: '* Желаемая дата',
+																ariaLabel: 'Введите желаемую дату',
+																ariaDescribedby: "date-hint"
+															}
+														})
+													.order-step__col.order-step__col--strech
+														+field({				
+															componentData: {
+																required: true,
+																placeholder: '* Желаемое время',
+																ariaLabel: 'Введите желаемое время',
+																ariaDescribedby: "time-hint"
+															},
+														})
+									fieldset.order-step__step(data-steps-section="3" aria-label="Шаг 3 из 3: Оплата") 
+										legend.order-step__title Оплата
+										.order-step__content
+											.order-step__item.order-step__item--payment
+												+field({
+													component: 'fieldset',	
+													validationType: "toggle-group",
+													componentData: {
+														name: 'set2',
+														required: true,
+														isLegendHidden: true,
+														title: 'способы оплаты',
+														className: 'toggle--card', 
+														type: 'radio',
+														optionsList: [
+															{label: 'Карта', value: '1', checked: true, type: 'radio'},
+															{label: 'Картой при получении', value: '2', type: 'radio'},
+															{label: 'Наличными при получении', value: '3', type: 'radio'},
+															{label: 'СБП', value: '4', type: 'radio'}
+														]
+													},
+												})
+											.order-step__item
+												.order-step__row
+													.order-step__col
+														.order-step__row
+															.order-step__col
+																+toggle({ name: 'bonus', value: '1', label: 'Использовать бонусы', id: 'need-bonus'})
+															.order-step__col
+																+field({
+																	validationType: "dependent-input",
+																	dependencySelector: "#need-bonus",
+																	componentData: {
+																		required: true,
+																		placeholder: 'Введите количество',
+																		ariaLabel: 'Введите количество бонусов',
+																		ariaDescribedby: "amount-hint",
+																		disabled: true
+																	},
+																})
+														.order-step__row
+															.order-step__text(id="bonus-balance-info") У вас есть 245 бонусов, вы можете использовать 110 
+													.order-step__col 
+														.order-step__row
+															.order-step__col
+																+toggle({ name: 'code', value: '1', label: 'Ввести промокод', id: 'need-promocode'})
+															.order-step__col
+																+field({
+																	validationType: "dependent-input",
+																	dependencySelector: "#need-promocode",
+																	componentData: {
+																		placeholder: 'Промокод',
+																		ariaLabel: 'Введите промокод',
+																		ariaDescribedby: "promo-hint",
+																		disabled: true
+																	},
+																})
+										.order-step__footer 
+											+button({
+												text: 'Оформить',
+												type: 'submit',
+												disabled: true,
+											}).button--base(data-steps-submit)
+						section.order__content
+							+order-mini()

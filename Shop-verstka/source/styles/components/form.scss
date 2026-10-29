@@ -1,0 +1,35 @@
+.form__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5x);
+}
+
+.form__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5x);
+}
+
+.form__subtext {
+  margin-block-start: var(--space-5x);
+  color: var(--color-neutral-gray-7);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--fz-0-5x);
+
+  a {
+    color: var(--color-neutral-gray-7);
+    text-decoration: underline;
+    text-underline-position: under;
+    transition: color var(--trans-default);
+
+    @include hover {
+      &:hover {
+        color: var(--color-neutral-gray-9);
+      }
+    }
+
+    &:active {
+      color: var(--color-neutral-gray-9);
+    }
+  }
+}

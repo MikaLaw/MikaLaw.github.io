@@ -1,0 +1,247 @@
+@layer typography {
+  .user-typography {
+    width: 100%;
+    max-inline-size: 996px;
+    overflow: hidden;
+    color: var(--color-neutral-gray-9);
+    font-family: var(--ff-default);
+    line-height: var(--line-height-default);
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 0;
+      font-weight: var(--font-weight-bold);
+      text-transform: var(--text-transform-uppercase);
+
+      &:not(:last-child) {
+        margin-block-end: var(--space-5x);
+      }
+
+      &:not(:first-child) {
+        margin-block-start: var(--space-5x);
+      }
+    }
+
+    h1 {
+      font-size: var(--fz-8x);
+      letter-spacing: var(--letter-spacing-0-5x);
+
+      @include vp-768 {
+        font-size: var(--fz-9x);
+      }
+
+      &:not(:last-child) {
+        margin-block-end: var(--space-12x);
+      }
+
+      &:not(:first-child) {
+        margin-block-start: var(--space-12x);
+      }
+    }
+
+    h2 {
+      font-size: var(--fz-3x);
+
+      @include vp-768 {
+        font-size: var(--fz-5-5x);
+      }
+
+      &:not(:last-child) {
+        margin-block-end: var(--space-8x);
+      }
+
+      &:not(:first-child) {
+        margin-block-start: var(--space-8x);
+      }
+    }
+
+    h3 {
+      font-size: var(--fz-default);
+
+      &:not(:last-child) {
+        margin-block-end: var(--space-6x);
+      }
+
+      &:not(:first-child) {
+        margin-block-start: var(--space-6x);
+      }
+    }
+
+    h4 {
+      font-size: var(--fz-0-5x);
+      letter-spacing: var(--letter-spacing-1x);
+
+      &:not(:last-child) {
+        margin-block-end: var(--space-4x);
+      }
+
+      &:not(:first-child) {
+        margin-block-start: var(--space-4x);
+      }
+    }
+
+    p {
+      margin: 0;
+      font-weight: var(--font-weight-medium);
+      font-size: var(--fz-1x);
+
+      &:not(:last-child) {
+        margin-block-end: var(--space-3x);
+      }
+    }
+
+    ol {
+      margin: 0;
+      margin-block-end: var(--space-8x);
+      padding: 0;
+      padding-inline-start: var(--space-4x);
+      font-weight: var(--font-weight-medium);
+      font-size: var(--fz-1x);
+
+      li {
+        &:not(:last-child) {
+          margin-block-end: var(--space-3x);
+
+          @include vp-768 {
+            margin-block-end: var(--space-5x);
+          }
+        }
+      }
+
+      ol,
+      ul,
+      p {
+        margin-block-start: var(--space-3x);
+      }
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      padding-inline-start: var(--space-4x);
+      font-weight: var(--font-weight-medium);
+      font-size: var(--fz-1x);
+      list-style: disc;
+
+      &:not(:last-child) {
+        margin-block-end: var(--space-8x);
+      }
+
+      li {
+        &:not(:last-child) {
+          margin-block-end: var(--space-3x);
+
+          @include vp-768 {
+            margin-block-end: var(--space-5x);
+          }
+        }
+      }
+
+      ol,
+      ul,
+      p {
+        margin-block-start: var(--space-3x);
+      }
+    }
+
+    figure {
+      margin: 0;
+      margin-block-end: var(--space-3x);
+    }
+
+    figcaption {
+      margin-block-start: var(--space-3x);
+      color: var(--color-neutral-gray-8);
+      font-weight: var(--font-weight-medium);
+      font-size: var(--fz-1-5x);
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    blockquote {
+      margin: 0;
+      margin-block-end: var(--space-6x);
+      padding: var(--space-5x) 0;
+      border-block-start: 1px solid var(--color-neutral-gray-6);
+      border-block-end: 1px solid var(--color-neutral-gray-6);
+
+      &:not(:first-child) {
+        margin-block-start: var(--space-6x);
+      }
+
+      p {
+        font-weight: var(--font-weight-bold);
+        font-size: var(--fz-default);
+      }
+    }
+
+    table {
+      display: inline-table;
+      width: 100%;
+      max-inline-size: 330px;
+      margin-inline-end: var(--space-2x);
+      margin-block-end: var(--space-2x);
+      padding: var(--space-5x);
+      background-color: var(--color-default-white);
+    }
+
+    caption {
+      display: block;
+      margin-block-end: var(--space-2x);
+      color: var(--color-neutral-gray-9);
+      font-weight: var(--font-weight-bold);
+      font-size: var(--fz-0-5x);
+      letter-spacing: var(--letter-spacing-1x);
+      text-align: start;
+      text-transform: var(--text-transform-uppercase);
+    }
+
+    td {
+      position: relative;
+      padding: var(--space-2x) 0;
+      color: var(--color-neutral-gray-9);
+      font-weight: var(--font-weight-medium);
+      font-size: var(--fz-1x);
+
+      &:not(:last-child) {
+        &::before {
+          width: calc(100% + 2px);
+        }
+      }
+
+      &::before {
+        position: absolute;
+        inset-block-end: 0;
+        inset-inline-start: 0;
+        width: 100%;
+        height: 1px;
+        background-color: var(--color-neutral-gray-6);
+        content: "";
+      }
+    }
+
+    a {
+      display: inline-block;
+      color: var(--color-neutral-gray-8);
+      border-block-end: 1px solid currentcolor;
+      transition: color var(--trans-default);
+
+      @include hover {
+        &:hover {
+          color: var(--color-neutral-gray-6);
+        }
+      }
+
+      &:active {
+        color: var(--color-neutral-gray-6);
+      }
+    }
+  }
+}

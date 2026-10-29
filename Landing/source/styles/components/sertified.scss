@@ -1,0 +1,63 @@
+.sertified {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 420px;
+  background: url("../img/components/sertified/certificate-seal.png") no-repeat center / 250px;
+}
+
+.sertified__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 600px;
+}
+
+.sertified__title {
+  margin-bottom: var(--space-5x);
+  color: var(--color-neutral-gray-1);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--fz-7x);
+  font-family: var(--ff-title);
+  line-height: var(--line-height-default);
+  text-align: center;
+  text-transform: var(--text-transform-uppercase);
+
+  span {
+    color: var(--color-neutral-gray-2);
+  }
+}
+
+.sertified__text {
+  margin-bottom: var(--space-4x);
+  color: var(--color-neutral-gray-2);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--fz-3x);
+  font-family: var(--ff-default);
+  line-height: var(--line-height-default);
+  text-align: center;
+}
+
+.sertified__link {
+  --sertified-color-link: var(--color-brand-blue-1);
+
+  display: block;
+  color: var(--sertified-color-link);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--fz-default);
+  font-family: var(--ff-default);
+  line-height: var(--line-height-default);
+  transition: color var(--trans-default);
+
+  @include hover {
+    &:hover {
+      --sertified-color-link: var(--color-neutral-gray-2);
+    }
+  }
+
+  &:active {
+    --sertified-color-link: var(--color-neutral-gray-2);
+  }
+}

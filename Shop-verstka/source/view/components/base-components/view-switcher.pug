@@ -1,0 +1,20 @@
+mixin view-switcher(options = {})
+  -
+    const {
+      buttons = [
+        { icon: 'icon-view-list', label: 'Список', href:'./catalog-list.html' },
+        { icon: 'icon-view-card', label: 'Сетка', href:'./catalog-card.html' },
+      ],
+      activeIndex = 0,
+    } = options;
+
+  .view-switcher&attributes(attributes)
+    each button, ind in buttons
+      +button({
+        iconLeft: button.icon,
+        ariaLabel: button.label,
+        tag: 'a',
+        href: button.href,
+        type: null,
+        text: null,
+      }).button--outline.button--icon.view-switcher__control(class= ind === activeIndex ? 'is-active' : '')

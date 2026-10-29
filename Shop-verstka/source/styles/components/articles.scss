@@ -1,0 +1,15 @@
+.articles__tags {
+  margin-block-end: var(--space-3x);
+
+  @include vp-480 {
+    margin-block-end: var(--space-7-5x);
+  }
+}
+
+.articles__controls {
+  margin-block-start: var(--space-6x);
+
+  @include vp-480 {
+    margin-block-start: var(--space-10x);
+  }
+}

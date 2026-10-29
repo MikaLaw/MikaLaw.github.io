@@ -1,0 +1,30 @@
+mixin sidebar-menu(options={})
+	-
+		const {
+			page = null,
+			title = "Личный кабинет",
+		} = options;
+
+	.sidebar-menu&attributes(attributes)
+		if title
+			.sidebar-menu__title!= title
+		ul.sidebar-menu__list
+			each item in lkNav
+				li.sidebar-menu__item
+					+button({
+						tag: 'a',
+						href: item.href,
+						text: item.text,
+						type: null,
+						id: null,
+					}).sidebar-menu__link(class= page === item.href ? 'sidebar-menu__link--active' : '')
+			li.sidebar-menu__item
+				+button({
+					ariaExpanded: "false",
+					ariaHaspopup: "dialog",
+					ariaLabel: 'Выйти из личного кабинета',
+					text: 'Выход',
+					type: null,
+					id: null,
+					iconRight: 'icon-arrow-right'
+				}).sidebar-menu__link(data-modal-show='logout-modal')

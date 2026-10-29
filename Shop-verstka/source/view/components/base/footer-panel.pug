@@ -1,0 +1,18 @@
+mixin footer-panel()
+  - const navList = navListFooterPanel
+  .footer-panel&attributes(attributes)
+    .container
+      nav.footer-panel__nav
+        ul.footer-panel__list
+          li.footer-panel__item.footer-panel__item--home
+            a.footer-panel__link.button(href="#")
+              +icon('icon-home', '26', '26')
+              span.footer-panel__text Главная
+          li.footer-panel__item.footer-panel__item--catalog
+          li.footer-panel__item.footer-panel__item--favorite 
+          li.footer-panel__item.footer-panel__item--cart 
+          li.footer-panel__item.footer-panel__item--user
+
+
+
+

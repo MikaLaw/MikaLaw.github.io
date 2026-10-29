@@ -1,0 +1,26 @@
+mixin map-block(options={})
+	-
+		const {
+			id = `map-${Math.random().toString(36).substr(2, 9)}`,
+			lazy = false,
+			text = false,
+			json = mapBlockInfo,
+			ariaLabel = "Интерактивная карта с расположением филиалов магазина",
+		} = options;
+
+	.map-block(data-map="block" data-json= json data-id=id role="application" aria-label=ariaLabel)
+		.map-block__map-wrapper
+			.map-block__map-container
+				.map-block__map(data-map-element)
+				+map-controls()
+			.map-block__balloon(data-balloon)
+				+balloon()
+			.map-block__dropdown
+				+select({
+					lazy: "true",
+				})
+		.map-block__cities-wrapper
+			+city-list({
+				title: null,
+				list: []
+			})

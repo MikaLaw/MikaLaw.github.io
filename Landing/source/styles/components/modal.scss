@@ -1,0 +1,122 @@
+.gslide-media:has(.modal) {
+  border-radius: var(--radius-5x);
+}
+
+.modal {
+  position: relative;
+  width: 920px;
+  max-width: 100%;
+  background-color: var(--color-default-white);
+
+  &::before {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-neutral-gray-3);
+    content: "";
+    inset: 0;
+    mask-image: url("../img/icons/modal-decor-1.svg");
+    mask-repeat: no-repeat;
+    mask-position: -120px -130px;
+    mask-size: 350px auto;
+  }
+
+  @include vp-768 {
+    &::before {
+      mask-image: url("../img/icons/modal-decor-2.svg");
+      mask-repeat: no-repeat;
+      mask-position: -200px -320px;
+      mask-size: 730px auto;
+    }
+  }
+}
+
+.modal--stone {
+  .modal__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5x);
+
+    @include vp-768 {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+}
+
+.modal__wrapper {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.modal__title {
+  --modal-size-title: var(--fz-3x);
+  --modal-margin-bottom-title: var(--space-5x);
+
+  margin-bottom: var(--modal-margin-bottom-title);
+  color: var(--color-neutral-gray-1);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--modal-size-title);
+  font-family: var(--ff-title);
+  line-height: var(--line-height-default);
+  text-transform: var(--text-transform-uppercase);
+
+  @include vp-480 {
+    --modal-size-title: var(--fz-9x);
+  }
+
+  @include vp-1024 {
+    --modal-size-title: var(--fz-15x);
+    --modal-margin-bottom-title: var(--space-10x);
+  }
+}
+
+.modal__content {
+  --modal-size-content: var(--fz-3x);
+
+  flex: 1;
+  overflow: auto;
+  color: var(--color-neutral-gray-2);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--modal-size-content);
+  font-family: var(--ff-default);
+  line-height: var(--line-height-default);
+  word-break: break-word;
+
+  p {
+    &:not(:last-child) {
+      margin-bottom: var(--space-5x);
+    }
+  }
+
+  dl,
+  img,
+  ol,
+  ul {
+    margin-bottom: var(--space-5x);
+  }
+
+  @include vp-1024 {
+    --modal-size-content: var(--fz-3x);
+  }
+}
+
+.modal__image {
+  position: relative;
+  flex-shrink: 0;
+  width: 290px;
+  height: 240px;
+
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    inset: 0;
+  }
+}

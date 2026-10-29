@@ -1,0 +1,86 @@
+.select-search {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: clamp(250px, 100%, 734px);
+  height: 100%;
+
+  &[aria-expanded="true"] {
+    .select-search__results {
+      transform: translateY(0);
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+.select-search__results {
+  --select-search-shadow-results: var(--box-shadow-1);
+  --select-search-position-results: absolute;
+
+  position: var(--select-search-position-results);
+  inset-block-start: calc(100% + var(--space-2-5x));
+  inset-inline-start: 0;
+  z-index: 10;
+  width: 100%;
+  background-color: var(--color-neutral-gray-2);
+  box-shadow: var(--select-search-shadow-results);
+  transform: translateY(var(--space-2-5x));
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    visibility 0.4s ease allow-discrete,
+    transform var(--trans-400),
+    opacity var(--trans-400);
+}
+
+.select-search__list {
+  --select-padding-list: 1px;
+
+  max-height: 300px;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  list-style: none;
+}
+
+.select-search__item {
+  --select-search-bg-item: var(--color-transparent);
+
+  margin: 0;
+  padding: var(--space-1-5x);
+  background-color: var(--select-search-bg-item);
+  cursor: pointer;
+  transition: background-color var(--trans-default);
+
+  @include hover {
+    &:hover {
+      .select-search__item-text {
+        --select-search-color-item-text: var(--color-default-black);
+      }
+    }
+  }
+
+  &.is-active {
+    --select-search-bg-item: var(--color-neutral-gray-9);
+
+    .select-search__item-text {
+      --select-search-color-item-text: var(--color-neutral-gray-1);
+    }
+  }
+}
+
+.select-search__item-text {
+  --select-search-color-item-text: var(--color-neutral-gray-8);
+
+  color: var(--select-search-color-item-text);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--fz-1x);
+  font-family: var(--ff-default);
+  line-height: var(--line-height-default);
+  transition: color var(--trans-default);
+}
+
+.select-search__item-text--empty {
+  padding: var(--space-1-5x);
+}

@@ -1,0 +1,12 @@
+mixin section-tags(options={})
+  -
+    const {
+      tagName = 'a',
+      href = "#",
+      list = tags2,
+    } = options;
+
+  ul.section-tags(data-scroll-block)&attributes(attributes)
+    each tag, ind in list
+      li.section-tags__tag
+        #{tagName}.button.section-tags__tag-link(href=href aria-current=ind === 0 ? "true" : null)!= tag

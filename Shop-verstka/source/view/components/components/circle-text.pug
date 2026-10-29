@@ -1,0 +1,49 @@
+mixin circle-text(options={})
+  -
+    const {
+      list = circleTextList,
+      width = 244,
+    } = options;
+
+    const cx = width / 2;                           // Центр по X и Y
+    const padding = 16;                             // Отступ от края для букв
+    const r = cx - padding;                         // Радиус траектории текста
+    const diameter = r * 2;                         // Диаметр траектории
+    const textLength = Math.round(2 * Math.PI * r); // Длина окружности (длина текста)
+
+  .circle-text
+    ul.circle-text__list 
+      each item in list
+        - const id = `circlePath-${Math.random().toString(36).substr(2, 9)}`;
+        li.circle-text__item
+          .circle-text__component(style=`--circle-text-radius: ${width}px`)
+            +picture({
+              format: "png",
+              path: item.img,
+              alt: item.text,
+              isLazyLoading: "lazy",
+              isDecoding: "async",
+              width: "320",
+              height: "310",
+              desktopSource: item.img,
+              mobileSource: `${item.img}-mobile`,
+            }).circle-text__img
+            svg.circle-text__svg(
+              viewBox=`0 0 ${width} ${width}` 
+              width=width 
+              height=width 
+              xmlns="http://www.w3.org/2000/svg"
+            )
+              defs
+                path(
+                  id=id 
+                  d=`M ${cx}, ${cx} m -${r}, 0 a ${r},${r} 0 1,1 ${diameter},0 a ${r},${r} 0 1,1 -${diameter},0`
+                )
+              text.circle-text__text(textLength=textLength lengthAdjust="spacing")
+                textPath(
+                  href=`#${id}` 
+                  startOffset="0%" 
+                  textLength=textLength 
+                  lengthAdjust="spacing"
+                )
+                  | !{item.text}&nbsp;

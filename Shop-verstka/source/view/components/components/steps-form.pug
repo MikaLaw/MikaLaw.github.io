@@ -1,0 +1,182 @@
+mixin steps-form(options = {})
+	.steps-form&attributes(attributes)(data-steps-form)
+		.steps-form__status.visually-hidden(
+			aria-live="polite" 
+			aria-atomic="true" 
+			data-steps-live-status
+		)
+		.steps-form__head 
+			.steps-form__title Заполнить бриф
+			+step()
+		.steps-form__body 
+			form.steps-form__form
+				section.steps-form__step.is-active(data-steps-section="1")
+					.steps-form__step-item
+						.steps-form__step-title Начнём со знакомства?
+						.steps-form__step-subtitle Расскажите о себе
+					.steps-form__step-item
+						+field({
+							fieldLabel: 'Фио',
+							validationType: "name",
+							componentData: {
+								required: true,
+								pattern: "^[а-яёА-ЯЁa-zA-Z]+([ \\-][а-яёА-ЯЁa-zA-Z]+)+$",
+								autocomplete: "name",
+							}
+						})
+					.steps-form__step-item
+						+field({
+							fieldLabel: 'Пол',
+							id: 'sexField1',					
+							component: 'select',
+							componentData: {
+								required: true,
+								btnId: 'sexField1',			
+								optionsList: [
+									{ label: "Женский", value: "female", },
+									{ label: "Мужской", value: "male", },
+								],
+								placeholder: '',              
+							}
+						})
+					.steps-form__step-item
+						+field({
+							fieldLabel: 'Куда отправить концепцию и КП?',
+							componentData: {
+								required: true,
+							}
+						})
+					.steps-form__step-item
+						+field({
+							fieldLabel: 'Телефон',						
+							componentData: {
+								required: true,
+								mask: 'phone',
+								type: "tel",
+								autocomplete: "tel",
+							},
+						})
+				section.steps-form__step(data-steps-section="2")
+					.steps-form__step-item
+						.steps-form__step-title Немного о компании?
+						.steps-form__step-subtitle Это блок необязательных вопросов (кроме дедлайна), но без них работать сложнее.
+					.steps-form__step-item
+						+field({
+							fieldLabel: 'Название компании',
+						})
+					.steps-form__step-item
+						+field({
+							component: 'input-upload',
+							componentData: {							
+								label: 'Добавить брендбук',
+							}					
+						})
+						.steps-form__step-text Чтобы персонализировать предложение, нужны лого, брендбук, айдентика или гайд по фирменному стилю (нет под рукой? отправьте на hello@aaagr.ru с названием компании в теме письма)
+					.steps-form__step-item
+						+field({
+							fieldLabel: 'Какую задачу нужно решить?',
+							component: 'textarea',
+						})
+						.steps-form__step-text Опишите или выберите подходящий пример: подарки на корпоратив, раздатка на выставку, промоматериалы для продаж, корпоративный мерч, брендированные канцтовары, подарки клиентам
+				section.steps-form__step(data-steps-section="3")
+					.steps-form__step-item
+						.steps-form__step-title Добавим деталей?
+						.steps-form__step-subtitle Ещё один блок необязательных вопросов, за каждый пропущенный вопрос -20% шанс получить хороший результат.
+					.steps-form__step-item
+						+field({
+							fieldLabel: 'Какие категории товаров не предлагать?',
+						})
+					.steps-form__step-item
+						+field({
+							fieldLabel: 'Какие категории товаров, на ваш взгляд, подойдут?',
+						})
+					.steps-form__step-item
+						+field({
+							fieldLabel: 'Критерии выбора?',
+						})
+					.steps-form__step-item
+						+field({
+							fieldLabel: 'Прошлый опыт?',
+							component: 'textarea',
+						})
+						.steps-form__step-text Расскажите, что уже делали. Не будем повторятся или, наоборот. поддержим/продолжим логику (пример: собираем домашнюю библиотеку)
+				section.steps-form__step(data-steps-section="4")
+					.steps-form__step-item
+						.steps-form__step-title Пора поговорить про Деньги!
+						.steps-form__step-subtitle Тут все вопросы обязательные , а то совсем не угадаем...
+					.steps-form__step-item
+						+field({
+							fieldLabel: 'Тираж?',
+							componentData: {							
+								required: true,
+							}
+						})
+					.steps-form__step-item
+						+field({
+							fieldLabel: 'Бюджет?',
+							componentData: {							
+								required: true,
+							}
+						})
+				section.steps-form__step(data-steps-section="5")
+					.steps-form__step-item
+						.steps-form__step-title Ну и добавим комфорта в общении
+						.steps-form__step-subtitle Последний блок необязательных вопросов, их цель сделать наше общение максимально комфортным и оперативным
+					.steps-form__step-item
+						+field({
+							component: 'fieldset',	
+							componentData: {
+								title: 'Как удобнее общаться?',
+								name: 'set2',
+								optionsList: [
+									{label: 'Телефон', value: '1'},
+									{label: 'Телеграм', value: '2'},
+									{label: 'Соцсети', value: '3'},
+									{label: 'Почта', value: '4'},
+									{label: 'WhatsApp', value: '5'}
+								]
+							},
+						})
+					.steps-form__step-item
+						+field({
+							fieldLabel: 'Ссылка на соц. сеть',
+							componentData: {
+								type: "url",
+							},
+						})
+					.steps-form__step-item
+						+field({
+							component: 'fieldset',	
+							componentData: {
+								name: 'set2',
+								type: 'radio',
+								optionsList: [
+									{label: 'Утром', value: '1'},
+									{label: 'После обеда', value: '2'},
+									{label: 'В любое время', value: '3'},
+								]
+							},
+						})
+					.steps-form__step-item
+						+field({
+							component: 'fieldset',
+							componentData: {
+								title: 'Нужна «живая» встреча?',
+								type: 'radio',
+								optionsList: [
+									{label: 'Да, давайте познакомимся, обсудим задачу пред тем, как её выполнять', value: '1'},
+									{label: 'Позже, хочу чтобы вы презентовали готовую концепцию и КП.', value: '2'},
+									{label: 'Нет, мне комфортно общаться дистанционно.', value: '3'},
+									{label: 'Позже решу', value: '3'},
+								]
+							},
+						})
+		.steps-form__footer
+			+button({
+				text: "Назад",
+				ariaLabel: "Назад на шаг"
+			}).button--base(data-steps-back)
+			+button({
+				text: "Вперед",
+				ariaLabel: "Вперед на шаг"
+			}).button--base(data-steps-forward)

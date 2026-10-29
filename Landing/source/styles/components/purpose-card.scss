@@ -1,0 +1,71 @@
+.purpose-card {
+  display: block;
+  font-family: var(--ff-title);
+  line-height: var(--line-height-default);
+
+  @include vp-768 {
+    position: relative;
+    padding-left: var(--space-10x);
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      background-color: var(--color-brand-blue-1);
+      content: "";
+      mask-image: url("../img/sprite.svg#icon-drop");
+      mask-repeat: no-repeat;
+      mask-position: center;
+    }
+  }
+
+  @include hover {
+    &:hover {
+      .purpose-card__title {
+        --purpose-card-color-title: var(--color-brand-blue-1);
+      }
+    }
+  }
+
+  &:active {
+    .purpose-card__title {
+      --purpose-card-color-title: var(--color-brand-blue-1);
+    }
+  }
+}
+
+.purpose-card__title {
+  --purpose-card-color-title: var(--color-neutral-gray-1);
+
+  margin-bottom: var(--space-5x);
+  color: var(--purpose-card-color-title);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--fz-7x);
+  text-transform: var(--text-transform-uppercase);
+  transition: color var(--trans-default);
+}
+
+.purpose-card__text {
+  display: flex;
+  gap: var(--space-2x);
+  align-items: center;
+  justify-content: flex-end;
+  color: var(--color-brand-blue-1);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--fz-default);
+
+  &::before {
+    display: block;
+    width: 20px;
+    height: 4px;
+    background-color: var(--color-brand-blue-1);
+    content: "";
+    mask-image: url("../img/sprite.svg#icon-dots");
+    mask-repeat: no-repeat;
+    mask-position: center;
+  }
+}

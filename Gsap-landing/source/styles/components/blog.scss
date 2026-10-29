@@ -1,0 +1,12 @@
+.blog__head {
+  margin-bottom: var(--space-15x);
+}
+
+.blog__item {
+  margin-bottom: 50px;
+  perspective: 500px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

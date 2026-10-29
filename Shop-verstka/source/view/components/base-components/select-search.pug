@@ -1,0 +1,49 @@
+mixin select-search(options = {})
+	-
+		const {
+			id = `select-search-${Math.random().toString(36).substr(2, 9)}`, 
+			ariaControlsId = `select-search-${Math.random().toString(36).substr(2, 9)}`,
+			ariaDescribedby = false,
+			ariaInputLabel = false,
+			component = false,
+			required = false,
+			optionList = selectList,
+			inputClassName = false,
+			placeholder = false,
+			lazy = false,
+			itemprop = false,
+		} = options;
+
+	.select-search(data-select-search data-mode= component ? 'component': null data-lazy=lazy)&attributes(attributes)
+		+input-search({
+			ariaAutocomplete: "list",
+			ariaDescribedby: ariaDescribedby,
+			required: required,
+			ariaLabel: ariaInputLabel,
+			placeholder: placeholder,
+			id: id,
+			name: options.name,
+			value: options.value,
+			itemprop: itemprop
+		})(class= inputClassName data-lazy  role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-controls=ariaControlsId)
+		.select-search__results(data-select-search-results)
+			if optionList.length > 0
+				ul.select-search__list.custom-scroll(
+					id=ariaControlsId 
+					role=component ? null : "listbox" 
+					aria-label="Подсказки к поиску"
+					data-select-search-list
+				)
+					each item, index in optionList
+						li.select-search__item(
+							id=`${id}-${index}`
+							role=component ? null : "option"
+							aria-selected=component ? null : "false"
+							data-select-search-item
+						)
+							if component
+								+#{component}(item)
+							else
+								span.select-search__item-text(data-select-search-text) #{item.label || item}
+			else 
+				.select-search__item-text.select-search__item-text--empty Нет вариантов

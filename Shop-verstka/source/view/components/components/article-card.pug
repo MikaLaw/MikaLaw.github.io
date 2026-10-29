@@ -1,0 +1,34 @@
+mixin article-card(options={})
+  -
+    const {
+      img = '',
+      date = '2026-05-15',
+      title = 'Заголовок новости',
+      text = 'Краткий текст новости для привлечения внимания читателя.',
+      titleTag = 'h3',
+      labels = false,
+    } = options;
+
+    const id = `article-card-${Math.random().toString(36).substr(2, 9)}`;
+
+  a.article-card(href="./news-detail.html" aria-labelledby=id)&attributes(attributes)
+    .article-card__image-wrapper
+      +picture({
+        format: "jpg",
+        path: img,
+        alt: title,
+        isLazyLoading: "lazy",
+        isDecoding: "async",
+        width: "320",
+        height: "310",
+        noneMediaSource: true,
+      })
+      if labels
+        ul.article-card__tags(aria-label="Тэги новости")
+          each sticker in labels
+            li.article-card__tag!= sticker
+    .article-card__content
+      time.article-card__date(datetime="2022-05-28")!= date
+      #{titleTag}.article-card__title(id=id)!= title 
+      .article-card__description
+        p!= text

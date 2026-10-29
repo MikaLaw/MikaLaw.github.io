@@ -1,0 +1,9 @@
+.faq {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8x);
+
+  @include vp-1024 {
+    grid-template-columns: 1fr 362px;
+  }
+}

@@ -1,0 +1,149 @@
+.refund-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5x);
+}
+
+.refund-form__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5x);
+  margin-block-end: var(--space-4x);
+  counter-reset: refund-step;
+}
+
+.refund-form__step {
+  margin: 0;
+  padding: var(--space-5x) var(--space-4x);
+  overflow: hidden;
+  font-family: var(--ff-default);
+  line-height: var(--line-height-default);
+  background: var(--color-neutral-gray-4);
+  border: none;
+  border-radius: var(--radius-1x);
+}
+
+.refund-form__step-title {
+  --refund-form-size-step-title: var(--fz-1x);
+
+  display: flex;
+  gap: var(--space-3x);
+  align-items: center;
+  margin: 0;
+  margin-block-end: var(--space-5x);
+  color: var(--color-neutral-gray-9);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--refund-form-size-step-title);
+  text-transform: var(--text-transform-uppercase);
+
+  @include vp-768 {
+    --refund-form-size-step-title: var(--fz-default);
+  }
+
+  &::before {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    overflow: hidden;
+    border: 1px solid var(--color-neutral-gray-9);
+    border-radius: 50%;
+    content: counter(refund-step);
+    counter-increment: refund-step;
+  }
+}
+
+.refund-form__fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.refund-form__step-field {
+  max-inline-size: 764px;
+
+  &:not(:last-child) {
+    margin-block-end: var(--space-3x);
+  }
+}
+
+.refund-form__toggle {
+  display: flex;
+  gap: var(--space-3x);
+  align-items: flex-start;
+
+  &:not(:last-child) {
+    margin-block-end: var(--space-3x);
+    padding-block-end: var(--space-3x);
+    border-block-end: 1px solid var(--color-neutral-gray-6);
+  }
+}
+
+.refund-form__text {
+  color: var(--color-neutral-gray-9);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--fz-1x);
+}
+
+.refund-form__footer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5x);
+  padding: var(--space-5x) var(--space-4x);
+  overflow: hidden;
+  background: var(--color-neutral-gray-2);
+  border-radius: var(--radius-1x);
+}
+
+.refund-form__head {
+  display: flex;
+  gap: var(--space-2x);
+  align-items: center;
+  justify-content: space-between;
+  margin-block-end: var(--space-5x);
+}
+
+.refund-form__title {
+  --refund-form-size-title: var(--fz-default);
+
+  color: var(--color-neutral-gray-9);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--refund-form-size-title);
+  text-transform: var(--text-transform-uppercase);
+
+  @include vp-768 {
+    --refund-form-size-title: var(--fz-3x);
+  }
+
+  @include vp-1024 {
+    --refund-form-size-title: var(--fz-5-5x);
+  }
+}
+
+.refund-form__summ {
+  --refund-form-size-summ: var(--fz-default);
+
+  color: var(--color-neutral-gray-9);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--refund-form-size-summ);
+  white-space: nowrap;
+  text-transform: var(--text-transform-uppercase);
+
+  @include vp-768 {
+    --refund-form-size-summ: var(--fz-3x);
+  }
+
+  @include vp-1024 {
+    --refund-form-size-summ: var(--fz-5-5x);
+  }
+}
+
+.refund-form__footer--mini {
+  padding: 0;
+  background: var(--color-transparent);
+
+  .refund-form__head {
+    margin-block-end: 0;
+  }
+}

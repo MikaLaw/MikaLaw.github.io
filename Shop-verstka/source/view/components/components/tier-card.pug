@@ -1,0 +1,26 @@
+mixin tier-card(options={})
+	-
+		const {
+			title = 'Старт',
+			amount = '3%',
+			discountParams = [
+				{
+					'label': 'Сумма покупок',
+					'value': 'от 500 до 5 000 ₽'					
+				},
+				{
+					'label': 'Скидка',
+					'value': '3%'					
+				}
+			]
+		} = options;
+
+	.tier-card&attributes(attributes)
+		.tier-card__header
+			h3.tier-card__name!= title
+			.tier-card__percent!= amount
+		dl.tier-card__info
+			each item in discountParams
+				.tier-card__row
+					dt.tier-card__label!= item.label
+					dd.tier-card__value!= item.value

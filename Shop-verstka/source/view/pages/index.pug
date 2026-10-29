@@ -1,0 +1,166 @@
+
+extends ../components/base/layout
+
+block variables
+  - const title = "Ui - kit"
+
+block main
+  style.
+    .page {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      overflow: hidden
+    }
+    .page__head {
+      padding: 30px 30px 40px;
+      border-bottom: 4px solid #E3292C;
+    }
+
+    .page__body {
+      padding: 40px 30px 80px;
+      flex: 1
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 30px;
+      line-height: 28px;
+      font-weight: 800;
+      margin-block-end: 50px;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    ul {
+      padding-inline-start: 20px;
+    }
+
+    .page__footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px 30px 40px;
+      border-top: 4px solid #E3292C;
+      border-bottom: 4px solid #E3292C;
+      text-align: center;
+    }
+
+    .page__date {
+      font-size: 18px; 
+    }
+
+    .uikit__component{
+      margin-block-end: 20px;
+    }
+
+    .uikit__cell {
+      width: 100%;
+    }
+
+    @media (min-inline-size: 768px) {
+      .uikit__cell {
+        max-inline-size: 50%;
+      }
+    }
+
+    .menu {
+      list-style: disc;
+      width: fit-content;
+      margin: 0 auto;
+    }
+
+  .page
+    .page__head
+      .logo
+    .page__body
+      h1 Проект
+      ul.menu
+        li.menu__link
+          a(href="./main.html") Главная
+        li.menu__link
+          a(href="./news.html") Новости
+        li.menu__link
+          a(href="./news-detail.html") Новость детально
+        li.menu__link
+          a(href="./knowledge-base.html") База знаний
+        li.menu__link
+          a(href="./stock-cards.html") Акции как карточки
+        li.menu__link
+          a(href="./stock-list.html") Акции как список
+        li.menu__link
+          a(href="./stock-detail.html") Акция детально
+        li.menu__link
+          a(href="./shops.html") Магазины
+        li.menu__link
+          a(href="./shop.html") Магазин				
+        li.menu__link
+          a(href="./contacts.html") Контакты
+        li.menu__link
+          a(href="./education.html") Обучение				
+        li.menu__link
+          a(href="./education-detail.html") Обучение детально			
+        li.menu__link
+          a(href="./faq.html") Частые вопросы 
+        li.menu__link
+          a(href="./not-found.html") 404	
+        li.menu__link
+          a(href="./services.html") Услуги				
+        li.menu__link
+          a(href="./loyalty-programm.html") Программа лояльности		
+        li.menu__link
+          a(href="./delivery.html") Доставка, оплата и возврат
+        li.menu__link
+          a(href="./catalog-card.html") Каталог(карточки)
+        li.menu__link
+          a(href="./catalog-list.html") Каталог(список)
+        li.menu__link
+          a(href="./search-result.html") Результаты поиска
+        li.menu__link
+          a(href="./favorite.html") Избранное
+        li.menu__link
+          a(href="./product.html") Товар	       
+        li.menu__link
+          a(href="./brands.html") Бренды			          
+        li.menu__link
+          a(href="./brand-products.html") Товары бренда
+        li.menu__link
+          a(href="./order.html") Оформление заказа
+        li.menu__link
+          a(href="./order-map.html") Оформление заказа(карта)
+        li.menu__link
+          a(href="./order-paid.html") Заказ оплачен
+        li.menu__link
+          a(href="./password-recovery-1.html") Восстановление пароля 1 шаг
+        li.menu__link
+          a(href="./password-recovery-2.html") Восстановление пароля 2 шаг
+        li.menu__link
+          a(href="./registration.html") Регистрация
+        li.menu__link
+          a(href="./lk-my-purchases.html") ЛК - Мои покупки
+        li.menu__link
+          a(href="./lk-my-purchase.html") ЛК - Заказ детально
+        li.menu__link
+          a(href="./lk-favorite.html") ЛК - Избранное
+        li.menu__link
+          a(href="./lk-feedback.html") ЛК - Обратная связь
+        li.menu__link
+          a(href="./lk-personal-data.html") ЛК - Личные данные
+        li.menu__link
+          a(href="./lk-waiting-list.html") ЛК - Лист ожидания
+        li.menu__link
+          a(href="./lk-refund-1.html") ЛК - Заявки на возврат			
+        li.menu__link
+          a(href="./lk-refund-2.html") ЛК - Заявки на возврат(нет заявок)
+        li.menu__link
+          a(href="./lk-refund-4.html") ЛК - Заявка на возврат детально					
+        li.menu__link
+          a(href="./lk-refund-3.html") ЛК - Новый возврат			
+        li.menu__link
+          a(href="./lk-my-card.html") ЛК - Моя карта							
+    .page__footer
+      p
+        | Дата измненений 
+        span.page__date  

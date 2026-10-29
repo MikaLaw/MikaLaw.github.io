@@ -1,0 +1,49 @@
+.nature-3 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  font-family: var(--ff-title);
+  line-height: var(--line-height-default);
+
+  @include vp-1024 {
+    min-height: 600px;
+  }
+
+  &::after {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-neutral-gray-3);
+    content: "";
+    inset: 0%;
+    mask-image: url("../img/sprite.svg#icon-drop");
+    mask-size: 250px 200px;
+    mask-repeat: no-repeat;
+    mask-position: center;
+  }
+}
+
+.nature-3__content {
+  max-width: 670px;
+}
+
+.nature-3__text {
+  --nature-1-size-text: var(--fz-3x);
+
+  color: var(--color-neutral-gray-1);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--nature-1-size-text);
+  text-align: center;
+  text-transform: var(--text-transform-uppercase);
+
+  @include vp-1024 {
+    --nature-1-size-text: var(--fz-7x);
+  }
+
+  span {
+    color: var(--color-brand-blue-1);
+  }
+}

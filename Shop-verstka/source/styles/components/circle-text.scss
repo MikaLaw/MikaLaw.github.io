@@ -1,0 +1,126 @@
+.circle-text__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-5x) 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @include vp-768 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.circle-text__item {
+  display: flex;
+  justify-content: center;
+
+  @include vp-768 {
+    flex: 1 1 25%;
+    padding: 0 var(--space-2x);
+  }
+
+  &:not(:last-child) {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      inset-block-start: 50%;
+      inset-inline-start: 100%;
+      display: block;
+      width: 1px;
+      height: 100%;
+      background-color: var(--color-neutral-gray-6);
+      transform: translateY(-50%);
+      content: "";
+
+      @include vp-768 {
+        height: 70%;
+      }
+    }
+  }
+
+  &:nth-child(even) {
+    &::before {
+      @include vp-767 {
+        content: none;
+      }
+    }
+  }
+}
+
+.circle-text__component {
+  --circle-text-width-component: 140px;
+
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-inline-size: var(--circle-text-width-component);
+  height: 100%;
+  max-height: var(--circle-text-width-component);
+
+  @include vp-480 {
+    --circle-text-width-component: 148px;
+  }
+
+  @include vp-1024 {
+    --circle-text-width-component: 180px;
+  }
+
+  @include vp-1280 {
+    --circle-text-width-component: var(--circle-text-radius);
+  }
+
+  @include hover {
+    &:hover {
+      .circle-text__svg {
+        animation-play-state: paused;
+      }
+
+      .circle-text__img {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.circle-text__img {
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-start: 50%;
+  width: 70%;
+  height: 70%;
+  overflow: hidden;
+  background-color: var(--color-default-white);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.8;
+  transition: opacity var(--trans-default);
+
+  img {
+    width: 100%;
+    height: 100%;
+    padding: var(--space-5x);
+    object-fit: contain;
+    object-position: center;
+  }
+}
+
+.circle-text__svg {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  animation: rotate-text 16s linear infinite;
+}
+
+.circle-text__text {
+  color: var(--color-neutral-gray-9);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--fz-1x);
+  font-family: var(--ff-default);
+  line-height: var(--line-height-default);
+
+  // letter-spacing: var(--letter-spacing-1x);
+  text-transform: var(--text-transform-uppercase);
+}

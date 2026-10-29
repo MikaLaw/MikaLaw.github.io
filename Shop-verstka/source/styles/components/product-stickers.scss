@@ -1,0 +1,28 @@
+.product-stickers {
+  display: flex;
+  gap: var(--space-0-5x);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.product-stickers__sticker {
+  margin: 0;
+  padding: var(--space-1-5x) var(--space-2x);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--fz-0-5x);
+  letter-spacing: var(--letter-spacing-1x);
+  text-transform: var(--text-transform-uppercase);
+}
+
+.product-stickers__sticker--sale {
+  background-color: var(--color-brand-green-1);
+}
+
+.product-stickers__sticker--new {
+  background-color: var(--color-brand-beige-1);
+}
+
+.product-stickers__sticker--not-available {
+  background-color: var(--color-neutral-gray-5);
+}

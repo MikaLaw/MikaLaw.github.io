@@ -1,0 +1,111 @@
+.banner {
+  --banner-padding: var(--space-5x);
+
+  position: relative;
+  padding: var(--banner-padding);
+  overflow: hidden;
+  font-family: var(--ff-default);
+  line-height: var(--line-height-default);
+  background-color: var(--color-neutral-gray-4);
+  border-radius: var(--radius-1x);
+
+  @include vp-768 {
+    --banner-padding: var(--space-5x);
+  }
+
+  @include vp-1280 {
+    --banner-padding: var(--space-10x);
+  }
+}
+
+.banner__content-wrapper {
+  position: relative;
+  z-index: 1;
+
+  @include vp-768 {
+    width: 60%;
+  }
+}
+
+.banner__title {
+  --banner-margin-bottom-title: var(--space-4x);
+  --banner-size-title: var(--fz-default);
+
+  margin: 0;
+  margin-block-end: var(--banner-margin-bottom-title);
+  color: var(--color-neutral-gray-9);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--banner-size-title);
+  text-transform: var(--text-transform-uppercase);
+
+  @include vp-768 {
+    --banner-margin-bottom-title: var(--space-4x);
+    --banner-size-title: var(--fz-5-5x);
+  }
+}
+
+.banner__text {
+  color: var(--color-neutral-gray-9);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--fz-1x);
+  line-height: 1.6;
+
+  &:not(:last-child) {
+    margin-block-end: var(--space-3x);
+  }
+
+  p {
+    margin: 0;
+
+    &:not(:last-child) {
+      margin-block-end: var(--space-1-5x);
+    }
+  }
+}
+
+.banner__img-wrapper {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-end: 0;
+  width: 40%;
+  height: 100%;
+
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    inset: 0;
+    object-position: left top;
+  }
+}
+
+.banner__pic {
+  position: relative;
+
+  &.banner__pic--loyalty {
+    width: 124px;
+    height: 124px;
+    margin-block-start: var(--space-3x);
+  }
+
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    inset: 0;
+  }
+}
+
+.banner__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3x);
+  align-items: center;
+
+  .button {
+    white-space: normal;
+  }
+}

@@ -1,0 +1,18 @@
+mixin priority-tags(options={})
+  -
+    const {
+      optionList = tags,
+      mode = false, // rows, dropdown
+      query = false,
+    } = options;
+
+  ul.priority-tags(
+    data-priority-tags
+    data-priority-responsive=query
+    data-mode=mode
+  )
+    each tag in optionList
+      li.priority-tags__item
+        +button({
+          text: tag
+        })

@@ -1,0 +1,34 @@
+.stock-stickers {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1-5x);
+  width: fit-content;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stock-stickers__sticker {
+  --stock-stickers-bg-sticker: var(--color-neutral-gray-1);
+
+  padding: var(--space-1-5x);
+  color: var(--color-neutral-gray-9);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--fz-0-5x);
+  letter-spacing: var(--letter-spacing-1x);
+  text-transform: var(--text-transform-uppercase);
+  background-color: var(--stock-stickers-bg-sticker);
+  border-radius: var(--radius-0-5x);
+}
+
+.stock-stickers__sticker--gift {
+  --stock-stickers-bg-sticker: var(--color-brand-violet-1);
+}
+
+.stock-stickers__sticker--discount {
+  --stock-stickers-bg-sticker: var(--color-brand-pink-1);
+}
+
+.stock-stickers__sticker--bonuses {
+  --stock-stickers-bg-sticker: var(--color-brand-blue-1);
+}

@@ -1,0 +1,46 @@
+mixin education-card(options={})
+  -
+    const {
+      img = '',
+      start = '12 марта', 
+      end = '25 марта',
+      text = 'Юлия Дранникова',
+      cost = '750 ₽',
+      stock = '1 200 ₽',
+      label = false,
+    } = options;
+
+    const id = `education-${Math.random().toString(36).substr(2, 9)}`;
+
+  a.education-card(href="./education-detail.html" aria-labelledby=id)&attributes(attributes)
+    .education-card__img-wrapper(aria-hidden="true")
+      +picture({
+        format: "jpg",
+        path: img,
+        alt: "",
+        isLazyLoading: "lazy",
+        isDecoding: "async",
+        width: "320",
+        height: "310",
+        noneMediaSource: true,
+      })
+    .education-card__content-wrapper
+      h3.education-card__title(id=id)!= text
+      if !label
+        .education-card__date-wrapper
+          time.education-card__date(datetime="2026-03-12")!= start
+          span.education-card__date-separator —
+          time.education-card__date(datetime="2026-03-25")!= end
+    .education-card__footer-wrapper
+      .education-card__price
+        .education-card__price-actual
+          span.visually-hidden Текущая цена:
+          != cost
+        if stock
+          .education-card__price-old
+            span.visually-hidden Старая цена:
+            s!= stock
+      span.button.button--icon.education-card__arrow
+        i.icon.icon-arrow-right
+    if label
+      .education-card__label!= label

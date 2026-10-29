@@ -1,0 +1,41 @@
+.section {
+  display: flex;
+  overflow: hidden;
+}
+
+.section--hero,
+.section--system,
+.section--eastman-tritan {
+  position: relative;
+}
+
+.section--sink {
+  max-inline-size: rem(1440px);
+  margin: 0 auto;
+}
+
+.section--habit {
+  padding: var(--space-25x) 0;
+  background-color: var(--color-brand-blue-3);
+  background-image: url("../img/components/habit/clouds.png");
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: contain;
+}
+
+.section__title {
+  color: var(--color-neutral-gray-1);
+  font-weight: var(--font-weight-black);
+  font-size: var(--fz-9x);
+  font-family: var(--ff-title);
+  line-height: var(--line-height-default);
+  text-transform: var(--text-transform-uppercase);
+
+  @include vp-1024 {
+    font-size: var(--fz-17x);
+  }
+
+  span {
+    color: var(--color-brand-blue-1);
+  }
+}

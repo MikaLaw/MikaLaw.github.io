@@ -1,0 +1,55 @@
+extends ../components/base/layout
+
+block variables
+	- const title = "ЛК-Заказ детально" //- на страницах кроме главной используйте О нас — ProjectName
+	- const wrapperMods = ""
+	- const hasHeader = true
+	- const headerMods = ""
+	- const hasFooter = true
+	- const hasFooterPanel = true 
+	- const footerMods = ""
+	- const currentUrl = "" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+	- const page = "./lk-my-purchase.html" //- обозначение страницы для проброса в панели подвала
+
+block main
+	main.page__main
+		+breadcrumbs({
+			list: [{title: 'Главная', href: './main.html'}, {title: 'Мои покупки', href: './lk-my-purchases.html'}, {title: 'Заказ'}],
+		})
+		section.section
+			.container
+				.section__wrapper 
+					.section__sidebar
+						+sidebar-menu({
+							page: page,
+						})
+					.section__content
+						.section__head
+							h1.section__title Заказ № 232421
+						.purchase
+							.purchase__head
+								+purchase-meta({
+									date: '25.06.23',
+									label: 'Принят',
+									deliveryDate : '25.07.23', 
+									labelClass: 'accept',
+								}).purchase__meta
+								.purchase__actions
+									+button({
+										text: 'Возврат',
+										ariaLabel: "Оформить возврат по заказу № 232421"
+									}).button--outline
+									+button({
+										text: 'Повторить',
+										iconLeft: 'icon-reload',
+										ariaLabel: "Повторить заказ № 232421"
+									}).button--base
+							.purchase__steps.purchase-steps
+								ol.purchase-steps__list
+									each item in orderStepList
+										li.purchase-steps__item 	
+											+purchase-step(item) 
+							.purchase__order
+								+order-mini({
+									bonus: false
+								}).order-mini--purchase 

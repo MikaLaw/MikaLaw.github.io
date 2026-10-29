@@ -1,0 +1,31 @@
+mixin modal(options ={})
+	- 
+		const {
+			title = 'Модальное окно',
+			name = `modal-${Math.random().toString(36).substr(2, 9)}`,
+			text = 'Вы точно хотите этого',
+			innerTrigger = false,
+			submitBtnText = 'Ок',
+			ariaId = `modalAriaId-${Math.random().toString(36).substr(2, 9)}`,
+		} = options;
+
+	dialog.dialog--fade.dialog.modal(data-modal=name aria-labelledby=ariaId)&attributes(attributes)
+		.modal__head 
+			.modal__title(id=ariaId)!= title
+			.modal__close 
+				+button({
+					text: null,
+					iconLeft: 'icon-close',
+					ariaLabel: "Закрыть модальное окно"
+				}).button--icon.button--transparent(data-modal-close=name)
+		.modal__body 
+			.modal__text!= text
+		.modal__footer
+			+button({
+				text: submitBtnText,
+				ariaLabel: "Подтвердить действие"
+			}).button--base(data-modal-show=innerTrigger)          
+			+button({
+				text: "Отмена",
+				ariaLabel: "Отменить действие"
+			}).button--outline(data-modal-close=name)

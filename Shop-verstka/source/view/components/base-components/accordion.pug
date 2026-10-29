@@ -1,0 +1,34 @@
+mixin accordion(options = {})
+  -
+    const {
+      optionList = accordionsOptionsList,
+      multi = false,
+      lazy = false,
+      iteration = 0,
+      indexChain = false,
+    } = options;
+
+  .accordion(
+    data-accordion=iteration === 0 ? 'init' : 'inner'
+    data-multi=iteration === 0 ? multi : null
+    data-lazy=iteration === 0 ? lazy : null
+    data-index-chain=iteration === 0 ? indexChain : null
+  )&attributes(attributes)
+    each item in optionList
+      .accordion__item(data-accordion-item)
+        +button({
+          text: item.title,
+          type: null,
+          iconRight: 'icon-dropdown',
+          role: false,
+        }).accordion__trigger(data-accordion-trigger)
+        .accordion__wrapper(data-accordion-content)
+          .accordion__content-inner
+            .accordion__content
+              if item.component 
+                +#{item.component}({...item.componentData})
+              else if item.list
+                +accordion({optionList: item.list, iteration: iteration + 1})
+              else
+                each p in item.text
+                  p.accordion__text!= p 

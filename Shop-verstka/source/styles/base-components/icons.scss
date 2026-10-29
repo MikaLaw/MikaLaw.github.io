@@ -1,0 +1,268 @@
+.icon {
+  display: inline-block;
+  transition: all var(--trans-default);
+
+  &::before {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: currentcolor;
+    content: "";
+    mask-repeat: no-repeat;
+    mask-position: center;
+  }
+}
+
+.icon-arrow-down {
+  &::before {
+    width: 14px;
+    height: 14px;
+    mask-image: url("../img/sprite.svg#icon-arrow-down");
+  }
+}
+
+.icon-arrow-left {
+  &::before {
+    width: 14px;
+    height: 14px;
+    mask-image: url("../img/sprite.svg#icon-arrow-left");
+  }
+}
+
+.icon-arrow-right {
+  &::before {
+    width: 14px;
+    height: 14px;
+    mask-image: url("../img/sprite.svg#icon-arrow-right");
+  }
+}
+
+.icon-arrow-up {
+  &::before {
+    width: 14px;
+    height: 14px;
+    mask-image: url("../img/sprite.svg#icon-arrow-up");
+  }
+}
+
+.icon-burger {
+  &::before {
+    mask-image: url("../img/sprite.svg#icon-burger");
+  }
+}
+
+.icon-calendar {
+  &::before {
+    mask-image: url("../img/sprite.svg#icon-calendar");
+  }
+}
+
+.icon-cart {
+  &::before {
+    mask-image: url("../img/sprite.svg#icon-cart");
+  }
+}
+
+.icon-check {
+  &::before {
+    mask-image: url("../img/sprite.svg#icon-check");
+  }
+}
+
+.icon-close {
+  &::before {
+    width: 16px;
+    height: 16px;
+    mask-image: url("../img/sprite.svg#icon-close");
+  }
+}
+
+.icon-download {
+  &::before {
+    mask-image: url("../img/sprite.svg#icon-download");
+  }
+}
+
+.icon-dropdown {
+  &::before {
+    width: 12px;
+    height: 12px;
+    mask-image: url("../img/sprite.svg#icon-dropdown");
+  }
+}
+
+.icon-eye-crossed {
+  &::before {
+    mask-image: url("../img/sprite.svg#icon-eye-crossed");
+  }
+}
+
+.icon-eye {
+  &::before {
+    mask-image: url("../img/sprite.svg#icon-eye");
+  }
+}
+
+.icon-favorite {
+  &::before {
+    mask-image: url("../img/sprite.svg#icon-favorite");
+  }
+}
+
+.icon-favorite-fill {
+  position: relative;
+
+  &::before {
+    mask-image: url("../img/sprite.svg#icon-favorite");
+  }
+
+  &::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: currentcolor;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity var(--trans-default);
+    content: "";
+    mask-repeat: no-repeat;
+    mask-image: url("../img/sprite.svg#icon-favorite-fill");
+    mask-position: center;
+  }
+
+  @include hover {
+    &:hover:not(:disabled):not(.disabled):not([aria-disabled="true"]) {
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  &.is-active,
+  &:active:not(:disabled):not(.disabled):not([aria-disabled="true"]) {
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+
+.icon-filter {
+  &::before {
+    mask-image: url("../img/sprite.svg#icon-filter");
+  }
+}
+
+.icon-geo {
+  &::before {
+    mask-image: url("../img/sprite.svg#icon-geo");
+  }
+}
+
+.icon-home {
+  &::before {
+    mask-image: url("../img/sprite.svg#icon-home");
+  }
+}
+
+.icon-map {
+  &::before {
+    mask-image: url("../img/sprite.svg#icon-map");
+  }
+}
+
+.icon-menu {
+  &::before {
+    mask-image: url("../img/sprite.svg#icon-menu");
+  }
+}
+
+.icon-minus {
+  &::before {
+    width: 8px;
+    height: 8px;
+    mask-image: url("../img/sprite.svg#icon-minus");
+  }
+}
+
+.icon-pause {
+  &::before {
+    mask-image: url("../img/sprite.svg#icon-pause");
+  }
+}
+
+.icon-phone {
+  &::before {
+    mask-image: url("../img/sprite.svg#icon-phone");
+  }
+}
+
+.icon-play {
+  &::before {
+    mask-image: url("../img/sprite.svg#icon-play");
+  }
+}
+
+.icon-plus {
+  &::before {
+    width: 8px;
+    height: 8px;
+    mask-image: url("../img/sprite.svg#icon-plus");
+  }
+}
+
+.icon-redirect {
+  &::before {
+    width: 24px;
+    height: 24px;
+    mask-image: url("../img/sprite.svg#icon-redirect");
+  }
+}
+
+.icon-reload {
+  &::before {
+    mask-image: url("../img/sprite.svg#icon-reload");
+  }
+}
+
+.icon-search {
+  &::before {
+    mask-image: url("../img/sprite.svg#icon-search");
+  }
+}
+
+.icon-star {
+  &::before {
+    mask-image: url("../img/sprite.svg#icon-star");
+  }
+}
+
+.icon-upload {
+  &::before {
+    mask-image: url("../img/sprite.svg#icon-upload");
+  }
+}
+
+.icon-user {
+  &::before {
+    mask-image: url("../img/sprite.svg#icon-user");
+  }
+}
+
+.icon-view-card {
+  &::before {
+    width: 16px;
+    height: 16px;
+    mask-image: url("../img/sprite.svg#icon-view-card");
+  }
+}
+
+.icon-view-list {
+  &::before {
+    width: 16px;
+    height: 16px;
+    mask-image: url("../img/sprite.svg#icon-view-list");
+  }
+}

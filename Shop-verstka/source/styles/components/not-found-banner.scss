@@ -1,0 +1,34 @@
+.not-found-banner {
+  padding-block-start: var(--space-15x);
+  font-family: var(--ff-default);
+  line-height: var(--line-height-default);
+
+  @include vp-768 {
+    padding: var(--space-15x) 0;
+  }
+}
+
+.not-found-banner__content {
+  position: relative;
+  z-index: 1;
+  max-inline-size: 450px;
+}
+
+.not-found-banner__title {
+  margin-block-end: var(--space-7-5x);
+}
+
+.not-found-banner__text {
+  margin-block-end: var(--space-10x);
+  color: var(--color-neutral-gray-9);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--fz-1x);
+
+  p {
+    margin: 0;
+
+    &:not(:last-child) {
+      margin-block-end: var(--space-1-5x);
+    }
+  }
+}

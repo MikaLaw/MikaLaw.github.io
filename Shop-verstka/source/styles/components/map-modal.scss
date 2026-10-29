@@ -1,0 +1,29 @@
+/* stylelint-disable scss/at-rule-no-unknown */
+.map-modal__dialog {
+  max-inline-size: 800px;
+  height: max-content;
+  margin: auto;
+  padding: var(--space-2x);
+  border-radius: var(--radius-2x);
+  opacity: 0;
+  transition:
+    opacity var(--trans-400),
+    display 0.4s allow-discrete,
+    overlay 0.4s allow-discrete;
+
+  &[open] {
+    opacity: 1;
+  }
+}
+
+@starting-style {
+  .map-modal__dialog[open] {
+    opacity: 0;
+  }
+}
+
+.map-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}

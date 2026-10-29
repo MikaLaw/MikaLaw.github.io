@@ -1,0 +1,39 @@
+.purchase__head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4x);
+  margin-block-end: var(--space-5x);
+
+  @include vp-1024 {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.purchase__steps {
+  margin-block-end: var(--space-3x);
+}
+
+.purchase__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3x);
+
+  @include vp-480 {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .button {
+    width: 100%;
+
+    @include vp-480 {
+      width: fit-content;
+    }
+  }
+}
+
+.purchase__info {
+  margin-block-end: var(--space-7-5x);
+}

@@ -1,0 +1,82 @@
+extends ../components/base/layout
+
+block variables
+	- const title = "ЛК-Заявка на возврат" //- на страницах кроме главной используйте О нас — ProjectName
+	- const wrapperMods = ""
+	- const hasHeader = true
+	- const headerMods = ""
+	- const hasFooter = true
+	- const hasFooterPanel = true 
+	- const footerMods = ""
+	- const currentUrl = "" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+	- const page = "./lk-refund-4.html" //- обозначение страницы для проброса в панели подвала
+
+block main
+	main.page__main
+		+breadcrumbs({
+			list: [{title: 'Главная', href: './main.html'}, {title: 'Заявки на возврат', href: './lk-refund-1.html'}, {title:'Заявка № 232421'}],
+		})
+		section.section
+			.container
+				.section__wrapper 
+					.section__sidebar
+						+sidebar-menu({
+							page: page,
+						})
+					.section__content
+						.section__head
+							h1.section__title Заявка № 232421
+							.refund-date 25.06.23
+						.refund-form
+							ul.refund-form__body
+								li.refund-form__step
+									h2.refund-form__step-title Товары к возврату
+									.refund-form__fieldset 
+										each product, ind in productList2
+											.refund-form__toggle
+												article.product-row.product-row--refund
+													.product-row__wrapper 
+														.product-row__img-wrapper
+															a.product-row__img(href="./product.html" tabindex="-1" aria-hidden="true")
+																+picture({
+																	format: "jpg",
+																	path: product.img,
+																	alt: "Товар",
+																	isLazyLoading: "lazy",
+																	isDecoding: "async",
+																	width: "320",
+																	height: "310",
+																	desktopSource: product.img,
+																	mobileSource: `${product.img}-mobile`,
+																})
+														.product-row__content-wrapper
+															.product-row__info-wrapper
+																h2.product-row__title
+																	a.product-row__link(href="./product.html")!= product.title
+																.product-row__description!= product.text
+															if product.cost
+																.product-row__price-wrapper
+																	.product-row__price-actual
+																		span.visually-hidden Текущая цена:
+																		!= product.cost
+																	if product.stock
+																		.product-row__price-old
+																			span.visually-hidden Старая цена:
+																			s!= product.stock
+																	.product-row__amount 1 шт
+								li.refund-form__step
+									h2.refund-form__step-title причина возврата
+									.refund-form__step-field
+										.field
+											.field__label причина
+											.field__wrapper
+												.upload-files
+													.upload-files__text Описание причины
+													ul.upload-files__list
+														each link in ['Filenamesomerealllylonпname1.jpg', 'Filenamesomerealllylonпname2.jpg', 'Filenamesomerealllylonпname3.jpg']
+															li.upload-files__item 
+																a.upload-files__link(href="/docs/report.pdf" download)!= link
+							.refund-form__footer.refund-form__footer--mini 
+								.refund-form__head 
+									.refund-form__title Итого к возврату:
+									.refund-form__summ 1 500 ₽

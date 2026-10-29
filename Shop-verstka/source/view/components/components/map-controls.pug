@@ -1,0 +1,7 @@
+mixin map-controls()
+  .map-block__controls
+    .map-block__zoom
+      button.map-block__zoom-button.map-block__zoom-button--in(type="button" data-map-zoom="in" aria-label="Увеличить")
+      button.map-block__zoom-button.map-block__zoom-button--out(type="button" data-map-zoom="out" aria-label="Уменьшить")
+    button.map-block__location.map-block__zoom-button(type="button" data-map-location)
+      +icon('icon-map', '16', '16')

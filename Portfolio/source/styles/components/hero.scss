@@ -1,0 +1,130 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  padding: var(--space-10x) 0;
+
+  @include vp-1024 {
+    justify-content: center;
+  }
+}
+
+.hero__content {
+  @include vp-1023 {
+    padding: var(--space-5x);
+    border-radius: var(--space-5x);
+    backdrop-filter: blur(var(--space-6x));
+  }
+}
+
+.hero__title {
+  --hero-size-title: var(--fz-16x);
+  --hero-color-title: var(--color-default-white);
+  --hero-margin-bottom-title: var(--space-2x);
+
+  margin-bottom: var(--hero-margin-bottom-title);
+  color: var(--hero-color-title);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--hero-size-title);
+  font-family: var(--ff-title);
+  line-height: var(--line-height-default);
+
+  @include vp-480 {
+    --hero-size-title: var(--fz-18x);
+  }
+
+  @include vp-768 {
+    --hero-size-title: var(--fz-36x);
+    --hero-margin-bottom-title: var(--space-7-5x);
+  }
+
+  @include vp-1024 {
+    --hero-color-title: var(--color-neutral-gray-1);
+    --hero-size-title: var(--fz-40x);
+  }
+}
+
+.hero__subtitle {
+  --hero-size-subtitle: var(--fz-16x);
+  --hero-color-subtitle: var(--color-default-white);
+
+  position: relative;
+  margin-bottom: var(--space-7-5x);
+  color: var(--hero-color-subtitle);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--hero-size-subtitle);
+  font-family: var(--ff-title);
+  line-height: var(--line-height-default);
+
+  @include vp-480 {
+    --hero-size-subtitle: var(--fz-18x);
+  }
+
+  @include vp-768 {
+    --hero-size-subtitle: var(--fz-36x);
+  }
+
+  @include vp-1024 {
+    --hero-color-subtitle: var(--color-neutral-gray-1);
+    --hero-size-subtitle: var(--fz-32x);
+  }
+
+  @include vp-1024 {
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      color: var(--color-default-white);
+      font-weight: var(--font-weight-bold);
+      font-size: var(--hero-size-subtitle);
+      font-family: var(--ff-title);
+      line-height: var(--line-height-default);
+      content: "Нужен Frontend?";
+      clip-path: inset(0 0 0 50%);
+    }
+  }
+}
+
+.hero__text {
+  --hero-size-text: var(--fz-default);
+  --hero-color-text: var(--color-default-white);
+
+  position: relative;
+  color: var(--hero-color-text);
+  font-weight: var(--font-weight-light);
+  font-size: var(--hero-size-text);
+  font-family: var(--ff-default);
+  line-height: var(--line-height-2x);
+
+  @include vp-480 {
+    --hero-size-text: var(--fz-3x);
+  }
+
+  @include vp-768 {
+    --hero-size-text: var(--fz-4x);
+  }
+
+  @include vp-1024 {
+    --hero-color-text: var(--color-neutral-gray-2);
+  }
+
+  @include vp-1024 {
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      color: var(--color-default-white);
+      font-weight: var(--font-weight-light);
+      font-size: var(--hero-size-text);
+      font-family: var(--ff-default);
+      line-height: var(--line-height-2x);
+      content: "Меня зовут Надя, и я — тот самый Frontend-разработчик, которого вы ищете.";
+      clip-path: inset(0 0 0 50%);
+    }
+  }
+}

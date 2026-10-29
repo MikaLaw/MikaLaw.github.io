@@ -1,0 +1,23 @@
+extends ../components/base/layout
+
+block variables
+	- const title = "Программа лояльности" //- на страницах кроме главной используйте О нас — ProjectName
+	- const wrapperMods = ""
+	- const hasHeader = true
+	- const headerMods = ""
+	- const hasFooter = true
+	- const hasFooterPanel = true 
+	- const footerMods = ""
+	- const currentUrl = "" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+	main.page__main
+		+breadcrumbs({
+			list: [{title: 'Главная', href: './main.html'}, {title: 'Программа лояльности'}],
+		})
+		section.section
+			.container
+				.section__head
+					h1.section__title Программа лояльности
+				.section__content.section__content--mini
+					+loyalty-block()

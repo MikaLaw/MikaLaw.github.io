@@ -1,0 +1,52 @@
+mixin tabs(options = {})
+  -
+    const {
+      mode = 'default',
+      optionList = accordionsOptionsList,
+      iteration = 0,
+      lazy = false,
+      ariaLabel = 'Название раздела',
+    } = options
+    const isRoot = iteration === 0
+    const isAccordion = mode === 'accordion'
+
+  .tabs(
+    data-tabs= isRoot ? 'init' : 'inner'
+    data-mode= isRoot ? mode : null
+    data-lazy= isRoot ? lazy : null
+  )&attributes(attributes)
+    .tabs__controls(data-tabs-controls)
+      each control in optionList
+        +button({
+          type: null,
+          text: control.title,
+        }).tabs__control(data-tabs-control)
+
+    .tabs__panel(
+      data-tabs-content
+      data-accordion= isAccordion ? (isRoot ? 'init' : 'inner') : null
+      data-lazy= isAccordion ? '' : null
+    )
+      each item in optionList
+        .tabs__item(
+          data-tabs-element
+          data-accordion-item= isAccordion ? '' : null
+        )
+          if isAccordion
+            +button({
+              type: null,
+              text: item.title,
+              iconRight: 'icon-dropdown',
+            }).tabs__trigger(data-accordion-trigger)
+          .tabs__element(data-accordion-content= isAccordion ? '' : null)
+            .tabs__content-inner
+              .tabs__content
+                if item.component 
+                  +#{item.component}({...item.componentData})
+                else if item.list && item.list.length > 0
+                  +tabs({optionList: item.list, mode, iteration: iteration + 1})
+                else
+                  if item.component
+                    +#{item.component}({...item.componentData})
+                  else
+                    p!= item.text

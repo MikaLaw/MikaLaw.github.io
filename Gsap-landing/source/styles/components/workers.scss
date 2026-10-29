@@ -1,0 +1,26 @@
+.workers__list {
+  --workers-col-list: 1;
+
+  display: grid;
+  grid-template-columns: repeat(var(--workers-col-list), minmax(0, 1fr));
+  gap: var(--space-6x);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @include vp-480 {
+    --workers-col-list: 2;
+  }
+
+  @include vp-1024 {
+    --workers-col-list: 3;
+  }
+
+  @include vp-1280 {
+    --workers-col-list: 4;
+  }
+}
+
+.workers__head {
+  margin-bottom: var(--space-15x);
+}

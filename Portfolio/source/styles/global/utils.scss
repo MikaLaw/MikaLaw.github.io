@@ -1,0 +1,194 @@
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border-width: 0;
+  clip: rect(0, 0, 0, 0);
+}
+
+.custom-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-neutral-gray-9) var(--color-neutral-gray-2);
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--color-neutral-gray-2);
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--color-neutral-gray-9);
+    border: 2px solid var(--color-neutral-gray-2);
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-neutral-gray-8);
+  }
+}
+
+.animate {
+  visibility: hidden;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.animate__fade-in {
+  visibility: visible;
+  animation-name: fade-in;
+}
+
+.animate__zoom-in {
+  visibility: visible;
+  animation-name: zoom-in;
+}
+
+.animate__fade-in-left {
+  visibility: visible;
+  animation-name: fade-in-left;
+}
+
+.animate__fade-in-right {
+  visibility: visible;
+  animation-name: fade-in-right;
+}
+
+.animate__fade-in-up {
+  visibility: visible;
+  animation-name: fade-in-up;
+}
+
+.animate__fade-in-down {
+  visibility: visible;
+  animation-name: fade-in-down;
+}
+
+.animate__circle-dash {
+  visibility: visible;
+
+  .arrow-animated {
+    animation: draw-arrow 2s ease-in-out both;
+  }
+
+  .arc-animated {
+    animation: draw-arc 2s ease-in-out both;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-left {
+  from {
+    transform: translate3d(-100%, 0, 0);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-right {
+  from {
+    transform: translate3d(100%, 0, 0);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    transform: translate3d(0, 100%, 0);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-down {
+  from {
+    transform: translate3d(0, -100%, 0);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+
+@keyframes zoom-in {
+  0% {
+    transform: scale3d(0.3, 0.3, 0.3);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-out {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes draw-arc {
+  0%,
+  10% { stroke-dashoffset: 130; }
+
+  65%,
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes draw-arrow {
+  0%,
+  63% { stroke-dashoffset: 30; }
+
+  80%,
+  100% { stroke-dashoffset: 0; }
+}

@@ -1,0 +1,12 @@
+mixin slider-controls()
+	.slider__controls
+		+button({
+			iconLeft: 'icon-arrow-left',
+			text: null,
+			ariaLabel: 'Назад',
+		}).button--control.button--outline.slider__button.swiper-button-prev
+		+button({
+			iconLeft: 'icon-arrow-right',
+			text: null,
+			ariaLabel: 'Вперед',
+		}).button--control.button--outline.slider__button.swiper-button-next

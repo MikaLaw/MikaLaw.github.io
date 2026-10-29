@@ -1,0 +1,123 @@
+.menu-hover {
+  &.dynamic-adaptive {
+    margin-block-end: var(--space-5x);
+
+    .menu-hover__list {
+      --menu-hover-gap-list: var(--space-3x);
+
+      flex-direction: column;
+    }
+
+    .menu-hover__item {
+      width: 100%;
+    }
+
+    .menu-hover__link {
+      justify-content: space-between;
+    }
+  }
+}
+
+.menu-hover__list {
+  --menu-hover-gap-list: var(--space-5x);
+  --menu-hover-align-items-list: center;
+  --menu-hover-padding-list: 0;
+
+  display: flex;
+  gap: var(--menu-hover-gap-list);
+  align-items: var(--menu-hover-align-items-list);
+  margin: 0;
+  padding: var(--menu-hover-padding-list);
+  list-style: none;
+}
+
+.menu-hover__item {
+  position: relative;
+
+  &:has([aria-expanded="true"]) {
+    @include vp-768 {
+      .menu-hover__submenu {
+        --menu-hover-transform-submenu: translateY(0);
+
+        display: block;
+        visibility: visible;
+        opacity: 1;
+      }
+
+      & > .menu-hover__link {
+        --button-color-text: var(--color-neutral-gray-7);
+      }
+    }
+  }
+
+  .menu-hover__list {
+    --menu-hover-gap-list: var(--space-2-5x);
+    --menu-hover-align-items-list: flex-start;
+    --menu-hover-padding-list: var(--space-2-5x);
+
+    flex-direction: column;
+  }
+}
+
+.menu-hover__link {
+  --button-tt: var(--text-transform-normal);
+  --button-fw: var(--font-weight-medium);
+  --button-ls: var(--letter-spacing-0x);
+  --button-color-text: var(--color-neutral-gray-9);
+
+  width: 100%;
+
+  @include hover {
+    &:hover {
+      --button-color-text: var(--color-neutral-gray-7);
+    }
+  }
+
+  &:active {
+    --button-color-text: var(--color-neutral-gray-7);
+  }
+}
+
+.menu-hover__submenu {
+  --menu-hover-top-submenu: var(--space-2-5x);
+  --menu-hover-transform-submenu: translateY(var(--space-2-5x));
+
+  @include vp-768 {
+    position: absolute;
+    inset-block-start: calc(100% + var(--menu-hover-top-submenu));
+    inset-inline-start: 0;
+    z-index: 2;
+    display: none;
+    min-inline-size: 170px;
+    padding: var(--space-1-5x) var(--space-3x);
+    background-color: var(--color-neutral-gray-2);
+    border-radius: var(--radius-1x);
+    box-shadow: var(--box-shadow-1);
+    transform: var(--menu-hover-transform-submenu);
+    visibility: hidden;
+    opacity: 0;
+    transition:
+      display 0.4s ease allow-discrete,
+      visibility 0.4s ease allow-discrete,
+      transform var(--trans-400),
+      opacity var(--trans-400);
+  }
+
+  &::before {
+    position: absolute;
+    inset-block-end: 100%;
+    inset-inline-start: 0;
+    display: block;
+    width: 100%;
+    height: var(--menu-hover-top-submenu);
+    content: "";
+  }
+}
+
+.header__burger {
+  display: block;
+
+  @include vp-768 {
+    display: none;
+  }
+}

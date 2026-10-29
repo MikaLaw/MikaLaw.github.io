@@ -1,0 +1,17 @@
+.counter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-inline-size: 26px;
+  padding: var(--space-0-5x);
+  color: var(--color-neutral-gray-1);
+  font-size: var(--fz-0-5x);
+  background-color: var(--color-neutral-gray-9);
+  border-radius: var(--radius-2x);
+  transition: background-color var(--trans-default);
+
+  &[hidden] {
+    display: none;
+  }
+}

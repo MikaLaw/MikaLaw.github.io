@@ -1,0 +1,21 @@
+.input-datapicker {
+  position: relative;
+}
+
+.input-datapicker__input {
+  min-inline-size: 122px;
+  padding-inline-end: var(--space-10x);
+}
+
+.input-datapicker__icon {
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-end: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+
+  svg {
+    fill: var(--color-transparent);
+    stroke: var(--color-neutral-gray-8);
+  }
+}

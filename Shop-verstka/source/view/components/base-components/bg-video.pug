@@ -1,0 +1,43 @@
+mixin bg-video(options = {})
+  -
+    const {
+      mobileSrc = '',
+      desktopSrc = '',
+      mobilePosterSrc = '',
+      desktopPosterSrc = '',
+      ariaLabel = false,
+      media = '1280',
+      priority = true,
+      width = '1920',
+      height = '1080',
+      loop = false,
+      controls = false,
+      buttonControl = false,
+    } = options;
+
+  .bg-video(data-bg-video)&attributes(attributes)
+    video(
+      controls=controls
+      playsinline
+      autoplay
+      loop=loop
+      muted
+      preload=priority ? "metadata" : "none" 
+      aria-label=ariaLabel    
+      data-poster-mobile=mobilePosterSrc
+      data-poster-desktop=desktopPosterSrc
+      data-mobile=mobileSrc
+      data-desktop=desktopSrc
+      width=width
+      height=height
+      src=desktopSrc
+    )
+    if buttonControl
+      +button({
+        text: null,
+        ariaLabel: "Пауза"
+      }).button--base.button--video.bg-video__control(
+        data-label-play="Воспроизвести" 
+        data-label-pause="Пауза" 
+        data-bg-video-control
+      )

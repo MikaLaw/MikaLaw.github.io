@@ -1,0 +1,28 @@
+.map-address-card {
+  font-family: var(--ff-default);
+  line-height: var(--line-height-default);
+}
+
+.map-address-card__title {
+  margin-block-end: var(--space-2-5x);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--fz-defaultl);
+}
+
+.map__card {
+  padding: var(--space-3x);
+  border: 1px solid var(--color-neutral-gray-9);
+  border-radius: var(--radius-4x);
+}
+
+.map-address-card__subtitle {
+  margin-block-end: var(--space-1x);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--fz-1x);
+}
+
+.map-address-card__text {
+  margin-block-end: var(--space-1x);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--fz-1x);
+}

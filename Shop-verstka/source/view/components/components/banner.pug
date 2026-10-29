@@ -1,0 +1,26 @@
+mixin banner(options = {})
+  -
+    const {
+      title = '+ 20% бонусных баллов',
+      titleTag = 'div',
+      text = 'Можно оплачивать до 50% от суммы покупки',
+      img = './img/components/product-banner/img-2',
+    } = options;
+
+  .banner&attributes(attributes)
+    .banner__content-wrapper 
+      #{titleTag}.banner__title!= title
+      if text
+        .banner__text!= text
+      block
+    .banner__img-wrapper(aria-hidden="true")
+      +picture({
+        format: "png",
+        path: img,
+        alt: "",
+        isLazyLoading: "lazy",
+        isDecoding: "async",
+        width: "320",
+        height: "310",
+        noneMediaSource: true,
+      })

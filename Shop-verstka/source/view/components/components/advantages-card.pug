@@ -1,0 +1,14 @@
+mixin advantages-card(options={})
+  -
+    const {
+      icon = '',
+      title = 'Заголовок новости',
+      text = 'Краткий текст новости для привлечения внимания читателя.',
+    } = options;
+
+  article.advantages-card&attributes(attributes)
+    .advantages-card__image-wrapper
+      img(src=`./img/icons/${icon}.svg` width=46, height=46, aria-hidden="true" alt="title")
+    h3.advantages-card__title!= title
+    .advantages-card__description
+      p!= text

@@ -1,0 +1,26 @@
+mixin input-upload(options={})
+	-
+		const {
+			id = false,
+			type = "img",// img file img-drop file-drop
+			name = "upload-img",
+			label = "Загрузить изображение",
+			amount = 4,
+			drop = false,
+			dropText = "Перетащите сюда файлы",
+			required = false,
+			maxSize = 1048576,
+			ariaDescribedby = false
+		} = options;
+
+	.input-upload(
+		data-upload=type
+		data-amount=amount
+	)&attributes(attributes)
+		.input-upload__status.visually-hidden(aria-live="polite" aria-atomic="true")
+		label.input-upload__label
+			input(name=name, type="file", required=required data-max-size=maxSize aria-describedby= ariaDescribedby id=id).input-upload__input.visually-hidden
+			span.input-upload__button!= label
+		if drop
+			.input-upload__drop-zone(data-drop-zone)
+				span.input-upload__drop-zone-text!= dropText

@@ -1,0 +1,45 @@
+.balloon__title {
+  margin: 0;
+  margin-block-end: var(--space-3x);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--fz-4x);
+  font-family: var(--ff-default);
+  line-height: var(--line-height-default);
+}
+
+.balloon__working-hours {
+  margin-block-end: var(--space-3x);
+}
+
+.balloon__text {
+  font-weight: var(--font-weight-medium);
+  font-size: var(--fz-1x);
+}
+
+.balloon__subtitle {
+  margin: 0;
+  margin-block-end: var(--space-2x);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--fz-1x);
+}
+
+.balloon__contact {
+  display: flex;
+  gap: var(--space-2x);
+  align-items: center;
+}
+
+.balloon__contact-text {
+  font-weight: var(--font-weight-medium);
+  font-size: var(--fz-0-5x);
+}
+
+.balloon__close {
+  position: absolute;
+  inset-block-start: 10px;
+  inset-inline-end: 10px;
+}
+
+.balloon__control {
+  margin-block-start: var(--space-2x);
+}

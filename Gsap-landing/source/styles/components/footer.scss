@@ -1,0 +1,11 @@
+.footer {
+  padding: var(--space-5x) 0;
+  font-family: var(--ff-default);
+  line-height: var(--line-height-default);
+}
+
+.footer__copyright {
+  color: var(--color-neutral-gray-1);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--fz-3x);
+}

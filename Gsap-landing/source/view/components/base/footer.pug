@@ -1,0 +1,12 @@
+mixin footer-list(list)
+	nav.footer__menu-inner
+		ul.footer__list
+			each item in list
+				li.footer__item 
+					a.footer__link(href=item.href)!= item.title
+
+mixin footer(footerMods)
+	footer.footer(class=footerMods)&attributes(attributes)
+		.footer__top
+			.container
+				.footer__copyright © 2021 Агропромышленный парк Казань

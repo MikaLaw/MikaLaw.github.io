@@ -1,0 +1,53 @@
+.features {
+  padding: var(--space-15x) 0;
+
+  @include vp-1024 {
+    padding: var(--space-25x) 0;
+  }
+}
+
+.features__title {
+  margin-bottom: var(--space-11x);
+
+  @include vp-1024 {
+    margin-bottom: var(--space-21x);
+  }
+}
+
+.features__list {
+  --features-gap-list: var(--space-10x);
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--features-gap-list);
+  list-style: none;
+  counter-reset: water-usefulness-counter;
+
+  @include vp-768 {
+    --features-gap-list: var(--space-18x);
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.features__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-top: var(--space-16x);
+
+  &::before {
+    position: absolute;
+    top: 0%;
+    left: 0;
+    z-index: -1;
+    color: var(--color-neutral-gray-3);
+    font-weight: var(--font-weight-bold);
+    font-size: 150px;
+    font-family: var(--ff-title);
+    line-height: 1;
+    text-transform: var(--text-transform-uppercase);
+    content: "0" counter(water-usefulness-counter) ".";
+    counter-increment: water-usefulness-counter;
+  }
+}

@@ -1,0 +1,51 @@
+extends ../components/base/layout
+
+block variables
+	- const title = "Контакты" //- на страницах кроме главной используйте О нас — ProjectName
+	- const wrapperMods = ""
+	- const hasHeader = true
+	- const headerMods = ""
+	- const hasFooter = true
+	- const hasFooterPanel = true 
+	- const footerMods = ""
+	- const currentUrl = "" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+	main.page__main
+		+breadcrumbs({
+			list: [{title: 'Главная', href: './main.html'}, {title: 'Контакты'}],
+		})
+		section.section
+			.container
+				.section__content
+					h1.section__title.visually-hidden Контакты
+					.contacts 
+						.contacts__list 
+							.contacts__item
+								.contacts__map(data-map="block" data-json= mapBlockInfo data-coordinates="[45.05413306105,38.936594267369]")
+									.map-block__map(data-map-element)
+									+map-controls()
+									.map-block__dropdown
+										+select({
+											lazy: "true",
+										})
+									.map-block__balloon(data-balloon)
+										+balloon()
+							.contacts__item 
+								.contacts__title Учебный центр
+								address.contacts__text г. Барнаул, ул. Власихинская, д. 91
+								.contacts__map(data-map="block" data-json= mapBlockInfo2)
+									.map-block__map(data-map-element)
+									+map-controls()      
+							.contacts__item 
+								.contacts__title Отдел по работе с клиентами
+								address.contacts__text г. Барнаул, ул. Власихинская, д. 91
+								.contacts__map(data-map="block" data-json= mapBlockInfo2)
+									.map-block__map(data-map-element)
+									+map-controls()
+		section.section
+			.container
+				.section__head
+					h2.section__title Место под seo-текст
+				.section__content
+					+text-cut()

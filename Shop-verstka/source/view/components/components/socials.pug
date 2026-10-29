@@ -1,0 +1,12 @@
+mixin socials(options={})
+  -
+    const {
+      micro = false,
+      socialList = socialsList,
+    } = options;
+
+  ul.socials&attributes(attributes)
+    each social in socialList
+      li.socials__item
+        a.button.socials__link(href="#" target="_blank" rel="nofollow noopener noreferrer" itemprop=micro ? "sameAs" : null aria-label=social.title)
+          img(src=`./img/icons/${social.icon}.svg` aria-hidden="true" width="18" height="18" alt=social.title)

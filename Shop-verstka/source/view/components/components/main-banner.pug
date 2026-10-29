@@ -1,0 +1,34 @@
+mixin main-banner(options={})
+  .main-banner
+    .main-banner__wrapper
+      .main-banner__content 
+        +logo()
+        .main-banner__description 
+          p Равным образом реализация намеченных плановых заданий позволяет оценить значение системы обучения кадров, соответствует насущным потребностям. 
+          p Товарищи! новая модель организационной деятельности обеспечивает широкому кругу (специалистов) участие в формировании дальнейших направлений развития. 
+          p Задача организации, в особенности же реализация намеченных плановых заданий требуют от нас анализа соответствующий условий активизации.
+        .main-banner__controls
+          +button({
+            text: 'Наши магазины',
+            tag: 'a',
+            href: "#",
+            type: null
+          }).button--base
+          +button({
+            text: 'Работа у нас',
+            tag: 'a',
+            href: "#",
+            type: null,
+          }).button--base
+      .main-banner__img 
+        +picture({
+          format: "png",
+          path: './img/components/main-banner/img-6',
+          alt: "Товар",
+          isLazyLoading: "lazy",
+          isDecoding: "async",
+          width: "320",
+          height: "310",
+          desktopSource: './img/components/main-banner/img-6',
+          mobileSource: './img/components/main-banner/img-6-mobile',
+        })

@@ -1,0 +1,42 @@
+.input,
+.textarea {
+  --input-bg: var(--color-transparent);
+  --input-padding: 0;
+  --input-color: var(--color-neutral-gray-9);
+
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 40px;
+  padding: var(--input-padding);
+  color: var(--input-color);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--fz-1x);
+  font-family: var(--ff-default);
+  line-height: var(--line-height-default);
+  background-color: var(--input-bg);
+  border-color: transparent;
+  border-style: solid;
+  border-width: 1px;
+  transition: border-color var(--trans-default), background-color var(--trans-default);
+
+  &::placeholder {
+    color: var(--color-neutral-gray-8);
+  }
+}
+
+.textarea--base,
+.input--base {
+  --input-padding: var(--space-2-5x) 0;
+
+  border-block-end-color: var(--color-neutral-gray-7);
+
+  &:focus {
+    border-block-end-color: var(--color-neutral-gray-9);
+    outline: none;
+  }
+
+  &[aria-invalid="true"] {
+    border-block-end-color: var(--color-brand-error);
+  }
+}

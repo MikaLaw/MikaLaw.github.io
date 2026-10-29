@@ -1,0 +1,75 @@
+/* stylelint-disable selector-class-pattern */
+
+.range__inputs {
+  display: flex;
+  gap: var(--space-2x);
+  align-items: center;
+  margin-block-end: var(--space-4-5x);
+}
+
+.range__input {
+  width: 100%;
+}
+
+.range__separator {
+  color: var(--color-neutral-gray-9);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--fz-1x);
+  font-family: var(--ff-default);
+  line-height: var(--line-height-default);
+}
+
+.range__label {
+  flex: 1;
+}
+
+.range__wrapper {
+  padding-block-end: var(--space-2x);
+}
+
+.range__slider {
+  height: 6px;
+  background: var(--color-neutral-gray-7);
+  border: 1px solid var(--color-neutral-gray-7);
+  box-shadow: none;
+
+  .noUi-handle {
+    inset-block-start: -6px;
+    inset-inline-end: -8px;
+    width: 16px;
+    height: 16px;
+    background-color: var(--color-neutral-gray-8);
+    border: none;
+    border-radius: 50%;
+    box-shadow: none;
+    cursor: pointer;
+    transition: background-color var(--trans-default);
+
+    &::before,
+    &::after {
+      content: none;
+    }
+
+    @include hover {
+      &:hover {
+        background-color: var(--color-neutral-gray-9);
+      }
+    }
+
+    &:active {
+      background-color: var(--color-neutral-gray-9);
+    }
+  }
+
+  .noUi-handle-lower {
+    inset-inline-end: -15px;
+  }
+
+  .noUi-handle-upper {
+    inset-inline-end: -1px;
+  }
+
+  .noUi-connect {
+    background: var(--color-neutral-gray-8);
+  }
+}

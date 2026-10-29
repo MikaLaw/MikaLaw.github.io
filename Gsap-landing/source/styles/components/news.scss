@@ -1,0 +1,22 @@
+.news__list {
+  --news-col-list: 1;
+
+  display: grid;
+  grid-template-columns: repeat(var(--news-col-list), minmax(0, 1fr));
+  gap: var(--space-6x);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @include vp-480 {
+    --news-col-list: 2;
+  }
+
+  @include vp-1024 {
+    --news-col-list: 3;
+  }
+}
+
+.news__head {
+  margin-bottom: var(--space-15x);
+}

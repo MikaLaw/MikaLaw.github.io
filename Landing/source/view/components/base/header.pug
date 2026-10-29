@@ -1,0 +1,34 @@
+mixin header(headerMods, currentUrl)
+	-
+		const headerLinks = [
+			{
+				href: "index.html",
+				text: "Главная"
+			},
+			{
+				href: "#",
+				text: "Страница 2"
+			},
+			{
+				href: "#",
+				text: "Страница 3"
+			},
+		]
+	- const menuHoverId = `menu-hover-header-1`;
+
+	header.header&attributes(attributes)(itemscope itemtype="https://schema.org")
+		.container.header__container
+			.header__logo.logo
+				a.logo__link(href="/" itemprop="url")
+					img.logo__img(src="./img/icons/logo.svg" alt="Natural Water Logo" width="220" height="63" itemprop="logo")
+					meta(itemprop="name" content="Natural Water")
+			nav.header__nav.nav(aria-label="Главная навигация" itemscope itemtype="https://schema.org")
+				button.nav__burger.burger.button(type="button" aria-expanded="false" aria-controls="menu" aria-label="Открыть меню")
+					span.burger__line(aria-hidden="true")
+					span.burger__line(aria-hidden="true")
+					span.burger__line(aria-hidden="true")
+					span.burger__line(aria-hidden="true")
+				ul.nav__list
+					each item in headerNav
+						li.nav__item
+							a.nav__link(href=item.href itemprop="url" data-scroll)!= item.title

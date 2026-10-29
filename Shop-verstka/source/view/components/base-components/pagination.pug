@@ -1,0 +1,45 @@
+mixin pagination(options = {})
+	- 
+		const {
+			delta = 1,
+			current =  1,
+			total = 10,
+			ariaLabel = 'Навигация по страницам',
+			pages = Array.from({length: total}, (_, i) => i + 1),
+		} = options;
+
+	nav.pagination(aria-label=ariaLabel)&attributes(attributes)
+		ul.pagination__list
+			li.pagination__item
+				+button({
+					href: current > 1 ? '#' : null,
+					tag: current > 1 ? 'a' : 'button',
+					type: null,
+					iconLeft: 'icon-arrow-left',
+					text: null,
+					ariaLabel: 'Назад',
+					disabled: current > 1 ? false : true,
+				}).button--outline.pagination__btn.pagination__btn--arrow
+			each n in pages
+				if n === 1 || n === total || (n >= current - delta && n <= current + delta)
+					li.pagination__item
+						+button({
+							href: n === current ? null : '#',
+							type: null,
+							tag: 'a',
+							text: n,
+							ariaLabel: `Страница ${n}`,
+						}).button--icon.pagination__link(aria-current=n === current ? "page" : null class=n === current ? 'pagination__link--current' : '')
+				else if (n === current - delta - 1 || n === current + delta + 1)					
+					li.pagination__item
+						span.pagination__dots(aria-hidden="true") ...
+			li.pagination__item
+				+button({
+					href: current < total ? '#' : null,
+					type: null,
+					text: null,
+					tag: current < total ? 'a' : 'button',
+					iconLeft: 'icon-arrow-right',
+					ariaLabel: 'Вперед',
+					disabled: current >= total ? 'true' : null,
+				}).button--outline.pagination__btn.pagination__btn--arrow

@@ -1,0 +1,207 @@
+.basket {
+  --table-columns: 80px 1fr 220px;
+  --table-gap: var(--space-4x) var(--space-2-5x);
+  --table-padding: var(--space-5x);
+
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: calc(100% - 86px - var(--space-2-5x));
+
+  @include vp-1024 {
+    --table-columns: 116px 1fr 154px 200px;
+  }
+}
+
+.basket__head {
+  display: none;
+
+  @include vp-768 {
+    display: block;
+    padding: 0  var(--table-padding);
+  }
+}
+
+.basket__legend {
+  @include vp-768 {
+    display: grid;
+    grid-template-columns: var(--table-columns);
+    gap: var(--table-gap);
+    padding-block-end: var(--space-3x);
+    border-block-end: 1px solid var(--color-neutral-gray-5);
+  }
+}
+
+.basket__label {
+  color: var(--color-neutral-gray-8);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--fz-1x);
+  font-family: var(--ff-default);
+  line-height: var(--line-height-default);
+}
+
+.basket__label--amount {
+  font-size: 0;
+
+  @include vp-1024 {
+    font-size: var(--fz-1x);
+  }
+
+  &::after {
+    color: var(--color-neutral-gray-8);
+    font-weight: var(--font-weight-medium);
+    font-size: var(--fz-1x);
+    font-family: var(--ff-default);
+    line-height: var(--line-height-default);
+    content: "Количество/Стоимость";
+
+    @include vp-1024 {
+      content: none;
+    }
+  }
+}
+
+.basket__label--cost {
+  display: none;
+
+  @include vp-1024 {
+    display: block;
+    text-align: end;
+  }
+}
+
+.basket__list {
+  flex-grow: 1;
+  margin: 0;
+  padding: 0 var(--table-padding);
+  list-style: none;
+}
+
+.basket__item {
+  position: relative;
+  margin: 0;
+  padding: var(--space-5x) 0;
+
+  &:not(:last-child) {
+    border-block-end: 1px solid var(--color-neutral-gray-5);
+  }
+}
+
+.basket__footer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3x);
+  padding: var(--table-padding);
+  background-color: var(--color-default-white);
+}
+
+.basket__summary {
+  display: flex;
+  gap: var(--space-3x);
+  justify-content: space-between;
+
+  .basket__price {
+    @include vp-768 {
+      flex-direction: row-reverse;
+      align-items: center;
+    }
+  }
+}
+
+.basket__price {
+  display: flex;
+  flex-wrap: wrap;
+  grid-column: 2 span;
+  gap: var(--space-1x);
+  align-items: center;
+  align-self: center;
+
+  @include vp-480 {
+    grid-column: 2/3;
+  }
+
+  @include vp-768 {
+    flex-direction: column;
+    grid-column: 1 span;
+    gap: var(--space-3x);
+    align-items: flex-start;
+    align-self: unset;
+  }
+
+  @include vp-1024 {
+    align-items: flex-end;
+    align-self: center;
+    order: 2;
+  }
+}
+
+.basket__summary-label {
+  color: var(--color-neutral-gray-9);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--fz-3x);
+  font-family: var(--ff-default);
+  line-height: var(--line-height-default);
+  text-transform: var(--text-transform-uppercase);
+}
+
+.basket__price-actual {
+  --product-card-size-price-actual: var(--fz-default);
+
+  font-weight: var(--font-weight-bold);
+  font-size: var(--product-card-size-price-actual);
+  letter-spacing: var(--letter-spacing-0-5x);
+  text-transform: var(--text-transform-uppercase);
+
+  @include vp-1024 {
+    --product-card-size-price-actual: var(--fz-5-5x);
+  }
+}
+
+.basket__price-old {
+  color: var(--color-neutral-gray-8);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--fz-1x);
+  text-decoration-line: line-through;
+}
+
+.basket__empty {
+  padding-block-end: var(--space-2x);
+  border-block-end: 1px solid var(--color-neutral-gray-6);
+  color: var(--color-neutral-gray-9);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--fz-1x);
+  font-family: var(--ff-default);
+  line-height: var(--line-height-default);
+  margin-block-end: var(--space-6x);
+
+  p {
+    margin: 0;
+
+    &:not(:last-child) {
+      margin-block-end: var(--space-2x);
+    }
+  }
+}
+
+.basket__subtitle {
+  color: var(--color-neutral-gray-9);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--fz-1x);
+  font-family: var(--ff-default);
+  line-height: var(--line-height-default);
+  letter-spacing: var(--letter-spacing-1x);
+  text-transform: var(--text-transform-uppercase);
+  margin-block-end: var(--space-7x);
+}
+
+.basket__remove {
+  position: absolute;
+  inset-block-start: var(--space-2x);
+  inset-inline-end: 0;
+
+  @include hover {
+    &:hover:not(:disabled) {
+      opacity: 0.4;
+    }
+  }
+}

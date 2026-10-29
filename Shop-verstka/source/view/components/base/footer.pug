@@ -1,0 +1,68 @@
+mixin footer-list(list)
+	nav.footer__menu-inner
+		ul.footer__list
+			each item in list
+				li.footer__item 
+					a.footer__link(href=item.href)!= item.title
+
+mixin footer(footerMods)
+	footer.footer(class=footerMods)&attributes(attributes)
+		.footer__top
+			.container
+				.footer__container
+					.footer__logo
+						+logo()
+					.footer__payment(data-da=`.footer__center .footer__container,479,0`)
+						+payment-method()
+		.footer__center 
+			.container
+				.footer__container
+					.footer__menu
+						section.footer__menu-section
+							h2.footer__menu-title!= footerList.title
+							details.footer__accordion
+								summary.footer__summary!= footerList.title
+									i.icon.icon-dropdown
+							.footer__menu-content
+								.footer__menu-wrapper
+									if footerList.list.length <= 11
+										+footer-list(footerList.list)
+									else if footerList.list.length > 11
+										+footer-list(footerList.list.slice(0, 11))
+										+footer-list(footerList.list.slice(11))
+						section.footer__menu-section
+							h2.footer__menu-title!= footerList2.title
+							details.footer__accordion
+								summary.footer__summary!= footerList2.title
+									i.icon.icon-dropdown
+							.footer__menu-content
+								.footer__menu-wrapper
+									if footerList2.list.length <= 11
+										+footer-list(footerList2.list)
+									else if footerList2.list.length > 11
+										+footer-list(footerList2.list.slice(0, 11))
+										+footer-list(footerList2.list.slice(11))
+					address.footer__contacts(data-da=`.footer__top .footer__container,767,last` itemscope itemtype="https://schema.org")
+						meta(itemprop="name" content="Модерн")
+						link(itemprop="url" href="https://example.com")
+						.footer__contact
+							a(href="mailto:modernshop22@yandex.ru" itemprop="email").footer__contact-link modernshop22@yandex.ru
+							.footer__contact-text Напишите нам
+						.footer__contact-phone
+							.footer__contact
+								a(href="tel:+73852221925" itemprop="telephone").footer__contact-link + 7 (3852) 22-19-25
+								.footer__contact-text Многоканальный
+							.footer__contact
+								a(href="tel:+79635243338" itemprop="telephone").footer__contact-link + 7 (963) 524-33-38
+								.footer__contact-text 10:00—18:00, Пн—Пт  
+						.footer__social 
+							+socials({
+								micro: true
+							})  
+		.footer__bottom
+			.container
+				.footer__container
+					.footer__text © 2023 «Модерн»— Косметика и оборудование для профессионалов
+					.footer__links
+						a.footer__link.footer__text(href="/privacy-policy/") Политика конфиденциальности
+						a.footer__link.footer__text(href="/terms/") Пользовательское соглашение

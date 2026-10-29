@@ -1,0 +1,23 @@
+mixin field-code(options={})
+  -
+    const {
+      text = 'Введите код подтверждения, отправленный на ваш телефон',
+      placeholder = 'Код подтверждения',
+      btnTextSuccess = 'Применить',
+      btnTextRepeat = 'Отправить код повторно',
+    } = options;
+
+  .field-code
+    .field-code__text!= text
+    .field-code__input
+      +input({
+        ...options,
+        placeholder: placeholder,
+      })
+    .field-code__control
+      +button({
+        text: btnTextSuccess,
+      }).button--base
+      +button({
+        text: btnTextRepeat,
+      }).button--outline

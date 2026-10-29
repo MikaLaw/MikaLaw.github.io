@@ -1,0 +1,59 @@
+mixin product-row(options={})
+	-
+		const {
+			img = './img/components/product-card/img-9',
+			labels = false,
+			title = 'CUTRIN',
+			titleTag = 'h3',
+			text = 'Кондиционер деликатный д/нормальных и сухих волос без отдушки, 200мл VIENO',
+			cost = '6 750 ₽',
+			stock = null,
+			isFavorite = false
+		} = options;
+
+	article.product-row&attributes(attributes)
+		.product-row__wrapper 
+			.product-row__img-wrapper
+				a.product-row__img(href="./product.html" tabindex="-1" aria-hidden="true")
+					+picture({
+						format: "jpg",
+						path: img,
+						alt: "Товар",
+						isLazyLoading: "lazy",
+						isDecoding: "async",
+						width: "320",
+						height: "310",
+						desktopSource: img,
+						mobileSource: `${img}-mobile`,
+					})
+				if labels
+					+product-stickers({list: labels, ariaLabel: "Метки товара"}).product-row__stickers
+			.product-row__content-wrapper
+				.product-row__info-wrapper
+					#{titleTag}.product-row__title
+						a.product-row__link(href="./product.html")!= title
+					.product-row__description!= text
+				if cost
+					.product-row__price-wrapper
+						.product-row__price-actual
+							span.visually-hidden Текущая цена:
+							!= cost
+						if stock
+							.product-row__price-old
+								span.visually-hidden Старая цена:
+								s!= stock
+			.product-row__control-wrapper
+				.product-row__control
+					+input-counter()
+					+button({
+						iconLeft: 'icon-cart',
+						text: null,
+						ariaLabel: 'Добавить в корзину',
+					}).button--base.button--icon(data-toast-notification-show="toast-cart-add-template")
+			.product-row__favorite
+				+button({
+					iconLeft: 'icon-favorite-fill',
+					text: null,
+					ariaLabel: 'Добавить в избранное',
+					ariaPressed: String(isFavorite)
+				})(data-toast-notification-show="toast-cart-add-template")

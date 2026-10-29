@@ -1,0 +1,104 @@
+/* stylelint-disable scss/at-rule-no-unknown */
+dialog,
+.dialog {
+  position: fixed;
+  width: 100%;
+  max-inline-size: 100%;
+  height: 100dvh;
+  max-height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--color-transparent);
+  border: none;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    display 0.3s allow-discrete,
+    overlay 0.3s allow-discrete;
+  inset: 0 0 0 0;
+
+  &[data-popovermode] {
+    z-index: 10;
+  }
+
+  &::backdrop {
+    position: fixed;
+    background-color: rgb(0 0 0 / 0%);
+    backdrop-filter: blur(0);
+    transition:
+      background-color 0.5s ease,
+      backdrop-filter 0.5s ease,
+      display 0.5s allow-discrete,
+      overlay 0.5s allow-discrete;
+    inset: 0;
+  }
+
+  &:not([open]) {
+    display: none;
+  }
+
+  &[open] {
+    display: flex;
+
+    &::backdrop {
+      background-color: rgb(60 60 60 / 20%);
+      backdrop-filter: blur(4px);
+    }
+  }
+}
+
+.dialog--inner {
+  &[open]::backdrop {
+    background-color: var(--color-transparent);
+  }
+}
+
+.dialog--fade {
+  visibility: hidden;
+  opacity: 0;
+
+  &[open] {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.dialog--slide {
+  transform: translateX(-100%);
+  opacity: 0;
+  transition:
+    opacity 0s ease 0.3s,
+    transform 0.3s ease,
+    display 0.3s allow-discrete,
+    overlay 0.3s allow-discrete;
+
+  &[open] {
+    transform: translateX(0);
+    opacity: 1;
+    transition:
+      opacity 0s ease,
+      transform 0.3s ease,
+      display 0.3s allow-discrete,
+      overlay 0.3s allow-discrete;
+  }
+}
+
+@starting-style {
+  dialog,
+  .dialog[open] {
+    &::backdrop {
+      background-color: rgb(0 0 0 / 0%);
+      backdrop-filter: blur(0);
+    }
+  }
+
+  .dialog--fade[open] {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .dialog--slide[open] {
+    transform: translateX(-100%);
+  }
+}

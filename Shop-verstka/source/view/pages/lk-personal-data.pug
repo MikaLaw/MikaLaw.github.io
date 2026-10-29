@@ -1,0 +1,199 @@
+extends ../components/base/layout
+
+block variables
+	- const title = "ЛК-Личные данные" //- на страницах кроме главной используйте О нас — ProjectName
+	- const wrapperMods = ""
+	- const hasHeader = true
+	- const headerMods = ""
+	- const hasFooter = true
+	- const hasFooterPanel = true 
+	- const footerMods = ""
+	- const currentUrl = "" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+	- const page = "./lk-personal-data.html" //- обозначение страницы для проброса в панели подвала
+
+block main
+	main.page__main
+		+breadcrumbs({
+			list: [{title: 'Главная', href: './main.html'}, {title: 'Личные данные'}],
+		})
+		section.section
+			.container
+				.section__wrapper 
+					.section__sidebar
+						+sidebar-menu({
+							page: page,
+						})
+					.section__content
+						.section__head
+							h1.section__title Личные данные
+						.personal-data
+							section.section__form.personal-data__form
+								h2.visually-hidden Форма с заполненными данными
+								.form-block(data-form data-validate-on-input data-validate-on-change data-validate-on-blur)
+									form.form
+										.form__wrapper
+											.form__body
+												+field({
+													fieldLabel: 'Фио',
+													validationType: "name",
+													componentData: {
+														value: 'Соколова Марина Владимировна',
+														required: true,
+														pattern: "^[а-яёА-ЯЁa-zA-Z]+([ \\-][а-яёА-ЯЁa-zA-Z]+)+$",
+														autocomplete: 'name',
+														ariaDescribedby: 'nameField1'
+													}
+												})
+												+field({
+													fieldLabel: 'Пол',
+													id: 'sexField11',					
+													component: 'select',
+													componentData: {
+														required: true,
+														btnId: 'sexField11',			
+														optionsList: [
+															{ label: "Женский", value: "female", 'checked': true},
+															{ label: "Мужской", value: "male", },
+														],
+														placeholder: '',
+														ariaDescribedby: 'sexField11e'          
+													}
+												})
+												+field({
+													fieldLabel: 'Дата рождения',
+													component: 'input-datapicker',
+													componentData: {
+														required: true,
+														value: '15.03.1993',
+														ariaDescribedby: 'datapickerField1'
+													}
+												})
+												+field({
+													fieldLabel: 'Email',
+													componentData: {
+														required: true,
+														type: 'email',
+														value: 'example@mail.com',
+														ariaDescribedby: 'emailField1'
+													},
+												})
+												+field({
+													fieldLabel: 'Населенный пункт',
+													component: 'select-search',
+													componentData: {							
+														required: true,
+														value: 'Бийск',
+														ariaDescribedby: 'placeField1' 
+													}		
+												})
+												+field({
+													fieldLabel: 'Любимый магазин',
+													id: 'shopField1',					
+													component: 'select',
+													componentData: {
+														required: true,
+														btnId: 'shopField1',			
+														optionsList: [
+															{ label: "Первый", value: "1", 'checked': true},
+															{ label: "Второй", value: "2", },
+														],
+														placeholder: 'Выбирите',
+														ariaDescribedby: 'shopField11'          
+													}
+												})
+												+field({
+													fieldLabel: 'Телефон',
+													text: 'Для привязки другого номера к профилю, обратитесь к нам',			
+													componentData: {
+														required: true,
+														value: '+ 7 (913) 812-64-34',
+														mask: 'phone',
+														type: "tel",
+														autocomplete: "tel",
+														ariaDescribedby: 'phone-1'
+													},
+												})
+												.field
+													.field__label Загруженные документы
+													.field__wrapper
+														.upload-files
+															ul.upload-files__list
+																each link in ['Filenamesomerealllylonпname1.jpg', 'Filenamesomerealllylonпname2.jpg', 'Filenamesomerealllylonпname3.jpg']
+																	li.upload-files__item 
+																		a.upload-files__link(href="/docs/report.pdf" download)!= link
+
+											.form__footer 
+												+button({
+													text: "Сохранить изменения",
+													type: 'submit',
+													ariaLabel: "Отправить данные на сервер",
+												}).button--base(data-form-submit)
+							section.section__form.personal-data__form
+								h2.personal-data__title Изменение пароля
+								.form-block(data-form data-validate-on-input data-validate-on-change data-validate-on-blur)
+									form.form
+										.form__wrapper
+											.form__body
+												+field({
+													fieldLabel: 'Текущий пароль',
+													component: 'input-password',
+													componentData: {
+														required: true,
+														autocomplete: "current-password",
+														spellcheck: 'false',
+														ariaDescribedby: 'current-pass-1'
+													},
+												})
+												+field({
+													fieldLabel: 'подтверждение телефона',
+													component: 'field-code',
+													componentData: {
+														required: true,
+														ariaDescribedby: 'field-code-1'
+													},
+												})
+												+field({
+													fieldLabel: 'Новый пароль',
+													component: 'input-password',
+													componentData: {
+														required: true,
+														autocomplete: "new-password",
+														spellcheck: 'false',
+														ariaDescribedby: 'new-pass-1'
+													},
+													validationType: "match",
+													matchName: 'password'
+												})
+												+field({
+													fieldLabel: 'подтверждение телефона',
+													component: 'field-code',
+													componentData: {
+														required: true,
+														ariaDescribedby: 'field-code-2'
+													},
+												})
+												+field({
+													fieldLabel: 'Повторите пароль',
+													component: 'input-password',
+													componentData: {
+														autocomplete: "new-password",
+														spellcheck: 'false',
+														ariaDescribedby: 'new-pass-2'
+													},
+													validationType: "match",
+													matchName: 'password'
+												})
+												+field({
+													fieldLabel: 'подтверждение телефона',
+													component: 'field-code',
+													componentData: {
+														required: true,
+														ariaDescribedby: 'field-code-3'
+													},
+												})
+											.form__footer 
+												+button({
+													text: "Сохранить изменения",
+													type: 'submit',
+													ariaLabel: "Отправить данные на сервер",
+												}).button--base(data-form-submit)

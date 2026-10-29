@@ -1,0 +1,70 @@
+mixin select(options = {})
+	- const id = Math.random().toString(36).slice(2, 11);
+	-
+		const {
+			btnId = Math.random().toString(36).slice(2, 11),
+			multiple = false,
+			name = `name-${id}`,
+			required = false,
+			disabled = false,
+			placeholder = 'Выберите одну из опций',
+			ariaDescribedby =  false,	
+			optionsList = selectList || [],		
+			lazy = false,
+			component = false,
+			componentData = false,
+		} = options;
+
+	.select&attributes(attributes)(
+		data-select
+		data-id=id
+		data-multiple=multiple
+		data-name=name
+		data-required=required
+		data-disabled=disabled
+		data-lazy=lazy
+	)
+		.select__control
+			button.button.select__button(
+				type="button" 
+				id=btnId
+				role="combobox"
+				aria-haspopup=optionsList.length > 0 ? "listbox" : null 
+				aria-expanded="false" 
+				aria-controls=`list-${id}`
+				aria-describedby = ariaDescribedby
+				data-select-button
+			)
+				span.select__placeholder!= placeholder
+				span.select__text(data-select-text)
+			+button({
+				ariaLabel: "Сбросить выбранные опции",
+				iconLeft: 'icon-close',
+				text: null,
+			}).button--transparent.select__clear(data-select-clear)
+		.select__options
+			.select__body
+				if component
+					+#{component}({...componentData})
+				else if optionsList.length > 0
+					ul.select__list.custom-scroll(
+						data-select-list
+						id=`list-${id}`
+						role="listbox" 
+						aria-labelledby=btnId
+						aria-multiselectable=multiple ? 'true' : false
+					)
+
+						each item in optionsList
+							li.select__item(
+								data-select-item
+								aria-selected=item.checked ? "true" : "false"
+								data-select-value=item.value
+								role="option"
+								id=`opt-${id}-${item.value.trim()}`
+								tabindex="0"
+							)
+								.select__item-checkbox
+								.select__item-text(data-select-item-text)!= item.label
+				else 
+					.select__item-text.select__item-text--empty Нет вариантов

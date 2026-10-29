@@ -1,0 +1,47 @@
+mixin product-attribute(options = {})
+  -
+    const {
+      label = 'Объём / мл',
+      ariaLabel = 'Выбор параметра товара',
+      productAttributeId = Math.random().toString(36).substring(2),
+      attributeOptions = [
+        {
+          active: true,
+          label: '200',
+          name: 'volume',
+          value: '200',
+          checked: true,
+          disabled: false
+        },
+        {
+          active: false,
+          label: '300',
+          name: 'volume',
+          value: '300',
+          checked: false,
+          disabled: false
+        },
+        {
+          active: false,
+          label: '500',
+          name: 'volume',
+          value: '500',
+          checked: false,
+          disabled: true
+        },
+      ]
+    } = options;
+
+  fieldset.product-attribute&attributes(attributes)
+    legend.product-attribute__label!= label
+    .product-attribute__options
+      each option in attributeOptions
+        label.product-attribute__option
+          input.input.visually-hidden(
+            type="radio",
+            name=option.name,
+            value=option.value,
+            checked=option.checked,
+            disabled=option.disabled,            
+          )
+          span.product-attribute__text!= option.label

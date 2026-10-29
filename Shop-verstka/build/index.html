@@ -1,0 +1,1835 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Ui - kit</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="ProjectName — описание">
+    <link rel="icon" type="image/png" href="/img/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/img/favicon/favicon.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="/img/favicon/site.webmanifest" crossorigin="use-credentials">
+    <link rel="preload" href="fonts/Montserrat-Bold.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/Montserrat-Medium.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/Montserrat-Regular.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/Montserrat-SemiBold.woff2" as="font" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/vendor.min.css">
+    <link rel="stylesheet" href="css/common.min.css">
+    <link rel="stylesheet" href="css/style.min.css">
+    <script src="scripts/vendor.min.js" defer></script>
+    <script src="scripts/main.min.js" defer></script>
+  </head>
+  <body>
+    <div class="page">
+      <style>
+        .page {
+          display: flex;
+          flex-direction: column;
+          flex: 1;
+          overflow: hidden
+        }
+        .page__head {
+          padding: 30px 30px 40px;
+          border-bottom: 4px solid #E3292C;
+        }
+        
+        .page__body {
+          padding: 40px 30px 80px;
+          flex: 1
+        }
+        
+        h1 {
+          text-align: center;
+          font-size: 30px;
+          line-height: 28px;
+          font-weight: 800;
+          margin-block-end: 50px;
+        }
+        
+        a:hover {
+          text-decoration: none;
+        }
+        
+        ul {
+          padding-inline-start: 20px;
+        }
+        
+        .page__footer {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 30px 30px 40px;
+          border-top: 4px solid #E3292C;
+          border-bottom: 4px solid #E3292C;
+          text-align: center;
+        }
+        
+        .page__date {
+          font-size: 18px; 
+        }
+        
+        .uikit__component{
+          margin-block-end: 20px;
+        }
+        
+        .uikit__cell {
+          width: 100%;
+        }
+        
+        @media (min-inline-size: 768px) {
+          .uikit__cell {
+            max-inline-size: 50%;
+          }
+        }
+        
+        .menu {
+          list-style: disc;
+          width: fit-content;
+          margin: 0 auto;
+        }
+        
+      </style>
+      <div class="page">
+        <div class="page__head">
+          <div class="logo"></div>
+        </div>
+        <div class="page__body">
+          <h1>Проект</h1>
+          <ul class="menu">
+            <li class="menu__link"><a href="./main.html">Главная</a></li>
+            <li class="menu__link"><a href="./news.html">Новости</a></li>
+            <li class="menu__link"><a href="./news-detail.html">Новость детально</a></li>
+            <li class="menu__link"><a href="./knowledge-base.html">База знаний</a></li>
+            <li class="menu__link"><a href="./stock-cards.html">Акции как карточки</a></li>
+            <li class="menu__link"><a href="./stock-list.html">Акции как список</a></li>
+            <li class="menu__link"><a href="./stock-detail.html">Акция детально</a></li>
+            <li class="menu__link"><a href="./shops.html">Магазины</a></li>
+            <li class="menu__link"><a href="./shop.html">Магазин				</a></li>
+            <li class="menu__link"><a href="./contacts.html">Контакты</a></li>
+            <li class="menu__link"><a href="./education.html">Обучение				</a></li>
+            <li class="menu__link"><a href="./education-detail.html">Обучение детально			</a></li>
+            <li class="menu__link"><a href="./faq.html">Частые вопросы </a></li>
+            <li class="menu__link"><a href="./not-found.html">404	</a></li>
+            <li class="menu__link"><a href="./services.html">Услуги				</a></li>
+            <li class="menu__link"><a href="./loyalty-programm.html">Программа лояльности		</a></li>
+            <li class="menu__link"><a href="./delivery.html">Доставка, оплата и возврат</a></li>
+            <li class="menu__link"><a href="./catalog-card.html">Каталог(карточки)</a></li>
+            <li class="menu__link"><a href="./catalog-list.html">Каталог(список)</a></li>
+            <li class="menu__link"><a href="./search-result.html">Результаты поиска</a></li>
+            <li class="menu__link"><a href="./favorite.html">Избранное</a></li>
+            <li class="menu__link"><a href="./product.html">Товар	       </a></li>
+            <li class="menu__link"><a href="./brands.html">Бренды			          </a></li>
+            <li class="menu__link"><a href="./brand-products.html">Товары бренда</a></li>
+            <li class="menu__link"><a href="./order.html">Оформление заказа</a></li>
+            <li class="menu__link"><a href="./order-map.html">Оформление заказа(карта)</a></li>
+            <li class="menu__link"><a href="./order-paid.html">Заказ оплачен</a></li>
+            <li class="menu__link"><a href="./password-recovery-1.html">Восстановление пароля 1 шаг</a></li>
+            <li class="menu__link"><a href="./password-recovery-2.html">Восстановление пароля 2 шаг</a></li>
+            <li class="menu__link"><a href="./registration.html">Регистрация</a></li>
+            <li class="menu__link"><a href="./lk-my-purchases.html">ЛК - Мои покупки</a></li>
+            <li class="menu__link"><a href="./lk-my-purchase.html">ЛК - Заказ детально</a></li>
+            <li class="menu__link"><a href="./lk-favorite.html">ЛК - Избранное</a></li>
+            <li class="menu__link"><a href="./lk-feedback.html">ЛК - Обратная связь</a></li>
+            <li class="menu__link"><a href="./lk-personal-data.html">ЛК - Личные данные</a></li>
+            <li class="menu__link"><a href="./lk-waiting-list.html">ЛК - Лист ожидания</a></li>
+            <li class="menu__link"><a href="./lk-refund-1.html">ЛК - Заявки на возврат			</a></li>
+            <li class="menu__link"><a href="./lk-refund-2.html">ЛК - Заявки на возврат(нет заявок)</a></li>
+            <li class="menu__link"><a href="./lk-refund-4.html">ЛК - Заявка на возврат детально					</a></li>
+            <li class="menu__link"><a href="./lk-refund-3.html">ЛК - Новый возврат			</a></li>
+            <li class="menu__link"><a href="./lk-my-card.html">ЛК - Моя карта							</a></li>
+          </ul>
+        </div>
+        <div class="page__footer">
+          <p>Дата измненений <span class="page__date"> </span></p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="toast-container" aria-live="polite" role="status" aria-atomic="true"></div>
+      <div class="tooltip" id="shared-tooltip" role="tooltip" aria-hidden="true"></div>
+      <button class="button button--icon button-top" type="button" aria-label="Прокрутить страницу к началу" data-button-top><i class="icon icon-arrow-up"></i>
+      </button>
+      <div class="slider-panel slider-panel--slide" data-slider-panel="sidebar-menu" id="sidebar-menu-controls" aria-labelledby="slider-panel-y90xpuysp" role="dialog" aria-modal="true">
+        <div class="slider-panel__slide" data-slider-slide>
+          <div class="slider-panel__header">
+            <div class="slider-panel__title" id="slider-panel-y90xpuysp">Личный кабинет</div>
+            <button class="button button--transparent slider-panel__close" type="button" aria-label="Закрыть модальное окно" data-slider-panel-close="sidebar-menu"><i class="icon icon-close"></i>
+            </button>
+          </div>
+          <div class="slider-panel__body custom-scroll">
+            <div class="sidebar-menu">
+              <ul class="sidebar-menu__list">
+                <li class="sidebar-menu__item">
+                  <a class="button sidebar-menu__link" href="./lk-my-purchases.html">Мои покупки
+                  </a>
+                </li>
+                <li class="sidebar-menu__item">
+                  <a class="button sidebar-menu__link" href="./lk-favorite.html">Избранное
+                  </a>
+                </li>
+                <li class="sidebar-menu__item">
+                  <a class="button sidebar-menu__link" href="./lk-my-card.html">Моя карта
+                  </a>
+                </li>
+                <li class="sidebar-menu__item">
+                  <a class="button sidebar-menu__link" href="./lk-waiting-list.html">Лист ожидания
+                  </a>
+                </li>
+                <li class="sidebar-menu__item">
+                  <a class="button sidebar-menu__link" href="./lk-refund-1.html">Заявки на возврат
+                  </a>
+                </li>
+                <li class="sidebar-menu__item">
+                  <a class="button sidebar-menu__link" href="./lk-feedback.html">Обратная связь
+                  </a>
+                </li>
+                <li class="sidebar-menu__item">
+                  <a class="button sidebar-menu__link" href="./lk-personal-data.html">Личные данные
+                  </a>
+                </li>
+                <li class="sidebar-menu__item">
+                  <button class="button sidebar-menu__link" aria-label="Выйти из личного кабинета" aria-expanded="false" aria-haspopup="dialog" data-modal-show="logout-modal"><span class="button__text">Выход</span><i class="icon icon-arrow-right"></i>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slider-panel slider-panel--slide" data-slider-panel="menu-hover" id="menu-hover-controls" aria-labelledby="slider-panel-k9rx3wngg" data-responsive="max-width: 767px" role="dialog" aria-modal="true">
+        <div class="slider-panel__slide" data-slider-slide>
+          <div class="slider-panel__header">
+            <div class="slider-panel__title" id="slider-panel-k9rx3wngg">Меню</div>
+            <button class="button button--transparent slider-panel__close" type="button" aria-label="Закрыть модальное окно" data-slider-panel-close="menu-hover"><i class="icon icon-close"></i>
+            </button>
+          </div>
+          <div class="slider-panel__body custom-scroll">
+          </div>
+        </div>
+      </div>
+      <div class="slider-panel slider-panel--menu-catalog slider-panel--slide" data-slider-panel="menu-catalog" id="menu-catalog-controls" aria-labelledby="slider-panel-e0ll6r945" role="dialog" aria-modal="true">
+        <div class="slider-panel__slide" data-slider-slide>
+          <div class="slider-panel__header">
+            <div class="slider-panel__title" id="slider-panel-e0ll6r945">Каталог</div>
+            <button class="button button--transparent slider-panel__close" type="button" aria-label="Закрыть модальное окно" data-slider-panel-close="menu-catalog"><i class="icon icon-close"></i>
+            </button>
+          </div>
+          <div class="slider-panel__body custom-scroll">
+            <nav class="menu-nested" data-menu-nested aria-label="Каталог товаров">
+              <div class="container">
+                <div class="menu-nested__list-wrapper">
+                  <ul class="menu-nested__list custom-scroll">
+                    <li class="menu-nested__item" data-menu-item>
+                      <button class="button menu-nested__link" type="button" aria-expanded="false" aria-controls="menu-level-ok6zxak" aria-haspopup="true" data-slider-panel-show="sidebar-menu-menu-level-ok6zxak"><span class="button__text">Электроника</span><i class="icon icon-dropdown"></i>
+                      </button>
+                      <div class="slider-panel slider-panel--slide" data-slider-panel="sidebar-menu-menu-level-ok6zxak" id="menu-level-ok6zxak" aria-labelledby="slider-panel-g9wakkfqk" data-responsive="max-width: 1023px" role="dialog" aria-modal="true">
+                        <div class="slider-panel__slide" data-slider-slide>
+                          <div class="slider-panel__header">
+                            <div class="slider-panel__title visually-hidden" id="slider-panel-g9wakkfqk">Электроника</div>
+                            <button class="button button--transparent slider-panel__back" type="button" aria-label="Закрыть модальное окно" data-slider-panel-close="sidebar-menu-menu-level-ok6zxak"><i class="icon icon-arrow-left 14 14"></i><span class="button__text">Электроника</span>
+                            </button>
+                          </div>
+                          <div class="slider-panel__body custom-scroll">
+                            <ul class="menu-nested__list custom-scroll">
+                              <li class="menu-nested__item" data-menu-item>
+                                <button class="button menu-nested__link" type="button" aria-expanded="false" aria-controls="menu-level-9159zyf" aria-haspopup="true" data-slider-panel-show="sidebar-menu-menu-level-9159zyf"><span class="button__text">Смартфоны</span><i class="icon icon-dropdown"></i>
+                                </button>
+                                <div class="slider-panel slider-panel--slide" data-slider-panel="sidebar-menu-menu-level-9159zyf" id="menu-level-9159zyf" aria-labelledby="slider-panel-1mc74al9b" data-responsive="max-width: 1023px" role="dialog" aria-modal="true">
+                                  <div class="slider-panel__slide" data-slider-slide>
+                                    <div class="slider-panel__header">
+                                      <div class="slider-panel__title visually-hidden" id="slider-panel-1mc74al9b">Смартфоны</div>
+                                      <button class="button button--transparent slider-panel__back" type="button" aria-label="Закрыть модальное окно" data-slider-panel-close="sidebar-menu-menu-level-9159zyf"><i class="icon icon-arrow-left 14 14"></i><span class="button__text">Смартфоны</span>
+                                      </button>
+                                    </div>
+                                    <div class="slider-panel__body custom-scroll">
+                                      <ul class="menu-nested__list custom-scroll">
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Apple iPhone
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Samsung Galaxy
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Xiaomi
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Realme
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">POCO
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Google Pixel
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Показать все
+                                          </a>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="menu-nested__item" data-menu-item>
+                                <a class="button menu-nested__link" href="./product.html">Умные часы
+                                </a>
+                              </li>
+                              <li class="menu-nested__item" data-menu-item>
+                                <a class="button menu-nested__link" href="./product.html">Наушники
+                                </a>
+                              </li>
+                              <li class="menu-nested__item" data-menu-item>
+                                <a class="button menu-nested__link" href="./product.html">Планшеты
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="menu-nested__item" data-menu-item>
+                      <button class="button menu-nested__link" type="button" aria-expanded="false" aria-controls="menu-level-1l2zw2o" aria-haspopup="true" data-slider-panel-show="sidebar-menu-menu-level-1l2zw2o"><span class="button__text">Бытовая техника</span><i class="icon icon-dropdown"></i>
+                      </button>
+                      <div class="slider-panel slider-panel--slide" data-slider-panel="sidebar-menu-menu-level-1l2zw2o" id="menu-level-1l2zw2o" aria-labelledby="slider-panel-ku2rborau" data-responsive="max-width: 1023px" role="dialog" aria-modal="true">
+                        <div class="slider-panel__slide" data-slider-slide>
+                          <div class="slider-panel__header">
+                            <div class="slider-panel__title visually-hidden" id="slider-panel-ku2rborau">Бытовая техника</div>
+                            <button class="button button--transparent slider-panel__back" type="button" aria-label="Закрыть модальное окно" data-slider-panel-close="sidebar-menu-menu-level-1l2zw2o"><i class="icon icon-arrow-left 14 14"></i><span class="button__text">Бытовая техника</span>
+                            </button>
+                          </div>
+                          <div class="slider-panel__body custom-scroll">
+                            <ul class="menu-nested__list custom-scroll">
+                              <li class="menu-nested__item" data-menu-item>
+                                <button class="button menu-nested__link" type="button" aria-expanded="false" aria-controls="menu-level-tlxdk1l" aria-haspopup="true" data-slider-panel-show="sidebar-menu-menu-level-tlxdk1l"><span class="button__text">Крупная техника</span><i class="icon icon-dropdown"></i>
+                                </button>
+                                <div class="slider-panel slider-panel--slide" data-slider-panel="sidebar-menu-menu-level-tlxdk1l" id="menu-level-tlxdk1l" aria-labelledby="slider-panel-3x58sf70s" data-responsive="max-width: 1023px" role="dialog" aria-modal="true">
+                                  <div class="slider-panel__slide" data-slider-slide>
+                                    <div class="slider-panel__header">
+                                      <div class="slider-panel__title visually-hidden" id="slider-panel-3x58sf70s">Крупная техника</div>
+                                      <button class="button button--transparent slider-panel__back" type="button" aria-label="Закрыть модальное окно" data-slider-panel-close="sidebar-menu-menu-level-tlxdk1l"><i class="icon icon-arrow-left 14 14"></i><span class="button__text">Крупная техника</span>
+                                      </button>
+                                    </div>
+                                    <div class="slider-panel__body custom-scroll">
+                                      <ul class="menu-nested__list custom-scroll">
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Холодильники
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Стиральные машины
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Посудомойки
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Духовые шкафы
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Варочные панели
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Вытяжки
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Микроволновки
+                                          </a>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="menu-nested__item" data-menu-item>
+                                <a class="button menu-nested__link" href="./product.html">Кофемашины
+                                </a>
+                              </li>
+                              <li class="menu-nested__item" data-menu-item>
+                                <a class="button menu-nested__link" href="./product.html">Чайники
+                                </a>
+                              </li>
+                              <li class="menu-nested__item" data-menu-item>
+                                <a class="button menu-nested__link" href="./product.html">Блендеры
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="menu-nested__item" data-menu-item>
+                      <button class="button menu-nested__link" type="button" aria-expanded="false" aria-controls="menu-level-tebfe3m" aria-haspopup="true" data-slider-panel-show="sidebar-menu-menu-level-tebfe3m"><span class="button__text">Автотовары</span><i class="icon icon-dropdown"></i>
+                      </button>
+                      <div class="slider-panel slider-panel--slide" data-slider-panel="sidebar-menu-menu-level-tebfe3m" id="menu-level-tebfe3m" aria-labelledby="slider-panel-2ty8ecmgg" data-responsive="max-width: 1023px" role="dialog" aria-modal="true">
+                        <div class="slider-panel__slide" data-slider-slide>
+                          <div class="slider-panel__header">
+                            <div class="slider-panel__title visually-hidden" id="slider-panel-2ty8ecmgg">Автотовары</div>
+                            <button class="button button--transparent slider-panel__back" type="button" aria-label="Закрыть модальное окно" data-slider-panel-close="sidebar-menu-menu-level-tebfe3m"><i class="icon icon-arrow-left 14 14"></i><span class="button__text">Автотовары</span>
+                            </button>
+                          </div>
+                          <div class="slider-panel__body custom-scroll">
+                            <ul class="menu-nested__list custom-scroll">
+                              <li class="menu-nested__item" data-menu-item>
+                                <button class="button menu-nested__link" type="button" aria-expanded="false" aria-controls="menu-level-t3ava38" aria-haspopup="true" data-slider-panel-show="sidebar-menu-menu-level-t3ava38"><span class="button__text">Автозвук</span><i class="icon icon-dropdown"></i>
+                                </button>
+                                <div class="slider-panel slider-panel--slide" data-slider-panel="sidebar-menu-menu-level-t3ava38" id="menu-level-t3ava38" aria-labelledby="slider-panel-50aa4fww4" data-responsive="max-width: 1023px" role="dialog" aria-modal="true">
+                                  <div class="slider-panel__slide" data-slider-slide>
+                                    <div class="slider-panel__header">
+                                      <div class="slider-panel__title visually-hidden" id="slider-panel-50aa4fww4">Автозвук</div>
+                                      <button class="button button--transparent slider-panel__back" type="button" aria-label="Закрыть модальное окно" data-slider-panel-close="sidebar-menu-menu-level-t3ava38"><i class="icon icon-arrow-left 14 14"></i><span class="button__text">Автозвук</span>
+                                      </button>
+                                    </div>
+                                    <div class="slider-panel__body custom-scroll">
+                                      <ul class="menu-nested__list custom-scroll">
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Hertz Marine
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Audison
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Tchernov Cable
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Автоакустика
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Усилители
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Сабвуферы
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Процессоры DSP
+                                          </a>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="menu-nested__item" data-menu-item>
+                                <a class="button menu-nested__link" href="./product.html">Видеорегистраторы
+                                </a>
+                              </li>
+                              <li class="menu-nested__item" data-menu-item>
+                                <a class="button menu-nested__link" href="./product.html">Радар-детекторы
+                                </a>
+                              </li>
+                              <li class="menu-nested__item" data-menu-item>
+                                <a class="button menu-nested__link" href="./product.html">Навигаторы
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="menu-nested__item" data-menu-item>
+                      <button class="button menu-nested__link" type="button" aria-expanded="false" aria-controls="menu-level-bjqrnj5" aria-haspopup="true" data-slider-panel-show="sidebar-menu-menu-level-bjqrnj5"><span class="button__text">Одежда и обувь</span><i class="icon icon-dropdown"></i>
+                      </button>
+                      <div class="slider-panel slider-panel--slide" data-slider-panel="sidebar-menu-menu-level-bjqrnj5" id="menu-level-bjqrnj5" aria-labelledby="slider-panel-lweymrpjz" data-responsive="max-width: 1023px" role="dialog" aria-modal="true">
+                        <div class="slider-panel__slide" data-slider-slide>
+                          <div class="slider-panel__header">
+                            <div class="slider-panel__title visually-hidden" id="slider-panel-lweymrpjz">Одежда и обувь</div>
+                            <button class="button button--transparent slider-panel__back" type="button" aria-label="Закрыть модальное окно" data-slider-panel-close="sidebar-menu-menu-level-bjqrnj5"><i class="icon icon-arrow-left 14 14"></i><span class="button__text">Одежда и обувь</span>
+                            </button>
+                          </div>
+                          <div class="slider-panel__body custom-scroll">
+                            <ul class="menu-nested__list custom-scroll">
+                              <li class="menu-nested__item" data-menu-item>
+                                <button class="button menu-nested__link" type="button" aria-expanded="false" aria-controls="menu-level-uqm5dw7" aria-haspopup="true" data-slider-panel-show="sidebar-menu-menu-level-uqm5dw7"><span class="button__text">Одежда</span><i class="icon icon-dropdown"></i>
+                                </button>
+                                <div class="slider-panel slider-panel--slide" data-slider-panel="sidebar-menu-menu-level-uqm5dw7" id="menu-level-uqm5dw7" aria-labelledby="slider-panel-dhopd5nkg" data-responsive="max-width: 1023px" role="dialog" aria-modal="true">
+                                  <div class="slider-panel__slide" data-slider-slide>
+                                    <div class="slider-panel__header">
+                                      <div class="slider-panel__title visually-hidden" id="slider-panel-dhopd5nkg">Одежда</div>
+                                      <button class="button button--transparent slider-panel__back" type="button" aria-label="Закрыть модальное окно" data-slider-panel-close="sidebar-menu-menu-level-uqm5dw7"><i class="icon icon-arrow-left 14 14"></i><span class="button__text">Одежда</span>
+                                      </button>
+                                    </div>
+                                    <div class="slider-panel__body custom-scroll">
+                                      <ul class="menu-nested__list custom-scroll">
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Платья
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Блузки
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Джинсы
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Куртки
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Пальто
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Спортивные костюмы
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Юбки
+                                          </a>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="menu-nested__item" data-menu-item>
+                                <a class="button menu-nested__link" href="./product.html">Обувь
+                                </a>
+                              </li>
+                              <li class="menu-nested__item" data-menu-item>
+                                <a class="button menu-nested__link" href="./product.html">Сумки и аксессуары
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="menu-nested__item" data-menu-item>
+                      <button class="button menu-nested__link" type="button" aria-expanded="false" aria-controls="menu-level-ik1s416" aria-haspopup="true" data-slider-panel-show="sidebar-menu-menu-level-ik1s416"><span class="button__text">Дом и дача</span><i class="icon icon-dropdown"></i>
+                      </button>
+                      <div class="slider-panel slider-panel--slide" data-slider-panel="sidebar-menu-menu-level-ik1s416" id="menu-level-ik1s416" aria-labelledby="slider-panel-oik2jr42z" data-responsive="max-width: 1023px" role="dialog" aria-modal="true">
+                        <div class="slider-panel__slide" data-slider-slide>
+                          <div class="slider-panel__header">
+                            <div class="slider-panel__title visually-hidden" id="slider-panel-oik2jr42z">Дом и дача</div>
+                            <button class="button button--transparent slider-panel__back" type="button" aria-label="Закрыть модальное окно" data-slider-panel-close="sidebar-menu-menu-level-ik1s416"><i class="icon icon-arrow-left 14 14"></i><span class="button__text">Дом и дача</span>
+                            </button>
+                          </div>
+                          <div class="slider-panel__body custom-scroll">
+                            <ul class="menu-nested__list custom-scroll">
+                              <li class="menu-nested__item" data-menu-item>
+                                <button class="button menu-nested__link" type="button" aria-expanded="false" aria-controls="menu-level-10x477q" aria-haspopup="true" data-slider-panel-show="sidebar-menu-menu-level-10x477q"><span class="button__text">Освещение</span><i class="icon icon-dropdown"></i>
+                                </button>
+                                <div class="slider-panel slider-panel--slide" data-slider-panel="sidebar-menu-menu-level-10x477q" id="menu-level-10x477q" aria-labelledby="slider-panel-e5uf7rjlx" data-responsive="max-width: 1023px" role="dialog" aria-modal="true">
+                                  <div class="slider-panel__slide" data-slider-slide>
+                                    <div class="slider-panel__header">
+                                      <div class="slider-panel__title visually-hidden" id="slider-panel-e5uf7rjlx">Освещение</div>
+                                      <button class="button button--transparent slider-panel__back" type="button" aria-label="Закрыть модальное окно" data-slider-panel-close="sidebar-menu-menu-level-10x477q"><i class="icon icon-arrow-left 14 14"></i><span class="button__text">Освещение</span>
+                                      </button>
+                                    </div>
+                                    <div class="slider-panel__body custom-scroll">
+                                      <ul class="menu-nested__list custom-scroll">
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Люстры
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Потолочные светильники
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Настольные лампы
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Бра и торшеры
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Светодиодные ленты
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Уличные фонари
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Умный свет
+                                          </a>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="menu-nested__item" data-menu-item>
+                                <a class="button menu-nested__link" href="./product.html">Мебель
+                                </a>
+                              </li>
+                              <li class="menu-nested__item" data-menu-item>
+                                <a class="button menu-nested__link" href="./product.html">Текстиль
+                                </a>
+                              </li>
+                              <li class="menu-nested__item" data-menu-item>
+                                <a class="button menu-nested__link" href="./product.html">Декор
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="menu-nested__item" data-menu-item>
+                      <button class="button menu-nested__link" type="button" aria-expanded="false" aria-controls="menu-level-8a72jv3" aria-haspopup="true" data-slider-panel-show="sidebar-menu-menu-level-8a72jv3"><span class="button__text">Детские товары</span><i class="icon icon-dropdown"></i>
+                      </button>
+                      <div class="slider-panel slider-panel--slide" data-slider-panel="sidebar-menu-menu-level-8a72jv3" id="menu-level-8a72jv3" aria-labelledby="slider-panel-q81obfz9f" data-responsive="max-width: 1023px" role="dialog" aria-modal="true">
+                        <div class="slider-panel__slide" data-slider-slide>
+                          <div class="slider-panel__header">
+                            <div class="slider-panel__title visually-hidden" id="slider-panel-q81obfz9f">Детские товары</div>
+                            <button class="button button--transparent slider-panel__back" type="button" aria-label="Закрыть модальное окно" data-slider-panel-close="sidebar-menu-menu-level-8a72jv3"><i class="icon icon-arrow-left 14 14"></i><span class="button__text">Детские товары</span>
+                            </button>
+                          </div>
+                          <div class="slider-panel__body custom-scroll">
+                            <ul class="menu-nested__list custom-scroll">
+                              <li class="menu-nested__item" data-menu-item>
+                                <button class="button menu-nested__link" type="button" aria-expanded="false" aria-controls="menu-level-tf9pff0" aria-haspopup="true" data-slider-panel-show="sidebar-menu-menu-level-tf9pff0"><span class="button__text">Игрушки</span><i class="icon icon-dropdown"></i>
+                                </button>
+                                <div class="slider-panel slider-panel--slide" data-slider-panel="sidebar-menu-menu-level-tf9pff0" id="menu-level-tf9pff0" aria-labelledby="slider-panel-4ho8taqcm" data-responsive="max-width: 1023px" role="dialog" aria-modal="true">
+                                  <div class="slider-panel__slide" data-slider-slide>
+                                    <div class="slider-panel__header">
+                                      <div class="slider-panel__title visually-hidden" id="slider-panel-4ho8taqcm">Игрушки</div>
+                                      <button class="button button--transparent slider-panel__back" type="button" aria-label="Закрыть модальное окно" data-slider-panel-close="sidebar-menu-menu-level-tf9pff0"><i class="icon icon-arrow-left 14 14"></i><span class="button__text">Игрушки</span>
+                                      </button>
+                                    </div>
+                                    <div class="slider-panel__body custom-scroll">
+                                      <ul class="menu-nested__list custom-scroll">
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Конструкторы LEGO
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Настольные игры
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Куклы
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Машинки
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Мягкие игрушки
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Интерактивные роботы
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Пазлы
+                                          </a>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="menu-nested__item" data-menu-item>
+                                <a class="button menu-nested__link" href="./product.html">Детское питание
+                                </a>
+                              </li>
+                              <li class="menu-nested__item" data-menu-item>
+                                <a class="button menu-nested__link" href="./product.html">Коляски
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="menu-nested__item" data-menu-item>
+                      <button class="button menu-nested__link" type="button" aria-expanded="false" aria-controls="menu-level-ue0qs1e" aria-haspopup="true" data-slider-panel-show="sidebar-menu-menu-level-ue0qs1e"><span class="button__text">Спорт и отдых</span><i class="icon icon-dropdown"></i>
+                      </button>
+                      <div class="slider-panel slider-panel--slide" data-slider-panel="sidebar-menu-menu-level-ue0qs1e" id="menu-level-ue0qs1e" aria-labelledby="slider-panel-ifhkw65qh" data-responsive="max-width: 1023px" role="dialog" aria-modal="true">
+                        <div class="slider-panel__slide" data-slider-slide>
+                          <div class="slider-panel__header">
+                            <div class="slider-panel__title visually-hidden" id="slider-panel-ifhkw65qh">Спорт и отдых</div>
+                            <button class="button button--transparent slider-panel__back" type="button" aria-label="Закрыть модальное окно" data-slider-panel-close="sidebar-menu-menu-level-ue0qs1e"><i class="icon icon-arrow-left 14 14"></i><span class="button__text">Спорт и отдых</span>
+                            </button>
+                          </div>
+                          <div class="slider-panel__body custom-scroll">
+                            <ul class="menu-nested__list custom-scroll">
+                              <li class="menu-nested__item" data-menu-item>
+                                <button class="button menu-nested__link" type="button" aria-expanded="false" aria-controls="menu-level-6w1l99r" aria-haspopup="true" data-slider-panel-show="sidebar-menu-menu-level-6w1l99r"><span class="button__text">Тренажеры</span><i class="icon icon-dropdown"></i>
+                                </button>
+                                <div class="slider-panel slider-panel--slide" data-slider-panel="sidebar-menu-menu-level-6w1l99r" id="menu-level-6w1l99r" aria-labelledby="slider-panel-505ruwfpp" data-responsive="max-width: 1023px" role="dialog" aria-modal="true">
+                                  <div class="slider-panel__slide" data-slider-slide>
+                                    <div class="slider-panel__header">
+                                      <div class="slider-panel__title visually-hidden" id="slider-panel-505ruwfpp">Тренажеры</div>
+                                      <button class="button button--transparent slider-panel__back" type="button" aria-label="Закрыть модальное окно" data-slider-panel-close="sidebar-menu-menu-level-6w1l99r"><i class="icon icon-arrow-left 14 14"></i><span class="button__text">Тренажеры</span>
+                                      </button>
+                                    </div>
+                                    <div class="slider-panel__body custom-scroll">
+                                      <ul class="menu-nested__list custom-scroll">
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Беговые дорожки
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Велотренажеры
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Эллипсоиды
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Гантели и гири
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Турники
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Коврики для йоги
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Фитнес-резинки
+                                          </a>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="menu-nested__item" data-menu-item>
+                                <a class="button menu-nested__link" href="./product.html">Велосипеды
+                                </a>
+                              </li>
+                              <li class="menu-nested__item" data-menu-item>
+                                <a class="button menu-nested__link" href="./product.html">Самокаты
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="menu-nested__item" data-menu-item>
+                      <button class="button menu-nested__link" type="button" aria-expanded="false" aria-controls="menu-level-nczo1i9" aria-haspopup="true" data-slider-panel-show="sidebar-menu-menu-level-nczo1i9"><span class="button__text">Красота и здоровье</span><i class="icon icon-dropdown"></i>
+                      </button>
+                      <div class="slider-panel slider-panel--slide" data-slider-panel="sidebar-menu-menu-level-nczo1i9" id="menu-level-nczo1i9" aria-labelledby="slider-panel-tmqlcm4i1" data-responsive="max-width: 1023px" role="dialog" aria-modal="true">
+                        <div class="slider-panel__slide" data-slider-slide>
+                          <div class="slider-panel__header">
+                            <div class="slider-panel__title visually-hidden" id="slider-panel-tmqlcm4i1">Красота и здоровье</div>
+                            <button class="button button--transparent slider-panel__back" type="button" aria-label="Закрыть модальное окно" data-slider-panel-close="sidebar-menu-menu-level-nczo1i9"><i class="icon icon-arrow-left 14 14"></i><span class="button__text">Красота и здоровье</span>
+                            </button>
+                          </div>
+                          <div class="slider-panel__body custom-scroll">
+                            <ul class="menu-nested__list custom-scroll">
+                              <li class="menu-nested__item" data-menu-item>
+                                <button class="button menu-nested__link" type="button" aria-expanded="false" aria-controls="menu-level-ebipd2s" aria-haspopup="true" data-slider-panel-show="sidebar-menu-menu-level-ebipd2s"><span class="button__text">Уход за волосами</span><i class="icon icon-dropdown"></i>
+                                </button>
+                                <div class="slider-panel slider-panel--slide" data-slider-panel="sidebar-menu-menu-level-ebipd2s" id="menu-level-ebipd2s" aria-labelledby="slider-panel-lt7o7b5th" data-responsive="max-width: 1023px" role="dialog" aria-modal="true">
+                                  <div class="slider-panel__slide" data-slider-slide>
+                                    <div class="slider-panel__header">
+                                      <div class="slider-panel__title visually-hidden" id="slider-panel-lt7o7b5th">Уход за волосами</div>
+                                      <button class="button button--transparent slider-panel__back" type="button" aria-label="Закрыть модальное окно" data-slider-panel-close="sidebar-menu-menu-level-ebipd2s"><i class="icon icon-arrow-left 14 14"></i><span class="button__text">Уход за волосами</span>
+                                      </button>
+                                    </div>
+                                    <div class="slider-panel__body custom-scroll">
+                                      <ul class="menu-nested__list custom-scroll">
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Профессиональные фены
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Стайлеры Dyson
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Выпрямители
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Плойки
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Машинки для стрижки
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Триммеры
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Эпиляторы
+                                          </a>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="menu-nested__item" data-menu-item>
+                                <a class="button menu-nested__link" href="./product.html">Электробритвы
+                                </a>
+                              </li>
+                              <li class="menu-nested__item" data-menu-item>
+                                <a class="button menu-nested__link" href="./product.html">Зубные щетки
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="menu-nested__item" data-menu-item>
+                      <button class="button menu-nested__link" type="button" aria-expanded="false" aria-controls="menu-level-5jakvt1" aria-haspopup="true" data-slider-panel-show="sidebar-menu-menu-level-5jakvt1"><span class="button__text">Книги</span><i class="icon icon-dropdown"></i>
+                      </button>
+                      <div class="slider-panel slider-panel--slide" data-slider-panel="sidebar-menu-menu-level-5jakvt1" id="menu-level-5jakvt1" aria-labelledby="slider-panel-fa0jc2ygv" data-responsive="max-width: 1023px" role="dialog" aria-modal="true">
+                        <div class="slider-panel__slide" data-slider-slide>
+                          <div class="slider-panel__header">
+                            <div class="slider-panel__title visually-hidden" id="slider-panel-fa0jc2ygv">Книги</div>
+                            <button class="button button--transparent slider-panel__back" type="button" aria-label="Закрыть модальное окно" data-slider-panel-close="sidebar-menu-menu-level-5jakvt1"><i class="icon icon-arrow-left 14 14"></i><span class="button__text">Книги</span>
+                            </button>
+                          </div>
+                          <div class="slider-panel__body custom-scroll">
+                            <ul class="menu-nested__list custom-scroll">
+                              <li class="menu-nested__item" data-menu-item>
+                                <button class="button menu-nested__link" type="button" aria-expanded="false" aria-controls="menu-level-wmo7s3h" aria-haspopup="true" data-slider-panel-show="sidebar-menu-menu-level-wmo7s3h"><span class="button__text">Художественная</span><i class="icon icon-dropdown"></i>
+                                </button>
+                                <div class="slider-panel slider-panel--slide" data-slider-panel="sidebar-menu-menu-level-wmo7s3h" id="menu-level-wmo7s3h" aria-labelledby="slider-panel-9whi1dcuu" data-responsive="max-width: 1023px" role="dialog" aria-modal="true">
+                                  <div class="slider-panel__slide" data-slider-slide>
+                                    <div class="slider-panel__header">
+                                      <div class="slider-panel__title visually-hidden" id="slider-panel-9whi1dcuu">Художественная</div>
+                                      <button class="button button--transparent slider-panel__back" type="button" aria-label="Закрыть модальное окно" data-slider-panel-close="sidebar-menu-menu-level-wmo7s3h"><i class="icon icon-arrow-left 14 14"></i><span class="button__text">Художественная</span>
+                                      </button>
+                                    </div>
+                                    <div class="slider-panel__body custom-scroll">
+                                      <ul class="menu-nested__list custom-scroll">
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Фантастика
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Детективы
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Фэнтези
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Триллеры
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Классика
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Исторические романы
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Поэзия
+                                          </a>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="menu-nested__item" data-menu-item>
+                                <a class="button menu-nested__link" href="./product.html">Учебники
+                                </a>
+                              </li>
+                              <li class="menu-nested__item" data-menu-item>
+                                <a class="button menu-nested__link" href="./product.html">Бизнес-литература
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="menu-nested__item" data-menu-item>
+                      <button class="button menu-nested__link" type="button" aria-expanded="false" aria-controls="menu-level-rsegee0" aria-haspopup="true" data-slider-panel-show="sidebar-menu-menu-level-rsegee0"><span class="button__text">Зоотовары</span><i class="icon icon-dropdown"></i>
+                      </button>
+                      <div class="slider-panel slider-panel--slide" data-slider-panel="sidebar-menu-menu-level-rsegee0" id="menu-level-rsegee0" aria-labelledby="slider-panel-l5ibxpqdo" data-responsive="max-width: 1023px" role="dialog" aria-modal="true">
+                        <div class="slider-panel__slide" data-slider-slide>
+                          <div class="slider-panel__header">
+                            <div class="slider-panel__title visually-hidden" id="slider-panel-l5ibxpqdo">Зоотовары</div>
+                            <button class="button button--transparent slider-panel__back" type="button" aria-label="Закрыть модальное окно" data-slider-panel-close="sidebar-menu-menu-level-rsegee0"><i class="icon icon-arrow-left 14 14"></i><span class="button__text">Зоотовары</span>
+                            </button>
+                          </div>
+                          <div class="slider-panel__body custom-scroll">
+                            <ul class="menu-nested__list custom-scroll">
+                              <li class="menu-nested__item" data-menu-item>
+                                <button class="button menu-nested__link" type="button" aria-expanded="false" aria-controls="menu-level-lc7duzc" aria-haspopup="true" data-slider-panel-show="sidebar-menu-menu-level-lc7duzc"><span class="button__text">Для кошек</span><i class="icon icon-dropdown"></i>
+                                </button>
+                                <div class="slider-panel slider-panel--slide" data-slider-panel="sidebar-menu-menu-level-lc7duzc" id="menu-level-lc7duzc" aria-labelledby="slider-panel-hpijrrh2k" data-responsive="max-width: 1023px" role="dialog" aria-modal="true">
+                                  <div class="slider-panel__slide" data-slider-slide>
+                                    <div class="slider-panel__header">
+                                      <div class="slider-panel__title visually-hidden" id="slider-panel-hpijrrh2k">Для кошек</div>
+                                      <button class="button button--transparent slider-panel__back" type="button" aria-label="Закрыть модальное окно" data-slider-panel-close="sidebar-menu-menu-level-lc7duzc"><i class="icon icon-arrow-left 14 14"></i><span class="button__text">Для кошек</span>
+                                      </button>
+                                    </div>
+                                    <div class="slider-panel__body custom-scroll">
+                                      <ul class="menu-nested__list custom-scroll">
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Сухой корм
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Влажный корм
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Лакомства
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Наполнители туалетов
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Когтеточки
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Игрушки для кошек
+                                          </a>
+                                        </li>
+                                        <li class="menu-nested__item" data-menu-item>
+                                          <a class="button menu-nested__link" href="./product.html">Переноски
+                                          </a>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="menu-nested__item" data-menu-item>
+                                <a class="button menu-nested__link" href="./product.html">Для собак
+                                </a>
+                              </li>
+                              <li class="menu-nested__item" data-menu-item>
+                                <a class="button menu-nested__link" href="./product.html">Для рыб и рептилий
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div class="slider-panel slider-panel--slide" data-slider-panel="catalog-filter" id="catalog-filter-controls" aria-labelledby="slider-panel-h2u4u8b0m" data-responsive="max-width: 767px" role="dialog" aria-modal="true">
+        <div class="slider-panel__slide" data-slider-slide>
+          <div class="slider-panel__header">
+            <div class="slider-panel__title" id="slider-panel-h2u4u8b0m">Фильтры</div>
+            <button class="button button--transparent slider-panel__close" type="button" aria-label="Закрыть модальное окно" data-slider-panel-close="catalog-filter"><i class="icon icon-close"></i>
+            </button>
+          </div>
+          <div class="slider-panel__body custom-scroll">
+          </div>
+        </div>
+      </div>
+      <div class="slider-panel slider-panel--search slider-panel--fade" data-slider-panel="search-panel" id="search-panel-controls" aria-labelledby="slider-panel-1fsqq5pwa" role="dialog" aria-modal="true">
+        <div class="slider-panel__slide" data-slider-slide>
+          <div class="slider-panel__header">
+            <div class="slider-panel__title visually-hidden" id="slider-panel-1fsqq5pwa">Поиск</div>
+            <button class="button button--transparent slider-panel__close" type="button" aria-label="Закрыть модальное окно" data-slider-panel-close="search-panel"><i class="icon icon-close"></i>
+            </button>
+          </div>
+          <div class="slider-panel__body custom-scroll">
+            <search class="search-modal" itemscope itemtype="https://schema.org">
+              <div class="container">
+                <form class="search-modal__form" itemprop="potentialAction" itemscope itemtype="https://schema.org">
+                  <meta itemprop="target" content="https://example.comsearch/?q={g6fe1onxdqs}">
+                  <div class="search-modal__title">Поиск</div>
+                  <div class="select-search" data-select-search data-mode="component">
+                    <div class="input-search input-search--icon" data-input-search data-lazy role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-controls="select-search-4l4apdn20">
+                      <input class="input input--base input-search__input" id="select-search-kq098gdny" name="g6fe1onxdqs" type="search" autocomplete="off" enterkeyhint="search" spellcheck="false" aria-label="Поиск по сайту" aria-autocomplete="list" itemprop="itemprop" data-input-search-field>
+                      <button class="button button--icon button--transparent input-search__button" type="button" aria-label="Очистить поле поиска" data-input-search-button><i class="icon icon-close"></i>
+                      </button>
+                    </div>
+                    <div class="select-search__results" data-select-search-results>
+                      <ul class="select-search__list custom-scroll" id="select-search-4l4apdn20" aria-label="Подсказки к поиску" data-select-search-list>
+                        <li class="select-search__item" id="select-search-kq098gdny-0" data-select-search-item>
+                          <article class="mini-cart">
+                            <div class="mini-cart__product"> <a class="mini-cart__img-wrapper" href="./product.html" tabindex="-1">
+                                <picture>
+                                  <source media="(min-width:1280px)" srcset="./img/components/product-card/img-9.webp, ./img/components/product-card/img-9@2x.webp 2x" type="image/webp">
+                                  <source media="(max-width:767px)" srcset="./img/components/product-card/img-9-mobile.webp, ./img/components/product-card/img-9-mobile@2x.webp 2x" type="image/webp"><img src="./img/components/product-card/img-9.jpg" srcset="./img/components/product-card/img-9@2x.jpg 2x" alt="Товар" width="320" height="310" loading="lazy" decoding="async">
+                                </picture></a>
+                              <div class="mini-cart__content-wrapper">
+                                <h3 class="mini-cart__title"><a class="mini-cart__link" href="./product.html">BLITHETARGETED TIGHTENING SERUM RETINOL 0.1</a></h3>
+                                <div class="mini-cart__description">Кондиционер деликатный д/нормальных и сухих волос без отдушки, 200мл VIENO</div>
+                                <div class="mini-cart__price-wrapper">
+                                  <div class="mini-cart__price-actual"><span class="visually-hidden">Текущая цена:</span>6 750 ₽
+                                  </div>
+                                  <div class="mini-cart__price-old"><span class="visually-hidden">Старая цена:</span>
+                                    <s>10 750 ₽</s>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </article>
+                        </li>
+                        <li class="select-search__item" id="select-search-kq098gdny-1" data-select-search-item>
+                          <article class="mini-cart">
+                            <div class="mini-cart__product"> <a class="mini-cart__img-wrapper" href="./product.html" tabindex="-1">
+                                <picture>
+                                  <source media="(min-width:1280px)" srcset="./img/components/product-card/img-5.webp, ./img/components/product-card/img-5@2x.webp 2x" type="image/webp">
+                                  <source media="(max-width:767px)" srcset="./img/components/product-card/img-5-mobile.webp, ./img/components/product-card/img-5-mobile@2x.webp 2x" type="image/webp"><img src="./img/components/product-card/img-5.jpg" srcset="./img/components/product-card/img-5@2x.jpg 2x" alt="Товар" width="320" height="310" loading="lazy" decoding="async">
+                                </picture></a>
+                              <div class="mini-cart__content-wrapper">
+                                <h3 class="mini-cart__title"><a class="mini-cart__link" href="./product.html">ALFAPARF</a></h3>
+                                <div class="mini-cart__description">Кондиционер для кудрявых и вьющихся волос, 1000мл SDL CURLS ENHANCING CONDITIONER</div>
+                                <div class="mini-cart__price-wrapper">
+                                  <div class="mini-cart__price-actual"><span class="visually-hidden">Текущая цена:</span>6 750 ₽
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </article>
+                        </li>
+                        <li class="select-search__item" id="select-search-kq098gdny-2" data-select-search-item>
+                          <article class="mini-cart">
+                            <div class="mini-cart__product"> <a class="mini-cart__img-wrapper" href="./product.html" tabindex="-1">
+                                <picture>
+                                  <source media="(min-width:1280px)" srcset="./img/components/product-card/img-6.webp, ./img/components/product-card/img-6@2x.webp 2x" type="image/webp">
+                                  <source media="(max-width:767px)" srcset="./img/components/product-card/img-6-mobile.webp, ./img/components/product-card/img-6-mobile@2x.webp 2x" type="image/webp"><img src="./img/components/product-card/img-6.jpg" srcset="./img/components/product-card/img-6@2x.jpg 2x" alt="Товар" width="320" height="310" loading="lazy" decoding="async">
+                                </picture></a>
+                              <div class="mini-cart__content-wrapper">
+                                <h3 class="mini-cart__title"><a class="mini-cart__link" href="./product.html">ALFAPARF</a></h3>
+                                <div class="mini-cart__description">Концентрат для сушки феном, 50мл Blow Dry Concentrate Moroccanoil</div>
+                                <div class="mini-cart__price-wrapper">
+                                  <div class="mini-cart__price-actual"><span class="visually-hidden">Текущая цена:</span>6 750 ₽
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </article>
+                        </li>
+                        <li class="select-search__item" id="select-search-kq098gdny-3" data-select-search-item>
+                          <article class="mini-cart">
+                            <div class="mini-cart__product"> <a class="mini-cart__img-wrapper" href="./product.html" tabindex="-1">
+                                <picture>
+                                  <source media="(min-width:1280px)" srcset="./img/components/product-card/img-7.webp, ./img/components/product-card/img-7@2x.webp 2x" type="image/webp">
+                                  <source media="(max-width:767px)" srcset="./img/components/product-card/img-7-mobile.webp, ./img/components/product-card/img-7-mobile@2x.webp 2x" type="image/webp"><img src="./img/components/product-card/img-7.jpg" srcset="./img/components/product-card/img-7@2x.jpg 2x" alt="Товар" width="320" height="310" loading="lazy" decoding="async">
+                                </picture></a>
+                              <div class="mini-cart__content-wrapper">
+                                <h3 class="mini-cart__title"><a class="mini-cart__link" href="./product.html">CUTRIN</a></h3>
+                                <div class="mini-cart__description">Маска тонирующая "Абрикос", 200мл AURORA COLOR CARE</div>
+                                <div class="mini-cart__price-wrapper">
+                                  <div class="mini-cart__price-actual"><span class="visually-hidden">Текущая цена:</span>6 750 ₽
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </article>
+                        </li>
+                        <li class="select-search__item" id="select-search-kq098gdny-4" data-select-search-item>
+                          <article class="mini-cart">
+                            <div class="mini-cart__product"> <a class="mini-cart__img-wrapper" href="./product.html" tabindex="-1">
+                                <picture>
+                                  <source media="(min-width:1280px)" srcset="./img/components/product-card/img-9.webp, ./img/components/product-card/img-9@2x.webp 2x" type="image/webp">
+                                  <source media="(max-width:767px)" srcset="./img/components/product-card/img-9-mobile.webp, ./img/components/product-card/img-9-mobile@2x.webp 2x" type="image/webp"><img src="./img/components/product-card/img-9.jpg" srcset="./img/components/product-card/img-9@2x.jpg 2x" alt="Товар" width="320" height="310" loading="lazy" decoding="async">
+                                </picture></a>
+                              <div class="mini-cart__content-wrapper">
+                                <h3 class="mini-cart__title"><a class="mini-cart__link" href="./product.html">CUTRIN</a></h3>
+                                <div class="mini-cart__description">Кондиционер деликатный д/нормальных и сухих волос без отдушки, 200мл VIENO</div>
+                                <div class="mini-cart__price-wrapper">
+                                  <div class="mini-cart__price-actual"><span class="visually-hidden">Текущая цена:</span>6 750 ₽
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </article>
+                        </li>
+                        <li class="select-search__item" id="select-search-kq098gdny-5" data-select-search-item>
+                          <article class="mini-cart">
+                            <div class="mini-cart__product"> <a class="mini-cart__img-wrapper" href="./product.html" tabindex="-1">
+                                <picture>
+                                  <source media="(min-width:1280px)" srcset="./img/components/product-card/img-5.webp, ./img/components/product-card/img-5@2x.webp 2x" type="image/webp">
+                                  <source media="(max-width:767px)" srcset="./img/components/product-card/img-5-mobile.webp, ./img/components/product-card/img-5-mobile@2x.webp 2x" type="image/webp"><img src="./img/components/product-card/img-5.jpg" srcset="./img/components/product-card/img-5@2x.jpg 2x" alt="Товар" width="320" height="310" loading="lazy" decoding="async">
+                                </picture></a>
+                              <div class="mini-cart__content-wrapper">
+                                <h3 class="mini-cart__title"><a class="mini-cart__link" href="./product.html">ALFAPARF</a></h3>
+                                <div class="mini-cart__description">Кондиционер для кудрявых и вьющихся волос, 1000мл SDL CURLS ENHANCING CONDITIONER</div>
+                                <div class="mini-cart__price-wrapper">
+                                  <div class="mini-cart__price-actual"><span class="visually-hidden">Текущая цена:</span>6 750 ₽
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </article>
+                        </li>
+                        <li class="select-search__item" id="select-search-kq098gdny-6" data-select-search-item>
+                          <article class="mini-cart">
+                            <div class="mini-cart__product"> <a class="mini-cart__img-wrapper" href="./product.html" tabindex="-1">
+                                <picture>
+                                  <source media="(min-width:1280px)" srcset="./img/components/product-card/img-6.webp, ./img/components/product-card/img-6@2x.webp 2x" type="image/webp">
+                                  <source media="(max-width:767px)" srcset="./img/components/product-card/img-6-mobile.webp, ./img/components/product-card/img-6-mobile@2x.webp 2x" type="image/webp"><img src="./img/components/product-card/img-6.jpg" srcset="./img/components/product-card/img-6@2x.jpg 2x" alt="Товар" width="320" height="310" loading="lazy" decoding="async">
+                                </picture></a>
+                              <div class="mini-cart__content-wrapper">
+                                <h3 class="mini-cart__title"><a class="mini-cart__link" href="./product.html">ALFAPARF</a></h3>
+                                <div class="mini-cart__description">Концентрат для сушки феном, 50мл Blow Dry Concentrate Moroccanoil</div>
+                                <div class="mini-cart__price-wrapper">
+                                  <div class="mini-cart__price-actual"><span class="visually-hidden">Текущая цена:</span>6 750 ₽
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </article>
+                        </li>
+                        <li class="select-search__item" id="select-search-kq098gdny-7" data-select-search-item>
+                          <article class="mini-cart">
+                            <div class="mini-cart__product"> <a class="mini-cart__img-wrapper" href="./product.html" tabindex="-1">
+                                <picture>
+                                  <source media="(min-width:1280px)" srcset="./img/components/product-card/img-7.webp, ./img/components/product-card/img-7@2x.webp 2x" type="image/webp">
+                                  <source media="(max-width:767px)" srcset="./img/components/product-card/img-7-mobile.webp, ./img/components/product-card/img-7-mobile@2x.webp 2x" type="image/webp"><img src="./img/components/product-card/img-7.jpg" srcset="./img/components/product-card/img-7@2x.jpg 2x" alt="Товар" width="320" height="310" loading="lazy" decoding="async">
+                                </picture></a>
+                              <div class="mini-cart__content-wrapper">
+                                <h3 class="mini-cart__title"><a class="mini-cart__link" href="./product.html">CUTRIN</a></h3>
+                                <div class="mini-cart__description">Маска тонирующая "Абрикос", 200мл AURORA COLOR CARE</div>
+                                <div class="mini-cart__price-wrapper">
+                                  <div class="mini-cart__price-actual"><span class="visually-hidden">Текущая цена:</span>6 750 ₽
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </article>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </search>
+          </div>
+        </div>
+      </div>
+      <div class="slider-panel slider-panel--basket slider-panel--slide" data-slider-panel="basket" id="basket-controls" aria-labelledby="slider-panel-3q2gaxq4v" role="dialog" aria-modal="true">
+        <div class="slider-panel__slide" data-slider-slide>
+          <div class="slider-panel__header">
+            <div class="slider-panel__title" id="slider-panel-3q2gaxq4v">Корзина</div>
+            <button class="button button--base" type="button" aria-label="Очистить корзину">Очистить
+            </button>
+            <button class="button button--transparent slider-panel__close" type="button" aria-label="Закрыть модальное окно" data-slider-panel-close="basket"><i class="icon icon-close"></i>
+            </button>
+          </div>
+          <div class="slider-panel__body custom-scroll">
+            <div class="basket">
+              <div class="basket__head">
+                <div class="basket__legend">
+                  <div class="basket__label">Фото</div>
+                  <div class="basket__label">Товар</div>
+                  <div class="basket__label basket__label--amount">Количество</div>
+                  <div class="basket__label basket__label--cost">Стоимость</div>
+                </div>
+              </div>
+              <ul class="basket__list">
+                <li class="basket__item">
+                  <div class="basket-product"> <a class="basket-product__img-wrapper" href="./product.html" tabindex="-1">
+                      <picture>
+                        <source media="(min-width:1280px)" srcset="./img/components/product-card/img-9.webp, ./img/components/product-card/img-9@2x.webp 2x" type="image/webp">
+                        <source media="(max-width:767px)" srcset="./img/components/product-card/img-9-mobile.webp, ./img/components/product-card/img-9-mobile@2x.webp 2x" type="image/webp"><img src="./img/components/product-card/img-9.jpg" srcset="./img/components/product-card/img-9@2x.jpg 2x" alt="Товар" width="320" height="310" loading="lazy" decoding="async">
+                      </picture></a>
+                    <div class="basket-product__info"><a class="basket-product__name" href="./product.html">BLITHETARGETED TIGHTENING SERUM RETINOL 0.1</a>
+                      <div class="basket-product__description">Кондиционер деликатный д/нормальных и сухих волос без отдушки, 200мл VIENO</div>
+                      <div class="basket-product__small-price">6 750 ₽<span>за шт.</span></div>
+                    </div>
+                    <div class="basket__price basket-product__price">
+                      <div class="basket__price-actual"><span class="visually-hidden">Текущая цена:</span>6 750 ₽
+                      </div>
+                      <div class="basket__price-old"><span class="visually-hidden">Старая цена:</span>
+                        <s>10 750 ₽</s>
+                      </div>
+                    </div>
+                    <div class="basket-product__counter">
+                      <div class="input-counter" data-counter>
+                        <div class="input-counter__wrapper">
+                          <button class="button button--base input-counter__btn" type="button" aria-label="Уменьшить количество" data-btn-minus><i class="icon icon-minus"></i>
+                          </button>
+                          <input class="input input-counter__input" type="number" value="1" min="1" max="100" aria-label="Количество">
+                          <button class="button button--base input-counter__btn" type="button" aria-label="Увеличить количество" data-btn-plus><i class="icon icon-plus"></i>
+                          </button>
+                        </div>
+                        <div class="counter-announcer visually-hidden" aria-live="polite" aria-atomic="true" data-counter-announcer></div>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="button button--icon basket__remove" type="button" aria-label="Удалить BLITHETARGETED TIGHTENING SERUM RETINOL 0.1" data-toast-notification-show="toast-cart-remove-template"><i class="icon icon-close"></i>
+                  </button>
+                </li>
+                <li class="basket__item">
+                  <div class="basket-product"> <a class="basket-product__img-wrapper" href="./product.html" tabindex="-1">
+                      <picture>
+                        <source media="(min-width:1280px)" srcset="./img/components/product-card/img-5.webp, ./img/components/product-card/img-5@2x.webp 2x" type="image/webp">
+                        <source media="(max-width:767px)" srcset="./img/components/product-card/img-5-mobile.webp, ./img/components/product-card/img-5-mobile@2x.webp 2x" type="image/webp"><img src="./img/components/product-card/img-5.jpg" srcset="./img/components/product-card/img-5@2x.jpg 2x" alt="Товар" width="320" height="310" loading="lazy" decoding="async">
+                      </picture></a>
+                    <div class="basket-product__info"><a class="basket-product__name" href="./product.html">ALFAPARF</a>
+                      <div class="basket-product__description">Кондиционер для кудрявых и вьющихся волос, 1000мл SDL CURLS ENHANCING CONDITIONER</div>
+                      <div class="basket-product__small-price">6 750 ₽<span>за шт.</span></div>
+                    </div>
+                    <div class="basket__price basket-product__price">
+                      <div class="basket__price-actual"><span class="visually-hidden">Текущая цена:</span>6 750 ₽
+                      </div>
+                    </div>
+                    <div class="basket-product__counter">
+                      <div class="input-counter" data-counter>
+                        <div class="input-counter__wrapper">
+                          <button class="button button--base input-counter__btn" type="button" aria-label="Уменьшить количество" data-btn-minus><i class="icon icon-minus"></i>
+                          </button>
+                          <input class="input input-counter__input" type="number" value="1" min="1" max="100" aria-label="Количество">
+                          <button class="button button--base input-counter__btn" type="button" aria-label="Увеличить количество" data-btn-plus><i class="icon icon-plus"></i>
+                          </button>
+                        </div>
+                        <div class="counter-announcer visually-hidden" aria-live="polite" aria-atomic="true" data-counter-announcer></div>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="button button--icon basket__remove" type="button" aria-label="Удалить ALFAPARF" data-toast-notification-show="toast-cart-remove-template"><i class="icon icon-close"></i>
+                  </button>
+                </li>
+                <li class="basket__item">
+                  <div class="basket-product"> <a class="basket-product__img-wrapper" href="./product.html" tabindex="-1">
+                      <picture>
+                        <source media="(min-width:1280px)" srcset="./img/components/product-card/img-6.webp, ./img/components/product-card/img-6@2x.webp 2x" type="image/webp">
+                        <source media="(max-width:767px)" srcset="./img/components/product-card/img-6-mobile.webp, ./img/components/product-card/img-6-mobile@2x.webp 2x" type="image/webp"><img src="./img/components/product-card/img-6.jpg" srcset="./img/components/product-card/img-6@2x.jpg 2x" alt="Товар" width="320" height="310" loading="lazy" decoding="async">
+                      </picture></a>
+                    <div class="basket-product__info"><a class="basket-product__name" href="./product.html">ALFAPARF</a>
+                      <div class="basket-product__description">Концентрат для сушки феном, 50мл Blow Dry Concentrate Moroccanoil</div>
+                      <div class="basket-product__small-price">6 750 ₽<span>за шт.</span></div>
+                    </div>
+                    <div class="basket__price basket-product__price">
+                      <div class="basket__price-actual"><span class="visually-hidden">Текущая цена:</span>6 750 ₽
+                      </div>
+                    </div>
+                    <div class="basket-product__counter">
+                      <div class="input-counter" data-counter>
+                        <div class="input-counter__wrapper">
+                          <button class="button button--base input-counter__btn" type="button" aria-label="Уменьшить количество" data-btn-minus><i class="icon icon-minus"></i>
+                          </button>
+                          <input class="input input-counter__input" type="number" value="1" min="1" max="100" aria-label="Количество">
+                          <button class="button button--base input-counter__btn" type="button" aria-label="Увеличить количество" data-btn-plus><i class="icon icon-plus"></i>
+                          </button>
+                        </div>
+                        <div class="counter-announcer visually-hidden" aria-live="polite" aria-atomic="true" data-counter-announcer></div>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="button button--icon basket__remove" type="button" aria-label="Удалить ALFAPARF" data-toast-notification-show="toast-cart-remove-template"><i class="icon icon-close"></i>
+                  </button>
+                </li>
+                <li class="basket__item">
+                  <div class="basket-product"> <a class="basket-product__img-wrapper" href="./product.html" tabindex="-1">
+                      <picture>
+                        <source media="(min-width:1280px)" srcset="./img/components/product-card/img-7.webp, ./img/components/product-card/img-7@2x.webp 2x" type="image/webp">
+                        <source media="(max-width:767px)" srcset="./img/components/product-card/img-7-mobile.webp, ./img/components/product-card/img-7-mobile@2x.webp 2x" type="image/webp"><img src="./img/components/product-card/img-7.jpg" srcset="./img/components/product-card/img-7@2x.jpg 2x" alt="Товар" width="320" height="310" loading="lazy" decoding="async">
+                      </picture></a>
+                    <div class="basket-product__info"><a class="basket-product__name" href="./product.html">CUTRIN</a>
+                      <div class="basket-product__description">Маска тонирующая "Абрикос", 200мл AURORA COLOR CARE</div>
+                      <div class="basket-product__small-price">6 750 ₽<span>за шт.</span></div>
+                    </div>
+                    <div class="basket__price basket-product__price">
+                      <div class="basket__price-actual"><span class="visually-hidden">Текущая цена:</span>6 750 ₽
+                      </div>
+                    </div>
+                    <div class="basket-product__counter">
+                      <div class="input-counter" data-counter>
+                        <div class="input-counter__wrapper">
+                          <button class="button button--base input-counter__btn" type="button" aria-label="Уменьшить количество" data-btn-minus><i class="icon icon-minus"></i>
+                          </button>
+                          <input class="input input-counter__input" type="number" value="1" min="1" max="100" aria-label="Количество">
+                          <button class="button button--base input-counter__btn" type="button" aria-label="Увеличить количество" data-btn-plus><i class="icon icon-plus"></i>
+                          </button>
+                        </div>
+                        <div class="counter-announcer visually-hidden" aria-live="polite" aria-atomic="true" data-counter-announcer></div>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="button button--icon basket__remove" type="button" aria-label="Удалить CUTRIN" data-toast-notification-show="toast-cart-remove-template"><i class="icon icon-close"></i>
+                  </button>
+                </li>
+                <li class="basket__item">
+                  <div class="basket-product"> <a class="basket-product__img-wrapper" href="./product.html" tabindex="-1">
+                      <picture>
+                        <source media="(min-width:1280px)" srcset="./img/components/product-card/img-9.webp, ./img/components/product-card/img-9@2x.webp 2x" type="image/webp">
+                        <source media="(max-width:767px)" srcset="./img/components/product-card/img-9-mobile.webp, ./img/components/product-card/img-9-mobile@2x.webp 2x" type="image/webp"><img src="./img/components/product-card/img-9.jpg" srcset="./img/components/product-card/img-9@2x.jpg 2x" alt="Товар" width="320" height="310" loading="lazy" decoding="async">
+                      </picture></a>
+                    <div class="basket-product__info"><a class="basket-product__name" href="./product.html">CUTRIN</a>
+                      <div class="basket-product__description">Кондиционер деликатный д/нормальных и сухих волос без отдушки, 200мл VIENO</div>
+                      <div class="basket-product__small-price">6 750 ₽<span>за шт.</span></div>
+                    </div>
+                    <div class="basket__price basket-product__price">
+                      <div class="basket__price-actual"><span class="visually-hidden">Текущая цена:</span>6 750 ₽
+                      </div>
+                    </div>
+                    <div class="basket-product__counter">
+                      <div class="input-counter" data-counter>
+                        <div class="input-counter__wrapper">
+                          <button class="button button--base input-counter__btn" type="button" aria-label="Уменьшить количество" data-btn-minus><i class="icon icon-minus"></i>
+                          </button>
+                          <input class="input input-counter__input" type="number" value="1" min="1" max="100" aria-label="Количество">
+                          <button class="button button--base input-counter__btn" type="button" aria-label="Увеличить количество" data-btn-plus><i class="icon icon-plus"></i>
+                          </button>
+                        </div>
+                        <div class="counter-announcer visually-hidden" aria-live="polite" aria-atomic="true" data-counter-announcer></div>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="button button--icon basket__remove" type="button" aria-label="Удалить CUTRIN" data-toast-notification-show="toast-cart-remove-template"><i class="icon icon-close"></i>
+                  </button>
+                </li>
+                <li class="basket__item">
+                  <div class="basket-product"> <a class="basket-product__img-wrapper" href="./product.html" tabindex="-1">
+                      <picture>
+                        <source media="(min-width:1280px)" srcset="./img/components/product-card/img-5.webp, ./img/components/product-card/img-5@2x.webp 2x" type="image/webp">
+                        <source media="(max-width:767px)" srcset="./img/components/product-card/img-5-mobile.webp, ./img/components/product-card/img-5-mobile@2x.webp 2x" type="image/webp"><img src="./img/components/product-card/img-5.jpg" srcset="./img/components/product-card/img-5@2x.jpg 2x" alt="Товар" width="320" height="310" loading="lazy" decoding="async">
+                      </picture></a>
+                    <div class="basket-product__info"><a class="basket-product__name" href="./product.html">ALFAPARF</a>
+                      <div class="basket-product__description">Кондиционер для кудрявых и вьющихся волос, 1000мл SDL CURLS ENHANCING CONDITIONER</div>
+                      <div class="basket-product__small-price">6 750 ₽<span>за шт.</span></div>
+                    </div>
+                    <div class="basket__price basket-product__price">
+                      <div class="basket__price-actual"><span class="visually-hidden">Текущая цена:</span>6 750 ₽
+                      </div>
+                    </div>
+                    <div class="basket-product__counter">
+                      <div class="input-counter" data-counter>
+                        <div class="input-counter__wrapper">
+                          <button class="button button--base input-counter__btn" type="button" aria-label="Уменьшить количество" data-btn-minus><i class="icon icon-minus"></i>
+                          </button>
+                          <input class="input input-counter__input" type="number" value="1" min="1" max="100" aria-label="Количество">
+                          <button class="button button--base input-counter__btn" type="button" aria-label="Увеличить количество" data-btn-plus><i class="icon icon-plus"></i>
+                          </button>
+                        </div>
+                        <div class="counter-announcer visually-hidden" aria-live="polite" aria-atomic="true" data-counter-announcer></div>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="button button--icon basket__remove" type="button" aria-label="Удалить ALFAPARF" data-toast-notification-show="toast-cart-remove-template"><i class="icon icon-close"></i>
+                  </button>
+                </li>
+                <li class="basket__item">
+                  <div class="basket-product"> <a class="basket-product__img-wrapper" href="./product.html" tabindex="-1">
+                      <picture>
+                        <source media="(min-width:1280px)" srcset="./img/components/product-card/img-6.webp, ./img/components/product-card/img-6@2x.webp 2x" type="image/webp">
+                        <source media="(max-width:767px)" srcset="./img/components/product-card/img-6-mobile.webp, ./img/components/product-card/img-6-mobile@2x.webp 2x" type="image/webp"><img src="./img/components/product-card/img-6.jpg" srcset="./img/components/product-card/img-6@2x.jpg 2x" alt="Товар" width="320" height="310" loading="lazy" decoding="async">
+                      </picture></a>
+                    <div class="basket-product__info"><a class="basket-product__name" href="./product.html">ALFAPARF</a>
+                      <div class="basket-product__description">Концентрат для сушки феном, 50мл Blow Dry Concentrate Moroccanoil</div>
+                      <div class="basket-product__small-price">6 750 ₽<span>за шт.</span></div>
+                    </div>
+                    <div class="basket__price basket-product__price">
+                      <div class="basket__price-actual"><span class="visually-hidden">Текущая цена:</span>6 750 ₽
+                      </div>
+                    </div>
+                    <div class="basket-product__counter">
+                      <div class="input-counter" data-counter>
+                        <div class="input-counter__wrapper">
+                          <button class="button button--base input-counter__btn" type="button" aria-label="Уменьшить количество" data-btn-minus><i class="icon icon-minus"></i>
+                          </button>
+                          <input class="input input-counter__input" type="number" value="1" min="1" max="100" aria-label="Количество">
+                          <button class="button button--base input-counter__btn" type="button" aria-label="Увеличить количество" data-btn-plus><i class="icon icon-plus"></i>
+                          </button>
+                        </div>
+                        <div class="counter-announcer visually-hidden" aria-live="polite" aria-atomic="true" data-counter-announcer></div>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="button button--icon basket__remove" type="button" aria-label="Удалить ALFAPARF" data-toast-notification-show="toast-cart-remove-template"><i class="icon icon-close"></i>
+                  </button>
+                </li>
+                <li class="basket__item">
+                  <div class="basket-product"> <a class="basket-product__img-wrapper" href="./product.html" tabindex="-1">
+                      <picture>
+                        <source media="(min-width:1280px)" srcset="./img/components/product-card/img-7.webp, ./img/components/product-card/img-7@2x.webp 2x" type="image/webp">
+                        <source media="(max-width:767px)" srcset="./img/components/product-card/img-7-mobile.webp, ./img/components/product-card/img-7-mobile@2x.webp 2x" type="image/webp"><img src="./img/components/product-card/img-7.jpg" srcset="./img/components/product-card/img-7@2x.jpg 2x" alt="Товар" width="320" height="310" loading="lazy" decoding="async">
+                      </picture></a>
+                    <div class="basket-product__info"><a class="basket-product__name" href="./product.html">CUTRIN</a>
+                      <div class="basket-product__description">Маска тонирующая "Абрикос", 200мл AURORA COLOR CARE</div>
+                      <div class="basket-product__small-price">6 750 ₽<span>за шт.</span></div>
+                    </div>
+                    <div class="basket__price basket-product__price">
+                      <div class="basket__price-actual"><span class="visually-hidden">Текущая цена:</span>6 750 ₽
+                      </div>
+                    </div>
+                    <div class="basket-product__counter">
+                      <div class="input-counter" data-counter>
+                        <div class="input-counter__wrapper">
+                          <button class="button button--base input-counter__btn" type="button" aria-label="Уменьшить количество" data-btn-minus><i class="icon icon-minus"></i>
+                          </button>
+                          <input class="input input-counter__input" type="number" value="1" min="1" max="100" aria-label="Количество">
+                          <button class="button button--base input-counter__btn" type="button" aria-label="Увеличить количество" data-btn-plus><i class="icon icon-plus"></i>
+                          </button>
+                        </div>
+                        <div class="counter-announcer visually-hidden" aria-live="polite" aria-atomic="true" data-counter-announcer></div>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="button button--icon basket__remove" type="button" aria-label="Удалить CUTRIN" data-toast-notification-show="toast-cart-remove-template"><i class="icon icon-close"></i>
+                  </button>
+                </li>
+              </ul>
+              <div class="basket__footer">
+                <div class="basket__summary">
+                  <div class="basket__summary-label">Итого</div>
+                  <div class="basket__price">
+                    <div class="basket__price-actual"><span class="visually-hidden">Текущая цена:</span>750 ₽</div>
+                    <div class="basket__price-old"><span class="visually-hidden">Старая цена:</span>
+                      <s>1200 ₽</s>
+                    </div>
+                  </div>
+                </div>
+                <a class="button button--base" href="./order.html">Оформить заказ
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <template data-toast-notification="toast-cart-add-template">
+        <div class="toast-product">
+          <div class="toast-product__wrapper" data-popup-content>
+            <div class="toast-product__head">
+              <div class="toast-product__title">Товар добавлен в корзину</div>
+              <div class="toast-product__close">
+                <button class="button button--transparent" type="button" aria-label="Закрыть уведомление" data-toast-notification-close><i class="icon icon-close"></i>
+                </button>
+              </div>
+            </div>
+            <div class="toast-product__body">
+              <div class="toast-product__img-wrapper">
+                <picture>
+                  <source media="(min-width:1280px)" srcset="./img/components/product-card/img-9.webp, ./img/components/product-card/img-9@2x.webp 2x" type="image/webp">
+                  <source media="(max-width:767px)" srcset="./img/components/product-card/img-9-mobile.webp, ./img/components/product-card/img-9-mobile@2x.webp 2x" type="image/webp"><img src="./img/components/product-card/img-9.jpg" srcset="./img/components/product-card/img-9@2x.jpg 2x" alt="Товар" width="320" height="310" loading="lazy" decoding="async">
+                </picture>
+              </div>
+              <div class="toast-product__content"> 
+                <div class="toast-product__name">Шампунь Антистресс с экстрактом...</div>
+                <div class="toast-product__price">
+                  <div class="toast-product__price-actual"><span class="visually-hidden">Текущая цена:</span>6 750 ₽
+                  </div>
+                  <div class="toast-product__price-old"><span class="visually-hidden">Старая цена:</span>
+                    <s>2 125,00 ₽</s>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </template>
+      <template data-toast-notification="toast-cart-remove-template">
+        <div class="toast-product">
+          <div class="toast-product__wrapper" data-popup-content>
+            <div class="toast-product__head">
+              <div class="toast-product__title">Товар удален из корзины</div>
+              <div class="toast-product__close">
+                <button class="button button--transparent" type="button" aria-label="Закрыть уведомление" data-toast-notification-close><i class="icon icon-close"></i>
+                </button>
+              </div>
+            </div>
+            <div class="toast-product__body">
+              <div class="toast-product__img-wrapper">
+                <picture>
+                  <source media="(min-width:1280px)" srcset="./img/components/product-card/img-9.webp, ./img/components/product-card/img-9@2x.webp 2x" type="image/webp">
+                  <source media="(max-width:767px)" srcset="./img/components/product-card/img-9-mobile.webp, ./img/components/product-card/img-9-mobile@2x.webp 2x" type="image/webp"><img src="./img/components/product-card/img-9.jpg" srcset="./img/components/product-card/img-9@2x.jpg 2x" alt="Товар" width="320" height="310" loading="lazy" decoding="async">
+                </picture>
+              </div>
+              <div class="toast-product__content"> 
+                <div class="toast-product__name">Шампунь Антистресс с экстрактом...</div>
+                <div class="toast-product__price">
+                  <div class="toast-product__price-actual"><span class="visually-hidden">Текущая цена:</span>6 750 ₽
+                  </div>
+                  <div class="toast-product__price-old"><span class="visually-hidden">Старая цена:</span>
+                    <s>2 125,00 ₽</s>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="toast-product__footer"> 
+              <button class="button button--base" type="button">вернуть в корзину
+              </button>
+            </div>
+          </div>
+        </div>
+      </template>
+      <template data-toast-notification="toast-favorite-add-template">
+        <div class="toast-product">
+          <div class="toast-product__wrapper" data-popup-content>
+            <div class="toast-product__head">
+              <div class="toast-product__title">Товар добавлен в избранное</div>
+              <div class="toast-product__close">
+                <button class="button button--transparent" type="button" aria-label="Закрыть уведомление" data-toast-notification-close><i class="icon icon-close"></i>
+                </button>
+              </div>
+            </div>
+            <div class="toast-product__body">
+              <div class="toast-product__img-wrapper">
+                <picture>
+                  <source media="(min-width:1280px)" srcset="./img/components/product-card/img-9.webp, ./img/components/product-card/img-9@2x.webp 2x" type="image/webp">
+                  <source media="(max-width:767px)" srcset="./img/components/product-card/img-9-mobile.webp, ./img/components/product-card/img-9-mobile@2x.webp 2x" type="image/webp"><img src="./img/components/product-card/img-9.jpg" srcset="./img/components/product-card/img-9@2x.jpg 2x" alt="Товар" width="320" height="310" loading="lazy" decoding="async">
+                </picture>
+              </div>
+              <div class="toast-product__content"> 
+                <div class="toast-product__name">Шампунь Антистресс с экстрактом...</div>
+                <div class="toast-product__price">
+                  <div class="toast-product__price-actual"><span class="visually-hidden">Текущая цена:</span>6 750 ₽
+                  </div>
+                  <div class="toast-product__price-old"><span class="visually-hidden">Старая цена:</span>
+                    <s>2 125,00 ₽</s>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </template>
+      <template data-toast-notification="toast-favorite-remove-template">
+        <div class="toast-product">
+          <div class="toast-product__wrapper" data-popup-content>
+            <div class="toast-product__head">
+              <div class="toast-product__title">Товар удален из избранного</div>
+              <div class="toast-product__close">
+                <button class="button button--transparent" type="button" aria-label="Закрыть уведомление" data-toast-notification-close><i class="icon icon-close"></i>
+                </button>
+              </div>
+            </div>
+            <div class="toast-product__body">
+              <div class="toast-product__img-wrapper">
+                <picture>
+                  <source media="(min-width:1280px)" srcset="./img/components/product-card/img-9.webp, ./img/components/product-card/img-9@2x.webp 2x" type="image/webp">
+                  <source media="(max-width:767px)" srcset="./img/components/product-card/img-9-mobile.webp, ./img/components/product-card/img-9-mobile@2x.webp 2x" type="image/webp"><img src="./img/components/product-card/img-9.jpg" srcset="./img/components/product-card/img-9@2x.jpg 2x" alt="Товар" width="320" height="310" loading="lazy" decoding="async">
+                </picture>
+              </div>
+              <div class="toast-product__content"> 
+                <div class="toast-product__name">Шампунь Антистресс с экстрактом...</div>
+                <div class="toast-product__price">
+                  <div class="toast-product__price-actual"><span class="visually-hidden">Текущая цена:</span>6 750 ₽
+                  </div>
+                  <div class="toast-product__price-old"><span class="visually-hidden">Старая цена:</span>
+                    <s>2 125,00 ₽</s>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </template>
+      <div class="popup" id="my-popover-5" popover="manual" role="status" data-popup tabindex="-1">
+        <div class="popup__wrapper" data-popup-content>
+          <div class="popup__text">Корзина очищена</div>
+          <div class="popup__close">
+            <button class="button button--transparent" type="button" aria-label="Закрыть уведомление" popovertarget="my-popover-5" popovertargetaction="hide"><i class="icon icon-close"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <dialog class="dialog--fade dialog modal modal--course" data-modal="course-education" aria-labelledby="course-education-1">
+        <div class="small-form" data-form data-validate-on-input data-validate-on-blur data-validate-on-change>
+          <form class="small-form__form">
+            <div class="small-form__header">
+              <div class="small-form__title" id="course-education-1">Записаться на курс</div>
+              <button class="button button--icon button--transparent modal__close" type="button" aria-label="Закрыть модальное окно" data-modal-close="course-education"><i class="icon icon-close"></i>
+              </button>
+            </div>
+            <div class="small-form__body">
+              <div class="small-form__text">Наш менеджер свяжется с вами</div>
+              <div class="small-form__field">
+                <div class="field">
+                  <div class="field__wrapper">
+                    <div class="select field__input" data-select data-id="trove3yp4" data-name="name-trove3yp4" data-required>
+                      <div class="select__control">
+                        <button class="button select__button" type="button" id="sexField1" role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-controls="list-trove3yp4" aria-describedby="courseField10" data-select-button><span class="select__placeholder">* Выберите курс</span><span class="select__text" data-select-text></span></button>
+                        <button class="button button--transparent select__clear" type="button" aria-label="Сбросить выбранные опции" data-select-clear><i class="icon icon-close"></i>
+                        </button>
+                      </div>
+                      <div class="select__options">
+                        <div class="select__body">
+                          <ul class="select__list custom-scroll" data-select-list id="list-trove3yp4" role="listbox" aria-labelledby="sexField1">
+                            <li class="select__item" data-select-item aria-selected="false" data-select-value="1" role="option" id="opt-trove3yp4-1" tabindex="0">
+                              <div class="select__item-checkbox"></div>
+                              <div class="select__item-text" data-select-item-text>Теория + практика</div>
+                            </li>
+                            <li class="select__item" data-select-item aria-selected="false" data-select-value="2" role="option" id="opt-trove3yp4-2" tabindex="0">
+                              <div class="select__item-checkbox"></div>
+                              <div class="select__item-text" data-select-item-text>Теория</div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="field__message-info" id="courseField10"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="small-form__field">
+                <div class="field">
+                  <div class="field__wrapper">
+                    <div class="input-datapicker field__input" data-datepicker data-datepicker-min="0" data-datepicker-max="365">
+                      <input class="input input--base input-datapicker__input" id="qhmg9urske9" name="3icodvpeyto" type="text" required placeholder="* Выберите дату" aria-describedby="dataField10">
+                      <div class="input-datapicker__icon">
+                        <svg width="26" height="26" aria-hidden="true" focusable="false">
+                          <use href="./img/sprite.svg#icon-calendar"></use>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="field__message-info" id="dataField10"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="small-form__field">
+                <div class="field">
+                  <div class="field__wrapper">
+                    <input class="input input--base field__input" data-maska="phone" id="1iljcdwrv9s" name="2kjj2ls7kcn" type="tel" required placeholder="* Телефон" autocomplete="tel" aria-describedby="phoneField10">
+                    <div class="field__message-info" id="phoneField10"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="small-form__footer">
+              <button class="button button--base" type="submit" aria-label="Отправить данные на сервер" data-form-submit>Записаться
+              </button>
+              <div class="small-form__subtext">Нажимая на кнопку «Записаться», я даю свое <a href="#" class="small-form__link">Согласие на обработку персональных данных</a></div>
+            </div>
+          </form>
+        </div>
+      </dialog>
+      <dialog class="dialog--fade dialog modal modal--login" data-modal="login-modal" aria-labelledby="login-modal-1">
+        <div class="small-form" data-form data-validate-on-input data-validate-on-blur data-validate-on-change>
+          <form class="small-form__form">
+            <div class="small-form__header">
+              <div class="small-form__title" id="login-modal-1">Вход</div>
+              <button class="button button--icon button--transparent modal__close" type="button" aria-label="Закрыть модальное окно" data-modal-close="login-modal"><i class="icon icon-close"></i>
+              </button>
+            </div>
+            <div class="small-form__body">
+              <div class="small-form__field">
+                <div class="field">
+                  <div class="field__wrapper">
+                    <input class="input input--base field__input" id="m2t7i2b0cdl" name="mgg5y2apm5b" type="email" required placeholder="* Email" aria-describedby="email-hint1">
+                    <div class="field__message-info" id="email-hint1"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="small-form__field">
+                <div class="field" data-validation-type="match" data-match-name="password">
+                  <div class="field__wrapper">
+                    <div class="input-password field__input" data-input-password>
+                      <input class="input input--base input-password__input" id="2o3qw3wmlo6" name="a1s8qao6iq5" type="password" required placeholder="* Пароль" autocomplete="new-password" spellcheck="false" aria-describedby="new-pass-10">
+                      <button class="button input-password__visibility" type="button" aria-label="Показать пароль">
+                      </button>
+                    </div>
+                    <div class="field__message-info" id="new-pass-10"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="small-form__field">
+                <div class="small-form__row">
+                  <div class="toggle">
+                    <input class="toggle__input visually-hidden" id="tg-oqbgk02gf" type="checkbox" checked>
+                    <label class="toggle__label" for="tg-oqbgk02gf"><span class="toggle__icon"></span><span class="toggle__text">Запомнить меня</span>
+                    </label>
+                  </div><a class="small-form__link" href="./password-recovery-1.html">Забыли пароль?</a>
+                </div>
+              </div>
+            </div>
+            <div class="small-form__footer">
+              <div class="small-form__controls">
+                <button class="button button--base" type="submit" data-form-submit>Войти
+                </button>
+                <a class="button button--outline" href="./registration.html">Регистрация
+                </a>
+              </div>
+              <div class="small-form__subtext">Нажимая на кнопку «Войти», я даю свое <a href="#" class="small-form__link">Согласие на обработку персональных данных</a></div>
+            </div>
+          </form>
+        </div>
+      </dialog>
+      <dialog class="dialog--fade dialog modal modal--login" data-modal="order-create-modal" aria-labelledby="order-create-modal-1">
+        <div class="small-form" data-form data-validate-on-input data-validate-on-blur data-validate-on-change>
+          <form class="small-form__form">
+            <div class="small-form__header">
+              <div class="small-form__title" id="order-create-modal-1">Оформить заказ</div>
+              <button class="button button--icon button--transparent modal__close" type="button" aria-label="Закрыть модальное окно" data-modal-close="order-create-modal"><i class="icon icon-close"></i>
+              </button>
+            </div>
+            <div class="small-form__body">
+              <div class="small-form__text">Выберите подарок из списка по акции «Подарок при покупке продукции Alfaparf на сумму 6 800 рублей»:</div>
+              <div class="small-form__field">
+                <div class="field">
+                  <div class="field__wrapper">
+                    <fieldset class="fieldset field__input" data-fieldset data-name="fs-8vnvlx5gq" data-required>
+                      <legend class="fieldset__title visually-hidden">Выбор варианта</legend>
+                      <div class="fieldset__options">
+                        <div class="toggle">
+                          <input class="toggle__input visually-hidden" id="fs-8vnvlx5gq-1-6emq2o7py6" type="radio" name="fs-8vnvlx5gq" value="1" required checked>
+                          <label class="toggle__label" for="fs-8vnvlx5gq-1-6emq2o7py6"><span class="toggle__icon"></span><span class="toggle__text">Шампунь мицеллярный успокаивающий 250мл</span>
+                          </label>
+                        </div>
+                        <div class="toggle">
+                          <input class="toggle__input visually-hidden" id="fs-8vnvlx5gq-2-6emq2o7py6" type="radio" name="fs-8vnvlx5gq" value="2" required>
+                          <label class="toggle__label" for="fs-8vnvlx5gq-2-6emq2o7py6"><span class="toggle__icon"></span><span class="toggle__text">Шампунь очищающий ABSOLUTE CLEANSING SHAMPOO 1000мл</span>
+                          </label>
+                        </div>
+                        <div class="toggle">
+                          <input class="toggle__input visually-hidden" id="fs-8vnvlx5gq-3-6emq2o7py6" type="radio" name="fs-8vnvlx5gq" value="3" required>
+                          <label class="toggle__label" for="fs-8vnvlx5gq-3-6emq2o7py6"><span class="toggle__icon"></span><span class="toggle__text">Тоник успокаивающий 125мл БОНУС</span>
+                          </label>
+                        </div>
+                        <div class="toggle">
+                          <input class="toggle__input visually-hidden" id="fs-8vnvlx5gq-4-6emq2o7py6" type="radio" name="fs-8vnvlx5gq" value="4" required>
+                          <label class="toggle__label" for="fs-8vnvlx5gq-4-6emq2o7py6"><span class="toggle__icon"></span><span class="toggle__text">Маска разглаживающая для непослушных волос 500мл</span>
+                          </label>
+                        </div>
+                        <div class="toggle">
+                          <input class="toggle__input visually-hidden" id="fs-8vnvlx5gq-5-6emq2o7py6" type="radio" name="fs-8vnvlx5gq" value="5" required>
+                          <label class="toggle__label" for="fs-8vnvlx5gq-5-6emq2o7py6"><span class="toggle__icon"></span><span class="toggle__text">Шампунь для кудрявых и вьющихся волос 1000мл</span>
+                          </label>
+                        </div>
+                        <div class="toggle">
+                          <input class="toggle__input visually-hidden" id="fs-8vnvlx5gq-6-6emq2o7py6" type="radio" name="fs-8vnvlx5gq" value="6" required>
+                          <label class="toggle__label" for="fs-8vnvlx5gq-6-6emq2o7py6"><span class="toggle__icon"></span><span class="toggle__text">Набор LISSE DESIGN</span>
+                          </label>
+                        </div>
+                        <div class="toggle">
+                          <input class="toggle__input visually-hidden" id="fs-8vnvlx5gq-7-6emq2o7py6" type="radio" name="fs-8vnvlx5gq" value="7" required>
+                          <label class="toggle__label" for="fs-8vnvlx5gq-7-6emq2o7py6"><span class="toggle__icon"></span><span class="toggle__text">Лосьон д/всех типов волос, придающий блеск 12х13мл</span>
+                          </label>
+                        </div>
+                      </div>
+                    </fieldset>
+                    <div class="field__message-info" id="gift-hint"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="small-form__footer">
+              <div class="small-form__controls">
+                <button class="button button--base" type="submit" data-form-submit>Выбрать
+                </button>
+                <a class="button button--outline" href="./registration.html">Регистрация
+                </a>
+                <a class="button button--base" href="./order.html">Подробнее
+                </a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </dialog>
+      <dialog class="dialog--fade dialog modal modal--small" data-modal="logout-modal" aria-labelledby="modalAriaId-tjtvs48s0">
+        <div class="modal__head"> 
+          <div class="modal__title" id="modalAriaId-tjtvs48s0">выйти?</div>
+          <div class="modal__close"> 
+            <button class="button button--icon button--transparent" type="button" aria-label="Закрыть модальное окно" data-modal-close="logout-modal"><i class="icon icon-close"></i>
+            </button>
+          </div>
+        </div>
+        <div class="modal__body"> 
+          <div class="modal__text">Вы точно хотите выйти из личного кабинета?</div>
+        </div>
+        <div class="modal__footer">
+          <button class="button button--base" type="button" aria-label="Подтвердить действие">Да
+          </button>
+          <button class="button button--outline" type="button" aria-label="Отменить действие" data-modal-close="logout-modal">Отмена
+          </button>
+        </div>
+      </dialog>
+      <dialog class="dialog--fade dialog modal modal--small" data-modal="order-modal" aria-labelledby="modalAriaId-326k1tpxo">
+        <div class="modal__head"> 
+          <div class="modal__title" id="modalAriaId-326k1tpxo">Оформить заказ?</div>
+          <div class="modal__close"> 
+            <button class="button button--icon button--transparent" type="button" aria-label="Закрыть модальное окно" data-modal-close="order-modal"><i class="icon icon-close"></i>
+            </button>
+          </div>
+        </div>
+        <div class="modal__body"> 
+          <div class="modal__text">Вы точно хотите оформить заказ?</div>
+        </div>
+        <div class="modal__footer">
+          <button class="button button--base" type="button" aria-label="Подтвердить действие">Да
+          </button>
+          <button class="button button--outline" type="button" aria-label="Отменить действие" data-modal-close="order-modal">Отмена
+          </button>
+        </div>
+      </dialog>
+      <dialog class="dialog--fade dialog modal" data-modal="wishlist-modal" aria-labelledby="modalAriaId-o0rxjwej0">
+        <div class="modal__head"> 
+          <div class="modal__title" id="modalAriaId-o0rxjwej0">Очистить лист ожидания?</div>
+          <div class="modal__close"> 
+            <button class="button button--icon button--transparent" type="button" aria-label="Закрыть модальное окно" data-modal-close="wishlist-modal"><i class="icon icon-close"></i>
+            </button>
+          </div>
+        </div>
+        <div class="modal__body"> 
+          <div class="modal__text">Вы точно хотите очистить лист ожидания?</div>
+        </div>
+        <div class="modal__footer">
+          <button class="button button--base" type="button" aria-label="Подтвердить действие">Да
+          </button>
+          <button class="button button--outline" type="button" aria-label="Отменить действие" data-modal-close="wishlist-modal">Отмена
+          </button>
+        </div>
+      </dialog>
+      <dialog class="dialog--fade dialog modal modal--small" data-modal="basket-clear-modal" aria-labelledby="modalAriaId-xe1wjesxl">
+        <div class="modal__head"> 
+          <div class="modal__title" id="modalAriaId-xe1wjesxl">Очистить корзину?</div>
+          <div class="modal__close"> 
+            <button class="button button--icon button--transparent" type="button" aria-label="Закрыть модальное окно" data-modal-close="basket-clear-modal"><i class="icon icon-close"></i>
+            </button>
+          </div>
+        </div>
+        <div class="modal__body"> 
+          <div class="modal__text">Вы точно хотите очистить корзину?</div>
+        </div>
+        <div class="modal__footer">
+          <button class="button button--base" type="button" aria-label="Подтвердить действие">Да
+          </button>
+          <button class="button button--outline" type="button" aria-label="Отменить действие" data-modal-close="basket-clear-modal">Отмена
+          </button>
+        </div>
+      </dialog>
+      <dialog class="dialog dialog--fade cookie-banner" data-cookie aria-labelledby="cookie-title-5tiyk2n">
+        <div class="cookie-banner__container">
+          <header class="cookie-banner__header">
+            <h2 class="cookie-banner__title" id="cookie-title-5tiyk2n">Мы уважаем вашу конфиденциальность</h2>
+          </header>
+          <div class="cookie-banner__content">
+            <p>Используем файлы cookie для улучшения работы сайта и анализа трафика.</p>
+          </div>
+          <footer class="cookie-banner__actions">
+            <button class="button button--outline" type="button" data-cookie-action="reject">Отклонить
+            </button>
+            <button class="button button--base" type="button" data-cookie-action="accept">Принять все
+            </button>
+          </footer>
+        </div>
+      </dialog>
+    </div>
+  </body>
+</html>

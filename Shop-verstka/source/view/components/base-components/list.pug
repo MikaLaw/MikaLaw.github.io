@@ -1,0 +1,12 @@
+mixin list(options={})
+  -
+    const {
+      list = productList1,
+      component = 'product-card',
+      componentData = false,
+    } = options;
+
+  ul.list&attributes(attributes)
+    each item in list
+      li.list__item
+        +#{component}({...item, ...componentData})

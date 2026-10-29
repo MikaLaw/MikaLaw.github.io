@@ -1,0 +1,26 @@
+mixin field(options = {})
+  -
+    const {
+      id = Math.random().toString(36).substring(2),
+      validationType = false,
+      fieldLabel = false,
+      message = null,
+      component = 'input',
+      componentData = false,
+      matchName = false,
+      dependencySelector = false,
+      text = false,
+    } = options;
+
+  .field(
+    data-validation-type=validationType
+    data-match-name=matchName
+    data-dependency-selector=dependencySelector
+  )&attributes(attributes)
+    if fieldLabel
+      label.field__label(for=id)!= fieldLabel
+    .field__wrapper
+      +#{component}({...componentData, id}).field__input(class= componentData.class)
+      if text
+        .field__message-text!= text
+      .field__message-info(id=componentData.ariaDescribedby)!= message

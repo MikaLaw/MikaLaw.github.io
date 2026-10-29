@@ -1,0 +1,31 @@
+mixin education-banner(options={})
+  -
+    const {
+      title = 'Ищем моделей',
+      text = 'Вы нам немного своего времени, мы вам великолепный образ!',
+      img = './img/components/course-page/img-17',
+    } = options;
+
+  .education-banner&attributes(attributes)
+    .education-banner__content-wrapper 
+      h2.education-banner__title!= title
+      .education-banner__text!= text
+      +button({
+        tag: 'a',
+        href: "./education-detail.html",
+        type: null,
+        text: 'Подробнее',
+        ariaLabel: 'Подробнее о программе обучения',
+        iconRight: 'icon-arrow-right'
+      }).button--outline.education-banner__button
+    .education-banner__img-wrapper(aria-hidden="true")
+      +picture({
+        format: "png",
+        path: img,
+        alt: "",
+        isLazyLoading: "lazy",
+        isDecoding: "async",
+        width: "320",
+        height: "310",
+        noneMediaSource: true,
+      })

@@ -1,0 +1,44 @@
+[data-scroll-block] {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: var(--space-2x);
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+  mask-image:
+    linear-gradient(
+      to right,
+      transparent 0%,
+      black var(--mask-left),
+      black calc(100% - var(--mask-right)),
+      transparent 100%
+    );
+
+  --mask-left: 0%;
+  --mask-right: 0%;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &.is-grabbing {
+    cursor: grabbing;
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+  }
+
+  & > * {
+    user-select: none;
+    scroll-snap-align: start;
+  }
+}
+
+.scroll-block {
+  --scroll-block-gap-container: var(--space-2x);
+
+  gap: var(--scroll-block-gap-container);
+}

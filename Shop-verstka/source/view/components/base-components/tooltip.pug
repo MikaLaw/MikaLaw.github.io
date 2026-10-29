@@ -1,0 +1,14 @@
+mixin tooltip(options = {})
+  -
+    const {
+      position = 'bottom',
+      text = 'Это тултип',
+    } = options;
+
+  +button({
+    text: 'Наведи на меня',
+  }).button--base(
+    data-tooltip-trigger
+    data-tooltip-text=text
+    data-tooltip-position=position
+  )

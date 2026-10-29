@@ -1,0 +1,105 @@
+extends ../components/base/layout
+
+block variables
+	- const title = "Страница курса" //- на страницах кроме главной используйте О нас — ProjectName
+	- const wrapperMods = ""
+	- const hasHeader = true
+	- const headerMods = ""
+	- const hasFooter = true
+	- const hasFooterPanel = true 
+	- const footerMods = ""
+	- const currentUrl = "" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+	main.page__main
+		+breadcrumbs({
+			list: [{title: 'Главная', href: './main.html'}, {title: 'Обучение', href: './education.html'}, {title: 'Мир цвета ALFAPARF MILANO'}],
+		})
+		section.section
+			.container
+				.section__content
+					.course 
+						.course__wrapper 
+							.course__gallery
+								+slider-thumb({
+									ariaLabel: 'Галерея изображений курса',
+									optionList: [
+										{title: 'Обучение 1', img: './img/components/course-page/img-6',},
+										{title: 'Обучение 1', img: './img/components/course-page/img-7',},
+										{title: 'Обучение 1', img: './img/components/course-page/img-8',},
+									]
+								})
+							.course__content
+								h1.course__title Мир цвета ALFAPARF MILANO
+								.course__lead 
+									.course__lead-img(aria-hidden="true")
+										+picture({
+											format: "jpg",
+											path: './img/components/course-page/img-13',
+											alt: "",
+											isLazyLoading: "eager",
+											fetchpriority: "high", 
+											isDecoding: "async",
+											width: "45",
+											height: "45",
+											noneMediaSource: true,
+										})
+									.course__lead-name Наталья Дивнич
+									.course__lead-date-wrapper
+										time.course__lead-date(datetime="2026-03-12") 12 марта
+										span.course__lead-date-separator —
+										time.course__lead-date(datetime="2026-03-25") 25 марта
+								dl.course__summary 
+									each item in courseSummary
+										.course__summary-cell
+											dt.course__summary-label!= item.label
+											dd.course__summary-value!= item.value
+								ul.course__list
+									each preview in coursePreview
+										li.course__item
+											+course-card(preview)
+								.user-typography
+									h3 Apple Keratin Mask
+									p Первый в мире «пластичный» кератин! Позволяет обладателю процедуры создавать локоны, а после мытья головы снова оставаться с прямыми и ровными волосами!
+									p Состав легко наносится, невероятно быстро встраивается в волос, что значительно ускоряет процесс сушки волос и дальнейшей полировки
+									p Эффект выпрямления до 6 месяцев при правильном домашнем уходе!
+									h3 Ботокс для натуральных и окрашенных волос BTX Classic
+									p Создает идеальную реконструкцию, омоложение и восстанавливает структуру волос.
+									p Сияющий блеск и полностью сохраненный естественный объем.
+									p Увлажнение до 4 месяцев при правильном домашнем уходе!
+									h3 Ботокс для блондированных и мелированных волос BTX Blond
+									p Идеален для блондированных, мелированных волос. Нейтрализует желтый и желто-оранжевый фон осветления. Холодный пигмент увеличивает период вымывания красителя, сохраняя холодный оттенок 4-6 недель.
+									p Делает цвет волос более глубоким, насыщенным с роскошными переливами!
+									p Увлажнение до 4 месяцев при правильном домашнем уходе!
+									h3 На семинаре Вы:
+									ul
+										li Узнаете все о продукции HALAK PROFESSIONAL
+										li Подробно разберете все тонкости применения продукции и узнаете, как избежать ошибок в работе
+										li Научитесь правильно позиционировать процедуры в салоне красоты и сможете, с легкостью, отработать возражения клиентов
+										li Отработаете на практике технологию нанесения составов и узнаете какие рекомендации давать клиенту после процедуры
+		section.section
+			.container
+				.section__content
+					+slider({
+						ariaLabel: "Курсы площадки",
+						name: 'card-bleed',
+						title: '<h2  class="section__title"><a href="#" class="section__title-link">Другие курсы <i class="icon icon-arrow-right"></i></a></h2>',
+						optionList: scheduleList2,
+						component: 'education-card',
+					}).slider--education
+		section.section
+			.container
+				.section__content
+					+banner({
+						title: 'Мы в соцсетях',
+						titleTag: 'h2',
+						text: 'Узнавайте о наших событиях первыми',
+						img: './img/components/product-banner/img-5',
+					})
+						+socials()
+		section.section
+			.container
+				.section__head
+					h2.section__title Место под seo-текст
+				.section__content
+					+text-cut()

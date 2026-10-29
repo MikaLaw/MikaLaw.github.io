@@ -1,0 +1,35 @@
+mixin picture(options = {})
+  -
+    const {
+      format = "",
+      path = "",
+      alt = "",
+      isLazyLoading = false,
+      isDecoding = false,
+      width = '320x',
+      height = '320px',
+      fetchpriority = false,
+      mobileSource = false,
+      tabletSource = false,
+      desktopSource = false,
+      noneMediaSource = false,
+    } = options;
+
+  picture&attributes(attributes)
+    if desktopSource
+      source(media="(min-width:1280px)", srcset=desktopSource + ".webp" + ", " + desktopSource + "@2x.webp" + " 2x" type="image/webp")
+    if tabletSource
+      source(media="(min-width:768px)", srcset=tabletSource + ".webp" + ", " + tabletSource + "@2x.webp" + " 2x" type="image/webp")
+    if mobileSource
+      source(media="(max-width:767px)", srcset=mobileSource + ".webp" + ", " + mobileSource + "@2x.webp" + " 2x" type="image/webp")
+    if noneMediaSource
+      source(srcset=path + ".webp" + ", " + path + "@2x.webp" + " 2x" type='image/webp', )
+    img(
+      src=path + "." + format, srcset=path + "@2x." + format + " 2x",
+      alt=alt,
+      width=width,
+      height=height,
+      loading=isLazyLoading,
+      fetchpriority=fetchpriority,
+      decoding=isDecoding
+    )  

@@ -1,0 +1,17 @@
+@use "sass:list";
+
+.work__list {
+  counter-reset: works;
+}
+
+.work__item {
+  $work-colors: #e9e8ee, #dadae4, #cccbd9, #bdbed2, #abadc4;
+
+  @each $color in $work-colors {
+    $i: list.index($work-colors, $color);
+
+    &:nth-child(#{$i}) {
+      background-color: $color;
+    }
+  }
+}

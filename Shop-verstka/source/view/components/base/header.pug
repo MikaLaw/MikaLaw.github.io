@@ -1,0 +1,92 @@
+mixin header(headerMods, currentUrl)
+	-
+		const headerLinks = [
+			{
+				href: "index.html",
+				text: "Главная"
+			},
+			{
+				href: "#",
+				text: "Страница 2"
+			},
+			{
+				href: "#",
+				text: "Страница 3"
+			},
+		]
+	- const menuHoverId = `menu-hover-header-1`;
+
+	header.header(class=headerMods)&attributes(attributes)
+		.header__top
+			.container
+				.header__container.header__container--top
+					+button({
+						iconLeft: 'icon-burger',
+						text: null,
+						ariaLabel: 'Открыть меню',
+						ariaExpanded: "false",
+						ariaControls: 'menu-hover'
+					}).button--icon.button--transparent.header__burger(data-slider-panel-show="menu-hover")
+					.header__contacts(data-da='[data-slider-panel="menu-hover"] .slider-panel__body,767,1' itemscope itemtype="https://schema.org")
+						meta(itemprop="name" content="Модерн")
+						a.header__phone.link(href="tel:83852221925" itemprop="telephone") + 7 (3852) 22-19-25
+					.header__logo(itemscope itemtype="https://schema.org")
+						+logo()
+					.header__controls          
+						.header__search
+							+button({
+								iconLeft: 'icon-search',
+								text: null,
+								ariaLabel: 'Поиск',
+								ariaExpanded: "false",
+								ariaControls: "search-panel-controls",
+							}).button--icon.button--transparent(data-slider-panel-show='search-panel')
+						.header__favorite
+							+button({
+								href: './favorite.html',
+								tag: 'a',
+								type: null,
+								iconLeft: 'icon-favorite',
+								text: 'Избранное',
+								ariaLabel: 'Перейти в избранное',
+							}).button--icon.button--transparent.button--panel(data-da=`.footer-panel__item--favorite,767,last`) 
+						.header__cart
+							button(
+								aria-expanded="false"
+								aria-controls="basket-controls"
+								aria-label="Открыть корзину, 2 товара"
+								data-slider-panel-show='basket'
+								data-da=`.footer-panel__item--cart,767,last`
+								type="button"
+							).button.button--icon.button--transparent.button--panel
+								span.button__icon
+									i.icon.icon-cart
+									span.counter 2
+								span.button__text Корзина
+						.header__user
+							+button({
+								text: "Кабинет",
+								ariaExpanded: "false",
+								ariaControls: 'sidebar-menu-controls',
+								ariaLabel: 'Личный кабинет',
+								iconLeft: 'icon-user',
+							}).button--icon.button--transparent.button--panel(data-slider-panel-show="sidebar-menu" data-da=`.footer-panel__item--user,767,last`)
+		.header__bottom
+			.container
+				.header__container
+					.header__catalog
+						+button({
+							text: "Каталог",
+							ariaExpanded: "false",
+							ariaHaspopup: "true",
+							ariaControls: 'menu-catalog-controls',
+							ariaLabel: 'Открыть меню каталога',
+							iconLeft: 'icon-menu',
+						}).button--icon.button--transparent.button--panel.button--panel-catalog(data-slider-panel-show="menu-catalog" data-da=`.footer-panel__item--catalog,767,last`)
+					.header__menu
+						+menu-hover({
+							id: menuHoverId,
+							navItems: mainMenu,
+						})(data-da='[data-slider-panel="menu-hover"] .slider-panel__body,767,0')
+
+

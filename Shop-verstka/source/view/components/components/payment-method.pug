@@ -1,0 +1,25 @@
+mixin payment-method(options={})
+  -
+    const {
+      paymentList = [
+        {title: 'Платежная система мир', src: './img/components/brands-list/img-31'},
+        {title: 'Платежная система виза', src: './img/components/brands-list/img-32'},
+        {title: 'Платежная система СБП', src: './img/components/brands-list/img-33'},
+      ],
+    } = options;
+
+  .payment-method&attributes(attributes)
+    ul.payment-method__list
+      each item in paymentList
+        li.payment-method__item
+          .payment-method__img
+            +picture({
+              format: "png",
+              path: item.src,
+              alt: item.title,
+              isLazyLoading: "lazy",
+              isDecoding: "async",
+              width: "50",
+              height: "24",
+              noneMediaSource: true,
+            })

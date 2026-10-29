@@ -1,0 +1,79 @@
+mixin product-card(options = {})
+	-
+		const {
+			img = './img/components/product-card/img-9',
+			labels = false,
+			title = 'CUTRIN',
+			titleTag = 'h3',
+			text = 'Кондиционер деликатный д/нормальных и сухих волос без отдушки, 200мл VIENO',
+			cost = '6 750 ₽',
+			stock = null,
+			sliderImg = false,
+			trigger = false,
+			isFavorite = false
+		} = options;
+
+	article.product-card&attributes(attributes)
+		.product-card__img-wrapper
+			if sliderImg
+				.product-card__slider.swiper(data-slider="nested" aria-hidden="true" data-slider-trigger=trigger)
+					.product-card__slider-wrapper.swiper-wrapper
+						each img in sliderImg
+							a.product-card__slider-slide(href="./product.html" tabindex="-1" aria-hidden="true").swiper-slide
+								+picture({
+									format: "jpg",
+									path: img,
+									alt: "Товар",
+									isLazyLoading: "lazy",
+									isDecoding: "async",
+									width: "320",
+									height: "310",
+									desktopSource: img,
+									mobileSource: `${img}-mobile`,
+								})
+					.product-card__slider-pagination.swiper-pagination
+			else
+				a.product-card__img(href="./product.html" tabindex="-1" aria-hidden="true")
+					+picture({
+						format: "jpg",
+						path: img,
+						alt: "Товар",
+						isLazyLoading: "lazy",
+						isDecoding: "async",
+						width: "320",
+						height: "310",
+						desktopSource: img,
+						mobileSource: `${img}-mobile`,
+					})
+			if labels
+				+product-stickers({list: labels, ariaLabel: "Метки товара"}).product-card__stickers
+			+button({
+				iconLeft: 'icon-favorite-fill',
+				text: null,
+				ariaLabel: 'Добавить в избранное',
+				ariaPressed: String(isFavorite)
+			}).product-card__favorite(data-toast-notification-show="toast-favorite-add-template")
+		.product-card__content-wrapper
+			#{titleTag}.product-card__title
+				a.product-card__link(href="./product.html")!= title
+			.product-card__description!= text
+			if cost
+				.product-card__price-wrapper
+					.product-card__price-actual
+						span.visually-hidden Текущая цена:
+						!= cost
+					if stock
+						.product-card__price-old
+							span.visually-hidden Старая цена:
+							s!= stock
+				.product-card__control-wrapper
+					+input-counter()
+					+button({
+						iconLeft: 'icon-cart',
+						text: null,
+						ariaLabel: 'Добавить в корзину',
+					}).button--base.button--icon(data-toast-notification-show="toast-cart-add-template")
+			else
+				+button({
+					text: 'В лист ожидания',
+				}).button--base.product-card__empty

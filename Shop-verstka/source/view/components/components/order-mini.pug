@@ -1,0 +1,29 @@
+mixin order-mini(options = {})
+  -
+    const {
+      title = 'Состав заказа',
+      list = orderList1,
+      footerTitle = 'Итог',
+      cost = '6 750 ₽',
+      stock = '10 750 ₽',
+      bonus = '+ 670 бонусов',
+    } = options;
+
+  .order-mini&attributes(attributes)
+    .order-mini__wrapper
+      h2.order-mini__title Состав заказа
+      ul.order-mini__list
+        each order in list
+          li.order-mini__item
+            +order-item(order)
+      .order-mini__footer
+        .order-mini__footer-title!= footerTitle
+        .order-mini__footer-values
+          .order-mini__price-old
+            span.visually-hidden Старая цена:
+            s #{stock}
+          .order-mini__price-actual
+            span.visually-hidden Текущая цена:
+            | #{cost}
+          if bonus
+            .order-mini__bonus!= bonus

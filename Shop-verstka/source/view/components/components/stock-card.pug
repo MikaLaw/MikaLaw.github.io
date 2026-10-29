@@ -1,0 +1,49 @@
+mixin stock-card(options={})
+	-
+		const {
+			img = '',
+			title = 'Заголовок новости',
+			titleTag = 'h3',
+			className = false,
+			text = false,
+			labels = false,
+			brand = false,
+		} = options;
+
+	article.stock-card(class=className)&attributes(attributes)
+		.stock-card__content-wrapper
+			#{titleTag}.stock-card__title
+				a.stock-card__link(href="./stock-detail.html")!= title
+					i.icon.icon-arrow-right
+			if text
+				.stock-card__description
+					p!= text
+		.stock-card__img-wrapper
+			+picture({
+				format: "jpg",
+				path: img,
+				alt: title,
+				isLazyLoading: "lazy",
+				isDecoding: "async",
+				width: "280",
+				height: "200",
+				noneMediaSource: true,
+			})
+			if brand || labels
+				.stock-card__labels
+					if brand 
+						a.stock-card__brand(href="#")
+							+picture({
+								format: "jpg",
+								path: brand,
+								alt: "Логотип бренда товара",
+								isLazyLoading: "lazy",
+								isDecoding: "async",
+								width: "110",
+								height: "36",
+								noneMediaSource: true,
+							})
+					if labels
+						+stock-stickers({
+							list: labels
+						})

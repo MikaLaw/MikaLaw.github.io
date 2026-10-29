@@ -1,0 +1,29 @@
+.purchases-filters {
+  width: 100%;
+  margin-block-end: var(--space-5x);
+  color: var(--color-neutral-gray-9);
+  font-family: var(--ff-default);
+  line-height: var(--line-height-default);
+
+  .select {
+    min-inline-size: 100px;
+  }
+}
+
+.purchases-filters__form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(266px, 1fr));
+  gap: var(--space-3x);
+}
+
+.purchases-filters__row {
+  display: flex;
+  gap: var(--space-2x);
+  align-items: center;
+}
+
+.purchases-filters__cell-separator {
+  width: 14px;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--fz-1x);
+}

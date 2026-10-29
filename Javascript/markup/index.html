@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800&amp;subset=cyrillic-ext" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" media="screen" href="./css/normalize.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="./css/main.css" />
+  <title>Meloman</title>
+</head>
+<body>
+<main class="main">
+  <section class="hero">
+    <h1 class="albums-list__title visually-hidden">Топ музыкальных альбомов</h1>
+    <header class="header">
+      <div class="container header__container">
+        <div class="header__logo logo">
+          <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="280" height="169" viewBox="0 0 280 169">
+            <path style="opacity:1" fill="#ffffff" d="M 73.5,-0.5 C 78.1667,-0.5 82.8333,-0.5 87.5,-0.5C 96.9138,1.9726 104.414,7.30594 110,15.5C 127.267,46.4249 144.934,77.0915 163,107.5C 169.901,97.5618 172.901,86.5618 172,74.5C 165.827,64.8247 160.16,54.8247 155,44.5C 150.014,21.1163 158.847,6.11631 181.5,-0.5C 185.167,-0.5 188.833,-0.5 192.5,-0.5C 201.874,1.6092 209.374,6.6092 215,14.5C 236.267,51.3696 257.267,88.3696 278,125.5C 278.183,128.365 278.683,131.031 279.5,133.5C 279.5,134.167 279.5,134.833 279.5,135.5C 277.298,153.036 267.632,164.036 250.5,168.5C 247.167,168.5 243.833,168.5 240.5,168.5C 231.406,166.606 223.906,161.939 218,154.5C 210,140.5 202,126.5 194,112.5C 187.184,133.299 175.017,150.132 157.5,163C 152.983,165.555 148.316,167.388 143.5,168.5C 141.5,168.5 139.5,168.5 137.5,168.5C 128.331,167.331 120.497,163.331 114,156.5C 102.822,137.472 91.6551,118.472 80.5,99.5C 80.5449,96.9228 79.5449,94.9228 77.5,93.5C 68.1968,78.0025 59.0301,62.3359 50,46.5C 43.5499,23.3992 51.3833,7.73251 73.5,-0.5 Z"/>
+            <path style="opacity:0.133" fill="#ffffff" d="M 77.5,93.5 C 79.5449,94.9228 80.5449,96.9228 80.5,99.5C 79.0292,97.7844 78.0292,95.7844 77.5,93.5 Z"/>
+            <path style="opacity:1" fill="#ffffff" d="M 39.5,168.5 C 35.8333,168.5 32.1667,168.5 28.5,168.5C 11.3481,164.018 1.68146,153.018 -0.5,135.5C -0.5,134.833 -0.5,134.167 -0.5,133.5C 3.22329,110.288 16.89,99.4551 40.5,101C 61.2942,107.07 70.1275,120.904 67,142.5C 62.8122,156.523 53.6456,165.19 39.5,168.5 Z"/>
+          </svg>            
+        </div>
+        <button class="burger" aria-label="Открыть меню сайта" data-burger>
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+        </button>
+        <nav class="main-navigation" data-menu>
+          <ul class="main-navigation__list">
+            <li class="main-navigation__item main-navigation__item--active"><a href="#all" class="main-navigation__link">Все альбомы</a></li>
+            <li class="main-navigation__item"><a href="#watchlist" class="main-navigation__link">Отложенное <span class="main-navigation__count">13</span></a></li>
+            <li class="main-navigation__item"><a href="#history" class="main-navigation__link">История <span class="main-navigation__count">4</span></a></li>
+            <li class="main-navigation__item"><a href="#favorites" class="main-navigation__link">Избранное <span class="main-navigation__count">8</span></a></li>
+          </ul>
+        </nav>     
+      </div> 
+    </header>
+  </section>
+
+  <section class="album container">
+    <ul class="sort">
+      <li class="sort__item"><button class="sort__button sort__button--active">По умолчанию</button></li>
+      <li class="sort__item"><button class="sort__button">По дате</button></li>
+      <li class="sort__item"><button class="sort__button">По рейтингу</button></li>
+    </ul>
+    <section class="album-list">
+      <h2 class="albums-list__title visually-hidden">Все альбомы</h2>
+
+      <div class="albums-list__container">
+        <article class="album-card">
+          <div class="album-card__cover-container">
+            <img src="./images/covers/the-dark-side-of-the-moon.jpg" alt="" class="album-card__cover">
+            <div class="album-card__content">
+              <h3 class="album-card__title">The Dark Side of the Moon</h3>
+              <p class="album-card__artist">Pink Floyd</p>
+              <p class="album-card__info">
+                <span class="album-card__year">1 марта 1973</span>
+                <span class="album-card__duration">42:50</span>
+                <span class="album-card__genre">Альбомный рок, Прогрессивный рок, Арт-рок, Хард-рок</span>
+              </p>   
+              <form class="album-card__controls">
+                <button class="album-card__controls-item button album-card__controls-item--add-to-watchlist" aria-label="Добавить в Отложенное">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none">
+                    <path d="M5 19.6693V4C5 3.44772 5.44772 3 6 3H18C18.5523 3 19 3.44772 19 4V19.6693C19 20.131 18.4277 20.346 18.1237 19.9985L12 13L5.87629 19.9985C5.57227 20.346 5 20.131 5 19.6693Z" stroke="currentColor" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+                <button class="album-card__controls-item button album-card__controls-item--mark-as-watched" aria-label="Пометить как прослушенное">                
+                  <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 14L9 19L20 8M6 8.88889L9.07692 12L16 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+                <button class="album-card__controls-item button album-card__controls-item--favorite" aria-label="Поместить в Избранное">
+                  <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.993 5.09691C11.0387 4.25883 9.78328 3.75 8.40796 3.75C5.42122 3.75 3 6.1497 3 9.10988C3 10.473 3.50639 11.7242 4.35199 12.67L12 20.25L19.4216 12.8944L19.641 12.6631C20.4866 11.7172 21 10.473 21 9.10988C21 6.1497 18.5788 3.75 15.592 3.75C14.2167 3.75 12.9613 4.25883 12.007 5.09692L12 5.08998L11.993 5.09691ZM12 7.09938L12.0549 7.14755L12.9079 6.30208L12.9968 6.22399C13.6868 5.61806 14.5932 5.25 15.592 5.25C17.763 5.25 19.5 6.99073 19.5 9.10988C19.5 10.0813 19.1385 10.9674 18.5363 11.6481L18.3492 11.8453L12 18.1381L5.44274 11.6391C4.85393 10.9658 4.5 10.0809 4.5 9.10988C4.5 6.99073 6.23699 5.25 8.40796 5.25C9.40675 5.25 10.3132 5.61806 11.0032 6.22398L11.0921 6.30203L11.9452 7.14752L12 7.09938Z" fill="currentColor"/>
+                  </svg>
+                </button>
+              </form>           
+            </div>
+          </div>         
+          <div class="album-card__comments-container"><button class="album-card__comments">5 комментариев</button ></div>
+        </article>
+
+        <article class="album-card">
+          <div class="album-card__cover-container">
+            <img src="./images/covers/master-of-puppets.jpg" alt="" class="album-card__cover">
+            <div class="album-card__content">
+              <h3 class="album-card__title">Master of Puppets</h3>
+              <p class="album-card__artist">Metallica</p>
+              <p class="album-card__info">
+                <span class="album-card__year">3 марта 1986</span>
+                <span class="album-card__duration">54:51</span>
+                <span class="album-card__genre">Хеви-металл, Cпид/трэш-метал, Xард-рок</span>
+              </p>  
+              <form class="album-card__controls">
+                <button class="album-card__controls-item button album-card__controls-item--add-to-watchlist" aria-label="Добавить в Отложенное">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none">
+                    <path d="M5 19.6693V4C5 3.44772 5.44772 3 6 3H18C18.5523 3 19 3.44772 19 4V19.6693C19 20.131 18.4277 20.346 18.1237 19.9985L12 13L5.87629 19.9985C5.57227 20.346 5 20.131 5 19.6693Z" stroke="currentColor" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+                <button class="album-card__controls-item button album-card__controls-item--mark-as-watched" aria-label="Пометить как прослушенное">                
+                  <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 14L9 19L20 8M6 8.88889L9.07692 12L16 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+                <button class="album-card__controls-item button album-card__controls-item--favorite" aria-label="Поместить в Избранное">
+                  <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.993 5.09691C11.0387 4.25883 9.78328 3.75 8.40796 3.75C5.42122 3.75 3 6.1497 3 9.10988C3 10.473 3.50639 11.7242 4.35199 12.67L12 20.25L19.4216 12.8944L19.641 12.6631C20.4866 11.7172 21 10.473 21 9.10988C21 6.1497 18.5788 3.75 15.592 3.75C14.2167 3.75 12.9613 4.25883 12.007 5.09692L12 5.08998L11.993 5.09691ZM12 7.09938L12.0549 7.14755L12.9079 6.30208L12.9968 6.22399C13.6868 5.61806 14.5932 5.25 15.592 5.25C17.763 5.25 19.5 6.99073 19.5 9.10988C19.5 10.0813 19.1385 10.9674 18.5363 11.6481L18.3492 11.8453L12 18.1381L5.44274 11.6391C4.85393 10.9658 4.5 10.0809 4.5 9.10988C4.5 6.99073 6.23699 5.25 8.40796 5.25C9.40675 5.25 10.3132 5.61806 11.0032 6.22398L11.0921 6.30203L11.9452 7.14752L12 7.09938Z" fill="currentColor"/>
+                  </svg>
+                </button>
+              </form>            
+            </div>
+          </div>
+
+          <div class="album-card__comments-container"><button class="album-card__comments">5 комментариев</button ></div>
+        </article>
+
+      </div>
+
+      <button class="albums-list__show-more">Показать ещё</button>
+    </section>
+
+    <section class="album-list album-list--extra">
+      <h2 class="albums-list__title">Комментируемые</h2>
+
+      <div class="albums-list__container">
+        <article class="album-card">
+          <div class="album-card__cover-container">
+            <img src="./images/covers/the-dark-side-of-the-moon.jpg" alt="" class="album-card__cover">
+            <div class="album-card__content">
+              <h3 class="album-card__title">The Dark Side of the Moon</h3>
+              <p class="album-card__artist">Pink Floyd</p>
+              <p class="album-card__info">
+                <span class="album-card__year">1 марта 1973</span>
+                <span class="album-card__duration">42:50</span>
+                <span class="album-card__genre">Альбомный рок, Прогрессивный рок, Арт-рок, Хард-рок</span>
+              </p>  
+              <form class="album-card__controls">
+                <button class="album-card__controls-item button album-card__controls-item--add-to-watchlist" aria-label="Добавить в Отложенное">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none">
+                    <path d="M5 19.6693V4C5 3.44772 5.44772 3 6 3H18C18.5523 3 19 3.44772 19 4V19.6693C19 20.131 18.4277 20.346 18.1237 19.9985L12 13L5.87629 19.9985C5.57227 20.346 5 20.131 5 19.6693Z" stroke="currentColor" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+                <button class="album-card__controls-item button album-card__controls-item--mark-as-watched" aria-label="Пометить как прослушенное">                
+                  <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 14L9 19L20 8M6 8.88889L9.07692 12L16 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+                <button class="album-card__controls-item button album-card__controls-item--favorite" aria-label="Поместить в Избранное">
+                  <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.993 5.09691C11.0387 4.25883 9.78328 3.75 8.40796 3.75C5.42122 3.75 3 6.1497 3 9.10988C3 10.473 3.50639 11.7242 4.35199 12.67L12 20.25L19.4216 12.8944L19.641 12.6631C20.4866 11.7172 21 10.473 21 9.10988C21 6.1497 18.5788 3.75 15.592 3.75C14.2167 3.75 12.9613 4.25883 12.007 5.09692L12 5.08998L11.993 5.09691ZM12 7.09938L12.0549 7.14755L12.9079 6.30208L12.9968 6.22399C13.6868 5.61806 14.5932 5.25 15.592 5.25C17.763 5.25 19.5 6.99073 19.5 9.10988C19.5 10.0813 19.1385 10.9674 18.5363 11.6481L18.3492 11.8453L12 18.1381L5.44274 11.6391C4.85393 10.9658 4.5 10.0809 4.5 9.10988C4.5 6.99073 6.23699 5.25 8.40796 5.25C9.40675 5.25 10.3132 5.61806 11.0032 6.22398L11.0921 6.30203L11.9452 7.14752L12 7.09938Z" fill="currentColor"/>
+                  </svg>
+                </button>
+              </form>                
+            </div>
+          </div>         
+          <div class="album-card__comments-container"><button class="album-card__comments">5 комментариев</button ></div>
+        </article>
+
+        <article class="album-card">
+          <div class="album-card__cover-container">
+            <img src="./images/covers/master-of-puppets.jpg" alt="" class="album-card__cover">
+            <div class="album-card__content">
+              <h3 class="album-card__title">Master of Puppets</h3>
+              <p class="album-card__artist">Metallica</p>
+              <p class="album-card__info">
+                <span class="album-card__year">3 марта 1986</span>
+                <span class="album-card__duration">54:51</span>
+                <span class="album-card__genre">Хеви-металл, Cпид/трэш-метал, Xард-рок</span>
+              </p>   
+              <form class="album-card__controls">
+                <button class="album-card__controls-item button album-card__controls-item--add-to-watchlist" aria-label="Добавить в Отложенное">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none">
+                    <path d="M5 19.6693V4C5 3.44772 5.44772 3 6 3H18C18.5523 3 19 3.44772 19 4V19.6693C19 20.131 18.4277 20.346 18.1237 19.9985L12 13L5.87629 19.9985C5.57227 20.346 5 20.131 5 19.6693Z" stroke="currentColor" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+                <button class="album-card__controls-item button album-card__controls-item--mark-as-watched" aria-label="Пометить как прослушенное">                
+                  <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 14L9 19L20 8M6 8.88889L9.07692 12L16 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+                <button class="album-card__controls-item button album-card__controls-item--favorite" aria-label="Поместить в Избранное">
+                  <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.993 5.09691C11.0387 4.25883 9.78328 3.75 8.40796 3.75C5.42122 3.75 3 6.1497 3 9.10988C3 10.473 3.50639 11.7242 4.35199 12.67L12 20.25L19.4216 12.8944L19.641 12.6631C20.4866 11.7172 21 10.473 21 9.10988C21 6.1497 18.5788 3.75 15.592 3.75C14.2167 3.75 12.9613 4.25883 12.007 5.09692L12 5.08998L11.993 5.09691ZM12 7.09938L12.0549 7.14755L12.9079 6.30208L12.9968 6.22399C13.6868 5.61806 14.5932 5.25 15.592 5.25C17.763 5.25 19.5 6.99073 19.5 9.10988C19.5 10.0813 19.1385 10.9674 18.5363 11.6481L18.3492 11.8453L12 18.1381L5.44274 11.6391C4.85393 10.9658 4.5 10.0809 4.5 9.10988C4.5 6.99073 6.23699 5.25 8.40796 5.25C9.40675 5.25 10.3132 5.61806 11.0032 6.22398L11.0921 6.30203L11.9452 7.14752L12 7.09938Z" fill="currentColor"/>
+                  </svg>
+                </button>
+              </form>           
+            </div>
+          </div>
+
+          <div class="album-card__comments-container"><button class="album-card__comments">5 комментариев</button ></div>
+        </article>
+
+
+      </div>
+    </section>
+
+  </section>
+</main>
+
+
+<footer class="footer">
+    <div class="footer__container container">
+        <section class="footer__logo logo logo--smaller">          
+          <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="280" height="169" viewBox="0 0 280 169">
+          <path style="opacity:1" fill="#ffffff" d="M 73.5,-0.5 C 78.1667,-0.5 82.8333,-0.5 87.5,-0.5C 96.9138,1.9726 104.414,7.30594 110,15.5C 127.267,46.4249 144.934,77.0915 163,107.5C 169.901,97.5618 172.901,86.5618 172,74.5C 165.827,64.8247 160.16,54.8247 155,44.5C 150.014,21.1163 158.847,6.11631 181.5,-0.5C 185.167,-0.5 188.833,-0.5 192.5,-0.5C 201.874,1.6092 209.374,6.6092 215,14.5C 236.267,51.3696 257.267,88.3696 278,125.5C 278.183,128.365 278.683,131.031 279.5,133.5C 279.5,134.167 279.5,134.833 279.5,135.5C 277.298,153.036 267.632,164.036 250.5,168.5C 247.167,168.5 243.833,168.5 240.5,168.5C 231.406,166.606 223.906,161.939 218,154.5C 210,140.5 202,126.5 194,112.5C 187.184,133.299 175.017,150.132 157.5,163C 152.983,165.555 148.316,167.388 143.5,168.5C 141.5,168.5 139.5,168.5 137.5,168.5C 128.331,167.331 120.497,163.331 114,156.5C 102.822,137.472 91.6551,118.472 80.5,99.5C 80.5449,96.9228 79.5449,94.9228 77.5,93.5C 68.1968,78.0025 59.0301,62.3359 50,46.5C 43.5499,23.3992 51.3833,7.73251 73.5,-0.5 Z"/>
+          <path style="opacity:0.133" fill="#ffffff" d="M 77.5,93.5 C 79.5449,94.9228 80.5449,96.9228 80.5,99.5C 79.0292,97.7844 78.0292,95.7844 77.5,93.5 Z"/>
+          <path style="opacity:1" fill="#ffffff" d="M 39.5,168.5 C 35.8333,168.5 32.1667,168.5 28.5,168.5C 11.3481,164.018 1.68146,153.018 -0.5,135.5C -0.5,134.833 -0.5,134.167 -0.5,133.5C 3.22329,110.288 16.89,99.4551 40.5,101C 61.2942,107.07 70.1275,120.904 67,142.5C 62.8122,156.523 53.6456,165.19 39.5,168.5 Z"/>
+        </svg>  
+      </section>
+      <section class="footer__statistics">
+        <p>10 альбомов прослушено</p>
+      </section>      
+    </div>
+</footer>
+  <script src="./init.js"></script>
+</body>
+</html>

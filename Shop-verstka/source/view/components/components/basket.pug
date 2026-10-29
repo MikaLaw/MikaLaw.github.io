@@ -1,0 +1,65 @@
+mixin basket(options = {})
+  -
+    const {
+      productList = productList1,
+    } = options;
+
+  .basket&attributes(attributes)
+    .basket__head
+      .basket__legend
+        .basket__label Фото
+        .basket__label Товар
+        .basket__label.basket__label--amount Количество
+        .basket__label.basket__label--cost Стоимость
+    ul.basket__list
+      each item in productList
+        li.basket__item
+          .basket-product 
+            a.basket-product__img-wrapper(href="./product.html" tabindex="-1")
+              +picture({
+                format: "jpg",
+                path: item.img,
+                alt: "Товар",
+                isLazyLoading: "lazy",
+                isDecoding: "async",
+                width: "320",
+                height: "310",
+                desktopSource: item.img,
+                mobileSource: `${item.img}-mobile`,
+              })
+            .basket-product__info
+              a.basket-product__name(href="./product.html")!= item.title
+              .basket-product__description!= item.text
+              .basket-product__small-price!= item.cost 
+                span за шт.
+            .basket__price.basket-product__price
+              .basket__price-actual
+                span.visually-hidden Текущая цена:
+                != item.cost
+              if item.stock
+                .basket__price-old
+                  span.visually-hidden Старая цена:
+                  s!= item.stock
+            .basket-product__counter
+              +input-counter()
+          +button({
+            text: null,
+            iconLeft: 'icon-close',
+            ariaLabel: `Удалить ${item.title}`,
+          }).button--icon.basket__remove(data-toast-notification-show="toast-cart-remove-template")
+    .basket__footer
+      .basket__summary
+        .basket__summary-label Итого
+        .basket__price
+          .basket__price-actual
+            span.visually-hidden Текущая цена:
+            | 750 ₽
+          .basket__price-old
+            span.visually-hidden Старая цена:
+            s 1200 ₽
+      +button({
+        text: 'Оформить заказ',
+        tag: 'a',
+        href: "./order.html",
+        type: null
+      }).button--base

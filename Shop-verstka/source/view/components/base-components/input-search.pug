@@ -1,0 +1,22 @@
+mixin input-search(options = {})
+	-
+		const {
+			id = `input-search-${Math.random().toString(36).substr(2, 9)}`,
+			ariaLabel = "Поиск по сайту",
+		} = options;
+
+	.input-search(data-input-search)&attributes(attributes)
+		+input({
+			type: "search", 
+			id: id, 
+			autocomplete: "off",
+			spellcheck: "false",
+			ariaLabel: ariaLabel,
+			enterkeyhint: "search",
+			...options,
+		}).input-search__input(data-input-search-field)
+		+button({
+			iconLeft: 'icon-close',
+			text: null,
+			ariaLabel: "Очистить поле поиска"
+		}).button--icon.button--transparent.input-search__button(data-input-search-button)

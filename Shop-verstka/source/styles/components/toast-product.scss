@@ -1,0 +1,105 @@
+.toast-product {
+  --popup-product-width: 290px;
+
+  width: 100%;
+  padding: var(--space-5x);
+  font-family: var(--ff-default);
+  line-height: var(--line-height-default);
+  background: var(--color-neutral-gray-3);
+  border-radius: var(--radius-1x);
+  box-shadow: var(--box-shadow-1);
+  transform: translateY(-50px);
+  opacity: 0;
+  transition: opacity var(--trans-default), transform var(--trans-default);
+  max-inline-size: var(--popup-product-width);
+
+  @include vp-768 {
+    --popup-product-width: 385px;
+  }
+
+  &.is-active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.toast-product__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3x);
+}
+
+.toast-product__head {
+  display: flex;
+  gap: var(--space-2x);
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.toast-product__title {
+  --popup-product-size-title: var(--fz-1x);
+
+  color: var(--popup-product-size-title);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--fz-default);
+  letter-spacing: var(--letter-spacing-1x);
+  text-transform: var(--text-transform-uppercase);
+
+  @include vp-480 {
+    --popup-product-size-title: var(--fz-default);
+  }
+}
+
+.toast-product__body {
+  display: flex;
+  gap: var(--space-2x);
+  align-items: flex-start;
+}
+
+.toast-product__img-wrapper {
+  position: relative;
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    inset: 0;
+  }
+}
+
+.toast-product__name {
+  color: var(--color-neutral-gray-9);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--fz-1x);
+}
+
+.toast-product__price {
+  display: flex;
+  gap: var(--space-2x);
+  align-items: baseline;
+}
+
+.toast-product__price-actual {
+  color: var(--color-neutral-gray-9);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--fz-default);
+  letter-spacing: var(--letter-spacing-1x);
+}
+
+.toast-product__price-old {
+  color: var(--color-neutral-gray-8);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--fz-0-5x);
+  text-decoration: line-through;
+}
+
+.toast-product__footer {
+  & > * {
+    width: 100%;
+  }
+}

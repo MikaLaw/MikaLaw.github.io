@@ -1,0 +1,138 @@
+.map-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6x);
+
+  @include vp-1280 {
+    flex-direction: row;
+    gap: var(--space-10x);
+  }
+
+  @include vp-1440 {
+    gap: var(--space-20x);
+  }
+}
+
+.map-block__map-wrapper {
+  position: relative;
+}
+
+.map-block__map-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+
+  @include vp-768 {
+    height: 500px;
+  }
+
+  @include vp-1280 {
+    width: 760px;
+    height: 100%;
+    min-height: 544px;
+  }
+}
+
+.map-block__map {
+  width: 100%;
+  height: 100%;
+}
+
+.map-block__dropdown {
+  position: absolute;
+  inset-block-start: 20px;
+  inset-inline-start: 20px;
+  width: 100%;
+  max-inline-size: 250px;
+
+  .select__button {
+    --button-color-bg: var(--color-neutral-gray-1);
+  }
+}
+
+.map-block__controls {
+  position: absolute;
+  inset-inline-end: 20px;
+  inset-block-end: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2x);
+}
+
+.map-block__zoom {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2x);
+}
+
+.map-block__zoom-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  background-color: var(--color-neutral-gray-1);
+  border: 1px solid var(--color-neutral-gray-7);
+  border-radius: 50%;
+  cursor: pointer;
+  pointer-events: auto;
+
+  &::before {
+    position: absolute;
+    inset-block-start: 50%;
+    width: 12px;
+    height: 2px;
+    background-color: var(--color-neutral-gray-7);
+    transform: translateY(-50%);
+    content: "";
+  }
+
+  &--in {
+    &::after {
+      position: absolute;
+      inset-block-start: 50%;
+      width: 2px;
+      height: 12px;
+      background-color: var(--color-neutral-gray-7);
+      transform: translateY(-50%);
+      content: "";
+    }
+  }
+}
+
+.map-block__location {
+  svg {
+    fill: var(--color-neutral-gray-7);
+  }
+
+  &::before {
+    content: none;
+  }
+}
+
+.map-block__balloon {
+  position: absolute;
+  inset-block-start: 100px;
+  inset-inline-start: 20px;
+  z-index: 1;
+  max-inline-size: 250px;
+  padding: var(--space-5x);
+  background-color: var(--color-neutral-gray-1);
+  border-radius: var(--radius-2x);
+  visibility: hidden;
+  opacity: 0;
+  transition: all var(--trans-default);
+
+  &.is-active {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.map-block__cities-wrapper {
+  @include vp-1280 {
+    flex: 1;
+  }
+}

@@ -1,0 +1,68 @@
+.benefits__title {
+  --benefits-size-title: var(--fz-3x);
+
+  margin-bottom: var(--space-6x);
+  color: var(--color-neutral-gray-1);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--benefits-size-title);
+  font-family: var(--ff-title);
+  line-height: var(--line-height-default);
+  text-transform: var(--text-transform-uppercase);
+
+  @include vp-768 {
+    --benefits-size-title: var(--fz-7x);
+  }
+}
+
+.benefits__list {
+  --benefits-gap-list: var(--space-6x);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--benefits-gap-list);
+  margin-bottom: var(--space-7-5x);
+
+  @include vp-1024 {
+    --benefits-gap-list: var(--space-10x);
+  }
+}
+
+.benefits__item {
+  --benefits-size-item: var(--fz-default);
+
+  color: var(--color-neutral-gray-1);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--benefits-size-item);
+  font-family: var(--ff-default);
+  line-height: var(--line-height-default);
+
+  @include vp-1024 {
+    --benefits-size-item: var(--fz-3x);
+
+    position: relative;
+    padding-left: var(--space-10x);
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      background-color: var(--color-brand-blue-1);
+      content: "";
+      mask-image: url("../img/sprite.svg#icon-drop");
+      mask-repeat: no-repeat;
+      mask-position: center;
+    }
+  }
+
+  p {
+    margin: 0;
+    margin-top: var(--space-3x);
+  }
+}
+
+.benefits__button {
+  margin-top: auto;
+}

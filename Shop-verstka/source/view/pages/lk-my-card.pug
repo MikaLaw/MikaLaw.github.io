@@ -1,0 +1,89 @@
+extends ../components/base/layout
+
+block variables
+	- const title = "ЛК-Моя карта" //- на страницах кроме главной используйте О нас — ProjectName
+	- const wrapperMods = ""
+	- const hasHeader = true
+	- const headerMods = ""
+	- const hasFooter = true
+	- const hasFooterPanel = true 
+	- const footerMods = ""
+	- const currentUrl = "" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+	- const page = "./lk-my-card.html" //- обозначение страницы для проброса в панели подвала
+
+block main
+	main.page__main
+		+breadcrumbs({
+			list: [{title: 'Главная', href: './main.html'}, {title: 'Моя карта'}],
+		})
+		section.section
+			.container
+				.section__wrapper 
+					.section__sidebar
+						+sidebar-menu({
+							page: page,
+						})
+					.section__content
+						.section__head
+							h1.section__title Моя карта
+						.section__description 
+							p Ознакомиться с <a href="#" class="section__link">Полными условиями программы лояльности</a>.
+						section.user-card
+							h2.visually-hidden Данные карты и баланс
+							.user-card__preview
+								.user-card__img 
+									+picture({
+										format: "jpg",
+										path: `./img/components/my-card/img-1`,
+										alt: "Товар",
+										isLazyLoading: "lazy",
+										isDecoding: "async",
+										width: "320",
+										height: "310",
+										noneMediaSource: true,
+									})
+								.user-card__logo
+									+logo({link: false})
+								.user-card__stats-info
+									.user-card__status Серебро
+									.user-card__badge 7%
+							dl.user-card__stats
+								.user-card__stats-row.user-card__stats-row--default
+									dt.user-card__stats-label Бонусы
+									dd.user-card__stats-value 111
+								.user-card__stats-row.user-card__stats-row--current
+									dt.user-card__stats-label Текущая скидка
+									dd.user-card__stats-value 7%
+								.user-card__stats-row.user-card__stats-row--gold
+									dt.user-card__stats-label До уровня «золото» со скидкой 10% нужно купить на сумму: 
+									dd.user-card__stats-value 3 000 ₽
+						section.discount-system
+							h2.discount-system__title система СКИДОК
+							ul.discount-system__list 
+								each card in rebateSystemList
+									li.discount-system__item
+										+tier-card(card)
+						section.operation-history 
+							h2.operation-history__title История операций с бонусными баллами
+							table.operation-history__table
+								thead.operation-history__head
+									tr.operation-history__head
+										th(scope="col").operation-history__th Дата
+										th(scope="col").operation-history__th Операция
+										th(scope="col").operation-history__th Сумма
+										th(scope="col").operation-history__th Баланс до
+										th(scope="col").operation-history__th Баланс после
+								tbody.operation-history__body
+									each tr in operationTable
+										tr.operation-history__tr 
+											td(data-label="Дата").operation-history__td!= tr.date
+											td(data-label="Операция").operation-history__td!= tr.title
+											td(data-label="Сумма").operation-history__td!= tr.summ
+											td(data-label="Баланс до").operation-history__td!= tr.before
+											td(data-label="Баланс после").operation-history__td!= tr.after	
+							+list-controls({
+								ariaLabel: 'Показать ещё следующие 10 операций'
+							}).operation-history__controls
+
+
+

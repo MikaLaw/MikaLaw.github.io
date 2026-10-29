@@ -1,0 +1,49 @@
+mixin button(options = {})
+	-
+		const {
+			id = false, 
+			tag = options.tag === 'a' ? false : options.tag || 'button', // button, a
+			href = false,
+			target = false, // "_blank"
+			rel = false, // "nofollow noopener noreferrer" 
+			type = 'button',
+			role = false,
+			text = "Смотреть",
+			iconLeft = false,
+			iconRight = false,
+			disabled = false,
+			ariaDisabled = false,
+			ariaLabel = false,
+			ariaLabelBy = false,
+			ariaPressed = false,
+			ariaExpanded = false,
+			ariaControls = false,
+			ariaSelected = false,
+			ariaHaspopup = false,
+		} = options;
+
+	#{tag}.button(
+		id=id,
+		href=href, 
+		target=target, 
+		rel=rel, 
+		type=type,
+		role=role,
+		disabled=disabled,
+		aria-disabled=ariaDisabled, 
+		aria-label=ariaLabel,
+		aria-labelledby=ariaLabelBy
+		aria-pressed=ariaPressed,
+		aria-expanded=ariaExpanded,
+		aria-controls=ariaControls,
+		aria-selected=ariaSelected
+		aria-haspopup=ariaHaspopup
+	)&attributes(attributes)
+		if iconLeft
+			i.icon(class=iconLeft)
+		if (iconLeft || iconRight) && text
+			span.button__text!= text
+		else
+			!= text      
+		if iconRight
+			i.icon(class=iconRight)

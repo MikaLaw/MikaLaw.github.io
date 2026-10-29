@@ -1,0 +1,46 @@
+include ./slider-controls
+
+mixin slider-custom(options={})
+  -
+    const {
+      optionList = productList1
+    } = options;
+
+  .product-slider.product-slider--custom(data-slider="custom" )
+    .product-slider__top.swiper(data-slider="custom-top" aria-hidden="true")
+      .product-slider__wrapper.swiper-wrapper
+        each product in optionList
+          .product-slider__slide.swiper-slide
+            .product-slider__img
+              +picture({
+                format: "jpg",
+                path: product.img,
+                alt: "Товар",
+                isLazyLoading: "lazy",
+                isDecoding: "async",
+                width: "320",
+                height: "310",
+                noneMediaSource: true,
+              })
+        +slider-controls()
+    .product-slider__bottom.swiper(data-slider="custom-bottom")
+      .product-slider__wrapper.swiper-wrapper(aria-live="polite")
+        each product in optionList
+          .product-slider__slide.swiper-slide
+            .product-slider__block
+              .product-slider__head(aria-hidden="true")!=product.title
+              .product-slider__content
+                .product-slider__picture
+                  +picture({
+                    format: "jpg",
+                    path: product.img,
+                    alt: "Товар",
+                    isLazyLoading: "lazy",
+                    isDecoding: "async",
+                    width: "320",
+                    height: "310",
+                    noneMediaSource: true,
+                  })
+                .product-slider__descriptions
+                  .product-slider__name!=product.title
+                  .product-slider__text!=product.text 

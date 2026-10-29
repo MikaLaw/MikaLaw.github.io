@@ -1,0 +1,22 @@
+mixin footer(footerMods)
+	footer.footer.page__footer&attributes(attributes)(itemscope, itemtype="https://schema.org")
+		.container
+			.footer__top
+				.footer__logo
+					+icon('icon-habit', '70', '70')
+				.footer__text 
+					.footer__legal(itemprop="productionCompany", itemscope, itemtype="https://schema.org")
+						strong(itemprop="name") Производитель: АО Научно-производственная фирма «Новь»
+						| , Россия, 630004, Новосибирская обл., г. Новосибирск, ул. Ленина, д. 28, этаж 1. Адрес производства: Россия, 630003, Новосибирская обл., г. Новосибирск, ул. Владимировская, д. 1а.
+					.footer__claims(itemprop="contactPoint", itemscope, itemtype="https://schema.org")
+						p.footer__legal.
+							Организация, уполномоченная на принятие претензий от потребителей: 
+							Россия, 630099, г. Новосибирск, ул. Ядринцевская, д. 53/1, оф. 1015.						
+						address.footer__contacts
+							| Телефон горячей линии: 
+							a.footer__link(href="tel:+78002500800" itemprop="telephone") 8-800-2500-800							
+			.footer__bottom
+				.footer__copyright
+					| © 
+					span(itemprop="name") NL International
+					|  2000—2026

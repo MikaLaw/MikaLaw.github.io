@@ -1,0 +1,40 @@
+.brand-stocks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3x);
+  align-items: flex-start;
+
+  @include vp-768 {
+    flex-direction: row;
+  }
+}
+
+.brand-stocks__img {
+  position: relative;
+  flex-shrink: 0;
+  width: 110px;
+  height: 72px;
+
+  @include vp-480 {
+    width: 132px;
+    height: 86px;
+  }
+
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: left top;
+    inset: 0;
+  }
+}
+
+.brand-stocks__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3x);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

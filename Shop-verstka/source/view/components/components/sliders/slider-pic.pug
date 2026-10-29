@@ -1,0 +1,53 @@
+mixin slider-pic(options={})
+  -
+    const {
+      name = "img",
+      ariaLabel = "Акционные предложения",
+      optionList = [
+        './img/components/product-card/img-1',
+        './img/components/product-card/img-2',
+        './img/components/product-card/img-3',
+        './img/components/product-card/img-4',
+        './img/components/product-card/img-5',
+        './img/components/product-card/img-6',
+        './img/components/product-card/img-7',
+        './img/components/product-card/img-8',
+      ],
+    } = options;
+
+  .slider.slider--pic.swiper(
+    data-slider=name
+    role="region"
+    aria-roledescription="carousel"
+    aria-label=ariaLabel
+  )&attributes(attributes)
+    .slider__wrapper.swiper-wrapper(aria-live="polite")
+      each img, ind in optionList
+        .slider__slide.swiper-slide
+          a.slider__img.glightbox(href=img + '.webp' data-gallery="product-gallery")
+            +picture({
+              format: "jpg",
+              path: img,
+              alt: "Товар",
+              isLazyLoading: ind === 0 ? "eager": "lazy",
+              fetchpriority: ind === 0 ? "high" : "low", 
+              isDecoding: "async",
+              width: "320",
+              height: "310",
+              noneMediaSource: true,
+            })
+    .slider__controls
+      +button({
+        iconLeft: 'icon-arrow-left',
+        text: null,
+        ariaLabel: 'Назад',
+      }).button--control.button--outline.slider__button.swiper-button-prev
+      .slider__pagination
+        .slider__pagination-inner
+          .swiper-pagination
+      +button({
+        iconLeft: 'icon-arrow-right',
+        text: null,
+        ariaLabel: 'Вперед',
+      }).button--control.button--outline.slider__button.swiper-button-next
+

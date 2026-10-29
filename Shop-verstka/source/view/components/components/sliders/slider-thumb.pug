@@ -1,0 +1,41 @@
+include ./slider-controls
+
+mixin slider-thumb(options={})
+  -
+    const {
+      optionList = productList1,
+      ariaLabel = "Акционные предложения"
+    } = options;
+
+  .slider.slider--gallery(data-slider="card-gallery")
+    .slider__top.swiper(data-slider="card-top")
+      .slider__wrapper.swiper-wrapper(aria-live="polite")
+        each item in optionList
+          .slider__slide.swiper-slide
+            a.slider__img.glightbox(href=item.img + '.webp' data-gallery="product-gallery")
+              +picture({
+                format: "jpg",
+                path: item.img,
+                alt: item.title,
+                isLazyLoading: "lazy",
+                isDecoding: "async",
+                width: "320",
+                height: "310",
+                noneMediaSource: true,
+              })
+      +slider-controls()
+    .slider__bottom.swiper(thumbsSlider data-slider="card-bottom")
+      .slider__wrapper.swiper-wrapper
+        each item in optionList
+          .slider__slide.swiper-slide
+            .slider__img
+              +picture({
+                format: "jpg",
+                path: item.img,
+                alt: "Товар",
+                isLazyLoading: "lazy",
+                isDecoding: "async",
+                width: "320",
+                height: "310",
+                noneMediaSource: true,
+              })

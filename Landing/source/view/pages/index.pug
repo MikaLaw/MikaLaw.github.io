@@ -1,0 +1,315 @@
+extends ../components/base/layout
+
+block variables
+	- const title = "NATURAL WATER"
+	- const hasHeader = true
+	- const hasFooter = true
+
+block main
+	main.page__main
+		section.section.section--hero
+			.container
+				.hero
+					.hero__img-container(aria-hidden="true" data-animate="fade-in")
+						+picture({
+							format: "jpg",
+							path: './img/components/hero-banner/img-1',
+							alt: "",
+							isLazyLoading: "lazy",
+							isDecoding: "async",
+							width: "480",
+							height: "510",
+							noneMediaSource: true
+						})
+					.hero__content-container(data-animate="fade-in")
+						.hero__icon(data-animate="fade-in-down")
+							+icon('icon-drop', '120', '138')
+						.hero__text(data-animate="fade-in-down") Комплект для регуляции pН воды 100% natural
+						h1.hero__title(data-animate="fade-in-up") Что такое 
+							span Natural Water 
+						ul.hero__list(data-animate="fade-in-up")
+							each item in heroList
+								li.hero__item!= item
+						+button({
+							text: 'Создать свою полезную привычку'
+						}).button--base.hero__button(data-animate="fade-in-up")
+		section.section#bottle-section-1
+			h2.visually-hidden Для кого этот продукт 
+			.container
+				.users
+					each item in usersList
+						article.users__block(class=`users__block${item.class}` data-bottle-section) 
+							.users__img-container(aria-hidden="true")
+								+picture({
+									format: "jpg",
+									path: item.img,
+									alt: "",
+									isLazyLoading: "lazy",
+									isDecoding: "async",
+									width: "320",
+									height: "310",
+									noneMediaSource: true
+								})
+							.users__content-container
+								.users__title.section__title!= item.title
+								.users__description
+									p!= item.text 
+									+button({
+										text: 'Заказать',
+										ariaLabel: `Заказать комплект ${item.title}`
+									}).button--base.users__button
+							.users__bottle-img(aria-hidden="true" data-bottle-move)
+								+picture({
+									format: "png",
+									path: item.bottle,
+									alt: "",
+									isLazyLoading: "lazy",
+									isDecoding: "async",
+									width: "320",
+									height: "310",
+									noneMediaSource: true
+								})
+		section.section
+			.container
+				.nature-1(data-animate="zoom-in")
+					.nature-1__content 
+						.nature-1__icon
+							+icon('icon-drop', '120', '138')
+						h2.nature-1__text Твоя вода. Твоя жизнь. Твоя осознанность.
+		section.section
+			.container
+				.purpose(data-animate="fade-in")
+					.purpose__head(data-animate="fade-in-left")
+						h2.purpose__title.section__title Для 
+							span чего?
+						.purpose__text Узнайте про водородный показатель и окислительно- восстановительный потенциал и их влияние на организм.
+					ul.purpose__list(data-animate="fade-in-right")
+						each item, i in purposeList
+							li.purpose__item 
+								a(href=`#purpose-${i}`).purpose__card.purpose-card.glightbox 
+									.purpose-card__title!= item.title
+									.purpose-card__text Читать дальше
+		section.section.section--sink
+			.bottle
+				each img in bottleImgList
+					.bottle__img-container(aria-hidden="true")
+						+picture({
+							format: "jpg",
+							path: img,
+							alt: '',
+							isLazyLoading: "eager",
+							isDecoding: "sync",
+							fetchpriority: "high", 
+							width: "320",
+							height: "310",
+							noneMediaSource: true
+						})
+		section.section.section--stone#natural-section
+			.container
+				.nature-2
+					.nature-2__content
+						h2.nature-2__text 100% 
+							span.visually-hidden натуральный продукт
+						.nature-2__icon
+							+icon('natural-text', '60%', '140px')
+					- for (let i = 1; i <= 9; i++)
+						.natural-2__stone(class=`natural-2__stone--${i}`)
+		section.section
+			.container
+				.saturate(data-animate="fade-in")
+					.saturate__img-container(aria-hidden="true" data-animate="fade-in-right")
+						+picture({
+							format: "png",
+							path: './img/components/saturated/image-1',
+							alt: '',
+							isLazyLoading: "lazy",
+							isDecoding: "async",
+							width: "320",
+							height: "310",
+							noneMediaSource: true
+						})
+					.saturate__content-container(data-animate="fade-in-left") 
+						h2.saturate__title.section__title Насыщено <br>
+							span Природой
+						.saturate__text 
+							p Природа уникальна – она создала естественный механизм обогащения воды: горная вода движется с вершин и на своем пути взаимодействует с различными минералами. 
+							p Именно такая вода легко усваивается организмом человека и поддерживает его кислотно-щелочной баланс.
+		section.section
+			.container
+				.nature-3(data-animate="fade-in-up") 
+					.nature-3__content
+						h2.nature-3__text Нам удалось воссоздать этот механизм и использовать его при создании 
+							span PH Balance Stones.
+		section.section.section--system
+			.container
+				.system(data-animate="fade-in")
+					.system__media-container(aria-hidden="true") 
+						.system__video-container
+							video(loop, autoplay, playsinline, muted, preload="auto" poster="./img/components/video/stones-bg.jpg")
+								source(src="./img/components/video/water-stone.webm" type="video/webm;")
+								source(src="./img/components/video/water-stone.mp4" type="video/mp4;")
+						.system__img-container
+							+picture({
+								format: "jpg",
+								path: './img/components/video/stones-bg',
+								alt: '',
+								isLazyLoading: "lazy",
+								isDecoding: "async",
+								width: "700",
+								height: "700",
+								noneMediaSource: true
+							})
+						ul.system__media-links
+							each stone,i in stonesList
+								li.system__media-item
+									a(href=`#system-${i}`).system__media-link.glightbox!= stone.title
+					.system__content-container(data-animate="fade-in-left") 
+						h2.system__title.section__title 5 stones<br>
+							span system
+						.system__text 100 % натуральный фильтр
+						ul.system__list
+							each stone, i in stonesList
+								li.system__item
+									a(href=`#system-${i}`).system__link.glightbox!= stone.title
+						+button({
+							text: 'Купить картридж'
+						}).button--base.system__button
+		section.section
+			.container
+				.nature-3(data-animate="fade-in-up") 
+					.nature-3__content
+						h2.nature-3__text Благодаря взаимно дополняющим свойствам минералы обеспечивают изменение 
+							span качества и структуры 
+							| воды.
+		section.section.section--eastman-tritan
+			.container
+				.eastman-tritan(data-animate="fade-in") 
+					.eastman-tritan__content(data-animate="fade-in-left")  
+						.eastman-tritan__subtitle В составе корпуса устройства используется материал
+						h2.eastman-tritan__title.section__title 
+							span Eastman Tritan™
+						.eastman-tritan__text 
+							p Безопасен, не токсичен и обладает свойствами BPA free (не содержит бисфенол-А).
+					.eastman-tritan__img-container
+						+picture({
+							format: "jpg",
+							path: './img/components/eastman-tritan/eastman-bg',
+							alt: '',
+							isLazyLoading: "lazy",
+							isDecoding: "async",
+							width: "700",
+							height: "700",
+							noneMediaSource: true
+						})
+		section.section.section--sertified
+			.container
+				.sertified(data-animate="fade-in-up") 
+					.sertified__content
+						h2.sertified__title Продукция 
+							span сертифицирована
+						.sertified__text 
+							p Подтверждено ассоциацией экспертов «Сибирский федеральный центр оздоровительного питания»
+						a(href="#").sertified__link Смотреть сертификаты
+		section.section.section--instructions#instructions
+			.container
+				.instructions(data-animate="fade-in")
+					.instructions__content-container(data-animate="fade-in-left")
+						h2.section__title.instructions__title
+							span Инструкция<br>
+							| по применению
+						.instructions__content
+							ol.instructions__list
+								each item in instructionsList
+									li.instructions__item.icon-instruction(class=item.icon)!= item.title
+							.instructions__text Вода становится «живой» – чистой, 
+								b слабощелочной
+								| , структурированной. 
+							+button({
+								text: 'Видеоинструкции'
+							}).button--base.instructions__button
+					.instructions__img-container(data-animate="fade-in-right")
+						.instructions__img-content
+							.instructions__img-title 
+								span 40 
+								| минут
+							.instructions__img-text Уровень pH воды приходит в норму.
+						.instructions__img
+							+picture({
+								format: "png",
+								path: './img/components/instruction/bottle',
+								alt: 'Процесс нормализации уровня pH в бутылке Natural Water',
+								isLazyLoading: "lazy",
+								isDecoding: "async",
+								width: "700",
+								height: "700",
+								noneMediaSource: true
+							})
+		section.section.section--properties
+			.container
+				.properties(data-animate="fade-in") 
+					h2.properties__head(data-animate="fade-in-up") Находящиеся в контейнере природные компоненты делают воду —
+						svg(xmlns="http://www.w3.org/2000/svg" width="180" height="184" viewBox="0 0 180 184" fill="none" data-animate="circle-dash")
+							g(fill="none")
+								g
+									path(stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dashoffset="130" stroke-dasharray="130" class="line arc-animated" d="M1.5 92 C1.5 46.6456 36.6456 11.5 82 11.5")
+									path(stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dashoffset="30" stroke-dasharray="30" class="line arrow-animated" d="M74.3934 2.51472 L82.8787 11 L74.3934 19.4853")
+								g
+									path(stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dashoffset="130" stroke-dasharray="130" class="line arc-animated" d="M1.5 92 C1.5 137.354 36.6456 172.5 82 172.5")
+									path(stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dashoffset="30" stroke-dasharray="30" class="line arrow-animated" d="M74.3934 164.515 L82.8787 173 L74.3934 181.485")
+								g
+									path(stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dashoffset="130" stroke-dasharray="130" class="line arc-animated" d="M178.5 92 C178.5 46.6457 143.354 11.5 98 11.5")
+									path(stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dashoffset="30" stroke-dasharray="30" class="line arrow-animated" d="M105.607 3.51473 L97.121 12 L105.607 20.4853")
+								g
+									path(stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dashoffset="130" stroke-dasharray="130" class="line arc-animated" d="M178.5 92 C178.5 137.354 143.354 172.5 98 172.5")
+									path(stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dashoffset="30" stroke-dasharray="30" class="line arrow-animated" d="M105.607 163.515 L97.121 172 L105.607 180.485")
+					ul.properties__list 
+						each item in propertyList
+							li.properties__item(data-animate="fade-in-up") 
+								.properties__content
+									.properties__title!= item.title 
+									.properties__text!= item.text		
+		section.section#water-usefulness
+			.container
+				.features(data-animate="fade-in")
+					h2.features__title.section__title(data-animate="fade-in-up") 
+						span Свойства<br>
+						| и выгоды
+					ol.features__list 
+						each item in benefitsList
+							li.features__item.benefits(data-animate="fade-in-up")
+								.benefits__title!= item.title
+								ul.benefits__list
+									each benefit in item.list
+										li.benefits__item!= benefit
+								+button({
+									text: item.button
+								}).button--base.benefits__button
+		section.section.section--habit
+			.container
+				.habit(data-animate="fade-in")
+					.habit__img-container(aria-hidden="true" data-animate="fade-in-left")
+						+picture({
+							format: "png",
+							path: './img/components/habit/bottle',
+							alt: '',
+							isLazyLoading: "lazy",
+							isDecoding: "async",
+							width: "700",
+							height: "730",
+							noneMediaSource: true
+						})
+					.habit__head(data-animate="fade-in-up")
+						.habit__logo
+							img(src="./img/icons/logo.svg" alt="Natural Water Logo" width="220" height="63")
+						h2.habit__title.section__title Создай свою полезную привычку
+					.habit__text(data-animate="fade-in-up") Вы можете заказать Ph Balance Stones только на сайте NL STORE						
+					.habit__icon(data-animate="fade-in-up")
+						+icon("icon-habit", '70', '70')
+					+button({
+						tag: 'a',
+						href: '#',
+						type: null,
+						target: '_blan',
+						rel: 'nofollow noopener noreferrer',
+						text: 'ПЕРЕЙТИ НА САЙТ'
+						}).button--base.habit__button(data-animate="fade-in-up")

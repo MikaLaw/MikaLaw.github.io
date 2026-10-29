@@ -1,0 +1,20 @@
+mixin list-controls(options={})
+  -
+    const {
+      isButton = true,
+      btnText = 'Показать ещё',
+      btnAriaLabel = 'Показать ещё следующие 10 товаров',
+      isPagination = true,
+    } = options;
+
+  .list-controls&attributes(attributes)
+    if isPagination
+      +pagination({
+        current: 6, 
+        total: 12
+      })
+    if isButton
+      +button({
+        text: btnText,
+        ariaLabel: btnAriaLabel
+      }).button--small.button--outline

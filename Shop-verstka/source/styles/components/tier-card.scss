@@ -1,0 +1,58 @@
+.tier-card {
+  font-family: var(--ff-default);
+  line-height: var(--line-height-default);
+}
+
+.tier-card__header {
+  display: flex;
+  gap: var(--space-2x);
+  align-items: center;
+  justify-content: space-between;
+  margin-block-end: var(--space-6x);
+  padding: var(--space-5x);
+  background: var(--color-neutral-gray-2);
+  border-radius: var(--radius-1x);
+}
+
+.tier-card__name {
+  color: var(--color-neutral-gray-9);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--fz-default);
+  letter-spacing: var(--letter-spacing-1x);
+  text-transform: var(--text-transform-uppercase);
+}
+
+.tier-card__percent {
+  color: var(--color-brand-orange-1);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--fz-5-5x);
+  letter-spacing: var(--letter-spacing-0-5x);
+  text-transform: var(--text-transform-uppercase);
+}
+
+.tier-card__info {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-2x);
+}
+
+.tier-card__row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1x);
+}
+
+.tier-card__label {
+  color: var(--color-neutral-gray-9);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--fz-0-5x);
+  letter-spacing: var(--letter-spacing-1x);
+  text-transform: var(--text-transform-uppercase);
+}
+
+.tier-card__value {
+  margin: 0;
+  color: var(--color-neutral-gray-9);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--fz-1x);
+}

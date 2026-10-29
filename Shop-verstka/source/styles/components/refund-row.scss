@@ -1,0 +1,43 @@
+.refund-row__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3x);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.refund-row__description {
+  --refund-row-size-description: var(--fz-1x);
+
+  padding: var(--space-5x);
+  color: var(--color-neutral-gray-8);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--refund-row-size-description);
+  font-family: var(--ff-default);
+  line-height: var(--line-height-default);
+  text-align: center;
+  background: var(--color-neutral-gray-4);
+  border-radius: var(--radius-1x);
+
+  @include vp-768 {
+    --refund-row-size-description: var(--fz-default);
+  }
+}
+
+.refund-date {
+  color: var(--color-neutral-gray-9);
+  font-weight: var(--font-weight-bold);
+  font-family: var(--ff-default);
+  line-height: var(--line-height-default);
+  letter-spacing: var(--letter-spacing-1x);
+  text-transform: var(--text-transform-uppercase);
+}
+
+.refund-row__controls {
+  margin-block-start: var(--space-6x);
+
+  @include vp-480 {
+    margin-block-start: var(--space-10x);
+  }
+}

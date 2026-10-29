@@ -1,0 +1,126 @@
+extends ../components/base/layout
+
+block variables
+	- const title = "Товар" //- на страницах кроме главной используйте О нас — ProjectName
+	- const wrapperMods = ""
+	- const hasHeader = true
+	- const headerMods = ""
+	- const hasFooter = true
+	- const hasFooterPanel = true 
+	- const footerMods = ""
+	- const currentUrl = "" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+	main.page__main
+		+breadcrumbs({
+			list: [
+				{title: 'Главная', href: './main.html'}, 
+				{title: 'Каталог', href: './catalog-card.html'}, 
+				{title: 'Окрашивание волос', href: './catalog-card.html'}, 
+				{title: 'Безаммиачный краситель', href: './catalog-card.html'}, 
+				{title: 'Безаммиачный краситель: Alfaparf', href: './catalog-card.html'}, 
+				{title: 'SV (Супер-фиолетовый) Крем-краска с экстрактом жемчуга и Алоэ Вера'}
+			],
+		})
+		section.section
+			.container
+				.section__content
+					.product 
+						.product__top
+							.product__gallery 
+								+slider-pic({
+									ariaLabel: "Галерея изображений товара",
+								})
+							.product__params.product-params
+								.product-params__brand
+									.product-params__brand-name ALFAPARF
+									.product-params__brand-status Официальный дистрибьютор
+								h1.product-params__title Шампунь Антистресс с экстрактом мальвы 250 мл CD СПА
+								form.product-params__form
+									input.visually-hidden(type="hidden" name="product_id" value="16611")
+									+product-attribute().product-params__attribute
+									.product-params__price
+										.product-params__price-actual
+											span.visually-hidden Текущая цена:
+											| 1 417 ₽
+										.product-params__price-old
+											span.visually-hidden Старая цена:
+											s 2 125,00 ₽
+									dl.product-params__info-list         
+										.product-params__info-item
+											dt Розничная цена:
+											dd 7 000 ₽
+										.product-params__info-item
+											dt Страна-производитель:
+											dd Италия
+										.product-params__info-item
+											dt Артикул:
+											dd CAT00016611
+									.product-params__controls
+										+button({
+											text: 'в корзину',
+											type: 'submit'
+										}).button--base
+										+button({
+											iconLeft: 'icon-favorite-fill',
+											text: null,
+											ariaLabel: 'Добавить в избранное',
+											ariaPressed: "false"
+										}).button--icon
+										+button({
+											href: '#',
+											tag: 'a', 
+											iconLeft: 'icon-redirect',
+											text: null,
+											type: null,
+											ariaLabel: 'Перейти на страницу акции',
+										}).button--icon.button--transparent
+								a.product-params__button-link(href="#") Получить доступ к специальным ценам для салонов
+								.product-params__info 
+									p Доступно к заказу для мастеров только на территории Алтайского края и Республики Алтай
+						.product__bottom
+							.product__info
+								+product-tab()
+							.product__contacts
+								.product-contacts
+									h2.product-contacts__title Задать вопрос о товаре
+									ul.product-contacts__list
+										each soc in socialsList2
+											li.product-contacts__item
+												a.product-contacts__link(href="#" rel="nofollow noopener noreferrer" target="_blank")
+													.product-contacts__icon
+														img(src=`./img/icons/${soc.icon}.svg` aria-hidden="true" width="44" height="44" alt=soc.title)
+													| #{soc.title} 										  
+		section.section
+			.container
+				.section__content
+					+slider({
+						title: '<h2  class="section__title"><a href="#" class="section__title-link">Вся линейка Revolution <i class="icon icon-arrow-right"></i></a></h2>',
+						name: 'card',
+					}).slider--product
+		section.section
+			.container
+				.section__content
+					+slider({
+						title: '<h2  class="section__title"><a href="#" class="section__title-link">С этим товаром покупают <i class="icon icon-arrow-right"></i></a></h2>',
+						name: 'card',
+					}).slider--product
+		section.section
+			.container
+				.section__content
+					+slider({
+						title: '<h2  class="section__title"><a href="#" class="section__title-link">Вы смотрели <i class="icon icon-arrow-right"></i></a></h2>',
+						name: 'card',
+					}).slider--product
+		section.section
+			.container
+				.section__head
+					h2.section__title Мы — официальные дистрибьюторы
+				.section__content
+					+distributors()
+		section.section
+			.container
+				.section__head
+					h2.section__title Место под seo-текст
+				.section__content
+					+text-cut()

@@ -1,0 +1,37 @@
+mixin mini-cart(options = {})
+  - 
+    const {
+      img = '',
+      title = '',
+      text = '',
+      cost = 0,
+      stock = 0,
+    } = options;
+
+  article.mini-cart&attributes(attributes)
+    .mini-cart__product 
+      a.mini-cart__img-wrapper(href="./product.html" tabindex="-1")
+        +picture({
+          format: "jpg",
+          path: img,
+          alt: "Товар",
+          isLazyLoading: "lazy",
+          isDecoding: "async",
+          width: "320",
+          height: "310",
+          desktopSource: img,
+          mobileSource: `${img}-mobile`,
+        })
+      .mini-cart__content-wrapper
+        h3.mini-cart__title
+          a.mini-cart__link(href="./product.html")!= title
+        .mini-cart__description!= text
+        .mini-cart__price-wrapper
+          .mini-cart__price-actual
+            span.visually-hidden Текущая цена:
+            != cost
+          if stock
+            .mini-cart__price-old
+              span.visually-hidden Старая цена:
+              s!= stock
+

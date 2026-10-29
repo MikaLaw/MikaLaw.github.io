@@ -1,0 +1,23 @@
+mixin header(headerMods, currentUrl)
+	-
+		const headerLinks = [
+			{
+				href: "index.html",
+				text: "Главная"
+			},
+			{
+				href: "#",
+				text: "Страница 2"
+			},
+			{
+				href: "#",
+				text: "Страница 3"
+			},
+		]
+	- const menuHoverId = `menu-hover-header-1`;
+
+	header.header&attributes(attributes)
+		.container
+			.header__logo.logo
+				.logo__link
+					img.logo__img(src="./img/icons/logo.svg" alt="" width="220" height="63")

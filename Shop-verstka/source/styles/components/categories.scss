@@ -1,0 +1,37 @@
+.categories {
+  font-family: var(--ff-default);
+  line-height: var(--line-height-default);
+}
+
+.categories__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2x);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.categories__link {
+  --categories-size-link: var(--fz-1x);
+  --categories-color-link: var(--color-neutral-gray-9);
+
+  color: var(--categories-color-link);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--categories-size-link);
+  transition: color var(--trans-default);
+
+  @include vp-768 {
+    --categories-size-link: var(--fz-1-5x);
+  }
+
+  @include hover {
+    &:hover {
+      --categories-color-link: var(--color-neutral-gray-7);
+    }
+  }
+
+  &:active {
+    --categories-color-link: var(--color-neutral-gray-7);
+  }
+}

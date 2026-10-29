@@ -1,0 +1,25 @@
+.icon-phone {
+  &::before {
+    display: block;
+    width: 18px;
+    height: 18px;
+    background-color: var(--color-neutral-gray-1);
+    content: "";
+    mask-image: url("../img/sprite.svg#icon-phone");
+    mask-repeat: no-repeat;
+    mask-position: center;
+  }
+}
+
+.icon-geo {
+  &::before {
+    display: block;
+    width: 14px;
+    height: 14px;
+    background-color: var(--color-default-white);
+    content: "";
+    mask-image: url("../img/sprite.svg#icon-geo");
+    mask-repeat: no-repeat;
+    mask-position: center;
+  }
+}

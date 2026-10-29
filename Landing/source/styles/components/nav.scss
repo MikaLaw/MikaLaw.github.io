@@ -1,0 +1,80 @@
+.nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-6x);
+  align-items: center;
+
+  @include vp-1023 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 90;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100svh;
+    padding-top: var(--space-25x);
+    background-color: var(--color-brand-blue-1);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  @include vp-1280 {
+    gap: var(--space-10x);
+  }
+}
+
+.nav__link {
+  --nav-size-link: var(--fz-7x);
+  --nav-color-link: var(--color-default-white);
+
+  position: relative;
+  display: block;
+  padding: var(--space-2x) 0;
+  color: var(--nav-color-link);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--nav-size-link);
+  font-family: var(--ff-default);
+  line-height: var(--line-height-default);
+
+  @include vp-1024 {
+    --nav-size-link: var(--fz-default);
+    --nav-color-link: var(--color-neutral-gray-1);
+  }
+
+  &::before {
+    position: absolute;
+    bottom: 0;
+    left: 0%;
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-brand-blue-1);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform var(--trans-default);
+    content: "";
+
+    @include vp-1023 {
+      background-color: var(--color-default-white);
+    }
+  }
+
+  @include hover {
+    &:hover {
+      &::before {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+    }
+  }
+
+  &:active {
+    &::before {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+  }
+}

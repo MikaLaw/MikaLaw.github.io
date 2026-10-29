@@ -1,0 +1,23 @@
+mixin blog-card(options={})
+	-
+		const {
+			img = './img/components/news-1',
+			title = 'Внутримолекулярный бензол: предпосылки',
+			date = '14.03.2022',
+		} = options;
+
+	a.blog-card(href="#")&attributes(attributes)
+		.blog-card__content
+			h3.blog-card__title!= title
+			time.blog-card__date(datetime="2022-05-28")!= date    
+		.blog-card__img(aria-hidden="true")
+			+picture({
+				format: "jpg",
+				path: img,
+				alt: title,
+				isLazyLoading: "lazy",
+				isDecoding: "async",
+				width: "320",
+				height: "310",
+				noneMediaSource: true,
+			})

@@ -1,0 +1,23 @@
+.payment-method__list {
+  display: flex;
+  gap: var(--space-4x);
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.payment-method__img {
+  width: 50px;
+  height: 24px;
+  filter: grayscale(1);
+
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: left top;
+    inset: 0;
+  }
+}

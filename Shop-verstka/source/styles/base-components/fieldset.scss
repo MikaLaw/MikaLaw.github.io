@@ -1,0 +1,21 @@
+.fieldset {
+  min-inline-size: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.fieldset__title {
+  margin-block-end: var(--space-2-5x);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--fz-default);
+  font-family: var(--ff-default);
+  line-height: var(--line-height-default);
+  text-transform: var(--text-transform-uppercase);
+}
+
+.fieldset__options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2x);
+}

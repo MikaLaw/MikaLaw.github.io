@@ -1,0 +1,47 @@
+extends ../components/base/layout
+
+block variables
+	- const title = "База знаний" //- на страницах кроме главной используйте О нас — ProjectName
+	- const wrapperMods = ""
+	- const hasHeader = true
+	- const headerMods = ""
+	- const hasFooter = true
+	- const hasFooterPanel = true 
+	- const footerMods = ""
+	- const currentUrl = "" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+	main.page__main
+		+breadcrumbs({
+			list: [{title: 'Главная', href: './main.html'}, {title: 'База знаний'}],
+		})
+		section.section
+			.container
+				.section__head
+					h1.section__title База знаний
+				.section__content
+					.section__description 
+						p Для получения доступа ко всем статьям необходимо авторизоваться в <a href="#" class="section__link">личном кабинете</a>.
+					.articles
+						+list({
+							list: articlesList2,
+							component: 'article-card',
+							componentData: { titleTag: 'h2' },
+						}).articles__list
+						+list-controls({
+							btnAriaLabel: 'Показать ещё следующие 10 статей',
+						}).articles__controls
+		section.section
+			.container
+				.section__content
+					+slider({
+						name: 'card',
+						title: '<h2  class="section__title"><a href="#" class="section__title-link">Вы смотрели <i class="icon icon-arrow-right"></i></a></h2>',
+						optionList: productList1,
+					}).slider--product
+		section.section
+			.container
+				.section__head
+					h2.section__title Место под seo-текст
+				.section__content
+					+text-cut()

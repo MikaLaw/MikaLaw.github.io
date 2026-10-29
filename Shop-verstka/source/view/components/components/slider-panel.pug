@@ -1,0 +1,29 @@
+mixin slider-panel(options={})
+	-
+		const {
+			name = 'slider-panel-example',
+			title = 'Категория',
+			isTitleHide = false,
+			iconClose = 'icon-close',
+			textClose = null,
+			classClose = 'slider-panel__close', 
+			ariaControlsId = 'slider-panel',
+			ariaLabelledby = `slider-panel-${Math.random().toString(36).substr(2, 9)}`,
+			headerComponent = false,
+			headerComponentData = false,
+			query = false
+		} = options;
+
+	.slider-panel(data-slider-panel=name id=ariaControlsId aria-labelledby=ariaLabelledby data-responsive=query role="dialog" aria-modal="true")&attributes(attributes)
+		.slider-panel__slide(data-slider-slide)
+			.slider-panel__header
+				.slider-panel__title(id=ariaLabelledby class=isTitleHide ? 'visually-hidden' : '')!= title
+				if headerComponent
+					+#{headerComponent}({...headerComponentData})(class= headerComponentData.class)
+				+button({
+					iconLeft: iconClose,
+					text: textClose,
+					ariaLabel: 'Закрыть модальное окно',
+				}).button--transparent(data-slider-panel-close=name class=classClose)
+			.slider-panel__body.custom-scroll
+				block

@@ -1,0 +1,47 @@
+mixin range(options = {})
+	-
+		const {
+			name = 'price',
+			min = 1,
+			max = 1000,
+			startMin = 1,
+			startMax = 1000,
+			idMin = Math.random().toString(36).substring(2),
+			idMax = Math.random().toString(36).substring(2),
+			postfix = "₽",
+			ariaLabel = "Фильтр диапазона",
+			title = false,
+			inputType = 'text',
+			inputArialabelMin = "Минимальная цена",
+			inputArialabelMax = "Максимальная цена",
+		} = options;
+
+	.range(
+		data-range=name,
+		data-min=min,
+		data-max=max,
+		data-start-min=startMin
+		data-start-max=startMax
+		aria-label=ariaLabel,
+		role="group"
+	)&attributes(attributes)
+		if rangeTitle
+			.range__title!= rangeTitle
+		.range__wrapper(data-range-content)
+			.range__inputs
+				label.range__label.visually-hidden(for=idMin data-range-min-label)!= inputArialabelMin
+				+input({
+					id: idMin,
+					type: inputType,
+					value: startMin || min,
+					inputmode: "numeric",
+				}).range__input(data-range-min)
+				span.range__separator —
+				label.range__label.visually-hidden(for=idMax data-range-max-label)!= inputArialabelMax
+				+input({
+					id: idMax,
+					type: inputType,
+					value: startMax || max,
+					inputmode: "numeric",
+				}).range__input(data-range-max )
+			.range__slider(data-range-bar)

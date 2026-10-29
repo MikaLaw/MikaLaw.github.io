@@ -1,0 +1,27 @@
+.list {
+  --list-column: 1;
+  --list-gap: var(--space-6x);
+
+  display: grid;
+  grid-template-columns: repeat(var(--list-column), minmax(0, 1fr));
+  gap: var(--list-gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @include vp-480 {
+    --list-column: 2;
+  }
+
+  @include vp-768 {
+    --list-column: 3;
+  }
+
+  @include vp-1280 {
+    --list-column: 4;
+  }
+}
+
+.list__item {
+  margin: 0;
+}
